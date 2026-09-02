@@ -72,6 +72,8 @@ duplicate record.
 | `A23` | `init_eo` reads `names.md`, which is about to move | a person, in anoieu | starting any new repository |
 | `A24` | receive `ai-novelty.md` as a file, and its companion stays behind | a person | nothing, but it splits a stated pair |
 | `A25` | kanon's docs measure duplicates an existing governance budget | **kanon** | nothing. It was a private scorecard |
+| `A26` | `synkrisis` is a proposed name, not a claimed one | a person, then ynoia | nothing. The directory renames cheaply |
+| `A27` | `telos` is running and is in no register | a person, and whoever owns it | comparing agendas at all |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -88,7 +90,7 @@ duplicate record.
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
 **Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
-`A21`, `A22`, `A23`, `A24`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
+`A21`, `A22`, `A23`, `A24`, `A26`, `A27`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
 `A20`, `A25`. **Everything else belongs to no office and that is correct** —
 `A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
 a directory to hold each of them is the mistake this page was cut back from.
@@ -412,6 +414,31 @@ own exam, and the duplication is the exact defect this repository spent a
 session diagnosing.
 **Closes when:** the ethics office measures against the existing budget and the
 private figure is gone.
+
+### `A26` — `synkrisis` is a proposed name, not a claimed one
+
+**Whose:** a person's to approve, ynoia's to register.
+**Why:** `R22` is ynoia's and **a name is claimed when a person approves one,
+never by a document suggesting it.** Kanon creating a directory is not a claim,
+and saying so on the directory's own front page is the cheapest way to keep it
+from becoming one by habit.
+**Closes when:** a person approves a name and ynoia writes the entry — or the
+directory is renamed.
+
+### `A27` — `telos` is running and is in no register
+
+**Whose:** a person's, and whoever owns the tree it is in.
+**Why:** `telos` is a child project with its own `docs/`, substantial enough
+that anoieu's link checker threw twenty-two spurious failures against it (`D6`).
+It is in **neither** `ecosystem.json` **nor** `names.md` — not even under *In use
+elsewhere, and claimed by nobody*, the section that exists because this happened
+with `noesis` and then `epikrisis`. **This is the third instance of a known
+failure**, and `names.md` says in terms that being absent from the register is
+not evidence a name is free.
+**Why it blocks:** no agenda can be compared against another that is not written
+down. `cvc6` is worse — it appears nowhere in anoieu at all.
+**Closes when:** `telos` has a row somewhere, or somebody says it deliberately
+does not.
 
 ---
 

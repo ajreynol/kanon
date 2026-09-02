@@ -57,6 +57,27 @@ kanon. When the file arrives, that is no longer so, and **rewriting it is
 ynoia's, not kanon's.** An office that edited the register on arrival would have
 answered the authority question in the worst possible way on day one.
 
+## What the office holds
+
+| what | footing | authority |
+| --- | --- | --- |
+| [`ynoia/`](ynoia) *(arriving)* | child project | **ynoia's.** Kanon houses and asks; it does not overrule |
+| [`synkrisis/`](synkrisis) | child project, **name proposed not claimed** | its own, and deliberately uninformed |
+| `ai-novelty.md` *(arriving)* | **a file, not a project** | the maintainer's — kanon keeps it and does not fill it |
+
+## Conflicting agendas
+
+**`synkrisis` finds where the ecosystem is pulling in two directions at once**,
+describes the conflict thoroughly enough that somebody could take a side, and
+attaches an opinion marked as uninformed. It also connects: two tools solving
+one problem in different trees is the same finding from the other side.
+
+**Its first entry is that the conflict cannot be stated yet.** Of the three
+verification agendas — `telos`, `cvc6`, `pathos` — one is reserved and unbuilt,
+one is **running and in no register at all**, and one appears nowhere in anoieu.
+`telos` is the third tool this ecosystem has found running unregistered, after
+`noesis` and `epikrisis`. Carried as `A27`.
+
 ## AI research
 
 **`ai-novelty.md` lives here — as a file, not a project.** No footing, no

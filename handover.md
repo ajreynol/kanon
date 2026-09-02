@@ -73,11 +73,21 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 - **A governance budget already exists** in `coherence.md`. Kanon's docs-flat
   measure was a private duplicate of it — `A25`.
 
+- **`telos` is running and is in no register.** A child project with its own
+  `docs/`, big enough to throw twenty-two spurious link failures in `D6`, absent
+  from `ecosystem.json` and `names.md` alike. **Third instance** after `noesis`
+  and `epikrisis`. **`cvc6` appears nowhere in anoieu at all.**
+- **Five readings of what Eunoia is, across three trees.** `ethos`'s `R10`
+  checker and `R11` manual, `ethos-eoc`, `noesis`, and `pathos` reserved and
+  unbuilt — and two of the three trees have joined nothing.
+
 ## Open
 
 - **Why does one fact about one tool live in six places?** Larger than any
   single correction. `tekmerion` is the tool for it, holds no roles, has
   produced nothing.
+- **Do `noesis` and `ethos-eoc` expect to converge, or is one the replacement
+  for the other?** Both are *Started*; neither entry says.
 - **What is a good latency?** No target exists, so *slow* is an impression.
 - **Who ends the ethics defect?** Settled that `martyria` and `zetesis` come
   here. Not settled that kanon is then the tree they sit in.
