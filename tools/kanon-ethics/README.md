@@ -45,7 +45,11 @@ office of the same name.
 | hold the docs-flat measure | each term, stated either way | two byte counts |
 | record what the office **declined** | as it happens | an entry naming the cost of declining |
 
-**The baseline, 2026-09-02:** **51,710 bytes of markdown and 0 bytes of code**,
+**Measured against the ecosystem's own governance budget** in
+`coherence.md`, not against a figure kanon invented. The budget already exists
+and `ai-novelty.md` records that its own two pages are on the wrong side of it;
+a president running a private measure alongside it would be scoring its own
+exam. **The baseline, 2026-09-02:** **51,710 bytes of markdown and 0 bytes of code**,
 across 0 code files. That is the number the measure is against, and it is worse
 than the ratio kanon criticised anoieu for — anoieu's is 1.54 MB of prose to
 595 KB of code; kanon's denominator is zero. **A measure with no baseline is a

@@ -62,6 +62,17 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 - **The same-owner loophole, both halves.** One owner is what makes the handoff
   safe and what stops it counting as a separation.
 
+- **`ai-novelty.md` exists, is unowned, and is 26 KB.** `docs/misc/` in anoieu
+  holds it with `linker.md` and `methodology.md`, and **no role in `roles.md`
+  covers any of the three.**
+- **Kanon's central criticism was not new.** `ai-novelty.md` already records
+  that the sharpest outside criticism of this ecosystem is that *the quality of
+  its self-criticism has been functioning as a substitute for the work*, and
+  that the page itself is the worst offender. Kanon reached it later and
+  independently.
+- **A governance budget already exists** in `coherence.md`. Kanon's docs-flat
+  measure was a private duplicate of it — `A25`.
+
 ## Open
 
 - **Why does one fact about one tool live in six places?** Larger than any

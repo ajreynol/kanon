@@ -57,11 +57,49 @@ kanon. When the file arrives, that is no longer so, and **rewriting it is
 ynoia's, not kanon's.** An office that edited the register on arrival would have
 answered the authority question in the worst possible way on day one.
 
+## AI research
+
+**`ai-novelty.md` lives here — as a file, not a project.** No footing, no
+README, no child-project entry. **And not a role handoff either:** nothing in
+`roles.md` owns it or anything else in anoieu's `docs/misc/`, so this is a
+document changing address rather than a responsibility changing hands.
+
+**What it is:** the interactions the maintainer found fascinating while
+developing this ecosystem, which might be of use to the AI community. **The
+entry criterion is one person's interest** — not importance, not correctness,
+not novelty — which means **kanon keeps the file and does not decide what goes
+in it.** The same relationship this office has with ynoia, arrived at from the
+other direction.
+
+**Three disciplines arrive with it and bind this office.** It **does not brag**,
+on the stated ground that a claim of novelty about one's own practice is the
+cheapest thing an agent can produce and reads exactly like an insight. A
+mechanism that turns out to be ordinary is **kept and relocated**, with one line
+saying where it went and what ruled it out — the same shape as *Closed* in
+[`../../handover.md`](../../handover.md), reached independently. And it is
+**neither a grade nor a survey**: `report-card.md` judges whether any of this is
+good and stays with anoieu, and nobody here has read the literature.
+
+**One consequence to plan for.** The page calls itself *a companion to
+`linker.md`*, which stays in anoieu's `docs/misc/` along with `methodology.md`.
+Moving one half of a stated pair is the `P2` question again — **is either half
+left unable to answer something it used to answer alone** — and here the answer
+is probably yes.
+
+**And it already contains this office's sharpest criticism of itself.** Its
+closing section says *diagnosis is not treatment*, and records that the sharpest
+criticism the ecosystem has had from outside is that **the quality of its
+self-criticism has been functioning as a substitute for the work rather than a
+spur to it** — adding that the page itself is the worst offender. Kanon reached
+the same conclusion independently and later. **It was not a new finding**, and
+this office should stop treating it as one.
+
 ## Standing tasks
 
 | task | when | output somebody can check |
 | --- | --- | --- |
 | **ask ynoia which of its five it would put down** | now — `K6` | ynoia's answer, in its words |
+| keep `ai-novelty.md`, do not fill it | always | a file whose entries are the maintainer's |
 | read before a ball is fired | before every `K` | the reading, cited, here |
 | route a research question to ynoia | whenever one arises | the question, and where it went |
 | keep `names.md` unedited by kanon | always | a clean blame on that file |

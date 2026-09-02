@@ -70,6 +70,8 @@ duplicate record.
 | `A21` | anoieu's Stretch 1 figures are quoted, not checked | **kanon** | kanon's own record, law 10 |
 | `A22` | receive `ynoia`, and treat it as the authority | a person, then **kanon** | the research office having a subject |
 | `A23` | `init_eo` reads `names.md`, which is about to move | a person, in anoieu | starting any new repository |
+| `A24` | receive `ai-novelty.md` as a file, and its companion stays behind | a person | nothing, but it splits a stated pair |
+| `A25` | kanon's docs measure duplicates an existing governance budget | **kanon** | nothing. It was a private scorecard |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -86,8 +88,8 @@ duplicate record.
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
 **Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
-`A21`, `A22`, `A23`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
-`A20`. **Everything else belongs to no office and that is correct** —
+`A21`, `A22`, `A23`, `A24`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
+`A20`, `A25`. **Everything else belongs to no office and that is correct** —
 `A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
 a directory to hold each of them is the mistake this page was cut back from.
 
@@ -383,6 +385,33 @@ something it used to answer alone** — and the answer is yes. It costs a line t
 plan and a broken start to discover.
 **Closes when:** `init_eo` names where it reads the register from, and that is
 true.
+
+### `A24` — receive `ai-novelty.md`, and its companion stays behind
+
+**Whose:** a person's to move. **A file, not a project** — no footing, no
+README, and **not a role handoff**: nothing in `roles.md` owns it or anything
+else in `docs/misc/`.
+**Why it belongs here:** it is the ecosystem's AI research, and the office of
+research is where research lives.
+**The constraint:** its entry criterion is **one person's fascination**, so
+kanon keeps the file and does not fill it.
+**The cost:** it calls itself a companion to `linker.md`, which stays in anoieu
+with `methodology.md`. **Moving one half of a stated pair** is the `P2` question
+and the answer here is probably yes.
+**Closes when:** the file is here and somebody has said what happens to the
+pairing.
+
+### `A25` — kanon's docs measure duplicates an existing governance budget
+
+**Whose:** kanon's, and it is a retraction.
+**Why:** objection 5 committed kanon to a docs-flat measure of its own
+invention. **`coherence.md` already has a governance budget**, which
+`ai-novelty.md` cites and against which it marks its own two pages as failing.
+A president keeping a private scorecard beside the ecosystem's is scoring its
+own exam, and the duplication is the exact defect this repository spent a
+session diagnosing.
+**Closes when:** the ethics office measures against the existing budget and the
+private figure is gone.
 
 ---
 
