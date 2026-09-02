@@ -60,6 +60,15 @@ duplicate record.
 | `A10` | the election mechanism | kanon, eventually | nothing yet |
 | `A11` | kanon-balls have no way to be delivered | a person | `K1`, `K2`, and every one after them |
 
+**Which office holds what.** `research` — `A4`, `A6`, `A7`, `A8`, `A9`.
+`readiness` — `A5`. `relations` — `A1`, `A2`, `A3`, `A11`. `ethics` — `A10`.
+
+**This page is public and the offices behind it are not.** The list is what
+kanon advertises; the working material in `tools/kanon-*/` is the president's
+own and no outside tool has standing to inspect it. An item reaches this page
+when it is something kanon is waiting on, not because an office holds a note
+about it.
+
 ---
 
 ### `A1` — get somebody else's account of Stretch 1

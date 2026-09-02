@@ -40,7 +40,7 @@ the unit of work falls out of it: what kanon sends is a **kanon-ball**.
 A kanon-ball is short, goes to exactly one tool, and is fired **for** it rather
 than at it. anoieu's output is a finding *against* you; kanon's is a kanon-ball
 *for* you, and that inversion is the whole reason the two are separate
-repositories. Nobody has to catch one. [`kanon-balls.md`](kanon-balls.md) is
+repositories. Nobody has to catch one. [`kanon-balls.md`](tools/kanon-relations/kanon-balls.md) is
 what the office does all day.
 
 Law 12 asks a president to keep a joke about its own name on its front page for
@@ -48,6 +48,79 @@ the whole term, on the ground that a president who cannot leave one there has
 started to believe the office is important. The test it sets is that the joke
 doubles as description. This one does, and it is the only part of this page that
 would survive being cut to one line.
+
+## The offices
+
+**`tools/X-Y/` in the repository of the active president X is the office of Y
+for president X** — *the office of research for kanon*, and so on. Four are
+open, and each was opened with work already in it:
+
+| office | what it holds |
+| --- | --- |
+| [research](tools/kanon-research/) | what we do not know yet |
+| [readiness](tools/kanon-readiness/) | is anybody blocked, and are we |
+| [relations](tools/kanon-relations/) | who is talking to whom, and who is stuck |
+| [ethics](tools/kanon-ethics/) | how the office itself behaved |
+
+**The prefix is the term, and an office does not travel.** When the presidency
+moves, the successor opens `tools/<their-name>-research/` in its own tree and
+these stay here as the record of one term. **The record travels and the offices
+do not** — the opposite of `history.md`, and deliberately.
+
+**They are named in plain English, which follows the register's reasoning rather
+than breaking it.** `names.md` asks for Greek and allows descriptive names where
+a thing is a program rather than an account — but its real argument is that a
+name must grep unambiguously, and the case it cites is a child project called
+`ethics` that lasted about an hour because the bare word matched prose about the
+subject. **`kanon-ethics` is the repair for exactly that**: the compound never
+turns up by accident. A Greek office name would also have to come out of the
+register, where `euboulia` and `nomophylax` are held for tools somebody may
+build — and spending one on a directory that dies with the term would be a claim
+on a name rather than a use of it.
+
+**The offices are internal.** A tool outside this repository has no authority to
+look inside them, and the active president reserves that right over its own
+offices without sharing it. **This is not a special case.** The ecosystem
+already holds that where a register disagrees with a repository about its own
+work, the repository is right; the offices are that rule applied, and need no
+exception written for anybody in particular. What leaves an office is what kanon
+chooses to fire.
+
+*A person reads whatever they like — this is about which **tool** may claim
+standing to inspect, not about what `PROTO-20` lets a human read before deciding
+anything.*
+
+### What crosses to the next president
+
+**Each office keeps a `handover.md` with four headings, and that file is the
+only thing that crosses.** Not the directory, not the working material, not the
+office itself.
+
+| heading | what goes under it |
+| --- | --- |
+| **Established** | shown to be true, with how somebody else re-derives it |
+| **Open** | still live, stated without this office's preferred answer |
+| **Closed** | answered or abandoned, and why, so it is not raised again |
+| **In flight** | mid-motion at term's end, and who holds the other end |
+
+**It is written as things are found, not at the close.** Law 11 already says a
+summary composed afterwards is a reconstruction; a finding recalled at term's
+end is a memory, and a president who knows the file is being written all along
+cannot smooth it later.
+
+**It is pinned, never copied.** The successor cites
+`kanon <commit>` and reads it there — the same coordinate `ecosystem.json`
+already uses for a member's join, because there is no version number here and a
+commit is the honest answer. Copying is what puts one fact in six places.
+
+**Each office writes its own, and the president does not aggregate them.** A
+president summarising its own offices is the party describing itself, which is
+the failure law 9 addresses one level up. It also lets a successor read one
+office without reading a whole term.
+
+**None of it binds the successor.** It is evidence, not instruction — a
+predecessor that could bind would be governing after its term. *Nothing yet* is
+an answer and is written; an omitted heading is not.
 
 ## The question it answers
 
