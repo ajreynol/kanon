@@ -28,6 +28,20 @@ stay.
 streak of 112. Recorded here because a handoff binds both sides and the party
 doing the deleting is bound harder.
 
+## Standing tasks
+
+| task | when | output somebody can check |
+| --- | --- | --- |
+| the three-line form below | on request, and each term | a colour with evidence under it |
+| **build the first check** | now — `A5` | a program that goes red when kanon's own discipline slips |
+
+**What the first check is.** Not a policy checker — that is anoieu's `R4` and is
+not ours. It checks **kanon's own structure**: that every office has a `README.md`
+and a `handover.md`, that every `handover.md` carries all four headings, that
+every item on `actionable.md` has a closing condition, and that every kanon-ball
+has its six fields. It enforces the disciplines this repository has written down
+against itself, it can actually fail, and it is code rather than more prose.
+
 ## The recurring form
 
 Three lines, whenever it is asked:

@@ -14,6 +14,17 @@ good enough.
 **It expires with the term.** Whoever holds the office next opens
 `tools/<their-name>-research/` in their own tree. Nothing here travels.
 
+## Standing tasks
+
+| task | when | output somebody can check |
+| --- | --- | --- |
+| read before a ball is fired | before every `K` | the reading, cited, in this office |
+| **turn an established finding into a ball** | when one is unraised — `K4` | a fired ball, or a reason it was held |
+
+**A finding nobody has been told is not a finding, it is a note.** Everything
+under *Established* below sat in anoieu's tree unraised until this office read
+it, and `K4` is the first correction of that habit.
+
 ## What is in it now
 
 **The standing analysis, 2026-09-02.** Six documents in anoieu describe kanon

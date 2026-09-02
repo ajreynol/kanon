@@ -6,7 +6,15 @@ each with the thing that closes it.
 **As of 2026-09-02, revised the same day.** Read against anoieu at commit
 `579aae7`.
 
-**What changed:** the office's job was sharpened to a relational one — who is
+**What changed, second revision:** the bar for being ready was named —
+**kanon joins the ecosystem**: `join_eo`, a footing, and CI that reports. That
+makes `A15` first and **absorbs `A2`**, since joining is what produces a footing
+rather than something asked for alongside it. The ethics destination was decided
+against this repository's recommendation and is settled: `A13` now has an
+address. *The original instruction to comply with nothing expires here — it held
+while there was nothing to join with, and there is about to be.*
+
+**What changed, first revision:** the office's job was sharpened to a relational one — who is
 stuck, whether the tools are talking, what the office can spend on getting
 somebody unstuck. So **an item that gets a tool unstuck now outranks an item
 that corrects a document**, `A1` is being carried as a kanon-ball rather than
@@ -48,6 +56,7 @@ duplicate record.
 
 | id | what | whose | blocks |
 | --- | --- | --- | --- |
+| `A15` | **join the ecosystem** | **kanon**, then a person | the deploy bar, and `A2` |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -60,9 +69,11 @@ duplicate record.
 | `A10` | the election mechanism | kanon, eventually | nothing yet |
 | `A11` | kanon-balls have no way to be delivered | a person | `K1`, `K2`, and every one after them |
 | `A12` | `R28` sits in the busiest tree while `E1` is blocked | anoieu, and a person | a stretch reaching `deployed` |
+| `A13` | `martyria` and `zetesis` sit inside the tree they assess | a person | the ethics half of the judge-inside-the-judged problem |
+| `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
 **Which office holds what.** `record` — `A1`, `A4`, `A10`. `relations` — `A2`,
-`A3`, `A11`. `distribution` — `A12`. `readiness` — `A5`. `research` — `A6`,
+`A3`, `A11`. `distribution` — `A12`, `A13`, `A14`. `readiness` — `A5`, `A15`. `research` — `A6`,
 `A7`, `A8`, `A9`. `ethics` — **none**, and that is correct: it records conduct
 rather than queuing work.
 
@@ -73,6 +84,18 @@ when it is something kanon is waiting on, not because an office holds a note
 about it.
 
 ---
+
+### `A15` — join the ecosystem
+
+**Whose:** kanon's to run, a person's to commit.
+**Why first:** it is the stated bar. `PROTO-20` gates on CI green both sides,
+and a repository that runs nothing is `unknown`. Joining is also what produces a
+footing, so **`A2` is absorbed rather than answered** — kanon stops being an
+entity the inventory cannot see by the same act that makes it checkable.
+**What it needs from us first:** `A5`. Joining a policy with nothing that runs
+is joining on paper.
+**Closes when:** `ecosystem.json` has a row for kanon and the checker passes in
+this tree.
 
 ### `A1` — get somebody else's account of Stretch 1
 
@@ -102,7 +125,8 @@ it.
 child. The office is being handed to an entity the inventory cannot see, and
 that was not decided — it was not noticed. Either answer is fine written down.
 **Closes when:** there is a row, or a line somewhere saying the president needs
-no footing.
+no footing. **Absorbed by `A15`** — joining produces the row, so this stops
+being a separate ask.
 
 ### `A3` — a discussion topic for the handoff
 
@@ -216,6 +240,37 @@ protocols are being run by hand, in the tree with the least room to run them.
 exist — **and its name is not kanon's to spend**, which is why this is a finding
 and not a proposal to annex it.
 **Closes when:** somebody says whether `R28` is a president's role or a tool's.
+
+### `A13` — `martyria` and `zetesis` sit inside the tree they assess
+
+**Whose:** a person's. **Not kanon's to receive** — see below.
+**Why:** anoieu's own register says the two ethics child projects are *child
+projects of the repository whose conduct they assess*. That is the `P2` defect
+in the ethics half, it is written down, and nobody has raised it as a handoff.
+`euboulia` is the reserved destination and is defined as advising `nomophylax`,
+which does not exist — **but leaving the tree you assess does not depend on who
+you advise**, so the stated blocker is not one.
+**Why not into `tools/kanon-ethics/`:** an office expires with the term and
+those carry permanent accumulating records. Permanent work cannot live in a
+term-scoped directory, and a president holding the ecosystem's ethics as well as
+its own conduct rebuilds the concentration this is meant to reduce.
+**Decided 2026-09-02: they come to `tools/kanon-ethics/`**, against this
+repository's recommendation, and the objection was answered rather than
+overruled — an office does not travel, but what it holds does. **The move is a
+person's**; kanon states what it expects to receive and reaches into nobody's
+tree. **Plan for the schedule**: `sleep.py` and `schedule.json` travel with
+`martyria`, so the ecosystem's working-hours protocol changes address.
+**Closes when:** the two projects are here and the schedule's new address is
+published.
+
+### `A14` — nobody has measured how long an answer takes
+
+**Whose:** **kanon's.** The second item on this list we can do alone.
+**Why:** latency is what actually blocks offloading, and it is currently an
+impression. There is enough in the public record to make it a number — three
+members declared at 10:53, 12:41 and 12:50 and were recorded at 16:44; `D1` ran
+a whole term. A figure makes it arguable; *slow* does not.
+**Closes when:** there is a latency figure and a target somebody disagrees with.
 
 ---
 

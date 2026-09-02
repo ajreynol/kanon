@@ -21,6 +21,14 @@ are better at that.
 **Every figure must be re-derivable by somebody else.** Law 10, and the only
 guard a page written by the party it describes actually has.
 
+## Standing tasks
+
+| task | when | output somebody can check |
+| --- | --- | --- |
+| keep the stretch entry current | from the hour the office moves | a draft that grows, never a document written at close |
+| ask for the census, do not compute it | each term — `K1` | epikrisis's figure, or *the figure does not exist* |
+| close the entry before the file travels | last act of the term | a closed entry a stranger can follow |
+
 ## Why any president needs it
 
 The record is the one artifact that outlives every term and is read by people

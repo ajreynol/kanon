@@ -69,6 +69,14 @@ moves, the successor opens `tools/<their-name>-research/` in its own tree and
 these stay here as the record of one term. **The record travels and the offices
 do not** — the opposite of `history.md`, and deliberately.
 
+**But what an office *holds* does travel.** A permanent project custodied by an
+office keeps its own name and its own history and moves to the successor's
+office of the same name; only the heading over it changes, which is exactly how
+`roles.md` already describes a child project graduating. The directory is the
+term's record; the work inside it is the ecosystem's. **This distinction was
+missing from this page until the ethics handoff was decided against my
+recommendation, and the gap was here rather than in the decision.**
+
 **They are named in plain English, which follows the register's reasoning rather
 than breaking it.** `names.md` asks for Greek and allows descriptive names where
 a thing is a program rather than an account — but its real argument is that a

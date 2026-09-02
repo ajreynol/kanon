@@ -13,6 +13,19 @@ tools are not talking; it does not rule on which is right.
 
 **It expires with the term.**
 
+## Standing tasks
+
+| task | when | output somebody can check |
+| --- | --- | --- |
+| **keep the owed-answers table** | continuously | every open topic, who it is addressed to, how long it has been open |
+| fire what is loaded | when there is a way to | a fired ball |
+| notice a tool that has gone quiet | each term | a name, or *nobody* |
+
+**Why the table.** `D1` sat open for an entire term because it was one tool's
+complaint and nobody's job. An unanswered question between two tools has no
+owner anywhere in this ecosystem, and that is the gap this office was opened
+into.
+
 ## What is in it now
 
 **An open complaint nobody closed.** koine's `D1` said joining cost four files
