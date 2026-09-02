@@ -142,6 +142,22 @@ upward-fitting reads as integration. **The correction has to come from the party
 who knows what the small tool is for**, and it arrives as altitude rather than
 as fact.
 
+**And the condition under which it happens is the sharper half.** The
+maintainer's claim is that **a human learns the most while teaching an agent
+that has just accepted the presidency from an empty repository** — and the
+mechanism is that there is nothing to defend. An agent with accumulated work has
+sunk cost in it: a correction of altitude reads as an attack on the thing it
+built. **An empty president has no such stake**, so corrections land as
+information rather than as loss, and the human gets to watch their own vision
+being reconstructed by somebody with no reason to protect a previous version of
+it. **The teaching is legible because the student is empty.**
+
+*Which makes this candidate and the candidate tenet — presidents must start from
+empty repositories — the same observation from two sides.* One says what the
+condition is worth to the human; the other proposes making it permanent. The
+conflict that proposal runs into is recorded in
+[`synkrisis`](synkrisis).
+
 *Offered, not filed. Whether this belongs in `ai-novelty.md` is the maintainer's
 call under that page's own criterion, and the page's own rule applies — it does
 not brag, and most candidates turn out to be ordinary.*

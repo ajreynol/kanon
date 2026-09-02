@@ -69,6 +69,53 @@ The `In use elsewhere` section of `names.md` exists because of the first two.
 **Due diligence still owed:** who owns `telos`, which tree it is in, and what
 `cvc6` means to the person holding it. All three are questions for people.
 
+## The empty president — a candidate tenet that conflicts with `P2`
+
+**The tenet, as stated by the maintainer:** *presidents must start from empty
+repositories*, because **presidents come with no past bias**. Recorded as the
+human's intuition rather than as kanon's proposal, deliberately — `laws.md`
+already says a protocol for choosing presidents drafted by the incumbent is the
+document this arrangement should be most suspicious of, and **kanon is the
+incumbent-designate proposing a rule it happens to pass.**
+
+**The conflict.** `P2` recommends that the policy, its checker, the inventory
+and the joining scripts move to kanon; `B15` is cutting the scope. **Kanon is
+also the president.** If a president must start empty, then governance cannot
+live permanently with the president — it would have to migrate every stretch,
+and `P2` has already priced that migration: *every member's pin moves once*, and
+the cost grows with each tool that joins first. **A rule that makes the
+ecosystem's shared machinery move every term is a rule against having shared
+machinery.**
+
+**Uninformed opinion:** both are right and they separate along a line `laws.md`
+has already drawn — **the presidency rotates and the other positions do not.**
+So the resolution is that governance is *fixed* to a repository while the
+*office* rotates away from it, and the tenet binds at the **start** of a term
+rather than throughout: a president carries nothing **in**, and may acquire
+during. kanon satisfies that today and would fail it at the start of Stretch 3,
+which is the correct outcome and the whole point.
+
+**The cost the tenet does not answer.** `laws.md` names it already: *pure is not
+capable… it cannot fail an examination and it has not passed one.* A law
+requiring emptiness does not merely permit an untested president, it
+**guarantees one every term, permanently**, and selects innocence over
+competence by construction. Kanon is currently the evidence: it cannot fire a
+ball, cannot be reached, runs nothing, and would fail `PROTO-20` today. **If
+that is the standing condition of every incoming president, the office is
+disabled at the start of every term** — and what carries across has to be the
+record and the handover, never the machinery.
+
+**Two smaller costs, stated so they are not discovered later.** Every term
+consumes a reserved name, and `names.md` has eight free; at one a stretch the
+register is empty in eight. And each past president leaves behind a repository
+that ran exactly one term.
+
+**Due diligence still owed:** this is an argument about the arrangement, which
+is **`R21` — ynoia's**, not synkrisis's and not kanon's. It is written here
+because the *conflict* is this project's job; **the verdict is ynoia's when it
+arrives**, and it should be asked whether the tenet belongs among the tenets
+`stathmos` weighs against.
+
 ## The two compilers — `noesis` and `ethos-eoc`
 
 **Not a conflict, a connection, and possibly a duplication.**

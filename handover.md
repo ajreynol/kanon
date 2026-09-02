@@ -88,6 +88,10 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   produced nothing.
 - **Do `noesis` and `ethos-eoc` expect to converge, or is one the replacement
   for the other?** Both are *Started*; neither entry says.
+- **Should presidents be required to start from empty repositories?** The
+  maintainer's intuition, and it conflicts with `P2` — governance living with a
+  president that must start empty means the shared machinery migrates every
+  term. Written up in `synkrisis`; the verdict is `R21`'s, which is ynoia's.
 - **What is a good latency?** No target exists, so *slow* is an impression.
 - **Who ends the ethics defect?** Settled that `martyria` and `zetesis` come
   here. Not settled that kanon is then the tree they sit in.

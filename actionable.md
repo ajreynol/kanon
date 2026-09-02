@@ -76,6 +76,7 @@ duplicate record.
 | `A27` | `telos` is running and is in no register | a person, and whoever owns it | comparing agendas at all |
 | `A28` | nobody has scrutinised kanon before it takes the office | **nobody, and that is the finding** | nothing. That is the problem |
 | `A29` | the stretch's three-word heading is owed | a person | law 6, at the close |
+| `A30` | candidate tenet: presidents must start from empty repositories | a person, audited by ynoia | it conflicts with `P2` |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -92,7 +93,7 @@ duplicate record.
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
 **Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
-`A21`, `A22`, `A23`, `A24`, `A26`, `A27`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
+`A21`, `A22`, `A23`, `A24`, `A26`, `A27`, `A30`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
 `A20`, `A25`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
 `A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
 a directory to hold each of them is the mistake this page was cut back from.
@@ -466,6 +467,24 @@ and a heading written after the fact has lost the thing worth recording.
 Candidates in [`working-summary.md`](working-summary.md): **Distribution**,
 **Out of anoieu**, **Fast answers**.
 **Closes when:** one is picked, before the stretch closes rather than at it.
+
+### `A30` — candidate tenet: presidents must start from empty repositories
+
+**Whose:** the maintainer's intuition, ynoia's to audit under `R21`. **Not
+kanon's proposal** — the incumbent-designate advocating a rule it happens to
+pass is the document `laws.md` says to distrust most.
+**The reason given:** presidents come with no past bias.
+**Why it is not simply adoptable:** it conflicts with `P2`. If governance moves
+to the president and the president must start empty, the ecosystem's shared
+machinery migrates every stretch — and `P2` prices that at *every member's pin
+moves once*, growing with each new member. The likely resolution is the line
+`laws.md` already draws: the presidency rotates, other positions do not, so the
+tenet binds at the **start** of a term rather than throughout.
+**The cost it does not answer:** it does not permit an untested president, it
+**guarantees one every term**. kanon is the current evidence — it runs nothing
+and would fail `PROTO-20` today.
+**Written up in [`synkrisis`](tools/kanon-research/synkrisis).**
+**Closes when:** ynoia audits it, or a person adopts or drops it.
 
 ---
 
