@@ -15,6 +15,40 @@ careful. It is still the wrong shape, and it grows more expensive to change with
 every member that pins anoieu in order to get the policy. **kanon is the address
 that separation goes to**, so that the judge stops being the prosecutor.
 
+## The office
+
+**kanon holds the presidency for Stretch 2, by bestowal.** The office is a
+repository's rather than a person's or an agent's, it expires with the stretch,
+it is handed on, and it confers nothing over anybody's repository — including
+the ones this ecosystem exists to serve.
+
+**What the president actually does is relational, not technical.** It does not
+adjudicate implementation. It asks who is stuck, whether the tools are talking
+to each other, and what the office could spend on getting somebody unstuck.
+Direction, not permission.
+
+**The office is not the transfer.** Holding the presidency is not permission to
+start the governance move — see objection 1 in
+[`initial-objections.md`](initial-objections.md). The policy, its checker and
+the inventory stay in anoieu until the maintainer raises `B15` again.
+
+## The joke
+
+**κανών is a rod, and a rod is not a cannon.** Say the name out loud anyway and
+the unit of work falls out of it: what kanon sends is a **kanon-ball**.
+
+A kanon-ball is short, goes to exactly one tool, and is fired **for** it rather
+than at it. anoieu's output is a finding *against* you; kanon's is a kanon-ball
+*for* you, and that inversion is the whole reason the two are separate
+repositories. Nobody has to catch one. [`kanon-balls.md`](kanon-balls.md) is
+what the office does all day.
+
+Law 12 asks a president to keep a joke about its own name on its front page for
+the whole term, on the ground that a president who cannot leave one there has
+started to believe the office is important. The test it sets is that the joke
+doubles as description. This one does, and it is the only part of this page that
+would survive being cut to one line.
+
 ## The question it answers
 
 *Does this tree meet the ecosystem's written standard, and what does joining ask
