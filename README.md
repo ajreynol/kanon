@@ -52,14 +52,16 @@ would survive being cut to one line.
 ## The offices
 
 **`tools/X-Y/` in the repository of the active president X is the office of Y
-for president X** — *the office of research for kanon*, and so on. Four are
+for president X** — *the office of research for kanon*, and so on. Six are
 open, and each was opened with work already in it:
 
 | office | what it holds |
 | --- | --- |
-| [research](tools/kanon-research/) | what we do not know yet |
-| [readiness](tools/kanon-readiness/) | is anybody blocked, and are we |
+| [record](tools/kanon-record/) | what happened, kept current while it happens |
 | [relations](tools/kanon-relations/) | who is talking to whom, and who is stuck |
+| [distribution](tools/kanon-distribution/) | what one tool holds that another could |
+| [readiness](tools/kanon-readiness/) | is anybody blocked, and are we |
+| [research](tools/kanon-research/) | what we do not know yet |
 | [ethics](tools/kanon-ethics/) | how the office itself behaved |
 
 **The prefix is the term, and an office does not travel.** When the presidency

@@ -59,9 +59,12 @@ duplicate record.
 | `A9` | whether the presidency needs a protocol at all | undecided | nothing, and it should |
 | `A10` | the election mechanism | kanon, eventually | nothing yet |
 | `A11` | kanon-balls have no way to be delivered | a person | `K1`, `K2`, and every one after them |
+| `A12` | `R28` sits in the busiest tree while `E1` is blocked | anoieu, and a person | a stretch reaching `deployed` |
 
-**Which office holds what.** `research` — `A4`, `A6`, `A7`, `A8`, `A9`.
-`readiness` — `A5`. `relations` — `A1`, `A2`, `A3`, `A11`. `ethics` — `A10`.
+**Which office holds what.** `record` — `A1`, `A4`, `A10`. `relations` — `A2`,
+`A3`, `A11`. `distribution` — `A12`. `readiness` — `A5`. `research` — `A6`,
+`A7`, `A8`, `A9`. `ethics` — **none**, and that is correct: it records conduct
+rather than queuing work.
 
 **This page is public and the offices behind it are not.** The list is what
 kanon advertises; the working material in `tools/kanon-*/` is the president's
@@ -200,6 +203,19 @@ no channel, is in no inventory, and is not a member. This is the same gap as
 receiving fix does not solve it — a footing lets tools see kanon, and a channel
 lets kanon reach them.
 **Closes when:** a ball has been delivered and the delivery is repeatable.
+
+### `A12` — `R28` sits in the busiest tree while `E1` is blocked
+
+**Whose:** anoieu's, and a person's. **Naming it is the whole of what this
+office does**, and naming is not taking.
+**Why:** `E1` has been `planned` for a full term and its last dry run read
+`BLOCKED`. The role that moves a stretch to `deployed` is `R28`, held by the
+tree that already carries fifteen of the ecosystem's twenty-eight roles. The
+protocols are being run by hand, in the tree with the least room to run them.
+`tekton` is reserved for the program that would take this over and does not
+exist — **and its name is not kanon's to spend**, which is why this is a finding
+and not a proposal to annex it.
+**Closes when:** somebody says whether `R28` is a president's role or a tool's.
 
 ---
 
