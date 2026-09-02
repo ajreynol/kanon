@@ -81,13 +81,14 @@ its own finding first.
 ## The offices
 
 **`tools/X-Y/` in the repository of the active president X is the office of Y
-for president X** — *the office of research for kanon*. **Three are open**, which
-is the floor:
+for president X** — *the office of research for kanon*. **Four are open**, of a
+maximum of five:
 
 | office | what it holds | in a phrase |
 | --- | --- | --- |
 | [research](tools/kanon-research/) | the home of `ynoia`, the ecosystem's research engine, which is the authority there | what comes **in** |
 | [correspondence](tools/kanon-correspondence/) | what we send, and what came back | what goes **out** |
+| [safety](tools/kanon-safety/) | how this infrastructure could be *persuaded* into failing | what could go **wrong** |
 | [ethics](tools/kanon-ethics/) | how the office behaved, and the ethics projects it custodies | what we **are** |
 
 ### Between three and five, and no more

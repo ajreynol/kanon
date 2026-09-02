@@ -78,6 +78,8 @@ duplicate record.
 | `A29` | the stretch's three-word heading is owed | a person | law 6, at the close |
 | `A30` | candidate tenet: presidents must start from empty repositories | a person, audited by ynoia | it conflicts with `P2` |
 | `A31` | `whats-next.md` is a practice, and proposed as a law | a person, in anoieu | nothing. kanon keeps it either way |
+| `A32` | `science-fiction.md` moving here reverses a written decision | a person | nothing, but it should be decided |
+| `A33` | `P2` hands kanon the code that runs in everyone's CI | **kanon**, before the move | nothing yet. That is the point |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -95,7 +97,7 @@ duplicate record.
 
 **Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
 `A21`, `A22`, `A23`, `A24`, `A26`, `A27`, `A30`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
-`A20`, `A25`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
+`A20`, `A25`. `safety` — `A32`, `A33`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
 `A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
 a directory to hold each of them is the mistake this page was cut back from.
 
@@ -503,6 +505,30 @@ nowhere to live. **Third instance**, and `K5` now carries all three.
 to refuse a considered agenda. Mitigated by requiring reasons rather than
 conclusions; written up in [`synkrisis`](tools/kanon-research/synkrisis).
 **Closes when:** a person adopts it, drops it, or says where such a rule lives.
+
+### `A32` — `science-fiction.md` moving here reverses a written decision
+
+**Whose:** a person's, and it is one line either way.
+**Why:** `coherence.md` records that `science-fiction.md` **stays where it is**,
+in the same sentence that calls it *a safety job rather than an essay*. The
+maintainer has said it comes to `tools/kanon-safety/`. **That is theirs to
+decide and kanon is not treating it as a mistake** — but the page's entire
+purpose is that a crossing is *a decision somebody makes rather than a drift
+nobody notices*, and it should not itself move by drift.
+**Closes when:** the reversal is written down, or the move is dropped.
+
+### `A33` — `P2` hands kanon the code that runs in everyone's CI
+
+**Whose:** kanon's, **before** the move rather than after.
+**Why:** `policy_check.py` executes in three members' builds, fetched from a URL
+at a commit each member pins. Under `P2` that becomes kanon's. **The president
+would own the one artifact that runs inside everybody else's tree** — which is
+an ordinary supply chain and is worth naming as one before inheriting it, not
+after. `D16` already mitigates part of it by requiring a green commit to bump to.
+**What is owed before the move:** a written statement of what a member is
+actually trusting when it pins, and what kanon undertakes not to do with that
+position.
+**Closes when:** that statement exists and predates the transfer.
 
 ---
 

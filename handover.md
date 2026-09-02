@@ -86,6 +86,13 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   checker and `R11` manual, `ethos-eoc`, `noesis`, and `pathos` reserved and
   unbuilt — and two of the three trees have joined nothing.
 
+- **`policy_check.py` runs in three members' CI, fetched by URL at a pinned
+  commit**, and `P2` hands it to kanon. The president would own the one artifact
+  that executes inside everybody else's build.
+- **`coherence.md` says `science-fiction.md` stays in anoieu**, in the sentence
+  calling it a safety job. The maintainer has directed it here; the reversal is
+  `A32`.
+
 ## Open
 
 - **Why does one fact about one tool live in six places?** Larger than any
