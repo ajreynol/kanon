@@ -40,7 +40,7 @@ the unit of work falls out of it: what kanon sends is a **kanon-ball**.
 A kanon-ball is short, goes to exactly one tool, and is fired **for** it rather
 than at it. anoieu's output is a finding *against* you; kanon's is a kanon-ball
 *for* you, and that inversion is the whole reason the two are separate
-repositories. Nobody has to catch one. [`kanon-balls.md`](tools/kanon-relations/kanon-balls.md) is
+repositories. Nobody has to catch one. [`kanon-balls.md`](kanon-balls.md) is
 what the office does all day.
 
 Law 12 asks a president to keep a joke about its own name on its front page for
@@ -49,88 +49,101 @@ started to believe the office is important. The test it sets is that the joke
 doubles as description. This one does, and it is the only part of this page that
 would survive being cut to one line.
 
+## The mission
+
+**No tool should hold what another tool could.** That is the ecosystem's stated
+mission and it is the whole reason this office exists — the presidency moved
+because one tree held most of the work, and it will keep moving for the same
+reason. Every term, kanon names at least one thing that could leave anoieu.
+
+**The constraint is latency, not willingness.** The maintainer has been inclined
+to move governance since 2026-08-31; what is actually in the way is that a
+question to another tool takes hours to land and can sit a whole term
+unanswered. **A handoff is a conversation with a deadline, and this ecosystem
+does not have a fast conversation.** So making answers fast is not a side
+project — it is the enabling work for every move kanon will ever propose.
+
+**And kanon does not build that machinery.** `koine` exists to be the one
+implementation of the reporting protocol rather than one per member. A president
+building a second would break the mission it holds the office to serve.
+
+**The mission points here too.** Kanon holding what another tool could hold is
+its own finding first.
+
 ## The offices
 
 **`tools/X-Y/` in the repository of the active president X is the office of Y
-for president X** — *the office of research for kanon*, and so on. Six are
-open, and each was opened with work already in it:
+for president X** — *the office of research for kanon*. **Three are open**, which
+is the floor:
 
-| office | what it holds |
-| --- | --- |
-| [record](tools/kanon-record/) | what happened, kept current while it happens |
-| [relations](tools/kanon-relations/) | who is talking to whom, and who is stuck |
-| [distribution](tools/kanon-distribution/) | what one tool holds that another could |
-| [readiness](tools/kanon-readiness/) | is anybody blocked, and are we |
-| [research](tools/kanon-research/) | what we do not know yet |
-| [ethics](tools/kanon-ethics/) | how the office itself behaved |
+| office | what it holds | in a phrase |
+| --- | --- | --- |
+| [research](tools/kanon-research/) | the home of `ynoia`, the ecosystem's research engine, which is the authority there | what comes **in** |
+| [correspondence](tools/kanon-correspondence/) | what we send, and what came back | what goes **out** |
+| [ethics](tools/kanon-ethics/) | how the office behaved, and the ethics projects it custodies | what we **are** |
 
-**The prefix is the term, and an office does not travel.** When the presidency
-moves, the successor opens `tools/<their-name>-research/` in its own tree and
-these stay here as the record of one term. **The record travels and the offices
-do not** — the opposite of `history.md`, and deliberately.
+### Between three and five, and no more
 
-**But what an office *holds* does travel.** A permanent project custodied by an
-office keeps its own name and its own history and moves to the successor's
-office of the same name; only the heading over it changes, which is exactly how
-`roles.md` already describes a child project graduating. The directory is the
-term's record; the work inside it is the ecosystem's. **This distinction was
-missing from this page until the ethics handoff was decided against my
-recommendation, and the gap was here rather than in the decision.**
+**A president holds at least three offices and at most five.** Fewer than three
+and the term is not ambitious enough to need a structure at all; more than five
+and nobody can say what each one is for. **This repository proved the second
+half the hard way**: it opened six in an afternoon and the maintainer could not
+explain four of them, which is the only evidence a rule like this ever gets.
 
-**They are named in plain English, which follows the register's reasoning rather
-than breaking it.** `names.md` asks for Greek and allows descriptive names where
-a thing is a program rather than an account — but its real argument is that a
-name must grep unambiguously, and the case it cites is a child project called
-`ethics` that lasted about an hour because the bare word matched prose about the
-subject. **`kanon-ethics` is the repair for exactly that**: the compound never
-turns up by accident. A Greek office name would also have to come out of the
-register, where `euboulia` and `nomophylax` are held for tools somebody may
-build — and spending one on a directory that dies with the term would be a claim
-on a name rather than a use of it.
+**Kanon cannot make that a law, and does not pretend to.** `laws.md` is
+deliberately narrow — it governs `history.md` *and nothing else*, and says in
+terms that a law about anything else does not belong in it. Amending it is the
+maintainer's, and **a president proposing an amendment writes the proposal and
+does not apply it.** So the range above is this repository's own practice,
+binding on kanon from now, and separately a proposal to anoieu carried as `K5`.
+If it is ever a law, somebody other than the president will have made it one.
 
-**The offices are internal.** A tool outside this repository has no authority to
-look inside them, and the active president reserves that right over its own
-offices without sharing it. **This is not a special case.** The ecosystem
-already holds that where a register disagrees with a repository about its own
-work, the repository is right; the offices are that rule applied, and need no
-exception written for anybody in particular. What leaves an office is what kanon
-chooses to fire.
+**There were six for about an hour.** The other four — record, relations,
+readiness, distribution — were a list, an output, a status and a mission
+wearing directories, and the maintainer could not tell what four of them were
+for. **That was the evidence.** Nothing was deleted except the containers: the
+mission is above, the list is [`actionable.md`](actionable.md), the output is
+[`kanon-balls.md`](kanon-balls.md), the findings moved into research, and
+readiness is what the check reports rather than a place.
+
+**The prefix is the term, and an office does not travel.** The successor opens
+`tools/<their-name>-research/` in its own tree; these stay as the record of one
+term.
+
+**But what an office holds does travel.** A permanent project custodied by an
+office keeps its own name and history and moves to the successor's office of the
+same name — only the heading over it changes, exactly as `roles.md` describes a
+child project graduating. `martyria` and `zetesis` are the first.
+
+**The offices are internal.** No tool outside this repository has authority to
+look inside them. **This is not a special case**: the ecosystem already holds
+that where a register disagrees with a repository about its own work, the
+repository is right. What leaves an office is what kanon chooses to fire.
 
 *A person reads whatever they like — this is about which **tool** may claim
-standing to inspect, not about what `PROTO-20` lets a human read before deciding
-anything.*
+standing to inspect, not what `PROTO-20` lets a human read.*
 
-### What crosses to the next president
+## What crosses to the next president
 
-**Each office keeps a `handover.md` with four headings, and that file is the
-only thing that crosses.** Not the directory, not the working material, not the
-office itself.
-
-| heading | what goes under it |
-| --- | --- |
-| **Established** | shown to be true, with how somebody else re-derives it |
-| **Open** | still live, stated without this office's preferred answer |
-| **Closed** | answered or abandoned, and why, so it is not raised again |
-| **In flight** | mid-motion at term's end, and who holds the other end |
+**One file: [`handover.md`](handover.md), with four headings** — *Established*,
+*Open*, *Closed*, *In flight*.
 
 **It is written as things are found, not at the close.** Law 11 already says a
 summary composed afterwards is a reconstruction; a finding recalled at term's
 end is a memory, and a president who knows the file is being written all along
 cannot smooth it later.
 
-**It is pinned, never copied.** The successor cites
-`kanon <commit>` and reads it there — the same coordinate `ecosystem.json`
-already uses for a member's join, because there is no version number here and a
-commit is the honest answer. Copying is what puts one fact in six places.
+**It is pinned, never copied.** The successor cites `kanon <commit>` and reads
+it there — the coordinate `ecosystem.json` already uses for a member's join.
+Copying is what puts one fact in six places.
 
-**Each office writes its own, and the president does not aggregate them.** A
-president summarising its own offices is the party describing itself, which is
-the failure law 9 addresses one level up. It also lets a successor read one
-office without reading a whole term.
+**Closed items cross too.** A successor with fresh eyes re-raises dead
+questions; the dedup has to run against everything seen, not everything kept.
 
-**None of it binds the successor.** It is evidence, not instruction — a
-predecessor that could bind would be governing after its term. *Nothing yet* is
-an answer and is written; an omitted heading is not.
+**None of it binds the successor.** Evidence, not instruction — a predecessor
+that could bind would be governing after its term. *Nothing yet* is an answer;
+an omitted heading is not.
+
 
 ## The question it answers
 

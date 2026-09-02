@@ -6,6 +6,11 @@ each with the thing that closes it.
 **As of 2026-09-02, revised the same day.** Read against anoieu at commit
 `579aae7`.
 
+**What changed, third revision:** four of the six offices were closed the day
+they opened. They were a list, an output, a status and a mission wearing
+directories, and the maintainer could not tell what four of them were for. **The
+items did not move — only their labels.**
+
 **What changed, second revision:** the bar for being ready was named —
 **kanon joins the ecosystem**: `join_eo`, a footing, and CI that reports. That
 makes `A15` first and **absorbs `A2`**, since joining is what produces a footing
@@ -57,6 +62,14 @@ duplicate record.
 | id | what | whose | blocks |
 | --- | --- | --- | --- |
 | `A15` | **join the ecosystem** | **kanon**, then a person | the deploy bar, and `A2` |
+| `A16` | the office-count range is a practice, not a law | a person, in anoieu | nothing. It binds kanon either way |
+| `A17` | nobody publishes what a repository here should look like | **kanon** to say, anoieu to decide | every layout change, silently |
+| `A18` | no way to find out what a tool can be asked for | **kanon**, with each tool's answer | using tools the ecosystem already has |
+| `A19` | no node has an FAQ; kanon now has one | **kanon** first, then a ball each | the cost of arriving anywhere |
+| `A20` | martyria's cases must survive the move byte-identical | **kanon** | nothing, until the move happens |
+| `A21` | anoieu's Stretch 1 figures are quoted, not checked | **kanon** | kanon's own record, law 10 |
+| `A22` | receive `ynoia`, and treat it as the authority | a person, then **kanon** | the research office having a subject |
+| `A23` | `init_eo` reads `names.md`, which is about to move | a person, in anoieu | starting any new repository |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -72,10 +85,11 @@ duplicate record.
 | `A13` | `martyria` and `zetesis` sit inside the tree they assess | a person | the ethics half of the judge-inside-the-judged problem |
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
-**Which office holds what.** `record` — `A1`, `A4`, `A10`. `relations` — `A2`,
-`A3`, `A11`. `distribution` — `A12`, `A13`, `A14`. `readiness` — `A5`, `A15`. `research` — `A6`,
-`A7`, `A8`, `A9`. `ethics` — **none**, and that is correct: it records conduct
-rather than queuing work.
+**Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
+`A21`, `A22`, `A23`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
+`A20`. **Everything else belongs to no office and that is correct** —
+`A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
+a directory to hold each of them is the mistake this page was cut back from.
 
 **This page is public and the offices behind it are not.** The list is what
 kanon advertises; the working material in `tools/kanon-*/` is the president's
@@ -271,6 +285,104 @@ impression. There is enough in the public record to make it a number — three
 members declared at 10:53, 12:41 and 12:50 and were recorded at 16:44; `D1` ran
 a whole term. A figure makes it arguable; *slow* does not.
 **Closes when:** there is a latency figure and a target somebody disagrees with.
+
+### `A16` — the office-count range is a practice, not a law
+
+**Whose:** a person's, in anoieu. **Kanon has already applied it to itself** and
+is not waiting.
+**Why:** three to five offices, adopted after opening six and being unable to
+explain four. Kanon cannot legislate it: `laws.md` governs `history.md` and
+nothing else by its own statement, and a president proposing an amendment writes
+the proposal and does not apply it. **The scope problem is the more interesting
+half** — a rule about how a presidency *works* rather than how its record is
+kept has nowhere to live in this ecosystem today.
+**Carried as [`K5`](kanon-balls.md).**
+**Closes when:** anoieu says whether `laws.md` widens, a second page exists, or
+neither.
+
+### `A17` — nobody publishes what a repository here should look like
+
+**Whose:** kanon's to say, anoieu's to decide. Correspondence communicates a
+layout; it does not set one.
+**Why:** anoieu moved `prompts/` out of `scripts/`, members had copied that
+layout, and **two published URLs went to 404 with copies already sent that could
+not be recalled** — `history.md` lists it under what is unfinished, and `D19`
+is a member reporting the same thing from the other end. A layout is a contract
+nobody wrote down, so changing it looked like tidying.
+**The ask is small:** say what the layout is, and say that a change to it is
+announced before it lands rather than after.
+**Closes when:** the expected layout is published somewhere a member can pin.
+
+### `A18` — no way to find out what a tool can be asked for
+
+**Whose:** kanon's to draft, each tool's to confirm in its own words.
+**Why:** `ecosystem.json` records what a tool *is*, never what it can be **asked
+for**. epikrisis proves the cost: it does real work, `laws.md` names it the
+holder of *independent audit*, and during anoieu's whole term nobody could work
+out how to get advice out of it. **A tool nobody knows how to ask is a tool the
+ecosystem does not have.**
+**Not a new register.** It is kanon's reading of what tools offer, corrected by
+them — `K1` is the first, and every entry is a quote or it is not an entry.
+**Closes when:** at least one tool has confirmed its own line.
+
+### `A19` — no node has an FAQ, and kanon now has one
+
+**Whose:** kanon's, then a ball to each node.
+**Why:** joining cost koine eighteen hundred lines of reading, and six documents
+describe kanon without agreeing. Same defect from the reader's side: nowhere
+does a tool say the short version of itself. **Five fixed questions**, in
+[`FAQ.md`](FAQ.md), written here before being proposed anywhere.
+**Closes when:** one other node adopts it, or says why the style is wrong.
+
+### `A20` — martyria's cases must survive the move byte-identical
+
+**Whose:** kanon's, and it is code rather than prose.
+**Why:** `martyria` carries `case-cvc5-12891.md` and `witnessed.md` — the record
+of how this ecosystem behaved toward the project it exists to serve. When it
+moves into `tools/kanon-ethics/`, **the party that becomes its keeper must be
+able to show it changed nothing**, and *trust me* is not a mechanism. A hash
+before and after costs nothing and is the difference between custody and
+possession.
+**Closes when:** the move happens and the hashes match on the record.
+
+### `A21` — anoieu's Stretch 1 figures are quoted, not checked
+
+**Whose:** kanon's.
+**Why:** kanon will quote Stretch 1's numbers in its own record — 22% green, a
+112-run streak, 331 commits, fifteen of twenty-eight roles. **Law 10 requires
+every figure on the record to be re-derivable by somebody else**, and nobody has
+re-derived these. Checking figures kanon is about to stand behind is
+self-interested rather than an audit, and that is exactly why it is safe for
+kanon to do it — `tekmerion` still holds the general job.
+**Closes when:** each figure is confirmed, corrected, or marked not re-derivable.
+
+### `A22` — receive `ynoia`, and treat it as the authority
+
+**Whose:** a person's to move; kanon's to house without overruling.
+**Why:** `ynoia` is the ecosystem's research engine and is overloaded — five
+roles and five registers, more than any other child project. It becomes a child
+project of `tools/kanon-research/`, keeping `R21`–`R25` and their ids, because
+an id is permanent wherever the role lives.
+**The constraint on us, stated before the move rather than after:** kanon does
+not grade a proposal ynoia has graded, settle a name it has registered, or
+answer *was kanon a good idea* — `proposals.md` holds `P2`, the audit that
+recommended this repository. And kanon does not edit `names.md` on arrival,
+including the sentence describing kanon that stops being true when it moves.
+**That rewrite is ynoia's.** Carried outward as `K6`.
+**Closes when:** ynoia is here and `names.md` has a clean blame with no kanon
+commits on it.
+
+### `A23` — `init_eo` reads `names.md`, which is about to move
+
+**Whose:** a person's, in anoieu.
+**Why:** `roles.md` describes `R22` as *the one thing here another script
+already depends on* — `init_eo` consults the register when a repository is
+started. Moving `ynoia` puts a prompt in anoieu and the register it reads in
+kanon. **This is the `P2` question — is either half left unable to answer
+something it used to answer alone** — and the answer is yes. It costs a line to
+plan and a broken start to discover.
+**Closes when:** `init_eo` names where it reads the register from, and that is
+true.
 
 ---
 

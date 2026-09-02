@@ -1,51 +1,73 @@
 # The office of research for kanon
 
-**What we do not know yet.** Open questions, the evidence under them, and the
-reading done before a kanon-ball is fired.
+**This office is the home of `ynoia`, and `ynoia` is the authority.**
 
-**Output is findings a reader can re-derive**, in the sense law 10 means: a
-number only this office can produce does not go on a page.
+`ynoia` — *why Eunoia* — is the Eunoia ecosystem's research engine: whether the
+arrangement earns its machinery, and what it is missing. It is today a child
+project of anoieu and **it is overloaded**, holding five roles and five separate
+registers, more than any other child project in the ecosystem. It comes here as
+a child project of this office.
 
-**Not this office.** Proposals — `ynoia` audits whether a thing should exist,
-and a question that has become a proposal leaves here and goes there. Nor
-verdicts: research says what is so, and `kanon-readiness` says whether that is
-good enough.
+## What *authority* means, concretely
 
-**It expires with the term.** Whoever holds the office next opens
-`tools/<their-name>-research/` in their own tree. Nothing here travels.
+**Kanon does not overrule it.** A verdict of ynoia's is ynoia's. This office
+custodies, houses and asks; it does not produce a competing audit, does not
+grade a proposal ynoia has graded, and does not settle a name ynoia has
+registered. **The relationship is law 9's** — the president asks for the
+analysis and quotes it, because a party producing the account of itself is the
+weakest document available.
+
+**What the office does in its own right is read**, and only to the depth a
+kanon-ball needs before it is fired. Reading is not a verdict. Where reading
+turns into *should this exist*, *is this name right*, or *does the arrangement
+earn this*, it stops being kanon's and becomes a question for ynoia.
+
+## What arrives with it
+
+Five roles, and **the ids do not change** — `R4` stays `R4` wherever it lives,
+and so does each of these.
+
+| id | role | owns |
+| --- | --- | --- |
+| `R21` | the account of the arrangement — the case, the case against, and what would change our minds | `why-eunoia.md` |
+| `R22` | the register of names: what each was reserved for, which are taken, how a new repository picks one | `names.md` |
+| `R23` | auditing whether an idea deserves a repository, with a verdict attached | `proposals.md`, `requests.md` |
+| `R24` | the register of tools that do not exist, in priority order | `tools.md` |
+| `R25` | which projects are worth a paper | `papers.md` |
+
+## Three things that follow, and none is optional
+
+**1. `init_eo` reads `names.md`.** `R22` is described in `roles.md` as *the one
+thing here another script already depends on* — a prompt living in anoieu
+consults a register that would then live in kanon. **This is the `P2` question:
+is either half left unable to answer something it used to answer alone?** The
+answer is yes, and it is cheap to plan now and expensive to discover when a new
+repository is being started.
+
+**2. Kanon inherits its own auditor.** `proposals.md` holds `P2`, the audit that
+recommended kanon exist; `names.md` holds the entry kanon took its name from.
+**The tool that argued for this repository would sit inside it.** That is the
+same defect `martyria` and `zetesis` carry, arriving by a different door, and it
+is recorded rather than argued again — the decision is made. What follows is
+that this office must never be the party that answers *was kanon a good idea*.
+
+**3. A sentence in `names.md` stops being true.** It reads *this file is in
+somebody else's tree, and a new repository does not edit it* — a sentence about
+kanon. When the file arrives, that is no longer so, and **rewriting it is
+ynoia's, not kanon's.** An office that edited the register on arrival would have
+answered the authority question in the worst possible way on day one.
 
 ## Standing tasks
 
 | task | when | output somebody can check |
 | --- | --- | --- |
-| read before a ball is fired | before every `K` | the reading, cited, in this office |
-| **turn an established finding into a ball** | when one is unraised — `K4` | a fired ball, or a reason it was held |
+| **ask ynoia which of its five it would put down** | now — `K6` | ynoia's answer, in its words |
+| read before a ball is fired | before every `K` | the reading, cited, here |
+| route a research question to ynoia | whenever one arises | the question, and where it went |
+| keep `names.md` unedited by kanon | always | a clean blame on that file |
 
-**A finding nobody has been told is not a finding, it is a note.** Everything
-under *Established* below sat in anoieu's tree unraised until this office read
-it, and `K4` is the first correction of that habit.
-
-## What is in it now
-
-**The standing analysis, 2026-09-02.** Six documents in anoieu describe kanon
-and no two agree: the register calls it a name with no repository, `roles.md`
-says it is not in the inventory, `ecosystem.json` has no row for it at all, and
-`history.md` makes it president of Stretch 2. **The office is being handed to an
-entity the inventory cannot see**, and that was not decided — it was not
-noticed.
-
-**Two drifts found in the same pass.** `laws.md` says anoieu held the presidency
-in Stretch 0; `history.md` says Stretch 0 had no president and anoieu held
-Stretch 1. The cause is in `laws.md`'s own footnote — the stretch numbering was
-renamed on 2026-09-02 and reached the record page, not the rules page. And
-`history.md` points twice at an *open questions* section that is not in the
-file.
-
-Carried as `A6`, `A7` and `A8` on [`../../actionable.md`](../../actionable.md).
-
-## The standing question
-
-**Why does a fact about one tool live in six places?** That is the finding this
-office was opened around, and the answer is worth more than any single
-correction on the list above. `tekmerion` exists to check whether these
-documents are still true, holds no roles, and has produced nothing.
+**Why the first one.** Five roles in one child project is the same
+concentration this presidency exists to reduce, one level down. **Naming is not
+taking, and which of them should move is ynoia's to say** — the office receiving
+an overloaded tool asking what it would like to put down is the least
+presumptuous form the question has.

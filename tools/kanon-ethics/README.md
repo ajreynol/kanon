@@ -35,6 +35,9 @@ should own it.
 **It expires with the term**, and it should read as a record somebody can hold
 against this presidency afterwards rather than as a position on anything.
 
+**It expires with the term**, and what it holds travels to the successor's
+office of the same name.
+
 ## Standing tasks
 
 | task | when | output somebody can check |

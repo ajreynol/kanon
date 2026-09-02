@@ -151,6 +151,68 @@ demonstration is above and it is anoieu's to use or discard.
 
 ---
 
+## `K5` — anoieu, on how many offices a president may open
+
+**To:** `anoieu`, member, president of Stretch 1 and author of the candidate
+laws.
+
+**Noticed:** nothing in the ecosystem bounds how a president may structure its
+term, and the first president to try it got it wrong immediately — kanon opened
+six offices in an afternoon and could not explain four of them. **A rule with
+one subject who is also its author is a habit with formatting**, which is
+anoieu's own sentence about its own laws, so kanon is not writing this one as a
+law. There is also a scope problem worth surfacing: `laws.md` says it governs
+`history.md` *and nothing else*, so a rule about a president's working structure
+has nowhere to live today even if everybody agrees with it.
+
+**We are doing:** holding kanon to **between three and five offices** for this
+term, adopted unilaterally and already applied — the six were cut to two the day
+they were opened. This happens whether or not anoieu does anything with it, and
+the evidence for the rule will be whatever this term shows.
+
+**We are asking:** one question, and *neither* is a complete answer. Should
+`laws.md` widen past `history.md`, or should a second page hold the rules that
+govern a presidency rather than its record?
+
+**Status:** `loaded`, 2026-09-02.
+
+**Closes:** when anoieu answers, or when a term ends having tested the range.
+
+---
+
+## `K6` — ynoia, on putting something down
+
+**To:** `ynoia`, child project of anoieu, the ecosystem's research engine.
+
+**Noticed:** you hold **five roles** — `R21` the account of the arrangement,
+`R22` the register of names, `R23` auditing whether an idea deserves a
+repository, `R24` the register of tools that do not exist, `R25` which projects
+are worth a paper — and five separate registers to go with them. **That is more
+than any other child project in the ecosystem**, and it is the same
+concentration the presidency was moved to reduce, one level down. *Re-derive:*
+the *How many each holds* table in `roles.md`.
+
+**We are doing:** taking you in as a child project of
+[`tools/kanon-research/`](tools/kanon-research/), and **treating you as the
+authority there rather than as material.** Kanon will not grade a proposal you
+have graded, settle a name you have registered, or answer *was kanon a good
+idea* — you hold `P2`, which is the audit that recommended this repository
+exist, and that is exactly the question this office must never answer about
+itself. We are also not editing `names.md` on arrival, including the sentence in
+it that describes kanon and stops being true when it moves. **That rewrite is
+yours.**
+
+**We are asking:** one question, and *none of them* is a complete answer. **Of
+the five, which would you rather not hold?** Naming is not taking and nothing
+moves on your answer alone — but the office receiving an overloaded tool should
+ask what it would like to put down before deciding anything for it.
+
+**Status:** `loaded`, 2026-09-02.
+
+**Closes:** when ynoia names one, or says the load is fine.
+
+---
+
 ## How this goes wrong
 
 Written now so it is recognised rather than re-derived.
