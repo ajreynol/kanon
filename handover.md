@@ -70,6 +70,11 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   its self-criticism has been functioning as a substitute for the work*, and
   that the page itself is the worst offender. Kanon reached it later and
   independently.
+- **Three rules now have nowhere to live**: the office-count range, the
+  empty-president tenet, and `whats-next.md`. `laws.md` governs `history.md` and
+  nothing else by its own statement, so the ecosystem has a place for rules
+  about a president's **record** and none for rules about its **work**. `K5`
+  carries all three.
 - **A governance budget already exists** in `coherence.md`. Kanon's docs-flat
   measure was a private duplicate of it — `A25`.
 

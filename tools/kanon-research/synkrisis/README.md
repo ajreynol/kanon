@@ -116,6 +116,26 @@ because the *conflict* is this project's job; **the verdict is ynoia's when it
 arrives**, and it should be asked whether the tenet belongs among the tenets
 `stathmos` weighs against.
 
+## `whats-next.md` against the empty-president tenet
+
+**Not a conflict between tools — a conflict between two of the maintainer's own
+proposals**, which is the kind this project is likeliest to be useful on.
+
+**The tenet** wants presidents to start empty so they carry **no past bias**.
+**The page** has each president hand its successor a considered view of what the
+next term should be for. **An empty successor is precisely the reader least
+equipped to refuse one.** It has no work, no history, and no standing from which
+to disagree with the only party that has walked the ground — so the page
+transmits bias by exactly the route the tenet was written to close.
+
+**Uninformed opinion:** they are compatible only if the page carries **reasons
+rather than conclusions**, because a reason can be checked against the tree by
+somebody who has done nothing, and a conclusion cannot. That is now rule 2 of
+[`whats-next.md`](../../../whats-next.md), and **it is a mitigation rather than
+a resolution** — a sufficiently well-argued suggestion is still very hard for an
+empty reader to decline. Worth revisiting when there is a second president to
+watch, which is the only evidence that would settle it.
+
 ## The two compilers — `noesis` and `ethos-eoc`
 
 **Not a conflict, a connection, and possibly a duplication.**

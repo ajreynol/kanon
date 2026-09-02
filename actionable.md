@@ -77,6 +77,7 @@ duplicate record.
 | `A28` | nobody has scrutinised kanon before it takes the office | **nobody, and that is the finding** | nothing. That is the problem |
 | `A29` | the stretch's three-word heading is owed | a person | law 6, at the close |
 | `A30` | candidate tenet: presidents must start from empty repositories | a person, audited by ynoia | it conflicts with `P2` |
+| `A31` | `whats-next.md` is a practice, and proposed as a law | a person, in anoieu | nothing. kanon keeps it either way |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -485,6 +486,23 @@ tenet binds at the **start** of a term rather than throughout.
 and would fail `PROTO-20` today.
 **Written up in [`synkrisis`](tools/kanon-research/synkrisis).**
 **Closes when:** ynoia audits it, or a person adopts or drops it.
+
+### `A31` — `whats-next.md` is a practice, and proposed as a law
+
+**Whose:** a person's to make a law of. **kanon keeps the page either way** and
+has started it already.
+**Why:** `laws.md`'s template carries *what is handed on* — leftovers and
+warnings — and *to the next president*, which is positive by rule. **Neither
+says what the next term should be for**, so a successor arrives at the bottom
+and must invent the purpose law 6 then demands in three words. This is the gap
+kanon met on its own arrival.
+**Why it is not simply adoptable:** same wall as `A16` and `A30`. `laws.md`
+governs `history.md` and nothing else, so a rule about a president's *work* has
+nowhere to live. **Third instance**, and `K5` now carries all three.
+**And it conflicts with `A30`:** an empty successor is the reader least equipped
+to refuse a considered agenda. Mitigated by requiring reasons rather than
+conclusions; written up in [`synkrisis`](tools/kanon-research/synkrisis).
+**Closes when:** a person adopts it, drops it, or says where such a rule lives.
 
 ---
 

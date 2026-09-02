@@ -170,6 +170,14 @@ term, adopted unilaterally and already applied — the six were cut to two the d
 they were opened. This happens whether or not anoieu does anything with it, and
 the evidence for the rule will be whatever this term shows.
 
+**Three instances now, not one.** Since this ball was drafted, two more rules
+have turned up with nowhere to live: the **empty-president tenet** — that a
+president must start from an empty repository, with no past bias — and
+**`whats-next.md`**, an outgoing president's suggestion of what the next term
+should be for. Neither is about `history.md`. **The pattern is that this
+ecosystem has a place for rules about a president's *record* and none for rules
+about a president's *work*.**
+
 **We are asking:** one question, and *neither* is a complete answer. Should
 `laws.md` widen past `history.md`, or should a second page hold the rules that
 govern a presidency rather than its record?
