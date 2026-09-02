@@ -67,6 +67,14 @@ project — it is the enabling work for every move kanon will ever propose.
 implementation of the reporting protocol rather than one per member. A president
 building a second would break the mission it holds the office to serve.
 
+**And the mirror, which is the half a president will get wrong first.** *No tool
+should be made to hold what it should not.* The office sits above everything and
+can therefore pull any tool upward toward the ecosystem's abstractions — usually
+by reading its name rather than its work. **A tool that is narrow and fast is
+often already doing the grandest thing available to it**, and protecting that is
+as much this office's job as redistributing load. `K7` is the case that taught
+it, and it is recorded there with the mistake still visible.
+
 **The mission points here too.** Kanon holding what another tool could hold is
 its own finding first.
 

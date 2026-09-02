@@ -97,6 +97,14 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 
 ## Closed
 
+- **Whether `dokimasia` should vet kanon — no, and the reasoning is the useful
+  part.** `dokimasia` is locally scoped to cvc5 and should run fast without
+  reaching for higher abstractions. The first draft of `K7` asked it to lift
+  itself to the ecosystem's level **on the strength of its name rather than its
+  work**, which is the characteristic error of this office. **The mission has a
+  mirror**: no tool should be made to hold what it should not. *Do not reopen by
+  reading a tool's etymology.*
+
 - **Where `ynoia` goes — `tools/kanon-research/`, as the authority there.** It
   brings `R21`–`R25` with their ids unchanged. **Kanon inherits its own
   auditor**: `proposals.md` holds `P2`, which recommended this repository exist,

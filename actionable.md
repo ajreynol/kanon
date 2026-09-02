@@ -74,6 +74,8 @@ duplicate record.
 | `A25` | kanon's docs measure duplicates an existing governance budget | **kanon** | nothing. It was a private scorecard |
 | `A26` | `synkrisis` is a proposed name, not a claimed one | a person, then ynoia | nothing. The directory renames cheaply |
 | `A27` | `telos` is running and is in no register | a person, and whoever owns it | comparing agendas at all |
+| `A28` | nobody has scrutinised kanon before it takes the office | **nobody, and that is the finding** | nothing. That is the problem |
+| `A29` | the stretch's three-word heading is owed | a person | law 6, at the close |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -91,7 +93,7 @@ duplicate record.
 
 **Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
 `A21`, `A22`, `A23`, `A24`, `A26`, `A27`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
-`A20`, `A25`. **Everything else belongs to no office and that is correct** —
+`A20`, `A25`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
 `A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
 a directory to hold each of them is the mistake this page was cut back from.
 
@@ -440,13 +442,40 @@ down. `cvc6` is worse — it appears nowhere in anoieu at all.
 **Closes when:** `telos` has a row somewhere, or somebody says it deliberately
 does not.
 
+### `A28` — nobody has scrutinised kanon before it takes the office
+
+**Whose:** **nobody's**, and that is the item. `dokimasia` was the obvious
+answer and is the wrong one — it is locally scoped to cvc5 and should stay fast
+and narrow, which `K7` now says to it directly.
+**Why:** `laws.md` invokes dokimasia by name and then closes the question —
+*the scrutiny an incoming office-holder would face passes trivially… there is
+nothing to examine.* **That was true when written and is not true now.** An
+office that passes its vetting because the candidate was empty has not been
+vetted, and kanon stops being empty in the same week it takes the office.
+**The gap is real and currently has no holder.** An office that passes its
+vetting because the candidate was empty has not been vetted, and kanon stops
+being empty in the same week it takes the office. Recording that nobody does
+this is more useful than assigning it to a tool whose name merely fits.
+**Closes when:** somebody vets kanon, or it is written down that nobody will.
+
+### `A29` — the stretch's three-word heading is owed
+
+**Whose:** a person's.
+**Why:** law 6 — *a stretch's heading is its purpose, in at most three words*,
+and a heading written after the fact has lost the thing worth recording.
+Candidates in [`working-summary.md`](working-summary.md): **Distribution**,
+**Out of anoieu**, **Fast answers**.
+**Closes when:** one is picked, before the stretch closes rather than at it.
+
 ---
 
 ## Owed, and not yet actionable
 
-**The working summary of Stretch 2.** Law 14, and kept current from the start
-rather than written at the end — law 11. Blocked on `A1` and on the office
-actually moving. Listed because a page that shows only what can be started today
+**The working summary of Stretch 2.** **Started** —
+[`working-summary.md`](working-summary.md), eleven fields, most of them *not
+yet*. It is a draft of an entry rather than an entry, because kanon does not
+hold `history.md` and nobody does (`A4`). The *Commits* field is blocked on
+`A1`. Listed because a page that shows only what can be started today
 looks finished when it is not.
 
 ---

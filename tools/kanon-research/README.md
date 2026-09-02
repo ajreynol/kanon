@@ -115,6 +115,37 @@ spur to it** — adding that the page itself is the worst offender. Kanon reache
 the same conclusion independently and later. **It was not a new finding**, and
 this office should stop treating it as one.
 
+## Offered to `ai-novelty.md`
+
+**Kanon keeps that file and does not fill it** — its entry criterion is the
+maintainer's fascination. What this office may do is *offer* a candidate and
+leave the judgement where it belongs. One so far.
+
+**A correction to shared vision evolution, observed live.** `ai-novelty.md`
+already carries *shared vision evolution* as a mechanism — one human, two
+agents, two repositories, the artifacts as the channel. **The candidate here is
+the correction step, which that account does not yet have.**
+
+What happened: an agent read a tool's *name* — `dokimasia`, the scrutiny before
+office — and drafted a request that the tool lift itself to the ecosystem's
+level. The human corrected it: dokimasia is locally scoped to cvc5 and should
+run fast without thinking about higher abstractions. **The correction was not
+that the agent had the facts wrong.** It had them right and drew the wrong
+altitude from them.
+
+**Why it might be worth something to somebody outside:** the interesting move is
+that the human did not overrule the vision, they taught the agent **how to lift
+a local vision into a grander one without destroying it** — the grander vision
+turned out to *protect* the local scope rather than absorb it. An agent
+optimising for coherence will reliably pull small tools upward, because
+upward-fitting reads as integration. **The correction has to come from the party
+who knows what the small tool is for**, and it arrives as altitude rather than
+as fact.
+
+*Offered, not filed. Whether this belongs in `ai-novelty.md` is the maintainer's
+call under that page's own criterion, and the page's own rule applies — it does
+not brag, and most candidates turn out to be ordinary.*
+
 ## Standing tasks
 
 | task | when | output somebody can check |
