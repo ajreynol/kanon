@@ -20,6 +20,11 @@ case is an agent that can be convinced by a sufficiently good forgery. This
 office's standing job is to find where that pattern is **missing** and should
 not be.
 
+**The kinds of failure are in [`scenarios.md`](scenarios.md)** —
+misinterpretation, deadlock, misappropriation, and exhaustion — with the
+ownership stance audited at the end. **This page lists surfaces; that one lists
+modes.**
+
 ## Six surfaces, all of them already documented
 
 **None of these is a discovery and none is a criticism.** Each is a thing the

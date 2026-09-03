@@ -70,6 +70,9 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   its self-criticism has been functioning as a substitute for the work*, and
   that the page itself is the worst offender. Kanon reached it later and
   independently.
+- **`INST-4` is proposed and, unlike the others, has a home.** *Read a primed
+  repository in full before proceeding.* `instructions.md` already holds
+  `INST-1`–`INST-3`, and the agent-facing half is the `Closed` heading here.
 - **Three rules now have nowhere to live**: the office-count range, the
   empty-president tenet, and `whats-next.md`. `laws.md` governs `history.md` and
   nothing else by its own statement, so the ecosystem has a place for rules
@@ -93,6 +96,51 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   calling it a safety job. The maintainer has directed it here; the reversal is
   `A32`.
 
+- **Four failure modes, all already instanced by accident**: misinterpretation
+  (three live documentation contradictions), deadlock (the stub deadline, the
+  vacant record, the pins the gate refuses), misappropriation (our own record
+  says a human wrote all 323 commits and that is not what happened), and
+  exhaustion. Written up in `tools/kanon-safety/scenarios.md`.
+- **The ownership stance protects legibility, not ownership.** No accounts, no
+  signatures, no chain of custody — deliberately. What defends provenance here
+  is that the record is public and re-derivable, **which holds only while the
+  build history stays comparable.**
+
+- **Five failure modes now**, obfuscation added: reading the corpus does not
+  produce understanding. **It is the mode that disables detection of the
+  others** — a corpus nobody understands cannot be checked for the
+  contradictions mode 1 depends on being findable. **kanon is the worst current
+  offender**, having invented two id namespaces in a day.
+- **Unfriendliness silently disables controls.** epikrisis held *independent
+  audit* for a term and nobody could ask it; the audit never ran and nothing
+  went red. That is why *all tools should evolve to be user friendly* is a
+  safety requirement rather than a courtesy.
+
+- **Jokes here are found in names, not written for them.** `anoieu`, `kanon`
+  and `iogos` are all operations on their own names whose results describe the
+  work, and all three are at their own expense. **A name that yields no joke is
+  probably a name that decorates rather than describes** — which makes law 12 a
+  test of the name as much as an obligation on the president. Written for the
+  next president in `whats-next.md`.
+
+- **The role numbering runs to `R30` with two meaningful gaps.** `R26` is
+  **reserved** for koine pending `D8`, not free — *an id claimed in a proposal
+  nobody has answered is not free*. `R27` was **deleted**: it was *deciding what
+  a stretch is for*, allocated to anoieu **in error**, on the ground that this
+  *is not a role here at all — it is the human's*. Counting headings misses
+  both.
+- **`coherence.md` still lists `R27` as moving to kanon.** A page promising this
+  repository a role that no longer exists. Fourth documentation contradiction,
+  first one about us.
+- **Twenty-eight roles exist and kanon holds none of them.** Offices are this
+  repository's internal structure; roles are the ecosystem's accountability, and
+  only the first has been built.
+- **Law 8 depends on a figure no role produces.** Assigned by law 9 to a tool
+  that holds zero roles, is in no register, and lives two levels down in another
+  member's tree. `D20` is open and names two jobs bundled as one: the
+  measurement (epikrisis's) and **the convention that would make it possible,
+  which is nobody's and has no reserved name.**
+
 ## Open
 
 - **Why does one fact about one tool live in six places?** Larger than any
@@ -104,6 +152,8 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   maintainer's intuition, and it conflicts with `P2` — governance living with a
   president that must start empty means the shared machinery migrates every
   term. Written up in `synkrisis`; the verdict is `R21`'s, which is ynoia's.
+- **Is kanon's own required reading already too long?** Probably yes — `A38`.
+  The remedy is diagnosed and deliberately not applied in the same breath.
 - **What is a good latency?** No target exists, so *slow* is an impression.
 - **Who ends the ethics defect?** Settled that `martyria` and `zetesis` come
   here. Not settled that kanon is then the tree they sit in.

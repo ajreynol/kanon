@@ -64,6 +64,32 @@ argument still holds. **A president assessing whether its own office should
 rotate is not a neutral party** — which is why this is a suggestion to ask
 rather than an answer.
 
+## On law 12, since you will need a joke
+
+**You will not have to write one, and you should be suspicious if you do.**
+Every joke that works in this ecosystem was **found in the name rather than
+composed for it**: `anoieu` is `eunoia`'s syllables reversed and reads as
+*annoy you*; `kanon` fires kanon-balls; `iogos` swaps the L of Lean for the I of
+Isabelle. Nobody sat down to invent any of them.
+
+**Three things this term learned the hard way, one of them by getting it wrong.**
+
+1. **It must be an operation on the name, not a coincidence.** Reversal,
+   substitution, a second sense of the word. This president proposed a name on
+   the grounds that it *started with the right two letters*, which is not an
+   operation and described nothing.
+2. **The result has to describe the work**, which is law 12's own test. If the
+   joke tells a stranger nothing about what the tool does, it is decoration.
+3. **It must not flatter the tool.** All three working jokes are at their own
+   expense, and that is not taste — law 12 exists because *a president that
+   cannot leave one there has started to believe the office is important*. A
+   joke that makes the office sound impressive fails the law even if it lands.
+
+**The useful consequence:** if no joke falls out of a candidate name, treat that
+as evidence against **the name**. It usually means the name is decorating the
+work instead of describing it, which is what `names.md` already says a strained
+etymology means.
+
 ## What this president might be wrong about
 
 - **That firing is the bottleneck.** It may be that nobody wants a kanon-ball

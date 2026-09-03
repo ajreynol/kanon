@@ -2,6 +2,28 @@
 
 *κανών — the measuring rod: the standard a thing is held straight against.*
 
+> ### If you are picking this repository up, read its documentation in full first
+>
+> **Not skimmed, and not the README alone. Failing to will cost you more time
+> than reading it does.**
+>
+> kanon is **primed**: a repository whose documentation is *ahead of its work*,
+> because a person and an agent settled its purpose in conversation and wrote
+> the result down before any of it was built. **That conversation is gone and
+> this tree is the only surviving copy.** Everything settled is recorded here,
+> including what was settled *against* — [`handover.md`](handover.md) keeps a
+> *Closed* heading for exactly that reason.
+>
+> A reader who skips it will re-ask decided questions, reopen dead ones, and
+> issue corrections that have already been applied. **None of those is a
+> failure of memory; they are what happens when the durable copy goes unread.**
+>
+> *Proposed to anoieu as `INST-4`. Its agent-facing half already exists — the
+> `Closed` heading is what makes reading in full finite, and the two are one
+> arrangement.* **And the obligation runs both ways:** an instruction to read
+> everything is only reasonable while there is not too much, so it binds this
+> repository to stay small at least as hard as it binds its reader.
+
 **kanon is where the Eunoia ecosystem keeps its governance, out of the
 analyzer**: the policy every member repository is checked against, the checker
 that decides it, the inventory of who is in, and the scripts by which a tool
@@ -14,6 +36,42 @@ failing it. Nothing has gone wrong: the same person maintains all of it and is
 careful. It is still the wrong shape, and it grows more expensive to change with
 every member that pins anoieu in order to get the policy. **kanon is the address
 that separation goes to**, so that the judge stops being the prosecutor.
+
+## The president is the only required reading
+
+**The ecosystem should evolve so that the primed president's own pages are the
+only documentation anybody is *required* to read.** Everything else is optional
+depth.
+
+**What that makes the office.** Not a container for the ecosystem's documents,
+and not a summary of them — **the president is the level of abstraction at which
+one person can hold the ecosystem in their head.** Whatever that level currently
+is, this tree is supposed to be it.
+
+**And you are welcome in the lower levels.** Every tool below this one is
+readable and worth reading. They are closer to the work and correspondingly less
+friendly, and **that is a debt rather than a design** — the ecosystem's stated
+position is that *all tools should evolve to be user friendly*, which is a
+safety requirement rather than a courtesy. See
+[the office of ethics](tools/kanon-ethics/) for why, and
+[the office of safety](tools/kanon-safety/scenarios.md) for what happens when it
+is not met.
+
+**Housed, not required:** [`conversation.md`](conversation.md) records how this
+repository was decided — the derivation rather than the decision. The tree tells
+you what was settled; that page tells you what it was settled *against*.
+
+**The distinction that keeps this from collapsing.** kanon custodies work that
+is not its own — `ynoia`, `martyria`, `zetesis`, `ai-novelty.md`,
+`science-fiction.md`. **What the president *writes* is required reading. What
+the president *houses* is not.** Housing something does not promote it, and a
+president whose required reading grows every time it receives a child project
+has broken the principle it exists to serve.
+
+**This is where the budget gets teeth.** Read in full, and the only thing you
+have to read — those two together are a hard size limit on this tree, enforced
+by a reader rather than by a rule. **kanon is already near it and probably past
+it**, which is `A38`.
 
 ## The office
 

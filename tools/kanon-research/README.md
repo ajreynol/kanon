@@ -154,7 +154,37 @@ it. **The teaching is legible because the student is empty.**
 
 *Which makes this candidate and the candidate tenet — presidents must start from
 empty repositories — the same observation from two sides.* One says what the
-condition is worth to the human; the other proposes making it permanent. The
+condition is worth to the human; the other proposes making it permanent.
+
+**And it gives shared vision evolution a stage the existing account is missing.**
+`ai-novelty.md` describes the artifacts being the channel between agents. What
+it does not describe is **how the vision gets into the artifacts in the first
+place**, which is a distinct activity with its own failure mode. The sequence,
+offered as three stages rather than one:
+
+1. **Priming** — a human and an agent settle a repository's purpose in
+   conversation, and the agent writes it into the tree. During this, **the
+   vision exists in two copies: the human's memory and the artifacts.**
+2. **Correction** — the human supplies *altitude* rather than fact, which is the
+   `K7` case above.
+3. **Evolution** — the artifacts carry the vision onward, which is the account
+   `ai-novelty.md` already has.
+
+**Stage 1's failure mode is that only one copy survives it.** The conversation
+does not persist: the next agent has only the tree, and the human's recollection
+drifts from it immediately. A human who proceeds on memory then issues
+instructions that contradict the record, and the agent — reading the record —
+follows the record. **That is `misinterpretation` from
+[`../kanon-safety/scenarios.md`](../kanon-safety/scenarios.md), arriving through
+the human rather than through an attacker: two sources that disagree, and
+whichever is picked is not recorded.**
+
+**Observed in this repository's own priming, twice**, both cheaply: a question
+was asked about clutter that a prior trim had already answered, and an
+instruction to cut prose was applied to material that was not the problem. Both
+were caught in one exchange. **Neither was a mistake about the facts; both were
+the durable copy and the remembered copy diverging**, which is exactly what
+`INST-4` exists to close. The
 conflict that proposal runs into is recorded in
 [`synkrisis`](synkrisis).
 

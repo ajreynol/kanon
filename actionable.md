@@ -80,6 +80,14 @@ duplicate record.
 | `A31` | `whats-next.md` is a practice, and proposed as a law | a person, in anoieu | nothing. kanon keeps it either way |
 | `A32` | `science-fiction.md` moving here reverses a written decision | a person | nothing, but it should be decided |
 | `A33` | `P2` hands kanon the code that runs in everyone's CI | **kanon**, before the move | nothing yet. That is the point |
+| `A34` | a CI edit can silently end the build record's comparability | **kanon** here, a person elsewhere | learning from the record at all |
+| `A35` | `INST-4`: read a primed repository in full before proceeding | a person, in anoieu | nothing. kanon states it either way |
+| `A36` | the president should be the only *required* reading | **kanon**, continuously | how big this tree may get |
+| `A37` | all tools should evolve to be user friendly | every tool, kanon for itself | controls that quietly do not run |
+| `A38` | kanon's own required reading is already too long | **kanon** | the principle it just adopted |
+| `A39` | law 8 requires a figure no role in the register produces | nobody — a gap, not a holder | every stretch entry, permanently |
+| `A40` | `coherence.md` lists deleted `R27` as moving to kanon | a person, in anoieu | nothing, but it promises us a role that does not exist |
+| `A41` | `R26` is reserved for koine and `D8` is unanswered | a person, in anoieu | koine, and it is on a clock anoieu set itself |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
 | `A2` | kanon's footing, or a decision that it needs none | a person, in anoieu | the census, audit and installer seeing the president |
 | `A3` | a discussion topic for the handoff | a person, in anoieu | the handoff being decidable either way |
@@ -96,8 +104,8 @@ duplicate record.
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
 **Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
-`A21`, `A22`, `A23`, `A24`, `A26`, `A27`, `A30`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`. `ethics` — `A13`,
-`A20`, `A25`. `safety` — `A32`, `A33`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
+`A21`, `A22`, `A23`, `A24`, `A26`, `A27`, `A30`, `A35`, `A39`, `A40`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`, `A41`. `ethics` — `A13`,
+`A20`, `A25`. `safety` — `A32`, `A33`, `A34`. `ethics` — also `A37`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
 `A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
 a directory to hold each of them is the mistake this page was cut back from.
 
@@ -501,6 +509,12 @@ kanon met on its own arrival.
 **Why it is not simply adoptable:** same wall as `A16` and `A30`. `laws.md`
 governs `history.md` and nothing else, so a rule about a president's *work* has
 nowhere to live. **Third instance**, and `K5` now carries all three.
+**Precedent found late, and it argues against this item.** `R27` — *deciding
+what a stretch is for* — **was allocated to anoieu in error and deleted**, on
+the ground that it *is not a role here at all; it is the human's*. This page
+survives that only by suggesting rather than deciding, non-bindingly, with
+reasons rather than conclusions. **Making it a law moves it toward what was
+removed**, and that should be weighed before anybody adopts it.
 **And it conflicts with `A30`:** an empty successor is the reader least equipped
 to refuse a considered agenda. Mitigated by requiring reasons rather than
 conclusions; written up in [`synkrisis`](tools/kanon-research/synkrisis).
@@ -529,6 +543,142 @@ after. `D16` already mitigates part of it by requiring a green commit to bump to
 actually trusting when it pins, and what kanon undertakes not to do with that
 position.
 **Closes when:** that statement exists and predates the transfer.
+
+### `A34` — a CI edit can silently end the build record's comparability
+
+**Whose:** kanon's for its own tree, a person's anywhere else.
+**Why:** law 10 makes the **public run history a primary source** — 171 runs, 37
+green, 22%, a 112-run streak are all read out of it. Rename a workflow, drop a
+job, or change what *green* asserts, and nothing is destroyed, but **figures
+either side of the change stop being comparable.** That does not falsify the
+record; **it prohibits learning from it**, which is worse, because a false
+figure can be caught and an incomparable one cannot. `B20` is the accidental
+version; the `Ready — init_eo kanon` job, which asserts its own stub and forces
+its own deletion, is the ecosystem's one example of getting it right.
+**What follows:** a change to CI deserves the care a change to a law gets,
+because it edits the meaning of the evidence rather than the evidence.
+**Closes when:** kanon's first workflow lands with a note saying what each job
+asserts, so a later change to it is visible as a change of meaning.
+
+### `A35` — `INST-4`: read a primed repository in full before proceeding
+
+**Whose:** a person's to adopt. **kanon states it on its own front page either
+way**, since an instruction filed where the reader will not reach it has failed
+at the thing it asks for.
+**Why:** a **primed** repository is one whose documentation is ahead of its
+work, because its purpose was settled in conversation and written down before
+anything was built. **The conversation does not persist and the tree does**, so
+after priming there is one copy of the vision, not two. A human proceeding on
+memory issues instructions that contradict the record; the agent reads the
+record and follows it. That is `misinterpretation` arriving through the human
+rather than an attacker.
+**Unlike `A16`, `A30` and `A31`, this one has a home.** It is an instruction to
+a person, and `instructions.md` exists and holds `INST-1` to `INST-3`. **Its
+agent-facing half is already built** — the `Closed` heading in
+[`handover.md`](handover.md) is what makes *read it in full* finite, and
+`coherence.md` says a rule with two sides gets both written and both given ids.
+**The cost it imposes is ours:** an instruction to read everything is only
+reasonable while there is not too much of it, so adopting this binds kanon to
+the governance budget harder than anything else on this list.
+**Closes when:** anoieu adopts it as `INST-4`, or declines and says why.
+
+### `A36` — the president should be the only *required* reading
+
+**Whose:** kanon's, continuously, and it is a constraint rather than a task.
+**Why:** the ecosystem should evolve so that the primed president's own pages
+are the only documentation anybody must read; everything else is optional depth.
+**The president is the level of abstraction at which one person can hold the
+ecosystem in their head.**
+**The distinction that makes it survivable:** what the president *writes* is
+required; what it *houses* is not. `ynoia`, `martyria`, `zetesis`,
+`ai-novelty.md` and `science-fiction.md` are custodied, not promoted.
+**Together with `INST-4` this is a hard size limit** — read it in full, and it
+is the only thing you must read — enforced by a reader rather than by a rule.
+**Closes when:** it does not. It is a standing constraint on every page added.
+
+### `A37` — all tools should evolve to be user friendly
+
+**Whose:** every tool's for itself; kanon's for kanon. **Not kanon's to grade
+others on** — `report-card.md` does that and stays with anoieu.
+**Why it is safety and not courtesy:** unfriendliness **silently disables
+controls**. epikrisis held *independent audit* for a whole term and nobody could
+work out how to ask it, so the audit never ran and nothing went red. Joining
+cost koine eighteen hundred lines, and a gate that expensive is one tools pass
+without reading. A build was red 112 runs because nobody was looking at the
+colour.
+**Why it is ethics too:** the cost is borne by somebody other than the party who
+built the tool, and is invisible to that party.
+**Closes when:** it does not. Stated as a policy in
+[the office of ethics](tools/kanon-ethics/).
+
+### `A38` — kanon's own required reading is already too long
+
+**Whose:** kanon's, and it is the first application of `A36` to the party that
+adopted it.
+**Why:** the pages kanon *wrote* — before any custodied work arrives — already
+run past a thousand lines, and **`actionable.md` is the largest single one.**
+That is this file, and it is a work queue rather than documentation: **a queue
+should not be required reading; a short statement of what is next should be.**
+**The candidate remedy**, not yet applied and deliberately not decided in the
+same breath as the diagnosis: this page keeps the table and the closing
+conditions, and the per-item prose moves to the office that holds each item.
+`initial-objections.md` and `handover.md` also overlap and one of them may not
+need to exist.
+**Closes when:** required reading is short enough that `INST-4` is a reasonable
+thing to ask of somebody.
+
+### `A39` — law 8 requires a figure no role in the register produces
+
+**Whose:** nobody's. That is the item.
+**Why:** law 8 demands the commit census *and how many are believed
+AI-generated*; law 9 forbids the president producing it and assigns it to
+epikrisis, which **holds zero roles, is in no register, and sits two levels down
+in another member's tree.** `D20` is open and says it directly: *the measurement
+does not exist, the convention that would make it possible does not exist.*
+**Two jobs are bundled there and neither has moved because of it.**
+
+- **The measurement** — what a tree's history shows — is epikrisis's, is what it
+  does, and has already been offered to it. **Not ours.**
+- **The convention that would make it possible** is not history analysis.
+  Epikrisis reads what exists; it cannot invent a way of recording what was
+  never recorded. **No role covers this and no name is reserved for it**, and it
+  is what law 8 is actually blocked on.
+
+**There is an external example to measure against**, which is unusual for
+anything in this ecosystem: cvc5 records vendor, model and version in a commit
+trailer in six of eight commits. Three of the ecosystem's 323 do. `history.md`
+calls cvc5's *the stronger practice and we did not invent it*.
+**It is the candidate scope for the proposed AI-research repository** — a job
+rather than a subject, and one that **unblocks epikrisis rather than competing
+with it**, which is the mirror of the mistake `K7` records.
+**Closes when:** a convention exists that makes the figure producible, or law 8
+is amended to stop requiring it.
+
+### `A40` — `coherence.md` lists deleted `R27` as moving to kanon
+
+**Whose:** a person's, in anoieu.
+**Why:** `coherence.md` says *`R4`, `R6` and `R27` are all listed as moving to
+the governance repository.* `R27` was deleted — `roles.md` says it was allocated
+*in error*, and `E1`'s dry run records its removal. **A page therefore promises
+kanon a role that does not exist**, which is the `misinterpretation` mode in
+[`tools/kanon-safety/scenarios.md`](tools/kanon-safety/scenarios.md): two true
+pages made incompatible by an edit that reached one of them. **Fourth instance,
+and the first that is about us.**
+**Closes when:** the sentence names only the roles that exist.
+
+### `A41` — `R26` is reserved for koine and `D8` is unanswered
+
+**Whose:** a person's, in anoieu. Kanon's only part is noticing.
+**Why:** `R26` is deliberately unallocated because koine's `D8` proposes it for
+the low-level formats of the reporting loop — *an id claimed in a proposal
+nobody has answered is not free.* **anoieu has already set its own clock on
+this**: `coherence.md` says if the reservation is still open in six months it
+*has stopped protecting koine and started blocking them, and the fix is
+answering `D8` rather than restating why the id is reserved.*
+**This is the second thing koine has open**, after `D1` and its eighteen hundred
+lines — which makes koine the tool most owed an answer in the ecosystem, and the
+recipient of two loaded balls that ask it for more.
+**Closes when:** `D8` is answered either way.
 
 ---
 

@@ -38,6 +38,38 @@ against this presidency afterwards rather than as a position on anything.
 **It expires with the term**, and what it holds travels to the successor's
 office of the same name.
 
+## The policy: all tools should evolve to be user friendly
+
+**Stated by the maintainer as an ethics policy, and it is a safety requirement
+rather than a courtesy.**
+
+**The argument is not that unfriendly tools are unpleasant.** It is that
+**unfriendliness silently disables controls.** A tool nobody can work out how to
+use is not a tool with poor documentation; **it is a control that does not
+run**, and nothing goes red when a control does not run.
+
+**Three instances, all already in the record.**
+
+- **epikrisis** held *independent audit* for an entire term and nobody could
+  work out how to ask it for anything. The audit did not fail. It never
+  happened, and `laws.md` was written assuming it had.
+- **Joining cost koine four files and eighteen hundred lines of reading.**
+  Joining is a safety gate — it is where the policy check starts running in your
+  build. **A gate that expensive is one tools pass without reading**, which is
+  the opposite of what the gate is for.
+- **A build was red for 112 consecutive runs and nobody noticed**, because
+  nobody was looking at the colour. Legibility is not separable from whether a
+  check works.
+
+**Why it belongs in ethics and not only in safety.** The cost of an unfriendly
+tool is borne by somebody other than the party who built it, and it is invisible
+to the party who built it. **That asymmetry is what makes it an ethical question
+rather than a quality one** — and it is the same asymmetry `INST-4` runs into,
+where an instruction to read everything is only fair while there is not too much.
+
+*This office states the policy and measures kanon against it. It does not grade
+other tools — `report-card.md` does that and stays with anoieu.*
+
 ## Standing tasks
 
 | task | when | output somebody can check |
