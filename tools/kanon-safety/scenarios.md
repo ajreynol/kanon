@@ -81,7 +81,7 @@ somebody else's claim about provenance.**
 
 ### The mechanism worth guarding: build history is evidence
 
-**Law 10 requires every figure on the record to be re-derivable from the
+**LAW 4 requires every figure on the record to be re-derivable from the
 repository and the public run history.** That makes CI history a **primary
 source**, not infrastructure — `history.md`'s 171 runs, 37 green, 22%, and the
 112-run streak are all read out of it.

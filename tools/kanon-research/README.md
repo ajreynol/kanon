@@ -13,7 +13,7 @@ a child project of this office.
 **Kanon does not overrule it.** A verdict of ynoia's is ynoia's. This office
 custodies, houses and asks; it does not produce a competing audit, does not
 grade a proposal ynoia has graded, and does not settle a name ynoia has
-registered. **The relationship is law 9's** — the president asks for the
+registered. **The relationship is LAW 4's** — the president asks for the
 analysis and quotes it, because a party producing the account of itself is the
 weakest document available.
 
@@ -61,7 +61,7 @@ answered the authority question in the worst possible way on day one.
 
 | what | footing | authority |
 | --- | --- | --- |
-| [`ynoia/`](ynoia) *(arriving)* | child project | **ynoia's.** Kanon houses and asks; it does not overrule |
+| `ynoia/` *(arriving)* | child project | **ynoia's.** Kanon houses and asks; it does not overrule |
 | [`synkrisis/`](synkrisis) | child project, **name proposed not claimed** | its own, and deliberately uninformed |
 | `ai-novelty.md` *(arriving)* | **a file, not a project** | the maintainer's — kanon keeps it and does not fill it |
 

@@ -53,13 +53,13 @@ eudaimonia. Addressed through eudaimonia, which is asked for nothing.
 **Noticed:** anoieu's `laws.md` already lists epikrisis as the holder of
 **independent audit** in its *Who holds what* table. epikrisis asked to be given
 a responsibility rather than the rank it was offered — and was given one, in a
-document it may never have read. Meanwhile laws 8 and 9 make the per-tool commit
-census epikrisis's work and **forbid the president from producing it**, and no
+document it may never have read. Meanwhile LAW 4 makes the per-tool commit
+census epikrisis's work and **forbids the president from producing it**, and no
 epikrisis report exists.
 
 **We are doing:** kanon will quote whatever epikrisis produces and will not
 second-guess it. If nothing arrives, kanon records in its stretch entry that the
-figure does not exist rather than substituting its own — which is what law 8
+figure does not exist rather than substituting its own — which is what the record
 asks for anyway, since a self-reported estimate of one's own automation is worth
 very little. **Kanon will not build a competing counter.**
 
@@ -138,9 +138,9 @@ reached the record page and not the rules page. `history.md` points twice at an
 say kanon has no repository, which stopped being true at `6f961c2`.
 
 **We are doing:** carrying all three as `A6`, `A7` and `A8` and **not fixing
-any of them**. `history.md` is the president's under law 1 and its Stretch 1
-entry is anoieu's alone under law 2, so kanon could not touch it after the
-office moves either. Law 4 requires a correction to show its work; the
+any of them**. `history.md` is the president's under LAW 4 and its Stretch 1
+entry is anoieu's alone, so kanon could not touch it after the
+office moves either. LAW 4 requires a correction to show its work; the
 demonstration is above and it is anoieu's to use or discard.
 
 **We are asking:** nothing. This is a finding handed over, not a request.

@@ -1,7 +1,7 @@
 # Working summary — Stretch 2
 
-**Law 14 makes this the president's first responsibility, before anything else
-it is asked to do. Law 11 says it is kept current while the stretch runs, not
+**This is the president's first responsibility, before anything else
+it is asked to do. LAW 4 says it is kept current while the stretch runs, not
 written at the end from memory** — a summary composed afterwards is a
 reconstruction, and a reconstruction by the party being described is the weakest
 document this ecosystem could produce.
@@ -17,7 +17,7 @@ answer and is written; an omitted field is not.
 ---
 
 **Purpose** — *proposed, not settled:* taking weight off anoieu. The stretch's
-three-word heading is owed under law 6 and the candidates are **Distribution**,
+three-word heading is owed and the candidates are **Distribution**,
 **Out of anoieu**, and **Fast answers**. A person picks.
 
 **Span** — began: not yet. Stretch 2 cannot open before kanon does.
@@ -25,7 +25,7 @@ three-word heading is owed under law 6 and the candidates are **Distribution**,
 **Membership** — no change. Three members, one foundation, two candidates, and
 kanon in no register at all (`A15`).
 
-**Commits** — **not yet available, and kanon will not compute it.** Law 9 gives
+**Commits** — **not yet available, and kanon will not compute it.** LAW 4 gives
 the census to epikrisis and forbids the president from producing it; `K1` asks
 for it. If nothing arrives, this field will say *the figure does not exist*
 rather than carry an estimate kanon made about itself.
@@ -48,10 +48,10 @@ real separation and arrives by the office moving rather than by design. The only
 real check remains the maintainer.
 
 **Evidence** — every figure re-derivable from the repositories and the public
-run history, per law 10. `A21` checks the Stretch 1 figures kanon intends to
+run history, per LAW 4. `A21` checks the Stretch 1 figures kanon intends to
 quote.
 
-**The joke** — on the front page for the whole term, per law 12: what kanon
+**The joke** — on the front page for the whole term, per LAW 6: what kanon
 sends is a **kanon-ball**. It doubles as description, which is the test.
 
 **To the next president** — not yet. Written last, and positively, per the rule.

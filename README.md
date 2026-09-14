@@ -101,7 +101,7 @@ than at it. anoieu's output is a finding *against* you; kanon's is a kanon-ball
 repositories. Nobody has to catch one. [`kanon-balls.md`](kanon-balls.md) is
 what the office does all day.
 
-Law 12 asks a president to keep a joke about its own name on its front page for
+LAW 6 asks a president to keep a joke about its own name on its front page for
 the whole term, on the ground that a president who cannot leave one there has
 started to believe the office is important. The test it sets is that the joke
 doubles as description. This one does, and it is the only part of this page that
@@ -195,7 +195,7 @@ standing to inspect, not what `PROTO-20` lets a human read.*
 **One file: [`handover.md`](handover.md), with four headings** — *Established*,
 *Open*, *Closed*, *In flight*.
 
-**It is written as things are found, not at the close.** Law 11 already says a
+**It is written as things are found, not at the close.** LAW 4 already says a
 summary composed afterwards is a reconstruction; a finding recalled at term's
 end is a memory, and a president who knows the file is being written all along
 cannot smooth it later.

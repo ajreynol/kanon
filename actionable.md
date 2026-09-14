@@ -67,7 +67,7 @@ duplicate record.
 | `A18` | no way to find out what a tool can be asked for | **kanon**, with each tool's answer | using tools the ecosystem already has |
 | `A19` | no node has an FAQ; kanon now has one | **kanon** first, then a ball each | the cost of arriving anywhere |
 | `A20` | martyria's cases must survive the move byte-identical | **kanon** | nothing, until the move happens |
-| `A21` | anoieu's Stretch 1 figures are quoted, not checked | **kanon** | kanon's own record, law 10 |
+| `A21` | anoieu's Stretch 1 figures are quoted, not checked | **kanon** | kanon's own record, LAW 4 |
 | `A22` | receive `ynoia`, and treat it as the authority | a person, then **kanon** | the research office having a subject |
 | `A23` | `init_eo` reads `names.md`, which is about to move | a person, in anoieu | starting any new repository |
 | `A24` | receive `ai-novelty.md` as a file, and its companion stays behind | a person | nothing, but it splits a stated pair |
@@ -75,7 +75,7 @@ duplicate record.
 | `A26` | `synkrisis` is a proposed name, not a claimed one | a person, then ynoia | nothing. The directory renames cheaply |
 | `A27` | `telos` is running and is in no register | a person, and whoever owns it | comparing agendas at all |
 | `A28` | nobody has scrutinised kanon before it takes the office | **nobody, and that is the finding** | nothing. That is the problem |
-| `A29` | the stretch's three-word heading is owed | a person | law 6, at the close |
+| `A29` | the stretch's three-word heading is owed | a person | at the close |
 | `A30` | candidate tenet: presidents must start from empty repositories | a person, audited by ynoia | it conflicts with `P2` |
 | `A31` | `whats-next.md` is a practice, and proposed as a law | a person, in anoieu | nothing. kanon keeps it either way |
 | `A32` | `science-fiction.md` moving here reverses a written decision | a person | nothing, but it should be decided |
@@ -85,7 +85,7 @@ duplicate record.
 | `A36` | the president should be the only *required* reading | **kanon**, continuously | how big this tree may get |
 | `A37` | all tools should evolve to be user friendly | every tool, kanon for itself | controls that quietly do not run |
 | `A38` | kanon's own required reading is already too long | **kanon** | the principle it just adopted |
-| `A39` | law 8 requires a figure no role in the register produces | nobody — a gap, not a holder | every stretch entry, permanently |
+| `A39` | the commit census requires a figure no role in the register produces | nobody — a gap, not a holder | every stretch entry, permanently |
 | `A40` | `coherence.md` lists deleted `R27` as moving to kanon | a person, in anoieu | nothing, but it promises us a role that does not exist |
 | `A41` | `R26` is reserved for koine and `D8` is unanswered | a person, in anoieu | koine, and it is on a clock anoieu set itself |
 | `A1` | somebody else's account of Stretch 1 | eudaimonia, through epikrisis | kanon's first legal obligation |
@@ -133,8 +133,8 @@ this tree.
 
 **Whose:** eudaimonia's, through `epikrisis`. Not kanon's to ask for and not
 kanon's to produce.
-**Why first:** law 14 makes the working summary the president's first
-responsibility, law 8 requires the per-tool commit census, and **law 9 forbids
+**Why first:** the working summary is the president's first responsibility, the
+per-tool commit census is owed, and **LAW 4 forbids
 the president from producing it** — epikrisis does, as a service. No epikrisis
 report exists. So kanon's first required act depends on a tool two levels deep
 in another member's tree that has never delivered one. `laws.md` says the same
@@ -203,9 +203,9 @@ and that *Stretch 0 chose not to build one before handing the office on*.
 
 ### `A7` — two dangling pointers in `history.md`
 
-**Whose:** anoieu's, as Stretch 1's president. Law 1 restricts the file to the
-president and law 2 to its own stretch, so this is specifically **not** kanon's
-even after the office moves, and law 4 requires the correction to show its work.
+**Whose:** anoieu's, as Stretch 1's president. LAW 4 restricts the file to the
+president, so this is specifically **not** kanon's
+even after the office moves, and LAW 4 requires the correction to show its work.
 **Why:** the entry says *that is the second open question below* and *see the
 open questions*, and there is no such section. One of those questions is whether
 the presidency belongs in `roles.md`, which `laws.md` lists among the four
@@ -367,7 +367,7 @@ possession.
 
 **Whose:** kanon's.
 **Why:** kanon will quote Stretch 1's numbers in its own record — 22% green, a
-112-run streak, 331 commits, fifteen of twenty-eight roles. **Law 10 requires
+112-run streak, 331 commits, fifteen of twenty-eight roles. **LAW 4 requires
 every figure on the record to be re-derivable by somebody else**, and nobody has
 re-derived these. Checking figures kanon is about to stand behind is
 self-interested rather than an audit, and that is exactly why it is safe for
@@ -473,7 +473,7 @@ this is more useful than assigning it to a tool whose name merely fits.
 ### `A29` — the stretch's three-word heading is owed
 
 **Whose:** a person's.
-**Why:** law 6 — *a stretch's heading is its purpose, in at most three words*,
+**Why:** *a stretch's heading is its purpose, in at most three words*,
 and a heading written after the fact has lost the thing worth recording.
 Candidates in [`working-summary.md`](working-summary.md): **Distribution**,
 **Out of anoieu**, **Fast answers**.
@@ -504,7 +504,7 @@ has started it already.
 **Why:** `laws.md`'s template carries *what is handed on* — leftovers and
 warnings — and *to the next president*, which is positive by rule. **Neither
 says what the next term should be for**, so a successor arrives at the bottom
-and must invent the purpose law 6 then demands in three words. This is the gap
+and must invent the purpose it is then asked to state in three words. This is the gap
 kanon met on its own arrival.
 **Why it is not simply adoptable:** same wall as `A16` and `A30`. `laws.md`
 governs `history.md` and nothing else, so a rule about a president's *work* has
@@ -547,7 +547,7 @@ position.
 ### `A34` — a CI edit can silently end the build record's comparability
 
 **Whose:** kanon's for its own tree, a person's anywhere else.
-**Why:** law 10 makes the **public run history a primary source** — 171 runs, 37
+**Why:** LAW 4 makes the **public run history a primary source** — 171 runs, 37
 green, 22%, a 112-run streak are all read out of it. Rename a workflow, drop a
 job, or change what *green* asserts, and nothing is destroyed, but **figures
 either side of the change stop being comparable.** That does not falsify the
@@ -627,11 +627,11 @@ need to exist.
 **Closes when:** required reading is short enough that `INST-4` is a reasonable
 thing to ask of somebody.
 
-### `A39` — law 8 requires a figure no role in the register produces
+### `A39` — the commit census requires a figure no role in the register produces
 
 **Whose:** nobody's. That is the item.
-**Why:** law 8 demands the commit census *and how many are believed
-AI-generated*; law 9 forbids the president producing it and assigns it to
+**Why:** the commit census is owed *and how many are believed
+AI-generated*; LAW 4 forbids the president producing it and assigns it to
 epikrisis, which **holds zero roles, is in no register, and sits two levels down
 in another member's tree.** `D20` is open and says it directly: *the measurement
 does not exist, the convention that would make it possible does not exist.*
@@ -642,7 +642,7 @@ does not exist, the convention that would make it possible does not exist.*
 - **The convention that would make it possible** is not history analysis.
   Epikrisis reads what exists; it cannot invent a way of recording what was
   never recorded. **No role covers this and no name is reserved for it**, and it
-  is what law 8 is actually blocked on.
+  is what the census is actually blocked on.
 
 **There is an external example to measure against**, which is unusual for
 anything in this ecosystem: cvc5 records vendor, model and version in a commit
@@ -651,8 +651,8 @@ calls cvc5's *the stronger practice and we did not invent it*.
 **It is the candidate scope for the proposed AI-research repository** — a job
 rather than a subject, and one that **unblocks epikrisis rather than competing
 with it**, which is the mirror of the mistake `K7` records.
-**Closes when:** a convention exists that makes the figure producible, or law 8
-is amended to stop requiring it.
+**Closes when:** a convention exists that makes the figure producible, or nothing
+asks for the figure any more.
 
 ### `A40` — `coherence.md` lists deleted `R27` as moving to kanon
 

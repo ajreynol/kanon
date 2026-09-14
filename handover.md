@@ -119,7 +119,7 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 - **Jokes here are found in names, not written for them.** `anoieu`, `kanon`
   and `iogos` are all operations on their own names whose results describe the
   work, and all three are at their own expense. **A name that yields no joke is
-  probably a name that decorates rather than describes** — which makes law 12 a
+  probably a name that decorates rather than describes** — which makes LAW 6 a
   test of the name as much as an obligation on the president. Written for the
   next president in `whats-next.md`.
 
@@ -135,7 +135,7 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 - **Twenty-eight roles exist and kanon holds none of them.** Offices are this
   repository's internal structure; roles are the ecosystem's accountability, and
   only the first has been built.
-- **Law 8 depends on a figure no role produces.** Assigned by law 9 to a tool
+- **The commit census depends on a figure no role produces.** Assigned by LAW 4 to a tool
   that holds zero roles, is in no register, and lives two levels down in another
   member's tree. `D20` is open and names two jobs bundled as one: the
   measurement (epikrisis's) and **the convention that would make it possible,

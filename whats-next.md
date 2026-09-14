@@ -4,9 +4,9 @@
 was left over — that is *what is handed on*. Not what went well — that is *to
 the next president*, which `laws.md` makes positive by rule. **This is the one
 forward-looking thing**, and its absence is why an incoming president arrives at
-the bottom and has to invent a purpose that law 6 then demands in three words.
+the bottom and has to invent a purpose to state in three words.
 
-**Started on day one, not written at the close.** Same reasoning as law 11: a
+**Started on day one, not written at the close.** Same reasoning as LAW 4: a
 suggestion assembled at the end is a rationalisation of how the term happened to
 go. This one is kept current while the reasons are still checkable.
 
@@ -64,7 +64,7 @@ argument still holds. **A president assessing whether its own office should
 rotate is not a neutral party** — which is why this is a suggestion to ask
 rather than an answer.
 
-## On law 12, since you will need a joke
+## On LAW 6, since you will need a joke
 
 **You will not have to write one, and you should be suspicious if you do.**
 Every joke that works in this ecosystem was **found in the name rather than
@@ -78,10 +78,10 @@ Isabelle. Nobody sat down to invent any of them.
    substitution, a second sense of the word. This president proposed a name on
    the grounds that it *started with the right two letters*, which is not an
    operation and described nothing.
-2. **The result has to describe the work**, which is law 12's own test. If the
+2. **The result has to describe the work**, which is LAW 6's own test. If the
    joke tells a stranger nothing about what the tool does, it is decoration.
 3. **It must not flatter the tool.** All three working jokes are at their own
-   expense, and that is not taste — law 12 exists because *a president that
+   expense, and that is not taste — LAW 6 exists because *a president that
    cannot leave one there has started to believe the office is important*. A
    joke that makes the office sound impressive fails the law even if it lands.
 
