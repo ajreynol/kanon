@@ -130,11 +130,12 @@ transmits bias by exactly the route the tenet was written to close.
 
 **Uninformed opinion:** they are compatible only if the page carries **reasons
 rather than conclusions**, because a reason can be checked against the tree by
-somebody who has done nothing, and a conclusion cannot. That is now rule 2 of
-[`whats-next.md`](../../../whats-next.md), and **it is a mitigation rather than
-a resolution** — a sufficiently well-argued suggestion is still very hard for an
-empty reader to decline. Worth revisiting when there is a second president to
-watch, which is the only evidence that would settle it.
+somebody who has done nothing, and a conclusion cannot. That is now one of the
+four rules [`whats-next.md`](../../../whats-next.md) is written under, and **it
+is a mitigation rather than a resolution** — a sufficiently well-argued
+suggestion is still very hard for an empty reader to decline. Worth revisiting
+when there is a second president to watch, which is the only evidence that would
+settle it.
 
 ## The two compilers — `noesis` and `ethos-eoc`
 

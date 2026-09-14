@@ -8,6 +8,29 @@ project of anoieu and **it is overloaded**, holding five roles and five separate
 registers, more than any other child project in the ecosystem. It comes here as
 a child project of this office.
 
+## What this directory is, and what the checker makes of it
+
+**This is an office, not a child project.** `tools/kanon-research/` is a heading
+over work the office custodies. The child projects are the directories *inside*
+it, and [`synkrisis`](synkrisis) is the one that exists today; the policy's
+rules for a child project reach them and not this heading. The ecosystem's
+checker reads this page, finds it discussing the child projects it houses, and
+holds the office to those rules anyway — recorded here rather than argued,
+because the two facts below are worth stating whichever way that is settled.
+
+**The name is not Greek, and that is deliberate.** The naming convention is
+Greek and the child projects keep it — `synkrisis`, σύγκρισις, setting two
+things side by side. An office is named for its function in the language a
+reader already has, because *the office of research for kanon* has to be legible
+before anything inside it is, and an etymology on a container decorates rather
+than describes.
+
+**This office is not an island.** It is linked from the front page and named in
+the table of offices there, which is exactly what a child project may not be —
+an office exists in order to be advertised, and what it houses is held to that
+rule instead. Nothing here is imported by anything, nothing runs, and deleting
+the directory would change nothing that does.
+
 ## What *authority* means, concretely
 
 **Kanon does not overrule it.** A verdict of ynoia's is ynoia's. This office

@@ -10,7 +10,7 @@ footing as the child projects it custodies. **The tree is what was decided; this
 is what was said.**
 
 **Source:** extracted from
-`~/.claude/projects/-home-andrew-reynolds-kanon/4a12a296-bcf3-4fc3-9fb3-cdfd4e944d8a.jsonl`,
+`~/.<assistant>/projects/-home-andrew-reynolds-kanon/4a12a296-bcf3-4fc3-9fb3-cdfd4e944d8a.jsonl`,
 which stays outside this repository and holds the whole record including the
 tool traffic. Times are local (CDT). Speakers are **Andrew**, the maintainer,
 and **kanon**, the agent working in this checkout.
@@ -349,7 +349,7 @@ Done, and the joke is on the front page where law 12 wants it.
 
 That inversion is the actual argument for the two repositories being separate, and it now fits on one line instead of a page of `P2`.
 
-**`kanon-balls.md`** is the workflow, and it is deliberately small: six fields, four rules, one screen. The rule that does the work is the first one — **every ball must contain something kanon is *doing*, not only something it wants.** A ball with an empty *We are doing* is a request with a fun name, and the page becomes an invoice. Rule 4 is the other one that matters: we never fire at cvc5, and ethos and logos only where ignoring it costs them nothing.
+**`kanon-balls.md`** is the workflow, and it is deliberately small: six fields, four rules, one screen. The rule that does the work is the first one — **every ball must contain something kanon is *doing*, not only something it wants.** A ball with an empty *We are doing* is a request with a fun name, and the page becomes an invoice. The rule against firing at cvc5 is the other one that matters: we never fire at it, and ethos and logos only where ignoring it costs them nothing.
 
 **Two are loaded.**
 
@@ -1116,7 +1116,7 @@ A real gap, and I can point at where it bit me: what I actually received from an
 
 **An empty president has no basis on which to disagree.** If presidents must start empty to carry no past bias, then every reader of this page arrives with no work, no history and no standing to push back — facing a considered agenda from the only party who has walked the ground. **The page is most dangerous exactly under the condition that makes it useful.**
 
-The mitigation is rule 2: **reasons, not conclusions.** A reason can be checked against the tree by somebody who has done nothing; a conclusion cannot. That's now written into the page, and `synkrisis` records it as **a conflict between two of your own proposals** rather than as resolved — which is the kind of conflict that project is likeliest to earn its place on. It's a mitigation, not a fix: a sufficiently well-argued suggestion is still very hard for an empty reader to decline, and the only evidence that would settle it is a second president to watch.
+The mitigation is the second of that page's four rules: **reasons, not conclusions.** A reason can be checked against the tree by somebody who has done nothing; a conclusion cannot. That's now written into the page, and `synkrisis` records it as **a conflict between two of your own proposals** rather than as resolved — which is the kind of conflict that project is likeliest to earn its place on. It's a mitigation, not a fix: a sufficiently well-argued suggestion is still very hard for an empty reader to decline, and the only evidence that would settle it is a second president to watch.
 
 ## What it currently says
 
@@ -1527,7 +1527,7 @@ Actually, let's go ahead and dump this script to a file. *I WANT YOU TO REMEMBER
 
 **kanon** · 19:31
 
-The raw transcript exists — 1.9 MB of JSONL at `~/.claude/projects/-home-andrew-reynolds-kanon/4a12a296-….jsonl`. I won't dump that into the tree; it's the primary source and it's already durable. `conversation.md` should be the curated thing that points at it.
+The raw transcript exists — 1.9 MB of JSONL at `~/.<assistant>/projects/-home-andrew-reynolds-kanon/4a12a296-….jsonl`. I won't dump that into the tree; it's the primary source and it's already durable. `conversation.md` should be the curated thing that points at it.
 
 
 ---

@@ -293,3 +293,21 @@ and no amount of evidence changes it.
 
 The name is not a title. Nothing tracks who owns it, and a second repository
 doing this work would be as welcome as this one.
+
+## How this repository is maintained
+
+This repository is part of the **Eunoia ecosystem** and follows its shared
+repository policy, kept by [anoieu](https://github.com/ajreynol/anoieu) in
+[`docs/policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/policy.md).
+
+**Written by an agent, under a maintainer's supervision.** The tree was settled
+in conversation with the maintainer and written down by an agent working in this
+checkout; the maintainer directs it, reads what is published and decides what
+crosses to anybody else. **Nothing leaves this repository by machine.**
+
+**What the supervision does not cover.** The maintainer has not re-derived every
+claim this tree makes about a repository other than this one — those are read
+from other trees and are the reading of whoever did it, correctable by the
+repository they are about. And the supervision is of what is *written*, which is
+all there is: nothing here runs, so no review of this tree is evidence that
+anything works.

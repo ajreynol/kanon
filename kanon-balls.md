@@ -276,11 +276,11 @@ Written now so it is recognised rather than re-derived.
 
 1. **Balls become findings.** The moment a *We are doing* is empty and the
    *We are asking* is long, kanon has rebuilt anoieu's job with better branding.
-   Rule 1 is the guard and it will need enforcing.
+   The first of the four rules above is the guard and it will need enforcing.
 2. **Volume.** A president firing many small things at many tools is a nuisance
    with an office. Few and aimed beats many and general.
 3. **They are never delivered.** Two are loaded and nothing here can fire them.
    Carried as `A11` on [`actionable.md`](actionable.md).
-4. **A ball lands on somebody held to none of this.** Rule 4 exists for that and
-   the boundary is easier to cross than it looks, because the tools nearest the
-   work are exactly the ones that never joined.
+4. **A ball lands on somebody held to none of this.** The rule against firing
+   at `cvc5` exists for that and the boundary is easier to cross than it looks,
+   because the tools nearest the work are exactly the ones that never joined.

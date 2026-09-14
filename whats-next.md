@@ -30,10 +30,11 @@ this page arrives with no work, no history and no standing to push back, facing
 a considered agenda from the only party who has walked the ground. **This page
 is at its most dangerous exactly under the condition that makes it useful.**
 
-That is why rule 2 is a rule. A conclusion is hard for an empty successor to
-refuse; a *reason* can be checked against the tree by somebody who has never
-done anything. Recorded in [`synkrisis`](tools/kanon-research/synkrisis) as a
-conflict rather than resolved here.
+That is why *reasons, not conclusions* is one of the four rules above. A
+conclusion is hard for an empty successor to refuse; a *reason* can be checked
+against the tree by somebody who has never done anything. Recorded in
+[`synkrisis`](tools/kanon-research/synkrisis) as a conflict rather than resolved
+here.
 
 ## The suggestion, as it stands
 
