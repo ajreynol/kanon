@@ -4,12 +4,9 @@
 One page, at most twenty-four items, each with the next thing to do and who has
 to do it. Written for a person to read in a minute and edit by hand.
 
-Nothing consumes this file yet. It is written first, deliberately: a board that
-is generated before anybody has kept one by hand encodes whatever the generator's
-author assumed, and the assumptions are the part worth getting wrong cheaply.
-What might read it later — a staleness check, a per-entity digest, a link from
-each finding to its row — is easier to design against a page that has already
-survived a few months of being edited.
+The inventory validator reads each item's **Entities** field to check that the
+board names registered tools. Priorities, status and next steps are maintained
+by hand.
 
 ## How to read it, and how to edit it
 
@@ -17,9 +14,10 @@ survived a few months of being edited.
 outstanding; the last is the least. Reordering is done by moving a block, and
 that is the main way a person changes what this page says.
 
-**The id is stable.** `B4` stays `B4` when it moves, so ids appear out of order
+**The id is stable.** `B6` stays `B6` when it moves, so ids appear out of order
 and that is correct rather than a mistake to tidy. A row that leaves is not
-reused: the next new item takes the next unused number.
+reused. **The next unused id is `B24`**, including after completed items are
+removed; their earlier contents remain in git history.
 
 **Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
 which one leaves, which is the whole value of the number. An item that is
@@ -28,7 +26,7 @@ of what happened lives in [`reports/reports.md`](https://github.com/ajreynol/ano
 git, and a board that keeps its dead is a board nobody reads to the bottom of.
 
 **The cap was twenty until 2026-09-02, and raising it needs a reason on the
-page.** It was set when the inventory held eight tools and now holds thirteen. A
+page.** It was set when the inventory held eight tools. A
 cap that never moves stops measuring priority and starts measuring how many
 repositories exist, so the number is set at roughly two items per entity — and
 **it is reviewed when the entity count changes, never when the board is full.**
@@ -47,7 +45,7 @@ Each item carries the same fields, in the same order:
 | field | what it holds |
 | --- | --- |
 | **Task** | one line: what is being maintained, not how |
-| **Entities** | the repositories involved, by the ids in [`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json) — `anoieu`, `cvc5`, `ethos`, `ethos-eoc`, `logos`, `eudaimonia`, `dokimasia`, `koine`, and the child projects `sapheneia`, `ynoia`, `euthyna`. No other name is an entity |
+| **Entities** | the repositories and child projects involved, using only ids from [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) |
 | **Status** | `ready`, `in progress`, `waiting on <entity>`, `blocked on <what>`, `not started`, or `parked` — plus one clause saying since when or on what |
 | **Channel** | how the prompts below reach the entities they name: `discussion`, `findings`, `upstream, by a person`, or `internal`. The section after this one is what each means |
 | **Next** | the single next issue to fix. One thing, not a plan |
@@ -104,43 +102,11 @@ rather than told.
 
 The seven steps are in
 [`roles.md`](roles.md#how-a-role-is-handed-off), and `B15` is the worked example
-— parked, and stated in role ids. **None of it gates anything** while the
+— transferred, with policy/checker version coordination still open. **None of it gates anything** while the
 ecosystem is still settling; the same section says what would change that and
 who decides.
 
 ---
-
-## B23 — epikrisis is the ecosystem's only history analysis and nothing can find it
-
-**Task:** `epikrisis` audits how these repositories have changed over time and
-is the only source of that in the ecosystem. **It has been promoted out of
-eudaimonia into a repository of its own**, which removes the child-of-a-child
-shape our inventory validator rejects and closes the harder of the two remedies
-below. **It is still in no register**: it has no entry in
-[`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json), so nothing that reads the
-inventory can find it.
-**Entities:** `anoieu`, `epikrisis`
-**Status:** **half closed.** The promotion happened and was eudaimonia's to
-make. **Registering it is what remains and is entirely our work** — it needs a
-footing decided for a repository that has joined nothing, which is our opinion
-to hold and not its act.
-**Channel:** **discussion** — `D20`, to eudaimonia.
-**Next:** ask, and read the answer. **The registration half can start
-immediately and does not need anybody's permission**, and it may turn out to be
-the whole of what we needed.
-**Prompt — `anoieu`:** decide whether the inventory's rule against a child of a
-child is a rule we believe or an assumption nobody tested. If it is the second,
-fixing it registers epikrisis today and the move becomes optional.
-**Prompt — `eudaimonia`:** `D20` asks the question. **Its own README argues for
-the current nesting** — the host asks a question it has no instrument for — so
-the answer may well be no, and no is a complete answer.
-**HUMAN FEEDBACK:**
-
-**Why this is staged beside `B22` and `B15` and is not the same kind of item.**
-Those two start tools that do not exist, which is ours to do. **This one asks
-somebody else to give up a child project**, and the thing already works. Staging
-them together is about sequence, not about symmetry: all three are what the next
-stretch needs, and only two of them are ours to deliver.
 
 ## B15 — governance, out of the analyzer, before we ask members to adopt again
 
@@ -162,44 +128,11 @@ was removed by anoieu in `eeafbcc` on 2026-09-15. The temporary ready check no
 longer applies to this completed creation.
 **HUMAN FEEDBACK:**
 
-## B20 — the two commits drifted, exactly as this row was watching for
-
-**Task:** `.github/workflows/ci.yml` and `scripts/deps.lock` both named the ethos
-and cvc5 commits, and nothing compared them. Taken deliberately rather than
-building the version that reads the lock, because the alternative was holding up
-a finished stretch for an elegant fix. **This row existed to measure what that
-cost.**
-**Entities:** `anoieu`
-**Status:** **settled, 2026-09-02.** The workflow now reads both commits out of
-`scripts/deps.lock` and the duplicates are gone.
-**Channel:** **internal** — nothing to send.
-**Next:** nothing. Kept for the result rather than the task.
-**Prompt — `anoieu`:** none. If a third copy of a dependency's commit is ever
-proposed, this row is the evidence against it.
-**HUMAN FEEDBACK:**
-
-**The result, which is why the row was worth keeping.** The entry said: *either
-the copies move together and the discipline was over-strict here, or they do
-not.* **Both copies drifted, and both were wrong.** CI built ethos at
-`7f4482b7` while the lock recorded `fe74fe40`, and checked out cvc5 at
-`aee87424` while the lock recorded `5cf62594`. Neither had been noticed.
-
-**Three things about how it was found, none of them the plan.** It was not
-found by anybody watching this row. It was found by a check added for an
-unrelated reason — the lock-versus-checkouts comparison — which could only see
-the cvc5 copy, because that is the one that lands in `deps/`. **The ethos
-disagreement was never detectable by any check we had** and turned up only
-because fixing the first sent somebody to read the file.
-
-**And the cost was paid before it was noticed: CI had been red for at least
-five consecutive runs.** A duplicate with no comparison is not a risk this
-repository ran, it is a failure it had already had and could not see.
-
 ## B18 — the associate protocol remains open for ethos
 
 **Task:** `associate` is defined and proposed for ethos, but what a repository
-has to carry was never decided. Our `D11`.
-**Entities:** `anoieu`, `ethos`
+has to carry was never decided. [Anoieu's `D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
+**Entities:** `kanon`, `ethos`
 **Status:** waiting on `ethos` — the choice between the two versions
 of the protocol is theirs to answer before it is ours to fix.
 **Channel:** **upstream, by a person** — ethos has no discussion file, so the
@@ -210,7 +143,7 @@ that plus the paragraph naming this ecosystem — and write it into
 **Updated 2026-09-15:** logos joined as a member. Its associate proposal is
 superseded, and it is no longer a party we are waiting on for this item. The
 evidence is in [the history](https://github.com/ajreynol/anoieu/blob/main/docs/history.md#how-long-it-lasted-and-who-joined).
-**Prompt — `anoieu`:** do not record ethos as an associate until the protocol is
+**Prompt — `kanon`:** do not record ethos as an associate until the protocol is
 decided; `proposed:` is the field that holds the intention, and
 `scripts/status_eo --protocol` is the report. When it is decided, the section in
 `policy.md` stops saying *drafted, and not in force* and the ethos entry moves in
@@ -229,7 +162,7 @@ held to our policy? Neither is also an answer.
 manual, found by writing a second account of the language and noticing where the
 second reading could not recover something from the first. **None has been
 carried anywhere**, and its own status page says so.
-**Entities:** `anoieu`, `ethos`
+**Entities:** `kanon`, `ethos`
 **Status:** ready — the ledger is written, read against `user_manual.md` at
 `3cf1c03`, and every row cites the section it is about.
 **Channel:** **upstream, by a person** — `ethos` has no discussion file, and a
@@ -239,7 +172,7 @@ repository, carried by somebody who can answer the follow-up.
 they cite — the grammar ones, `EOM-01` and `EOM-02` — and carry those alone. The
 judgement rows wait until a reader who knows Eunoia has looked at the ledger,
 which nobody has.
-**Prompt — `anoieu`:** these are *candidates* and are to stay labelled as such;
+**Prompt — `kanon`:** these are *candidates* and are to stay labelled as such;
 the ledger's own header says most likely to be wrong are the judgement rows, and
 that caution is the reason it is worth reading. Do not file them as findings —
 they are about a document, not a defect in a file with a line number.
@@ -256,26 +189,25 @@ writing the *analyzer*; these were found by writing a *second manual*. Different
 instruments, different rows, and the ledger had no board row at all until the
 inventory of 2026-09-01 went looking.
 
-## B6 — the reporting protocol has two implementations and an approved home
+## B6 — the shared prompt-drift check exists and awaits adoption
 
-**Task:** `dokimasia` built the same loop we did, in an afternoon, by reading
-ours; `koine` was approved to hold the shared half. Their `D4`.
+**Task:** decide whether anoieu and dokimasia adopt koine's existing
+prompt-drift checker and remove their local copies.
 **Entities:** `anoieu`, `dokimasia`, `koine`
-**Status:** waiting on `koine` — the repository exists and its scope is its
-owner's to set.
-**Channel:** **discussion** — a reply into `dokimasia`'s `D4`, and a topic in our file addressed to `koine`.
-**Next:** answer `D4` by pointing at the approved proposal, and say which piece
-we would fetch first.
-**Prompt — `anoieu`:** reply to `dokimasia`'s `D4`: the shared parts become
-something a member fetches, `koine` is the approved name, and the prompt-drift
-check is the piece we would take first because it is the one guaranteed to rot in
-two copies.
-**Prompt — `dokimasia`:** the scope question is settled in principle; what is
-still open is whose implementation the shared check starts from, and yours is the
-second one, which makes it the better evidence.
-**Prompt — `koine`:** nothing is owed. If you take the prompt-drift check first,
-two repositories will drop their copies; if you take nothing, nothing here
-breaks.
+**Status:** waiting on the customers — koine publishes the checker and both
+customer specifications; anoieu still keeps its local `prompts_agree()`.
+**Channel:** **discussion** — through the customers' existing topics with koine.
+**Next:** compare the published customer specifications with the current prompt
+layouts, then adopt a pinned version or record why keeping the local copy costs
+less.
+**Evidence:** [koine's running interface](https://github.com/ajreynol/koine/blob/b927aac9e8b402e58f6b1ccdc6f4c5056c868015/README.md#running-it)
+contains the command and customer comparison. The build is no longer the task.
+**Prompt — `anoieu`:** decide whether to replace the local drift check with the
+published implementation after checking it against the current prompt layout.
+**Prompt — `dokimasia`:** make the same comparison for your own workflow; a
+reasoned decision to keep the local check is a complete answer.
+**Prompt — `koine`:** the implementation is available. No new implementation
+is requested by this item.
 **HUMAN FEEDBACK:** raised to the top 2026-08-31: settling this enables a lot of other work.
 
 ## B3 — the fuzzer has found real defects and filed none of them
@@ -296,38 +228,17 @@ say plainly in the report that the fuzzer produced them — a provoked crash and
 read signature are different claims and the codes already say which.
 **HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is stopping us filing them.
 
-## B4 — every member's build depends on this repository's tip
-
-**Task:** the joining step clones `anoieu` at its default branch and runs the
-checker out of that clone, so a member's CI can go red, or green, with no commit
-of their own. Raised by `dokimasia` as its `D2`.
-**Entities:** `anoieu`, `dokimasia`, `koine`, `eudaimonia`
-**Status:** ready — the ask is precise and the fix is ours.
-**Channel:** **discussion** — a reply into `dokimasia`'s `D2`, and a notice to `koine` and `eudaimonia` in our own file when the pinned step lands.
-**Next:** give the joining page a pinned step, and name where the pin moves and
-who moves it.
-**Prompt — `anoieu`:** rewrite the CI snippet in `docs/policy.md` to pin a
-commit, and say in the same paragraph how a member learns a newer pin is worth
-taking. A build that can turn green without a commit cannot be evidence that a
-commit was good, which is their argument and it holds.
-**Prompt — `dokimasia`:** nothing until the page changes; the topic settles when
-it does.
-**Prompt — `koine`:** you joined most recently and paid this cost last. If the
-pinned step reads wrong to you, say so before it is written down.
-**Prompt — `eudaimonia`:** your workflow tracks the tip too. When the pinned
-step lands, moving to it is one line.
-**HUMAN FEEDBACK:**
-
 ## B2 — seven accepted ethos fixes that have not reached `main`
 
 **Task:** the seven rows closed *awaiting landing* on `ethos` are all still one
 commit off the default branch.
 **Entities:** `ethos`, `anoieu`
-**Status:** waiting on `ethos` — `scripts/landing.py --check` reports all seven as
-`not yet`, against a checkout fetched today.
+**Status:** waiting on verification — anoieu's closed-findings ledger still
+marks these as awaiting landing. That record is not evidence about today's
+default branch.
 **Channel:** **upstream, by a person** — `ethos` has no discussion file, so asking about a merge is a message somebody sends, not a topic anybody can address.
-**Next:** merge the branch, or tell us it is not going to be merged so the rows
-can be reopened rather than sitting closed on a promise.
+**Next:** verify the marked fixes against the current default branch; update
+the ledger for anything that landed, and ask about only the remainder.
 **Prompt — `ethos`:** the branch `anoieu-findings` carries fixes for seven
 findings you accepted. It is one commit ahead of `main` and has been for the
 duration. Merging it, or saying it will not be merged, is the only thing
@@ -342,12 +253,12 @@ and replace the marker with what landed it. Do not let a second row age the way
 **Task:** `koine` joined from the `join_eo` prompt and reported where the time
 actually went; it also reported what `init_eo` cannot finish from inside a new
 repository. Its `D1` and `D2`.
-**Entities:** `anoieu`, `koine`
+**Entities:** `kanon`, `koine`
 **Status:** ready — two topics open, both addressed to us, both specific.
 **Channel:** **discussion** — replies into `koine`'s `D1` and `D2`.
 **Next:** put the minimal passing tree in the joining section verbatim, in one
 place, or say plainly that reading the checker is the intended path.
-**Prompt — `anoieu`:** answer `koine`'s `D1` with the smallest tree that passes
+**Prompt — `kanon`:** answer `koine`'s `D1` with the smallest tree that passes
 the policy check, written out, and `D2` with what `init_eo` is not able to do
 from inside the new repository and who does it instead. `koine` is close to the
 smallest repository that can join, so its cost is the floor everybody pays.
@@ -357,20 +268,19 @@ is only agreement closes nothing.
 
 ## B7 — the links between repositories are the ones nothing checks
 
-**Task:** `dokimasia`'s `D3` and `D1` — a link into `anoieu` is the one link no
-checker validates, and a child project's own documentation reads as a broken
-link from outside its tree.
+**Task:** `dokimasia`'s `D3` — decide whether the policy checker should
+resolve links into the repository whose checkout it already holds.
 **Entities:** `anoieu`, `dokimasia`
-**Status:** ready — both are ours to fix and both are cheap.
-**Channel:** **discussion** — replies into `dokimasia`'s `D3` and `D1`.
+**Status:** ready — cross-repository link checking remains undecided.
+The separate child-relative-link defect (`D1`) was fixed and marked settled.
+**Channel:** **discussion** — a reply into `dokimasia`'s `D3`.
 **Next:** decide whether the policy checker should resolve cross-repository
 links at all, and say so either way.
-**Prompt — `anoieu`:** answer `D3` and `D1`. If cross-repository links stay
+**Prompt — `anoieu`:** answer `D3`. If cross-repository links stay
 unchecked, write down why — a rule that cannot be checked is one the policy is
 supposed to name as unchecked rather than leave implied.
-**Prompt — `dokimasia`:** if you have a shape for the child-project link that
-survives being read from outside the tree, propose it; you hit this before we
-did.
+**Prompt — `dokimasia`:** your proposed checkout-based check is recorded in
+`D3`; the settled child-project case needs no further work.
 **HUMAN FEEDBACK:**
 
 ## B8 — a committed regression test that two checkers disagree about
@@ -484,36 +394,21 @@ picks the fix up; `logos-1` is blocked on this and on nothing else.
 reply. This is the finding that taught us to check.
 **HUMAN FEEDBACK:** a minor bug — moved down 2026-08-31.
 
-## B13 — committed test data carries a path out of somebody's home directory
+## B13 — fuzz promotion can reintroduce machine-local seed paths
 
-**Task:** two fuzz reproducers record the seed path they were shrunk from, and
-those paths name a former machine's home directory and a scratch directory. The
-policy check that forbids this reads Markdown only, so committed data slips past
-it.
+**Task:** normalize seed provenance when promoting a fuzz reproducer, so a new
+case cannot copy a machine-local path into committed data.
 **Entities:** `anoieu`
-**Status:** ready — found by grep, two files and their `finding.json` companions.
-**Channel:** **internal** — nothing to send.
-**Next:** decide whether the fix is to relativise the seed at promotion time or
-to widen the check to tracked non-Markdown files. Probably both.
-**Prompt — `anoieu`:** the promoter should record a seed as a repository-relative
-path or as the corpus name, never as an absolute one, and `scripts/policy_check.py`
-should look outside `*.md` for the same pattern it already forbids there.
-**HUMAN FEEDBACK:**
-
-## B14 — nothing schedules a run, so the report is as fresh as somebody's memory
-
-**Task:** `scripts/run.py` is run by hand. A ref in `scripts/deps.json` pointed at a
-branch that had been deleted upstream, and the report kept reporting on it until
-somebody happened to look.
-**Entities:** `anoieu`
-**Status:** ready — the failure has already happened once.
-**Channel:** **internal** — nothing to send.
-**Next:** decide what a scheduled run is allowed to do: measure and open nothing,
-or measure and commit the regenerated files.
-**Prompt — `anoieu`:** a run that only measures is safe and produces a diff
-nobody reads; a run that commits changes the report without a person. The
-question to settle first is which of those the ecosystem wants, and
-`docs/coherence.md` is where the answer belongs before any workflow file exists.
+**Status:** partly resolved — the recorded paths are gone and
+`check_local_paths_data()` now examines non-Markdown files. The promoter still
+copies the case and serializes the input record without normalizing its source.
+**Channel:** **internal** in anoieu — nothing to send upstream.
+**Next:** normalize provenance in both the promoted case and its `finding.json`,
+using a repository-relative path or corpus name where one is available.
+**Evidence:** [the promoter](https://github.com/ajreynol/anoieu/blob/eeafbcc7bc9706651357ebfb38235adc25cd770d/anoieu_fuzz/report.py)
+and [the data-path check](https://github.com/ajreynol/anoieu/blob/eeafbcc7bc9706651357ebfb38235adc25cd770d/scripts/policy_check.py).
+**Prompt — `anoieu`:** keep the existing data-path check and repair promotion
+so that it does not reintroduce the paths already removed from the corpus.
 **HUMAN FEEDBACK:**
 
 ## B16 — nobody audits what the tools depend on
@@ -538,13 +433,13 @@ happens.
 **Task:** `zetesis` says its standard comes from outside and cites the
 reading that supports it. **The reading has not been done**, so the project has
 a question, three recorded gaps, and no standard.
-**Entities:** `anoieu`, `zetesis`
+**Entities:** `kanon`, `zetesis`
 **Status:** ready — nothing is blocked on anybody else, and the first hour of it
 is a literature search.
 **Channel:** **internal** — nothing to send, and nothing here is filed anywhere.
 **Next:** find and cite one external account of what an agent-run project owes,
 and say plainly which of our claims it does and does not reach.
-**Prompt — `anoieu`:** doing ethics from this repository is out of scope and
+**Prompt — `kanon`:** doing ethics from this repository is out of scope and
 saying so is not an excuse: the alternative is to take a standard somebody else
 argued for. Until one is cited, every claim this ecosystem makes about its own
 conduct rests on a standard it wrote itself, which is the weakest possible
@@ -554,19 +449,6 @@ did. A gap in the literature is a result; a plausible bibliography assembled to
 look rigorous is the failure you exist to notice.
 **HUMAN FEEDBACK:**
 
-## B17 — what reads this board
-
-**Task:** the infrastructure that consumes this page — a staleness check, a
-digest per entity, a link from a finding to the row that carries it.
-**Entities:** `anoieu`
-**Status:** not started — deliberately, and after the page has been kept by hand
-for a while.
-**Channel:** **internal** — nothing to send.
-**Next:** nothing yet. The first thing worth building is whichever one a person
-finds themselves doing by hand three times.
-**Prompt — `anoieu`:** when this is built, `HUMAN FEEDBACK` outranks every other
-field on an item, and a tool that overwrites one has misread the page.
-**HUMAN FEEDBACK:**
 ---
 
 *A full board is one that has stopped being prioritised. If this page is at its

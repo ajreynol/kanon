@@ -258,5 +258,35 @@
     "parent": "eudaimonia",
     "path": "tools/workflow-launcher",
     "what": "the first hour of a new tool's life, and a register of what this ecosystem's practice has turned out to be doing"
+  },
+  "anakrisis": {
+    "status": "child",
+    "parent": "dokimasia",
+    "path": "tools/anakrisis",
+    "what": "examines cvc5 pull requests by comparing dokimasia's proof-completeness analyses before and after a change, and records what its review adds"
+  },
+  "empeiria": {
+    "status": "child",
+    "parent": "dokimasia",
+    "path": "tools/empeiria",
+    "what": "works cvc5's public bug reports and records what the maintainers' responses teach about the next fix"
+  },
+  "telos": {
+    "status": "child",
+    "parent": "dokimasia",
+    "path": "tools/telos",
+    "what": "research toward a proof-first SMT solver whose output is checked by Logos, using dokimasia's analyses to guide the design"
+  },
+  "apodeixis": {
+    "status": "child",
+    "parent": "eudaimonia",
+    "path": "tools/apodeixis",
+    "what": "a proposed Alethe stress test of the Eudaimonia framework; work is paused pending collaboration and permission from the Alethe maintainers"
+  },
+  "noesis": {
+    "status": "child",
+    "parent": "eudaimonia",
+    "path": "tools/noesis",
+    "what": "research toward a verified Eunoia-to-Lean compiler, with explicit preservation claims for each pass"
   }
 }
