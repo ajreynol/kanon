@@ -14,8 +14,8 @@ and confers nothing over anybody's repository. See [`README.md`](README.md).
 
 ### 2. What can I ask it for?
 
-**Nothing yet, and that is the honest answer.** kanon runs no code, holds no
-policy, and has no channel to receive a question on. `tools/` is empty. Ideas
+**No running tool yet.** kanon holds no policy, and `tools/` is empty. Questions
+and proposals have a [discussion channel](docs/discussion.md). Ideas
 for research, correspondence, safety and ethics are in
 [`brainstorm-offices.md`](brainstorm-offices.md); the proposed messages are in
 [`kanon-balls.md`](kanon-balls.md). No internal offices are established.
@@ -35,8 +35,6 @@ nothing here is scripture.
 
 ### 5. Where do I ask something?
 
-**Nowhere yet.** kanon has no discussion channel, no footing in
-`ecosystem.json`, and no row any tool can address. Until that changes, a person
-carries anything either way. This is the most embarrassing line on the page and
-it stays until it is false — carried as `A3` and `A11` on
-[`actionable.md`](actionable.md).
+**[The discussion file](docs/discussion.md)** holds topics between kanon and
+other tools. A person carries each topic and explicitly requests any response;
+writing a topic does not deliver it automatically.

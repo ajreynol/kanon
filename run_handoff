@@ -1,0 +1,76 @@
+cp -p -- ../anoieu/docs/vision.md docs/vision.md
+git add -- docs/vision.md
+cp -p -- ../anoieu/docs/policy.md docs/policy.md
+git add -- docs/policy.md
+cp -p -- ../anoieu/docs/laws.md docs/laws.md
+git add -- docs/laws.md
+cp -p -- ../anoieu/docs/board.md docs/board.md
+git add -- docs/board.md
+cp -p -- ../anoieu/docs/roles.md docs/roles.md
+git add -- docs/roles.md
+cp -p -- ../anoieu/docs/coherence.md docs/coherence.md
+git add -- docs/coherence.md
+cp -p -- ../anoieu/docs/interface.md docs/interface.md
+git add -- docs/interface.md
+cp -p -- ../anoieu/docs/instructions.md docs/instructions.md
+git add -- docs/instructions.md
+cp -p -- ../anoieu/scripts/ecosystem/ecosystem.json scripts/ecosystem/ecosystem.json
+git add -- scripts/ecosystem/ecosystem.json
+cp -p -- ../anoieu/scripts/ecosystem/ecosystem.py scripts/ecosystem/ecosystem.py
+git add -- scripts/ecosystem/ecosystem.py
+cp -p -- ../anoieu/scripts/status_eo scripts/status_eo
+git add -- scripts/status_eo
+cp -p -- ../anoieu/scripts/install_eo scripts/install_eo
+git add -- scripts/install_eo
+cp -p -- ../anoieu/scripts/ecosystem/checkouts.json scripts/ecosystem/checkouts.json
+git add -- scripts/ecosystem/checkouts.json
+cp -p -- ../anoieu/scripts/ecosystem/near.py scripts/ecosystem/near.py
+git add -- scripts/ecosystem/near.py
+cp -p -- ../anoieu/scripts/bump_check.py scripts/bump_check.py
+git add -- scripts/bump_check.py
+cp -p -- ../anoieu/scripts/transfer_check.py scripts/transfer_check.py
+git add -- scripts/transfer_check.py
+cp -p -- ../anoieu/scripts/ready_check.py scripts/ready_check.py
+git add -- scripts/ready_check.py
+cp -p -- ../anoieu/prompts/join_eo prompts/join_eo
+git add -- prompts/join_eo
+cp -p -- ../anoieu/prompts/check_join_eo prompts/check_join_eo
+git add -- prompts/check_join_eo
+cp -p -- ../anoieu/prompts/confirm_eo prompts/confirm_eo
+git add -- prompts/confirm_eo
+cp -p -- ../anoieu/prompts/init_eo prompts/init_eo
+git add -- prompts/init_eo
+cp -p -- ../anoieu/prompts/welcome_eo prompts/welcome_eo
+git add -- prompts/welcome_eo
+cp -p -- ../anoieu/prompts/global_audit prompts/global_audit
+git add -- prompts/global_audit
+cp -p -- ../anoieu/prompts/process_discussion prompts/process_discussion
+git add -- prompts/process_discussion
+cp -Rp -- ../anoieu/tools/ynoia tools/
+git add -- tools/ynoia/README.md
+git add -- tools/ynoia/names.md
+git add -- tools/ynoia/papers.md
+git add -- tools/ynoia/proposals.md
+git add -- tools/ynoia/requests.md
+git add -- tools/ynoia/tools.md
+git add -- tools/ynoia/why-eunoia.md
+cp -Rp -- ../anoieu/tools/martyria tools/
+git add -- tools/martyria/README.md
+git add -- tools/martyria/case-cvc5-12891.md
+git add -- tools/martyria/reports.md
+git add -- tools/martyria/schedule.json
+git add -- tools/martyria/sleep.py
+git add -- tools/martyria/stances.md
+git add -- tools/martyria/witnessed.md
+cp -Rp -- ../anoieu/tools/zetesis tools/
+git add -- tools/zetesis/README.md
+git add -- tools/zetesis/findings.md
+cp -Rp -- ../anoieu/tools/stathmos tools/
+git add -- tools/stathmos/README.md
+git add -- tools/stathmos/evidence.md
+git add -- tools/stathmos/protocol.md
+cp -Rp -- ../anoieu/tools/sapheneia tools/
+git add -- tools/sapheneia/README.md
+git add -- tools/sapheneia/feedback.md
+git add -- tools/sapheneia/manual.md
+git add -- tools/sapheneia/semantics.md

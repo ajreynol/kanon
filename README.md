@@ -64,6 +64,9 @@ you what was settled; that page tells you what it was settled *against*.
 The [documentation index](docs/README.md) links to the work, decisions and optional
 background kept here.
 
+Questions and proposals to other tools are kept in
+[the discussion file](docs/discussion.md), for a person to carry.
+
 **The distinction that keeps this from collapsing.** A handoff may bring work
 kanon did not write, such as `ynoia`, `martyria` and `zetesis`. None is housed
 here yet. **What the president *writes* is required reading. What
