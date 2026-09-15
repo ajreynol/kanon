@@ -37,7 +37,9 @@ explain four of them; produced tens of kilobytes of prose and no code on its
 first day, against a governance budget that already existed and that it
 duplicated with a private measure (`A25`); and reached, several hours late and
 believing it new, a criticism `ai-novelty.md` had already recorded from outside.
-**All three before the term began.**
+**All three before the term began.** On 2026-09-15 the maintainer judged the
+offices premature: their directories were removed and their ideas retained in
+[brainstorm-offices.md](brainstorm-offices.md). No incoming project has been copied.
 
 **What is handed on** — [`handover.md`](handover.md), kept current.
 

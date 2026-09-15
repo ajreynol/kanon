@@ -3,6 +3,11 @@
 **A list of what kanon is waiting on, kept by kanon.** Ten items, prioritised,
 each with the thing that closes it.
 
+**Update, 2026-09-15:** the office structure is deferred. `tools/` is empty;
+its former documents are proposals in [brainstorm-offices.md](brainstorm-offices.md).
+The draft handoff uses `tools/<project>/` directly. Earlier dated decisions below
+are retained with their corrections; they do not establish offices.
+
 **As of 2026-09-02, revised the same day.** Read against anoieu at commit
 `579aae7`.
 
@@ -62,13 +67,13 @@ duplicate record.
 | id | what | whose | blocks |
 | --- | --- | --- | --- |
 | `A15` | **join the ecosystem** | **kanon**, then a person | the deploy bar, and `A2` |
-| `A16` | the office-count range is a practice, not a law | a person, in anoieu | nothing. It binds kanon either way |
+| `A16` | the office-count proposal is deferred | **kanon** | nothing |
 | `A17` | nobody publishes what a repository here should look like | **kanon** to say, anoieu to decide | every layout change, silently |
 | `A18` | no way to find out what a tool can be asked for | **kanon**, with each tool's answer | using tools the ecosystem already has |
 | `A19` | no node has an FAQ; kanon now has one | **kanon** first, then a ball each | the cost of arriving anywhere |
 | `A20` | martyria's cases must survive the move byte-identical | **kanon** | nothing, until the move happens |
 | `A21` | anoieu's Stretch 1 figures are quoted, not checked | **kanon** | kanon's own record, LAW 4 |
-| `A22` | receive `ynoia`, and treat it as the authority | a person, then **kanon** | the research office having a subject |
+| `A22` | receive `ynoia`, and treat it as the authority | a person, then **kanon** | receiving the research project |
 | `A23` | `init_eo` reads `names.md`, which is about to move | a person, in anoieu | starting any new repository |
 | `A24` | receive `ai-novelty.md` as a file, and its companion stays behind | a person | nothing, but it splits a stated pair |
 | `A25` | kanon's docs measure duplicates an existing governance budget | **kanon** | nothing. It was a private scorecard |
@@ -103,17 +108,9 @@ duplicate record.
 | `A13` | `martyria` and `zetesis` sit inside the tree they assess | a person | the ethics half of the judge-inside-the-judged problem |
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
-**Which office holds what.** `research` — `A6`, `A7`, `A8`, `A9`, `A12`, `A14`,
-`A21`, `A22`, `A23`, `A24`, `A26`, `A27`, `A30`, `A35`, `A39`, `A40`. `correspondence` — `A3`, `A11`, `A17`, `A18`, `A19`, `A41`. `ethics` — `A13`,
-`A20`, `A25`. `safety` — `A32`, `A33`, `A34`. `ethics` — also `A37`. **Unassigned and first:** `A15`, `A5`. **Everything else belongs to no office and that is correct** —
-`A1`, `A3`, `A4`, `A5`, `A10`, `A11`, `A15` are just kanon's work, and inventing
-a directory to hold each of them is the mistake this page was cut back from.
-
-**This page is public and the offices behind it are not.** The list is what
-kanon advertises; the working material in `tools/kanon-*/` is the president's
-own and no outside tool has standing to inspect it. An item reaches this page
-when it is something kanon is waiting on, not because an office holds a note
-about it.
+**No offices currently hold these items.** The earlier allocation is retained
+in [the brainstorming notes](brainstorm-offices.md#earlier-allocation-of-work).
+The list remains kanon's work queue; the proposed office structure is deferred.
 
 ---
 
@@ -295,6 +292,10 @@ tree. **Plan for the schedule**: `sleep.py` and `schedule.json` travel with
 **Closes when:** the two projects are here and the schedule's new address is
 published.
 
+**Updated 2026-09-15:** the office destination above is withdrawn. The draft
+handoff uses `tools/martyria/` and `tools/zetesis/` directly; neither has been
+copied here.
+
 ### `A14` — nobody has measured how long an answer takes
 
 **Whose:** **kanon's.** The second item on this list we can do alone.
@@ -304,19 +305,13 @@ members declared at 10:53, 12:41 and 12:50 and were recorded at 16:44; `D1` ran
 a whole term. A figure makes it arguable; *slow* does not.
 **Closes when:** there is a latency figure and a target somebody disagrees with.
 
-### `A16` — the office-count range is a practice, not a law
+### `A16` — the office-count proposal is deferred
 
-**Whose:** a person's, in anoieu. **Kanon has already applied it to itself** and
-is not waiting.
-**Why:** three to five offices, adopted after opening six and being unable to
-explain four. Kanon cannot legislate it: `laws.md` governs `history.md` and
-nothing else by its own statement, and a president proposing an amendment writes
-the proposal and does not apply it. **The scope problem is the more interesting
-half** — a rule about how a presidency *works* rather than how its record is
-kept has nowhere to live in this ecosystem today.
-**Carried as [`K5`](kanon-balls.md).**
-**Closes when:** anoieu says whether `laws.md` widens, a second page exists, or
-neither.
+**Updated 2026-09-15:** the maintainer judged the offices premature. No minimum
+or maximum office count binds kanon. The earlier proposal and its reasoning are
+preserved in [the brainstorming notes](brainstorm-offices.md#earlier-structure-proposal).
+`K5` now records the deferral. Revisit the structure only if actual work calls
+for offices.
 
 ### `A17` — nobody publishes what a repository here should look like
 
@@ -357,7 +352,7 @@ does a tool say the short version of itself. **Five fixed questions**, in
 **Whose:** kanon's, and it is code rather than prose.
 **Why:** `martyria` carries `case-cvc5-12891.md` and `witnessed.md` — the record
 of how this ecosystem behaved toward the project it exists to serve. When it
-moves into `tools/kanon-ethics/`, **the party that becomes its keeper must be
+moves here, **the party that becomes its keeper must be
 able to show it changed nothing**, and *trust me* is not a mechanism. A hash
 before and after costs nothing and is the difference between custody and
 possession.
@@ -379,8 +374,9 @@ kanon to do it — `tekmerion` still holds the general job.
 **Whose:** a person's to move; kanon's to house without overruling.
 **Why:** `ynoia` is the ecosystem's research engine and is overloaded — five
 roles and five registers, more than any other child project. It becomes a child
-project of `tools/kanon-research/`, keeping `R21`–`R25` and their ids, because
-an id is permanent wherever the role lives.
+project here, keeping `R21`–`R25` and their ids, because an id is permanent
+wherever the role lives. **Updated 2026-09-15:** the draft destination is
+`tools/ynoia/`; the office structure is deferred and nothing has arrived yet.
 **The constraint on us, stated before the move rather than after:** kanon does
 not grade a proposal ynoia has graded, settle a name it has registered, or
 answer *was kanon a good idea* — `proposals.md` holds `P2`, the audit that
@@ -433,11 +429,10 @@ private figure is gone.
 
 **Whose:** a person's to approve, ynoia's to register.
 **Why:** `R22` is ynoia's and **a name is claimed when a person approves one,
-never by a document suggesting it.** Kanon creating a directory is not a claim,
-and saying so on the directory's own front page is the cheapest way to keep it
-from becoming one by habit.
-**Closes when:** a person approves a name and ynoia writes the entry — or the
-directory is renamed.
+never by a document suggesting it.** The directory was removed on 2026-09-15;
+its ideas remain in [the brainstorming notes](brainstorm-offices.md#synkrisis).
+No child project or name claim is established.
+**Closes when:** a person decides whether to pursue the project and its name.
 
 ### `A27` — `telos` is running and is in no register
 
@@ -494,7 +489,7 @@ tenet binds at the **start** of a term rather than throughout.
 **The cost it does not answer:** it does not permit an untested president, it
 **guarantees one every term**. kanon is the current evidence — it runs nothing
 and would fail `PROTO-20` today.
-**Written up in [`synkrisis`](tools/kanon-research/synkrisis).**
+**Written up in [`synkrisis`](brainstorm-offices.md#synkrisis).**
 **Closes when:** ynoia audits it, or a person adopts or drops it.
 
 ### `A31` — `whats-next.md` is a practice, and proposed as a law
@@ -517,7 +512,7 @@ reasons rather than conclusions. **Making it a law moves it toward what was
 removed**, and that should be weighed before anybody adopts it.
 **And it conflicts with `A30`:** an empty successor is the reader least equipped
 to refuse a considered agenda. Mitigated by requiring reasons rather than
-conclusions; written up in [`synkrisis`](tools/kanon-research/synkrisis).
+conclusions; written up in [`synkrisis`](brainstorm-offices.md#synkrisis).
 **Closes when:** a person adopts it, drops it, or says where such a rule lives.
 
 ### `A32` — `science-fiction.md` moving here reverses a written decision
@@ -609,7 +604,7 @@ colour.
 **Why it is ethics too:** the cost is borne by somebody other than the party who
 built the tool, and is invisible to that party.
 **Closes when:** it does not. Stated as a policy in
-[the office of ethics](tools/kanon-ethics/).
+[the ethics notes](brainstorm-offices.md#ethics).
 
 ### `A38` — kanon's own required reading is already too long
 
@@ -661,7 +656,7 @@ asks for the figure any more.
 the governance repository.* `R27` was deleted — `roles.md` says it was allocated
 *in error*, and `E1`'s dry run records its removal. **A page therefore promises
 kanon a role that does not exist**, which is the `misinterpretation` mode in
-[`tools/kanon-safety/scenarios.md`](tools/kanon-safety/scenarios.md): two true
+[the safety scenarios](brainstorm-offices.md#scenarios): two true
 pages made incompatible by an edit that reached one of them. **Fourth instance,
 and the first that is about us.**
 **Closes when:** the sentence names only the roles that exist.

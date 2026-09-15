@@ -10,6 +10,11 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 
 ## Established
 
+**Update, 2026-09-15:** the maintainer deferred the internal offices as premature.
+Their six documents are retained in [brainstorm-offices.md](brainstorm-offices.md),
+and `tools/` is empty. Incoming projects have not been copied. The draft handoff
+uses `tools/<project>/` directly, superseding the office destinations below.
+
 **About kanon's standing**
 
 - **Six documents in anoieu describe kanon and no two agree.** `names.md`, the
@@ -100,7 +105,7 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   (three live documentation contradictions), deadlock (the stub deadline, the
   vacant record, the pins the gate refuses), misappropriation (our own record
   says a human wrote all 323 commits and that is not what happened), and
-  exhaustion. Written up in `tools/kanon-safety/scenarios.md`.
+  exhaustion. Written up in [the safety scenarios](brainstorm-offices.md#scenarios).
 - **The ownership stance protects legibility, not ownership.** No accounts, no
   signatures, no chain of custody — deliberately. What defends provenance here
   is that the record is public and re-derivable, **which holds only while the
@@ -171,13 +176,14 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
   mirror**: no tool should be made to hold what it should not. *Do not reopen by
   reading a tool's etymology.*
 
-- **Where `ynoia` goes — `tools/kanon-research/`, as the authority there.** It
+- **Earlier destination for `ynoia` — superseded on 2026-09-15.** The
+  research-office nesting is withdrawn; the draft now uses `tools/ynoia/`. It
   brings `R21`–`R25` with their ids unchanged. **Kanon inherits its own
   auditor**: `proposals.md` holds `P2`, which recommended this repository exist,
   so this office must never answer *was kanon a good idea*.
-- **How many offices a president may open — three to five.** Adopted as kanon's
-  own practice, not as a law: `laws.md` governs `history.md` and nothing else,
-  so the rule has nowhere to live in the ecosystem today. Proposed as `K5`.
+- **The three-to-five office range — deferred on 2026-09-15.** It was kanon's
+  practice and a proposal in `K5`; it no longer binds kanon. The reasoning is
+  retained in [the brainstorming notes](brainstorm-offices.md#earlier-structure-proposal).
 - **Six offices — no, two.** *Closed the day it was opened.* Four of the six
   were a status, a list, an output and a mission wearing directories. Corrected
   by the maintainer, who could not tell what four of them were for, which was

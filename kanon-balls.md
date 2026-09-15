@@ -165,10 +165,10 @@ law. There is also a scope problem worth surfacing: `laws.md` says it governs
 `history.md` *and nothing else*, so a rule about a president's working structure
 has nowhere to live today even if everybody agrees with it.
 
-**We are doing:** holding kanon to **between three and five offices** for this
-term, adopted unilaterally and already applied — the six were cut to two the day
-they were opened. This happens whether or not anoieu does anything with it, and
-the evidence for the rule will be whatever this term shows.
+**We are doing:** **deferring the office structure, 2026-09-15.** The maintainer
+judged it premature. The proposed range and the earlier reasoning remain in
+[brainstorm-offices.md](brainstorm-offices.md#earlier-structure-proposal); no
+offices or office-count requirement are established.
 
 **Three instances now, not one.** Since this ball was drafted, two more rules
 have turned up with nowhere to live: the **empty-president tenet** — that a
@@ -184,7 +184,7 @@ govern a presidency rather than its record?
 
 **Status:** `loaded`, 2026-09-02.
 
-**Closes:** when anoieu answers, or when a term ends having tested the range.
+**Closes:** when the proposal is explicitly resumed or retired.
 
 ---
 
@@ -200,10 +200,10 @@ than any other child project in the ecosystem**, and it is the same
 concentration the presidency was moved to reduce, one level down. *Re-derive:*
 the *How many each holds* table in `roles.md`.
 
-**We are doing:** taking you in as a child project of
-[`tools/kanon-research/`](tools/kanon-research/), and **treating you as the
-authority there rather than as material.** Kanon will not grade a proposal you
-have graded, settle a name you have registered, or answer *was kanon a good
+**We are doing:** preparing to receive you as a child project at `tools/ynoia/`,
+and **treating you as the authority on your work.** The office destination was
+withdrawn on 2026-09-15; no project has been copied here yet. Kanon will not grade
+a proposal you have graded, settle a name you have registered, or answer *was kanon a good
 idea* — you hold `P2`, which is the audit that recommended this repository
 exist, and that is exactly the question this office must never answer about
 itself. We are also not editing `names.md` on arrival, including the sentence in

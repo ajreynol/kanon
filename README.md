@@ -53,17 +53,17 @@ readable and worth reading. They are closer to the work and correspondingly less
 friendly, and **that is a debt rather than a design** — the ecosystem's stated
 position is that *all tools should evolve to be user friendly*, which is a
 safety requirement rather than a courtesy. See
-[the office of ethics](tools/kanon-ethics/) for why, and
-[the office of safety](tools/kanon-safety/scenarios.md) for what happens when it
+[the ethics notes](brainstorm-offices.md#ethics) for why, and
+[the safety scenarios](brainstorm-offices.md#scenarios) for what happens when it
 is not met.
 
 **Housed, not required:** [`conversation.md`](conversation.md) records how this
 repository was decided — the derivation rather than the decision. The tree tells
 you what was settled; that page tells you what it was settled *against*.
 
-**The distinction that keeps this from collapsing.** kanon custodies work that
-is not its own — `ynoia`, `martyria`, `zetesis`, `ai-novelty.md`,
-`science-fiction.md`. **What the president *writes* is required reading. What
+**The distinction that keeps this from collapsing.** A handoff may bring work
+kanon did not write, such as `ynoia`, `martyria` and `zetesis`. None is housed
+here yet. **What the president *writes* is required reading. What
 the president *houses* is not.** Housing something does not promote it, and a
 president whose required reading grows every time it receives a child project
 has broken the principle it exists to serve.
@@ -136,59 +136,14 @@ it, and it is recorded there with the mistake still visible.
 **The mission points here too.** Kanon holding what another tool could hold is
 its own finding first.
 
-## The offices
+## Possible offices
 
-**`tools/X-Y/` in the repository of the active president X is the office of Y
-for president X** — *the office of research for kanon*. **Four are open**, of a
-maximum of five:
-
-| office | what it holds | in a phrase |
-| --- | --- | --- |
-| [research](tools/kanon-research/) | the home of `ynoia`, the ecosystem's research engine, which is the authority there | what comes **in** |
-| [correspondence](tools/kanon-correspondence/) | what we send, and what came back | what goes **out** |
-| [safety](tools/kanon-safety/) | how this infrastructure could be *persuaded* into failing | what could go **wrong** |
-| [ethics](tools/kanon-ethics/) | how the office behaved, and the ethics projects it custodies | what we **are** |
-
-### Between three and five, and no more
-
-**A president holds at least three offices and at most five.** Fewer than three
-and the term is not ambitious enough to need a structure at all; more than five
-and nobody can say what each one is for. **This repository proved the second
-half the hard way**: it opened six in an afternoon and the maintainer could not
-explain four of them, which is the only evidence a rule like this ever gets.
-
-**Kanon cannot make that a law, and does not pretend to.** `laws.md` is
-deliberately narrow — it governs `history.md` *and nothing else*, and says in
-terms that a law about anything else does not belong in it. Amending it is the
-maintainer's, and **a president proposing an amendment writes the proposal and
-does not apply it.** So the range above is this repository's own practice,
-binding on kanon from now, and separately a proposal to anoieu carried as `K5`.
-If it is ever a law, somebody other than the president will have made it one.
-
-**There were six for about an hour.** The other four — record, relations,
-readiness, distribution — were a list, an output, a status and a mission
-wearing directories, and the maintainer could not tell what four of them were
-for. **That was the evidence.** Nothing was deleted except the containers: the
-mission is above, the list is [`actionable.md`](actionable.md), the output is
-[`kanon-balls.md`](kanon-balls.md), the findings moved into research, and
-readiness is what the check reports rather than a place.
-
-**The prefix is the term, and an office does not travel.** The successor opens
-`tools/<their-name>-research/` in its own tree; these stay as the record of one
-term.
-
-**But what an office holds does travel.** A permanent project custodied by an
-office keeps its own name and history and moves to the successor's office of the
-same name — only the heading over it changes, exactly as `roles.md` describes a
-child project graduating. `martyria` and `zetesis` are the first.
-
-**The offices are internal.** No tool outside this repository has authority to
-look inside them. **This is not a special case**: the ecosystem already holds
-that where a register disagrees with a repository about its own work, the
-repository is right. What leaves an office is what kanon chooses to fire.
-
-*A person reads whatever they like — this is about which **tool** may claim
-standing to inspect, not what `PROTO-20` lets a human read.*
+**The office structure is deferred as premature.** `tools/` is empty, and no
+incoming project has been copied from anoieu. The research, correspondence,
+safety and ethics ideas are kept in
+[`brainstorm-offices.md`](brainstorm-offices.md), including the scenarios and
+synkrisis notes. They establish no offices, minimum office count or project
+assignments. The handoff will receive projects without nesting them in offices.
 
 ## What crosses to the next president
 

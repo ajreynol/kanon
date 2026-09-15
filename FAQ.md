@@ -1,9 +1,8 @@
 # kanon — FAQ
 
-**Five questions, fixed.** This is the style the office of correspondence
-proposes to every node in the ecosystem, written here first because proposing a
-style you have not adopted is worth nothing. Answers are short on purpose; the
-long versions are linked.
+**Five questions, fixed.** This is a style kanon proposes to every node in the
+ecosystem, written here first because proposing a style you have not adopted is
+worth nothing. Answers are short on purpose; the long versions are linked.
 
 ### 1. What is this tool for?
 
@@ -16,9 +15,10 @@ and confers nothing over anybody's repository. See [`README.md`](README.md).
 ### 2. What can I ask it for?
 
 **Nothing yet, and that is the honest answer.** kanon runs no code, holds no
-policy, and has no channel to receive a question on. What it does today is read,
-record and send: findings in `tools/kanon-research/`, conduct in
-`tools/kanon-ethics/`, and [`kanon-balls.md`](kanon-balls.md) going out.
+policy, and has no channel to receive a question on. `tools/` is empty. Ideas
+for research, correspondence, safety and ethics are in
+[`brainstorm-offices.md`](brainstorm-offices.md); the proposed messages are in
+[`kanon-balls.md`](kanon-balls.md). No internal offices are established.
 
 ### 3. What does it depend on, and who depends on it?
 
