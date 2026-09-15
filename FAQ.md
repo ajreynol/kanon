@@ -7,14 +7,16 @@ worth nothing. Answers are short on purpose; the long versions are linked.
 ### 1. What is this tool for?
 
 **The Eunoia ecosystem's governance, kept out of the analyzer** — the policy,
-its checker, the inventory and the joining scripts, so that the repository
+the inventory and the joining scripts, so that the repository
 writing the rules is not also the one filing findings against you. It also holds
 the **presidency for Stretch 2**, which is an office in the ecosystem's own work
 and confers nothing over anybody's repository. See [`README.md`](README.md).
 
 ### 2. What can I ask it for?
 
-**No running tool yet.** kanon holds no policy, and `tools/` is empty. Questions
+**Inventory checks, installation, status and joining prompts.** The shared
+policy and five child projects arrived in the governance handoff. See
+[the command reference](docs/commands.md). Questions
 and proposals have a [discussion channel](docs/discussion.md). Ideas
 for research, correspondence, safety and ethics are in
 [`brainstorm-offices.md`](brainstorm-offices.md); the proposed messages are in
@@ -22,9 +24,9 @@ for research, correspondence, safety and ethics are in
 
 ### 3. What does it depend on, and who depends on it?
 
-**Depends on:** `anoieu` — for the policy, the candidate laws, the inventory and
-the record it expects to inherit. **Depended on by:** nobody. No tree pins
-kanon, and nothing breaks if this repository disappears.
+**Depends on:** `anoieu` for the policy checker, which remains there.
+**Used by:** people running the ecosystem's installer and joining prompts, and
+repositories reading the shared policy. Existing member CI still pins anoieu.
 
 ### 4. What is it *not*?
 

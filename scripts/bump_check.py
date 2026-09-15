@@ -2,8 +2,8 @@
 """Refuse a bump to a commit anoieu's own CI did not pass.
 
 A member takes on whatever we have changed by moving a pin -- `ANOIEU_REV` in
-their `anoieu / policy` workflow -- to a commit of this repository. **That bump
-is valid only if this repository's CI is green at exactly that commit**, and this
+their `anoieu / policy` workflow -- to a commit of anoieu. **That bump
+is valid only if anoieu's CI is green at exactly that commit**, and this
 is the program that decides it. Published so that every member does not write it
 separately; nothing obliges anybody to use this one, and the requirement is the
 refusal rather than the program.
@@ -156,7 +156,7 @@ def main() -> int:
     print(f"-- {'ADOPT' if code == 0 else 'REFUSE'}: {REPO} at {rev} is {reason}")
     if code == 0:
         print("   This says those checks passed at that commit, and nothing about "
-              "whether the\n   policy change is any good -- see docs/reports/"
+              "whether the\n   policy change is any good -- see https://github.com/ajreynol/anoieu/blob/main/docs/reports/"
               "reporting-policy.md on silence.")
     return code
 

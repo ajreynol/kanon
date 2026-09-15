@@ -2,7 +2,7 @@
 
 **What each tool weighs, in numbers somebody else can re-derive. Nothing here is
 judged.** Assembled 2026-09-02. The paragraphs that would rest on this are in
-[`../../docs/report-card.md`](../../docs/report-card.md) and are a person's to
+[`../../docs/report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) and are a person's to
 write; a row here that reads like a verdict is a defect.
 
 ## How to read it, and the discount that applies to every row

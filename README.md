@@ -25,17 +25,15 @@
 > repository to stay small at least as hard as it binds its reader.
 
 **kanon is where the Eunoia ecosystem keeps its governance, out of the
-analyzer**: the policy every member repository is checked against, the checker
-that decides it, the inventory of who is in, and the scripts by which a tool
+analyzer**: the policy every member repository is checked against, the inventory of who is
+in, and the scripts by which a tool
 starts, joins and is installed.
 
-All of that lives today in `anoieu`, which is also the analyzer — the tool that
-reads member repositories and files findings against them. One repository
-therefore writes the rule, decides compliance with it, and reports you for
-failing it. Nothing has gone wrong: the same person maintains all of it and is
-careful. It is still the wrong shape, and it grows more expensive to change with
-every member that pins anoieu in order to get the policy. **kanon is the address
-that separation goes to**, so that the judge stops being the prosecutor.
+**The governance handoff landed on 2026-09-15, in `7eb9973`.** The shared
+policy, vision, laws, board, role register, inventory, installer and joining
+prompts now live here. The analyzer, fuzzer, findings system and **policy checker
+remain in [anoieu](https://github.com/ajreynol/anoieu)**. Member CI continues to
+pin that checker; moving the documents does not change those pins.
 
 ## The president is the only required reading
 
@@ -67,12 +65,10 @@ background kept here.
 Questions and proposals to other tools are kept in
 [the discussion file](docs/discussion.md), for a person to carry.
 
-**The distinction that keeps this from collapsing.** A handoff may bring work
-kanon did not write, such as `ynoia`, `martyria` and `zetesis`. None is housed
-here yet. **What the president *writes* is required reading. What
-the president *houses* is not.** Housing something does not promote it, and a
-president whose required reading grows every time it receives a child project
-has broken the principle it exists to serve.
+**The distinction that keeps this from collapsing.** The handoff brought
+`ynoia`, `martyria` and `zetesis`, along with two other child projects, under
+`tools/`. **What the president *writes* is required reading. What the president
+*houses* is not.** Housing something does not promote it.
 
 **This is where the budget gets teeth.** Read in full, and the only thing you
 have to read — those two together are a hard size limit on this tree, enforced
@@ -91,10 +87,10 @@ adjudicate implementation. It asks who is stuck, whether the tools are talking
 to each other, and what the office could spend on getting somebody unstuck.
 Direction, not permission.
 
-**The office is not the transfer.** Holding the presidency is not permission to
-start the governance move — see objection 1 in
-[`initial-objections.md`](initial-objections.md). The policy, its checker and
-the inventory stay in anoieu until the maintainer raises `B15` again.
+**The office and the transfer are separate acts.** The initial objections
+record why taking the presidency did not itself authorize moving governance.
+The maintainer subsequently made the handoff in `7eb9973`; the checker stayed
+with anoieu, as the [role register](docs/roles.md) specifies.
 
 ## The joke
 
@@ -144,12 +140,10 @@ its own finding first.
 
 ## Possible offices
 
-**The office structure is deferred as premature.** `tools/` is empty, and no
-incoming project has been copied from anoieu. The research, correspondence,
-safety and ethics ideas are kept in
-[`brainstorm-offices.md`](brainstorm-offices.md), including the scenarios and
-synkrisis notes. They establish no offices, minimum office count or project
-assignments. The handoff will receive projects without nesting them in offices.
+**The office structure is deferred as premature.** Incoming projects live
+directly under `tools/`. The research, correspondence, safety and ethics ideas
+remain in [`brainstorm-offices.md`](brainstorm-offices.md); they establish no
+internal offices or project assignments.
 
 ## What crosses to the next president
 
@@ -194,23 +188,33 @@ that is for — and kanon has no opinion to offer.
 Two narrower ones, for the same reason:
 
 - **Whether a rule should exist.** kanon holds the standard and applies it.
-  Amending it is a person's, argued on anoieu's board and in ynoia's proposals.
+  Amending it is a person's, argued on the board here and in ynoia's proposals.
   There is no vote here.
 - **Whether a finding against you is fair.** Findings stay with the analyzer.
   Moving them here would rebuild the thing this repository exists to take apart.
 
-## What it would take to run it
+## Running the commands
 
-**Nothing here runs.** There is no policy, no checker, no inventory, no scripts,
-no tests and no CI. This repository is this file. There is nothing to install,
-nothing to invoke, and no output to read.
+Python 3.10 or newer, Bash and Git are enough for the local commands. From this
+checkout:
 
-To check a tree against the ecosystem's policy today, run anoieu's
-`tools/policy_check.py` — which is what the four member repositories, anoieu,
-eudaimonia, dokimasia and koine, pin in their CI. That is the answer today, and
-the move is not approved: the audit (`P2` in ynoia's proposals) is open, and the
-board item (`B15`) says in as many words *do not start the move* while its scope
-is still being cut.
+```sh
+scripts/status_eo --check       # validate the inventory, offline
+scripts/install_eo --dry-run   # inspect the clone commands
+scripts/install_eo --status    # inspect the checkouts on this machine
+scripts/status_eo              # policy and discussion status across checkouts
+python3 scripts/policy_check.py --root .
+```
+
+Policy checks use an **anoieu checkout beside kanon**, or one selected with
+`ANOIEU_ROOT`. The local `scripts/policy_check.py` is a launcher for that
+checkout's checker, not a second implementation. Its output identifies the
+checker commit. Installation status and offline inventory validation work
+without that dependency.
+
+[`docs/commands.md`](docs/commands.md) lists the commands, checkout settings,
+prompt previews and validation steps. The workflow in `.github/workflows/anoieu.yml`
+keeps kanon's existing checker pin; local regression checks also run in CI.
 
 ## The name
 
@@ -237,20 +241,10 @@ the name gets more accurate rather than less.
 
 ## The stub
 
-`tools/kanon/` in anoieu is a stub: a placeholder directory carrying one
-sentence, which says to delete it once its replacement is safely in the
-ecosystem. This repository is the replacement it names. Saying so is the spawned
-repository's half of the handoff protocol (`PROTO-20` in anoieu's
-`docs/coherence.md`); anoieu's half is only to clear away markers that have gone
-stale.
-
-So, plainly: **this is the kanon that stub holds a place for, and it is not yet
-in a state to take that place.** The protocol judges the claim by reading the
-repository rather than the message, and there is nothing here to read but this
-file. It also asks for CI passing on both sides with no exceptions, and a
-repository that runs nothing is *unknown*, which is not a pass. **The stub
-should stay.** An agent does not delete one in any case — that is a person's,
-and no amount of evidence changes it.
+The original [`tools/kanon/` stub in anoieu](https://github.com/ajreynol/anoieu/tree/ca58216/tools/kanon)
+records where this repository began. Anoieu removed that stub in `eeafbcc` on
+2026-09-15. The link is pinned to its last version so the history remains
+readable after removal.
 
 The name is not a title. Nothing tracks who owns it, and a second repository
 doing this work would be as welcome as this one.
@@ -258,8 +252,10 @@ doing this work would be as welcome as this one.
 ## How this repository is maintained
 
 This repository is part of the **Eunoia ecosystem** and follows its shared
-repository policy, kept by [anoieu](https://github.com/ajreynol/anoieu) in
-[`docs/policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/policy.md).
+repository policy, kept here in
+[`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
+The [pre-handoff policy](https://github.com/ajreynol/anoieu/blob/4d21ec9/docs/policy.md)
+remains available for repositories using the older checker.
 
 **Written by an agent, under a maintainer's supervision.** The tree was settled
 in conversation with the maintainer and written down by an agent working in this
@@ -270,5 +266,5 @@ crosses to anybody else. **Nothing leaves this repository by machine.**
 claim this tree makes about a repository other than this one — those are read
 from other trees and are the reading of whoever did it, correctable by the
 repository they are about. And the supervision is of what is *written*, which is
-all there is: nothing here runs, so no review of this tree is evidence that
-anything works.
+the scope of their review. Automated checks report only the properties they
+exercise; they do not establish the truth of every claim in these documents.

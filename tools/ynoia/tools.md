@@ -177,23 +177,12 @@ recommendation is worth making at all.
 
 **What:** the policy, its checker, the inventory and the joining scripts, in a
 repository that is not also the tool that files findings against you.
-**State:** `parked` — audited as `P2` in [`proposals.md`](proposals.md) with the
-verdict **needed**; the maintainer is inclined and has said explicitly that it
-is not actionable until they raise it again.
-**Settles:** nothing in [`why-eunoia.md`](why-eunoia.md) — it is not an argument
-about the proof pipeline. What it settles is that one repository currently
-writes the rules a member is judged by *and* files the findings against them.
-**Costs:** every member's pin moves once, at a moment each of them chooses, and
-the cost grows with every member that joins before it happens.
-**Before it:** `install_eo` settling, so that the audit which reads across the
-policy and the findings is a one-line problem rather than two checkouts.
-**Today:** all of it, inside anoieu — `docs/policy.md`, `scripts/policy_check.py`,
-`scripts/ecosystem/ecosystem.json` and the `*_eo` scripts, already consumed by four trees.
-**Why here:** first, and not being worked on, which is the split this field
-exists to make. It is the only entry on this page whose consumers already exist
-and already depend on the thing; nothing else here has a user at all. That it is
-parked is a fact about *when*, decided by a person, and not a fact about how
-promising it is.
+**State:** governance transferred to kanon on 2026-09-15 (`7eb9973`).
+**Settles:** the rules are now kept outside the analyzer that files findings.
+The checker remains in anoieu as `R31`, so existing member pins do not move.
+**Today:** policy, vision, inventory, installer and joining prompts live in
+kanon. The remaining policy/checker version question is recorded in
+[the role register](../../docs/roles.md#r31--the-policy-checker).
 
 ## epikrisis — a repository of its own, and not ours to grant
 
@@ -273,8 +262,8 @@ produced under rules its own author could have shaped.
 **Before it:** a second president. With one, the separation is theatre: there is
 nobody yet whose stretch was judged by rules somebody else wrote. `kanon`
 taking Stretch 1 is what makes this real rather than tidy.
-**Today:** `docs/laws.md`, held by anoieu, which is the president it binds. It
-says so on the page rather than hiding it.
+**Today:** `docs/laws.md` is held by kanon, the current president, following
+the 2026-09-15 handoff. Separating custody of the laws remains a proposal.
 **Why here:** **behind `kanon`, and ahead of the remaining proposals.** It is not urgent — one stretch, one president, and the maintainer
 reviews every commit, which is real oversight even if it is not independence.
 It is placed above the research tools because **the defect it fixes gets worse
@@ -312,9 +301,9 @@ a different one**, and a proposal has to say whether both belong or only one.
 **Before it:** `nomophylax`, obviously — an advisor with nobody to advise is a
 register with extra steps. And a second president, for the same reason that one
 gives.
-**Today:** `tools/martyria/` and `tools/zetesis/`, inside anoieu, each a child
-project of the repository whose conduct they assess. Both say so on their own
-front pages; neither is thereby fixed.
+**Today:** `tools/martyria/` and `tools/zetesis/` moved to kanon on
+2026-09-15. Their relocation does not by itself establish independence from
+the ecosystem whose conduct they assess.
 **Why here:** **fourth, behind `nomophylax`.** It cannot be built before the
 thing it advises exists, and it is placed above the research tools for the same
 reason: what it fixes gets quietly worse while nothing is done, because every
@@ -346,7 +335,7 @@ checker is less independent than the argument wants, since it reads the same
 signature through the same compiler.
 **Before it:** `nothing`. It is the only entry here that can start without a
 decision being made first.
-**Today:** the baseline, [`../../docs/fuzzing.md`](../../docs/fuzzing.md) —
+**Today:** the baseline, [`../../docs/fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md) —
 grammar-directed generation, a mutated seed corpus, three verdict-level oracles,
 and no instrumentation anywhere. It is deliberately the floor, which is what
 makes *research-quality* a measurable claim rather than an adjective.

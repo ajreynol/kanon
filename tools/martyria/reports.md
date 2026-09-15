@@ -8,7 +8,7 @@ in the moment it is least convenient.
 
 ## Why this is not the findings ledger
 
-The ledger in [`../../docs/reports/`](../../docs/reports/reports.md) carries
+The ledger in [`../../docs/reports/`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md) carries
 defects **we** found in **somebody else's** files. This is the other direction
 and it has never had a channel. That gap is already written down as one:
 [`../../docs/coherence.md`](../../docs/coherence.md) records that findings do

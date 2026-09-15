@@ -34,22 +34,23 @@ rule, and the incident that produced it, are in
 
 ## What this repository is responsible for
 
-Six things, and only two of them are the tool.
+The 2026-09-15 handoff moved governance to kanon. The boundary is:
 
-| what | where | who else it binds |
-| --- | --- | --- |
-| the analyzer | [`../anoieu/`](../anoieu) | anyone running it; the baselines other repositories would gate on |
-| the fuzzer | [`../anoieu_fuzz/`](../anoieu_fuzz) | a second shipped tool: its `FUZ` rows are in the record and two CI steps run it |
-| **the publishing position** | [`reporting-policy.md`](reports/reporting-policy.md) | maintained here, **referenced by [dokimasia](https://github.com/ajreynol/dokimasia)** rather than copied |
-| **the reporting workflow** | [`reporting-workflow.md`](reports/reporting-workflow.md) | [`../scripts/`](../scripts) implement it; other repositories adopt its CI half |
-| **the development vision** | [`../docs/vision.md`](vision.md), and [`report-card.md`](report-card.md), which it governs | written for *every* repository in the ecosystem |
-| **the repository policy** | [`../docs/policy.md`](policy.md) | written to be copied; governs child projects in any parent |
+| what | where |
+| --- | --- |
+| policy and joining | [policy.md](policy.md), `prompts/` |
+| development vision | [vision.md](vision.md) |
+| inventory, installation and status | [commands.md](commands.md), `scripts/ecosystem/` |
+| laws, board and role register | [laws.md](laws.md), [board.md](board.md), [roles.md](roles.md) |
+| maintenance protocols | this page, [interface.md](interface.md), [instructions.md](instructions.md) |
 
-The four in bold are **not about anoieu**. They are ecosystem documents that
-happen to be maintained here, which has one consequence worth stating plainly:
-editing one of them edits what other repositories are following, and the fact
-that the file sits in this tree does not make the change local. That is the
-whole reason the next section exists.
+The analyzer, fuzzer, policy checker, findings workflow, report card and earlier
+term history remain in [anoieu](https://github.com/ajreynol/anoieu). Links below
+to those artifacts name that repository. Historical examples retain their
+original context; they do not assign anoieu's implementations to kanon.
+The role register distinguishes the shared rules from the checker that reads
+them. Changes to shared policy can affect other repositories even though the
+file is now local.
 
 ## Protocols, and how they are labelled
 
@@ -79,7 +80,7 @@ named.
 | `PROTO-3` | going off the deep end — *this cannot be checked from here* | agent → person | [`interface.md`](interface.md) |
 | `PROTO-4` | temporal session coherence — the session's open ask survives its branches | agent → person | [`interface.md`](interface.md) |
 | `PROTO-5` | the context protocol — say concretely what changed, not what it means | agent → person | [`interface.md`](interface.md) |
-| `PROTO-6` | the reporting workflow — a defect carried to whoever owns the file | repository → repository | [`reporting-workflow.md`](reports/reporting-workflow.md) |
+| `PROTO-6` | the reporting workflow — a defect carried to whoever owns the file | repository → repository | [`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md) |
 | `PROTO-7` | the discussion file — everything that is not a defect report | repository → repository | [`policy.md`](policy.md) |
 | `PROTO-8` | joining, and its soft and affiliating forms | repository → ecosystem | [`policy.md`](policy.md) |
 | `PROTO-9` | retired, 2026-09-15 | — | no active protocol |
@@ -432,7 +433,7 @@ turn by definition.
 
 User-facing commands live directly in `scripts/`. `scripts/ecosystem/` holds
 the internal status implementation, the typo-check helper, and ecosystem JSON.
-The corpus dependency manifest and lock live in `scripts/` beside `deps.py`.
+The corpus dependency manifest, lock and runner remain in anoieu.
 `tools/` holds child projects and their own code and data.
 
 `repos.local` is the shared map from a repo id to a checkout on this machine. It
@@ -448,21 +449,12 @@ to it — the first for everything on the list, the second when a tool arrives.
 
 | command | run in | what it does |
 | --- | --- | --- |
-| `harvest_cpc_proofs` | here | collects real CPC proofs to seed the fuzzer with |
-| `deps.py` | imported by the runner | fetches the corpus dependencies and reads and renders their lock |
-| `doc_currency.py` | here | measures the evidence that documentation is current |
-| `gen_checks_doc.py` | here | regenerates `docs/checks.md` from the check registry |
-| `gen_corpus_table.py` | imported by the runner | measures corpus findings and renders the results table |
-| `gen_open_findings.py` | here | adds new findings to the ledger; `--check` reports unlisted findings |
-| `landing.py` | here | reports changes awaiting landing; `--check` reads their checkouts |
-| `oracle_desugar.py` | here | compares desugaring results with the ethos binary |
-| `run.py` | here | fetches dependencies and generates the corpus report and findings; `--offline --check` checks the local copies |
-| `sweep.py <path>...` | here | reads every signature under the supplied paths and reports failures |
-| `install_eo` | here, **first** | clones the ecosystem beside this checkout. `--dry-run` prints the commands; `--status` reads the checkouts. [The options](usage.md#the-rest-of-the-ecosystem) |
+| `install_eo` | here, **first** | clones the ecosystem beside this checkout. `--dry-run` prints the commands; `--status` reads the checkouts. [The options](commands.md#checkouts-and-the-checker) |
 | `status_eo` | here | prints ecosystem membership, policy results and checkout status; wraps `ecosystem.py` |
 | `bump_check.py` | here, or with `--root PATH` | checks whether a policy commit is eligible for adoption |
-| `policy_check.py` | here, or with `--root PATH` | checks the repository policy; also run by members in CI |
-| `ready_check.py <name>` | here | checks whether a proposed tool is ready to be started |
+| `policy_check.py` | here, or with `--root PATH` | launches the checker in anoieu; member CI still runs anoieu directly |
+| `anoieu_dependency.py` | imported by the local commands | finds the anoieu checkout and loads its declaration readers |
+| `ready_check.py <name> --stub-root <path>` | here | checks the local name register and the source repository's stub; does not verify CI |
 | `transfer_check.py <name>` | here | reports whether roles are ready to transfer to a project |
 
 ### `scripts/ecosystem/` — internal helpers
@@ -472,17 +464,17 @@ to it — the first for everything on the list, the second when a tool arrives.
 | `ecosystem.py` | `scripts/status_eo` | status rendering, inventory checks and protocol reports |
 | `near.py` | ecosystem commands and prompts | prints whether two repository ids are one edit apart |
 
-`status_eo` is a wrapper around `scripts/ecosystem/ecosystem.py`, and `scripts/policy_check.py`
-has no wrapper on purpose: it is the interface **other repositories** run in
-their CI, so its path is published in [`policy.md`](policy.md) and must not
-acquire a second spelling.
+`status_eo` wraps `scripts/ecosystem/ecosystem.py`. Kanon's local
+`scripts/policy_check.py` launches the checker retained in anoieu; it does not
+replace the published interface member CI already pins. See
+[checkout configuration](commands.md#checkouts-and-the-checker).
 
 ### Data beside the scripts
 
 | file | directory | what it holds |
 | --- | --- | --- |
-| `deps.json` | `scripts/` | the source repositories and paths measured by the corpus runner |
-| `deps.lock` | `scripts/` | the commits used for the recorded corpus report |
+| `deps.json` | `anoieu/scripts/` | the source repositories and paths measured by the corpus runner |
+| `deps.lock` | `anoieu/scripts/` | the commits used for the recorded corpus report |
 | `ecosystem.json` | `scripts/ecosystem/` | ecosystem membership and each project's footing |
 | `checkouts.json` | `scripts/ecosystem/` | exceptions to the inventory-derived install plan |
 
@@ -495,20 +487,20 @@ itself.
 | --- | --- | --- |
 | `init_eo new` <br> `init_eo from-child <path>` | the **new** repository | the README that says what the tool is for: what it answers, the question it does not, the name explained. `new` writes it from the name register; `from-child` writes it from an existing child project's charter and from what that project delivered. The mode is required, never guessed. Complies with nothing, deliberately |
 | `welcome_eo <id> <path>` | here | records the checkout, syncs the ecosystem's list, reads the new tool, drafts a first message. A welcome, never an audit. Refuses a typo rather than recording one |
-| `join_eo` <br> `join_eo --soft` <br> `join_eo --soft --affiliated` | the **joining** repository | adds the membership declaration and the pinned `anoieu / policy` workflow. `--soft` is a different act rather than a smaller one: the maintenance note alone, declaring no membership, linking nowhere, adding no workflow and running no checker — for a repository that should not join and is still worth a note. `--affiliated` is the same again with one paragraph changed: it names the ecosystem and says the repository is not held to its policy, which is the note an `associate` in the inventory carries. All three prompts are fixed and drift-checked against [`policy.md`](policy.md) |
+| `join_eo` <br> `join_eo --soft` <br> `join_eo --soft --affiliated` | the **joining** repository | adds the membership declaration and the pinned `anoieu / policy` workflow. `--soft` is a different act rather than a smaller one: the maintenance note alone, declaring no membership, linking nowhere, adding no workflow and running no checker — for a repository that should not join and is still worth a note. `--affiliated` is the same again with one paragraph changed: it names the ecosystem and says the repository is not held to its policy, which is the note an `associate` in the inventory carries. All three prompts mirror the templates in [`policy.md`](policy.md) |
 | `check_join_eo <id>` | here | joined, ready, misconfigured or not ready — and whether the obstacle is ours |
 | `confirm_eo <id>` <br> `confirm_eo --president <id>` | here | **after** a join: whether the way they joined meets the benchmark for excellence, in the report card's four bands. `--president` adds the office — LAW 6's joke, whether acceptance is on the record, and whether they know what expires. **It confirms and never appoints** |
 | `process_discussion <id> [Dn]` | here | works what another repository has addressed to us. **Read-only until a person names a topic** |
-| `check_anoieu [id]` | the project a **finding** is about | answers our findings there, and drafts a reply for its maintainer |
-| `process_anoieu <id> [ID]` | here | processes that reply: moves rows, writes verdicts, appends the logs |
+| `check_anoieu [id]` (in anoieu) | the project a **finding** is about | answers our findings there, and drafts a reply for its maintainer |
+| `process_anoieu <id> [ID]` (in anoieu) | anoieu | processes that reply: moves rows, writes verdicts, appends the logs |
 | `global_audit` | here | the whole ecosystem against policy and vision, fast, no deep analysis |
 
 **Every prompt takes `--show-prompt`**, which prints what it would send and runs
 nothing. That is the first thing to do with one you have not used, and the only
 way to review a prompt without spending a turn on it. `install_eo` is the same
 idea for the one command that changes a machine: `--dry-run` prints exactly what
-a run would execute, and the suite checks that what it prints and what it runs
-are `git clone` and nothing else.
+a run would execute. The installer only executes `git clone` when installing;
+its command guard refuses any other operation.
 
 ## What happens when we add a new tool to the ecosystem
 
@@ -597,7 +589,7 @@ is the smaller of the two.
 ## A finding is about `main`
 
 We report a defect against what a project ships. Every ref in
-[`../scripts/deps.json`](../scripts/deps.json) is a branch somebody else's users get,
+[`../scripts/deps.json`](https://github.com/ajreynol/anoieu/blob/main/scripts/deps.json) is a branch somebody else's users get,
 and a finding measured on a topic branch is one its owner can close by deleting
 the branch.
 
@@ -616,7 +608,7 @@ exception for being where the work is convenient to read. ethos's own `main` is
 still where the Eunoia manual is read from, and findings against the checker are
 against `main`. `ethosEoc3` contains `main` in full, so measuring the tree there
 measures `main` and the compiler work on top of it; when the branch merges, the
-ref in [`../scripts/deps.json`](../scripts/deps.json) becomes `main` and the exception
+ref in [`../scripts/deps.json`](https://github.com/ajreynol/anoieu/blob/main/scripts/deps.json) becomes `main` and the exception
 is gone rather than renegotiated.
 
 **And the exception does not reach `install_eo`, which installs a default branch
@@ -637,7 +629,7 @@ branch is not wrong, and a checker finding is still measured there.
 A second exception is a decision, and it is written down here with its reason or
 it is not made. A branch named in somebody's *reply* — `anoieu-findings`, say —
 is where a fix is read before it lands; it is never what a finding is measured
-against, and [what closes a row](reports/reporting-workflow.md#what-closes-a-row-and-what-does-not)
+against, and [what closes a row](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md#what-closes-a-row-and-what-does-not)
 is a separate question with its own answer.
 
 ## The primary scope, and what follows from it
@@ -702,12 +694,12 @@ whenever a page feels significant.
 `scripts/policy_check.py` executes in three other repositories. **Adding a check
 changes what somebody else's build does, and removing one changes what it stops
 catching** — both are events in the ordinary sense, and neither is visible in a
-document unless we write it down. [`checks.md`](checks.md) is generated from the
+document unless we write it down. [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) is generated from the
 registry, so the page is not the event; **the check is.**
 
 **What does not qualify, and would clog the record if it did:**
-[`usage.md`](usage.md) and [`fuzzing.md`](fuzzing.md) describe an interface
-nobody outside runs; [`notes.md`](notes.md) is miscellany by construction;
+[`usage.md`](https://github.com/ajreynol/anoieu/blob/main/docs/usage.md) and [`fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md) describe an interface
+nobody outside runs; [`notes.md`](https://github.com/ajreynol/anoieu/blob/main/docs/notes.md) is miscellany by construction;
 [`interface.md`](interface.md), [`coherence.md`](coherence.md) and this
 ecosystem's protocol register change most weeks and are read by agents working
 here rather than by anybody depending on them. **A protocol added is worth an
@@ -727,7 +719,7 @@ reason, and wait for a person — do not make it and mention it afterwards.
 what AI-assisted development in this ecosystem is for, it is addressed to
 repositories that did not write it, and the party with the least standing to
 revise it is the agent it governs. This includes
-[`report-card.md`](report-card.md), which was split out of it and is governed by
+[`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md), which was split out of it and is governed by
 it unchanged: a paragraph there is a judgement about somebody else's project,
 and softening or sharpening one is exactly the edit that should not be made
 quietly.
@@ -768,7 +760,7 @@ can decide from the tree. Run it before proposing a change here — and if you a
 a rule, either make it checkable or accept that it lands on the checker's
 printed list of what it cannot decide.
 
-**3. [`reporting-policy.md`](reports/reporting-policy.md) — not yet stable, so
+**3. [`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md) — not yet stable, so
 say what you changed.** Unlike the two above, this page is still settling: its
 positions are being worked out rather than defended, and adding, sharpening or
 retiring one is ordinary work rather than something to ask about first. Two
@@ -784,22 +776,22 @@ retired, the page renamed again) is carried to dokimasia by hand.
 > Nothing here fixes that — nothing crosses a repository boundary by machine —
 > so it is a person's errand, and it is unfiled.
 
-**4. [`reporting-workflow.md`](reports/reporting-workflow.md) — ask before the prompts.** A
+**4. [`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md) — ask before the prompts.** A
 person approves every change to a prompt template, and each round should leave
 the prompts *shorter and clearer* than it found them — that rule was itself
 learned the expensive way and is written up in
-[`postmortem.md`](reports/postmortem.md). `tests/run.py` fails when a script's copy of a
+[`postmortem.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/postmortem.md). `tests/run.py` fails when a script's copy of a
 prompt has drifted from the document, so the two move together or not at all.
 
 **5. The generated documents — never hand-edited, ask about nothing.**
-[`corpus.md`](reports/corpus.md) and [`checks.md`](checks.md) are rewritten whole, so
-anything typed into them is lost. [`open-findings.md`](reports/open-findings.md) and
-[`closed-findings.md`](reports/closed-findings.md) are additive: the generator adds rows
+[`corpus.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/corpus.md) and [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) are rewritten whole, so
+anything typed into them is lost. [`open-findings.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/open-findings.md) and
+[`closed-findings.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/closed-findings.md) are additive: the generator adds rows
 and never removes or rewrites one, which is what keeps hand-written verdicts
 alive. Closing a row is a judgement made by the review step, never by a diff.
 
 **6. Everything else — ordinary work.** The README's results layer,
-[`notes.md`](notes.md), [`usage.md`](usage.md), [`fuzzing.md`](fuzzing.md), the
+[`notes.md`](https://github.com/ajreynol/anoieu/blob/main/docs/notes.md), [`usage.md`](https://github.com/ajreynol/anoieu/blob/main/docs/usage.md), [`fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md), the
 code, the tests. No permission needed; the normal standard applies.
 
 **What a repository says about itself decides how freely you may work in it.**
@@ -808,7 +800,7 @@ does ordinary work in it without asking step by step — the ladder above still
 orders what needs a person *within* this tree, and that is the whole of the
 constraint. Where the note says people write it, or where there is no note,
 restraint applies: propose, show the diff, and wait.
-[`reporting-policy.md`](reports/reporting-policy.md) already decides the *register
+[`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md) already decides the *register
 of address* this way — by what the project says about itself, never by our
 impression of the code — and this is the same test applied to the scope of
 action. **Where there is no note, the cautious reading applies**, because
@@ -914,7 +906,7 @@ needs no undertaking from us about when we change things, and a structural
 answer keeps working when nobody is paying attention. Where a promise is
 genuinely the only mechanism available, say in the same breath that it is an
 intention, that nothing enforces it, and that nobody should build on it — the
-same tiering [`reports/reporting-policy.md`](reports/reporting-policy.md) applies
+same tiering [`reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md) applies
 to its own positions. Withdrawing a commitment costs more than never making one,
 and most of that cost falls on somebody who is not us.
 
@@ -1068,12 +1060,12 @@ simplification.
 
 **Adoption is still small.** The [inventory](../scripts/ecosystem/ecosystem.json)
 records current membership. Logos joined on 2026-09-15; the declaration, pin and
-passing policy run are recorded in [the history](history.md#how-long-it-lasted-and-who-joined).
+passing policy run are recorded in [the history](https://github.com/ajreynol/anoieu/blob/main/docs/history.md#how-long-it-lasted-and-who-joined).
 Experience with this group does not establish that the arrangement coordinates
 forty repositories, and each adopter so far has found things the ones before it
 did not.
 
-**It has not been free.** [`report-card.md`](report-card.md) records
+**It has not been free.** [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) records
 that the stretch of work which produced most of this changed nothing about what
 the analyzer finds, and introduced two silent defects into the fuzzer — one of
 which would have let CI pass while verifying nothing at all. Defending the
@@ -1136,11 +1128,11 @@ fired on anything is either perfect or pointless, and the second is the way to b
 ## The governance budget
 
 **The rule exists and nothing counts against it.**
-[`report-card.md`](report-card.md) grades this repository down for exactly this
+[`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) grades this repository down for exactly this
 and states the rule in the same paragraph: *every further page here has to
 displace a check, a finding, or an hour of somebody else's reading.* Nothing has
 ever measured whether it is kept. A rule with no counter attached is the same
-failure the prompt-length table in [`postmortem.md`](reports/postmortem.md)
+failure the prompt-length table in [`postmortem.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/postmortem.md)
 exists to fix in the other half of the system — and it is the criticism that
 came from outside, in `workflow-launcher`'s register of what this ecosystem's
 practice appears to be doing, which reads six checkouts and writes down what is
@@ -1158,7 +1150,7 @@ commands, and worth nothing until there is a second row.
 | — **written prose: the number this section is about** | 18 | **9,450** |
 | Python | 54 | 13,382 |
 | `scripts/` and `prompts/` | 11 | 2,481 |
-| checks with a page in [`checks.md`](checks.md) | | 63 |
+| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | | 63 |
 | findings in the ledger | | 39 open, 43 closed |
 
 ```
@@ -1193,7 +1185,7 @@ The record is now edited mostly by an assistant: `prompts/process_anoieu` reads 
 reply and moves rows, writes verdicts, narrows checks and appends to two logs.
 That has already worked and has already gone wrong — a verdict of *fixed
 upstream* was recorded three times for a fix that never happened, and nothing
-noticed for months (see [`postmortem.md`](reports/postmortem.md)). The question this
+noticed for months (see [`postmortem.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/postmortem.md)). The question this
 section is for is not *how do we stop an agent editing the record* but **what
 must remain true of the record after any edit, whoever made it, and which of
 those can a machine check.**
@@ -1211,12 +1203,12 @@ Grouped by what they protect. The right-hand column is the honest status.
 
 | # | property | why | today |
 | --- | --- | --- | --- |
-| **C1** | **The log is append-only.** A run adds entries to [`reports.md`](reports/reports.md#the-log-what-was-reported-and-what-came-back) and [`postmortem.md`](reports/postmortem.md); it does not rewrite what an earlier run wrote. | The log is the only account of what we believed and when. A log an agent may rewrite is a log that silently agrees with the present. | nothing checks it |
+| **C1** | **The log is append-only.** A run adds entries to [`reports.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md#the-log-what-was-reported-and-what-came-back) and [`postmortem.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/postmortem.md); it does not rewrite what an earlier run wrote. | The log is the only account of what we believed and when. A log an agent may rewrite is a log that silently agrees with the present. | nothing checks it |
 | **C2** | **Except to correct, and a correction is visible as one.** An earlier entry may be amended when it is *wrong* — not when it reads badly — and the amendment says so in place, keeping the original claim legible. | This round had to correct three verdicts and a false claim about the fuzzer's records. Forbidding that outright would have forced a knowingly false log. | done by hand, by convention |
-| **C3** | **Every id that has ever appeared is accounted for, forever.** An id in [`open-findings.md`](reports/open-findings.md) or [`closed-findings.md`](reports/closed-findings.md) never leaves both; it is open, or closed with a verdict, and never absent. | The whole point of an id. A row that can vanish makes every earlier decision unverifiable. | the generator is additive and cannot delete, but nothing forbids a *hand* deletion |
+| **C3** | **Every id that has ever appeared is accounted for, forever.** An id in [`open-findings.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/open-findings.md) or [`closed-findings.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/closed-findings.md) never leaves both; it is open, or closed with a verdict, and never absent. | The whole point of an id. A row that can vanish makes every earlier decision unverifiable. | the generator is additive and cannot delete, but nothing forbids a *hand* deletion |
 | **C4** | **No id is in both files, and no id appears twice in either.** | Two states for one finding is a record that answers differently depending on where you look. | not checked |
 | **C5** | **A closed row's verdict is re-derivable, or says why it is not.** A verdict of *fixed upstream* is a claim about a tree we have; it should carry the commit it was checked at, and a later run should be able to fail when the finding is still reported there. | This is exactly how three rows sat closed on a fix that never landed. | not checked; the highest-value gap |
-| **C6** | **An id is stable under things that are not the finding.** Regenerating the CPC baseline this round changed every id, because the fingerprint moved with the path root when the entry point changed — the findings were identical. An id that moves when nothing about the finding moved silently invalidates every verdict recorded against it. | Decisions are recorded against ids. | **broken**, and [`reports.md`](reports/reports.md#what-cvc5-asked-for-next) currently claims otherwise |
+| **C6** | **An id is stable under things that are not the finding.** Regenerating the CPC baseline this round changed every id, because the fingerprint moved with the path root when the entry point changed — the findings were identical. An id that moves when nothing about the finding moved silently invalidates every verdict recorded against it. | Decisions are recorded against ids. | **broken**, and [`reports.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md#what-cvc5-asked-for-next) currently claims otherwise |
 | **C7** | **A closure is traceable to its evidence.** Every verdict names the run, the reply, or the commit it rests on, so a reader can go from a closed row to why. | *"Because an assistant said so"* is not a reason, and today the link is prose in a log entry. | by convention |
 | **C8** | **A finding reported to somebody is tracked until it is resolved**, including when the resolution is *declined*, *withdrawn*, or *reopened*. Reopening is a first-class transition, not an edit. | We reopened three rows this round and had to invent how. | ad hoc |
 | **C9** | **A generated file is only ever written by its generator**, and a hand edit to one is a failure rather than a surprise on the next run. | `corpus.md` and `checks.md` say this in prose; nothing enforces it. | not checked |
@@ -1276,7 +1268,7 @@ keys. Three options, none chosen:
   transitions: *reopened* is indistinguishable from *was always open* except in
   the log the script wrote.
 - **A tracker.** GitHub issues were the earlier plan
-  ([`reporting-workflow.md`](reports/reporting-workflow.md#medium-term-issues-on-our-own-repository)),
+  ([`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md#medium-term-issues-on-our-own-repository)),
   and the constraints there still hold: issues live on *our* repository, a
   person posts, never an agent. The argument for one is not bookkeeping — it is
   that **findings do not all come from our checks.** Some will come from a
@@ -1434,8 +1426,8 @@ readiness for us; somebody has to look.
    page that carries one. [`roles.md`](roles.md) sits beside it and answers the
    other question the board assumes you can already answer: *whose is this, and
    whose is it not*. Read it before anything that touches a second repository.
-3. Read this page, then [`reporting-workflow.md`](reports/reporting-workflow.md#the-workflow)
-   if you are working a finding, or [`notes.md`](notes.md#the-design) if you are
+3. Read this page, then [`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md#the-workflow)
+   if you are working a finding, or [`notes.md`](https://github.com/ajreynol/anoieu/blob/main/docs/notes.md#the-design) if you are
    working on the tool.
 4. Check the ladder above before touching any document in it.
 5. If the task is the record itself, the ledger script in *The cheap route* is

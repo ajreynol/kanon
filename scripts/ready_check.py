@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Can `init_eo new` be run on this name today?
 
-**Temporary, on purpose, and built so that it cannot quietly become
-permanent.** It exists so that opening this repository on the web answers *what
-is the next thing to do* without anybody reading a board. It is wired to the
-`Ready - init_eo kanon` CI job.
+**Temporary, inherited from anoieu's old ready job.** The name register now
+lives in kanon; `--stub-root PATH` selects the source checkout whose stub is
+being held. This command does not run as a CI gate in kanon and cannot establish
+that either repository's CI is green.
 
 **A missing stub is a failure, not a pass.** When a spawned repository proves
 itself and the stub is deleted under the handoff protocol, this goes red and the
@@ -20,19 +20,20 @@ is green on both sides -- but *what to do next* had changed and this said
 otherwise. **A green tick that names the wrong next step is the failure this
 file was written to avoid**, committed by the file itself.
 
-Green here means three things and no more:
+Success here means two things:
 
   * the name is in the ecosystem's name register, so `init_eo new` will not
     stop on it;
-  * a stub holds its place, and still says it is a stub;
-  * every other job in this workflow passed, which the handoff protocol makes
-    non-negotiable before anything is handed to anybody.
+  * a stub holds its place, and still says it is a stub.
+
+Both repositories' CI must be checked separately before a handoff.
 
 **It does not mean the tool should be built**, that anybody has agreed to build
 it, or that it will be any good. It means the paperwork is not in the way.
 """
 
 import glob
+import argparse
 import json
 import os
 import sys
@@ -60,7 +61,7 @@ def existing(name: str) -> str:
     return "" if status == "child" else status
 
 
-def check(name: str) -> tuple[list[str], str]:
+def check(name: str, stub_root: str = ROOT) -> tuple[list[str], str]:
     """What is not ready, and where the register was found.
 
     Empty list means ready.
@@ -82,12 +83,12 @@ def check(name: str) -> tuple[list[str], str]:
         bad.append(f"`{name}` is not in {rel} -- `init_eo new` is told to stop "
                    "when the register has no entry, so it would stop on this one")
 
-    stub = os.path.join(ROOT, "tools", name, "README.md")
+    stub = os.path.join(stub_root, "tools", name, "README.md")
     if not os.path.isfile(stub):
         # Not "nothing to do". Either the stub was never made, or it was
         # deleted because the work has a repository now -- and in the second
         # case this job has done its job and should be removed with it.
-        bad.append(f"there is no stub at tools/{name}/. If it was deleted "
+        bad.append(f"there is no stub at {stub}. If it was deleted "
                    "because the tool now exists, delete this job too: it is "
                    "temporary and this is how it says so")
         return bad, rel
@@ -102,11 +103,13 @@ def check(name: str) -> tuple[list[str], str]:
 
 
 def main(argv: list[str]) -> int:
-    if len(argv) != 1:
-        print("usage: ready_check.py <name>", file=sys.stderr)
-        return 2
-    name = argv[0]
-    problems, register = check(name)
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    parser.add_argument("name")
+    parser.add_argument("--stub-root", default=ROOT,
+                        help="checkout holding the source stub (default: kanon)")
+    args = parser.parse_args(argv)
+    name = args.name
+    problems, register = check(name, args.stub_root)
     if problems:
         print(f"NOT READY: init_eo new, for {name}")
         for p in problems:
@@ -119,7 +122,7 @@ def main(argv: list[str]) -> int:
         # green, which is the thing still outstanding.
         print(f"HELD: `{name}` already exists as a repository, recorded as "
               f"{footing}.")
-        print(f"  the stub at tools/{name}/ stays until `PROTO-20` is "
+        print(f"  the stub at {args.stub_root}/tools/{name}/ stays until `PROTO-20` is "
               "satisfied -- CI green on both sides, non-negotiable")
         print(f"  the register entry is in {register}")
         print("  `init_eo new` is not the next step here and this job no "
@@ -127,9 +130,8 @@ def main(argv: list[str]) -> int:
         return 0
     print(f"READY: run `init_eo new` in a fresh repository named {name}.")
     print(f"  the register entry is in {register}")
-    print(f"  the stub holding its place is tools/{name}/")
-    print("  every other job in this workflow passed, which the handoff "
-          "protocol requires before anything is handed over")
+    print(f"  the stub holding its place is {args.stub_root}/tools/{name}/")
+    print("  both repositories' CI must still be checked before a handoff")
     return 0
 
 

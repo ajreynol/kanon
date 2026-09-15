@@ -119,7 +119,7 @@ outcome of this command.
 This repository is joining the Eunoia ecosystem. One page says how, and it is
 the authority:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/policy.md#joining-the-eunoia-ecosystem
+  https://github.com/ajreynol/kanon/blob/main/docs/policy.md#joining-the-eunoia-ecosystem
 
 Read it, then do what it says, here:
 
@@ -146,7 +146,7 @@ read -r -d '' SOFT_PROMPT <<'SOFT_PROMPT_END' || true
 script is the authority for what this prompt asks**, and it can be read without
 running anything:*
 
-  https://github.com/ajreynol/anoieu/blob/main/prompts/join_eo
+  https://github.com/ajreynol/kanon/blob/main/prompts/join_eo
 
 *`join_eo --soft --show-prompt` prints exactly this text and does nothing else,
 so anybody handed this can check it against what the command actually says.*
@@ -154,7 +154,7 @@ so anybody handed this can check it against what the command actually says.*
 This repository is adopting one convention and joining nothing. One page defines
 the convention, and it is the authority for what the note must say:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
+  https://github.com/ajreynol/kanon/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
 
 Read it, then do this here, and nothing else:
 
@@ -185,7 +185,7 @@ read -r -d '' AFFIL_PROMPT <<'AFFIL_PROMPT_END' || true
 repository. **That script is the authority for what this prompt asks**, and it
 can be read without running anything:*
 
-  https://github.com/ajreynol/anoieu/blob/main/prompts/join_eo
+  https://github.com/ajreynol/kanon/blob/main/prompts/join_eo
 
 *`join_eo --soft --affiliated --show-prompt` prints exactly this text and does
 nothing else, so anybody handed this can check it against what the command
@@ -194,7 +194,7 @@ actually says.*
 This repository is adopting one convention and joining nothing. One page defines
 the convention, and it is the authority for what the note must say:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
+  https://github.com/ajreynol/kanon/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
 
 Read it, then do this here, and nothing else:
 

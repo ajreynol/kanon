@@ -4,12 +4,14 @@
 judgement: εὔνοια is εὖ + νοῦς, **good thinking** — and this project removes the
 εὖ and asks whether the thinking is good. That is a claim somebody can disagree
 with: if the arrangement is obviously right and the question idle, the name is
-wrong and so is the project. It also follows the sibling convention — [anoieu](../../README.md) is
+wrong and so is the project. It also follows the sibling convention — [anoieu](https://github.com/ajreynol/anoieu) is
 Eunoia read backwards, and this is Eunoia read as a question.*
 
 A child project under [`docs/policy.md`](../../docs/policy.md). Started by a
-human, read-only, unadvertised, and not part of what this repository ships.
-Deleting this directory changes nothing anywhere else.
+human, read-only, and not part of the governance commands this repository ships.
+Deleting this directory changes no running command. **This is not an island:**
+kanon names this project on its front page to distinguish housed work from
+required reading; it is therefore not unadvertised.
 
 ## The question
 
@@ -56,7 +58,7 @@ So: write it down, make the strongest case against it, and see which survives.
    in. The output is an argument with a
    recommendation at the end. **It approves nothing:** a repository is a claim
    on a shared namespace and on years of somebody's attention, and the policy
-   reserves that for a person. anoieu carries proposals in, because it is the
+   reserves that for a person. kanon carries proposals in, because it is the
    only tool that may address a child project directly.
 
 5. **Which projects have a paper in them.** The ecosystem's policy asks a
@@ -82,12 +84,10 @@ The boundary matters more than the goals, so it is stated first.
   with the alternatives listed for form's sake.
 - **It does not report defects.** Where reading the ecosystem turned up something
   actually wrong in somebody's file, that is a finding: it leaves through
-  [`reporting-workflow.md`](../../docs/reports/reporting-workflow.md) with an id and a
+  [`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md) with an id and a
   state, and never through here. This project's output is argument.
-- **It does not speak for anoieu.** The host tool is a participant in the
-  argument and an interested one — it exists because the narrow-fragment position
-  is right — and the account says so rather than pretending to neutrality it
-  does not have.
+- **It does not speak for kanon or anoieu.** Both are participants in the
+  argument. Hosting this project does not make its account neutral.
 - **It does not commit anybody to the tools it names.** A named project with a
   paragraph attached is a description of work that would change an argument, not
   a roadmap, not an assignment, and not a claim that anybody intends to build it.

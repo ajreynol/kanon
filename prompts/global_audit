@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # global_audit -- where does the whole ecosystem stand?
 #
-# Run it here, in anoieu. It takes the inventory in scripts/ecosystem/ecosystem.json, runs
+# Run it here, in kanon. It takes the inventory in scripts/ecosystem/ecosystem.json, runs
 # the policy checker over every member that is checked out on this machine, and
 # hands the results to an assistant to read across.
 #
@@ -65,7 +65,9 @@ locate() {
       [ -d "$path" ] && { (cd "$path" && pwd); return; }
     done < "$REPOS_FILE"
   fi
-  for r in ${ANOIEU_REPOS:-$HOME}; do
+  IFS=: read -r -a SEARCH_ROOTS <<< "${ANOIEU_REPOS:-}"
+  for r in "${SEARCH_ROOTS[@]}" "$ROOT/.." "$HOME"; do
+    [ -n "$r" ] || continue
     [ -d "$r/$want" ] && { (cd "$r/$want" && pwd); return; }
   done
   return 1
@@ -77,7 +79,7 @@ REPORTS=""
 SEEN="|"
 while IFS=$'\t' read -r name status repo; do
   [ -n "$name" ] || continue
-  case "$status" in child|served) REPORTS="$REPORTS
+  case "$status" in child|foundation|associate|outsider|served) REPORTS="$REPORTS
 === $name ($status) -- not audited: $status entries are not asked to comply."; continue ;; esac
   if ! path=$(locate "$repo" 2>/dev/null); then
     REPORTS="$REPORTS
@@ -94,7 +96,7 @@ while IFS=$'\t' read -r name status repo; do
   out=$(timeout 120 python3 "$ROOT/scripts/policy_check.py" --root "$path" 2>&1 || true)
   REPORTS="$REPORTS
 === $name ($status) at $path
-$(printf '%s\n' "$out" | sed -n '/^ok\|^FAIL\|^skip\|^minor\|^ /p' | head -40)"
+$(printf '%s\n' "$out" | sed -n '/^ok\|^FAIL\|^skip\|^minor\|^UNVERIFIED\|^ /p' | head -40)"
 done < <(python3 - "$INVENTORY" <<'PY'
 import json,sys
 d=json.load(open(sys.argv[1]))
@@ -136,12 +138,13 @@ nobody here has the authority to settle it. Keep it to what you can point at --
 something that shipped, something that was consumed, something that has not
 moved. Do not produce a number, a grade, or a ranking.
 
-**3. Ours.** What of this is anoieu's fault: a check that fires on something
+**3. Ours.** What of this is kanon's fault: a check that fires on something
 that is not a problem, a policy that does not fit a legitimate repository, an
 instruction that misleads, a page that has gone stale. That is ours to fix
 rather than anybody else's to work around, and it is the part of an audit most
 easily skipped because it is the only part that makes work for us. Where the fix
-is small, make it here and stage it.
+is small, make it here and stage it. Checker defects belong in anoieu; report
+those separately instead of changing another checkout.
 
 Write the result to audit-response.md at this repository's root, appending and
 leaving anything already there. Stage it; commit nothing. Open no topic in

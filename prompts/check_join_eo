@@ -2,7 +2,7 @@
 # check_join_eo -- is that repository ready to join the Eunoia ecosystem, already
 # in it, or claiming to be without backing the claim?
 #
-# Run it here, in anoieu, pointed at somebody else's checkout. The counterpart is
+# Run it here, in kanon, pointed at somebody else's checkout. The counterpart is
 # prompts/join_eo, which runs in *their* repository and does the joining.
 #
 #   check_join_eo ethos             # by repo id, or by path
@@ -42,7 +42,7 @@ usage: check_join_eo [--codex] [--print] [--show-prompt] NAME
   --print         run non-interactively and print the result
   --show-prompt   print the prompt and exit, running nothing
 
-Run this in anoieu, pointed at the repository you are asking about.
+Run this in kanon, pointed at the repository you are asking about.
 USAGE
   exit 2
 }
@@ -78,7 +78,9 @@ elif [ -f "$REPOS_FILE" ]; then
   done < "$REPOS_FILE"
 fi
 if [ -z "$TARGET" ]; then
-  for r in ${ANOIEU_REPOS:-$HOME}; do
+  IFS=: read -r -a SEARCH_ROOTS <<< "${ANOIEU_REPOS:-}"
+  for r in "${SEARCH_ROOTS[@]}" "$ROOT/.." "$HOME"; do
+    [ -n "$r" ] || continue
     [ -d "$r/$NAME" ] && { TARGET=$(cd "$r/$NAME" && pwd); break; }
   done
 fi
@@ -88,7 +90,12 @@ if [ -z "$TARGET" ]; then
   exit 2
 fi
 
-REPORT=$(python3 "$ROOT/scripts/policy_check.py" --root "$TARGET" 2>&1 || true)
+REPORT_STATUS=0
+REPORT=$(python3 "$ROOT/scripts/policy_check.py" --root "$TARGET" 2>&1) || REPORT_STATUS=$?
+if [ "$REPORT_STATUS" -gt 1 ]; then
+  printf '%s\n' "$REPORT" >&2
+  exit "$REPORT_STATUS"
+fi
 
 read -r -d '' PROMPT <<PROMPT_END || true
 Decide where $NAME stands with respect to the Eunoia ecosystem. It is checked
@@ -130,10 +137,10 @@ to fix rather than theirs to work around. Three shapes it takes: a check that
 fires on something that is not actually a problem; a policy that does not fit a
 legitimate shape of repository; an instruction that is wrong, missing or
 ambiguous enough that a careful reader would get it wrong. Say so plainly, and
-then make the change here in anoieu -- narrow the check, reword the page, or
-carve the exemption -- and `git add` it, leaving it staged and not committed
+then make the change here in kanon -- reword the page or clarify the instruction -- and `git add` it, leaving it staged and not committed
 for a maintainer to review. Do not soften the
-verdict to avoid the work.
+verdict to avoid the work. If the defect is in the checker, name it for anoieu,
+which still owns that implementation; do not edit its checkout from here.
 
 Say explicitly when the fault is *not* ours, too, so that silence is not the
 only evidence either way.

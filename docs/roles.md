@@ -193,21 +193,18 @@ once, and written down here when it is made.
 
 ### The worked example: anoieu to kanon
 
-`B15` on the board proposes moving the ecosystem's governance out of the tool
-that also files findings against members; the ynoia proposals page audits it as
-`P2` and recommends it. It is **parked** by the maintainer, and nothing here
-changes that — it is the worked example precisely because a deferred decision is
-easier to read than a live one. In the terms of this page:
+`B15` proposed moving governance out of the analyzer. The maintainer made
+the handoff on 2026-09-15 in kanon commit `7eb9973`:
 
-- **Moves:** `R4`, the policy and joining; `R6`, the inventory and the
-  installer.
-- **Stays:** `R1` the bug report system, `R2` the analyzer, `R3` the fuzzer,
-  `R5` the vision.
-- **Gains:** `kanon`, which now exists, has joined as a member, and passes the
-  policy check. **The receiving end of this example stopped being hypothetical
-  on 2026-09-14**; what is still parked is the move itself.
-- **Consumers:** every member, because joining *is* running the checker `R4`
-  owns — one more with each tool that joins. `status_eo` is the count.
+- **Moved:** `R4`, policy and joining; `R6`, inventory and installation; and
+  `R5`, development vision, now held by kanon.
+- **Stayed in anoieu:** `R1`, the findings system; `R2`, the analyzer; `R3`,
+  the fuzzer; and `R31`, the policy checker.
+- **Rehoused:** the five child projects now recorded under kanon in the
+  inventory. Their role ids and responsibilities remain their own.
+- **Consumers:** member workflows still pin anoieu's checker. A document move
+  does not move those pins. The policy/checker version relationship is still
+  an open follow-up, described under `R31`.
 
 The split falls where it does because the argument is about exactly one thing:
 the repository that writes the rules a member is judged by should not also be
@@ -230,24 +227,25 @@ number worth looking at, in both directions.
 
 | tool | footing | how many |
 | --- | --- | --- |
-| `anoieu` | member | 7 |
+| `anoieu` | member | 4 |
 | `cvc5` | foundation | 2 |
 | `dokimasia` | member | 1 |
 | `ethos` | candidate | 2 |
 | `ethos-eoc` | child of `ethos` | 2 |
 | `eudaimonia` | member | 1 |
 | `euthyna` | child of `eudaimonia` | 1 |
+| `kanon` | president | 3 |
 | `koine` | member | 1 |
 | `logos` | member | 3 |
-| `martyria` | child of `anoieu` | 0 |
-| `sapheneia` | child of `anoieu` | 1 |
-| `stathmos` | child of `anoieu` | 1 |
+| `martyria` | child of `kanon` | 0 |
+| `sapheneia` | child of `kanon` | 1 |
+| `stathmos` | child of `kanon` | 1 |
 | `tekmerion` | child of `anoieu` | 0 |
 | `workflow-launcher` | child of `eudaimonia` | 0 |
-| `ynoia` | child of `anoieu` | 5 |
-| `zetesis` | child of `anoieu` | 0 |
+| `ynoia` | child of `kanon` | 5 |
+| `zetesis` | child of `kanon` | 0 |
 
-Twenty-seven roles across sixteen tools, and four sections empty:
+Twenty-seven roles across seventeen tools, and four sections empty:
 `workflow-launcher`, `martyria`, `zetesis` and `tekmerion` hold
 nothing, which is not an
 omission — a child project usually has no users, nothing depends on it, and it
@@ -260,34 +258,8 @@ and that one.
 
 ## anoieu
 
-*Seven responsibilities under the three headings the front page names: the
-analyzer and the fuzzer are the tool, the ledger and its workflow are the
-reporting system, and the remaining four are the ecosystem's shared
-arrangements. **A register counts responsibilities and a front page says what a
-repository is** — different granularities, and neither is a longer version of
-the other. Two of these have a stated destination elsewhere and have not
-moved.*
-
-
-### R4 — the ecosystem's policy, and joining it
-
-**Held by:** `anoieu`
-**Role:** how a repository in this ecosystem is arranged, what its front page
-must say about who is writing it, how tools talk to one another, and what a
-child project may do. Written to be adopted rather than admired, and
-machine-checked in every member's CI.
-**Owns:** `docs/policy.md`, and the `init_eo`, `join_eo`, `check_join_eo` and
-`global_audit` prompts.
-**Not this role:** who is actually in the ecosystem, which is `R6`; what the
-work is *for*, which is `R5` and is argued rather than decided by a program;
-and **deciding whether a tree complies, which is `R31` and stays here.**
-
-> **Destined for `kanon`.** Writing the rules a member is judged by is
-> governance, and it should not sit in the tree that also files findings against
-> them.
->
-> **The program is not part of this role and does not go with it.** That is a
-> deliberate split rather than an oversight — see `R31`.
+*Four responsibilities: the analyzer, fuzzer, findings system and policy
+checker. Governance is now held by kanon.*
 
 ### R31 — the policy checker
 
@@ -297,7 +269,7 @@ the policy. The program every member's CI runs, its checks, its two tiers, its
 skip lines, and its refusal to report coverage it does not have.
 **Owns:** `scripts/policy_check.py`, and the `adoption_interface` case in
 `tests/run.py` that holds it to being a published interface.
-**Not this role:** what the rules *are*, which is `R4` and is leaving. This role
+**Not this role:** what the rules *are*, which is `R4` and is held by kanon. This role
 implements somebody else's document and has no standing to change what it says.
 
 **Why it is split from `R4`, and why the split is the point.** `B15` argues
@@ -310,17 +282,13 @@ checker** — three programs that read somebody's files and report what is wrong
 with them. The policy checker is the third of those and has never been anything
 else.
 
-**What it costs, and it falls on us rather than on any member.** After the move
-the checker and the document it enforces are in two repositories, so
-`ANOIEU_REV` stops pinning them together — see *Run the check* in
-[`policy.md`](policy.md), which says today that cloning this repository pins
-both at one version. **That sentence stops being true on the day `R4` moves**,
-and what replaces it is undecided: either the checker pins a commit of kanon, or
-the two are versioned together by agreement, or a member pins both. Nobody has
-chosen, and it is recorded here because the move is what makes it urgent.
+**What the split costs.** The checker and the policy it enforces now live
+in different repositories. `ANOIEU_REV` pins only the checker; see
+[Run the check](policy.md#2-run-the-check). Whether the checker pins kanon,
+the two are released together, or a member pins both remains undecided.
 
 **What it buys, and this is the part worth the split.** Members' workflows do
-not change. The `anoieu / policy` job clones this repository and runs
+not change. The `anoieu / policy` job clones anoieu and runs
 `scripts/policy_check.py`; if the checker moved, every member's job would clone
 somewhere else and the check would arrive under a different name in their pull
 requests. **Moving the rules costs a member nothing. Moving the checker would
@@ -351,18 +319,6 @@ and the committed baselines.
 **Not this role:** what happens to a finding once it exists, which is `R1`, and
 generating cases nobody wrote, which is `R3`.
 
-### R6 — the inventory, and getting the ecosystem onto a machine
-
-**Held by:** `anoieu`
-**Role:** who is in the ecosystem and on what footing, and the commands that
-clone the rest of it beside a checkout, record where each one landed, and report
-what has drifted.
-**Owns:** `scripts/ecosystem/ecosystem.json`, `scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
-`scripts/install_eo`, `scripts/status_eo`, and the `welcome_eo` prompt.
-**Not this role:** deciding membership — a status is changed by a person and no
-script writes that file — and the rules a member is checked against, which are
-`R4`.
-
 ### R3 — the fuzzer
 
 **Held by:** `anoieu`
@@ -374,20 +330,6 @@ reproducers under `tests/fuzz/`.
 **Not this role:** reading a signature without running anything, which is `R2`,
 and the research-quality successor, which is nobody's — it has a name,
 `elenchos`, and no repository.
-
-### R5 — the development vision
-
-**Held by:** `anoieu`
-**Role:** what AI-assisted development in this ecosystem is aiming at — the
-tenets, and the record of what the tools have actually delivered to one another.
-Written for every repository, and argued rather than checked.
-**Owns:** `docs/vision.md`. The grading half was split out as `R30` on
-2026-09-02: the two pages have nothing in common operationally — this one is
-argued and changes rarely, that one is re-done every round against recorded
-evidence — and carrying both under one id hid which of them had gone stale.
-**Not this role:** anything mechanical. Nothing may ever check this one, which
-is the single rule in this ecosystem that forbids work rather than requiring it;
-the checkable half is `R4`.
 
 `R28` and `R29` were retired on 2026-09-15. Neither is an active
 responsibility or a pending role transfer.
@@ -549,6 +491,50 @@ structured in a way that will cost the next regeneration.
 **Owns:** its own account, inside its own directory.
 **Not this role:** maintaining or rewriting what it reads, which stays `R17`.
 Anything it wants to say leaves through its parent, like any other finding.
+
+## kanon
+
+### R4 — the ecosystem's policy, and joining it
+
+**Held by:** `kanon`
+**Role:** how a repository in this ecosystem is arranged, what its front page
+must say about who is writing it, how tools talk to one another, and what a
+child project may do. Written to be adopted rather than admired, and
+machine-checked in every member's CI.
+**Owns:** `docs/policy.md`, and the `init_eo`, `join_eo`, `check_join_eo` and
+`global_audit` prompts.
+**Not this role:** who is actually in the ecosystem, which is `R6`; what the
+work is *for*, which is `R5` and is argued rather than decided by a program;
+and **deciding whether a tree complies, which is `R31` and stays in anoieu.**
+
+**Moved from anoieu on 2026-09-15 (`7eb9973`).** The checker is a
+separate responsibility, `R31`, and remains in anoieu.
+
+### R6 — the inventory, and getting the ecosystem onto a machine
+
+**Held by:** `kanon`
+**Role:** who is in the ecosystem and on what footing, and the commands that
+clone the rest of it beside a checkout, record where each one landed, and report
+what has drifted.
+**Owns:** `scripts/ecosystem/ecosystem.json`, `scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
+`scripts/install_eo`, `scripts/status_eo`, and the `welcome_eo` prompt.
+**Not this role:** deciding membership — a status is changed by a person and no
+script writes that file — and the rules a member is checked against, which are
+`R4`.
+
+### R5 — the development vision
+
+**Held by:** `kanon`
+**Role:** what AI-assisted development in this ecosystem is aiming at — the
+tenets, and the record of what the tools have actually delivered to one another.
+Written for every repository, and argued rather than checked.
+**Owns:** `docs/vision.md`. The grading half was split out as `R30` on
+2026-09-02: the two pages have nothing in common operationally — this one is
+argued and changes rarely, that one is re-done every round against recorded
+evidence — and carrying both under one id hid which of them had gone stale.
+**Not this role:** anything mechanical. Nothing may ever check this one, which
+is the single rule in this ecosystem that forbids work rather than requiring it;
+the checkable half is `R4`.
 
 ## koine
 

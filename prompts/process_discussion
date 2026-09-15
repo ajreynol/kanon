@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # process_discussion -- work the topics another tool has addressed to us.
 #
-# Run it here, in anoieu, naming a repository whose docs/discussion.md may have
+# Run it here, in kanon, naming a repository whose docs/discussion.md may have
 # something for us. The checkout is resolved from scripts/repos.local, the same
 # file process_anoieu uses and whose format its header documents.
 #
@@ -74,7 +74,9 @@ elif [ -f "$REPOS_FILE" ]; then
   done < "$REPOS_FILE"
 fi
 if [ -z "$TARGET" ]; then
-  for r in ${ANOIEU_REPOS:-$HOME}; do
+  IFS=: read -r -a SEARCH_ROOTS <<< "${ANOIEU_REPOS:-}"
+  for r in "${SEARCH_ROOTS[@]}" "$ROOT/.." "$HOME"; do
+    [ -n "$r" ] || continue
     [ -d "$r/$NAME" ] && { TARGET=$(cd "$r/$NAME" && pwd); break; }
   done
 fi
@@ -116,10 +118,10 @@ change nothing in it.**
 
 $SCOPE
 
-Topics addressed to us are the ones whose To: names anoieu. Ignore the rest --
+Topics addressed to us are the ones whose To: names kanon. Ignore the rest --
 correspondence between other people is not ours to answer.
 
-Where you do act, the work happens *here*, in anoieu, and the reply is drafted
+Where you do act, the work happens *here*, in kanon, and the reply is drafted
 here for a person to carry:
 
   - Make whatever change the topic actually asks for, and stage it. Staged and
@@ -139,7 +141,7 @@ forbids it, because two tools that may raise topics about each other's
 correspondence generate work for everybody and information for nobody.
 
 Do not treat a topic as a finding. A finding is a defect in their code with a
-path and a line, and it goes through docs/reports/reporting-workflow.md. A topic
+path and a line, and it goes through https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md. A topic
 is a request, a proposal, a question or a notice, and it does not.
 
 Finish with what you could not answer and why, and with anything in their topic

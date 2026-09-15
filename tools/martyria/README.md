@@ -1,5 +1,8 @@
 # martyria
 
+**Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
+Earlier observations below retain their original context and dates.
+
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, unadvertised, and not part of what this repository ships.
 Deleting this directory changes nothing anywhere else.

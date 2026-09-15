@@ -318,7 +318,7 @@ anoieu is currently three things, and its own README says so: an analyzer, a
 reporting system, and *the place the Eunoia ecosystem's shared policy is kept*.
 The third has grown since that sentence was written. It is now
 [`docs/policy.md`](../../docs/policy.md),
-[`scripts/policy_check.py`](../../scripts/policy_check.py) — which runs in every
+[`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py) — which runs in every
 member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
 [`scripts/ecosystem/ecosystem.py`](../../scripts/ecosystem/ecosystem.py),
 [`prompts/init_eo`](../../prompts/init_eo),
@@ -371,7 +371,7 @@ transfer asks two more:
 
 5. **What does the losing repository keep?** Here: the analyzer, the fuzzer, the
    findings ledger, and the reporting workflow. The line to argue is
-   [`reporting-policy.md`](../../docs/reports/reporting-policy.md), which is a
+   [`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md), which is a
    position shared with dokimasia about what may be published — governance by
    any reading, and also the document anoieu most needs to own, since it is the
    one constraining anoieu's own behaviour. **Recommendation: it stays**, and the

@@ -21,9 +21,8 @@ changes anything is `git clone`; the directory is made with `os.makedirs` and th
 `cd` is a `cwd=` argument, so neither is a command at all. Everything else is a
 read of a checkout — `rev-parse`, `status`, `log`, `rev-list`, `symbolic-ref` —
 plus `fetch`, only when `--status --fetch` asks for it. Both lists are enforced
-here, in `execute` and `git`, and asserted by `tests/run.py`, which reads what
-this prints and what it would run and fails if either grows a command. Nothing
-is passed to a shell anywhere in this file.
+here, in `execute` and `git`. The regression suite exercises the dry run without
+cloning anything. Nothing is passed to a shell anywhere in this file.
 
 **Only a default branch is ever installed.** Every command here is a plain
 `git clone <url> <dir>`: no `-b`, no checkout, no branch switch. A **child
@@ -43,7 +42,7 @@ be edited for the ordinary case.
 
 Membership stays a decision a person makes: this file reads
 `scripts/ecosystem/ecosystem.json` and never writes it. Where the inventory, the clone list,
-`scripts/deps.json` and `scripts/repos.local` disagree, `--status` says so under
+anoieu's `scripts/deps.json` and kanon's `scripts/repos.local` disagree, `--status` says so under
 `note:` and repairs nothing.
 
 Choosing what to include:
@@ -65,14 +64,16 @@ import datetime
 import json
 import os
 import re
+import shlex
 import subprocess
 import sys
+
+from anoieu_dependency import checkout
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CHECKOUTS = os.path.join(HERE, "ecosystem", "checkouts.json")
 INVENTORY = os.path.join(HERE, "ecosystem", "ecosystem.json")
-DEPS = os.path.join(ROOT, "scripts", "deps.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
                             os.path.join(ROOT, "scripts", "repos.local"))
 
@@ -122,7 +123,13 @@ def status_meanings() -> dict:
 
 
 def deps() -> dict:
-    return strip_comments(load(DEPS))
+    # Dependency pins describe anoieu's reports, which did not move to kanon.
+    # An installation inventory is still useful before anoieu is installed.
+    try:
+        path = checkout() / "scripts" / "deps.json"
+    except FileNotFoundError:
+        return {}
+    return strip_comments(load(path)) if path.is_file() else {}
 
 
 def in_a_sentence(status: str, meanings: dict) -> str:
@@ -207,9 +214,9 @@ def plan() -> list[Repo]:
 
 
 def default_root() -> str:
-    """Where the checkouts go: siblings of this anoieu checkout, unless told.
+    """Where the checkouts go: siblings of this kanon checkout, unless told.
 
-    The directory holding anoieu, so a second tool lands beside it; $EO_ROOT or
+    The directory holding kanon, so a second tool lands beside it; $EO_ROOT or
     --root override that.
 
     A guess from the tree rather than a fact about anybody's setup, which is why
@@ -266,9 +273,8 @@ def execute(cmd: list[str], cwd: str) -> int:
     """Run one install command, having checked that it is one.
 
     The check is code rather than a comment because this is the one script here
-    that changes a machine outside this repository. `tests/run.py` asserts that
-    what the dry run prints and what this would run are both `git clone`; this
-    refuses, at run time, anything that got past that.
+    that changes a machine outside this repository. This refuses any operation
+    other than `git clone` at run time.
     """
     if tuple(cmd[:2]) != INSTALL:
         raise SystemExit(f"install_eo: refusing to run `{' '.join(cmd[:2])}`; "
@@ -421,8 +427,8 @@ def dump(root: str, repos: list[Repo]) -> int:
         print("\n# nothing selected: everything asked for is already here.")
         return 0
     print()
-    print(f"mkdir -p {root}")
-    print(f"cd {root}")
+    print(f"mkdir -p {shlex.quote(root)}")
+    print(f"cd {shlex.quote(root)}")
 
     for r in repos:
         print()
@@ -438,7 +444,7 @@ def dump(root: str, repos: list[Repo]) -> int:
         for chunk in wrap(f"not by default: {r.opt_in}", 70) if r.opt_in else []:
             print(f"#   {chunk}")
         lead = "# " if r.opt_in else ""
-        print(lead + " ".join(r.command()))
+        print(lead + shlex.join(r.command()))
         for c in r.elsewhere:
             for line in child_note(r, c):
                 print(f"#   {line}")
@@ -588,8 +594,8 @@ def show(root: str, repos: list[Repo], inv: dict, do_fetch: bool,
                 notes.append(f"{c}: scripts/repos.local points at {mapped[c]}, "
                              f"and this list expects {path}")
             elif c not in mapped and here:
-                notes.append(f"{c} is checked out and not in scripts/repos.local, "
-                             "so anoieu's scripts will not find it")
+                notes.append(f"{c} is checked out and not in scripts/repos.local; "
+                             "commands can still find it through their search roots")
         pinned = dep.get(r.key, {}).get("ref", "")
         if pinned:
             # A ref that is a child's branch is the report saying which version
@@ -597,11 +603,11 @@ def show(root: str, repos: list[Repo], inv: dict, do_fetch: bool,
             child_refs = {c["branch"] for c in r.elsewhere}
             wanted = "" if pinned in child_refs else (default_branch(path) if here else "")
             if wanted and pinned != wanted:
-                notes.append(f"{r.key}: scripts/deps.json reports on {pinned}, "
+                notes.append(f"{r.key}: anoieu/scripts/deps.json reports on {pinned}, "
                              f"and the ecosystem works on {wanted}")
             if here and git(path, "rev-parse", "--verify", "--quiet",
                             f"origin/{pinned}")[0] != 0:
-                notes.append(f"{r.key}: scripts/deps.json reports on {pinned}, and this "
+                notes.append(f"{r.key}: anoieu/scripts/deps.json reports on {pinned}, and this "
                              f"checkout has no origin/{pinned} -- gone from the "
                              "remote, or never fetched")
 
@@ -631,6 +637,8 @@ def show(root: str, repos: list[Repo], inv: dict, do_fetch: bool,
             path = os.path.join(root, r.key)
             if not is_checkout(path):
                 state = "not cloned"
+            elif c.get("path") and not os.path.isdir(os.path.join(path, c["path"])):
+                state = "missing from this checkout"
             elif not c.get("branch"):
                 state = "present"
             else:
@@ -686,7 +694,7 @@ def main() -> int:
     ap.add_argument("--no-repos-local", action="store_true",
                     help="with --run, do not update scripts/repos.local")
     ap.add_argument("--root", default="", metavar="PATH",
-                    help="where the checkouts live; the default is siblings of this anoieu checkout, or $EO_ROOT")
+                    help="where the checkouts live; the default is siblings of this kanon checkout, or $EO_ROOT")
     ap.add_argument("--fetch", action="store_true",
                     help="with --status, fetch each checkout first")
     args = ap.parse_args()

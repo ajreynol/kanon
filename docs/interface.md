@@ -3,7 +3,7 @@
 **How a person drives this repository.** One page, addressed to whoever is
 sitting at the terminal.
 
-Not to be confused with two neighbours. [`usage.md`](usage.md) is the
+Not to be confused with two neighbours. [`usage.md`](https://github.com/ajreynol/anoieu/blob/main/docs/usage.md) is the
 **analyzer's** interface — what the tool takes, what each option means — and is
 for somebody running a program. [`coherence.md`](coherence.md) is the
 **maintenance** entry point — what this repository is responsible for and what

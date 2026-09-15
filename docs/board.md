@@ -24,7 +24,7 @@ reused: the next new item takes the next unused number.
 **Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
 which one leaves, which is the whole value of the number. An item that is
 done, or that nobody will act on, is deleted rather than archived — the record
-of what happened lives in [`reports/reports.md`](reports/reports.md) and in
+of what happened lives in [`reports/reports.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md) and in
 git, and a board that keeps its dead is a board nobody reads to the bottom of.
 
 **The cap was twenty until 2026-09-02, and raising it needs a reason on the
@@ -144,45 +144,23 @@ stretch needs, and only two of them are ours to deliver.
 
 ## B15 — governance, out of the analyzer, before we ask members to adopt again
 
-**Task:** hand `R4` — the ecosystem's policy, and joining it — and `R6` — the
-inventory, and getting the ecosystem onto a machine — to a repository that is
-not also the tool that files findings against members. `R1`, `R2`, `R3` and
-`R5` stay. The tool is `kanon`. Audited as `P2` in
-the ynoia proposals page; the roles and the procedure are in
-[`roles.md`](roles.md#how-a-role-is-handed-off).
-**Entities:** `anoieu`, `ynoia`
-**Status:** **raised, 2026-09-02**, and scoped — the maintainer parked this
-until they raised it again. The next move is limited; the full handoff is not
-in scope.
-**Channel:** **internal** while the scope is being cut. It becomes
-**discussion** the moment a rule moves, and then every member whose pin moves is
-an entity.
-**Next:** decide the smallest useful handoff — most likely the joining
-rule and its checker, not the inventory — and say what stays. **Do not start
-the move.**
-**Prompt — `anoieu`:** list which artifacts of `R4` a member actually touches
-when it updates its policy pin, and which of those are ours to publish rather than
-ours to run. That list is the scope. Write no code and move no file.
-**Prompt — `ynoia`:** the `P2` audit was written against the whole handoff. Say
-whether a partial one — the joining rule alone — is a different proposal or the
-same one delivered in two parts, because those have different verdicts.
-**Ready:** CI carries a job named **`Ready — init_eo kanon`**. Green means
-the register entry exists, the stub is still there, and every other job
-passed — which is what the handoff protocol requires before anything is
-handed over. It says the paperwork is not in the way, and nothing about
-whether the tool should be built. **The job is temporary**: it asserts its
-own stub exists, so deleting the stub turns it red and the only repair is
-to delete the job. See `scripts/ready_check.py`.
-**Stub:** `tools/kanon/` holds the place, under the handoff protocol in
-[`coherence.md`](coherence.md#proto-20--the-handoff-protocol). It is a marker
-and not a claim on the name. It stays until a person approves its removal.
+**Task:** keep the governance handoff usable while the policy and checker
+live in different repositories. `R4`, `R6` and `R5` moved to kanon; `R1`,
+`R2`, `R3` and `R31` remain in anoieu.
+**Entities:** `anoieu`, `kanon`
+**Status:** files transferred on 2026-09-15 (`7eb9973`); integration follow-up.
+**Channel:** **discussion** — a person carries any proposal to the other tool.
+**Next:** decide how a checker pin identifies the policy version it implements.
+The alternatives remain in [the role register](roles.md#r31--the-policy-checker).
+**Prompt — `kanon`:** keep the receiving inventory, links and commands aligned
+with the transferred files. Record the open version relationship without
+changing member pins.
+**Prompt — `anoieu`:** retain the checker interface and decide with kanon how
+the policy version is recorded alongside it.
+**Stub:** the [historical source marker](https://github.com/ajreynol/anoieu/tree/ca58216/tools/kanon)
+was removed by anoieu in `eeafbcc` on 2026-09-15. The temporary ready check no
+longer applies to this completed creation.
 **HUMAN FEEDBACK:**
-
-**Why it matters.** Members adopt the policy. **We are currently the tool that publishes the rule, checks compliance
-with it, and files findings against the repositories being checked** — three
-roles that are fine to hold while nobody is watching and awkward the moment
-adoption is the goal. The known fact that every member joined by pinning a
-commit our own gate refuses is the same problem seen from the other end.
 
 ## B20 — the two commits drifted, exactly as this row was watching for
 
@@ -231,7 +209,7 @@ that plus the paragraph naming this ecosystem — and write it into
 [`policy.md`](policy.md) as in force.
 **Updated 2026-09-15:** logos joined as a member. Its associate proposal is
 superseded, and it is no longer a party we are waiting on for this item. The
-evidence is in [the history](history.md#how-long-it-lasted-and-who-joined).
+evidence is in [the history](https://github.com/ajreynol/anoieu/blob/main/docs/history.md#how-long-it-lasted-and-who-joined).
 **Prompt — `anoieu`:** do not record ethos as an associate until the protocol is
 decided; `proposed:` is the field that holds the intention, and
 `scripts/status_eo --protocol` is the report. When it is decided, the section in

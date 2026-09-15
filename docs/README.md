@@ -2,6 +2,20 @@
 
 Start with [kanon's README](../README.md) for its purpose and current scope.
 
+## Governance and commands
+
+| Page | What it records |
+| --- | --- |
+| [Commands](commands.md) | Installation, status, prompt previews and local validation |
+| [Policy](policy.md) | The shared repository policy and joining procedure |
+| [Vision](vision.md) | The development goals, argued rather than mechanically checked |
+| [Laws](laws.md) | The presidency and its record |
+| [Board](board.md) | Cross-repository work and its next steps |
+| [Roles](roles.md) | Responsibilities and their current holders |
+| [Coherence](coherence.md) | Maintenance responsibilities and protocols |
+| [Interface](interface.md) | How a person directs the work |
+| [Instructions](instructions.md) | Shared instructions for agents |
+
 ## Work and decisions
 
 | Page | What it records |

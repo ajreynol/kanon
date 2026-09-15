@@ -27,7 +27,7 @@ it yet. Write the README that says what it is for. That is the whole of the job.
 alternative — it was settled before this repository existed, and it is recorded
 in the ecosystem's register:
 
-  https://github.com/ajreynol/anoieu/blob/main/tools/ynoia/names.md
+  https://github.com/ajreynol/kanon/blob/main/tools/ynoia/names.md
 
 Find the entry whose name matches this repository's. It carries the etymology and
 a line of scope, and it may point at a proposal with more. **If there is no
@@ -57,7 +57,7 @@ this name, you are what it is waiting for. **That makes identifying yourself
 your job and not anoieu's** — the rule, including what gets rejected and why, is
 the handoff protocol here:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/coherence.md
+  https://github.com/ajreynol/kanon/blob/main/docs/coherence.md
 
 Two things it is worth knowing now. **You are not claiming a unique title** — no
 ownership is tracked and another repository doing this work would be equally
@@ -88,8 +88,8 @@ The Eunoia ecosystem asks every tool in it, from its first commit, to honour the
 hours the human has said they work. There is a protocol for agents and a short
 instruction for people, and they are two halves of one arrangement:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/interface.md
-  https://github.com/ajreynol/anoieu/blob/main/docs/instructions.md
+  https://github.com/ajreynol/kanon/blob/main/docs/interface.md
+  https://github.com/ajreynol/kanon/blob/main/docs/instructions.md
 
 **What it asks of you here, before this repository has any machinery:** if you
 can tell that it is outside ordinary working hours, say so once — *take a

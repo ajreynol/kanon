@@ -1,5 +1,8 @@
 # sapheneia
 
+**Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
+Earlier observations below retain their original context and dates.
+
 *σαφήνεια — clarity; the lucidity of an account. Aristotle opens his treatment
 of style with it: `ὡρίσθω λέξεως ἀρετὴ σαφῆ εἶναι`, let the virtue of style be
 defined as being clear (Rhetoric III.2). It is the right word because it names a

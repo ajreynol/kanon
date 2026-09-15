@@ -112,7 +112,7 @@ it yet. Write the README that says what it is for. That is the whole of the job.
 alternative — it was settled before this repository existed, and it is recorded
 in the ecosystem's register:
 
-  https://github.com/ajreynol/anoieu/blob/main/tools/ynoia/names.md
+  https://github.com/ajreynol/kanon/blob/main/tools/ynoia/names.md
 
 Find the entry whose name matches this repository's. It carries the etymology and
 a line of scope, and it may point at a proposal with more. **If there is no
@@ -142,7 +142,7 @@ that statement is where it said so.
 **The name is already taken, and by this work.** It is in the ecosystem's
 register, with a line saying where it has been living:
 
-  https://github.com/ajreynol/anoieu/blob/main/tools/ynoia/names.md
+  https://github.com/ajreynol/kanon/blob/main/tools/ynoia/names.md
 
 Do not re-derive the etymology and do not improve on it. The child's own README
 explains the name in a sentence somebody can disagree with; that sentence comes
@@ -181,7 +181,7 @@ this name, you are what it is waiting for. **That makes identifying yourself
 your job and not anoieu's** — the rule, including what gets rejected and why, is
 the handoff protocol here:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/coherence.md
+  https://github.com/ajreynol/kanon/blob/main/docs/coherence.md
 
 Two things it is worth knowing now. **You are not claiming a unique title** — no
 ownership is tracked and another repository doing this work would be equally
@@ -221,7 +221,7 @@ Copy nothing on your own initiative except the README you are writing.
 
 **Two things are owed elsewhere, and neither of them is yours to do.** Say so
 at the end instead. The register entry for the name has to say where it lives
-now rather than where it lived. And any role the child held in anoieu's
+now rather than where it lived. And any role the child held in kanon's
 `docs/roles.md` moves under this repository's own heading and **keeps its id**
 — a role that changes hands keeps its number, which is what makes every
 decision recorded against it survive the move.

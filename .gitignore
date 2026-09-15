@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+scripts/repos.local
+*-response.md
+scratch/
+*.local.md

@@ -30,9 +30,9 @@
     "order within its status, so a new tool lands in a sensible place unasked."
   ],
   "root": "..",
-  "order": ["anoieu", "ethos", "logos", "eudaimonia", "dokimasia", "koine", "cvc5"],
+  "order": ["kanon", "anoieu", "ethos", "logos", "eudaimonia", "dokimasia", "koine", "cvc5"],
   "overrides": {
-    "anoieu": {
+    "kanon": {
       "why": "where this list lives, so you already have it if you are reading this"
     },
     "ethos": {

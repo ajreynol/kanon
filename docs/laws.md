@@ -73,7 +73,7 @@ wanting to know what happened does not skip past procedure.
 records what a reader cannot reconstruct from them: how often the build was
 broken, for how long, and what nobody was watching.
 
-**It is not the report card.** [`report-card.md`](report-card.md) grades how well
+**It is not the report card.** [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) grades how well
 each tool performs the function it claims and **does not move with the office.**
 Keeping an archive or an assessment is not holding one.
 

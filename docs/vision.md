@@ -26,7 +26,7 @@ is **who is able to settle a question.**
 Policy states facts about a tree: where a file goes, what the README ends with,
 what a child project may import, whether the lock file that pins a measurement
 exists. A program can decide every one of those without holding an opinion, and
-one does — [`scripts/policy_check.py`](../scripts/policy_check.py), on every push. When it goes red
+one does — [`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py), on every push. When it goes red
 something is wrong in a way nobody has to be persuaded of, which is the entire
 value of putting it in CI.
 
@@ -176,8 +176,8 @@ But that is a decision to be made and stated, not a gap to be left; *it will be
 obvious later what this was for* is not the same as having decided.
 
 Where there is a deliverable, this page hands over to
-[`../docs/reports/reporting-policy.md`](reports/reporting-policy.md) and
-[`../docs/reports/reporting-workflow.md`](reports/reporting-workflow.md): what may be said
+[`../docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md) and
+[`../docs/reports/reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md): what may be said
 about code you do not own, what separates a candidate published under your own
 name from a finding carried to its owner, and how a row is closed. Speed belongs
 to producing the deliverable. It does not belong to sending it.
@@ -264,7 +264,7 @@ there.
 Six exchanges that have already happened. They are listed because a tenet with
 no instances is a preference, and because the shape of a real exchange is more
 instructive than the rule abstracted from it. Everything below is as of the
-commits [`deps.lock`](../scripts/deps.lock) records — cvc5 `aee8742`, ethos `3cf1c03`,
+commits [`deps.lock`](https://github.com/ajreynol/anoieu/blob/main/scripts/deps.lock) records — cvc5 `aee8742`, ethos `3cf1c03`,
 logos `47f29bf`, eudaimonia `45e34e0` — and re-measurable from them.
 
 ### The tools
@@ -300,7 +300,7 @@ the ecosystem — a proof checker written in C++ for one purpose becoming a buil
 dependency of a Lean development written for another, because it was the thing
 already able to answer *does this proof check*. It also shows the cost of being
 consumed: a defect in CPC arrives in logos unchanged, which is what
-[`logos-1`](reports/reports.md#logos--the-lean-development) records, and why
+[`logos-1`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md#logos--the-lean-development) records, and why
 auditing the copy filed cvc5's findings under logos's name seventeen times
 before we stopped reading it.
 
@@ -352,11 +352,11 @@ the generated checker's verdicts against it, keeping two implementations on
 purpose.
 
 **anoieu → everything.** One row per project in
-[`../docs/reports/reports.md`](reports/reports.md), each with an id and a state. To cvc5,
+[`../docs/reports/reports.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md), each with an id and a state. To cvc5,
 three real defects found on the first audit and confirmed against ethos — `cvc5-1`
 is `proofs/eo/cpc/programs/Strings.eo:42` and `:55`, two programs declaring
 `:signature ((Seq T)) Int` whose every case returns a Boolean — plus
-[`report/cpc-audit.html`](reports/cpc-audit.html), rendered for readers who
+[`report/cpc-audit.html`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/cpc-audit.html), rendered for readers who
 will not clone anything. To ethos, three confirmed defects and three diagnostics
 worth improving, and separately two the fuzzer provoked: an uncaught C++
 exception on `(declare-const f (->))`, and an error path that skips ethos's own
@@ -376,7 +376,7 @@ configuration through elaboration to the Eunoia serialiser, and asks whether any
 path reaches an inference no proof step covers — particularly under
 `--safe-mode=safe`, where cvc5 promises that anything it solves it can prove.
 The two tools share no code and neither depends on the other; what they share is
-a position, [`../docs/reports/reporting-policy.md`](reports/reporting-policy.md), maintained here and
+a position, [`../docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md), maintained here and
 referenced there, which is its own kind of exchange and a cheap one. They meet at
 exactly one seam — `src/proof/eo/`, where cvc5 turns an internal proof into
 Eunoia. A rule cvc5 emits that CPC does not declare is invisible to each tool in
@@ -413,7 +413,7 @@ them would have excluded the best work on this list.
 
 **A person carried every one of them.** No exchange on this list was made by
 machinery, and that is the standing rule rather than a description of the
-current state — [`../docs/reports/reporting-policy.md`](reports/reporting-policy.md) is where it is
+current state — [`../docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md) is where it is
 argued.
 
 ## The front page
@@ -532,7 +532,7 @@ health — these are things a reader needs in order to weigh what follows. They
 belong where the reader arrives, stated once, plainly, in the tool's own voice.
 That is a different act from hedging, and the difference is that a caveat can be
 used and a mood cannot. Where those particular limits are argued is
-[`../docs/reports/reporting-policy.md`](reports/reporting-policy.md); the point here is only that
+[`../docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md); the point here is only that
 stating them clearly is entirely compatible with standing behind the work, and
 is in fact most of what makes standing behind it believable.
 
@@ -632,7 +632,7 @@ absence of that somebody.
 | who may strengthen a claim | a person, asked directly, with the evidence attached |
 | what enforces the policy | `scripts/policy_check.py`, in CI |
 | what enforces the vision | nothing, deliberately — it is argued, not checked |
-| what governs a deliverable | [`../docs/reports/reporting-policy.md`](reports/reporting-policy.md), [`../docs/reports/reporting-workflow.md`](reports/reporting-workflow.md) |
+| what governs a deliverable | [`../docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md), [`../docs/reports/reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md) |
 | where speculative work goes instead | a child project, `tools/X/`, under [`policy.md`](policy.md) |
 | what confers standing on the tool | a person choosing to use, run or own it — never the agent's say-so |
 | the ending to aim for | a human takes over the development |
@@ -646,13 +646,13 @@ away from you has done everything on this page except the thing it was for.
 
 ## The report card
 
-**Its own page now: [`report-card.md`](report-card.md).** How each tool in the
+**Its own page now: [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md).** How each tool in the
 ecosystem stands against the six tenets, in the two registers, with the limits
 on what a paragraph there is allowed to be. Everything on this page governs it
 unchanged — argued and never checked, and a person changes a paragraph — and it
 was split out because it is the half that moves: the tenets are stable, and the
 grading is re-done every round against the commits
-[`deps.lock`](../scripts/deps.lock) records.
+[`deps.lock`](https://github.com/ajreynol/anoieu/blob/main/scripts/deps.lock) records.
 
 ## The paper, and the reader nobody here writes for
 
@@ -722,7 +722,7 @@ Six exist, tracked here in a sentence each and nowhere else:
 
 | child | parent | what it is |
 | --- | --- | --- |
-| [**sapheneia**](https://github.com/ajreynol/anoieu/tree/main/tools/sapheneia) | anoieu | a description of Eunoia written as a language definition rather than as a manual for a checker, in order to find where the existing account is silent, ambiguous or contradicts itself |
+| [**sapheneia**](https://github.com/ajreynol/kanon/tree/main/tools/sapheneia) | anoieu | a description of Eunoia written as a language definition rather than as a manual for a checker, in order to find where the existing account is silent, ambiguous or contradicts itself |
 | [**euthyna**](https://github.com/ajreynol/eudaimonia/tree/main/tools/euthyna) | eudaimonia | in its own words, an account of *the proof in logos: what it is made of, where its weight sits, and what would have to change for it to cover more than one calculus* — with a measurement harness over an unmodified logos checkout |
 | [**ynoia**](../tools/ynoia) | anoieu | *why Eunoia* — whether the ecosystem's arrangement earns its machinery, the strongest case against it, six ways it could be arranged instead, and the tools whose absence distorts the argument |
 | [**martyria**](../tools/martyria) | anoieu | one ethical question at a time with a stance attached, the evidence a stance rests on, and the register where a report that we violated something would be answered |
@@ -739,7 +739,7 @@ a claim on attention that has so far produced nothing, and what earns it a place
 is a deliverable in the sense of tenet 4 — a finding carried, a measurement
 somebody uses, an argument somebody acts on. Until then it is named here and
 nowhere else: not on the parent's front page, not in its documentation index, not in any
-report, and not on the [report card](report-card.md). **The human decides when that
+report, and not on the [report card](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md). **The human decides when that
 changes**, exactly as a human decides to start one, and the decision has three
 outcomes rather than one — it graduates into its own repository, it is folded
 into the parent, or it is retired in place with a line saying what was learned.

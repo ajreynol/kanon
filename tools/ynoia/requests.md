@@ -59,7 +59,7 @@ the subject is here. It should work on any member's tree.
   outbound prompt, or pinned by somebody else's CI. Those cannot be changed
   unilaterally at all.
 - **Age against the tree it describes**, which
-  [`scripts/doc_currency.py`](../../scripts/doc_currency.py) already measures separately and
+  [`scripts/doc_currency.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/doc_currency.py) already measures separately and
   which this should read rather than recompute.
 
 ### The question underneath, which is the interesting one

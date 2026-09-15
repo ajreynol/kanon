@@ -12,8 +12,11 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 
 **Update, 2026-09-15:** the maintainer deferred the internal offices as premature.
 Their six documents are retained in [brainstorm-offices.md](brainstorm-offices.md),
-and `tools/` is empty. Incoming projects have not been copied. The draft handoff
-uses `tools/<project>/` directly, superseding the office destinations below.
+and the completed handoff (`7eb9973`, 2026-09-15) uses `tools/<project>/`
+directly, superseding the office destinations below. Governance documents,
+inventory, scripts and five child projects arrived. The policy checker,
+report card and earlier term history remain in anoieu. The earlier findings
+below record the state when they were made.
 
 **About kanon's standing**
 

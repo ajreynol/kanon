@@ -56,6 +56,8 @@ import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+from anoieu_dependency import policy_checker
 INVENTORY = os.path.join(HERE, "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
                             os.path.join(ROOT, "scripts", "repos.local"))
@@ -126,9 +128,8 @@ OWN_REPO = ("member", "president", "associate", "candidate")
 #
 # These are a **copy**: what a footing means is decided in `docs/policy.md`, and
 # what a verdict means is decided by `check()` and by the branches in `main()`
-# below. So the copy is named by its ground truth and compared to it --
-# `key_is_complete` in tests/run.py fails when a footing exists in `REQUIRED`
-# and not here. Nothing compares the prose, which is the half that can still rot.
+# below. Keep the names aligned with REQUIRED. Nothing compares the prose,
+# which is the half that can still drift.
 
 #: One line per footing, in the order a reader meets them. Keep the keys equal
 #: to `REQUIRED`'s; the value says how to *read the column*, never what the
@@ -151,12 +152,13 @@ POLICY_VALUES = (
     ("N failing", "N of our checks failed on it"),
     ("not held", "an associate. Nothing was run, and that is the footing"),
     ("no checkout", "not on this machine, so nothing could be run"),
+    ("unverified", "the checker could not run; no compliance verdict is available"),
     ("-", "a child or a foundation: not a repository this table checks"),
 )
 
 #: Every value the `channel` column can print, and what it means.
 CHANNEL_VALUES = (
-    ("N for us", "N topics in it are addressed to anoieu"),
+    ("N for us", "N topics in it are addressed to kanon"),
     ("yes", "they keep one, and nothing in it is for us"),
     ("none", "they keep none. Not a defect: the file is optional"),
     ("-", "a child or a foundation"),
@@ -224,8 +226,8 @@ def render_key() -> str:
                "not a problem,")
     out.append("  or the policy does not fit a legitimate shape of repository -- "
                "that one is")
-    out.append("  ours, and it is fixed here in docs/policy.md or "
-               "scripts/policy_check.py.")
+    out.append("  fixed in kanon/docs/policy.md for policy defects, or in "
+               "anoieu/scripts/policy_check.py for checker defects.")
     return "\n".join(out)
 
 
@@ -247,7 +249,8 @@ def locate(repo: str) -> str:
                 path = os.path.expanduser(parts[1].strip())
                 if os.path.isdir(path):
                     return path
-    for r in os.environ.get("ANOIEU_REPOS", os.path.expanduser("~")).split(":"):
+    roots = os.environ.get("ANOIEU_REPOS", "").split(os.pathsep)
+    for r in [p for p in roots if p] + [os.path.dirname(ROOT), os.path.expanduser("~")]:
         cand = os.path.join(r, repo)
         if os.path.isdir(cand):
             return cand
@@ -271,6 +274,9 @@ def check(path: str) -> tuple[str, list[str]]:
     # three things is one thing wrong, and saying "3 fail" overstates it.
     failed = [l[5:] for l in out.stdout.splitlines() if l.startswith("FAIL ")]
     detail = [l.strip() for l in out.stdout.splitlines() if l.startswith("     ")]
+    if out.returncode != 0 and not failed:
+        return "unverified", [out.stderr.strip() or out.stdout.strip()
+                              or "the policy checker did not report a result"]
     return ("ok" if out.returncode == 0 else f"{len(failed)} failing"), detail
 
 
@@ -378,8 +384,7 @@ def still_true(inv: dict) -> tuple[list[str], list[str]]:
     the network, and counting it as a stale inventory would make this job red for
     something nobody here can fix.
     """
-    sys.path.insert(0, os.path.dirname(HERE))
-    import policy_check  # noqa: PLC0415
+    policy_check = policy_checker()
 
     bad, unseen = [], []
     for name, e in inv.items():
@@ -465,8 +470,11 @@ def protocol(inv: dict) -> int:
       declares      a full membership declaration, which no associate needs and
                     which would mean the footing is the wrong one
     """
-    sys.path.insert(0, os.path.dirname(HERE))
-    import policy_check  # noqa: PLC0415
+    try:
+        policy_check = policy_checker()
+    except (OSError, ImportError) as exc:
+        print(f"UNVERIFIED: {exc}")
+        return 2
 
     rows = []
     for name, e in inv.items():
@@ -540,10 +548,11 @@ def health(inv: dict | None = None) -> list[tuple[str, str, str]]:
             unknown += 1
             continue
         verdict, _ = check(path)
+        unknown += 1 if verdict == "unverified" else 0
         passing += 1 if verdict == "ok" else 0
         disc = os.path.join(path, "docs", "discussion.md")
         if os.path.isfile(disc):
-            owed += open(disc, encoding="utf-8").read().count("**To:** anoieu")
+            owed += open(disc, encoding="utf-8").read().count("**To:** kanon")
 
     # Soft on purpose. The schedule mechanism is maintained by a child project,
     # and a child project may be deleted without anything else noticing -- so
@@ -604,7 +613,11 @@ def audit(online: bool) -> int:
         print("-- whether it is still true was not asked: --online does that")
         return 1 if bad else 0
 
-    stale, unseen = still_true(inv)
+    try:
+        stale, unseen = still_true(inv)
+    except (OSError, ImportError) as exc:
+        print(f"UNVERIFIED: {exc}")
+        return 2
     for b in stale:
         print(f"FAIL {b}")
     for u in unseen:
@@ -671,7 +684,7 @@ def main() -> int:
         disc = os.path.join(path, "docs", "discussion.md")
         if os.path.isfile(disc):
             text = open(disc, encoding="utf-8").read()
-            for_us = text.count("**To:** anoieu")
+            for_us = text.count("**To:** kanon")
             topics = f"{for_us} for us" if for_us else "yes"
         else:
             topics = "none"
@@ -686,7 +699,9 @@ def main() -> int:
                 f"{name} passes our checks but we still have it down as a "
                 "candidate rather than a member. If it has joined since, our "
                 "inventory is out of date -- ours to fix, in scripts/ecosystem/ecosystem.json")
-        if verdict != "ok" and status in MEMBERS:
+        if verdict == "unverified":
+            notes.append(f"{name}: policy unverified: {'; '.join(fails)}")
+        elif verdict != "ok" and status in MEMBERS:
             # The count comes from `verdict`, which counts failing *checks*.
             # `fails` is their detail lines and there are more of them -- the
             # overstatement `check()` warns about three lines above its return.
@@ -769,7 +784,8 @@ def main() -> int:
           f"policy check, {owed} topic{'s' if owed != 1 else ''} "
           f"{'are' if owed != 1 else 'is'} owed to us, "
           "and how good any of these tools actually are is a judgement kept in "
-          "docs/report-card.md rather than in this table.")
+          "https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md "
+          "rather than in this table.")
     return 0
 
 

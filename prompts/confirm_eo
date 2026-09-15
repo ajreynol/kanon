@@ -85,7 +85,9 @@ elif [ -f "$REPOS_FILE" ]; then
   done < "$REPOS_FILE"
 fi
 if [ -z "$TARGET" ]; then
-  for r in ${ANOIEU_REPOS:-$HOME}; do
+  IFS=: read -r -a SEARCH_ROOTS <<< "${ANOIEU_REPOS:-}"
+  for r in "${SEARCH_ROOTS[@]}" "$ROOT/.." "$HOME"; do
+    [ -n "$r" ] || continue
     [ -d "$r/$NAME" ] && { TARGET=$(cd "$r/$NAME" && pwd); break; }
   done
 fi
@@ -95,7 +97,12 @@ if [ -z "$TARGET" ]; then
   exit 2
 fi
 
-REPORT=$(python3 "$ROOT/scripts/policy_check.py" --root "$TARGET" 2>&1 || true)
+REPORT_STATUS=0
+REPORT=$(python3 "$ROOT/scripts/policy_check.py" --root "$TARGET" 2>&1) || REPORT_STATUS=$?
+if [ "$REPORT_STATUS" -gt 1 ]; then
+  printf '%s\n' "$REPORT" >&2
+  exit "$REPORT_STATUS"
+fi
 TRANSFER=$(python3 "$ROOT/scripts/transfer_check.py" "$NAME" 2>&1 || true)
 
 read -r -d '' BODY <<PROMPT_END || true
@@ -104,7 +111,7 @@ $NAME has joined. **That is settled and is not the question.** Whether they
 
 **The question here is whether the way they joined meets our benchmark for
 excellence.** The ecosystem's word for this is **Arete** -- a thing performing
-its function well -- and it is set out in docs/report-card.md. A repository can satisfy
+its function well -- and it is set out in https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md. A repository can satisfy
 every check and have joined badly, and that is the case worth naming.
 
 Their tree is at $TARGET. **Read it; change nothing, there or here.**
@@ -155,7 +162,7 @@ answer can feed it:
                joining prompt asked for the wrong things.
 
 **Grade the join, not the tool.** Whether the repository is any good is a
-different question, answered in docs/report-card.md, and confusing the two would
+different question, answered in https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md, and confusing the two would
 make this a verdict nobody asked us for.
 PROMPT_END
 

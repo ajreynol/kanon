@@ -1,5 +1,8 @@
 # stathmos
 
+**Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
+Earlier observations below retain their original context and dates.
+
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, unadvertised, and not part of what this repository ships.
 
@@ -11,7 +14,7 @@ than the scale or the verdict.*
 **In one line: the mediator of the report card. It says whether a judgement
 passed on a tool was justified.**
 
-**It does not grade tools** — [`report-card.md`](../../docs/report-card.md)
+**It does not grade tools** — [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md)
 does that. It grades the grading: whether the evidence under a band supports the
 band, whether an axis was applied the same way twice, and whether a paragraph
 about somebody else's project is one they could argue with. **The judge needs
@@ -49,8 +52,9 @@ step, not the destination. `R30` keeps its number when it goes, which is what
 makes the move a handoff rather than a rewrite, and the procedure is in
 [`../../docs/roles.md`](../../docs/roles.md).
 
-Until it moves, **every assessment it makes about `anoieu` is a self-assessment
-and is marked as one.** That rule is borrowed rather than invented — a
+Assessments made while this project was in anoieu remain marked as
+self-assessments. **New assessments of kanon are self-assessments**, since it
+now houses this project. Moving the directory does not establish independence. That rule is borrowed rather than invented — a
 neighbouring tool that audits histories holds itself to it, and a
 self-assessment producing no unfavourable findings is void.
 

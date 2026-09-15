@@ -6,20 +6,18 @@ means *our side is in order and there is somewhere for the roles to go*. It does
 not mean the transfer is a good idea, that anybody has agreed, or that the
 receiving project wants them.
 
-**Both repositories must have their CI passing, and only one of those is
-checkable from here.** Ours is: this runs as a CI job that depends on every
-other job, so it cannot report green while anything else is red. **Theirs is
-not, and this program will not pretend otherwise.** Asking GitHub about somebody
-else's build from inside our build would make our CI fail for reasons in
-somebody else's tree, which `docs/policy.md` names as the way a suite becomes
-noise. So the other half is reported as **unverified from here** and is a
-person's step with `--online`.
+**Both repositories must have their CI passing.** This helper moved from an
+anoieu CI job to kanon and no longer runs behind that job's prerequisites. It
+therefore reports local CI as unverified. `--online` can read the destination's
+latest run, but that alone cannot authorize a transfer.
 
-Exit codes follow `scripts/bump_check.py`, for the same reason it has three:
+Exit codes:
 
-    0   ready       -- our side is in order, and where checked, theirs
-    1   not ready   -- something named below is missing
-    2   unverified  -- we could not ask, which is not a pass
+    1   not ready   -- a pending role marker or destination is missing
+    2   unverified  -- a build remains unchecked, even if the markers exist
+
+There is no success exit until both builds can be established. A person checks
+the two commits before moving anything.
 
 **Roles move by being marked.** A role destined for another project carries a
 `Destined for` line in `docs/roles.md`, and that marker is what this reads. **A
@@ -81,9 +79,12 @@ def their_ci(target: str) -> tuple[str, str]:
     if not url:
         return "unverified", "no repository url recorded"
     slug = url.rstrip("/").split("github.com/")[-1]
-    out = subprocess.run(["gh", "run", "list", "--repo", slug, "--limit", "1",
-                          "--json", "conclusion", "-q", ".[0].conclusion"],
-                         capture_output=True, text=True)
+    try:
+        out = subprocess.run(["gh", "run", "list", "--repo", slug, "--limit", "1",
+                              "--json", "conclusion", "-q", ".[0].conclusion"],
+                             capture_output=True, text=True)
+    except OSError as exc:
+        return "unverified", f"could not run gh: {exc}"
     if out.returncode != 0:
         return "unverified", "could not ask GitHub"
     verdict = out.stdout.strip()
@@ -114,7 +115,7 @@ def main(argv: list[str]) -> int:
     print(f"transfer to {target}")
     print(f"  roles marked to move: {', '.join(roles) if roles else 'none'}")
     print(f"  the target is:        {where}")
-    print("  our CI:               green, or this job would not be running")
+    print("  our CI:               unverified here -- check the runs for this commit")
 
     if online:
         state, detail = their_ci(target)
@@ -132,12 +133,13 @@ def main(argv: list[str]) -> int:
         for p in problems:
             print(f"  - {p}")
         return 1
-    print(f"READY on our side to transfer roles to {target}.")
+    print(f"Role markers and destination exist for {target}.")
     if not online:
         print("  Their build is still unchecked. A person confirms it with "
               "--online before anything moves.")
         return 2
-    return 0
+    print("  Our build is still unchecked. A person confirms both builds before anything moves.")
+    return 2
 
 
 if __name__ == "__main__":

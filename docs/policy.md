@@ -283,7 +283,7 @@ covers. anoieu's, for the phrasing rather than the content:
 > **Written by AI agents, under light human supervision.** A human directs the
 > work, reads what is published and decides what is filed; nobody vets the
 > internal design, and nothing reaches another project's issue tracker without
-> review. [`docs/reports/reporting-policy.md`](reports/reporting-policy.md) says what that does and
+> review. [`docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md) says what that does and
 > does not cover, and why the intended audience is experts.
 
 **It is last.** By the time a reader reaches it they have seen what the tool
@@ -615,8 +615,8 @@ for it.
 
 **This is not the bug-report channel.** A finding — anoieu believes line 42 of
 your file is wrong — has its own template, ids, states and prompts, in
-[`reporting-workflow.md`](reports/reporting-workflow.md), and what may be said
-in one is governed by [`reporting-policy.md`](reports/reporting-policy.md). A
+[`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md), and what may be said
+in one is governed by [`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md). A
 finding never goes here, and a discussion topic never goes in the findings
 ledger. The test is whether the thing you want to say has a *file and a line
 number*: if it does, it is a finding.
@@ -775,7 +775,7 @@ announcement written to everybody reads like a mailing that has already gone
 out. It has not. Nothing here sends anything.
 
 **A covering note is a suggestion with a date on it.** Earlier notes are kept
-in [`history.md`](history.md). They are not current instructions: who is told,
+in [`history.md`](https://github.com/ajreynol/anoieu/blob/main/docs/history.md). They are not current instructions: who is told,
 when, in what words, and whether at all remains a person's decision.
 
 ### Who may address whom
@@ -1020,7 +1020,7 @@ sure somebody asked.
 
 Every rule on this page is a claim about *this tree*, which means a program can
 decide it without holding an opinion — and
-[`scripts/policy_check.py`](../scripts/policy_check.py) decides the ones that are
+[`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py) decides the ones that are
 currently decidable, on every push. That is the property to preserve when adding
 to this page: **a rule nobody can check is a rule worded loosely enough to be
 tightened**, or one that belongs in [`vision.md`](vision.md) instead.
@@ -1277,12 +1277,17 @@ linking here:
 ## How this repository is maintained
 
 This repository is part of the **Eunoia ecosystem** and follows its shared
-repository policy, kept by [anoieu](https://github.com/ajreynol/anoieu) in
-[`docs/policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/policy.md).
+repository policy, kept by [kanon](https://github.com/ajreynol/kanon) in
+[`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
 
 <then your own note: who writes this, under what supervision, and what that
 supervision does not cover>
 ```
+
+Older pinned checkers may still require a link to anoieu. When retaining such
+a pin, add a link to the policy at that anoieu commit alongside the current
+kanon policy, as [kanon's maintenance note](../README.md#how-this-repository-is-maintained)
+does. The historical URL stays valid after the file moves.
 
 It goes **first** in that section for the same reason the note goes last in the
 README: it is what a reader needs in order to weigh everything above it.
@@ -1327,7 +1332,7 @@ jobs:
         run: |
           git clone --quiet https://github.com/ajreynol/anoieu /tmp/anoieu
           git -C /tmp/anoieu checkout --quiet "$ANOIEU_REV"
-      - run: python3 /tmp/anoieu/scripts/policy_check.py --root .
+      - run: python3 /tmp/anoieu/tools/policy_check.py --root .
 ```
 
 **Pin it.** `ANOIEU_REV` is a commit you choose and move on your own schedule,
@@ -1355,22 +1360,17 @@ every member does not write it separately — `python3 scripts/bump_check.py --r
 to refuse as unverified. Nothing obliges you to use ours; the requirement is the
 refusal, not the program.
 
-Cloning the repository rather than downloading the one file is deliberate: it
-pins the checker and this page *together*, so the rules you are held to and the
-program that decides them are the same version.
+**The checker and this page now live in different repositories.** The
+2026-09-15 handoff moved the policy to kanon and left the checker in anoieu.
+`ANOIEU_REV` pins the checker, not the current policy text. A member's existing
+workflow and pin remain valid; older pins may run `tools/policy_check.py`, while
+newer anoieu commits use `scripts/policy_check.py`.
 
-**That is true today and is planned to stop being true.** The checker is a
-separate responsibility from this page — deciding whether a tree complies is
-checking, which is what anoieu is for, while writing the rules is governance and
-is intended to move to another repository. **When it does, one `ANOIEU_REV`
-stops covering both.** Nothing about your workflow changes on that day: the job
-still clones this repository and still runs `scripts/policy_check.py`, because the
-half that moves is the half your CI never touches. **What is undecided is how
-the two stay in step afterwards** — whether the checker pins a commit of the
-page, whether they are released together by agreement, or whether a member ends
-up pinning two things. It is named here rather than after the fact, because the
-one outcome we will not choose is the one where a member finds out by being
-checked against a page it could not have read.
+**How the two versions stay in step is still undecided.** The role register
+records the open choice: pin the policy from the checker, release the pair by
+agreement, or pin both in each member. Until that is settled, record a kanon
+commit separately when citing the policy; a checker pin alone does not identify
+it.
 
 Tracking the tip — dropping the `env:` and the `checkout` line — is a reasonable
 choice for a repository that wants to find out about changes immediately and
@@ -1518,7 +1518,7 @@ outcome of this command.
 This repository is joining the Eunoia ecosystem. One page says how, and it is
 the authority:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/policy.md#joining-the-eunoia-ecosystem
+  https://github.com/ajreynol/kanon/blob/main/docs/policy.md#joining-the-eunoia-ecosystem
 
 Read it, then do what it says, here:
 
@@ -1547,7 +1547,7 @@ repository -- that last one is worth more to us than a clean run.
 script is the authority for what this prompt asks**, and it can be read without
 running anything:*
 
-  https://github.com/ajreynol/anoieu/blob/main/prompts/join_eo
+  https://github.com/ajreynol/kanon/blob/main/prompts/join_eo
 
 *`join_eo --soft --show-prompt` prints exactly this text and does nothing else,
 so anybody handed this can check it against what the command actually says.*
@@ -1555,7 +1555,7 @@ so anybody handed this can check it against what the command actually says.*
 This repository is adopting one convention and joining nothing. One page defines
 the convention, and it is the authority for what the note must say:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
+  https://github.com/ajreynol/kanon/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
 
 Read it, then do this here, and nothing else:
 
@@ -1588,7 +1588,7 @@ And `join_eo --soft --affiliated` this one:
 repository. **That script is the authority for what this prompt asks**, and it
 can be read without running anything:*
 
-  https://github.com/ajreynol/anoieu/blob/main/prompts/join_eo
+  https://github.com/ajreynol/kanon/blob/main/prompts/join_eo
 
 *`join_eo --soft --affiliated --show-prompt` prints exactly this text and does
 nothing else, so anybody handed this can check it against what the command
@@ -1597,7 +1597,7 @@ actually says.*
 This repository is adopting one convention and joining nothing. One page defines
 the convention, and it is the authority for what the note must say:
 
-  https://github.com/ajreynol/anoieu/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
+  https://github.com/ajreynol/kanon/blob/main/docs/policy.md#the-soft-form-the-note-without-the-membership
 
 Read it, then do this here, and nothing else:
 

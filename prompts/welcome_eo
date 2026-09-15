@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # welcome_eo -- a new tool has appeared; read it and say something useful.
 #
-# Run it here, in anoieu, the first time a repository is worth looking at. It
+# Run it here, in kanon, the first time a repository is worth looking at. It
 # takes the id it will be known by and where it is, records that in
 # scripts/repos.local so every other script can find it, and then reads it.
 #
@@ -63,7 +63,7 @@ usage: welcome_eo [--codex] [--print] [--show-prompt] ID PATH
   --show-prompt   print the prompt and exit. A dry run: records nothing
   --force         proceed past a warning. Never past a hard failure
 
-Run this in anoieu. PATH may be omitted only if ID is already recorded.
+Run this in kanon. PATH may be omitted only if ID is already recorded.
 
 It refuses rather than guesses. Who is in the ecosystem is not a thing to
 corrupt with a typo, and an id here becomes the name eight other scripts use.
@@ -119,9 +119,9 @@ fi
 # -- it has to be a checkout, and it has to be somebody else's
 [ -e "$TARGET/.git" ] || die "$TARGET is not a git repository"
 case "$TARGET" in "$HOME"|/) die "$TARGET is not a repository checkout" ;; esac
-[ "$TARGET" != "$ROOT" ] || die "that is anoieu itself"
-case "$TARGET/" in "$ROOT"/*) die "$TARGET is inside anoieu; a member is its own repository" ;; esac
-case "$ROOT/" in "$TARGET"/*) die "anoieu is inside $TARGET; that is not a member checkout" ;; esac
+[ "$TARGET" != "$ROOT" ] || die "that is kanon itself"
+case "$TARGET/" in "$ROOT"/*) die "$TARGET is inside kanon; a member is its own repository" ;; esac
+case "$ROOT/" in "$TARGET"/*) die "kanon is inside $TARGET; that is not a member checkout" ;; esac
 
 # -- the guards that catch a typo rather than a decision
 BASE=$(basename "$TARGET")
@@ -147,7 +147,7 @@ if [ "$SHOW" = 1 ]; then
   echo "-- dry run: nothing recorded. $NAME -> $TARGET" >&2
 elif [ -z "$RECORDED" ]; then
   if [ ! -f "$REPOS_FILE" ]; then
-    printf '# where each project is checked out on this machine.\n# One entry per line, "<repo-id> <path>". See prompts/process_anoieu.\n' > "$REPOS_FILE"
+    printf '# where each project is checked out on this machine.\n# One entry per line, "<repo-id> <path>". See docs/commands.md.\n' > "$REPOS_FILE"
   fi
   printf '%s\t%s\n' "$NAME" "$TARGET" >> "$REPOS_FILE"
   echo "-- recorded in $REPOS_FILE:" >&2
@@ -170,7 +170,12 @@ SYNC=$(python3 "$ROOT/scripts/install_eo" --status "$NAME" 2>&1 || true)
 echo "-- the ecosystem's own list, for $NAME:" >&2
 printf '%s\n' "$SYNC" | sed 's/^/   /' >&2
 
-REPORT=$(python3 "$ROOT/scripts/policy_check.py" --root "$TARGET" 2>&1 || true)
+REPORT_STATUS=0
+REPORT=$(python3 "$ROOT/scripts/policy_check.py" --root "$TARGET" 2>&1) || REPORT_STATUS=$?
+if [ "$REPORT_STATUS" -gt 1 ]; then
+  printf '%s\n' "$REPORT" >&2
+  exit "$REPORT_STATUS"
+fi
 
 BRIEF="They left no ynoia-brief.local.md, so what they read is not recorded."
 if [ -f "$TARGET/ynoia-brief.local.md" ]; then

@@ -284,7 +284,7 @@ correction gets more expensive every stretch and never gets cheaper.**
   said so, and it was not a formality. **It was built, and joined on
   2026-09-14**, so this one is discharged rather than outstanding.
 - **Hand over the assessment with the office.**
-  [`report-card.md`](../../docs/report-card.md) stays here. The record of what
+  [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) stays here. The record of what
   happened should follow whoever is answerable for it; the grading of everybody
   should not travel with the office being graded.
 - **Claim this makes the arrangement legitimate.** A second bestowal is still a

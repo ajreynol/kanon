@@ -770,7 +770,7 @@ known.
 - *It makes the semantics prover-neutral by force.* Today `.eos` leaks its
   target: a termination measure is carried as literal Lean text inside a
   semantics file, and this analyzer has a check for one that names a program no
-  longer there ([TRI0007](../../docs/checks.md#tri0007)) because nothing else compares
+  longer there ([TRI0007](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md#tri0007)) because nothing else compares
   them. A second backend cannot be built without separating what the semantics
   says from how Lean says it — the boundary noesis has to draw, arrived at from
   a third direction.
@@ -863,7 +863,7 @@ the expensive half — instrumentation, a corpus, a scheduler — pays only if t
 cheap half has stopped paying, which is an empirical question about a specific
 checker at a specific time.
 
-**What exists today.** The baseline: [`fuzzing.md`](../../docs/fuzzing.md), in this
+**What exists today.** The baseline: [`fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md), in this
 repository, which has none of the above and is deliberately the floor —
 grammar-directed generation, mutation of a seed corpus, three verdict-level
 oracles, and no instrumentation anywhere. It is worth having partly for what it
@@ -910,7 +910,7 @@ deciding which one before either is started.
 
 # What eudaimonia says about all this
 
-[eudaimonia](https://github.com/cvc5/eudaimonia) is the arrangement with the
+[eudaimonia](https://github.com/ajreynol/eudaimonia) is the arrangement with the
 calculus taken out: bring a signature and a semantics, get a Lake project with a
 checker, its proofs, its regression suite and its documentation. It is the
 falsification test for the claim `ethos-eoc` makes about itself — *a second
@@ -969,7 +969,7 @@ nothing checks it; it is that the check runs after a checker has been generated,
 reads the output rather than the input, and can therefore only report what a
 signature *became*. Answering the same questions from the signature and its
 semantics — before anything is generated, in terms the author wrote — is
-[eud-1](../../docs/reports/reports.md#eudaimonia--the-template-for-other-calculi).
+[eud-1](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md#eudaimonia--the-template-for-other-calculi).
 
 *Its calculus profile has answers that are declared rather than verified.* Seven
 questions; five checked against what the compiler emitted, two recorded on

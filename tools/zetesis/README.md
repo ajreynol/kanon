@@ -1,8 +1,10 @@
 # zetesis
 
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
-human, read-only, unadvertised, and not part of what this repository ships.
-Deleting this directory changes nothing anywhere else.
+human, read-only, and not part of the governance commands this repository ships.
+Deleting this directory changes no running command. **This is not an island:**
+kanon names this project on its front page to distinguish housed work from
+required reading; it is therefore not unadvertised.
 
 ## The name
 
@@ -292,7 +294,7 @@ category error**, and it would be the first thing to report under `D18`.
   become the thing it was watching for.
 - **It does not judge another repository's conduct.** What may be published
   about somebody else's work is governed by
-  [`../../docs/reports/reporting-policy.md`](../../docs/reports/reporting-policy.md)
+  [`../../docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md)
   and nothing here loosens it.
 - **It gates nothing.** No commit, no stretch and no handoff waits on this
   directory, and if one ever does, it has stopped being a child project.
