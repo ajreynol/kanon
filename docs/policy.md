@@ -20,7 +20,7 @@ another project, no change of footing.
 **House style.** Cite a rule by name, never by number. Append; do not renumber;
 retire in place with a line saying why. Prefer the shortest form that is still
 arguable, and never narrate that you are following these rules. [LAW
-8](laws.md#law-8--the-policy-and-the-vision-are-kept-short-enough-to-read-in-one-sitting)
+8](laws.md#law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting)
 gives this page a length to stay under.
 
 ## What is checked, and what is not
