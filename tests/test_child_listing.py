@@ -125,10 +125,18 @@ class ChildCommands(unittest.TestCase):
         self.assertIn("child listing preference unverified", output)
 
     def test_status_filters_rows_and_counts(self):
+        self.entries["published"]["short"] = "Research notes"
+        self.inventory.write_text(json.dumps(self.entries))
         output = self.status()
         self.assert_only_advertised(output)
         self.assertIn("2 children", output)
         self.assertNotIn("5 children", output)
+        self.assertEqual(output.splitlines()[0].split(),
+                         ["tool", "status", "policy", "channel", "moved", "where", "purpose"])
+        for name, purpose in (("host", "parent"), ("published", "Research notes"),
+                              ("implicit", "child project")):
+            row = next(line for line in output.splitlines() if line.split()[:1] == [name])
+            self.assertTrue(row.endswith(purpose), row)
 
     def test_all_children_includes_preferences_and_unverified_reads(self):
         output = self.status("--all-children")
@@ -145,6 +153,8 @@ class ChildCommands(unittest.TestCase):
         for name in self.choices:
             self.assertNotIn(name, output)
         self.assertIn("parent checkout unavailable", output)
+        row = next(line for line in output.splitlines() if line.split()[:1] == ["host"])
+        self.assertTrue(row.endswith(self.entries["host"]["what"]), row)
 
     def test_installer_views_and_branch_advice_share_the_preference(self):
         for mode in ("--dry-run", "--status", "--run"):

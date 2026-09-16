@@ -9,7 +9,7 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 | Command | What it does |
 | --- | --- |
 | `scripts/status_eo --check` | Validates the inventory offline |
-| `scripts/status_eo` | Reads checkout policy results and topics addressed to kanon |
+| `scripts/status_eo` | Shows tool purposes, checkout policy results and topics addressed to kanon |
 | `scripts/status_eo --verbose` | Adds the reasons behind policy results |
 | `scripts/status_eo --all-children` | Includes every recorded child and its listing preference |
 | `scripts/status_eo --check --online` | Also reads remote membership declarations |
@@ -53,6 +53,9 @@ Installation status can be read before anoieu is installed. When available,
 anoieu's `scripts/deps.json` supplies its report dependency pins; kanon does
 not keep a duplicate. The installer and status commands share
 [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) as their inventory.
+The `purpose` column in `status_eo` reads an entry's optional `short` field,
+falling back to `what`. Keep `short` around 60 characters or fewer; longer text
+is shortened at a word boundary with an ellipsis. `what` keeps the full description.
 
 ## Child project listings
 

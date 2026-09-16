@@ -54,6 +54,7 @@ import os
 import re
 import subprocess
 import sys
+import textwrap
 import urllib.error
 import urllib.request
 
@@ -210,6 +211,8 @@ def render_key() -> str:
     out.append("  moved    days since the last commit in the checkout on this "
                "disk, not on their remote")
     out.append("  where    where that checkout is")
+    out.append("  purpose  `short`, falling back to `what`, in scripts/ecosystem/ecosystem.json")
+    out.append("           at most 60 characters; longer descriptions end with an ellipsis")
     out.append("")
     out.append("fixing a `N failing` row")
     out.append("  The count is all this table has. To see what failed:")
@@ -774,12 +777,16 @@ def main() -> int:
             notes.append(note)
 
     w = max((len(r[0]) for r in rows), default=4) + 2
+    locations = {r[0]: r[5].replace(os.path.expanduser("~"), "~") for r in rows}
+    where_width = max([len("where")] + [len(path) for path in locations.values()]) + 2
     print(f"{'tool':<{w}}{'status':<11}{'policy':<12}"
-          f"{'channel':<10}{'moved':<8}where")
+          f"{'channel':<10}{'moved':<8}{'where':<{where_width}}purpose")
     for name, status, verdict, topics, moved, where in rows:
-        short = where.replace(os.path.expanduser("~"), "~") if where else ""
+        purpose = textwrap.shorten(inv[name].get("short") or inv[name].get("what") or "-",
+                                   width=60, placeholder="…")
         print(f"{name:<{w}}{status:<11}{verdict:<12}"
-              f"{topics:<10}{moved:<8}{short}")
+              f"{topics:<10}{moved:<8}{locations[name]:<{where_width}}"
+              f"{purpose}")
 
     # The pointer, not the key. One line, immediately under the table, because
     # the moment somebody needs the legend is the moment they are looking at a

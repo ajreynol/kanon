@@ -3,7 +3,7 @@
 #
 # The public command for the implementation in scripts/ecosystem/ecosystem.py.
 #
-#   status_eo                    # the table: status, policy, channel, moved
+#   status_eo                    # the table: status, policy, channel, moved, where, purpose
 #   status_eo --verbose          # ... and why each policy verdict came out
 #   status_eo --all-children     # include unadvertised and unverified children
 #   status_eo --check            # is the inventory itself well formed?

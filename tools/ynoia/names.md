@@ -94,6 +94,8 @@ using it, and a name was taken on the strength of that.
 | name | where | why it is not in the tables above |
 | --- | --- | --- |
 | **epikrisis** | **a repository of its own**, promoted out of eudaimonia | it audits how repositories change over time, and it is running. It stays here rather than moving to *Taken* because that table records names **we** reserved, and this one was chosen in somebody else's tree. **Promotion changed where it lives and not who named it** |
+| **eschaton** | **a repository of its own**, [ajreynol/eschaton](https://github.com/ajreynol/eschaton) | compares approaches to better-founded SMT solvers and their costs. Its name was chosen in its own tree, not reserved here |
+| **telos** | a child project at `tools/telos` in eschaton, moved out of dokimasia | research toward a proof-first SMT solver whose output is checked by Logos. Its name was chosen in its original parent's tree; moving it changes its location, not who named it |
 | **apodeixis** | a child project in eudaimonia — the build framework driven at a calculus nobody designed it around | its authors deliberately did not claim it here, on the ground that adding a line to somebody else's register is a person's edit to make. That restraint is the reason it looked free |
 
 **`bouleusis`** — βούλευσις, deliberation about particulars — was considered
