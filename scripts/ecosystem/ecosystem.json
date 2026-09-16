@@ -210,7 +210,8 @@
     "what": "searches for ways to improve cvc5 performance, using reproducible benchmark experiments to test proposed changes"
   },
   "eschaton": {
-    "status": "candidate",
+    "status": "member",
+    "joined": "anoieu 442bb67",
     "repo": "eschaton",
     "url": "https://github.com/ajreynol/eschaton",
     "short": "Compares approaches to better-founded SMT solvers",
