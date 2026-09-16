@@ -858,18 +858,17 @@ for, and leaves room for anything else we ever ask to become another job in the
 same file, muted or deleted in one place. Nothing is installed and nothing is
 built.
 
-**It passes if and only if two things hold.** The README declares membership as
-above, and the tree upholds the policies that apply to it. Either alone is a
-failure — a declaration nothing backs is what this check exists to prevent, and
-a compliant tree that says nothing has not joined anything.
+**It passes if and only if two things hold.** The README declares membership,
+and the tree upholds the policies that apply to it. Either alone is a failure —
+a declaration nothing backs is what this check exists to prevent, and a
+compliant tree that says nothing has not joined anything.
 
 **Pin it.** `ANOIEU_REV` is a commit you choose and move on your own schedule,
-and moving it is a commit in *your* repository. Without it your build becomes a
-function of a repository your maintainers do not own, and a build that can turn
-**green** without anybody committing cannot be used as evidence that a commit
-was good. Tracking the tip is a reasonable choice for a repository that wants
-to hear about changes immediately; it should be a decision rather than what
-happens if you paste the short version.
+and moving it is a commit in *your* repository. **A build that can turn green
+without anybody committing cannot be used as evidence that a commit was good.**
+Tracking the tip is a reasonable choice for a repository that wants to hear
+about changes immediately; it should be a decision rather than what happens if
+you paste the short version.
 
 **And only move the pin to a commit where our CI is green — a requirement, not
 a suggestion.** Work we could not get past our own build is not work to take
@@ -877,14 +876,12 @@ on. Ask it **about that commit and never about our tip**, so the answer never
 changes after you have taken it; **fail closed**, which is affordable because
 bumping is optional; and **do not run it in your CI**, since it reads a remote.
 [`../scripts/bump_check.py`](../scripts/bump_check.py) is that check, published
-so every member does not write it separately. The requirement is the refusal,
+so every member does not write it separately — the requirement is the refusal,
 not the program.
 
 **The checker and this page live in different repositories**, so `ANOIEU_REV`
-pins the checker and not the policy text. **How the two stay in step is
-undecided** — the role register records the open choice. Until it is settled,
-cite the policy by its own commit as well, because a checker pin alone does not
-identify it.
+pins the checker and not the policy text. **How the two stay in version step is
+undecided**; until it is settled, cite the policy by its own commit as well.
 
 ### What we do not promise
 
