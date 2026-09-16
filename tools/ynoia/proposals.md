@@ -97,8 +97,8 @@ claims nothing
 **What:** the `.eos` semantics written as Lean definitions over the SMT-LIB model
 logos already carries, the compiler as a Lean metaprogram over those
 definitions, and a theorem relating what it emits to what they say
-**Verdict:** **not yet** — the thing does not exist in any form, and two of the
-three prerequisites already have owners who are not it
+**Verdict:** **not yet** — on the *repository* question, and two of the three
+prerequisites already have owners who are not it
 **If approved:** it would not be approved into existence; the first three steps
 are the prerequisites below, in three trees that are not this one, and the
 repository question returns when they meet
@@ -106,6 +106,10 @@ repository question returns when they meet
 `docs/noesis-readiness.md`, which argues the entry's stated blocker is closer to
 discharged than [`tools.md`](tools.md) assumes. Carried in and audited here
 because the *placement* question is this page's and not that document's.
+*Amended 2026-09-16: `noesis` has since been started as a child project in
+eudaimonia, which is the placement this audit recommended if it had to start
+now. The repository question is unchanged and still open; what is no longer true
+is that the thing does not exist.*
 
 ### The name
 
@@ -138,9 +142,13 @@ by the inventory before this page was asked about it.
 
 ### Against the standard
 
-*Does it exist anywhere yet?* **No — written zero times.** The standard's
-weakest evidence is code written once, which it calls a design; this is below
-that floor. Its two halves each exist once, in different trees and different
+*Does it exist anywhere yet?* **At the time of this audit, no — written zero
+times.** The standard's weakest evidence is code written once, which it calls a
+design; this was below that floor. *Amended 2026-09-16: it now exists as a child
+project in eudaimonia at `tools/noesis`, with a charter. The verdict is about a
+repository and is undisturbed by that — the audit's own threshold says the
+repository question returns when logos and eudaimonia would fetch the Lean
+definitions rather than read them.* Its two halves each exist once, in different trees and different
 languages — the `.eos` sets as `R13`, the Lean SMT model as `R18` — and neither
 is the artifact. This alone settles the verdict, and the standard says a proposal
 failing an early question does not need the later ones answered. They are
@@ -203,13 +211,14 @@ work in a repository with outside contributors and review, where a
 `tools/noesis/` inside the compiler's own tree *is* read as the compiler's
 position whatever its README says.
 
-**`anoieu`. No, on the evidence test.** It is where the name was coined and where sapheneia
-and ynoia already sit, which is exactly why it is worth refusing: anoieu's
-evidence is signature analysis, and noesis's is compilation and Lean. Ynoia is
-not the counter-example — its subject is the arrangement, and anoieu is the
-ecosystem's reader. A third child here would make anoieu the ecosystem's
-speculation warehouse, which [`roles.md`](../../docs/roles.md)'s own philosophy
-says to read as a measurement rather than tidy away.
+**`anoieu`. No, on the evidence test.** It is where the name was coined, and
+where sapheneia and ynoia sat until both moved to kanon on 2026-09-15 — which is
+exactly why it is worth refusing: anoieu's evidence is signature analysis, and
+noesis's is compilation and Lean. Ynoia is not the counter-example — its subject
+is the arrangement, and anoieu is the ecosystem's reader. Another child here
+would make anoieu the ecosystem's speculation warehouse, which
+[`roles.md`](../../docs/roles.md)'s own philosophy says to read as a measurement
+rather than tidy away.
 
 **`eudaimonia`. Yes, if it must start now.** Three reasons, in order of weight.
 Its blocker *is* noesis's prerequisite — the account says open question 7 "has to
@@ -427,8 +436,8 @@ it is → joining this ecosystem is their choice, and `init_eo` / `join_eo` are
 offered, never required
 **Decided:** **approved 2026-08-31** by the maintainer, as `koine`. Proposed by
 dokimasia in its `D4`; audited at anoieu `441b562`, revised the same day — see
-*What changed* below. The repository does not exist yet; approving it is not
-creating it.
+*What changed* below. The repository did not exist when it was approved —
+approving it is not creating it — and it exists now, as a member.
 
 ### The names
 

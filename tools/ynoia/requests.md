@@ -239,8 +239,8 @@ one person's preferences, presented as what AI-assisted development is aiming
 at. They should be a **default set** a repository may replace, rather than *the*
 set — and, because they drive machinery rather than only grading it, the
 dependency has to be written down before any of it can be configured.
-**Where:** the page is anoieu's and the change is a person's, since the vision
-sits at the top of the supervision ladder. The tracing below is ordinary work in
+**Where:** the page is kanon's, since the 2026-09-15 handoff, and the change is
+a person's, since the vision sits at the top of the supervision ladder. The tracing below is ordinary work in
 this tree and does not need the change to be decided first.
 **State:** **open.** Raised by the maintainer, 2026-09-02.
 
@@ -301,8 +301,9 @@ the change meaningful, and the deciding is a person's.
 tell afterwards whether it worked.*
 **Where:** **split across two trees, and that is the interesting part.** The
 criteria are ours — [`../zetesis/`](../zetesis/README.md) owes them and does not
-have them. The evidence half exists and is somebody else's: `epikrisis`, in
-eudaimonia's tree, derives re-derivable findings from histories. **Nothing owns
+have them. The evidence half exists and is somebody else's: `epikrisis`, a
+repository of its own since it was promoted out of eudaimonia, derives
+re-derivable findings from histories. **Nothing owns
 the join between them**, and inventing a third tool to hold it would be the
 wrong answer before either half is finished.
 **State:** **open.** Raised by the maintainer, 2026-09-02.
@@ -397,7 +398,7 @@ work:
 
 A first version — collect every `^#{2,4} <id> — ` as a definition, every
 `` `<id>` `` as a citation, report citations with no definition — was run over
-this repository on 2026-09-02. **83 ids defined, four reported, none of them
+anoieu, where this project then lived, on 2026-09-02. **83 ids defined, four reported, none of them
 real.**
 
 - **Two were the checker's fault.** `O6` and `T2` are defined as `## O6. …` and

@@ -129,8 +129,9 @@ is closer than it looks.
 
 ## anoieu — a checker's silence, read as a defect
 
-**Stance:** `unstated`, and this repository keeps the page that asks for one,
-which makes the omission worse rather than excusable.
+**Stance:** `unstated`. It kept the page that asks for one until governance
+moved to kanon on 2026-09-15, which makes the omission worse rather than
+excusable.
 **Verdict:** **write it.**
 **The paper:** what can be found by reading a proof calculus's signature, its
 semantics and its embedding against one another — three artifacts with three
@@ -142,7 +143,7 @@ round is more honest than most published evaluations. What is missing is the
 sentence a paper is built on: what *kind* of defect lives in the gap between a
 signature and its semantics, and why a checker cannot report it. Until that is
 written the paper is a tool description with a findings table, which is the shape
-the first question exists to refuse. The counts also need care — this repository's
+the first question exists to refuse. The counts also need care — anoieu's
 own position forbids publishing coverage of its own checks, and a paper is
 exactly where that rule is hardest to keep.
 

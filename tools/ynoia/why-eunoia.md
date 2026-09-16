@@ -1,7 +1,7 @@
 # Why a proof calculus, and not just Lean
 
 *The account of [ynoia](README.md), a child project under
-[`docs/policy.md`](../../docs/policy.md): read-only, unadvertised, and not part
+[`docs/policy.md`](../../docs/policy.md): read-only, advertised, and not part
 of what this repository ships. It decides nothing and commits nobody. anoieu is
 a participant in this argument rather than a referee — it exists because one
 side of it is right — and where that shows, it is meant to.*
@@ -9,7 +9,7 @@ side of it is right — and where that shows, it is meant to.*
 > **Internal note.**
 >
 > Tracked, so that it has a history and can be argued with in review — but
-> deliberately not linked from the front page or any other index, because it
+> deliberately not linked from any index outside this project, because it
 > is a working argument rather than a published position, and nothing in the
 > tool depends on it. Its purpose is to have the case written down well enough
 > to argue with — with the ethos, cvc5 and logos people, and with ourselves — so
@@ -77,13 +77,13 @@ measured.** That belongs at the top.
 | the claim | what stands behind it | what would settle it |
 | --- | --- | --- |
 | **1 — the proof and the problem are in one language** | **A feature that exists and does what the argument says.** ethos's `(reference "problem.smt2")` parses the benchmark and refuses any `assume` that is not one of its assertions. This is the strongest claim here and the only one resting on a mechanism a reader can go and run | nothing; it is established. What is open is whether the seam could be *verified* on the Lean side instead — open question 2 |
-| **2 — a narrow fragment is analyzable** | **Evidence in this tree**: 63 checks, an analyzer of about three thousand lines, and a desugarer validated case by case against the real parser | it is evidence about *this analyzer*, not about the language. A second analyzer, or an analyzer of a wide fragment failing where this one succeeds, would make it about the language |
+| **2 — a narrow fragment is analyzable** | **Evidence in anoieu's tree**: 63 checks, an analyzer of about three thousand lines, and a desugarer validated case by case against the real parser | it is evidence about *this analyzer*, not about the language. A second analyzer, or an analyzer of a wide fragment failing where this one succeeds, would make it about the language |
 | **3 — the proof is data, not a program** | **Argued.** The counter, that a calculus moves too, is stated and not resolved | a case where a CPC proof survived a change that would have broken an equivalent Lean proof, or the reverse |
 | **4 — enormous proofs make the fragment's cheapness decisive** | **Explicitly folklore, by this document's own admission.** No measurement of ours, and open question 5 records that nobody has compared ethos with the generated Lean checker on the same proofs | the measurement. It is described below and it is runnable today |
 | **6 — the Lean side is generated rather than chosen** | **True of the pipeline as built**, and untested as an *independence* claim | `iogos` — a second prover — which does not exist. Until then, "generated rather than chosen" is a fact about one backend |
-| **O2 — the `.eos` layer is the tell** | **Argued, and conceded**: this is where the arrangement's own case is weakest, and the document says so | `noesis`, which does not exist |
+| **O2 — the `.eos` layer is the tell** | **Argued, and conceded**: this is where the arrangement's own case is weakest, and the document says so | `noesis`, now a child project in eudaimonia and not yet landed |
 | **arrangements A–F** | **Laid out fairly. None costed.** No estimate of what moving to any of them would take | any one of them costed by somebody who would have to do it |
-| **the named projects** | **Five do not exist.** A sixth, `euthyna`, has been started and is documented at its source. The register, in priority order, is [`tools.md`](tools.md) | another one being started |
+| **the named projects** | **Three do not exist** — pathos, iogos, elenchos. **Four have been started**, all as child projects in eudaimonia and all documented at their sources: `euthyna`, `noesis`, `hermeneia`, `mimesis`. The register of the rest, in priority order, is [`tools.md`](tools.md) | another one being started |
 
 ### The one measurement that is runnable today
 
@@ -94,8 +94,8 @@ proofs.
 
 **Every piece of that is already on the machine this was written on.** ethos
 builds and runs. logos builds and produces `logos` and `logos-native`. Real CPC
-proofs are committed in logos's own regression tree, and this repository has a
-script for harvesting more. Nothing has to be written, funded or waited for —
+proofs are committed in logos's own regression tree, and anoieu has a script
+for harvesting more. Nothing has to be written, funded or waited for —
 what is missing is somebody spending an afternoon and reporting a number,
 including the number that would embarrass the argument.
 
@@ -139,8 +139,9 @@ Five schemes run through this document and nothing has said so until now:
 | **A–F** | the six coherent arrangements of the ecosystem |
 | **1–10, under *Open questions*** | what is unsettled. These are separate from the reasons and share their numbers, which is a wart |
 
-Named projects — pathos, hermeneia, noesis, iogos, elenchos — are not numbered
-and are registered in [`tools.md`](tools.md).
+Named projects — pathos, iogos, elenchos — are not numbered and are registered
+in [`tools.md`](tools.md). The ones that have since been started are not on that
+page and document themselves at their sources.
 
 ## The question, put fairly
 
@@ -235,7 +236,7 @@ tactics, no metaprogramming — and nothing a proof can invoke that is not one o
 those.
 
 What that buys is not elegance. It is that **the ways a thing can be wrong are
-enumerable**, and this repository is the evidence: 63 checks cover a large part
+enumerable**, and anoieu is the evidence: 63 checks cover a large part
 of what a signature can get wrong, the whole analyzer is about three thousand
 lines, and its account of the language's desugaring is validated against the
 real parser case by case. Nobody writes that for "arbitrary Lean", because for
@@ -363,7 +364,7 @@ emit text either way. Mostly a follow-on to T1: the compiler's main job is
 compiling the semantics, so moving the semantics moves most of the compiler.
 
 T1 and T2 together, with a theorem relating what the compiler emits to what the
-definitions say, is Noesis, below.
+definitions say, is Noesis, now a child project in eudaimonia.
 
 ## T3. Retire `ethos` and ship the generated checker
 
@@ -415,7 +416,7 @@ These are about the fragment rather than about any one tool, and are numbered
 
 Program bodies untyped, matching untyped, `define` bodies never typed, a
 program's declared return type unverified, arity unchecked inside a body: every
-one of those is a check in this repository, and every one is a non-question in a
+one of those is a check in anoieu, and every one is a non-question in a
 typed functional language. We wrote three thousand lines to recover a fraction
 of what Lean would have given by construction. That is not an argument about
 taste; it is a measured cost, and we paid it.
@@ -534,17 +535,18 @@ and what nothing else provides.
 
 ---
 
-# Five projects that do not exist yet, and change the picture
+# Three projects that do not exist yet, and change the picture
 
-**Pathos**, **hermeneia**, **noesis**, **iogos** and **elenchos** are code
-names, and none of the five has a repository or a line of code. A sixth,
-**euthyna**, was named here and **has since been started** as a child project in
-eudaimonia's tree; its description has been deleted from this page and it
-documents itself at its source, which is what this ecosystem does with anything
-that launches. It is still referred to below wherever it carries an argument —
-**the argument stays, the specification goes.**
+**Pathos**, **iogos** and **elenchos** are code names, and none of the three has
+a repository or a line of code. Four others were named here and **have since
+been started**, all as child projects in eudaimonia's tree: **euthyna**,
+**noesis**, **hermeneia** and **mimesis**. Their descriptions have been deleted
+from this page and each documents itself at its source, which is what this
+ecosystem does with anything that launches. They are still referred to below
+wherever they carry an argument — **the argument stays, the specification
+goes.**
 
-The five are named here because the costs and open questions above are stated
+The three are named here because the costs and open questions above are stated
 relative to what exists today, and each of these would move a different one. Writing down what they *would* change is also the cheapest way
 to notice which of today's arguments are about the arrangement and which are
 merely about its current state.
@@ -589,158 +591,6 @@ it is where the work would go.
 artifact, and expensive artifacts want a stable interface to be built against.
 That is a point *for* the calculus as a fixed input — reason 3, restated with
 something concrete at stake.
-
-## Hermeneia — from the embedded semantics to Lean's own logic
-
-*Also a code name, and also work not yet started.* ἑρμηνεία is interpretation —
-the carrying of meaning from one account into another, and the title of
-Aristotle's *De Interpretatione* — which is exactly what the project does:
-carry what a proof establishes about an encoding into a statement in Lean's own
-terms.
-
-Logos proves things about a deep embedding. Its guarantee today reads
-
-```lean
-theorem correct___logos_state_is_refutation (assums : List Term) (cmds : CCmdList)
-    (h : logos_state_is_refutation (logos_run assums cmds) = true) :
-    eo_satisfiability (logos_assumption_term assums) false
-```
-
-— the conjunction of a list of *embedded* `Term`s is unsatisfiable under the
-*embedded* SMT-LIB semantics. That is true, checkable, and about the encoding. A
-Lean user who wants to conclude something about Lean's own `Int`, `BitVec` or
-`String` has to bridge the gap themselves, and there is no bridge.
-
-The second project is that bridge: a correspondence between the SMT-LIB
-semantics Logos carries and Lean's native logic, symbol by symbol and sort by
-sort, so that what a proof establishes can be *restated* as an ordinary Lean
-proposition.
-
-**What it changes, and it is more than it looks.**
-
-*The ecosystem acquires a second audience.* Today every consumer of a CPC proof
-is a checker. With a correspondence, a consumer can be a **proof**: a Lean
-development calls a solver, gets a refutation, and ends up with a theorem in its
-own terms. That is the strongest available answer to objection O5 — the
-interchange argument is worth what its consumers make it worth — because it adds
-a kind of consumer the arrangement does not have at all.
-
-*It answers open question 2 from the other end.* The sharpest argument for the
-calculus is the reference seam: a Lean pipeline needs a trusted, unverified
-translator from `.smt2` into its embedding, and that is where a statement can
-drift from the problem. A correspondence does not verify that translator; it
-makes it unnecessary in one direction. The problem stays in SMT-LIB, where ethos
-can check the proof against the actual file, and the *verdict* is what travels
-into Lean.
-
-*It changes what the generated Lean development is for.* Reason 6 says the Lean
-side is generated rather than chosen. Today what is generated is a soundness
-argument that a person reads and trusts. With a correspondence it becomes a
-component that a person *uses*, which is a different order of usefulness for the
-same generation machinery.
-
-**Why the compiler is the natural place to set it up.** A correspondence is a
-per-symbol obligation — `Int` to `Int`, `bvadd` to a bit-vector operation,
-`str.++` to an append — stated against the same semantics that already produces
-one artifact per symbol. That is exactly `ethos-eoc`'s shape: it compiles a
-symbol's meaning into a constructor, a type rule, an evaluator case and a
-verification condition, and a correspondence lemma is one more thing in that
-list. If it works, the compiler earns its keep by generating something no
-hand-written development would keep in step — which is a real answer to
-objection O2, and a reason to be slower about T2 than that objection suggests.
-
-Read the other way, it is also the strongest argument yet for arrangement **B**:
-a correspondence between two *Lean* definitions is a far easier thing to state,
-prove and maintain than one between a Lean definition and a term rendered out of
-`.eos` text by a compiler written in C++ and Python.
-
-**Where the difficulty sits.** Choosing what corresponds to what, and what to do
-where the two disagree. SMT-LIB's operations are total; Lean's native ones are
-total in a different way or not at all — division by zero, an out-of-range
-`str.substr`, a bit-vector of width zero. CPC already carries the evidence that
-this is the hard part: it declares `div_total`, `mod_total`, `/_total` and the
-`@div_by_zero` family precisely because the standard's totality has to be said
-somewhere. A correspondence has to say where each of those lands in Lean, and
-the answer is a design decision, not a lemma.
-
-## Noesis — the semantics and the compiler, defined in Lean
-
-*A code name, and also work not yet started.* νόησις is the top of Plato's
-divided line: the grasp of a principle that rests on no hypothesis, as against
-διάνοια, which reasons correctly *from* hypotheses it never examines. The name
-says what the project is for. Today `ethos-eoc` is the hypothesis — what a
-`.eos` file means is what the compiler makes of it, and the deep embedding,
-logos's soundness lemmas, the verification conditions and this analyzer's model
-of the language all reason from that and none of them can examine it. Noesis is
-a definition to reason from instead. (It shares its root with Eunoia, and with
-the anagram this repository is named after.)
-
-Concretely it is T1 and T2 taken together and proved: the `.eos` semantics
-written as Lean definitions over the SMT-LIB model logos already carries, the
-compiler as a Lean metaprogram over those definitions, and a theorem relating
-what it emits to what they say. Arrangement **B** is the shape; noesis is the
-artifact.
-
-**What it settles.**
-
-- Objection **O2** — the `.eos` layer is the tell — stops being something to
-  answer in prose. T1 lists what goes: the four vocabulary levels become types,
-  the aggregate table becomes pattern matching, `sem_compile.py` disappears,
-  and `is_list_nil` becomes an obligation with something behind it.
-- Objection **O6** — a checker, a compiler, a generated checker and a semantics
-  kept in step by hand at the seams — gets a statement where it currently has a
-  convention.
-- Objection **O3** — termination is nobody's job — moves from a measure written
-  as literal Lean text inside a `.eos` file, whose absence surfaces a full
-  regeneration later, to Lean's own well-founded recursion, checked where the
-  definition is written. Somebody still supplies the measure. Nobody has to
-  route it through a language that cannot typecheck it.
-- **Open question 3** is answered by building it. **Open question 7** — where
-  the line falls between the invariant core and what a signature contributes —
-  has to be answered *first*, because a compiler's correctness theorem
-  quantifies over signatures and cannot be stated without it. That is
-  eudaimonia's own blocker, and this is the version of it that cannot be
-  deferred.
-- And the case for it is already made above, in hermeneia's argument for
-  arrangement **B**: a correspondence between two *Lean* definitions is a far
-  easier thing to state, prove and maintain than one between a Lean definition
-  and a term rendered out of `.eos` text by a compiler written in C++ and
-  Python. Noesis is what makes hermeneia cheap.
-
-**What it does not settle.** Argument 1, deliberately: the signature stays
-`.eo`, SMT-shaped, maintained by the people who maintain the solver, and the
-reference check against the `.smt2` file stays exactly where it is. Nor
-performance — ethos remains the fast unverified checker and arrangement **D**
-stays blocked on the measurement, or on Pathos. And the population question T1
-raises is untouched: writing a calculus's semantics would demand Lean fluency
-where it now demands `.eos` fluency, which trades one small expert community for
-another rather than removing the requirement.
-
-**Why it is not Pathos under another name**, which is worth saying because the
-two descriptions sound alike. A compiler that emits a checker *and* a proof of
-its soundness is, read one way, a verified checker generator. But the hard parts
-barely overlap: Pathos's is efficiency under verification — hash consing,
-sharing, mutable state — and noesis's is the statement, what "this compiler is
-correct" asserts and against what. They compose, and either can be built first.
-
-**Where the difficulty sits.** Not in the target language, where a proof
-assistant is by construction good at this, but in the source. A
-compiler-correctness theorem needs a semantics of *Eunoia*, and there is not
-one: what matching does and does not check, how a `:list` annotation desugars
-under each operator attribute, what `eo::define` binds and in what order, when a
-program case is reachable, what a literal evaluates to. Objection O7 is the same
-observation from the other side — none of that was written down, and this
-project would have to write all of it down, exactly, before the theorem it wants
-can be stated. This repository's desugarer is a partial and informal answer to
-one corner of that question, validated case by case against the real parser, and
-the size of that corner is a fair guide to the size of the rest.
-
-**And what it would cost this repository**, since we should say so where we say
-it about T4. The eight `TRI` checks exist because nothing else compares the legs
-of the triple; under noesis there are no legs, and they go. The `.eo` checks
-stay, because the signature stays. A smaller loss than T4 and a real one, and
-the same reason to distrust our enthusiasm — this time about a proposal we are
-recommending rather than resisting.
 
 ## Iogos — logos in a second proof assistant
 
@@ -872,8 +722,9 @@ claim rather than an adjective.
 
 ## What the six mean for the argument above
 
-*Six were named and five are described above; `euthyna` is documented at its
-source now. It stays in this section because the argument still turns on it.*
+*Six were named and three are described above; `euthyna`, `noesis` and
+`hermeneia` are documented at their sources now. They stay in this section
+because the argument still turns on them.*
 
 
 Two of the cost columns are dated rather than wrong. Arrangement **D** is
@@ -897,14 +748,14 @@ turning its by-product into an instrument, making its strongest artifact reach
 further, making its largest one tractable, and settling where the semantics
 lives — and only the last of those is a fork rather than an increment.
 
-What all six share — the five below and the one that launched — is that they
-are expensive things built *against* the
-signature and the proof format, and each one that gets built raises the cost of
+What all six share — the three above and the three that have launched — is that
+they are expensive things built *against* the signature and the proof format, and each one that gets built raises the cost of
 moving those. That is an argument for settling questions 1 and 3 — where the
 calculus is defined, and whether `.eos` should be Lean — before rather than
 after. Noesis and iogos are the two that would settle question 3 instead of
 accruing against it, which is the argument for doing one of them first, and for
-deciding which one before either is started.
+deciding which one before either is started. Noesis started without that
+decision having been made.
 
 ---
 
@@ -993,33 +844,6 @@ the wrong place.
 
 ---
 
-## Mimesis — helping authors write signatures from scratch
-
-**The proposed artifact is an authoring setup**, for somebody with a calculus
-in mind and no Eunoia signature yet. It would help them write the declarations,
-rules and side conditions of an initial `.eo` signature, using worked examples
-and small accepting and rejecting proof tests. The maintainer intends to launch
-it soon, as recorded on 2026-09-16; it has not started and has no assigned home.
-
-**The gap is before checker generation.** Eudaimonia's `--dummy-rule` starter
-already supplies a working one-rule signature, semantics and regression proofs.
-Mimesis would help the author get from that starting point, or a blank file, to
-their own calculus. Its immediate consumers are the author and ethos; a later
-handoff to eudaimonia also needs semantics and soundness work. It would not
-replace either checker or claim that passing proof tests establishes soundness.
-
-**The case is about reason 1's author, not just its notation.** Keeping the
-signature in the solver developer's language earns more if someone can write a
-new one without reconstructing the conventions from a large existing calculus.
-A first test would take one small calculus from its author's rule descriptions
-to an exercised signature and record where help was still needed. If existing
-examples and eudaimonia's starter do that job just as well, the case for a
-separate authoring setup is weak. Whether this needs a repository of its own is
-not decided here. The name, μίμησις, imitation, is for learning through worked
-examples, not for requiring an existing signature as input.
-
----
-
 # What both columns agree on
 
 Reading them together, the disagreement is narrower than "calculus or Lean".
@@ -1057,7 +881,8 @@ Squarely on one side, and it should be said plainly: this tool is an argument fo
 the narrow-fragment position, and also an admission that the position is not
 free. A fragment small enough to analyze exhaustively is only better than a
 language that checks itself *if the analysis actually exists*. Every check in
-`docs/checks.md` is something a type system would have given for nothing.
+anoieu's [`docs/checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md)
+is something a type system would have given for nothing.
 
 ---
 

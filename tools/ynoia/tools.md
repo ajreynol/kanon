@@ -34,8 +34,14 @@ that is the line, and it is why the dependency auditor `R1` is not here.
 kept. **euthyna** left when eudaimonia started it and **koine** left when its
 repository existed; both are now in
 [`../../docs/roles.md`](../../docs/roles.md), which is where a tool with a role
-is described. A page that keeps its graduates is a page whose first entries are
-all finished work.
+is described. **Five more left on 2026-09-16**: **kanon**, whose governance
+transfer completed on 2026-09-15, and **epikrisis**, promoted out of eudaimonia
+— both members in
+[`ecosystem.json`](../../scripts/ecosystem/ecosystem.json) — and **noesis**,
+**hermeneia** and **mimesis**, each started as a child project in eudaimonia's
+tree and documented at its source. A page that keeps its graduates is a page
+whose first entries are all finished work, which is exactly what the first two
+entries here had become before that sweep.
 
 ## How to read it, and how to edit it
 
@@ -173,76 +179,6 @@ recommendation is worth making at all.
 
 ---
 
-## kanon — the ecosystem's governance, out of the analyzer
-
-**What:** the policy, its checker, the inventory and the joining scripts, in a
-repository that is not also the tool that files findings against you.
-**State:** governance transferred to kanon on 2026-09-15 (`7eb9973`).
-**Settles:** the rules are now kept outside the analyzer that files findings.
-The checker remains in anoieu as `R31`, so existing member pins do not move.
-**Today:** policy, vision, inventory, installer and joining prompts live in
-kanon. The remaining policy/checker version question is recorded in
-[the role register](../../docs/roles.md#r31--the-policy-checker).
-
-## epikrisis — a repository of its own, and not ours to grant
-
-**What:** the tool that audits how these repositories have changed over time,
-with every claim resting on evidence a reader can re-derive, **promoted out of
-its parent into a repository of its own.** It is the ecosystem's only source of
-GitHub history analysis, and `docs/laws.md` already requires every figure in a
-president's account to be re-derivable by somebody else, which is exactly what a
-president counting its own commits cannot offer.
-**State:** `proposed` — suggested by the maintainer, 2026-09-02. **Unlike every
-other entry on this page, the thing already exists and works.** What is proposed
-is a move, not a build.
-**Settles:** that the ecosystem's history analysis lives **two levels down
-inside another tool**, at `tools/workflow-launcher/tools/`, which our own
-inventory validator rejects as malformed — a child whose parent is a child.
-Nothing fails today only because it is not in the inventory. **A tool three
-repositories are expected to rely on should not be reachable only by knowing
-where somebody filed it.**
-**Costs:** eudaimonia loses a child project it started, and whatever the parent
-was getting from having it close. **We do not know what that is**, which is
-itself a reason the decision is not ours.
-**Before it:** nothing technical. **The one prerequisite is a person in
-eudaimonia agreeing**, which is the whole of the difficulty — and there is an
-argument to answer first. **epikrisis has already explained why it sits where it
-does**, in a section of its own README headed *Why it is here rather than one
-level up*: its host asks a question it has no instrument for, and epikrisis is
-that instrument. **That is a reason, not an accident**, and a proposal to move it
-has to beat it rather than ignore it.
-
-**And there may be a cheaper fix that gets us what we actually want.** Our
-complaint is that the ecosystem's only source of history analysis is
-unregistered and reachable only by knowing where somebody filed it. **That is
-solved by putting it in the inventory, not by moving it** — which would need our
-validator's rule against a child of a child revisited, and that rule is ours.
-**If registration is enough, the move is a want and not a need**, and this entry
-should be read that way.
-**Today:** running, unregistered, and depended on by two laws written in this
-repository before anybody asked it whether it wanted the job. The second is the
-sharper one: **a stretch's record must state how many commits each tool took and
-how many are believed AI-generated**, and the second half of that is a
-measurement nobody in this ecosystem can currently make. Across 323 commits this
-stretch, every one is authored by a human and three name an agent. **A project
-whose subject is how repositories evolve is where that question belongs**, and
-naming it may do more to focus the tool than the promotion would. It is posed as a
-research project in `D20`, with what we already know about why it is hard:
-trailers are optional, inconsistently spelled, record co-authorship rather than
-automation, and **absence proves nothing** — our own history is almost entirely
-agent-written and carries almost none. **The tree with the best attribution in
-this ecosystem is cvc5, which never joined it.**
-**Why here:** **listed beside `kanon`, and not the same kind of
-item as either.** Those two are `init_eo new` — nothing exists, and starting
-them is ours to do. This is `init_eo from-child`, the work exists, and
-**graduating a child project is its parent's decision.** It sits on this page as
-something we want and have asked for, never as something we have planned.
-
-*On the name: chosen in eudaimonia's tree, not ours. It is recorded in
-[`names.md`](names.md) under names in use elsewhere, which is the section that
-exists because this register once called a name free while a neighbouring tree
-was already using it.*
-
 ## nomophylax — the laws, out of the hands of the party they bind
 
 **What:** the tool that maintains `docs/laws.md` — the rules under which a
@@ -264,7 +200,7 @@ nobody yet whose stretch was judged by rules somebody else wrote. `kanon`
 taking Stretch 1 is what makes this real rather than tidy.
 **Today:** `docs/laws.md` is held by kanon, the current president, following
 the 2026-09-15 handoff. Separating custody of the laws remains a proposal.
-**Why here:** **behind `kanon`, and ahead of the remaining proposals.** It is not urgent — one stretch, one president, and the maintainer
+**Why here:** **first, now that `kanon` has left the page.** It is not urgent — one stretch, one president, and the maintainer
 reviews every commit, which is real oversight even if it is not independence.
 It is placed above the research tools because **the defect it fixes gets worse
 with every stretch that closes**, and the entries written before it exists
@@ -304,7 +240,7 @@ gives.
 **Today:** `tools/martyria/` and `tools/zetesis/` moved to kanon on
 2026-09-15. Their relocation does not by itself establish independence from
 the ecosystem whose conduct they assess.
-**Why here:** **fourth, behind `nomophylax`.** It cannot be built before the
+**Why here:** **second, behind `nomophylax`.** It cannot be built before the
 thing it advises exists, and it is placed above the research tools for the same
 reason: what it fixes gets quietly worse while nothing is done, because every
 stretch that closes was assessed by a project living inside the assessed.
@@ -333,8 +269,7 @@ defects it finds in the first.
 every one costs a person's judgement before it can be filed — and the generated
 checker is less independent than the argument wants, since it reads the same
 signature through the same compiler.
-**Before it:** `nothing`. It is the only entry here that can start without a
-decision being made first.
+**Before it:** `nothing`. It can start without a decision being made first.
 **Today:** the baseline, [`../../docs/fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md) —
 grammar-directed generation, a mutated seed corpus, three verdict-level oracles,
 and no instrumentation anywhere. It is deliberately the floor, which is what
@@ -343,83 +278,6 @@ makes *research-quality* a measurable claim rather than an adjective.
 could start on a Monday. It has a floor already built, it needs no question
 settled first, and it is the only one that would pay for the generation column
 in a currency other than trust.
-
-## mimesis — helping authors write signatures from scratch
-
-**What:** an authoring setup that helps turn a new calculus into an initial
-Eunoia `.eo` signature, with worked examples and small proof tests.
-**State:** `named` — requested by the maintainer on 2026-09-16, with the
-intention of launching soon; not yet started or assigned a home.
-**Settles:** tests the authoring cost behind reason **1**: whether keeping the
-calculus in the solver developer's language also makes a new one practical to
-write. Scope and the test of that claim are in
-[the account](why-eunoia.md#mimesis--helping-authors-write-signatures-from-scratch).
-**Costs:** helping authors express their intended rules and side conditions
-without mistaking a signature that accepts proofs for a sound calculus.
-**Before it:** a launch charter choosing the first example calculus and the
-project's home; neither is decided by this listing.
-**Today:** existing signatures as examples, plus eudaimonia's `--dummy-rule`
-starter; no dedicated mimesis authoring setup is registered.
-**Why here:** behind `elenchos`, which already has an executable baseline, but
-ahead of larger compiler and checker changes: one small calculus offers a
-bounded first test, and the maintainer intends to start it soon.
-
-## noesis — the semantics and the compiler, defined in Lean
-
-**What:** `.eos` written as Lean definitions over the model logos already
-carries, the compiler as a Lean metaprogram over those definitions, and a
-theorem relating what it emits to what they say.
-**State:** **started, elsewhere** — a child project in eudaimonia, with a
-charter and docs, whose stated goal is a verified Eunoia compiler in Lean. The
-`P3` audit in [`proposals.md`](proposals.md) returned **not yet** on the
-*repository* question and that verdict stands; what has changed is that "it has
-been written zero times" is no longer true, and this listing said so for longer
-than it was accurate. **This entry is now a description of somebody else's
-work** and should be read for what it wants rather than as a plan of ours.
-**Settles:** **O2**, **O3** and **O6**, each of which currently has a convention
-where it wants a statement; and **open question 3**, by building it. Arrangement
-**B** is the shape.
-**Costs:** not the target language, where a proof assistant is by construction
-good at this, but the source. A compiler-correctness theorem needs a semantics
-of *Eunoia* and there is not one — what matching checks, how `:list` desugars
-under each attribute, what `eo::define` binds and in what order.
-**Before it:** **open question 7**, where the line falls between the invariant
-core and what a signature contributes, because the theorem quantifies over
-signatures and cannot be stated without it; and the fork with `iogos`, which
-cannot both hold in their strongest forms.
-**Today:** `ethos-eoc`, which is the hypothesis — what a `.eos` file means is
-what the compiler makes of it, and everything downstream reasons from that and
-none of it can examine it.
-**Why here:** the highest leverage on the page and the lowest readiness. It
-would settle open question 3 rather than accrue against it, and it is what makes
-`hermeneia` cheap. It sits below `elenchos` because it cannot start before a
-fork is decided, and its first task is writing down a language nobody has
-written down.
-
-## hermeneia — from the embedded semantics to Lean's own logic
-
-**What:** a correspondence between the SMT-LIB semantics logos carries and
-Lean's native logic, symbol by symbol and sort by sort, so that what a proof
-establishes can be restated as an ordinary Lean proposition.
-**State:** `named`.
-**Settles:** **O5**, more directly than anything else on this page: it adds a
-kind of consumer the arrangement does not have at all — a Lean development that
-ends with a theorem in its own terms rather than with a checker's verdict. It
-answers **open question 2** from the other end, by making the reference seam
-unnecessary in one direction rather than by verifying it.
-**Costs:** choosing what corresponds to what where the two disagree. SMT-LIB's
-operations are total and Lean's native ones are not, or are total differently —
-division by zero, an out-of-range `str.substr`, a bit-vector of width zero. Each
-is a design decision, not a lemma.
-**Before it:** `nothing` strictly. `noesis` makes it far cheaper, which is the
-whole of why it sits below.
-**Today:** `nothing`. A Lean user who wants a conclusion about Lean's own `Int`,
-`BitVec` or `String` bridges the gap themselves, and there is no bridge.
-**Why here:** below `noesis` because it is the same work twice as hard while the
-semantics is still `.eos` text rendered by a compiler written in C++ and Python
-— a correspondence between two Lean definitions is a far easier thing to state
-and maintain. Above `pathos` because what it adds is an audience the ecosystem
-has never had, and `pathos` improves something it already has.
 
 ## pathos — an efficient verified proof checker
 

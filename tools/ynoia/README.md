@@ -12,8 +12,10 @@ Eunoia read backwards, and this is Eunoia read as a question.*
 A child project under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, and not part of the governance commands this repository ships.
 Deleting this directory changes no running command. **This is not an island:**
-kanon names this project on its front page to distinguish housed work from
-required reading; it is therefore not unadvertised.
+kanon carries it in
+[`ecosystem.json`](../../scripts/ecosystem/ecosystem.json) and
+`scripts/status_eo` lists it among the advertised children; it is therefore not
+unadvertised.
 
 ## The question
 
@@ -114,8 +116,9 @@ project's call.
 **The account exists and is long.** Nothing in it has been argued with by
 anybody who disagrees, which is the whole point of writing it and has not
 happened yet. It has reached no consumer and so has earned no place in
-[`docs/practice.md`](../../docs/practice.md) — with one qualification: of the six projects it named, **euthyna** has since been started
-as a child project of eudaimonia, and the register in
+[`docs/practice.md`](../../docs/practice.md) — with one qualification: of the seven projects it named, four —
+**euthyna**, **noesis**, **hermeneia** and **mimesis** — have since been started
+as child projects of eudaimonia, and the register in
 [`names.md`](names.md) is now consulted by `prompts/init_eo` when a new
 repository picks a name. Whether that is this account's doing or
 convergence is not something this project can establish about itself.

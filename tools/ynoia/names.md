@@ -25,8 +25,8 @@ an account — `anoieu_fuzz` is one — but the burden is on the name to earn it
 **And the convention has a second reason, found by breaking it.** A child
 project named with an ordinary English word makes every sentence using that word
 ambiguous — proper noun, or common one — and the ambiguity is not only a reading
-cost. `scripts/policy_check.py` decides whether a child project is an island by
-grepping the tree for **the bare project name**, so a common word matches prose
+cost. anoieu's `scripts/policy_check.py` decides whether a child project is an
+island by grepping the tree for **the bare project name**, so a common word matches prose
 about the *subject* rather than about the project, and reports an island break
 that is not one. An unusual name reads unambiguously and greps unambiguously,
 and those turn out to be the same property. The case is written up in
@@ -50,9 +50,11 @@ about an hour.
 | **tekmerion** | τεκμήριον, conclusive evidence as against a mere sign: the evidence that what these documents say is still true, claim by claim. The name is the standard it is held to rather than a description of what it has. **Started**, in anoieu |
 | **martyria** | μαρτυρία, testimony — the evidence a witness gives: the **actionable** ethics project. One situation at a time, the evidence it rests on, and a stance somebody can act on. Also the name of one entry in its register. **Started**, in kanon |
 | **zetesis** | ζήτησις, inquiry — the seeking, as against the having-found: the **general** half. What standard this ecosystem is held to, taken from work done outside, and whether our record could show we met it. It has no standard yet, which is why the name is the one it is. **Started**, in kanon |
+| **kanon** | κανών, the measuring rod — the standard a thing is held straight against: the ecosystem's governance, out of the analyzer — the policy, vision, inventory and joining scripts, in a repository that is not also the tool that files findings against members. The checker stays in anoieu. Argued as `B15` on the board and `P2` in [`proposals.md`](proposals.md). **Its own repository**, joined 2026-09-14; governance arrived 2026-09-15 |
 | **koine** | κοινή, *the common tongue* — the shared dialect that let people who spoke differently understand each other. The shared machinery of the reporting loop, so the protocol has one implementation rather than one per member. **Its own repository**, and a member; audited as [`P1`](proposals.md) |
 | **noesis** | νόησις, *the act of understanding* — the semantics and the compiler defined **in** Lean rather than compiled into it: a verified Eunoia compiler. **Started**, in eudaimonia, and found there rather than declared here — see the note under *Reserved* |
 | **hermeneia** | ἑρμηνεία, interpretation — correspondence between embedded SMT-LIB semantics and Lean's native logic. **Started**, in eudaimonia at `tools/hermeneia` |
+| **mimesis** | μίμησις, imitation — learning to express a calculus through worked examples: how a Eunoia signature is written and how one gets into Logos, in two strands, case studies and tutorials. **Started**, in eudaimonia at `tools/mimesis` |
 | **workflow-launcher** | descriptive rather than Greek, and the register's own exception applies: it is a program and not an account. The first hour of a new tool's life, and a register of what this ecosystem's practice turns out to be doing. A child project, in eudaimonia |
 
 **Names chosen outside this ecosystem are not here.** `cvc5` and `ethos-eoc` are
@@ -66,29 +68,27 @@ the name was ours to choose.
 An intention recorded by the maintainer, not a launched project. No location
 is assigned until the launch.
 
-| name | Greek | what it would be |
-| --- | --- | --- |
-| **mimesis** | μίμησις, imitation — learning to express a calculus through worked examples | a setup for helping authors write Eunoia signatures from scratch. **The maintainer intends to launch it soon**, recorded 2026-09-16; not started. Scope in [the account](why-eunoia.md#mimesis--helping-authors-write-signatures-from-scratch), listing in [tools.md](tools.md#mimesis--helping-authors-write-signatures-from-scratch) |
+There is currently nothing reserved for an intended launch. `mimesis` was the
+last, reserved on 2026-09-16 and started the same day.
 
 ## Reserved, and free to take
 
 Each was named in [`why-eunoia.md`](why-eunoia.md) because some argument there is
-stated relative to its absence. **None of the names below has a repository, and none has a line of code** — a
-claim this table has now been wrong about once. Two of them have a **stub**: a
-placeholder directory in this repository carrying one sentence and doing
-nothing. **A stub is not a claim on the name.** It marks a place, and it is
-deleted under the handoff protocol in
-[`protocols.md`](../../docs/protocols.md). `noesis` sat
-here while eudaimonia was already running it as a child project, and it moved to
-*Taken* only because somebody went looking in the neighbouring tree. **Being in
-this table is not evidence that a name is unused**, for the same reason the
-section after it exists.
+stated relative to its absence. **None of the names below has a repository, and
+none has a line of code** — a claim this table has now been wrong about once.
+**None of them currently has a stub** either: a placeholder directory carrying
+one sentence and doing nothing. **A stub is not a claim on the name.** It marks
+a place, and it is deleted under the handoff protocol in
+[`protocols.md`](../../docs/protocols.md). `noesis` sat here while eudaimonia
+was already running it as a child project, and it moved to *Taken* only because
+somebody went looking in the neighbouring tree. **Being in this table is not
+evidence that a name is unused**, for the same reason the section after it
+exists.
 
 | name | Greek | what it would be |
 | --- | --- | --- |
-| **kanon** | κανών, the measuring rod — the standard a thing is held straight against | **the ecosystem's governance, out of the analyzer**: the policy, vision, inventory and joining scripts; the checker stays in anoieu, in a repository that is not also the tool that files findings against members. Argued as `B15` on the board and `P2` in [`proposals.md`](proposals.md). **Taken**: the repository exists and joined on 2026-09-14. Governance arrived on 2026-09-15; anoieu removed its old stub in `eeafbcc` |
 | **nomophylax** | νομοφύλαξ, guardian of the laws — the office that held the statutes and checked that magistrates acted within them | **the tool that maintains `docs/laws.md`**, and checks a closed stretch entry against the rules it was supposed to be written under. Not a lawgiver: amendments stay a person's. Suggested 2026-09-02. It completes a family already here by accident — `dokimasia` scrutinises **before** office, `euthyna` audits **after**, this watches **during**. `thesmos` was the alternative |
-| **euboulia** | εὐβουλία, good counsel — the quality of deliberating well, as against the deliberating itself. It shares its prefix with *eunoia* by construction | **the ethical advisor to whoever holds the laws.** The ecosystem's ethics gathered into one place, advising `nomophylax` and deciding nothing. Would accumulate `martyria` and `zetesis`, which today are child projects of the repository whose conduct they assess. Suggested 2026-09-02. `bouleusis` stays free and stays the better name for anything that decides cases |
+| **euboulia** | εὐβουλία, good counsel — the quality of deliberating well, as against the deliberating itself. It shares its prefix with *eunoia* by construction | **the ethical advisor to whoever holds the laws.** The ecosystem's ethics gathered into one place, advising `nomophylax` and deciding nothing. Would accumulate `martyria` and `zetesis`, which moved to kanon on 2026-09-15 and are child projects there. Suggested 2026-09-02. `bouleusis` stays free and stays the better name for anything that decides cases |
 | **pathos** | πάθος, the third mode of persuasion | an efficient *verified* proof checker — the one that would let the ecosystem ship what it proves rather than a second implementation |
 | **iogos** | not Greek: `logos` with the **L** of Lean swapped for the **I** of Isabelle. The one joke in the register, and it earns its place by fixing the scope in the name | the same calculus, semantics and soundness development redone against Isabelle/HOL — an Isabelle backend for `ethos-eoc`, and logos rebuilt on it, as an independence check |
 | **elenchos** | ἔλεγχος, cross-examination | differential fuzzing derived from the calculus rather than written by hand — what the fuzzer here is a deliberate baseline for |
@@ -110,7 +110,7 @@ using it, and a name was taken on the strength of that.
 
 **`bouleusis`** — βούλευσις, deliberation about particulars — was considered
 for the actionable half and not used, since `martyria` covers it. Free, and the
-argument for it is in this repository's history.
+argument for it is in anoieu's history, where this project began.
 
 **So the register is not the whole answer to *is this name free*.** It records
 what has been claimed, and a name can be in use without being claimed. Look in
