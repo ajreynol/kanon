@@ -10,6 +10,7 @@ Start with [kanon's README](../README.md) for its purpose and current scope.
 | [Policy](policy.md) | The shared repository policy and joining procedure |
 | [Vision](vision.md) | The development goals, argued rather than mechanically checked |
 | [Laws](laws.md) | The presidency and its record |
+| [History](history.md) | kanon's account of its own term, and the membership record |
 | [Board](board.md) | Cross-repository work and its next steps |
 | [Roles](roles.md) | Responsibilities and their current holders |
 | [Coherence](coherence.md) | Maintenance responsibilities and protocols |

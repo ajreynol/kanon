@@ -114,6 +114,19 @@ PRESIDENT_FILES = {
     "docs/history.md": "its account of its own term",
 }
 
+#: The repositories that have held the shared policy, and so the only ones a
+#: `joined` coordinate may name. The policy moved from anoieu to kanon in the
+#: 2026-09-15 handoff, which is why that field names a repository as well as a
+#: commit: a bare sha stopped identifying anything the moment there were two
+#: trees it could have come from, and the policy is expected to move again
+#: every time the office does. A name added here is a statement that a
+#: repository once kept the policy, and is never removed when it stops.
+POLICY_HOLDERS = ("anoieu", "kanon")
+
+#: A short git object name, the only form `joined` is written in. Long enough
+#: to be unambiguous in trees this size and short enough to read in a table.
+SHORT_SHA = re.compile(r"[0-9a-f]{7,40}")
+
 #: A footing an entry says we *intend*, in `proposed`, while its `status` stays
 #: what is true today. It exists because the associate protocol is drafted and
 #: not decided: recording the intention as the fact would be this file asserting
@@ -344,6 +357,24 @@ def well_formed(inv: dict) -> list[str]:
         url = e.get("url", "")
         if url and not url.startswith("https://"):
             bad.append(f"{name}: `{url}` is not an https url")
+        # `joined` names the commit of whichever repository held the shared
+        # policy at the time, so it reads `kanon 1a2b3c4`. Checked because the
+        # tempting shorthand -- a bare sha -- was unambiguous only while one
+        # repository had ever kept the policy, and that stopped being true at
+        # the 2026-09-15 handoff. Nothing requires the field; this decides only
+        # whether a value that is there can be read.
+        joined = e.get("joined", "")
+        if joined:
+            if status not in MEMBERS:
+                bad.append(f"{name}: a {status} entry carries `joined`, which "
+                           "records when a repository joined; this one has not")
+            parts = joined.split()
+            if len(parts) != 2 or parts[0] not in POLICY_HOLDERS \
+                    or not SHORT_SHA.fullmatch(parts[1]):
+                bad.append(f"{name}: `joined` is {joined!r}; it names the "
+                           "repository that held the policy and that "
+                           "repository's commit, as in `kanon 1a2b3c4`, from "
+                           f"{' or '.join(POLICY_HOLDERS)}")
     # `docs/laws.md`, LAW 3: there is a president, "one at a time". A file that
     # records two has recorded a handover that did not finish, which is the one
     # way this footing can go wrong silently -- both rows look correct alone.

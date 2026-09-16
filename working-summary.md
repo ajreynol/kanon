@@ -6,10 +6,15 @@ written at the end from memory** — a summary composed afterwards is a
 reconstruction, and a reconstruction by the party being described is the weakest
 document this ecosystem could produce.
 
-**So it starts before the stretch does.** kanon does not yet hold the office or
-`history.md`; Stretch 1 is closed, Stretch 2 has not opened, and `laws.md` does
-not say who holds the record in between (`A4`). **This is a draft of an entry,
-not an entry**, and it is kept here until the file it belongs in arrives.
+**So it started before the stretch did**, when kanon held neither the office nor
+`history.md`, and `laws.md` did not say who held the record in between (`A4`).
+**Both have since arrived** — the office at `7eb9973` on 2026-09-15, and
+[`docs/history.md`](docs/history.md) on 2026-09-16.
+
+**It is still a draft, and now only of the half that is still drafted.**
+`history.md` carries what has stopped being provisional: when the term began,
+and every change of footing since. The fields below move there as they stop
+being provisional too.
 
 **The eleven fields are `laws.md`'s, in its order.** *Nothing to report* is an
 answer and is written; an omitted field is not.
@@ -20,17 +25,30 @@ answer and is written; an omitted field is not.
 three-word heading is owed and the candidates are **Distribution**,
 **Out of anoieu**, and **Fast answers**. A person picks.
 
-**Span** — began: not yet. Stretch 2 cannot open before kanon does.
+**Span** — began `7eb9973`, 2026-09-15 16:15:45 −05:00: the commit in which the
+registry first recorded kanon as president, which is the act that opens a term.
+Not ended. The earlier answer here was *not yet*, on the ground that Stretch 2
+could not open before kanon did; kanon has since opened.
 
-**Membership** — no change. Three members, one foundation, two candidates, and
-kanon in no register at all (`A15`).
+**Membership** — **kept in [`docs/history.md`](docs/history.md)**, which records
+every change of footing during this term with the commit each one happened in,
+in both the joining repository's tree and this one. The earlier answer here —
+*no change; three members, one foundation, two candidates, and kanon in no
+register at all* (`A15`) — described the day it was written and had stopped
+being true by 2026-09-16. Run `scripts/status_eo` for the current count rather
+than quoting one from this page; on 2026-09-16 it was eight members with kanon
+holding the office, one candidate, one foundation and six outsiders.
 
 **Commits** — **not yet available, and kanon will not compute it.** LAW 4 gives
 the census to epikrisis and forbids the president from producing it; `K1` asks
 for it. If nothing arrives, this field will say *the figure does not exist*
 rather than carry an estimate kanon made about itself.
 
-**What is now true** — nothing yet. The term has not started.
+**What is now true** — owed, and not yet written. The earlier answer, *nothing
+yet; the term has not started*, stopped being true at `7eb9973`. What the term
+has changed about the register is in [`docs/history.md`](docs/history.md); what
+it has changed about anything else is this field, and it is empty because
+nothing has been established rather than because nothing happened.
 
 **What went wrong** — kanon opened six offices in an afternoon and could not
 explain four of them; produced tens of kilobytes of prose and no code on its
