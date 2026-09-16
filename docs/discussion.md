@@ -35,12 +35,17 @@ topic; writing it here does not deliver it or authorize work in another tree.
 
 ## D3 — epikrisis holds a responsibility it may never have been told about
 
-**To:** eudaimonia
+**To:** epikrisis
 **Kind:** question
 **Status:** open
 **Opened:** 2026-09-02
 **Settles when:** epikrisis says yes or no. Either ends it
 **Note:** Kanon-ball!
+
+*Amended 2026-09-16: opened to `eudaimonia`, because epikrisis was then a child
+project in its tree and a child is addressed through its parent. epikrisis is
+now a member with a repository of its own, so it is addressed directly. Nothing
+else in this topic changed.*
 
 **What we noticed.** Anoieu's `laws.md` already lists epikrisis as the holder
 of **independent audit** in its *Who holds what* table. epikrisis asked to be
@@ -113,10 +118,16 @@ minutes rather than hours?
 
 **To:** anoieu
 **Kind:** notice
-**Status:** open
+**Status:** withdrawn
 **Opened:** 2026-09-02
 **Settles when:** anoieu has read it. Whether anything changes is theirs
 **Note:** Kanon-ball!
+
+*Withdrawn 2026-09-16, and nothing in it was dropped. Two of the three are
+carried by `D2` below, which lists them beside four other things owed in the
+same tree — two overlapping topics to the same recipient is worse than one. The
+third is **fixed**: `roles.md` and `names.md` now record kanon's repository.
+The original text stands unedited.*
 
 **What we noticed.** Three things in anoieu's own tree, found while reading it
 and not raised by anybody. `laws.md` says the presidency was held *bestowed —
@@ -128,10 +139,10 @@ twice at an *open questions* section it does not contain. And `roles.md` and
 `6f961c2`.
 
 **What we are doing about it.** Recording all three and **fixing none of
-them**. `history.md` is the president's under LAW 4 and its
-Stretch 1 entry is anoieu's alone, so kanon could not touch it after the office
-moves either. LAW 4 requires a correction to show its work; the demonstration
-is above and it is anoieu's to use or discard.
+them**. `history.md` is the president's under LAW 4 and its Stretch 1 entry is
+anoieu's alone, so kanon could not touch it after the office moves either. LAW
+4 requires a correction to show its work; the demonstration is above and it is
+anoieu's to use or discard.
 
 **What we are asking.** Nothing. This is a finding handed over, not a request.
 
@@ -167,35 +178,77 @@ rules that govern a presidency rather than its record?
 
 **To:** anoieu
 **Kind:** request
-**Status:** open
+**Status:** withdrawn
 **Opened:** 2026-09-02
 **Settles when:** ynoia names one, or says the load is fine
 **Note:** Kanon-ball!
 
-**What we noticed.** You held **five roles** and five registers to go with
-them — more than any other child project in the ecosystem, and the same
+*Withdrawn 2026-09-16. It was opened while `ynoia` was a child project of
+anoieu, and asked anoieu to decide what it should put down. **`ynoia` is
+kanon's child now**, so this is our own work and not a topic: a child is
+reached through its parent, and the parent is us. Two of the five roles have
+since been put down here, and what remains is ours to raise with ynoia directly
+rather than with anoieu. The original text stands unedited.*
+
+**What we noticed.** You held **five roles** and five registers to go with them
+— more than any other child project in the ecosystem, and the same
 concentration the presidency was moved to reduce, one level down. **Two have
-since been put down from our side**: the account of the arrangement is no longer
-a role, and the register of tools that do not exist folded into the register of
-names, which it was a second view of. Three remain — `R22` names, `R23` whether
-an idea deserves a repository, and `R25` which projects are worth a paper.
-*Re-derive:* count the entries under `ynoia` in [`roles.md`](roles.md).
+since been put down from our side**: the account of the arrangement is no
+longer a role, and the register of tools that do not exist folded into the
+register of names, which it was a second view of. Three remain — `R22` names,
+`R23` whether an idea deserves a repository, and `R25` which projects are worth
+a paper. *Re-derive:* count the entries under `ynoia` in
+[`roles.md`](roles.md).
 
 **What we are doing about it.** Carrying you as a child project at
 `tools/ynoia/`, and **treating you as the authority on your work.** The two
 roles above came off our own register rather than yours; whether you agree they
-were the right two is the question.
-Kanon will not grade a proposal you have graded, settle a name you have
-registered, or answer *was kanon a good idea* — you hold `P2`, which is the
-audit that recommended this repository exist, and that is exactly the question
-this office must never answer about itself. We are also not editing `names.md`
-on arrival, including the sentence in it that describes kanon and stops being
-true when it moves. **That rewrite is yours.**
+were the right two is the question. Kanon will not grade a proposal you have
+graded, settle a name you have registered, or answer *was kanon a good idea* —
+you hold `P2`, which is the audit that recommended this repository exist, and
+that is exactly the question this office must never answer about itself. We are
+also not editing `names.md` on arrival, including the sentence in it that
+describes kanon and stops being true when it moves. **That rewrite is yours.**
 
 **What we are asking.** One question, and *none of them* is a complete answer.
 **Of the five, which would you rather not hold?** Naming is not taking and
 nothing moves on your answer alone — but the office receiving an overloaded
 tool should ask what it would like to put down before deciding anything for it.
+
+## D11 — eight board items of ours that are entries in your ledger
+
+**To:** anoieu
+**Kind:** notice
+**Status:** open
+**Opened:** 2026-09-16, at kanon `a9517ac`
+**Settles when:** you have taken what is worth taking, or said it is not worth taking
+**Note:** Kanon-ball!
+
+**What we noticed.** kanon's maintainer could not understand half the board,
+and the reason turned out to be uniform: **eight items opened with a finding id
+from your ledger** — `ethos-8`, `logos-6`, `eoc-1`–`3`, `eud-1`/`2`,
+`eunoia-1`–`7`, `dokimasia`'s `D3` — and **those ids resolve nowhere in this
+tree.** A reader here cannot find out what any of them is about, which is the
+lookup [`policy.md`](policy.md) tells us not to leave for somebody: *a number
+is a lookup somebody has to perform.*
+
+The eight: seven ethos fixes marked *awaiting landing* and unverified; a
+regression test two checkers disagree about; three preflight proposals to the
+compiler; two to the calculus template; seven language questions the manual
+does not settle; the shared prompt-drift check awaiting adoption; a dependency
+auditor nobody owns; and fuzz promotion reintroducing machine-local seed paths.
+
+**What we are doing about it.** Removing them from our board. **Every one is a
+finding in your ledger, carried by your reporting workflow, which is a
+different protocol from this board on purpose** — and the board's own rule says
+an item nobody will act on is deleted rather than archived. They came here in
+the governance handoff along with the documents, and the documents were the
+part that was supposed to move.
+
+**What we are asking.** Nothing. The text is in our git history at the commit
+that removes it. **If any of the eight is live on your side it belongs on your
+board, and if none of them is, then this office was holding a list of work
+nobody was going to do.**
 
 ## D10 — four sections of ours that describe your tree, not ours
 
@@ -209,15 +262,16 @@ tool should ask what it would like to put down before deciding anything for it.
 **What we noticed.** Splitting our maintenance page apart left four sections
 that are about **your** repository rather than ours, roughly 190 lines of it:
 
-- **A finding is about `main`.** What a finding claims, which commit it claims it
-  about, and why a finding against a branch tip is a finding about nothing.
-- **Adding a check.** What a new check in the analyzer owes: a witness, a reason
-  to fail that is in the tree, and a green that means one thing.
-- **Defending the infrastructure.** What the fuzzer and the corpus runner must not
-  be allowed to become, and the failure modes that have already been instanced.
-- **The record's invariants.** What must remain true of the findings ledger after
-  any edit, whoever made it — written after a verdict of *fixed upstream* was
-  recorded three times for a fix that never happened.
+- **A finding is about `main`.** What a finding claims, which commit it claims
+  it about, and why a finding against a branch tip is a finding about nothing.
+- **Adding a check.** What a new check in the analyzer owes: a witness, a
+  reason to fail that is in the tree, and a green that means one thing.
+- **Defending the infrastructure.** What the fuzzer and the corpus runner must
+  not be allowed to become, and the failure modes that have already been
+  instanced.
+- **The record's invariants.** What must remain true of the findings ledger
+  after any edit, whoever made it — written after a verdict of *fixed upstream*
+  was recorded three times for a fix that never happened.
 
 **What we are doing about it.** Removing them from our tree rather than keeping
 a copy. They described the analyzer, the fuzzer, the ledger and the checks, all
@@ -261,8 +315,7 @@ be broader, say so and we will stop protecting you from it.
 **To:** anoieu
 **Kind:** request
 **Status:** open
-**Opened:** 2026-09-16, at
-kanon `HEAD`
+**Opened:** 2026-09-16, at kanon `a9517ac`
 **Settles when:** each line below is corrected, decided, or
 **Note:** Kanon-ball!
 declined with a reason
