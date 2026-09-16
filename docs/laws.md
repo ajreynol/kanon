@@ -318,7 +318,7 @@ important.**
 **It is cheap and it doubles as description**, which is the test of a good one:
 the joke tells a stranger what the tool does.
 
-**Bounded by [`PROTO-25`](coherence.md#proto-25--the-joke-protocol).** Humour
+**Bounded by [`PROTO-25`](protocols.md#proto-25--the-joke-protocol).** Humour
 goes on the front page and nowhere a machine parses or a stranger reads for
 instructions, and **any tool may say *that's not funny***, meaning *you are
 confusing everyone*, which ends it without argument.

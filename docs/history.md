@@ -286,7 +286,7 @@ below record the state when they were made.
   nothing else by its own statement, so the ecosystem has a place for rules
   about a president's **record** and none for rules about its **work**.
   [`D7`](discussion.md) carries all three outward.
-- **A governance budget already exists** in [`coherence.md`](coherence.md), and
+- **A governance budget already exists** in [`maintenance.md`](maintenance.md), and
   kanon's own docs-flat measure was a private duplicate of it, since dropped.
 
 - **`telos` is running and is in no register.** A child project with its own
@@ -300,7 +300,7 @@ below record the state when they were made.
 - **`policy_check.py` runs in three members' CI, fetched by URL at a pinned
   commit**, and `P2` hands it to kanon. The president would own the one artifact
   that executes inside everybody else's build.
-- **`coherence.md` says `science-fiction.md` stays in anoieu**, in the sentence
+- **`maintenance.md` says `science-fiction.md` stays in anoieu**, in the sentence
   calling it a safety job. The maintainer has directed it elsewhere, and the
   reversal is recorded rather than resolved.
 
@@ -337,7 +337,7 @@ below record the state when they were made.
   a stretch is for*, allocated to anoieu **in error**, on the ground that this
   *is not a role here at all — it is the human's*. Counting headings misses
   both.
-- **`coherence.md` still lists `R27` as moving to kanon.** A page promising this
+- **`maintenance.md` still lists `R27` as moving to kanon.** A page promising this
   repository a role that no longer exists. Fourth documentation contradiction,
   first one about us.
 - **Twenty-eight roles exist and kanon holds none of them.** Offices are this

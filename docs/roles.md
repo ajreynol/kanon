@@ -398,7 +398,7 @@ which is `R30`.
 **Role:** the maintenance entry point and the protocols under it — what to ask
 before changing something, how a person steers an agent, and what the commands
 here do.
-**Owns:** `docs/coherence.md`, `docs/interface.md`, `docs/maintenance.md` and
+**Owns:** `docs/maintenance.md`, `docs/interface.md`, `docs/maintenance.md` and
 `docs/commands.md`.
 **Not this role:** the commands themselves, which are `R6`'s; and what an agent
 is told about somebody else's repository, which is `R4`'s prompts.

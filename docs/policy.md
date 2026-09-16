@@ -732,7 +732,7 @@ member's CI is theirs.
 
 Role handoffs follow [`roles.md`](roles.md#how-a-role-is-handed-off);
 replacement of a stub follows
-[`PROTO-20`](coherence.md#proto-20--the-handoff-protocol). History and letters
+[`PROTO-20`](protocols.md#proto-20--the-handoff-protocol). History and letters
 stay in the repository that held the office, under [LAW
 4](laws.md#law-4--the-president-writes-historymd-in-its-own-repository-and-a-letter-to-its-successor).
 
@@ -1019,7 +1019,7 @@ The policy is written to be copied. What another repository has to decide:
 | --- | --- |
 | how the tree is arranged | the table in *The layout* |
 | where the maintenance note goes | the last section of `README.md` |
-| where a maintainer starts | `docs/coherence.md`, linked from tooling and not from the front page |
+| where a maintainer starts | `docs/maintenance.md`, at a path anybody can guess |
 | where child projects live | `tools/X/` |
 | who may start and end one | a human, explicitly (rule 1) |
 | what governs anything published about somebody else's code | your own reporting policy, wherever you keep it |

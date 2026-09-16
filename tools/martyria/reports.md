@@ -11,7 +11,7 @@ in the moment it is least convenient.
 The ledger in [`../../docs/reports/`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md) carries
 defects **we** found in **somebody else's** files. This is the other direction
 and it has never had a channel. That gap is already written down as one:
-[`../../docs/coherence.md`](../../docs/coherence.md) records that findings do
+[`../../docs/protocols.md`](../../docs/protocols.md) records that findings do
 not all come from our checks, that some will come from a project telling us
 something is wrong with our own record, and that those have no row to hang off.
 This is the row.

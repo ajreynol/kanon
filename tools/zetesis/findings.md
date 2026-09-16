@@ -130,7 +130,7 @@ counter-case is found by looking rather than by stumbling.
 **What:** every register in this family records what the *tools* did. The
 person directing them appears only where their action is entangled with an
 agent's. The mid-stream commit noted in
-[`../../docs/coherence.md`](../../docs/coherence.md) is the first fault recorded
+[`../../docs/protocols.md`](../../docs/protocols.md) is the first fault recorded
 here that is **purely the prompter's**, and it went into a maintenance page
 rather than into any register of conduct — because no register has a slot for
 it.

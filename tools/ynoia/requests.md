@@ -331,7 +331,7 @@ already been told from outside that it is better at diagnosis than treatment.
 Reading three trees and running one existing command produced, in minutes, a
 result nobody had suspected: **all three members pinned a commit our own CI had
 failed**, so a requirement we published as hard has never been satisfiable. It
-is written up in [`../../docs/coherence.md`](../../docs/coherence.md).
+is written up in [`../../docs/protocols.md`](../../docs/protocols.md).
 
 That is a real demonstration and it demonstrates **detection**, not correction.
 Three honest limits, and they are the content of this request:

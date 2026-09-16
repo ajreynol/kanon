@@ -197,6 +197,38 @@ true when it moves. **That rewrite is yours.**
 nothing moves on your answer alone — but the office receiving an overloaded
 tool should ask what it would like to put down before deciding anything for it.
 
+## D10 — four sections of ours that describe your tree, not ours
+
+**To:** anoieu
+**Kind:** notice
+**Status:** open
+**Opened:** 2026-09-16
+**Settles when:** you have taken what is worth taking, or said it is not worth taking
+**Note:** Kanon-ball!
+
+**What we noticed.** Splitting our maintenance page apart left four sections
+that are about **your** repository rather than ours, roughly 190 lines of it:
+
+- **A finding is about `main`.** What a finding claims, which commit it claims it
+  about, and why a finding against a branch tip is a finding about nothing.
+- **Adding a check.** What a new check in the analyzer owes: a witness, a reason
+  to fail that is in the tree, and a green that means one thing.
+- **Defending the infrastructure.** What the fuzzer and the corpus runner must not
+  be allowed to become, and the failure modes that have already been instanced.
+- **The record's invariants.** What must remain true of the findings ledger after
+  any edit, whoever made it — written after a verdict of *fixed upstream* was
+  recorded three times for a fix that never happened.
+
+**What we are doing about it.** Removing them from our tree rather than keeping
+a copy. They described the analyzer, the fuzzer, the ledger and the checks, all
+of which are yours, and a page in our tree that tells you how to maintain yours
+is the concentration this office exists to reduce. **The text is in our git
+history** at the commit that removes it, and you are welcome to any of it.
+
+**What we are asking.** Nothing. This is a notice, and *we do not want it* is a
+complete answer — the sections may well be stale, since we were not the ones
+running the thing they describe.
+
 ## D9 — whether staying local is dokimasia's position or our reading of it
 
 **To:** dokimasia
@@ -243,7 +275,7 @@ afternoon.
   not match the record.
 - **Two dangling pointers in `history.md`**, from Stretch 1, which anoieu wrote
   and only anoieu can correct.
-- **`coherence.md` lists `R27` as moving to kanon**, and `R27` no longer
+- **`maintenance.md` lists `R27` as moving to kanon**, and `R27` no longer
   exists. It promises us a responsibility that is not there.
 - **`R26` is reserved for koine and `D8` is unanswered** — koine is waiting, on
   a clock anoieu set itself.

@@ -6,7 +6,7 @@ sitting at the terminal.
 Not to be confused with two neighbours.
 [`usage.md`](https://github.com/ajreynol/anoieu/blob/main/docs/usage.md) is the
 **analyzer's** interface — what the tool takes, what each option means — and is
-for somebody running a program. [`coherence.md`](coherence.md) is the
+for somebody running a program. [`protocols.md`](protocols.md) is the
 **maintenance** entry point — what this repository is responsible for and what
 standards the work is held to — and is for whoever is doing the work, human or
 agent. This page is the seam between those two: what a person says to get work
@@ -499,7 +499,7 @@ working in, said plainly enough that a person can tell it is wrong — and the
 mission statement quoted from the tree.
 
 **It is a belief, stated as one, and the agent does not verify itself.** Same
-rule as [`PROTO-20`](coherence.md#proto-20--the-handoff-protocol): a claim
+rule as [`PROTO-20`](protocols.md#proto-20--the-handoff-protocol): a claim
 about identity is worth nothing when the claimant is also the one checking it.
 What makes it useful is that **it is said out loud where somebody who knows
 better can contradict it.**
@@ -532,7 +532,7 @@ run and their output reported.
 **What never comes back**, whatever you ask for: anything sent to another
 repository, any repository created, anything pushed, posted or published. Those
 are structural — no code here can do them — and the reason is in
-[`coherence.md`](coherence.md): the path from an idea to a public artifact must
+[`protocols.md`](protocols.md): the path from an idea to a public artifact must
 have a person in it.
 
 ### The decisions only you can make

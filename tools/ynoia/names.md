@@ -78,7 +78,7 @@ claim this table has now been wrong about once. Two of them have a **stub**: a
 placeholder directory in this repository carrying one sentence and doing
 nothing. **A stub is not a claim on the name.** It marks a place, and it is
 deleted under the handoff protocol in
-[`coherence.md`](../../docs/coherence.md). `noesis` sat
+[`protocols.md`](../../docs/protocols.md). `noesis` sat
 here while eudaimonia was already running it as a child project, and it moved to
 *Taken* only because somebody went looking in the neighbouring tree. **Being in
 this table is not evidence that a name is unused**, for the same reason the
