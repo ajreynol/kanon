@@ -377,6 +377,25 @@ def well_formed(inv: dict) -> list[str]:
         # LAW 9: `published` records an intellectual claim its authors made, and
         # `"none"` is the answer when they have not made one yet. A blank is
         # neither answer, and the two permit different things.
+        # LAW 10: *in dioktes* is a state this ecosystem enters, declared against
+        # the tool it concerns so that somebody can object while it is happening
+        # rather than afterwards. It is entered **only where we believe a claim
+        # that tool has made is inaccurate**, so the field reads "<date began> --
+        # <the claim, and what closes it>": a pursuit with no stated end is a
+        # posture rather than an investigation, and one whose belief was written
+        # afterwards is whatever the findings happened to support. The entry is
+        # removed when the claim settles either way, rather than kept as a record
+        # of having once been in one.
+        dioktes = e.get("dioktes", "")
+        if dioktes:
+            if status != "outsider":
+                bad.append(f"{name}: `dioktes` is declared against a {status} "
+                           "entry; LAW 10 is about tools outside this ecosystem")
+            elif "--" not in dioktes:
+                bad.append(f"{name}: `dioktes` is {dioktes!r}; it reads "
+                           "\"<date began> -- <what closes it>\", and a pursuit "
+                           "with no stated end is a posture")
+
         if status == "outsider":
             pub = e.get("published", "")
             if pub and pub not in ("none", "unknown") and "http" not in pub \

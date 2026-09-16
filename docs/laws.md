@@ -458,3 +458,75 @@ tool should reach a consumer early, and none of that reaches a claim about
 somebody's unpublished contribution. **Anything written under this footing
 carries the date it was read and says plainly that the project did not ask to
 be measured.**
+
+## (LAW 10) — *In dioktes*: when we go looking for defects in somebody else's tool
+
+*διώκτης — the pursuer, from διώκω, to chase or pursue.* **A repository here is
+*in dioktes* when it is actively searching for defects in a tool outside this
+ecosystem.** Running a fuzzer at it, reading its source for faults, building
+cases against it: work whose object is to find something wrong with somebody
+else's artifact.
+
+**The word names our posture, not their standing.** Being pursued is not a
+footing, it confers nothing and asks nothing, and a tool does not become
+anything by our having pointed a fuzzer at it. **This is a state that a
+repository here enters, and the law is about what we owe while we are in it.**
+
+**It is not a declaration of war**, and reading it as one is the
+misunderstanding the name exists to prevent. Finding real defects in a
+neighbour's tool and carrying them to its authors is a service, and this
+ecosystem was built to do it. **What the name does is stop it happening
+quietly**, because the same activity — same fuzzer, same hours, same findings —
+is a service when the results go to the owner and an attack when they go on a
+scoreboard, and nothing in the work itself distinguishes the two.
+
+### Entering it
+
+**A person decides, and it is declared.** The state is recorded against that
+tool in the register, with the date it began and what closes it. **A pursuit
+nobody declared is indistinguishable afterwards from one nobody would have
+approved**, and the declaration is what lets somebody object while it is
+happening rather than after.
+
+**Only against a released tool.** You cannot search for defects in code you
+have not been given, and [LAW
+9](#law-9--released-is-not-published-and-tracking-respects-the-difference)
+already forbids reading our own position against unreleased work. **Whether
+they have *published* does not enter into it**: a claim made in a README is as
+much a claim as one made in a paper, and checking it is a fact about their
+artifact rather than a positioning of our contribution against theirs.
+
+
+### What it does not license
+
+- **A count is never a score.** The number of defects we found says which of
+  our checks tripped, and never how sound their tool is. Publishing it as a
+  measure of the tool is overselling with a number attached.
+- **No comparison.** Not against our tools, not against another outsider, not
+  against a previous version of theirs. A pursuit produces findings, and a
+  ranking is a different artifact that nobody asked us to make.
+- **Nothing is published about a defect before its owner has it.** Findings go
+  through the ordinary reporting discipline — confirmed, reduced, and put to
+  whoever the authority is — and being *in dioktes* lowers that standard by
+  nothing. **If anything it raises it**: we went looking, so a false positive
+  is a cost we chose to impose on somebody.
+- **No characterisation of the project.** *We found three defects in X* is ours
+  to say when it is true. *X is poorly tested* is not, and never becomes so by
+  the first sentence being true many times.
+
+### Leaving it
+
+**They can end it, and that is the whole of it.** If the maintainers of that
+tool ask us to stop, we stop — no appeal, no argument about whether the
+findings were useful, and no continuing quietly. **They did not ask to be
+pursued**, and a pursuit that outlives its target's patience has stopped being
+a service whatever it is producing.
+
+**It ends when the claim is settled.** Confirmed, refuted, withdrawn by its
+authors, or abandoned by us — and the register stops recording the state when
+it closes. A state with no end is a posture rather than an investigation, which
+is why the entry names what closes it before it opens.
+
+**And the honest reason this law exists:** a fuzzer pointed at somebody else's
+tool produces findings indefinitely, and volume is the thing that turns help
+into pressure. **The limit is never the tool's; it is ours.**
