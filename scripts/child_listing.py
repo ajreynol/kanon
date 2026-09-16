@@ -1,8 +1,8 @@
 """Read a parent's choice to advertise a child from the child's README.
 
-Only an exact, standalone declaration in the introduction (before the first
-section heading) opts in. Examples, comments and ordinary prose do not count.
-Missing declarations default to unadvertised; unreadable or invalid ones are
+An exact, standalone declaration in the introduction (before the first section
+heading) sets the choice. Examples, comments and ordinary prose do not count.
+Missing declarations default to advertised; unreadable or invalid ones are
 unverified. This module reads local files only and never changes the inventory.
 """
 
@@ -40,7 +40,7 @@ def declaration(text: str) -> Listing:
         if line.startswith("**Eunoia listing:**"):
             values.append(line[len("**Eunoia listing:**"):].strip())
     if not values:
-        return Listing("unadvertised", "no declaration; default")
+        return Listing("advertised", "no declaration; default")
     if len(values) != 1:
         return Listing("unverified", "multiple Eunoia listing declarations")
     if values[0] not in ("advertised", "unadvertised"):

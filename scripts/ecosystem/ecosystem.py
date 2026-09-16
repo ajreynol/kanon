@@ -21,7 +21,8 @@ carries about its own silence applies here.
 Membership is a decision rather than a measurement, so the `status` column comes
 from `scripts/ecosystem/ecosystem.json` and is never inferred. Where the measurement and the
 recorded status disagree, the row says so; changing the file is a person's job.
-Child rows additionally require the parent's opt-in in the child's local README.
+Child rows follow the parent's choice in the child's local README, defaulting
+to advertised when the README has no declaration.
 `--all-children` includes every recorded child and explains its listing state.
 
 `--check` is the same principle with an exit code, and it is what CI runs. Two
@@ -640,7 +641,7 @@ def audit(online: bool) -> int:
 
 USAGE = """usage: status_eo [--verbose] [--all-children] [--check [--online]] [--health] [--protocol]
 
-  (no arguments)  the table: repositories and explicitly advertised children
+  (no arguments)  the table: repositories and advertised children
   --verbose       ... and, per tool, which checks failed and what they found
   --all-children  include every recorded child, with its listing preference
   --check         is the inventory itself well formed? No network, no checkouts
@@ -650,8 +651,8 @@ USAGE = """usage: status_eo [--verbose] [--all-children] [--check [--online]] [-
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
 
-Children opt in with **Eunoia listing:** advertised in their README introduction,
-before the first section heading. Missing declarations mean unadvertised.
+Children opt out with **Eunoia listing:** unadvertised in their README introduction,
+before the first section heading. Missing declarations mean advertised.
 Preferences are read from local parent checkouts; unavailable or invalid reads
 are reported as unverified. --check still validates the complete inventory.
 """

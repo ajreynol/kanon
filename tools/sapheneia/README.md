@@ -1,5 +1,7 @@
 # sapheneia
 
+**Eunoia listing:** advertised
+
 **Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
 Earlier observations below retain their original context and dates.
 
@@ -11,8 +13,8 @@ unclear. The description of it can be clearer, and that is the whole of what
 this project is for.*
 
 A research project under [`docs/policy.md`](../../docs/policy.md). Started by a human,
-read-only, unadvertised, and not part of what this repository ships. Deleting
-this directory changes nothing anywhere else.
+read-only, advertised in ecosystem listings, and not part of what this repository
+ships. Deleting this directory changes nothing anywhere else.
 
 ## The question
 

@@ -56,17 +56,18 @@ not keep a duplicate. The installer and status commands share
 
 ## Child project listings
 
-A parent repository chooses which children to advertise. To include a child in
-`status_eo` and the installer's generated child summaries and branch advice, put
+A parent repository chooses which children to advertise. Children with a readable
+README are advertised by default. To omit a child from `status_eo` and the
+installer's generated child summaries and branch advice, put
 this standalone line in the child's `README.md` introduction, before the first
 `##` (or deeper) heading:
 
 ```markdown
-**Eunoia listing:** advertised
+**Eunoia listing:** unadvertised
 ```
 
-Use `unadvertised` to explicitly opt out. A README without a declaration is
-unadvertised by default. Code examples, HTML comments, block quotes and ordinary
+Use `advertised` to explicitly opt in. A README without a declaration is
+advertised by default. Code examples, HTML comments, block quotes and ordinary
 prose do not count as declarations. Multiple declarations or an unsupported
 value are unverified and do not opt in.
 
@@ -83,9 +84,9 @@ validation, child ID resolution and `scripts/repos.local` mappings still use
 the complete inventory. Choosing to advertise does not change a child's status
 or promote it into a repository. Handwritten descriptions are not filtered.
 
-There is no automatic migration: existing child READMEs without the declaration
-remain unadvertised until their parent maintainer opts them in. The declaration
-is kept only in that README, not copied into kanon's inventory.
+Existing child READMEs without the declaration remain advertised. A parent can
+opt individual children out by adding the declaration above. The choice is kept
+only in that README, not copied into kanon's inventory.
 
 ## Prompt previews
 

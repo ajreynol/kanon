@@ -58,10 +58,10 @@ Choosing what to include:
 An id is a repo id or any inventory id it provides, so `ethos-eoc` selects the
 one ethos tree that carries both.
 
-Child summaries and branch advice require `**Eunoia listing:** advertised` in
-the child's local README introduction. An absent declaration means unadvertised;
-unavailable or invalid declarations are reported as unverified. All child ids
-still resolve to their parents and are recorded in scripts/repos.local.
+Child summaries and branch advice follow `**Eunoia listing:** advertised` or
+`unadvertised` in the child's local README introduction. An absent declaration
+means advertised; unavailable or invalid declarations are reported as unverified.
+All child ids still resolve to their parents and are recorded in scripts/repos.local.
 """
 
 from __future__ import annotations

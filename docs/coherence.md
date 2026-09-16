@@ -538,12 +538,12 @@ files. The sequence, which nothing enforces:
    id still resolves to the parent's checkout so the other scripts can take it.
    Where the child's current work is on another branch of the parent, `branch`
    says which. A child is **listed** by `status_eo` and the installer's generated
-   summaries only when its local README introduction declares
-   `**Eunoia listing:** advertised`.
-   For those children the installer repeats the branch advice without acting
-   on it. An absent declaration means unadvertised, while IDs still resolve to
+   summaries according to its local README introduction's
+   `**Eunoia listing:** advertised` or `unadvertised` declaration.
+   For advertised children the installer repeats the branch advice without
+   acting on it. An absent declaration means advertised, while IDs still resolve to
    the parent. [The listing rules](commands.md#child-project-listings) describe
-   the opt-in and the explicit `--all-children` inspection view. A *name* with no
+   the choice and the explicit `--all-children` inspection view. A *name* with no
    work behind it does not earn a row — the register
    in [`../tools/ynoia/names.md`](../tools/ynoia/names.md) is where those live,
    and an install that advertised them would be a list of things to go and not

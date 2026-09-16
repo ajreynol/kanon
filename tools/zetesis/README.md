@@ -1,10 +1,13 @@
 # zetesis
 
+**Eunoia listing:** unadvertised
+
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, and not part of the governance commands this repository ships.
 Deleting this directory changes no running command. **This is not an island:**
 kanon names this project on its front page to distinguish housed work from
-required reading; it is therefore not unadvertised.
+required reading. That reference remains an island exception; this project is
+unadvertised in ecosystem listings.
 
 ## The name
 

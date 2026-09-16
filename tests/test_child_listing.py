@@ -15,21 +15,21 @@ from child_listing import declaration, read_listing
 
 
 class Declarations(unittest.TestCase):
-    def test_only_introductory_metadata_advertises(self):
-        marker = "**Eunoia listing:** advertised"
+    def test_only_introductory_metadata_changes_the_default(self):
+        marker = "**Eunoia listing:** unadvertised"
         cases = [
-            (f"# Example\n\n{marker}\n\n## Charter\n", "advertised"),
-            ("**Eunoia listing:** unadvertised\n", "unadvertised"),
-            ("This project is advertised and is not an island.\n", "unadvertised"),
-            (f"```markdown\n{marker}\n```\n", "unadvertised"),
-            (f"~~~~\n{marker}\n~~~~\n", "unadvertised"),
-            (f"<!--\n{marker}\n-->\n", "unadvertised"),
-            (f"> {marker}\n", "unadvertised"),
-            (f"    {marker}\n", "unadvertised"),
-            (f"## Example\n{marker}\n", "unadvertised"),
-            (f"```\n## Example\n```\n{marker}\n", "advertised"),
+            (f"# Example\n\n{marker}\n\n## Charter\n", "unadvertised"),
+            ("**Eunoia listing:** advertised\n", "advertised"),
+            ("This project is unadvertised and is an island.\n", "advertised"),
+            (f"```markdown\n{marker}\n```\n", "advertised"),
+            (f"~~~~\n{marker}\n~~~~\n", "advertised"),
+            (f"<!--\n{marker}\n-->\n", "advertised"),
+            (f"> {marker}\n", "advertised"),
+            (f"    {marker}\n", "advertised"),
+            (f"## Example\n{marker}\n", "advertised"),
+            (f"```\n## Example\n```\n{marker}\n", "unadvertised"),
             ("**Eunoia listing:** yes\n", "unverified"),
-            (f"{marker}\n**Eunoia listing:** unadvertised\n", "unverified"),
+            (f"{marker}\n**Eunoia listing:** advertised\n", "unverified"),
             (f"{marker}\n{marker}\n", "unverified"),
         ]
         for text, state in cases:
@@ -119,14 +119,15 @@ class ChildCommands(unittest.TestCase):
 
     def assert_only_advertised(self, output):
         self.assertIn("published", output)
-        for name in ("quiet", "implicit", "broken", "missing"):
+        self.assertIn("implicit", output)
+        for name in ("quiet", "broken", "missing"):
             self.assertNotIn(name, output)
         self.assertIn("child listing preference unverified", output)
 
     def test_status_filters_rows_and_counts(self):
         output = self.status()
         self.assert_only_advertised(output)
-        self.assertIn("1 child", output)
+        self.assertIn("2 children", output)
         self.assertNotIn("5 children", output)
 
     def test_all_children_includes_preferences_and_unverified_reads(self):
@@ -134,7 +135,7 @@ class ChildCommands(unittest.TestCase):
         self.assertIn("5 children", output)
         self.assertIn("published: Eunoia listing: advertised", output)
         self.assertIn("quiet: Eunoia listing: unadvertised", output)
-        self.assertIn("implicit: Eunoia listing: unadvertised (no declaration; default)", output)
+        self.assertIn("implicit: Eunoia listing: advertised (no declaration; default)", output)
         self.assertIn("broken: Eunoia listing: unverified", output)
         self.assertIn("missing: Eunoia listing: unverified", output)
 
@@ -175,9 +176,11 @@ class ChildCommands(unittest.TestCase):
         destination = self.base / "fresh"
 
         def clone(cmd, cwd):
-            child = Path(cwd) / "host-tree" / "tools" / "published"
-            child.mkdir(parents=True)
-            (child / "README.md").write_text("**Eunoia listing:** advertised\n")
+            for name in ("published", "implicit"):
+                child = Path(cwd) / "host-tree" / "tools" / name
+                child.mkdir(parents=True)
+                text = "**Eunoia listing:** advertised\n" if name == "published" else "# Child\n"
+                (child / "README.md").write_text(text)
             return 0
 
         out = io.StringIO()
