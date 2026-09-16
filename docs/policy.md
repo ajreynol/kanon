@@ -25,12 +25,16 @@ gives this page a length to stay under.
 
 ## What is checked, and what is not
 
-[`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py),
-kept in anoieu, decides every rule below marked **Checked**, on every push.
-`--coverage` prints what it cannot decide and why, because a checker reporting
-only its own passes reads as coverage it does not have. Checks that do not
-apply are skipped and named. **A rule nobody can check is worded loosely enough
-to be tightened**, or belongs in [`vision.md`](vision.md) instead.
+The **policy checker**, published by
+[anoieu](https://github.com/ajreynol/anoieu), decides every rule below marked
+**Checked**, on every push. It also prints what it cannot decide and why,
+because a checker reporting only its own passes reads as coverage it does not
+have, and it skips by name every check that does not apply, so *passing* never
+reads as more coverage than it was. **How the checker is arranged, invoked and
+named is anoieu's to decide and is not restated here.**
+
+**A rule nobody can check is worded loosely enough to be tightened**, or
+belongs in [`vision.md`](vision.md) instead.
 
 **The rule no program will ever decide: a document that has gone stale is a
 defect.** Everything else assumes it. A claim in prose that quietly stopped
@@ -52,13 +56,11 @@ you have stopped standing behind and never withdrawn.
 | --- | --- |
 | `README.md` | the front page, and the whole of what any other document may assume has been read |
 | `docs/` | every written document, indexed by `docs/README.md` |
-| `docs/reports/` | the record: findings ledgers, what was measured, the reporting policy and workflow |
-| `report/` | the paper, where there is one. Encouraged, never required |
 | `tools/` | child projects, with their own code and data |
 | `tests/` | the evidence: cases, recorded behaviour of other people's programs, committed baselines |
 | `scripts/` | commands, helpers and their data: generators, checks, the runner |
 | `scripts/ecosystem/` | internal ecosystem helpers, inventory and checkout settings |
-| `prompts/` | workflows that hand context to an assistant, kept apart so running a command never means deciding to spend a turn. Worth copying, not required |
+| `prompts/` | workflows that hand context to an assistant, kept apart from `scripts/` so that running a command never means deciding to spend a turn |
 | `deps/` | other people's repositories, fetched by a run and never committed |
 | `.github/workflows/` | what runs on every push |
 | the package itself | at the top level, named after the tool |
@@ -138,23 +140,6 @@ Where none exists, say so where the copy is. Likewise **a workflow is defined
 in prose and implemented in `scripts/`**: the document stays the definition,
 and CI checks the script's copy has not drifted from it.
 
-### Papers
-
-**A repository with a result writes it up, in `report/` — encouraged, never
-required.** One or more `*.tex` files, addressed to a human who will not clone
-this tree. Roughly eight to twenty pages: under eight the README already covers
-it, over twenty nobody outside the project reads it. **Nothing generates it** —
-a paper assembled from the findings ledger is the ledger with worse
-typesetting. What it inherits is the ledger's discipline: every quantity names
-the commits it was measured at.
-
-**A stance is required; a paper is not.** Every tool states whether there is a
-paper in it — one exists, one is planned, or there is nothing here worth
-writing up. The third is a real answer and the right one for most tools. Say it
-in one sentence where a reader already is. Where a register disagrees with a
-repository about its own work, the repository is right. Nothing checks this: a
-check would decide only that a stance is *present*.
-
 ## Ownership, and what is claimed
 
 **Owner:** `ajreynol` — Andrew Reynolds, University of Iowa and AWS. Recorded
@@ -202,9 +187,7 @@ covers:
 > **Written by AI agents, under light human supervision.** A human directs the
 > work, reads what is published and decides what is filed; nobody vets the
 > internal design, and nothing reaches another project's issue tracker without
-> review.
-> [`docs/reports/reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md)
-> says what that does and does not cover.
+> review. <a link to whatever says what that review does and does not cover>
 
 **It is last.** By the time a reader reaches it they have seen what the tool
 claims, and this is the note that tells them how to weigh all of it. At the top
@@ -277,15 +260,14 @@ repository it is run in, in its first line.
 **Recommended, not checked.** Every repository here is asked the same handful
 of questions — *what is this*, *which repository does X*, *where is the
 register that would record this* — and answers each by searching the tree,
-which is paid for every time and produces something *reconstructed* rather than
-decided.
+paying that cost every time and producing something *reconstructed* rather than
+decided. So write them down, as a `## Common questions` section late in the
+README: after what the tool is, before the maintenance note.
 
-So write them down as a `## Common questions` section, late in the README —
-after what the tool is, before the maintenance note. **Questions that have
-short settled answers and that actually get asked**, in the words somebody
-would use, **routing answers first**: the most valuable entry is not *what does
-this tool do* but **which repository this belongs to**. **One line each, and a
-link.** Keep it short enough to re-read in a minute, because a stale FAQ is
+**Questions that have short settled answers and that actually get asked**, in
+the words somebody would use, **routing answers first** — the most valuable
+entry is not *what does this tool do* but **which repository this belongs to**.
+**One line each, and a link.** Keep it re-readable in a minute; a stale FAQ is
 worse than none.
 
 **A child project is never an entry** — not by name, not as a hedge that tells
@@ -347,8 +329,8 @@ the bottom saying whether the gates pass — scannable in three seconds, and a
 not grant the approval:** a bottom line of `READY` means the mechanical checks
 pass, never that anybody has agreed.
 
-**The goal is the agent's state, not the reader's impression.** An agent can
-get steadily better at producing well-formed blocks without becoming better
+**The goal is the agent's state, not the reader's impression**, and an agent
+can get better at producing well-formed blocks without becoming better
 informed. So **the tool must not emit the finished block**: it delivers
 evidence, and composing the target is where being informed happens.
 
@@ -380,12 +362,11 @@ wire**, and anything said to that repository is carried by a person;
 [`board.md`](board.md) has a row for it.
 
 **This is not the bug-report channel.** A finding has its own template, ids,
-states and prompts, in
-[`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md),
-governed by
-[`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md).
-The test is whether what you want to say has a *file and a line number*: if it
-does, it is a finding.
+states and prompts: **anoieu keeps the reporting workflow and the reporting
+policy** that govern how one is carried and what may be said in it, and where
+those live is [anoieu's](https://github.com/ajreynol/anoieu) to say. The test
+is whether what you want to say has a *file and a line number*: if it does, it
+is a finding.
 
 ### The gate every discussion file carries
 
@@ -429,33 +410,35 @@ asked for, and a safety rule that degrades to a warning is eventually ignored.
 
 ### The format
 
-One `##` section per topic, newest first, each opening with a five-line field
-block and nothing between the heading and the fields.
+One `##` section per topic, newest first, opening with a five-line field block
+and nothing between the heading and the fields.
 
 ```markdown
-## D3 — should the seam check live here or in dokimasia
+## D<n> — <what is at stake, in a line>
 
-**To:** dokimasia
-**Kind:** request
-**Status:** open
-**Opened:** 2026-08-31, at cvc5 `aee8742`
-**Settles when:** one of us writes it down as ours, in our own tree
+**To:** <tool>, <tool>
+**Kind:** request | proposal | question | notice | answer
+**Status:** open | answered | declined | withdrawn | settled
+**Opened:** <date>[, at <project> `<commit>`]
+**Settles when:** <what would end this>
 
-Body: what is being asked, and the reasoning somebody would have to argue with.
+<what is being asked, and the reasoning somebody would have to argue with>
 
 ### Replies
 
-**dokimasia, 2026-09-04.** What came back, quoted or summarised, attributed and
-dated. Replies are appended; nothing above them is rewritten.
+**<tool>, <date>.** <what came back, quoted or summarised>
 ```
 
-| field | rule |
-| --- | --- |
-| **To** | **one or more tools, named unequivocally** — the exact name the project uses for itself, never "the compiler" or "upstream". A topic addressed to nobody in particular is addressed to nobody |
-| **Kind** | one of the five below. A topic that fits none is probably a finding |
-| **Status** | `open`, `answered`, `declined`, `withdrawn` or `settled` |
-| **Opened** | the date, and the commits the topic was formed against where it depends on them |
-| **Settles when** | what would end it. Required while open, because a question with no answerable form is a complaint |
+**To** names each tool unequivocally — the name the project uses for itself,
+never "the compiler" or "upstream" — because a topic addressed to nobody in
+particular is addressed to nobody. **Opened** carries the commits the topic was
+formed against where it depends on them. **Settles when** is required while a
+topic is open, because a question with no answerable form is a complaint.
+**Replies are appended**, attributed and dated, and nothing above them is
+rewritten.
+
+**Kind** is one of five, and a topic that fits none of them is probably a
+finding:
 
 | kind | what it is |
 | --- | --- |
@@ -639,13 +622,6 @@ whom**. A named exception is a decision somebody can defend; an unnamed one is
 drift. **The rules a child has to break in order to be useful are the evidence
 that it is no longer research.**
 
-**11. It states whether there is a paper in it.** One line in the child's
-README alongside the charter. Required of a child where it is only encouraged
-of a repository, because a child is where the question goes unasked — it has no
-users and may be unadvertised — and its three endings all turn on whether the
-work amounted to something. Where a register says a child should write one and
-the child disagrees, **the child is right**.
-
 ## What a member is asked for
 
 **Four expectations, and none is a surprise on the day it is checked.** The
@@ -655,10 +631,10 @@ where nothing is enforced.
 
 | the expectation | how it is checked | what comes next |
 | --- | --- | --- |
-| **Say you are a member, on the front page** | `check_declaration` reads the claim — *part of the Eunoia ecosystem* — and `check_declaration_first` where it sits. `check_declaration_links` is minor | say who does the work and what the supervision does not cover; a note shaped to pass reads as one |
-| **Keep one entry point** | `check_front_page`, `check_docs_index` | keep the index true as documents arrive; a stale index is the first thing a returning reader hits |
+| **Say you are a member, on the front page** | the checker reads the claim — *part of the Eunoia ecosystem* — and where it sits in the note. The missing link is minor | say who does the work and what the supervision does not cover; a note shaped to pass reads as one |
+| **Keep one entry point** | one front page, and an index naming every document | keep the index true as documents arrive; a stale index is the first thing a returning reader hits |
 | **Run the checker in your own CI** | not checkable from here. We see the result, not the job | pin a commit where our build is green, and move the pin deliberately |
-| **Keep your links and paths honest** | `check_links`, `check_anchors`, `check_local_paths` | the checks catch dead targets, not stale claims |
+| **Keep your links and paths honest** | every link, anchor and committed path is resolved | the checks catch dead targets, not stale claims |
 
 **A channel is not among them.** A `docs/discussion.md` is [offered and not
 required](#the-discussion-file), and nothing asks a README to link to one.
@@ -812,11 +788,11 @@ missing link a minor finding. Add the link anyway: *part of the Eunoia
 ecosystem* tells somebody there is an arrangement and gives them no way to find
 out what it asks of you.
 
-Older pinned checkers may still require a link to anoieu. When retaining such a
-pin, add a link to the policy at that anoieu commit alongside the current kanon
-policy, as [kanon's maintenance
-note](../README.md#how-this-repository-is-maintained) does. The historical URL
-stays valid after the file moves.
+An older pin may still expect the declaration to link to anoieu rather than
+here. Where one does, link both — the policy as it stood at that commit, and
+the current one — as [kanon's maintenance
+note](../README.md#how-this-repository-is-maintained) does. A commit URL stays
+valid after the file moves.
 
 ### 2. Run the check
 
@@ -833,15 +809,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: the policy, at the commit this repository pins
+      - name: the policy checker, at the commit this repository pins
         env:
-          # Replace with a commit. `--version` on any run prints the one you got.
-          ANOIEU_REV: 441b562
+          ANOIEU_REV: <a commit you choose>
         run: |
-          git clone --quiet https://github.com/ajreynol/anoieu /tmp/anoieu
-          git -C /tmp/anoieu checkout --quiet "$ANOIEU_REV"
-      - run: python3 /tmp/anoieu/tools/policy_check.py --root .
+          <fetch the checker at $ANOIEU_REV and run it against this tree>
 ```
+
+**The shape is ours; the contents of that last step are anoieu's.** Take the
+clone URL, the checker's path and the way it is invoked from
+[anoieu](https://github.com/ajreynol/anoieu) rather than from here. Writing
+them down on this page would make them wrong the day anoieu moves a file, and
+this page has no way to know when that is.
 
 **The names are the point.** A check appears in your pull requests as *workflow
 / job*, so this one reads **`anoieu / policy`**: it says who is asking and what
@@ -856,29 +835,26 @@ a compliant tree that says nothing has not joined anything.
 
 **Pin it.** `ANOIEU_REV` is a commit you choose and move on your own schedule,
 and moving it is a commit in *your* repository. Without it your build becomes a
-function of a repository your maintainers do not own — and a build that can
-turn **green** without anybody committing cannot be used as evidence that a
-commit was good. Tracking the tip is a reasonable choice for a repository that
+function of a repository your maintainers do not own, and a build that can turn
+**green** without anybody committing cannot be used as evidence that a commit
+was good. Tracking the tip is a reasonable choice for a repository that
 wants to hear about changes immediately; it should be a decision rather than
 what happens if you paste the short version.
 
 **And only move the pin to a commit where our CI is green — a requirement, not
 a suggestion.** Work we could not get past our own build is not work to take
-on. Three properties of that question: it is asked **about that commit and
-never about our tip**, so the answer never changes after you have taken it; it
-**fails closed**, affordable because bumping is optional; and it **must not run
-in your CI**, since it reads a remote.
+on. Ask it **about that commit and never about our tip**, so the answer never
+changes after you have taken it; **fail closed**, which is affordable because
+bumping is optional; and **do not run it in your CI**, since it reads a remote.
 [`../scripts/bump_check.py`](../scripts/bump_check.py) is that check, published
 so every member does not write it separately. The requirement is the refusal,
 not the program.
 
-**The checker and this page live in different repositories.** `ANOIEU_REV` pins
-the checker, not the current policy text; older pins may run
-`tools/policy_check.py`, while newer anoieu commits use
-`scripts/policy_check.py`. **How the two stay in step is undecided** — the role
-register records the open choice. Until it is settled, record a kanon commit
-separately when citing the policy, because a checker pin alone does not
-identify it.
+**The checker and this page live in different repositories**, so `ANOIEU_REV`
+pins the checker and not the policy text. **How the two stay in step is
+undecided** — the role register records the open choice. Until it is settled,
+record a kanon commit separately when citing the policy, because a checker pin
+alone does not identify it.
 
 ### What we do not promise
 
@@ -996,8 +972,7 @@ The policy is written to be copied. What another repository has to decide:
 | where a maintainer starts | `docs/coherence.md`, linked from tooling and not from the front page |
 | where child projects live | `tools/X/` |
 | who may start and end one | a human, explicitly (rule 1) |
-| what governs anything published | `docs/reports/reporting-policy.md` |
-| what governs anything carried to another project | `docs/reports/reporting-workflow.md` |
+| what governs anything published about somebody else's code | your own reporting policy, wherever you keep it |
 | what the ending states are | graduate, fold in, retire in place (rule 9) |
 
 Replace the rows that name documents with your own equivalents, keep the rules,
