@@ -201,6 +201,14 @@
     "short": "Finds gaps in cvc5's proof production",
     "what": "reads cvc5's proof-production C++ and asks what no proof step covers"
   },
+  "tachyon": {
+    "status": "member",
+    "joined": "anoieu 442bb67",
+    "repo": "tachyon",
+    "url": "https://github.com/ajreynol/tachyon",
+    "short": "Searches for ways to improve cvc5 performance",
+    "what": "searches for ways to improve cvc5 performance, using reproducible benchmark experiments to test proposed changes"
+  },
   "eschaton": {
     "status": "candidate",
     "repo": "eschaton",
@@ -322,5 +330,12 @@
     "path": "tools/noesis",
     "short": "Researches a verified Eunoia-to-Lean compiler",
     "what": "research toward a verified Eunoia-to-Lean compiler, with explicit preservation claims for each pass"
+  },
+  "hermeneia": {
+    "status": "child",
+    "parent": "eudaimonia",
+    "path": "tools/hermeneia",
+    "short": "Connects embedded SMT-LIB semantics to Lean's logic",
+    "what": "researches correspondence definitions and lemmas that carry checked refutations from embedded SMT-LIB semantics into native Lean propositions"
   }
 }
