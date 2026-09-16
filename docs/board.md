@@ -1,12 +1,114 @@
 # The board
 
-**What is being maintained across the Eunoia ecosystem, in priority order.**
-One page, at most twenty-four items, each with the next thing to do and who has
-to do it. Written for a person to read in a minute and edit by hand.
+**What is being maintained across the Eunoia ecosystem, in priority order** —
+each item with the next thing to do and who has to do it. **Position is the
+priority**, so the first is the most important thing outstanding. *How to read
+and edit this page is at the bottom.*
 
-The inventory validator reads each item's **Entities** field to check that the
-board names registered tools. Priorities, status and next steps are maintained
-by hand.
+## B3 — the fuzzer has found real defects and filed none of them
+
+**Task:** **two crashes the fuzzer found in ethos and nobody has filed.** An uncaught C++ abort on a one-line
+signature, and error paths that print outside ethos's own `Error:
+<file>:<line>` convention. Six reproducers are committed here; nothing has been
+sent upstream.
+**Entities:** `ethos`, `anoieu`
+**Status:** ready — the reproducers exist and are committed under `tests/fuzz/`.
+**Channel:** **findings** — `ethos-8` and `ethos-9`, through `prompts/check_anoieu ethos`, because a defect report is not a discussion topic.
+**Next:** file the two, with their reproducers, through the ordinary loop.
+**Prompt — `ethos`:** `(declare-const f (->))` aborts with an uncaught
+`std::length_error` rather than reporting a bad type. Separately, three error
+paths exit without a file or line, which breaks the convention every other
+error in the binary follows. Reproducers are committed and fetchable raw.
+**Prompt — `anoieu`:** run `prompts/check_anoieu ethos` for these two rows, and
+say plainly in the report that the fuzzer produced them — a provoked crash and
+a read signature are different claims and the codes already say which.
+**HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is stopping us filing them.
+
+## B26 — no node has a front-page FAQ, and kanon does not either
+
+**Task:** joining cost koine eighteen hundred lines of reading, and nowhere does
+a tool say the short version of itself.
+[`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
+answer — a `## Common questions` section on the front page.
+**Entities:** `kanon`
+**Status:** open on our own side first. **Nothing may be proposed to anybody
+until kanon carries one.**
+**Channel:** **local**, then a ball each.
+**Next:** write kanon's, then propose the section to one other tool.
+**Prompt — `kanon`:** proposing a style you have not adopted is the error this
+office exists to avoid. **HUMAN FEEDBACK:**
+
+## B18 — the associate protocol remains open for ethos
+
+**Task:** `associate` is defined and proposed for ethos, but what a repository
+has to carry was never decided. [Anoieu's
+`D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
+**Entities:** `kanon`, `ethos`
+**Status:** waiting on `ethos` — the choice between the two versions
+of the protocol is theirs to answer before it is ours to fix.
+**Channel:** **upstream, by a person** — ethos has no discussion file, so the
+question is carried by hand.
+**Next:** decide the one open question — the bare maintenance-note heading, or
+that plus the paragraph naming this ecosystem — and write it into
+[`policy.md`](policy.md) as in force. **logos is a member**, so its associate
+proposal is superseded and it is not a party we are waiting on for this item.
+**Prompt — `kanon`:** do not record ethos as an associate until the protocol is
+decided; `proposed:` is the field that holds the intention, and
+`scripts/status_eo --protocol` is the report. When it is decided, the section
+in `policy.md` stops saying *drafted, and not in force* and the ethos entry
+moves in one commit. **Prompt — `ethos`:** we would like to record you as an
+associate: a footing that obliges you to nothing, runs nothing in your CI, and
+says that every other reading of the language is measured against your
+checker's behaviour. The only thing it would ask is a `How this repository is
+maintained` heading. Which would you rather be asked for — that alone, or that
+plus a paragraph saying you are not held to our policy? Neither is also an
+answer. **HUMAN FEEDBACK:**
+
+## B27 — the ethics projects: where they sit, and what they are held to
+
+**Task:** two problems with one answer, and a person holds both.
+**Where they sit:** `martyria` and `zetesis` examine how this ecosystem behaves,
+from inside a repository that is part of it — the judge-inside-the-judged
+problem, which neither resolves by saying so in its own README.
+**What they are held to:** `zetesis` says its standard comes from outside and
+cites the reading that supports it. **The reading has not been done**, so the
+project has a question, three recorded gaps, and no standard — and until one
+external account is cited, **every claim this ecosystem makes about its own
+conduct rests on a standard it wrote itself**, which is the arrangement we
+criticise elsewhere.
+**Entities:** `kanon`, `zetesis`
+**Status:** open. Nothing is blocked on anybody else; the first hour of the
+second half is a literature search.
+**Channel:** **local** — nothing crosses a boundary until a person moves it.
+**Next:** cite one external account of what an agent-run project owes, and say
+plainly which of our claims it does and does not reach. Then decide whether
+either project graduates, and say what would make the answer different.
+**Prompt — `zetesis`:** name what you could not find as carefully as what you
+did. A gap in the literature is a result; a plausible bibliography assembled to
+look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
+
+## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
+
+**Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed and never was.** Two program declarations that return `Bool`
+from a signature that declares `Int`, recorded as fixed upstream three months
+ago on a change that never landed.
+**Entities:** `cvc5`, `logos`, `anoieu`
+**Status:** waiting on `cvc5` — reopened after the landing audit caught it.
+**Channel:** **findings** — `cvc5-1` in the ledger, carried by `prompts/check_anoieu cvc5`. `cvc5` has no discussion file and has joined nothing; delivery upstream is a person's act.
+**Next:** get the two lines fixed on a named branch of `cvc5`, or a statement
+that the declaration is intended and the finding is wrong. **Prompt — `cvc5`:**
+`proofs/eo/cpc/programs/Strings.eo:42` and `:55` declare a program returning
+`Int` and give cases returning `Bool`. Either correct the declared return type,
+or say which of the two is intended so the finding can be withdrawn. It was
+previously reported as fixed; nothing in the tree changed. **Prompt —
+`logos`:** nothing to do until that lands. `install/defs/Cpc.eo` and
+`Cpc.cached.eo` carry the same three cases as vendored copies, and regenerating
+picks the fix up; `logos-1` is blocked on this and on nothing else. **Prompt —
+`anoieu`:** keep the row in the landing audit and do not close it on a reply.
+This is the finding that taught us to check.
+**HUMAN FEEDBACK:** a minor bug — moved down 2026-08-31.
+
+---
 
 ## How to read it, and how to edit it
 
@@ -105,188 +207,3 @@ coordination still open. **None of it gates anything** while the ecosystem is
 still settling; the same section says what would change that and who decides.
 
 ---
-
-## B6 — the shared prompt-drift check exists and awaits adoption
-
-**Task:** decide whether anoieu and dokimasia adopt koine's existing
-prompt-drift checker and remove their local copies.
-**Entities:** `anoieu`, `dokimasia`, `koine`
-**Status:** waiting on the customers — koine publishes the checker and both
-customer specifications; anoieu still keeps its local `prompts_agree()`.
-**Channel:** **discussion** — through the customers' existing topics with koine.
-**Next:** compare the published customer specifications with the current prompt
-layouts, then adopt a pinned version or record why keeping the local copy costs
-less.
-**Evidence:** [koine's running interface](https://github.com/ajreynol/koine/blob/b927aac9e8b402e58f6b1ccdc6f4c5056c868015/README.md#running-it)
-contains the command and customer comparison. The build is no longer the task.
-**Prompt — `anoieu`:** decide whether to replace the local drift check with the
-published implementation after checking it against the current prompt layout.
-**Prompt — `dokimasia`:** make the same comparison for your own workflow; a
-reasoned decision to keep the local check is a complete answer. **Prompt —
-`koine`:** the implementation is available. No new implementation is requested
-by this item.
-**HUMAN FEEDBACK:** raised to the top 2026-08-31: settling this enables a lot of other work.
-
-## B3 — the fuzzer has found real defects and filed none of them
-
-**Task:** **two crashes the fuzzer found in ethos and nobody has filed.** An uncaught C++ abort on a one-line
-signature, and error paths that print outside ethos's own `Error:
-<file>:<line>` convention. Six reproducers are committed here; nothing has been
-sent upstream.
-**Entities:** `ethos`, `anoieu`
-**Status:** ready — the reproducers exist and are committed under `tests/fuzz/`.
-**Channel:** **findings** — `ethos-8` and `ethos-9`, through `prompts/check_anoieu ethos`, because a defect report is not a discussion topic.
-**Next:** file the two, with their reproducers, through the ordinary loop.
-**Prompt — `ethos`:** `(declare-const f (->))` aborts with an uncaught
-`std::length_error` rather than reporting a bad type. Separately, three error
-paths exit without a file or line, which breaks the convention every other
-error in the binary follows. Reproducers are committed and fetchable raw.
-**Prompt — `anoieu`:** run `prompts/check_anoieu ethos` for these two rows, and
-say plainly in the report that the fuzzer produced them — a provoked crash and
-a read signature are different claims and the codes already say which.
-**HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is stopping us filing them.
-
-## B24 — the office's messages have no way to be delivered
-
-**Task:** the office's unit of work is a message to one tool, and nothing
-carries one. Every topic staged in [`discussion.md`](discussion.md) waits on a
-person, with no channel named for most of the tools it is addressed to.
-**Entities:** `kanon`, `koine`
-**Status:** open, and it blocks every other thing this office produces.
-**Channel:** **discussion**, where the receiving tool keeps one; by a person
-otherwise.
-**Next:** decide whether delivery is koine's protocol or a person's habit, and
-write the answer where a ball is drafted. **Prompt — `kanon`:** do not build a
-second delivery mechanism. `koine` exists to be the one implementation, and a
-president building a rival breaks the mission it holds the office to serve.
-**HUMAN FEEDBACK:**
-
-## B19 — a child project has fifteen candidates and no route out
-
-**Task:** **fifteen pieces of candidate feedback on the Eunoia manual, written by a child project here and carried nowhere.** `sapheneia`'s ledger, read against the ethos
-manual, found by writing a second account of the language and noticing where
-the second reading could not recover something from the first. **None has been
-carried anywhere**, and its own status page says so.
-**Entities:** `kanon`, `ethos`
-**Status:** ready — the ledger is written, read against `user_manual.md` at
-`3cf1c03`, and every row cites the section it is about.
-**Channel:** **upstream, by a person** — `ethos` has no discussion file, and a
-child project has no channel of its own: anything it says leaves through this
-repository, carried by somebody who can answer the follow-up.
-**Next:** pick the two or three rows that are checkable by reading the sentence
-they cite — the grammar ones, `EOM-01` and `EOM-02` — and carry those alone.
-The judgement rows wait until a reader who knows Eunoia has looked at the
-ledger, which nobody has. **Prompt — `kanon`:** these are *candidates* and are
-to stay labelled as such; the ledger's own header says most likely to be wrong
-are the judgement rows, and that caution is the reason it is worth reading. Do
-not file them as findings — they are about a document, not a defect in a file
-with a line number. **Prompt — `ethos`:** a second, independent description of
-Eunoia was written against your manual, and fifteen places came up where the
-second reading could not recover something from the first: a silence, an
-ambiguity, or a passage that does not appear to agree with itself. Two are
-grammar productions that derive nothing; the rest are documentation. **HUMAN
-FEEDBACK:**
-
-**Note.** Seven other language questions, found by writing the *analyzer*, end
-at the same manual and are anoieu's rather than ours. These were found by
-writing a *second manual*. Different instruments, and this ledger had no board
-row at all until the inventory of 2026-09-01 went looking.
-
-## B21 — an ethics we can be held to, taken from work we have not read
-
-**Task:** `zetesis` says its standard comes from outside and cites the
-reading that supports it. **The reading has not been done**, so the project has
-a question, three recorded gaps, and no standard.
-**Entities:** `kanon`, `zetesis`
-**Status:** ready — nothing is blocked on anybody else, and the first hour of it
-is a literature search.
-**Channel:** **internal** — nothing to send, and nothing here is filed anywhere.
-**Next:** find and cite one external account of what an agent-run project owes,
-and say plainly which of our claims it does and does not reach. **Prompt —
-`kanon`:** support zetesis in finding and assessing a standard somebody outside
-this ecosystem argued for. Until one is cited, every claim this ecosystem makes
-about its own conduct rests on a standard it wrote itself, which is the weakest
-possible arrangement and the one we criticise elsewhere. **Prompt —
-`zetesis`:** name what you could not find as carefully as what you did. A gap
-in the literature is a result; a plausible bibliography assembled to look
-rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
-
----
-
-*A full board is one that has stopped being prioritised. If this page is at its
-cap, the next thing to do is not to add an item — it is to decide which one has
-stopped mattering. The count is deliberately not written here: it rots, it has
-rotted twice, and anybody who needs it can count.*
-
-## B26 — no node has a front-page FAQ, and kanon does not either
-
-**Task:** joining cost koine eighteen hundred lines of reading, and nowhere does
-a tool say the short version of itself.
-[`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
-answer — a `## Common questions` section on the front page.
-**Entities:** `kanon`
-**Status:** open on our own side first. **Nothing may be proposed to anybody
-until kanon carries one.**
-**Channel:** **local**, then a ball each.
-**Next:** write kanon's, then propose the section to one other tool.
-**Prompt — `kanon`:** proposing a style you have not adopted is the error this
-office exists to avoid. **HUMAN FEEDBACK:**
-
-## B18 — the associate protocol remains open for ethos
-
-**Task:** `associate` is defined and proposed for ethos, but what a repository
-has to carry was never decided. [Anoieu's
-`D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
-**Entities:** `kanon`, `ethos`
-**Status:** waiting on `ethos` — the choice between the two versions
-of the protocol is theirs to answer before it is ours to fix.
-**Channel:** **upstream, by a person** — ethos has no discussion file, so the
-question is carried by hand.
-**Next:** decide the one open question — the bare maintenance-note heading, or
-that plus the paragraph naming this ecosystem — and write it into
-[`policy.md`](policy.md) as in force. **logos is a member**, so its associate
-proposal is superseded and it is not a party we are waiting on for this item.
-**Prompt — `kanon`:** do not record ethos as an associate until the protocol is
-decided; `proposed:` is the field that holds the intention, and
-`scripts/status_eo --protocol` is the report. When it is decided, the section
-in `policy.md` stops saying *drafted, and not in force* and the ethos entry
-moves in one commit. **Prompt — `ethos`:** we would like to record you as an
-associate: a footing that obliges you to nothing, runs nothing in your CI, and
-says that every other reading of the language is measured against your
-checker's behaviour. The only thing it would ask is a `How this repository is
-maintained` heading. Which would you rather be asked for — that alone, or that
-plus a paragraph saying you are not held to our policy? Neither is also an
-answer. **HUMAN FEEDBACK:**
-
-## B27 — two ethics projects sit inside the tree they assess
-
-**Task:** `martyria` and `zetesis` examine how this ecosystem behaves, from
-inside a repository that is part of it. That is the ethics half of the
-judge-inside-the-judged problem, and it is not resolved by either of them
-saying so in their own README.
-**Entities:** `kanon`
-**Status:** open. A person decides; no agent has standing to.
-**Channel:** **local** — nothing crosses a boundary until a person moves it.
-**Next:** decide whether either graduates, and say what would make the answer
-different. **HUMAN FEEDBACK:**
-
-## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
-
-**Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed and never was.** Two program declarations that return `Bool`
-from a signature that declares `Int`, recorded as fixed upstream three months
-ago on a change that never landed.
-**Entities:** `cvc5`, `logos`, `anoieu`
-**Status:** waiting on `cvc5` — reopened after the landing audit caught it.
-**Channel:** **findings** — `cvc5-1` in the ledger, carried by `prompts/check_anoieu cvc5`. `cvc5` has no discussion file and has joined nothing; delivery upstream is a person's act.
-**Next:** get the two lines fixed on a named branch of `cvc5`, or a statement
-that the declaration is intended and the finding is wrong. **Prompt — `cvc5`:**
-`proofs/eo/cpc/programs/Strings.eo:42` and `:55` declare a program returning
-`Int` and give cases returning `Bool`. Either correct the declared return type,
-or say which of the two is intended so the finding can be withdrawn. It was
-previously reported as fixed; nothing in the tree changed. **Prompt —
-`logos`:** nothing to do until that lands. `install/defs/Cpc.eo` and
-`Cpc.cached.eo` carry the same three cases as vendored copies, and regenerating
-picks the fix up; `logos-1` is blocked on this and on nothing else. **Prompt —
-`anoieu`:** keep the row in the landing audit and do not close it on a reply.
-This is the finding that taught us to check.
-**HUMAN FEEDBACK:** a minor bug — moved down 2026-08-31.

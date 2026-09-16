@@ -377,6 +377,23 @@ were made.
 
 ### Closed
 
+**Three more went, and one merged.** *The shared prompt-drift check awaits
+adoption* named no kanon entity and was anoieu's, dokimasia's and koine's to
+settle — **and dropping it overrides an earlier `HUMAN FEEDBACK` that raised it
+to the top**, which is recorded here because the board says that field outranks
+every other, so overriding it should be visible rather than quiet. *The
+office's messages have no way to be delivered* described the design as a
+defect: **the delivery mechanism is a person**, deliberately, and the messages
+now sit as topics where a person can carry them. *A child project has fifteen
+candidates and no route out* was the same mistake — a ledger waiting on a
+person is the child-project rule that nothing leaves the island by machine,
+working as written rather than a blockage — so the two rows in it that are
+checkable by reading the sentence they cite are staged as a topic to ethos, and
+the other thirteen stay in the ledger where they belong. *An ethics we can be
+held to* merged into the item about where the ethics projects sit: one person
+holds both halves, and two rows made it look like two decisions.
+
+
 **Three more board items removed, and two of them were already dead.** *Nobody
 has measured how long an answer takes* duplicated the topic that asks koine the
 same question, and the front-page claim it existed to back — that latency, not

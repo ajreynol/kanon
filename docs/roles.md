@@ -1,128 +1,12 @@
 # The roles
 
-**One entry per responsibility, under the tool that holds it.** A role is a
-single self-contained thing somebody is accountable for, with a permanent id
-and four labelled fields. [`board.md`](board.md) is the other half of the pair:
-the board is **what is outstanding**, this is **what everything is for**. A row
-here moves when responsibility moves, which is rare and is always a decision
-somebody made.
-
-| field | what it holds |
-| --- | --- |
-| **Held by** | the tool or tools accountable, by their ids in [`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json) |
-| **Role** | the responsibility itself, in two sentences at most |
-| **Owns** | the artifacts that are its to change, and therefore nobody else's |
-| **Not this role** | the nearest neighbouring responsibility, and which role it is — or that it is nobody's. **Never empty**: a role is not a boundary until it says what it excludes, and the near miss is the expensive one |
-
-## The rules
-
-**An id is permanent.** `R4` stays `R4` whoever holds it, because decisions get
-recorded against ids and an id that moves invalidates them silently. A
-deprecated role is **deleted** rather than marked dead, and its number is never
-reused.
-
-**No role is too small.** The count is not a budget. A role that could
-reasonably be split is split; one that feels too slight to deserve an id gets
-one anyway. An extra entry costs four lines — two responsibilities sharing one
-entry costs somebody the ability to say which of them a change belongs to.
-
-**Length is a measurement, not a defect.** Six roles under one heading means a
-tool has taken on more than it should, or has not decided what it is, and
-merging entries until the section looks tidy only hides it. **An empty section
-is the same measurement from the other end**: a tool that is named, is in the
-register, and is accountable for nothing yet.
-
-**Two tools holding one role is a seam that has not been cut.** The entry names
-both and appears under both headings, as a standing question rather than a
-description. `R16` is the worked example — the reporting loop was implemented
-twice before anybody wrote down that it was one role.
-
-**Within a tool, position is the priority**: the first role is the one it is
-least able to drop. **Across tools nothing is ranked**, and sections are
-alphabetical, because this page has no basis for saying one repository matters
-more than another. Ids therefore appear out of order, which is correct.
-
-**A role is not a child project.** This is a global register of *who is
-responsible*; a child project is local to its parent's tree and answers *where
-the work is being done*. A tool can hold roles with no child projects, or carry
-child projects and hold one role.
-
-**The tool ids are the register's**, and where the two disagree [the
-register](../scripts/ecosystem/ecosystem.json) is right and this page is stale.
-
-## How a role is handed off
-
-**A handoff is the same role under a different heading**, and the id does not
-change. Seven steps, in this order because each is cheap to get wrong and
-expensive to discover later.
-
-1. **Name the roles, not the files.** A proposal phrased as a list of paths is
-   a migration nobody can hold an opinion about.
-2. **Say what stays.** The losing tool's remaining section is written out in
-   full, because the line between the two halves is where every argument about
-   it will actually happen.
-3. **Name the consumers**, by id. Where a role carries a CI contract that is
-   *every member*, and the count grows with each tool that joins first —
-   usually the strongest argument for doing it sooner.
-4. **Put it on [`board.md`](board.md)**, with one prompt per entity. A prompt
-   written to be answered is a different artifact from an announcement.
-5. **Collect the opinions, and leave them where they landed.** Afterwards, a
-   handoff nobody objected to and one nobody was asked about look identical
-   unless the asking is on the record.
-6. **Move the entry, and only the entry**, in one commit, so this register is
-   never half-handed-over.
-7. **The pins move last, and each consumer picks when.** A consumer still
-   pinned to the old holder is not behind; it is correct.
-
-**None of them is a gate.** They describe the honest way to hand a role over
-and stop nobody's work. What would change that is the ecosystem being stable
-enough that a handoff nobody was asked about costs somebody a red build — and
-that is a person's decision, made once and written here.
-
-**A role over human-authored work is not ours to move.** No footing and no
-procedure here makes reassigning it a handoff; it is a claim on somebody's
-authorship. **Ask who wrote it and what they agreed to**, not what footing the
-repository holds. `R11` is the worked example.
-
-**A child project graduating is a handoff**, and the commonest one this page
-will see: the roles do not change, the heading over them does. **A role handed
-off to nobody is deprecated rather than orphaned**, and an empty section is
-where a handoff goes looking for a taker.
-
-## Why the split between kanon and anoieu falls where it does
-
-**The argument is about exactly one thing: the repository that writes the rules
-a member is judged by should not also be the one filing findings against
-them.** `R1` does the filing, so it sits with the analyzer; `R4` writes the
-rules, so it sits here. `R6` follows `R4`, because the audit that reads across
-both wants the register beside the policy rather than beside the ledger. And
-the position on what may be published, part of `R1`, stays with the tool whose
-own behaviour it constrains.
-
-**Two of the seven steps exist because an audit asked them and the procedure
-could not**: *what does the losing repository keep*, and *is either half left
-unable to answer a question it could answer alone*.
-
-## What the shape says
-
-**`scripts/status_eo` prints the footings**; counting the entries below is the
-only honest way to count the roles, and a table here restating them would be a
-copy nothing compares.
-
-**kanon holds seven, which is the most of any tool, and that is the finding
-rather than an achievement.** The register's own rule says a long section means
-a tool has taken on more than it should or has not decided what it is — and the
-ecosystem's mission says no tool should hold what another tool could. Every one
-of the seven is a candidate to hand off, and `R32` and `R34` move with the
-office by law whether anybody proposes it or not.
-
-**Four sections are empty** — a child project usually has no users and owes
-nobody an artifact, so that is the expected state rather than an omission.
-**`stathmos` is the exception and says so**, holding `R30` from its first day,
-which makes it not an island for a reason written beside the role. The rows
-worth reading are the longest, the empty ones, and that one.
-
----
+**One entry per responsibility, under the tool that holds it** — a single
+self-contained thing somebody is accountable for, with a permanent id and four
+labelled fields. [`board.md`](board.md) is the other half of the pair: the
+board is **what is outstanding**, this is **what everything is for**. **Within
+a tool, position is the priority**; across tools nothing is ranked. *The rules
+for reading and editing this page, and how a role is handed off, are at the
+bottom.*
 
 ## anoieu
 
@@ -543,3 +427,113 @@ the disagreement rather than resolving it. Nor is it the findings ledger: that
 is `R1`, it is about somebody else's code, and this is about our own.
 
 ## zetesis
+
+---
+
+## The rules
+
+**An id is permanent.** `R4` stays `R4` whoever holds it, because decisions get
+recorded against ids and an id that moves invalidates them silently. A
+deprecated role is **deleted** rather than marked dead, and its number is never
+reused.
+
+**No role is too small.** The count is not a budget. A role that could
+reasonably be split is split; one that feels too slight to deserve an id gets
+one anyway. An extra entry costs four lines — two responsibilities sharing one
+entry costs somebody the ability to say which of them a change belongs to.
+
+**Length is a measurement, not a defect.** Six roles under one heading means a
+tool has taken on more than it should, or has not decided what it is, and
+merging entries until the section looks tidy only hides it. **An empty section
+is the same measurement from the other end**: a tool that is named, is in the
+register, and is accountable for nothing yet.
+
+**Two tools holding one role is a seam that has not been cut.** The entry names
+both and appears under both headings, as a standing question rather than a
+description. `R16` is the worked example — the reporting loop was implemented
+twice before anybody wrote down that it was one role.
+
+**Within a tool, position is the priority**: the first role is the one it is
+least able to drop. **Across tools nothing is ranked**, and sections are
+alphabetical, because this page has no basis for saying one repository matters
+more than another. Ids therefore appear out of order, which is correct.
+
+**A role is not a child project.** This is a global register of *who is
+responsible*; a child project is local to its parent's tree and answers *where
+the work is being done*. A tool can hold roles with no child projects, or carry
+child projects and hold one role.
+
+**The tool ids are the register's**, and where the two disagree [the
+register](../scripts/ecosystem/ecosystem.json) is right and this page is stale.
+
+## How a role is handed off
+
+**A handoff is the same role under a different heading**, and the id does not
+change. Seven steps, in this order because each is cheap to get wrong and
+expensive to discover later.
+
+1. **Name the roles, not the files.** A proposal phrased as a list of paths is
+   a migration nobody can hold an opinion about.
+2. **Say what stays.** The losing tool's remaining section is written out in
+   full, because the line between the two halves is where every argument about
+   it will actually happen.
+3. **Name the consumers**, by id. Where a role carries a CI contract that is
+   *every member*, and the count grows with each tool that joins first —
+   usually the strongest argument for doing it sooner.
+4. **Put it on [`board.md`](board.md)**, with one prompt per entity. A prompt
+   written to be answered is a different artifact from an announcement.
+5. **Collect the opinions, and leave them where they landed.** Afterwards, a
+   handoff nobody objected to and one nobody was asked about look identical
+   unless the asking is on the record.
+6. **Move the entry, and only the entry**, in one commit, so this register is
+   never half-handed-over.
+7. **The pins move last, and each consumer picks when.** A consumer still
+   pinned to the old holder is not behind; it is correct.
+
+**None of them is a gate.** They describe the honest way to hand a role over
+and stop nobody's work. What would change that is the ecosystem being stable
+enough that a handoff nobody was asked about costs somebody a red build — and
+that is a person's decision, made once and written here.
+
+**A role over human-authored work is not ours to move.** No footing and no
+procedure here makes reassigning it a handoff; it is a claim on somebody's
+authorship. **Ask who wrote it and what they agreed to**, not what footing the
+repository holds. `R11` is the worked example.
+
+**A child project graduating is a handoff**, and the commonest one this page
+will see: the roles do not change, the heading over them does. **A role handed
+off to nobody is deprecated rather than orphaned**, and an empty section is
+where a handoff goes looking for a taker.
+
+## Why the split between kanon and anoieu falls where it does
+
+**The argument is about exactly one thing: the repository that writes the rules
+a member is judged by should not also be the one filing findings against
+them.** `R1` does the filing, so it sits with the analyzer; `R4` writes the
+rules, so it sits here. `R6` follows `R4`, because the audit that reads across
+both wants the register beside the policy rather than beside the ledger. And
+the position on what may be published, part of `R1`, stays with the tool whose
+own behaviour it constrains.
+
+**Two of the seven steps exist because an audit asked them and the procedure
+could not**: *what does the losing repository keep*, and *is either half left
+unable to answer a question it could answer alone*.
+
+## What the shape says
+
+**`scripts/status_eo` prints the footings**; counting the entries below is the
+only honest way to count the roles, and a table here restating them would be a
+copy nothing compares.
+
+**kanon holds seven, which is the most of any tool, and that is the finding
+rather than an achievement.** The register's own rule says a long section means
+a tool has taken on more than it should or has not decided what it is — and the
+ecosystem's mission says no tool should hold what another tool could. Every one
+of the seven is a candidate to hand off, and `R32` and `R34` move with the
+office by law whether anybody proposes it or not.
+
+**Four sections are empty** — a child project usually has no users and owes
+nobody an artifact, so that is the expected state rather than an omission.
+**`stathmos` is the exception and says so**, holding `R30` from its first day,
+which makes it not an island for a reason written beside the role. The rows
+worth reading are the longest, the empty ones, and that one.

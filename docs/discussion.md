@@ -215,6 +215,47 @@ describes kanon and stops being true when it moves. **That rewrite is yours.**
 nothing moves on your answer alone — but the office receiving an overloaded
 tool should ask what it would like to put down before deciding anything for it.
 
+## D12 — two places the Eunoia grammar does not derive what the manual's own prose uses
+
+**To:** ethos
+**Kind:** notice
+**Status:** open
+**Opened:** 2026-09-16, at kanon `a9517ac`, read against `user_manual.md` at `3cf1c03`
+**Settles when:** you have read them, or said the reading is wrong
+**Note:** Kanon-ball!
+
+**What we noticed.** A child project here wrote a second, independent account
+of Eunoia as a language definition, and recorded fifteen places where the
+second reading could not recover something from the manual. **Two of those are
+checkable by reading the sentence they cite**, and those are the only two
+carried here.
+
+- **`<term>` cannot derive a literal.** `<term> ::= <symbol> | (<symbol>
+  <term>+) | (! <term> <attr>+)` has no alternative for literals, so `5`,
+  `"abc"` and `#b010` are not derivable as terms. `<sexpr>` has a `<literal>`
+  alternative and `<literal>` itself is never defined; the six categories
+  appear in *Literal types* as prose. **Suggested:** add `| <literal>` to
+  `<term>`, and a production for `<literal>` over those six.
+- **`<datatype-dec>` cannot derive `par`.** `<datatype-dec> ::= (<cons-dec>+)`
+  cannot derive `(par (X) (((node …) (leaf))))`, which is the form the manual's
+  *own* parametric datatype example uses. **Suggested:** add the `par`
+  alternative.
+
+**What we are doing about it.** Nothing to your tree. **These are candidates
+under our own reporting position, published with the evidence they have and
+explicitly unjudged** — and they are about the *manual*, never about the
+language: where a row would imply a language decision rather than a wording
+change, the project says so and stops, because proposing the decision is
+outside its charter.
+
+**The other thirteen are judgement rather than grammar** and stay in the ledger
+until a reader who knows Eunoia has looked at them, which nobody has. They are
+at `tools/sapheneia/feedback.md` in this tree and are not being carried.
+
+**What we are asking.** Nothing, and *the reading is wrong* is a complete
+answer — the grammar may be deliberately partial, in which case saying so is
+itself the answer to what a second implementation should parse.
+
 ## D11 — eight board items of ours that are entries in your ledger
 
 **To:** anoieu
