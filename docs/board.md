@@ -102,9 +102,9 @@ rather than told.
 
 The seven steps are in
 [`roles.md`](roles.md#how-a-role-is-handed-off), and `B15` is the worked example
-— transferred, with policy/checker version coordination still open. **None of it gates anything** while the
-ecosystem is still settling; the same section says what would change that and
-who decides.
+— transferred, with policy/checker version coordination still open. **None of
+it gates anything** while the ecosystem is still settling; the same section
+says what would change that and who decides.
 
 ---
 
@@ -228,10 +228,10 @@ say plainly in the report that the fuzzer produced them — a provoked crash and
 read signature are different claims and the codes already say which.
 **HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is stopping us filing them.
 
-## B2 — seven accepted ethos fixes that have not reached `main`
+## B2 — verify seven accepted ethos fixes marked awaiting landing
 
-**Task:** the seven rows closed *awaiting landing* on `ethos` are all still one
-commit off the default branch.
+**Task:** establish whether the seven ethos fixes recorded as *awaiting
+landing* have reached the default branch, and bring the ledger up to date.
 **Entities:** `ethos`, `anoieu`
 **Status:** waiting on verification — anoieu's closed-findings ledger still
 marks these as awaiting landing. That record is not evidence about today's
@@ -239,13 +239,11 @@ default branch.
 **Channel:** **upstream, by a person** — `ethos` has no discussion file, so asking about a merge is a message somebody sends, not a topic anybody can address.
 **Next:** verify the marked fixes against the current default branch; update
 the ledger for anything that landed, and ask about only the remainder.
-**Prompt — `ethos`:** the branch `anoieu-findings` carries fixes for seven
-findings you accepted. It is one commit ahead of `main` and has been for the
-duration. Merging it, or saying it will not be merged, is the only thing
-outstanding.
-**Prompt — `anoieu`:** re-run `scripts/landing.py --check` after any ethos merge,
-and replace the marker with what landed it. Do not let a second row age the way
-`cvc5-1` did.
+**Prompt — `ethos`:** after verification identifies any remaining fixes from
+`anoieu-findings`, say whether those changes are still intended to land.
+**Prompt — `anoieu`:** compare each marked fix with the current default
+branch and replace its marker with the commit that landed it, where found.
+Carry only the unresolved remainder to ethos.
 **HUMAN FEEDBACK:**
 
 ## B5 — joining costs eighteen hundred lines of reading
@@ -254,7 +252,8 @@ and replace the marker with what landed it. Do not let a second row age the way
 actually went; it also reported what `init_eo` cannot finish from inside a new
 repository. Its `D1` and `D2`.
 **Entities:** `kanon`, `koine`
-**Status:** ready — two topics open, both addressed to us, both specific.
+**Status:** ready — two topics originally addressed to anoieu remain open;
+kanon now owns the joining instructions and scripts they concern.
 **Channel:** **discussion** — replies into `koine`'s `D1` and `D2`.
 **Next:** put the minimal passing tree in the joining section verbatim, in one
 place, or say plainly that reading the checker is the intended path.
@@ -439,9 +438,9 @@ is a literature search.
 **Channel:** **internal** — nothing to send, and nothing here is filed anywhere.
 **Next:** find and cite one external account of what an agent-run project owes,
 and say plainly which of our claims it does and does not reach.
-**Prompt — `kanon`:** doing ethics from this repository is out of scope and
-saying so is not an excuse: the alternative is to take a standard somebody else
-argued for. Until one is cited, every claim this ecosystem makes about its own
+**Prompt — `kanon`:** support zetesis in finding and assessing a standard
+somebody outside this ecosystem argued for. Until one is cited, every claim
+this ecosystem makes about its own
 conduct rests on a standard it wrote itself, which is the weakest possible
 arrangement and the one we criticise elsewhere.
 **Prompt — `zetesis`:** name what you could not find as carefully as what you
