@@ -107,184 +107,6 @@ says what would change that and who decides.
 
 ---
 
-## B24 — the office's messages have no way to be delivered
-
-**Task:** the office's unit of work is a message to one tool, and nothing
-carries one. Every topic staged in [`discussion.md`](discussion.md) waits on a
-person, with no channel named for most of the tools it is addressed to.
-**Entities:** `kanon`, `koine`
-**Status:** open, and it blocks every other thing this office produces.
-**Channel:** **discussion**, where the receiving tool keeps one; by a person
-otherwise.
-**Next:** decide whether delivery is koine's protocol or a person's habit, and
-write the answer where a ball is drafted.
-**Prompt — `kanon`:** do not build a second delivery mechanism. `koine` exists
-to be the one implementation, and a president building a rival breaks the
-mission it holds the office to serve.
-**HUMAN FEEDBACK:**
-
-## B25 — nobody has measured how long an answer takes
-
-**Task:** the constraint on every handoff this office will ever propose is that
-a question to another tool takes hours to land and can sit a whole term
-unanswered. That is asserted everywhere and measured nowhere.
-**Entities:** `kanon`
-**Status:** open. The figure is re-derivable from discussion files and commit
-dates, and nobody has derived it.
-**Channel:** **local** — it reads public history and asks nobody for anything.
-**Next:** take the measurement once, over the topics that exist, and state the
-method so somebody can disagree with the number.
-**Prompt — `kanon`:** a latency claim with no measurement behind it is the kind
-of sentence [`practice.md`](practice.md) says to cut.
-**HUMAN FEEDBACK:**
-
-## B26 — no node has a front-page FAQ, and kanon does not either
-
-**Task:** joining cost koine eighteen hundred lines of reading, and nowhere does
-a tool say the short version of itself.
-[`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
-answer — a `## Common questions` section on the front page.
-**Entities:** `kanon`
-**Status:** open on our own side first. **Nothing may be proposed to anybody
-until kanon carries one.**
-**Channel:** **local**, then a ball each.
-**Next:** write kanon's, then propose the section to one other tool.
-**Prompt — `kanon`:** proposing a style you have not adopted is the error this
-office exists to avoid.
-**HUMAN FEEDBACK:**
-
-## B27 — two ethics projects sit inside the tree they assess
-
-**Task:** `martyria` and `zetesis` examine how this ecosystem behaves, from
-inside a repository that is part of it. That is the ethics half of the
-judge-inside-the-judged problem, and it is not resolved by either of them saying
-so in their own README.
-**Entities:** `kanon`
-**Status:** open. A person decides; no agent has standing to.
-**Channel:** **local** — nothing crosses a boundary until a person moves it.
-**Next:** decide whether either graduates, and say what would make the answer
-different.
-**HUMAN FEEDBACK:**
-
-## B28 — a tool is running and is in no register
-
-**Task:** `telos` is recorded as a child project and is doing work; comparing
-agendas across the ecosystem is impossible while a running tool is missing from
-the view somebody reads.
-**Entities:** `kanon`
-**Status:** open. **Membership is a decision, not a fact about a tree**, so the
-register does not fix itself.
-**Channel:** **local**, then confirm with whoever owns it.
-**Next:** a person decides the footing; `scripts/status_eo --check` reports the
-result.
-**HUMAN FEEDBACK:**
-
-## B29 — Stretch 1's figures are quoted here and checked by nobody
-
-**Task:** LAW 4 asks that every figure in a term record be re-derivable by
-somebody else. Figures from the previous stretch are repeated in this tree
-without anybody re-taking them, which is the weakest form the record can have.
-**Entities:** `kanon`, `anoieu`
-**Status:** open. It is kanon's own defect rather than anoieu's.
-**Channel:** **local** — the public run history is enough.
-**Next:** re-derive or drop them. A number only its author can produce does not
-go on the page.
-**HUMAN FEEDBACK:**
-
-## B30 — there is no way to find out what a tool can be asked for
-
-**Task:** the ecosystem has tools that would answer questions nobody knows to
-ask them. A reader arriving at any tree can find what it *is* and not what it
-*will do for you*.
-**Entities:** `kanon`
-**Status:** open, and it needs each tool's own answer rather than ours about
-them.
-**Channel:** **discussion**, one ask per tool, carried by a person.
-**Next:** ask two tools and see whether the answers have a shape worth
-proposing.
-**Prompt — `kanon`:** do not write this register *about* other tools. A
-description of what somebody else offers, published under our name, is the
-failure [`policy.md`](policy.md) reserves the endorsing footings to prevent.
-**HUMAN FEEDBACK:**
-
-## B15 — governance, out of the analyzer, before we ask members to adopt again
-
-**Task:** keep governance usable while the policy and the checker live in
-different repositories. `R4`, `R6` and `R5` are kanon's; `R1`, `R2`, `R3` and
-`R31` are anoieu's.
-**Entities:** `anoieu`, `kanon`
-**Status:** integration follow-up. [The history](history.md) records what
-moved.
-**Channel:** **discussion** — a person carries any proposal to the other tool.
-**Next:** decide how a checker pin identifies the policy version it implements.
-The alternatives remain in [the role register](roles.md#r31--the-policy-checker).
-**Prompt — `kanon`:** keep the register, the links and the commands aligned
-with the documents here. Record the open version relationship without changing
-member pins.
-**Prompt — `anoieu`:** retain the checker interface and decide with kanon how
-the policy version is recorded alongside it.
-**HUMAN FEEDBACK:**
-
-## B18 — the associate protocol remains open for ethos
-
-**Task:** `associate` is defined and proposed for ethos, but what a repository
-has to carry was never decided. [Anoieu's `D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
-**Entities:** `kanon`, `ethos`
-**Status:** waiting on `ethos` — the choice between the two versions
-of the protocol is theirs to answer before it is ours to fix.
-**Channel:** **upstream, by a person** — ethos has no discussion file, so the
-question is carried by hand.
-**Next:** decide the one open question — the bare maintenance-note heading, or
-that plus the paragraph naming this ecosystem — and write it into
-[`policy.md`](policy.md) as in force.
-**logos is a member**, so its associate proposal is superseded and it is not a
-party we are waiting on for this item.
-**Prompt — `kanon`:** do not record ethos as an associate until the protocol is
-decided; `proposed:` is the field that holds the intention, and
-`scripts/status_eo --protocol` is the report. When it is decided, the section in
-`policy.md` stops saying *drafted, and not in force* and the ethos entry moves in
-one commit.
-**Prompt — `ethos`:** we would like to record you as an associate: a footing that
-obliges you to nothing, runs nothing in your CI, and says that every other
-reading of the language is measured against your checker's behaviour. The only
-thing it would ask is a `How this repository is maintained` heading. Which would
-you rather be asked for — that alone, or that plus a paragraph saying you are not
-held to our policy? Neither is also an answer.
-**HUMAN FEEDBACK:**
-
-## B19 — a child project has fifteen candidates and no route out
-
-**Task:** `sapheneia` holds `EOM-01` … `EOM-15` — candidate feedback on the ethos
-manual, found by writing a second account of the language and noticing where the
-second reading could not recover something from the first. **None has been
-carried anywhere**, and its own status page says so.
-**Entities:** `kanon`, `ethos`
-**Status:** ready — the ledger is written, read against `user_manual.md` at
-`3cf1c03`, and every row cites the section it is about.
-**Channel:** **upstream, by a person** — `ethos` has no discussion file, and a
-child project has no channel of its own: anything it says leaves through this
-repository, carried by somebody who can answer the follow-up.
-**Next:** pick the two or three rows that are checkable by reading the sentence
-they cite — the grammar ones, `EOM-01` and `EOM-02` — and carry those alone. The
-judgement rows wait until a reader who knows Eunoia has looked at the ledger,
-which nobody has.
-**Prompt — `kanon`:** these are *candidates* and are to stay labelled as such;
-the ledger's own header says most likely to be wrong are the judgement rows, and
-that caution is the reason it is worth reading. Do not file them as findings —
-they are about a document, not a defect in a file with a line number.
-**Prompt — `ethos`:** a second, independent description of Eunoia was written
-against your manual, and fifteen places came up where the second reading could
-not recover something from the first: a silence, an ambiguity, or a passage that
-does not appear to agree with itself. Two are grammar productions that derive
-nothing; the rest are documentation.
-**HUMAN FEEDBACK:**
-
-**Note.** This is not [`B11`](#b11--seven-language-questions-the-manual-does-not-settle),
-though both end at the same manual. `B11` is `eunoia-1` … `eunoia-7`, found by
-writing the *analyzer*; these were found by writing a *second manual*. Different
-instruments, different rows, and the ledger had no board row at all until the
-inventory of 2026-09-01 went looking.
-
 ## B6 — the shared prompt-drift check exists and awaits adoption
 
 **Task:** decide whether anoieu and dokimasia adopt koine's existing
@@ -324,6 +146,83 @@ say plainly in the report that the fuzzer produced them — a provoked crash and
 read signature are different claims and the codes already say which.
 **HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is stopping us filing them.
 
+## B24 — the office's messages have no way to be delivered
+
+**Task:** the office's unit of work is a message to one tool, and nothing
+carries one. Every topic staged in [`discussion.md`](discussion.md) waits on a
+person, with no channel named for most of the tools it is addressed to.
+**Entities:** `kanon`, `koine`
+**Status:** open, and it blocks every other thing this office produces.
+**Channel:** **discussion**, where the receiving tool keeps one; by a person
+otherwise.
+**Next:** decide whether delivery is koine's protocol or a person's habit, and
+write the answer where a ball is drafted.
+**Prompt — `kanon`:** do not build a second delivery mechanism. `koine` exists
+to be the one implementation, and a president building a rival breaks the
+mission it holds the office to serve.
+**HUMAN FEEDBACK:**
+
+## B19 — a child project has fifteen candidates and no route out
+
+**Task:** `sapheneia` holds `EOM-01` … `EOM-15` — candidate feedback on the ethos
+manual, found by writing a second account of the language and noticing where the
+second reading could not recover something from the first. **None has been
+carried anywhere**, and its own status page says so.
+**Entities:** `kanon`, `ethos`
+**Status:** ready — the ledger is written, read against `user_manual.md` at
+`3cf1c03`, and every row cites the section it is about.
+**Channel:** **upstream, by a person** — `ethos` has no discussion file, and a
+child project has no channel of its own: anything it says leaves through this
+repository, carried by somebody who can answer the follow-up.
+**Next:** pick the two or three rows that are checkable by reading the sentence
+they cite — the grammar ones, `EOM-01` and `EOM-02` — and carry those alone. The
+judgement rows wait until a reader who knows Eunoia has looked at the ledger,
+which nobody has.
+**Prompt — `kanon`:** these are *candidates* and are to stay labelled as such;
+the ledger's own header says most likely to be wrong are the judgement rows, and
+that caution is the reason it is worth reading. Do not file them as findings —
+they are about a document, not a defect in a file with a line number.
+**Prompt — `ethos`:** a second, independent description of Eunoia was written
+against your manual, and fifteen places came up where the second reading could
+not recover something from the first: a silence, an ambiguity, or a passage that
+does not appear to agree with itself. Two are grammar productions that derive
+nothing; the rest are documentation.
+**HUMAN FEEDBACK:**
+
+**Note.** This is not [`B11`](#b11--seven-language-questions-the-manual-does-not-settle),
+though both end at the same manual. `B11` is `eunoia-1` … `eunoia-7`, found by
+writing the *analyzer*; these were found by writing a *second manual*. Different
+instruments, different rows, and the ledger had no board row at all until the
+inventory of 2026-09-01 went looking.
+
+## B21 — an ethics we can be held to, taken from work we have not read
+
+**Task:** `zetesis` says its standard comes from outside and cites the
+reading that supports it. **The reading has not been done**, so the project has
+a question, three recorded gaps, and no standard.
+**Entities:** `kanon`, `zetesis`
+**Status:** ready — nothing is blocked on anybody else, and the first hour of it
+is a literature search.
+**Channel:** **internal** — nothing to send, and nothing here is filed anywhere.
+**Next:** find and cite one external account of what an agent-run project owes,
+and say plainly which of our claims it does and does not reach.
+**Prompt — `kanon`:** support zetesis in finding and assessing a standard
+somebody outside this ecosystem argued for. Until one is cited, every claim
+this ecosystem makes about its own
+conduct rests on a standard it wrote itself, which is the weakest possible
+arrangement and the one we criticise elsewhere.
+**Prompt — `zetesis`:** name what you could not find as carefully as what you
+did. A gap in the literature is a result; a plausible bibliography assembled to
+look rigorous is the failure you exist to notice.
+**HUMAN FEEDBACK:**
+
+---
+
+*A full board is one that has stopped being prioritised. If this page is at its
+cap, the next thing to do is not to add an item — it is to decide which one has
+stopped mattering. The count is deliberately not written here: it rots, it has
+rotted twice, and anybody who needs it can count.*
+
 ## B2 — verify seven accepted ethos fixes marked awaiting landing
 
 **Task:** establish whether the seven ethos fixes recorded as *awaiting
@@ -342,23 +241,61 @@ branch and replace its marker with the commit that landed it, where found.
 Carry only the unresolved remainder to ethos.
 **HUMAN FEEDBACK:**
 
-## B5 — joining costs eighteen hundred lines of reading
+## B26 — no node has a front-page FAQ, and kanon does not either
 
-**Task:** `koine` joined from the `join_eo` prompt and reported where the time
-actually went; it also reported what `init_eo` cannot finish from inside a new
-repository. Its `D1` and `D2`.
-**Entities:** `kanon`, `koine`
-**Status:** ready — two topics originally addressed to anoieu remain open;
-kanon now owns the joining instructions and scripts they concern.
-**Channel:** **discussion** — replies into `koine`'s `D1` and `D2`.
-**Next:** put the minimal passing tree in the joining section verbatim, in one
-place, or say plainly that reading the checker is the intended path.
-**Prompt — `kanon`:** answer `koine`'s `D1` with the smallest tree that passes
-the policy check, written out, and `D2` with what `init_eo` is not able to do
-from inside the new repository and who does it instead. `koine` is close to the
-smallest repository that can join, so its cost is the floor everybody pays.
-**Prompt — `koine`:** hold the topics open until the page changes; a reply that
-is only agreement closes nothing.
+**Task:** joining cost koine eighteen hundred lines of reading, and nowhere does
+a tool say the short version of itself.
+[`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
+answer — a `## Common questions` section on the front page.
+**Entities:** `kanon`
+**Status:** open on our own side first. **Nothing may be proposed to anybody
+until kanon carries one.**
+**Channel:** **local**, then a ball each.
+**Next:** write kanon's, then propose the section to one other tool.
+**Prompt — `kanon`:** proposing a style you have not adopted is the error this
+office exists to avoid.
+**HUMAN FEEDBACK:**
+
+## B25 — nobody has measured how long an answer takes
+
+**Task:** the constraint on every handoff this office will ever propose is that
+a question to another tool takes hours to land and can sit a whole term
+unanswered. That is asserted everywhere and measured nowhere.
+**Entities:** `kanon`
+**Status:** open. The figure is re-derivable from discussion files and commit
+dates, and nobody has derived it.
+**Channel:** **local** — it reads public history and asks nobody for anything.
+**Next:** take the measurement once, over the topics that exist, and state the
+method so somebody can disagree with the number.
+**Prompt — `kanon`:** a latency claim with no measurement behind it is the kind
+of sentence [`practice.md`](practice.md) says to cut.
+**HUMAN FEEDBACK:**
+
+## B18 — the associate protocol remains open for ethos
+
+**Task:** `associate` is defined and proposed for ethos, but what a repository
+has to carry was never decided. [Anoieu's `D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
+**Entities:** `kanon`, `ethos`
+**Status:** waiting on `ethos` — the choice between the two versions
+of the protocol is theirs to answer before it is ours to fix.
+**Channel:** **upstream, by a person** — ethos has no discussion file, so the
+question is carried by hand.
+**Next:** decide the one open question — the bare maintenance-note heading, or
+that plus the paragraph naming this ecosystem — and write it into
+[`policy.md`](policy.md) as in force.
+**logos is a member**, so its associate proposal is superseded and it is not a
+party we are waiting on for this item.
+**Prompt — `kanon`:** do not record ethos as an associate until the protocol is
+decided; `proposed:` is the field that holds the intention, and
+`scripts/status_eo --protocol` is the report. When it is decided, the section in
+`policy.md` stops saying *drafted, and not in force* and the ethos entry moves in
+one commit.
+**Prompt — `ethos`:** we would like to record you as an associate: a footing that
+obliges you to nothing, runs nothing in your CI, and says that every other
+reading of the language is measured against your checker's behaviour. The only
+thing it would ask is a `How this repository is maintained` heading. Which would
+you rather be asked for — that alone, or that plus a paragraph saying you are not
+held to our policy? Neither is also an answer.
 **HUMAN FEEDBACK:**
 
 ## B7 — the links between repositories are the ones nothing checks
@@ -376,6 +313,60 @@ unchecked, write down why — a rule that cannot be checked is one the policy is
 supposed to name as unchecked rather than leave implied.
 **Prompt — `dokimasia`:** your proposed checkout-based check is recorded in
 `D3`; the settled child-project case needs no further work.
+**HUMAN FEEDBACK:**
+
+## B28 — a tool is running and is in no register
+
+**Task:** `telos` is recorded as a child project and is doing work; comparing
+agendas across the ecosystem is impossible while a running tool is missing from
+the view somebody reads.
+**Entities:** `kanon`
+**Status:** open. **Membership is a decision, not a fact about a tree**, so the
+register does not fix itself.
+**Channel:** **local**, then confirm with whoever owns it.
+**Next:** a person decides the footing; `scripts/status_eo --check` reports the
+result.
+**HUMAN FEEDBACK:**
+
+## B29 — Stretch 1's figures are quoted here and checked by nobody
+
+**Task:** LAW 4 asks that every figure in a term record be re-derivable by
+somebody else. Figures from the previous stretch are repeated in this tree
+without anybody re-taking them, which is the weakest form the record can have.
+**Entities:** `kanon`, `anoieu`
+**Status:** open. It is kanon's own defect rather than anoieu's.
+**Channel:** **local** — the public run history is enough.
+**Next:** re-derive or drop them. A number only its author can produce does not
+go on the page.
+**HUMAN FEEDBACK:**
+
+## B27 — two ethics projects sit inside the tree they assess
+
+**Task:** `martyria` and `zetesis` examine how this ecosystem behaves, from
+inside a repository that is part of it. That is the ethics half of the
+judge-inside-the-judged problem, and it is not resolved by either of them saying
+so in their own README.
+**Entities:** `kanon`
+**Status:** open. A person decides; no agent has standing to.
+**Channel:** **local** — nothing crosses a boundary until a person moves it.
+**Next:** decide whether either graduates, and say what would make the answer
+different.
+**HUMAN FEEDBACK:**
+
+## B30 — there is no way to find out what a tool can be asked for
+
+**Task:** the ecosystem has tools that would answer questions nobody knows to
+ask them. A reader arriving at any tree can find what it *is* and not what it
+*will do for you*.
+**Entities:** `kanon`
+**Status:** open, and it needs each tool's own answer rather than ours about
+them.
+**Channel:** **discussion**, one ask per tool, carried by a person.
+**Next:** ask two tools and see whether the answers have a shape worth
+proposing.
+**Prompt — `kanon`:** do not write this register *about* other tools. A
+description of what somebody else offers, published under our name, is the
+failure [`policy.md`](policy.md) reserves the endorsing footings to prevent.
 **HUMAN FEEDBACK:**
 
 ## B8 — a committed regression test that two checkers disagree about
@@ -452,20 +443,38 @@ one to take first costs a paragraph: matching does not check types, so a type
 annotation on a rule's parameters does not restrict which applications match.
 **HUMAN FEEDBACK:**
 
-## B12 — fifteen checks with no witness
+## B16 — nobody audits what the tools depend on
 
-**Task:** the suite reports which checks own a minimal signature written for
-them. Fifteen do not: `ANO0001`, `ANO0002`, `DOC0001`, `DOC0012`, `EO0001`,
-`EO0002`, `EO0003`, `EO0010`, `EO0011`, `EO0022`–`EO0026`, `TRI0008`.
+**Task:** an auditor that reads what each repository depends on and asks whether
+it needs to. Tracked as `R1` in the ynoia requests page.
+**Entities:** `anoieu`, `ynoia`
+**Status:** not started — raised, argued, and unowned.
+**Channel:** **internal** for now; a request, not a finding, if it ever leaves this tree.
+**Next:** write the baseline while the answer is still *almost nothing*, so the
+first addition is what gets reported.
+**Prompt — `anoieu`:** the analyzer declares no dependencies and means it. A
+check that records that, per member, and reports the first package that appears
+is worth more now than a thorough one written after there are forty.
+**Prompt — `ynoia`:** if this wants to run in members' CI it is machinery
+everybody fetches, which is a proposal rather than a request. Promote it if that
+happens.
+**HUMAN FEEDBACK:**
+
+## B13 — fuzz promotion can reintroduce machine-local seed paths
+
+**Task:** normalize seed provenance when promoting a fuzz reproducer, so a new
+case cannot copy a machine-local path into committed data.
 **Entities:** `anoieu`
-**Status:** ready — the gap is printed on every run and nobody is blocked on it.
-**Channel:** **internal** — nothing to send.
-**Next:** write witnesses for the `EO0022`–`EO0026` block, which is five of the
-fifteen and one family.
-**Prompt — `anoieu`:** a check with no witness is a check whose meaning is
-whatever the code currently does. The evidence table on the front page claims
-each check reports the minimal signature written for it; for these fifteen that
-claim is not backed.
+**Status:** partly resolved — the recorded paths are gone and
+`check_local_paths_data()` now examines non-Markdown files. The promoter still
+copies the case and serializes the input record without normalizing its source.
+**Channel:** **internal** in anoieu — nothing to send upstream.
+**Next:** normalize provenance in both the promoted case and its `finding.json`,
+using a repository-relative path or corpus name where one is available.
+**Evidence:** [the promoter](https://github.com/ajreynol/anoieu/blob/eeafbcc7bc9706651357ebfb38235adc25cd770d/anoieu_fuzz/report.py)
+and [the data-path check](https://github.com/ajreynol/anoieu/blob/eeafbcc7bc9706651357ebfb38235adc25cd770d/scripts/policy_check.py).
+**Prompt — `anoieu`:** keep the existing data-path check and repair promotion
+so that it does not reintroduce the paths already removed from the corpus.
 **HUMAN FEEDBACK:**
 
 ## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
@@ -488,65 +497,3 @@ picks the fix up; `logos-1` is blocked on this and on nothing else.
 **Prompt — `anoieu`:** keep the row in the landing audit and do not close it on a
 reply. This is the finding that taught us to check.
 **HUMAN FEEDBACK:** a minor bug — moved down 2026-08-31.
-
-## B13 — fuzz promotion can reintroduce machine-local seed paths
-
-**Task:** normalize seed provenance when promoting a fuzz reproducer, so a new
-case cannot copy a machine-local path into committed data.
-**Entities:** `anoieu`
-**Status:** partly resolved — the recorded paths are gone and
-`check_local_paths_data()` now examines non-Markdown files. The promoter still
-copies the case and serializes the input record without normalizing its source.
-**Channel:** **internal** in anoieu — nothing to send upstream.
-**Next:** normalize provenance in both the promoted case and its `finding.json`,
-using a repository-relative path or corpus name where one is available.
-**Evidence:** [the promoter](https://github.com/ajreynol/anoieu/blob/eeafbcc7bc9706651357ebfb38235adc25cd770d/anoieu_fuzz/report.py)
-and [the data-path check](https://github.com/ajreynol/anoieu/blob/eeafbcc7bc9706651357ebfb38235adc25cd770d/scripts/policy_check.py).
-**Prompt — `anoieu`:** keep the existing data-path check and repair promotion
-so that it does not reintroduce the paths already removed from the corpus.
-**HUMAN FEEDBACK:**
-
-## B16 — nobody audits what the tools depend on
-
-**Task:** an auditor that reads what each repository depends on and asks whether
-it needs to. Tracked as `R1` in the ynoia requests page.
-**Entities:** `anoieu`, `ynoia`
-**Status:** not started — raised, argued, and unowned.
-**Channel:** **internal** for now; a request, not a finding, if it ever leaves this tree.
-**Next:** write the baseline while the answer is still *almost nothing*, so the
-first addition is what gets reported.
-**Prompt — `anoieu`:** the analyzer declares no dependencies and means it. A
-check that records that, per member, and reports the first package that appears
-is worth more now than a thorough one written after there are forty.
-**Prompt — `ynoia`:** if this wants to run in members' CI it is machinery
-everybody fetches, which is a proposal rather than a request. Promote it if that
-happens.
-**HUMAN FEEDBACK:**
-
-## B21 — an ethics we can be held to, taken from work we have not read
-
-**Task:** `zetesis` says its standard comes from outside and cites the
-reading that supports it. **The reading has not been done**, so the project has
-a question, three recorded gaps, and no standard.
-**Entities:** `kanon`, `zetesis`
-**Status:** ready — nothing is blocked on anybody else, and the first hour of it
-is a literature search.
-**Channel:** **internal** — nothing to send, and nothing here is filed anywhere.
-**Next:** find and cite one external account of what an agent-run project owes,
-and say plainly which of our claims it does and does not reach.
-**Prompt — `kanon`:** support zetesis in finding and assessing a standard
-somebody outside this ecosystem argued for. Until one is cited, every claim
-this ecosystem makes about its own
-conduct rests on a standard it wrote itself, which is the weakest possible
-arrangement and the one we criticise elsewhere.
-**Prompt — `zetesis`:** name what you could not find as carefully as what you
-did. A gap in the literature is a result; a plausible bibliography assembled to
-look rigorous is the failure you exist to notice.
-**HUMAN FEEDBACK:**
-
----
-
-*A full board is one that has stopped being prioritised. If this page is at its
-cap, the next thing to do is not to add an item — it is to decide which one has
-stopped mattering. The count is deliberately not written here: it rots, it has
-rotted twice, and anybody who needs it can count.*

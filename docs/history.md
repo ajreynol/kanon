@@ -372,6 +372,23 @@ below record the state when they were made.
 
 ### Closed
 
+**Three board items removed, and the board's own rule is why**: an item that is
+done, or that nobody will act on, is deleted rather than archived.
+
+- **Governance out of the analyzer — done.** The move landed; what survived it
+  is the single question of how a checker pin identifies the policy version it
+  implements, and that already has a home in [`policy.md`](policy.md) and the
+  role register. A board item for it was a third copy of one open choice.
+- **Joining costs eighteen hundred lines of reading — split, not dropped.** The
+  defect on our own side is now the board's front-page FAQ item, and the ask to
+  koine — *what would the number have to be* — is a topic in
+  [`discussion.md`](discussion.md). One complaint was being tracked in three
+  places.
+- **Fifteen checks with no witness — nobody is blocked on it**, by its own
+  status, and it is internal to a single tool that keeps its own board. It was
+  on this one because this one used to be the only board.
+
+
 **The office's own work list is folded into the normal channels.** What kanon
 was waiting on was kept in a register of its own, in parallel with the board and
 the discussion file, which is the duplication [`policy.md`](policy.md) warns
