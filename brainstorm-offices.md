@@ -1,8 +1,9 @@
 # Brainstorm: possible offices
 
-**Deferred on 2026-09-15.** The maintainer judged the office structure premature.
-Kanon has no established internal offices, and `tools/` is empty. No incoming
-project from anoieu has been copied here.
+**Deferred on 2026-09-15.** The maintainer judged the office structure
+premature. Kanon has no established internal offices. The child projects that
+arrived in the governance handoff later that day sit directly under `tools/`,
+with no office nesting, which is what this page was deferred in favour of.
 
 This is optional background. The six former office documents, the proposed
 structure and the allocation of work are preserved below as earlier design
@@ -368,7 +369,7 @@ promotion.
 **3. One FAQ style, at every node.** Joining cost koine four files and eighteen
 hundred lines of reading. Six documents describe kanon and no two agree. Both
 are the same defect from the reader's side: there is nowhere a tool says the
-short version of itself. **Kanon writes its own first** — [`FAQ.md`](FAQ.md)
+short version of itself. **Kanon writes its own first** — [its front page](README.md#common-questions)
 — because proposing a style you have not adopted is the move `K2` was built to
 avoid. Carried as `A19`.
 

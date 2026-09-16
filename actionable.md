@@ -70,7 +70,7 @@ duplicate record.
 | `A16` | the office-count proposal is deferred | **kanon** | nothing |
 | `A17` | nobody publishes what a repository here should look like | **kanon** to say, anoieu to decide | every layout change, silently |
 | `A18` | no way to find out what a tool can be asked for | **kanon**, with each tool's answer | using tools the ecosystem already has |
-| `A19` | no node has an FAQ; kanon now has one | **kanon** first, then a ball each | the cost of arriving anywhere |
+| `A19` | no node has a front-page FAQ; kanon now has one | **kanon** first, then a ball each | the cost of arriving anywhere |
 | `A20` | martyria's cases must survive the move byte-identical | **kanon** | nothing, until the move happens |
 | `A21` | anoieu's Stretch 1 figures are quoted, not checked | **kanon** | kanon's own record, LAW 4 |
 | `A22` | receive `ynoia`, and treat it as the authority | a person, then **kanon** | receiving the research project |
@@ -338,13 +338,17 @@ ecosystem does not have.**
 them — `K1` is the first, and every entry is a quote or it is not an entry.
 **Closes when:** at least one tool has confirmed its own line.
 
-### `A19` — no node has an FAQ, and kanon now has one
+### `A19` — no node has a front-page FAQ, and kanon now has one
 
 **Whose:** kanon's, then a ball to each node.
 **Why:** joining cost koine eighteen hundred lines of reading, and six documents
 describe kanon without agreeing. Same defect from the reader's side: nowhere
-does a tool say the short version of itself. **Five fixed questions**, in
-[`FAQ.md`](FAQ.md), written here before being proposed anywhere.
+does a tool say the short version of itself. **Five fixed questions**, under
+[*Common questions*](README.md#common-questions), written here before being
+proposed anywhere. It sits on the front page rather than in a file of its own
+because [`docs/policy.md`](docs/policy.md#common-questions-on-the-front-page)
+holds that an FAQ kept elsewhere is a second overview competing with the front
+page — so the style being proposed is the section, not the file.
 **Closes when:** one other node adopts it, or says why the style is wrong.
 
 ### `A20` — martyria's cases must survive the move byte-identical
