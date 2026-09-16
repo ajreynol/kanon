@@ -344,6 +344,26 @@ could start on a Monday. It has a floor already built, it needs no question
 settled first, and it is the only one that would pay for the generation column
 in a currency other than trust.
 
+## mimesis — helping authors write signatures from scratch
+
+**What:** an authoring setup that helps turn a new calculus into an initial
+Eunoia `.eo` signature, with worked examples and small proof tests.
+**State:** `named` — requested by the maintainer on 2026-09-16, with the
+intention of launching soon; not yet started or assigned a home.
+**Settles:** tests the authoring cost behind reason **1**: whether keeping the
+calculus in the solver developer's language also makes a new one practical to
+write. Scope and the test of that claim are in
+[the account](why-eunoia.md#mimesis--helping-authors-write-signatures-from-scratch).
+**Costs:** helping authors express their intended rules and side conditions
+without mistaking a signature that accepts proofs for a sound calculus.
+**Before it:** a launch charter choosing the first example calculus and the
+project's home; neither is decided by this listing.
+**Today:** existing signatures as examples, plus eudaimonia's `--dummy-rule`
+starter; no dedicated mimesis authoring setup is registered.
+**Why here:** behind `elenchos`, which already has an executable baseline, but
+ahead of larger compiler and checker changes: one small calculus offers a
+bounded first test, and the maintainer intends to start it soon.
+
 ## noesis — the semantics and the compiler, defined in Lean
 
 **What:** `.eos` written as Lean definitions over the model logos already

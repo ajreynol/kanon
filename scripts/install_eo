@@ -29,13 +29,15 @@ cloning anything. Nothing is passed to a shell anywhere in this file.
 project** is not a checkout of its own -- it is a directory in somebody else's
 tree, and it arrives when that tree does. Where a child's current work is on
 another branch of its parent, as `ethos-eoc`'s is on `ethosEoc3`, the parent
-installs normally and the install *says so*, with the one command that gets you
-the newer copy. Nobody is put on a branch they did not choose, and nothing is
-withheld because a directory inside it moves faster than its default branch.
+installs normally and, for an advertised child, the install *says so*, with the
+one command that gets you the newer copy. Nobody is put on a branch they did not
+choose, and nothing is withheld because a directory inside it moves faster than
+its default branch.
 
 The list is derived from `scripts/ecosystem/ecosystem.json`: every entry that is not a child
-project carries a url and a repo id, and the clone follows from them. Adding a
-tool to the inventory is therefore the whole of adding it here.
+project carries a url and a repo id. Outsiders are tracked for comparison and
+appear in `--status`, but are never cloned, even when named explicitly or with
+`--with-optional`. For other repositories, the clone follows from the entry.
 `scripts/ecosystem/checkouts.json` holds only the exceptions -- a branch that is not the
 default, a clone flag, a repo somebody has to decide about -- and nothing has to
 be edited for the ordinary case.
@@ -55,6 +57,11 @@ Choosing what to include:
 
 An id is a repo id or any inventory id it provides, so `ethos-eoc` selects the
 one ethos tree that carries both.
+
+Child summaries and branch advice follow `**Eunoia listing:** advertised` or
+`unadvertised` in the child's local README introduction. An absent declaration
+means advertised; unavailable or invalid declarations are reported as unverified.
+All child ids still resolve to their parents and are recorded in scripts/repos.local.
 """
 
 from __future__ import annotations
@@ -69,6 +76,7 @@ import subprocess
 import sys
 
 from anoieu_dependency import checkout
+from child_listing import read_listing, unverified_note
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -169,9 +177,15 @@ class Repo:
         """The clone, which is always of the default branch."""
         return ["git", "clone", *self.args, self.url, self.key]
 
+    def listed_children(self, path: str) -> tuple[list[dict], str]:
+        """The children this local parent advertises, without changing id lookup."""
+        readings = [(c, read_listing(path, c.get("path", ""))) for c in self.children]
+        return ([c for c, listing in readings if listing.advertised],
+                unverified_note(self.key, [listing for _, listing in readings]))
+
 
 def plan() -> list[Repo]:
-    """Every tree to clone: the inventory, grouped by repository, plus anything
+    """Every tree to list: the inventory, grouped by repository, plus anything
     `scripts/ecosystem/checkouts.json` names that the inventory does not carry yet."""
     conf = load(CHECKOUTS)
     over = conf.get("overrides", {})
@@ -181,7 +195,9 @@ def plan() -> list[Repo]:
     kids: dict[str, list[dict]] = {}
     for name, e in inv.items():
         if e.get("status") in NOT_A_REPO:
-            kids.setdefault(e.get("parent", ""), []).append(
+            parent = e.get("parent", "")
+            key = inv.get(parent, {}).get("repo", parent)
+            kids.setdefault(key, []).append(
                 {"name": name, "path": e.get("path", ""), "what": e.get("what", ""),
                  "branch": e.get("branch", "")})
 
@@ -233,6 +249,9 @@ def select(repos: list[Repo], args) -> list[Repo]:
     named = {n for n in args.ids}
     out = []
     for r in repos:
+        # Outsiders are comparison data, visible in status but never installed.
+        if "outsider" in r.statuses and not args.status:
+            continue
         ids = {r.key, *r.covers, *(c["name"] for c in r.children)}
         if named and not (ids & named):
             continue
@@ -417,6 +436,7 @@ def merge_repos_local(root: str, repos: list[Repo], planned: set[str] = frozense
 
 def dump(root: str, repos: list[Repo]) -> int:
     meanings = status_meanings()
+    children = {}
     print("# The Eunoia ecosystem, as commands. This is --dry-run, so none of")
     print("# them has been run. Every uncommented line below is live: a run")
     print("# without --dry-run executes exactly these, and so does a paste.")
@@ -445,11 +465,16 @@ def dump(root: str, repos: list[Repo]) -> int:
             print(f"#   {chunk}")
         lead = "# " if r.opt_in else ""
         print(lead + shlex.join(r.command()))
-        for c in r.elsewhere:
+        children[r.key], note = r.listed_children(os.path.join(root, r.key))
+        if note:
+            print(f"# note: {note}")
+        for c in children[r.key]:
+            if not c.get("branch"):
+                continue
             for line in child_note(r, c):
                 print(f"#   {line}")
 
-    kids = [(c, r) for r in repos for c in r.children]
+    kids = [(c, r) for r in repos for c in children[r.key]]
     if kids:
         print()
         print("# Child projects, which arrive with the tree they live in and are")
@@ -470,29 +495,31 @@ def run(root: str, repos: list[Repo], everything: list[Repo], write_map: bool) -
     """Clone what was selected. Skips what is there; refuses what is in the way."""
     if not repos:
         print("-- nothing to do: everything selected is already here.")
-    failed, have, advise = [], set(), []
+    failed, have, advise, notes = [], set(), [], []
     os.makedirs(root, exist_ok=True)
     for r in repos:
         path = os.path.join(root, r.key)
+        on = ""
         if is_checkout(path):
             print(f"-- {r.key}: already a checkout, left alone")
-            have.add(r.key)
             # Still worth saying, if the tree is not where the child's work is.
             on = git(path, "rev-parse", "--abbrev-ref", "HEAD")[1]
-            advise += [(r, c) for c in r.elsewhere if c["branch"] != on]
-            continue
-        if os.path.isdir(path) and os.listdir(path):
-            print(f"-- {r.key}: {path} has something in it and is not a checkout "
-                  "-- refusing to touch it")
-            failed.append(r.key)
-            continue
-        cmd = r.command()
-        print(f"$ {' '.join(cmd)}")
-        if execute(cmd, root) != 0:
-            failed.append(r.key)
-            continue
+        else:
+            if os.path.isdir(path) and os.listdir(path):
+                print(f"-- {r.key}: {path} has something in it and is not a checkout "
+                      "-- refusing to touch it")
+                failed.append(r.key)
+                continue
+            cmd = r.command()
+            print(f"$ {' '.join(cmd)}")
+            if execute(cmd, root) != 0:
+                failed.append(r.key)
+                continue
         have.add(r.key)
-        advise += [(r, c) for c in r.elsewhere]
+        children, note = r.listed_children(path)
+        if note:
+            notes.append(note)
+        advise += [(r, c) for c in children if c.get("branch") and c["branch"] != on]
 
     for r, c in advise:
         # Said after the clones rather than beside one, because it is not about
@@ -501,6 +528,9 @@ def run(root: str, repos: list[Repo], everything: list[Repo], write_map: bool) -
         print(f"-- {r.key} is installed, and:")
         for line in child_note(r, c):
             print(f"   {line}")
+
+    for note in notes:
+        print(f"   note: {note}")
 
     if write_map:
         text, disagree = merge_repos_local(root, everything, have)
@@ -523,17 +553,19 @@ def run(root: str, repos: list[Repo], everything: list[Repo], write_map: bool) -
 def read_repos_file() -> dict:
     found = {}
     if os.path.isfile(REPOS_FILE):
-        for line in open(REPOS_FILE, encoding="utf-8"):
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            parts = line.split(None, 1)
-            if len(parts) == 2:
-                found[parts[0]] = os.path.expanduser(parts[1].strip())
+        with open(REPOS_FILE, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split(None, 1)
+                if len(parts) == 2:
+                    found[parts[0]] = os.path.expanduser(parts[1].strip())
     return found
 
 
-def observe(path: str, r: "Repo", do_fetch: bool) -> tuple[str, list[str], bool]:
+def observe(path: str, r: "Repo", do_fetch: bool,
+            children: list[dict] | None = None) -> tuple[str, list[str], bool]:
     """One checkout, as a cell, some notes, and whether it is a checkout at all.
 
     Offline unless asked otherwise. An empty directory is reported as empty
@@ -565,7 +597,9 @@ def observe(path: str, r: "Repo", do_fetch: bool) -> tuple[str, list[str], bool]
             cell += f" -{behind}/+{ahead}"
     default = default_branch(path)
     if default and branch != default:
-        kid = next((c["name"] for c in r.elsewhere if c["branch"] == branch), "")
+        if children is None:
+            children, _ = r.listed_children(path)
+        kid = next((c["name"] for c in children if c.get("branch") == branch), "")
         why = (f", which is where {kid}'s current work is" if kid else
                f", and install_eo installs {default}")
         notes.append(f"on {branch}{why} — switched by hand, since install_eo "
@@ -580,10 +614,14 @@ def show(root: str, repos: list[Repo], inv: dict, do_fetch: bool,
     whole = len(repos) == len(everything)
     notes: list[str] = []
     rows = []
+    children = {}
 
     for r in repos:
         path = os.path.join(root, r.key)
-        cell, why, here = observe(path, r, do_fetch)
+        children[r.key], note = r.listed_children(path)
+        if note:
+            notes.append(note)
+        cell, why, here = observe(path, r, do_fetch, children[r.key])
         notes += [f"{r.key}: {w}" for w in why]
         rows.append((r.key, r.label(), cell, age(path) if here else "-", path))
         if not r.recorded:
@@ -629,7 +667,7 @@ def show(root: str, repos: list[Repo], inv: dict, do_fetch: bool,
         print(f"{key:<{w}}{label:<{k}}{cell:<32}{moved:<8}"
               f"{path.replace(os.path.expanduser('~'), '~')}")
 
-    kids = [(c, r) for r in repos for c in r.children]
+    kids = [(c, r) for r in repos for c in children[r.key]]
     if kids:
         print()
         for c, r in kids:

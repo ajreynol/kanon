@@ -174,6 +174,44 @@ class Commands(unittest.TestCase):
         self.assertFalse(dest.exists())
         self.assertFalse(Path(self.env["ANOIEU_REPOS_FILE"]).exists())
 
+    def test_installer_never_clones_outsiders(self):
+        outsiders = {name: entry for name, entry in installer.inventory().items()
+                     if entry["status"] == "outsider"}
+        self.assertTrue(outsiders)
+        outsider_urls = {entry["url"] for entry in outsiders.values()}
+        selections = [[], ["--with-optional"], ["--role", "outsider"],
+                      list(outsiders), [entry["repo"] for entry in outsiders.values()]]
+        for selection in selections:
+            for dry_run in (False, True):
+                with self.subTest(selection=selection, dry_run=dry_run):
+                    argv = ["install_eo", "--root", str(self.base / "install"),
+                            "--no-repos-local", *selection]
+                    if dry_run:
+                        argv.append("--dry-run")
+                    out = io.StringIO()
+                    with patch.object(sys, "argv", argv), \
+                         patch.object(installer, "execute", return_value=0) as execute, \
+                         contextlib.redirect_stdout(out):
+                        self.assertEqual(installer.main(), 0)
+                    for url in outsider_urls:
+                        self.assertNotIn(url, out.getvalue())
+                    cloned_urls = {call.args[0][-2] for call in execute.call_args_list}
+                    self.assertTrue(cloned_urls.isdisjoint(outsider_urls))
+                    if dry_run:
+                        execute.assert_not_called()
+                    elif selection in ([], ["--with-optional"]):
+                        self.assertIn(installer.inventory()["kanon"]["url"], cloned_urls)
+                    else:
+                        execute.assert_not_called()
+
+    def test_installer_status_still_lists_outsiders(self):
+        result = self.command(sys.executable, "scripts/install_eo", "--status",
+                              "--role", "outsider", "--root", str(self.base))
+        self.assertEqual(result.returncode, 0, result.stderr)
+        for name, entry in installer.inventory().items():
+            if entry["status"] == "outsider":
+                self.assertIn(f"{name} -- outsider", result.stdout)
+
     def test_prompt_previews(self):
         target = self.base / "example"
         (target / ".git").mkdir(parents=True)

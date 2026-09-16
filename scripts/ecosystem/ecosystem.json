@@ -29,6 +29,7 @@
     "url": "https://github.com/cvc5/LFSC",
     "vetted": "2026-09-02",
     "what": "the LFSC proof checker. **Its authors report it is deprecated and no longer useful**, which is their statement and not our assessment",
+    "short": "LFSC proof checker; deprecated by its authors",
     "why": "comparison data with a different shape: a tool whose own authors have declared it done. Activity numbers for it are expected to be low and that is not a finding about it"
   },
   "lean-smt": {
@@ -51,6 +52,10 @@
     "Who is in the Eunoia ecosystem, and on what footing. Read by the status",
     "implementation here, scripts/ commands and prompts/global_audit. Checkouts resolve",
     "through scripts/repos.local, the map shared by commands and prompts.",
+    "",
+    "`what` is the full description. Optional `short` supplies a concise purpose",
+    "for status_eo, aiming for 60 characters or fewer. The table uses `short`",
+    "before `what` and shortens longer text to 60 characters with an ellipsis.",
     "",
     "This is a list somebody maintains, not one anything derives: a footing is a",
     "decision rather than a fact about a tree. `status` is the whole of what this",
@@ -80,9 +85,10 @@
     "              names whose tree, `path` where in it, and `branch` the",
     "              branch of the parent its current work is on, where that is",
     "              not the default one. A child is never a checkout of its own,",
-    "              and is listed by scripts/install_eo all the same: it is work",
-    "              that exists and may be worth reading, and saying where it",
-    "              lives costs a line. A name with no work behind it is a",
+    "              and its own README introduction controls its listing with",
+    "              **Eunoia listing:** advertised or unadvertised. An absent",
+    "              declaration means advertised; IDs still resolve through the",
+    "              parent. A name with no work behind it is a",
     "              different thing and is not here at all -- tools/ynoia/",
     "              names.md is the register of those",
     "",
@@ -117,13 +123,33 @@
     "",
     "Two further fields, neither of which is a status:",
     "",
-    "  joined     the commit of anoieu a member pinned when it joined, which is",
-    "             the only coordinate we actually have. There is no X.Y.Z",
-    "             version of this repository and nothing is versioned against a",
-    "             stretch, so a commit is the honest answer until somebody",
-    "             decides otherwise. Absent where it could not be established:",
-    "             we did not record joins at the time, and reconstructing one",
-    "             means reading somebody else's history.",
+    "  joined     the commit of the repository that **held the shared policy**",
+    "             when a member joined: `anoieu <sha>` for a join before the",
+    "             2026-09-15 governance handoff, `kanon <sha>` for one after it.",
+    "             That is why the value names a repository and not only a",
+    "             commit -- the policy has moved once and is expected to move",
+    "             again, and a bare sha would stop identifying anything the",
+    "             moment it did. It is the only coordinate we actually have:",
+    "             there is no X.Y.Z version of the policy and nothing is",
+    "             versioned against a stretch, so a commit is the honest answer",
+    "             until somebody decides otherwise.",
+    "",
+    "             It used to record the anoieu commit a member *pinned* on",
+    "             joining. A pin identifies the checker and not the policy, the",
+    "             two now live in different repositories, and docs/policy.md",
+    "             says under `The checker and this page now live in different",
+    "             repositories` that a checker pin alone does not identify the",
+    "             policy. Nothing is lost by the change: a member's pin is in",
+    "             its own workflow file, which is where it was read from.",
+    "             Changed 2026-09-16. Only tachyon and eschaton moved, being",
+    "             the two members who joined after the handoff; every earlier",
+    "             join was measured against the policy anoieu held, and its",
+    "             `anoieu` commit is correct under the new reading unchanged.",
+    "",
+    "             Absent where it could not be established: we did not record",
+    "             joins at the time, and reconstructing one means reading",
+    "             somebody else's history. Which footings changed during the",
+    "             current term, and when, is docs/history.md.",
     "",
     "  genuine    a judgement, never a check: that the repository was",
     "             *constructed* according to these policies rather than made to",
@@ -145,12 +171,14 @@
     "status": "member",
     "repo": "anoieu",
     "url": "https://github.com/ajreynol/anoieu",
+    "short": "Static analyzer, fuzzer, and policy checker",
     "what": "the static analyzer, the fuzzer, and the policy checker; the policy is kept by kanon"
   },
   "cvc5": {
     "status": "foundation",
     "repo": "cvc5",
     "url": "https://github.com/cvc5/cvc5",
+    "short": "SMT solver and owner of CPC",
     "what": "the solver, and the owner of CPC. The ecosystem exists to serve it, and asks it for nothing"
   },
   "ethos": {
@@ -158,6 +186,7 @@
     "proposed": "associate",
     "repo": "ethos",
     "url": "https://github.com/cvc5/ethos",
+    "short": "Proof checker and Eunoia manual",
     "vetted": "2026-09-01",
     "what": "the proof checker, the home of the Eunoia manual, and the tree the ethos-eoc child project is in",
     "why": "every other reading of the language is measured against its behaviour, and this repository's oracle is a recording of it"
@@ -181,6 +210,7 @@
     "joined": "anoieu dc2c613",
     "repo": "eudaimonia",
     "url": "https://github.com/ajreynol/eudaimonia",
+    "short": "Calculus template: a signature, checker, and proofs",
     "what": "the calculus template: bring a signature, get a checker and its proofs"
   },
   "dokimasia": {
@@ -188,13 +218,31 @@
     "joined": "anoieu 441b562",
     "repo": "dokimasia",
     "url": "https://github.com/ajreynol/dokimasia",
+    "short": "Finds gaps in cvc5's proof production",
     "what": "reads cvc5's proof-production C++ and asks what no proof step covers"
+  },
+  "tachyon": {
+    "status": "member",
+    "joined": "kanon 4c4a78a",
+    "repo": "tachyon",
+    "url": "https://github.com/ajreynol/tachyon",
+    "short": "Searches for ways to improve cvc5 performance",
+    "what": "searches for ways to improve cvc5 performance, using reproducible benchmark experiments to test proposed changes"
+  },
+  "eschaton": {
+    "status": "member",
+    "joined": "kanon c95ab21",
+    "repo": "eschaton",
+    "url": "https://github.com/ajreynol/eschaton",
+    "short": "Compares approaches to better-founded SMT solvers",
+    "what": "compares approaches to better-founded SMT solvers and their costs"
   },
   "epikrisis": {
     "status": "member",
     "joined": "anoieu dbb9337",
     "repo": "epikrisis",
     "url": "https://github.com/ajreynol/epikrisis",
+    "short": "Audits repository histories against evidence",
     "what": "audits how these repositories have changed over time, on evidence a reader can re-derive"
   },
   "kanon": {
@@ -202,6 +250,7 @@
     "joined": "anoieu 4d21ec9",
     "repo": "kanon",
     "url": "https://github.com/ajreynol/kanon",
+    "short": "Ecosystem policy, governance, and inventory",
     "what": "the ecosystem's governance: the policy, vision, inventory and joining scripts; the checker stays in anoieu"
   },
   "koine": {
@@ -209,84 +258,105 @@
     "joined": "anoieu 5668c20",
     "repo": "koine",
     "url": "https://github.com/ajreynol/koine",
+    "short": "Shared reporting protocol and tooling",
     "what": "the shared machinery of the reporting loop: one implementation of the protocol rather than one per member"
   },
   "sapheneia": {
     "status": "child",
     "parent": "kanon",
     "path": "tools/sapheneia",
+    "short": "Defines Eunoia as a language",
     "what": "Eunoia described as a language definition rather than as a checker's manual"
   },
   "ynoia": {
     "status": "child",
     "parent": "kanon",
     "path": "tools/ynoia",
+    "short": "Questions the ecosystem's design and what it lacks",
     "what": "whether the ecosystem's arrangement earns its machinery, and what it is missing"
   },
   "euthyna": {
     "status": "child",
     "parent": "eudaimonia",
     "path": "tools/euthyna",
+    "short": "Examines the structure and weight of Logos's proofs",
     "what": "what the proof in logos is made of, and where its weight sits"
   },
   "martyria": {
     "status": "child",
     "parent": "kanon",
     "path": "tools/martyria",
+    "short": "Ethical concerns, responses, and evidence of conduct",
     "what": "specific ethical concerns, with a stance attached: what we do about one situation, and what can be shown about how we behaved in it"
   },
   "zetesis": {
     "status": "child",
     "parent": "kanon",
     "path": "tools/zetesis",
+    "short": "Examines ethical standards and evidence of meeting them",
     "what": "the general inquiry: what standard this ecosystem is held to, taken from outside, and whether our record could show we met it"
   },
   "stathmos": {
     "status": "child",
     "parent": "kanon",
     "path": "tools/stathmos",
+    "short": "Evidence for assessing tools against ecosystem tenets",
     "what": "what each tool weighs against the tenets, at the recorded version, and the evidence for it -- the report card's raw material, not its verdicts"
   },
   "tekmerion": {
     "status": "child",
     "parent": "anoieu",
     "path": "tools/tekmerion",
+    "short": "Checks documentation claims against evidence",
     "what": "the evidence that what these documents say is still true, claim by claim -- why anybody should believe the prose this ecosystem mostly consists of"
   },
   "workflow-launcher": {
     "status": "child",
     "parent": "eudaimonia",
     "path": "tools/workflow-launcher",
+    "short": "Guides a new tool's first hour and records lessons",
     "what": "the first hour of a new tool's life, and a register of what this ecosystem's practice has turned out to be doing"
   },
   "anakrisis": {
     "status": "child",
     "parent": "dokimasia",
     "path": "tools/anakrisis",
+    "short": "Reviews cvc5 PRs for changes in proof completeness",
     "what": "examines cvc5 pull requests by comparing dokimasia's proof-completeness analyses before and after a change, and records what its review adds"
   },
   "empeiria": {
     "status": "child",
     "parent": "dokimasia",
     "path": "tools/empeiria",
+    "short": "Works cvc5 bug reports and learns from maintainer feedback",
     "what": "works cvc5's public bug reports and records what the maintainers' responses teach about the next fix"
   },
   "telos": {
     "status": "child",
-    "parent": "dokimasia",
+    "parent": "eschaton",
     "path": "tools/telos",
+    "short": "Researches a proof-first SMT solver checked by Logos",
     "what": "research toward a proof-first SMT solver whose output is checked by Logos, using dokimasia's analyses to guide the design"
   },
   "apodeixis": {
     "status": "child",
     "parent": "eudaimonia",
     "path": "tools/apodeixis",
+    "short": "Proposed Alethe stress test of Eudaimonia; paused",
     "what": "a proposed Alethe stress test of the Eudaimonia framework; work is paused pending collaboration and permission from the Alethe maintainers"
   },
   "noesis": {
     "status": "child",
     "parent": "eudaimonia",
     "path": "tools/noesis",
+    "short": "Researches a verified Eunoia-to-Lean compiler",
     "what": "research toward a verified Eunoia-to-Lean compiler, with explicit preservation claims for each pass"
+  },
+  "hermeneia": {
+    "status": "child",
+    "parent": "eudaimonia",
+    "path": "tools/hermeneia",
+    "short": "Connects embedded SMT-LIB semantics to Lean's logic",
+    "what": "researches correspondence definitions and lemmas that carry checked refutations from embedded SMT-LIB semantics into native Lean propositions"
   }
 }
