@@ -64,7 +64,7 @@ readiness, distribution — were a list, an output, a status and a mission
 wearing directories, and the maintainer could not tell what four of them were
 for. **That was the evidence.** Nothing was deleted except the containers: the
 mission is above, the list is [the board](../board.md), the output is
-[`kanon-balls.md`](../kanon-balls.md), the findings moved into research, and
+[the discussion file](../discussion.md), the findings moved into research, and
 readiness is what the check reports rather than a place.
 
 **The prefix is the term, and an office does not travel.** The successor opens
@@ -220,7 +220,8 @@ on the stated ground that a claim of novelty about one's own practice is the
 cheapest thing an agent can produce and reads exactly like an insight. A
 mechanism that turns out to be ordinary is **kept and relocated**, with one line
 saying where it went and what ruled it out — the same shape as *Closed* in
-[`handover.md`](../handover.md), reached independently. And it is
+[the handover section](../history.md#what-crosses-to-the-next-president),
+reached independently. And it is
 **neither a grade nor a survey**: `report-card.md` judges whether any of this is
 good and stays with anoieu, and nobody here has read the literature.
 
@@ -334,7 +335,7 @@ presumptuous form the question has.
 ## Correspondence
 
 **What we send, and what came back.** The office owns
-[`kanon-balls.md`](../kanon-balls.md) and the question nobody in this
+[the discussion file](../discussion.md) and the question nobody in this
 ecosystem currently owns: *who owes whom an answer, and for how long?*
 
 **It communicates; it does not legislate.** The policy is anoieu's `R4` until a
@@ -932,7 +933,7 @@ transmits bias by exactly the route the tenet was written to close.
 **Uninformed opinion:** they are compatible only if the page carries **reasons
 rather than conclusions**, because a reason can be checked against the tree by
 somebody who has done nothing, and a conclusion cannot. That is now one of the
-four rules [`whats-next.md`](../whats-next.md) is written under, and **it
+four rules [the suggestion to the next term](../history.md#what-the-next-term-should-be-for) is written under, and **it
 is a mitigation rather than a resolution** — a sufficiently well-argued
 suggestion is still very hard for an empty reader to decline. Worth revisiting
 when there is a second president to watch, which is the only evidence that would

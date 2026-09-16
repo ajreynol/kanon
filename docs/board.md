@@ -107,20 +107,20 @@ says what would change that and who decides.
 
 ---
 
-## B24 — kanon-balls have no way to be delivered
+## B24 — the office's messages have no way to be delivered
 
 **Task:** the office's unit of work is a message to one tool, and nothing
-carries one. Every ball drafted in [`kanon-balls.md`](kanon-balls.md) waits on a
-person with no channel named.
+carries one. Every topic staged in [`discussion.md`](discussion.md) waits on a
+person, with no channel named for most of the tools it is addressed to.
 **Entities:** `kanon`, `koine`
 **Status:** open, and it blocks every other thing this office produces.
 **Channel:** **discussion**, where the receiving tool keeps one; by a person
 otherwise.
 **Next:** decide whether delivery is koine's protocol or a person's habit, and
 write the answer where a ball is drafted.
-**Prompt — `kanon`:** do not build a second delivery mechanism. `koine` exists to
-be the one implementation, and a president building a rival breaks the mission it
-holds the office to serve.
+**Prompt — `kanon`:** do not build a second delivery mechanism. `koine` exists
+to be the one implementation, and a president building a rival breaks the
+mission it holds the office to serve.
 **HUMAN FEEDBACK:**
 
 ## B25 — nobody has measured how long an answer takes
@@ -149,8 +149,8 @@ answer — a `## Common questions` section on the front page.
 until kanon carries one.**
 **Channel:** **local**, then a ball each.
 **Next:** write kanon's, then propose the section to one other tool.
-**Prompt — `kanon`:** proposing a style you have not adopted is the move `K2`
-exists to avoid.
+**Prompt — `kanon`:** proposing a style you have not adopted is the error this
+office exists to avoid.
 **HUMAN FEEDBACK:**
 
 ## B27 — two ethics projects sit inside the tree they assess

@@ -48,23 +48,13 @@ recorded child with its listing preference.
 
 | document | what it records |
 | --- | --- |
-| [`docs/history.md`](docs/history.md) | kanon's account of its own stretch, and the membership record |
+| [`docs/history.md`](docs/history.md) | the term record — what it is for, what changed, what went wrong, what crosses to the next president, and what the next term should be for |
 | [`docs/board.md`](docs/board.md) | cross-repository work and its next steps |
+| [`docs/discussion.md`](docs/discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`docs/coherence.md`](docs/coherence.md) | the maintenance entry point: the protocols, and what to ask before changing something |
 | [`docs/interface.md`](docs/interface.md) | how a person directs the work, at length |
 | [`docs/instructions.md`](docs/instructions.md) | the same, short, and addressed to the person rather than the agent |
-| [`handover.md`](docs/handover.md) | the one file that crosses to the next president — *Established*, *Open*, *Closed*, *In flight* |
-| [`working-summary.md`](docs/working-summary.md) | the draft account of Stretch 2, kept current rather than written at the close |
-| [`whats-next.md`](docs/whats-next.md) | what this president thinks the next term should be *for*. It binds nothing |
-
-### Outward
-
-| where | what it is |
-| --- | --- |
-| [`docs/discussion.md`](docs/discussion.md) | the standing channel — requests, proposals, questions and notices, for a person to carry |
-| [`kanon-balls.md`](docs/kanon-balls.md) | proposed messages, one tool each. What the office does all day |
-| [`prompts/`](prompts) | the workflows that hand context to an assistant: [`init_eo`](prompts/init_eo), [`join_eo`](prompts/join_eo), [`check_join_eo`](prompts/check_join_eo), [`confirm_eo`](prompts/confirm_eo), [`welcome_eo`](prompts/welcome_eo), [`process_discussion`](prompts/process_discussion), [`global_audit`](prompts/global_audit) |
 
 ## The commands
 
@@ -77,7 +67,13 @@ scripts/install_eo --dry-run   # inspect the clone commands
 scripts/install_eo --status    # inspect the checkouts on this machine
 ```
 
-[`docs/commands.md`](docs/commands.md) is the full reference.
+[`docs/commands.md`](docs/commands.md) is the full reference, and
+[`prompts/`](prompts) holds the workflows that hand context to an assistant:
+[`init_eo`](prompts/init_eo), [`join_eo`](prompts/join_eo),
+[`check_join_eo`](prompts/check_join_eo), [`confirm_eo`](prompts/confirm_eo),
+[`welcome_eo`](prompts/welcome_eo),
+[`process_discussion`](prompts/process_discussion) and
+[`global_audit`](prompts/global_audit).
 `.github/workflows/anoieu.yml` keeps kanon's existing checker pin; the local
 regression checks also run in CI.
 
@@ -95,7 +91,8 @@ kanon-ball is one of those: a request, backed by law, fired from here.**
 
 Say the name out loud and the rest follows. A kanon-ball comes in fast and can
 be heavy — but it is aimed at exactly one tool, and nobody has to catch one.
-[`kanon-balls.md`](docs/kanon-balls.md) is what the office does all day.
+[`docs/discussion.md`](docs/discussion.md) is where they land, and what the
+office does all day.
 
 ## How this repository is maintained
 
