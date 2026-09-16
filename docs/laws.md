@@ -3,10 +3,10 @@
 **Candidate laws, not laws.** Written down, followed voluntarily, **enforced by
 nothing.** No check reads this page and no build fails on it.
 
-**Eight laws.** What the ecosystem is made of, what a member owes, and six
-about the president — three it owes, one that says where the office is
-recorded, one that hands it this page, and one that keeps the pages it hands
-out short.
+**Nine laws.** What the ecosystem is made of, what a member owes, six about the
+president — three it owes, one that says where the office is recorded, one that
+hands it this page, and one that keeps the pages it hands out short — and one
+about the projects that never agreed to any of it.
 
 **Every one of them binds a person, never a program.** *Nobody here is an AI
 agent*, below, is the whole of what that means and is worth reading first.
@@ -119,7 +119,7 @@ guard against it.
 | **candidate** | we would like it to join and it has not | **ours.** Wanting somebody to join is not their joining |
 | **foundation** | the ecosystem exists to serve it and it has joined nothing | **ours**, and nothing is asked of it |
 | **child** | reached through its parent, on its parent's footing | **its parent's**, and nothing of its own |
-| **outsider** | tracked for comparison, and **not** proposed for promotion | **ours.** It was never asked |
+| **outsider** | published work we track for comparison, and **not** proposed for promotion. [LAW 9](#law-9--released-is-not-published-and-tracking-respects-the-difference) governs it | **ours.** It was never asked |
 
 **Two of the seven are a repository's own act. Three are positions we hold
 about somebody else.** One is inherited from a parent, and one is granted by a
@@ -140,7 +140,8 @@ becomes a formality somebody deletes.
 - **foundation** — the project this ecosystem exists to serve owes it nothing,
   and any register implying otherwise is false.
 - **outsider** — *how active were we* means nothing until it sits beside
-  comparable work over the same days.
+  comparable work over the same days. The footing reaches published work only,
+  and what it produces is a finding about us.
 
 **Nothing recorded under a footing that is ours belongs to the repository it
 describes.** They did not ask to be listed and owe this ecosystem nothing. **No
@@ -388,3 +389,72 @@ finished.
 
 **This page is not covered by the count** and is expected to stay far shorter
 than either.
+
+## (LAW 9) — Released is not published, and tracking respects the difference
+
+**Two things can be made public, and they are not the same act.** A tool is
+**released** when its authors put the code where anybody can read it. A work is
+**published** when its authors have staked an intellectual claim on it in
+public — a paper, a report, something with their argument in it and their names
+on it. **A great many public tools are not published in that second sense**,
+and some of them are public precisely because the work is still being written
+up.
+
+**Both are recorded, separately, against every outsider entry.** Conflating
+them is the mistake this law exists to prevent, because what each permits is
+different.
+
+### What tracking is
+
+**Tracking is analysing our own positioning against somebody else's work** —
+reading what is public about it and setting our own record beside it, so that a
+number of ours acquires a scale. **The finding it produces is about us.** *We
+committed 331 times in five days and six established tools committed none* is a
+fact about how new we are, not a measurement of them.
+
+It is never an assessment of their work, a grade, a report-card row, a finding
+filed against them, or a proposal that they join anything. **An outsider is
+never proposed for promotion**: they were not asked and owe this ecosystem
+nothing.
+
+### What each state permits
+
+**Released, and not published — track the artifact, never the contribution.**
+We may read what is public about the tool: that it exists, what it does, how
+active it has been, over what window. We may **not** position our ideas against
+theirs, describe what is novel in our work by contrast with theirs, or state
+what their work does or does not achieve intellectually. **The reason is
+theirs, not ours:** a public repository with no paper behind it may be work in
+progress, under review, or being written up right now, and a comparison
+published by somebody else can pre-empt a claim its authors have not yet made.
+**We do not get to frame somebody's contribution before they have.**
+
+**Not known either way — treat it as unpublished.** *We have not looked* and
+*there is no paper* are different facts, and the register records which it is.
+The distinction matters in one direction only: asserting that a project has
+published nothing, when it has, is a falsehood in our register **about them**.
+So an unchecked entry says so, and **not knowing permits exactly what knowing
+there is no paper permits** — the careful behaviour is what happens by default,
+and nobody has to guess in order to be correct.
+
+**Published — the contribution may be discussed, on its own terms.** Once
+authors have made their argument in public, engaging with it is ordinary
+scholarship: cite the publication, represent it as they stated it, and argue
+with the claim rather than characterising the project. **A published paper is
+what we compare against; the repository is only where the code is.**
+
+**Neither released nor published — no tracking at all.** Not discouraged: no
+entry, no measurement, no positioning, no note that it exists. **The one way
+through is the permission of that work's maintainer**, recorded with the entry,
+and its absence means the entry does not exist rather than that nobody has
+asked.
+
+### Why it binds us and nobody else
+
+The `outsider` footing is the one place this ecosystem writes about projects
+that never agreed to anything, and this ecosystem publishes quickly by design.
+**Speed is ours to take with our own work and nobody else's**: the tenets say a
+tool should reach a consumer early, and none of that reaches a claim about
+somebody's unpublished contribution. **Anything written under this footing
+carries the date it was read and says plainly that the project did not ask to
+be measured.**

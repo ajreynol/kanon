@@ -88,7 +88,27 @@ REQUIRED = {
     # for, and `vetted` is the date somebody last looked at the entry -- because
     # writing about a project that never asked to be written about should carry
     # a date the way every other claim here does.
-    "outsider": ("repo", "url", "vetted", "why"),
+    #
+    # `released` and `published` are **two different facts** and LAW 9 turns on
+    # the difference. `released` is where the code was made public. `published`
+    # is the intellectual claim -- a paper, with an argument in it and its
+    # authors' names on it -- and a great many public tools have none yet.
+    #
+    # Released but not published means we may track the artifact and **not the
+    # contribution**: no positioning of our ideas against theirs, because a
+    # repository with no paper behind it may be under review or being written up
+    # right now, and we do not get to frame somebody's contribution before they
+    # have. So `published` is required, and takes one of three values: a
+    # citation, `"none"` where somebody established there is no paper, or
+    # `"unknown"` where nobody has looked. The third exists because `"none"` is
+    # a claim about somebody else's work -- asserting a project has published
+    # nothing, when it has, is a falsehood in our register about them.
+    # `"unknown"` permits exactly what `"none"` permits, so the careful
+    # behaviour is what happens when nobody knows.
+    #
+    # Neither is printed in any table: they back the footing rather than
+    # describing the tool.
+    "outsider": ("repo", "url", "vetted", "why", "released", "published"),
     # The office, which `docs/laws.md` makes a footing. It asks for exactly what
     # `member` asks for because **a president is a member** -- LAW 2 binds it
     # like any other, and the office adds obligations rather than replacing
@@ -160,8 +180,8 @@ FOOTINGS = {
     "associate": "load-bearing for us, and owes us nothing. Never checked",
     "foundation": "the ecosystem is downstream of it. Asked for nothing, ever",
     "child": "a project inside another repository, on its parent's footing",
-    "outsider": "outside the ecosystem, tracked so our own numbers have something "
-                "to be compared against",
+    "outsider": "published work outside the ecosystem, tracked so our own numbers "
+                "have something to be compared against",
 }
 
 #: Every value the `policy` column can print, and what it means.
@@ -354,6 +374,17 @@ def well_formed(inv: dict) -> list[str]:
                     if not e.get(field):
                         bad.append(f"{name}: proposing `{proposed}` needs `{field}`, "
                                    "the same as holding it")
+        # LAW 9: `published` records an intellectual claim its authors made, and
+        # `"none"` is the answer when they have not made one yet. A blank is
+        # neither answer, and the two permit different things.
+        if status == "outsider":
+            pub = e.get("published", "")
+            if pub and pub not in ("none", "unknown") and "http" not in pub \
+                    and len(pub) < 12:
+                bad.append(f"{name}: `published` is {pub!r}; write the paper it "
+                           "cites, `none` where somebody established there is "
+                           "not one, or `unknown` where nobody has looked")
+
         url = e.get("url", "")
         if url and not url.startswith("https://"):
             bad.append(f"{name}: `{url}` is not an https url")
