@@ -11,7 +11,7 @@ tool actually says, the tool is right and this page is stale.**
 
 **Two pages sit behind it, and you do not need either to start.**
 [`protocols.md`](protocols.md) is the register of named exchanges every member
-follows; [`interface.md`](interface.md) is the half of that register about how
+follows; [`protocols.md`](protocols.md) is the half of that register about how
 a person directs an agent, at length.
 
 ## Where to start
@@ -36,7 +36,7 @@ a person directs an agent, at length.
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
 | what we are saying to other tools | [`discussion.md`](discussion.md) |
-| the protocols | [`protocols.md`](protocols.md), [`interface.md`](interface.md) |
+| the protocols | [`protocols.md`](protocols.md) |
 | maintaining this tree | this page |
 
 **The analyzer, the fuzzer, the policy checker and the findings workflow are
@@ -59,6 +59,83 @@ for.
 Ids stay put. A withdrawn one stays listed, so nobody reuses the number.
 
 ---
+
+## The contract
+
+**What you supply:** direction, and the decisions that are nobody else's to make.
+
+**What comes back:** changed files left in the working tree, arguments you can
+disagree with, and a summary saying what was done and what was left. Checks are
+run and their output reported.
+
+**What never comes back**, whatever you ask for: anything sent to another
+repository, any repository created, anything pushed, posted or published. Those
+are structural — no code here can do them — and the reason is in
+[`protocols.md`](protocols.md): the path from an idea to a public artifact must
+have a person in it.
+
+### The decisions only you can make
+
+These are the inputs the work stalls without. If a session seems to be waiting,
+it is almost always waiting on one of these:
+
+- **starting or ending a child project**, and changing its scope;
+- **creating a repository**, which is a security boundary and not a convention;
+- **a footing** in
+  [`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json)
+  — no script writes that file;
+- **granting a role**, and approving a handoff;
+- **changing a prompt template**;
+- **carrying anything to another repository** — a finding, a topic, an
+  announcement — and choosing which repositories, and whether at all;
+- **naming which discussion topic** is to be acted on. The response gate needs
+  the name, so "handle the koine topics" stalls where "answer `koine-D9`" does
+  not;
+- **a stance on publishing**, for this repository and for each child project;
+- **who gets notified of a change**, when, and in what words. A draft
+  announcement is not a message already sent.
+
+## Prompting advice
+
+Learned from sessions that went wrong, in rough order of how much each cost.
+
+**Say which repository the prompt is for.** These trees are alike on purpose
+and sit side by side on one disk, and a prompt meant for one arriving in
+another is a real failure with a real incident behind it — the rule is *A
+prompt may not be for this repository* in [`policy.md`](policy.md). One clause
+at the top prevents it.
+
+**Never ask a repository whether it should hold something.** *Should koine own
+the communication protocols* is a question koine cannot answer: an agent asked
+to find the case for X will find it, and the result is indistinguishable from
+an honest answer. Ask the register that would record it, or ask the repository
+the different question — *what would you accept*.
+
+**Name the topic, not the pile.** The response gate requires it, so this is the
+difference between work happening and a clarifying question coming back.
+
+**Say what you want back**: a judgement, a draft, or a change. The three have
+very different costs and the wrong guess wastes a whole turn.
+
+**Ask for removals, not only additions.** Every protocol here is held to *an
+addition says what it removes*, and the counter that watches it has reported
+three rounds and three increases. Nothing counts pages at all. A prompt that
+says *what comes out* is the one that moves that number, and it is rarely asked
+for.
+
+**State the conservatism you want.** *We are still testing whether this
+workflow is safe* changes what gets done, not just how it is described — it is
+the difference between a register being edited and a register being reported
+on.
+
+**Correct mid-turn; it is cheap.** Several of the better outcomes here came
+from a one-line correction landing while work was in flight — *exercise this in
+moderation*, *iogos is a joke, it has a concrete scope*. Waiting until the end
+costs a full turn of rework.
+
+**Give the principle rather than the edit** where you can. *You can do anything
+you want if the repository's policy says it is AI generated* produced a rule
+that generalises; the equivalent list of permitted actions would not have.
 
 ## `INST-1` — your working window
 

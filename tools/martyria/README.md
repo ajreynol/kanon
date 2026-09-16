@@ -102,7 +102,7 @@ of this that stays defensible.
 
 ## The one mechanism it maintains
 
-**The sleep protocol**, [`PROTO-18`](../../docs/interface.md), and the schedule
+**The sleep protocol**, [`PROTO-18`](../../docs/protocols.md), and the schedule
 behind it. That makes this the only ethics project here that ships a program
 rather than a page, and it is worth saying why the program landed in the
 *actionable* half rather than the general one: the question *should an agent

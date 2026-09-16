@@ -521,7 +521,7 @@ prompt asked for a new CI check instead. The agent built it without the one line
 the protocol exists for, and the person had to point out that the protocol had
 not fired.
 
-**Artifact:** the protocol in `docs/interface.md`, written earlier the same day;
+**Artifact:** the protocol in `docs/protocols.md`, written earlier the same day;
 and this session's own history, where the branch is taken with no reminder.
 
 **What it cost:** nothing yet — the check is useful and the report card is still

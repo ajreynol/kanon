@@ -30,7 +30,7 @@ that are appended to and never rewritten. **It keeps no account of its inputs.**
 The prompts a person actually typed, turn by turn, are not tracked and never
 were.
 
-**Evidence:** [`../../docs/interface.md`](../../docs/interface.md) already
+**Evidence:** [`../../docs/protocols.md`](../../docs/protocols.md) already
 concedes it, in the sequence describing how a tool starts: *a person points it
 in a direction, with whatever prompts that takes. This step is invisible
 afterwards — it leaves no artifact — which is worth remembering when reading the

@@ -53,8 +53,7 @@ recorded child with its listing preference.
 | [`docs/discussion.md`](docs/discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`docs/maintenance.md`](docs/maintenance.md) | **start here to maintain this tree** — where to start, what you do, and what this repository is responsible for |
-| [`docs/protocols.md`](docs/protocols.md) | the register of named exchanges — how a handoff, a refresh or a transfer is conducted |
-| [`docs/interface.md`](docs/interface.md) | the protocols by which a person directs an agent, at length and addressed to the agent |
+| [`docs/protocols.md`](docs/protocols.md) | the register of named exchanges — between a person and an agent, and between one repository and another |
 
 ## If you maintain a tool and want to join
 
