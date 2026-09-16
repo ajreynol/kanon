@@ -3,9 +3,9 @@
 **Candidate laws, not laws.** Written down, followed voluntarily, **enforced by
 nothing.** No check reads this page and no build fails on it.
 
-**Seven laws.** What the ecosystem is made of, what a member owes, and five
+**Eight laws.** What the ecosystem is made of, what a member owes, and six
 about the president — three it owes, one that says where the office is recorded,
-and one that hands it this page.
+one that hands it this page, and one that keeps the pages it hands out short.
 
 **Every one of them binds a person, never a program.** *Nobody here is an AI
 agent*, below, is the whole of what that means and is worth reading first.
@@ -335,3 +335,38 @@ test: do the same cases come out the same way?** If not, it is not a rewrite.
 **There is no amendment process.** An amendment process is governance about
 governance, and this ecosystem already has more of that than of the thing it
 governs.
+
+## (LAW 8) — The policy and the vision are kept short enough to read in one sitting
+
+**A recommended length, and nothing more.** [`policy.md`](policy.md) and
+[`vision.md`](vision.md) each stay **under 10,000 words**, and **7,000 is the
+number to aim at**. `wc -w` decides it, anybody can run it, and no build fails
+on the answer.
+
+**Words rather than lines.** A hand-wrapped file's line count is a fact about
+its wrapping; what a reader spends is words. Ten thousand is roughly forty
+minutes for somebody who has never seen the page before.
+
+**Over the ceiling is not a violation.** It is a signal that something on the
+page has stopped being load-bearing, and the repair is to find that thing rather
+than to shave evenly.
+
+**Growth is paid for.** A change that adds a rule says what it replaces, or
+argues that the page is now worth more of a reader's time than it was. **A page
+that only ever grows has stopped being maintained and started accumulating.**
+
+**What comes out first**, in order: a copy of something a script already
+carries; an account of how a rule came to be; a paragraph defending a rule
+against an objection nobody raised; and a second sentence that restates the
+first.
+
+**Shortening is a rewrite, and LAW 7's test applies** — do the same cases come
+out the same way? A cut that quietly changes an outcome is the failure that law
+exists against, and it is easiest to commit while trimming.
+
+**Why these two.** With this page they are the whole of what somebody outside
+reads to find out what is being asked of them. **A page nobody finishes asks
+nothing of anybody**, and length is the commonest reason a page is not finished.
+
+**This page is not covered by the count** and is expected to stay far shorter
+than either.
