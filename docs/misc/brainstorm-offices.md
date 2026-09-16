@@ -369,9 +369,9 @@ promotion.
 **3. One FAQ style, at every node.** Joining cost koine four files and eighteen
 hundred lines of reading. Six documents describe kanon and no two agree. Both
 are the same defect from the reader's side: there is nowhere a tool says the
-short version of itself. **Kanon writes its own first** — [its front page](../../README.md#common-questions
-— because proposing a style you have not adopted is the move `K2` was built to
-avoid. Carried as `A19`.
+short version of itself. **Kanon writes its own first**, on
+[its front page](../../README.md#common-questions) — because proposing a style
+you have not adopted is the move `K2` was built to avoid. Carried as `A19`.
 
 ### Standing tasks
 

@@ -6,9 +6,8 @@ means *our side is in order and there is somewhere for the roles to go*. It does
 not mean the transfer is a good idea, that anybody has agreed, or that the
 receiving project wants them.
 
-**Both repositories must have their CI passing.** This helper moved from an
-anoieu CI job to kanon and no longer runs behind that job's prerequisites. It
-therefore reports local CI as unverified. `--online` can read the destination's
+**Both repositories must have their CI passing.** This helper does not run
+behind a CI job's prerequisites, so it reports local CI as unverified. `--online` can read the destination's
 latest run, but that alone cannot authorize a transfer.
 
 Exit codes:

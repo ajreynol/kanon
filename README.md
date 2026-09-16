@@ -2,12 +2,31 @@
 
 *κανών — the measuring rod: the standard a thing is held straight against.*
 
-**kanon is current the Eunoia ecosystem's governance.**
-  
-## The documents
+**kanon is currently the Eunoia ecosystem's governance**: the maintainer of the
+recommended policy every member repository is checked against, the vision it is
+argued from, the laws of the office, and the register of who is in and on what
+footing. It currently holds the ecosystem's presidency, which is an office in
+this ecosystem's own work and confers nothing over anybody's repository.
 
-**Every document in this tree appears below.** A document not worth a row is
-not worth adding.
+## The register
+
+**Who is in the Eunoia ecosystem, and on what terms.**
+
+The list of the members of the Eunoia ecosystem can be obtained by:
+
+```sh
+scripts/status_eo --check      # validate the register, offline
+scripts/status_eo              # policy and discussion status across checkouts
+```
+
+> **[`scripts/ecosystem/ecosystem.json`](scripts/ecosystem/ecosystem.json) is
+> the ground truth**; the table above is a copy for a reader who has not cloned
+> anything, and **nothing compares the two**. Where they disagree, the register
+> is right.
+
+The above requires python 3.10 or newer, Bash and Git are enough for the local commands.
+
+## The documents
 
 ### The shared documents — written for every repository, not just this one
 
@@ -41,58 +60,37 @@ not worth adding.
 | [`kanon-balls.md`](kanon-balls.md) | proposed messages, one tool each. What the office does all day |
 | [`prompts/`](prompts) | the workflows that hand context to an assistant: [`init_eo`](prompts/init_eo), [`join_eo`](prompts/join_eo), [`check_join_eo`](prompts/check_join_eo), [`confirm_eo`](prompts/confirm_eo), [`welcome_eo`](prompts/welcome_eo), [`process_discussion`](prompts/process_discussion), [`global_audit`](prompts/global_audit) |
 
-### The tree
-
-| where | what it is |
-| --- | --- |
-| [`docs/commands.md`](docs/commands.md) | installation, status, prompt previews and local validation |
-| [`scripts/`](scripts) | the commands themselves, their data, and the launcher for anoieu's checker |
-| [`tools/`](tools) | child projects, each with its own charter. The directory listing is their index |
-| [`tests/`](tests) | the regression checks this repository runs on itself |
-
-### `docs/misc/` — housed, and not required
-
-| where | what it is |
-| --- | --- |
-| [`docs/misc/conversation.md`](docs/misc/conversation.md) | the verbatim transcript of the session that primed this repository. The tree is what was decided; this is what was said |
-| [`docs/misc/brainstorm-offices.md`](docs/misc/brainstorm-offices.md) | the internal office structure, **deferred as premature**. It establishes nothing, and is kept for [the safety scenarios](docs/misc/brainstorm-offices.md#scenarios) and [the ethics notes](docs/misc/brainstorm-offices.md#ethics), which are cited from live work |
-| [`docs/misc/initial-objections.md`](docs/misc/initial-objections.md) | the reservations recorded when the office was offered, before it was held |
-
 ## The commands
 
-Python 3.10 or newer, Bash and Git are enough for the local commands. From this
+This repository is also the recommended way to get started with development
+in Eunoia ecosystem over multiple repositories.
+Requiring, python 3.10 or newer, Bash and Git are enough for the local commands. From this
 checkout:
 
 ```sh
-scripts/status_eo --check      # validate the register, offline
-scripts/status_eo              # policy and discussion status across checkouts
 scripts/install_eo --dry-run   # inspect the clone commands
 scripts/install_eo --status    # inspect the checkouts on this machine
-python3 scripts/policy_check.py --root .
 ```
-
-Policy checks use an **anoieu checkout beside kanon**, or one selected with
-`ANOIEU_ROOT`. The local `scripts/policy_check.py` is a launcher for that
-checkout's checker, not a second implementation, and its output identifies the
-checker commit. Installation status and offline register validation work
-without that dependency.
 
 [`docs/commands.md`](docs/commands.md) is the full reference.
 `.github/workflows/anoieu.yml` keeps kanon's existing checker pin; the local
 regression checks also run in CI.
 
-**kanon publishes the standard; [anoieu](https://github.com/ajreynol/anoieu)
-publishes the checker.** The policy, the vision, the laws and the registers are
+The policy checks are maintained in 
+**[anoieu](https://github.com/ajreynol/anoieu).** The policy, the vision, the laws and the registers are
 here. The analyzer, the fuzzer, the findings system and the program that
 decides whether a tree meets the policy are there, and a member pins a commit
 of it.
 
-## The joke
+## A joke about the name
 
-This repository is the current keeper of the laws of the Eunoia ecosystem [link here].
-In establishing these laws, it gives discussion items that are targetted directly to members of the Eunoia ecosystem.
-A **kanon-ball** is a request, backed by law, originating from this repository.
-A kanon-ball is intended to come fast and potentially give a heavy request.
+This repository keeps [the laws of the Eunoia ecosystem](docs/laws.md), and in
+keeping them it opens discussion items addressed directly to members. **A
+kanon-ball is one of those: a request, backed by law, fired from here.**
+
+Say the name out loud and the rest follows. A kanon-ball comes in fast and can
+be heavy — but it is aimed at exactly one tool, and nobody has to catch one.
+[`kanon-balls.md`](kanon-balls.md) is what the office does all day.
 
 ## How this repository is maintained
 
