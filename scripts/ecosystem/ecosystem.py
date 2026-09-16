@@ -21,6 +21,8 @@ carries about its own silence applies here.
 Membership is a decision rather than a measurement, so the `status` column comes
 from `scripts/ecosystem/ecosystem.json` and is never inferred. Where the measurement and the
 recorded status disagree, the row says so; changing the file is a person's job.
+Child rows additionally require the parent's opt-in in the child's local README.
+`--all-children` includes every recorded child and explains its listing state.
 
 `--check` is the same principle with an exit code, and it is what CI runs. Two
 questions, and the second is why it exists:
@@ -58,6 +60,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from anoieu_dependency import policy_checker
+from child_listing import read_listing, unverified_note
 INVENTORY = os.path.join(HERE, "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
                             os.path.join(ROOT, "scripts", "repos.local"))
@@ -240,15 +243,16 @@ def locate(repo: str) -> str:
     """A repo id, the way every script here resolves one: the mapping file, then
     a scan of $ANOIEU_REPOS. Never a bare path -- these ids come from a file."""
     if os.path.isfile(REPOS_FILE):
-        for line in open(REPOS_FILE, encoding="utf-8"):
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            parts = line.split(None, 1)
-            if len(parts) == 2 and parts[0] == repo:
-                path = os.path.expanduser(parts[1].strip())
-                if os.path.isdir(path):
-                    return path
+        with open(REPOS_FILE, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#"):
+                    continue
+                parts = line.split(None, 1)
+                if len(parts) == 2 and parts[0] == repo:
+                    path = os.path.expanduser(parts[1].strip())
+                    if os.path.isdir(path):
+                        return path
     roots = os.environ.get("ANOIEU_REPOS", "").split(os.pathsep)
     for r in [p for p in roots if p] + [os.path.dirname(ROOT), os.path.expanduser("~")]:
         cand = os.path.join(r, repo)
@@ -634,16 +638,22 @@ def audit(online: bool) -> int:
     return 1 if bad or stale else 0
 
 
-USAGE = """usage: status_eo [--verbose] [--check [--online]] [--health] [--protocol]
+USAGE = """usage: status_eo [--verbose] [--all-children] [--check [--online]] [--health] [--protocol]
 
-  (no arguments)  the table: one row per tool in scripts/ecosystem/ecosystem.json
+  (no arguments)  the table: repositories and explicitly advertised children
   --verbose       ... and, per tool, which checks failed and what they found
+  --all-children  include every recorded child, with its listing preference
   --check         is the inventory itself well formed? No network, no checkouts
   --check --online  ... and does each remote's README still agree with it
   --health        the one-line-per-question health report
   --protocol      where each tool proposed for `associate` stands against the
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
+
+Children opt in with **Eunoia listing:** advertised in their README introduction,
+before the first section heading. Missing declarations mean unadvertised.
+Preferences are read from local parent checkouts; unavailable or invalid reads
+are reported as unverified. --check still validates the complete inventory.
 """
 
 
@@ -661,13 +671,27 @@ def main() -> int:
         inv = json.load(open(INVENTORY, encoding="utf-8"))
         return protocol({k: v for k, v in inv.items() if not k.startswith("_")})
     verbose = "--verbose" in sys.argv
-    inv = json.load(open(INVENTORY, encoding="utf-8"))
+    all_children = "--all-children" in sys.argv
+    with open(INVENTORY, encoding="utf-8") as f:
+        inv = json.load(f)
     rows, notes = [], []
+    child_listings, parent_paths = {}, {}
 
     for name, e in inv.items():
-        if name == "_comment":
+        if name.startswith("_"):
             continue
         status = e.get("status", "?")
+        if status == "child":
+            parent = e.get("parent", "")
+            if parent not in parent_paths:
+                parent_paths[parent] = locate(inv.get(parent, {}).get("repo", parent))
+            listing = read_listing(parent_paths[parent], e.get("path", ""))
+            child_listings.setdefault(parent, []).append(listing)
+            if all_children:
+                detail = f" ({listing.reason})" if listing.reason else ""
+                notes.append(f"{name}: Eunoia listing: {listing.state}{detail}")
+            elif not listing.advertised:
+                continue
         if status in ("child", "foundation"):
             rows.append((name, status, "-", "-", "-", e.get("parent", "")))
             continue
@@ -743,7 +767,12 @@ def main() -> int:
         if verbose and fails:
             notes.append(f"{name}: " + "; ".join(fails[:6]))
 
-    w = max(len(r[0]) for r in rows) + 2
+    for parent, listings in child_listings.items():
+        note = unverified_note(parent, listings)
+        if note:
+            notes.append(note)
+
+    w = max((len(r[0]) for r in rows), default=4) + 2
     print(f"{'tool':<{w}}{'status':<11}{'policy':<12}"
           f"{'channel':<10}{'moved':<8}where")
     for name, status, verdict, topics, moved, where in rows:

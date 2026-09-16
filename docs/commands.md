@@ -11,6 +11,7 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 | `scripts/status_eo --check` | Validates the inventory offline |
 | `scripts/status_eo` | Reads checkout policy results and topics addressed to kanon |
 | `scripts/status_eo --verbose` | Adds the reasons behind policy results |
+| `scripts/status_eo --all-children` | Includes every recorded child and its listing preference |
 | `scripts/status_eo --check --online` | Also reads remote membership declarations |
 | `scripts/status_eo --protocol` | Reports on the proposed associate protocol |
 | `scripts/status_eo --health` | Summarizes policy, discussion and working-hours indicators |
@@ -53,6 +54,39 @@ anoieu's `scripts/deps.json` supplies its report dependency pins; kanon does
 not keep a duplicate. The installer and status commands share
 [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) as their inventory.
 
+## Child project listings
+
+A parent repository chooses which children to advertise. To include a child in
+`status_eo` and the installer's generated child summaries and branch advice, put
+this standalone line in the child's `README.md` introduction, before the first
+`##` (or deeper) heading:
+
+```markdown
+**Eunoia listing:** advertised
+```
+
+Use `unadvertised` to explicitly opt out. A README without a declaration is
+unadvertised by default. Code examples, HTML comments, block quotes and ordinary
+prose do not count as declarations. Multiple declarations or an unsupported
+value are unverified and do not opt in.
+
+Both commands read the local parent checkout and the child's inventory `path`.
+They read the currently checked-out version, without fetching or switching to
+the child's recorded `branch`. A missing parent, missing path, or unreadable
+README leaves the preference unverified; a note names the parent and the reason,
+without listing the affected children. The installer reads from `--root` (or its
+default), and reads again after cloning when producing branch advice.
+
+`status_eo --all-children` includes every recorded child with its preference and
+any read error. Normal table counts include only displayed children. Inventory
+validation, child ID resolution and `scripts/repos.local` mappings still use
+the complete inventory. Choosing to advertise does not change a child's status
+or promote it into a repository. Handwritten descriptions are not filtered.
+
+There is no automatic migration: existing child READMEs without the declaration
+remain unadvertised until their parent maintainer opts them in. The declaration
+is kept only in that README, not copied into kanon's inventory.
+
 ## Prompt previews
 
 ```sh
@@ -87,5 +121,6 @@ validation. The separate policy job keeps the existing anoieu checker pin.
 `scripts/anoieu_dependency.py` supplies checkout discovery for the local
 launcher and status readers. `scripts/ecosystem/ecosystem.py` implements
 `status_eo`; `scripts/ecosystem/near.py` checks likely spelling mistakes in
-repository ids. The root `run_handoff` and `run_handoff_anoieu` files record the
+repository ids. `scripts/child_listing.py` reads the README listing declaration
+for both status and installation. The root `run_handoff` and `run_handoff_anoieu` files record the
 one-time transfer commands and are not installation or verification commands.

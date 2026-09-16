@@ -154,7 +154,7 @@ them here rather than in every file is the point of the rule.
 **When you cite a rule from another document, say what it says.** A number is a
 lookup somebody has to perform, and *rule 4* carries no meaning at the point of
 reading. Inside the document that defines them, numbers are fine. Across
-documents, give the substance: *a child project is not advertised*, never *rule
+documents, give the substance: *a child project is unadvertised by default*, never *rule
 3*. Checked.
 
 **Every repository explains its own name — recommended, not required.** A short
@@ -919,20 +919,33 @@ work.
 **2. It is an island, and the island is read-only.** It reads whatever it likes
 and writes **only inside its own directory**. It imports nothing from the host
 tool and the host tool imports nothing from it. It is not on the import path,
-not in the test suite, not in CI, not in any generated document. Deleting it is
+not in the test suite, not in CI, not in any generated document apart from the
+optional ecosystem listing described in rule 3. Deleting it is
 the test: if removing `tools/X/` changes what the tool does or what CI says, it
 was not an island and the coupling is a defect to be removed rather than
 documented.
 
-**3. It is not advertised.** No entry in the repository README, no row in the
-documentation index, no mention in a report, no announcement, no link inward
-from anything a user reads. The directory listing of `tools/` is the whole of
-the index: a registry file is one more thing to keep true, and the filesystem
-already answers the question. This is not secrecy — the work is committed in the
-open. It is a refusal to **borrow the host tool's credibility** for work that
-has not earned any of its own. A speculative account that arrives with the
-tool's name on the front page is read as the tool's position, and withdrawing
-that impression later costs more than the work is worth.
+**3. It is unadvertised by default; its parent maintainer may opt it in.**
+Without that choice, there is no entry in the repository README, no row in the
+documentation index or normal ecosystem status table, no mention in a report,
+no announcement, and no link inward from anything a user reads. The directory
+listing of `tools/` is enough to discover it. An inventory entry can retain its
+ID, parent and path for resolving references without making it a displayed row.
+
+The choice is recorded in the child's own `README.md` introduction, before the
+first `##` (or deeper) heading, as the standalone line
+`**Eunoia listing:** advertised`. The value `unadvertised` explicitly opts out;
+an absent declaration also means unadvertised. Kanon's commands read this exact
+field rather than inferring a choice from prose or keeping a second copy in the
+inventory. An unavailable or invalid declaration gives no permission to list
+the child. `status_eo --all-children` is the explicit inspection view for all
+recorded children. The reading rules are in
+[`commands.md`](commands.md#child-project-listings).
+
+Advertising is the parent's choice about visibility. It does not promote the
+child, make it required reading, or change its other obligations. The default
+avoids **borrowing the host tool's credibility** for speculative work without
+that choice. Unadvertised work remains committed in the open.
 
 **4. The name is part of the work.** Projects are named along the ecosystem's
 convention — Greek, and preferably from the vocabulary it already draws on. Pick
@@ -1007,7 +1020,7 @@ and the third is the commonest.
 
 This is a rule for child projects specifically, when it is only *encouraged* for
 a repository, because a child project is the case where the question goes
-unasked: it has no users, nothing depends on it, it is advertised nowhere, so
+unasked: it has no users, nothing depends on it, it is unadvertised by default, so
 nobody ever arrives and asks what came of it — and its three endings all turn on
 whether the work amounted to something.
 
