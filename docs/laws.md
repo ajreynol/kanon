@@ -211,8 +211,13 @@ this ecosystem shares, and **they move with it**:
 - **the account of the stretch** ([LAW
   4](#law-4--the-president-writes-historymd-in-its-own-repository-and-a-letter-to-its-successor)).
 
-**Most of that travels; two things do not.** The account and the letter stay in
-the tree that wrote them — a successor inherits neither and starts its own.
+**Most of that travels; three things do not.** The account and the letter stay
+in the tree that wrote them — a successor inherits neither and starts its own.
+So does **`maintenance.md`**, which is local by construction: it says how to
+maintain *that* repository, every repository here keeps one, and the incoming
+president already has its own. **The office implies that a president keeps one;
+it does not hand one over.**
+
 Everything else is handed over whole, because a successor that has to
 reconstruct the shared rules has not been handed an office, it has been handed
 a name.

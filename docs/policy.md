@@ -104,6 +104,10 @@ a separate page, and **it has a name every repository here uses**, because a
 maintainer arriving from another tree should not have to work out what this one
 called it.
 
+**It is local, and it is the repository's own.** Every repository here keeps
+one and each describes its own tree; nothing about it is shared and it moves
+with nobody. **The name is the only part that is a convention.**
+
 **What belongs on it:** *if you are a human maintaining this repository —
 possibly by directing an agent — here is how.* Where to start, what this
 repository is responsible for, and what the person does. **Addressed to a
