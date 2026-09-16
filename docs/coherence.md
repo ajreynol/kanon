@@ -9,7 +9,7 @@ It is deliberately **not linked from the front page**. `README.md` is for
 somebody deciding whether the tool is worth their attention, and a page about
 how the work is run is noise to them — see *The front page* in
 [`../docs/vision.md`](vision.md). It is linked instead from the things a
-maintainer opens: the documentation index, and the headers of the programs that
+maintainer opens: the front page's index, and the headers of the programs that
 write the record.
 
 *Coherence* is the property this page exists to protect, in one sentence: **the

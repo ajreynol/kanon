@@ -51,7 +51,7 @@ Kanon's [published `policy` job](https://github.com/ajreynol/kanon/actions/runs/
 passed at `6f5bfba`, while `status_eo` reported `1 failing`. The immediate cause
 was ours: preparing the handoff created an empty `docs/` directory. The local
 checker required an index; Git did not record the empty directory, so CI never
-saw it. We have since added our documentation index, and both checks pass
+saw it. We have since added our index, and both checks pass
 locally. That fix is staged at the time of writing.
 
 There are also two different checker selections. Our workflow pins anoieu

@@ -55,7 +55,7 @@ you have stopped standing behind and never withdrawn.
 | path | what it holds |
 | --- | --- |
 | `README.md` | the front page, and the whole of what any other document may assume has been read |
-| `docs/` | every written document, indexed by `docs/README.md` |
+| `docs/` | every written document, each named in the index |
 | `tools/` | child projects, with their own code and data |
 | `tests/` | the evidence: cases, recorded behaviour of other people's programs, committed baselines |
 | `scripts/` | commands, helpers and their data: generators, checks, the runner |
@@ -76,12 +76,15 @@ first thing whoever is doing it needs. Keep it separate — here
 [`coherence.md`](coherence.md) — and do not add a file per assistant to point
 at it.
 
-**`docs/` has an index, and the index is itself a document.** One row per
+**Every document is indexed, and the index is itself a document.** One row per
 document saying what it is *for*; a document not worth a row is not worth
-adding. Two things are deliberately unindexed and skipped by name: the index
-itself, and a **letter from one office-holder to the next**
+adding. The index may be `docs/README.md`, or a section of the front page where
+a repository is small enough or is itself an inventory — but there is exactly
+one, and it covers the whole tree. Two things are deliberately unindexed: the
+index itself, and a **letter from one office-holder to the next**
 (`letter-to-<name>.md`), which [`laws.md`](laws.md) holds is in no index.
-Checked.
+Checked where the index is `docs/README.md`; the front-page form is not yet
+decidable by the checker.
 
 **Written and generated documents are separated and labelled.** A generated
 document says at the top that it is generated and by what, and generators write

@@ -9,7 +9,7 @@ side of it is right — and where that shows, it is meant to.*
 > **Internal note.**
 >
 > Tracked, so that it has a history and can be argued with in review — but
-> deliberately not linked from `docs/README.md` or any other index, because it
+> deliberately not linked from the front page or any other index, because it
 > is a working argument rather than a published position, and nothing in the
 > tool depends on it. Its purpose is to have the case written down well enough
 > to argue with — with the ethos, cvc5 and logos people, and with ourselves — so

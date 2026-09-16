@@ -21,8 +21,9 @@ repository that has not adopted it.
 
 ## The front page
 
-Tenet 3 of [`vision.md`](vision.md) asks for a README that is clear. What *clear* has to survive is not
-stability — **a front page has two layers moving at different speeds, and
+[`vision.md`](vision.md) asks for a small number of self-contained things, each
+clear from the front README. What *clear* has to survive is not stability — **a
+front page has two layers moving at different speeds, and
 running them at the same speed is the usual failure.**
 
 **The purpose layer is fixed.** What the tool is for, the question it answers,
@@ -91,7 +92,8 @@ modest — it has failed to communicate, and destroyed its own calibration. When
 every sentence is hedged a reader cannot tell the well-evidenced claims from
 the speculative ones, so the caveats that genuinely matter are the first
 casualties. And nobody takes ownership of a tool its own author will not stand
-behind, which works directly against the ending tenet 4 aims at.
+behind, which works directly against the ending the vision aims at — *a human
+takes over the development*.
 
 **The goal is to make people interested** — other tools, other repositories,
 and above all a human who might take this over. Interest is the input to
@@ -223,8 +225,9 @@ logos, a third project entirely.
 
 **None of them has earned a place in this vision.** A child project is a claim
 on attention that has so far produced nothing, and what earns it a place is a
-consumer in the sense of tenet 1 — a finding carried, a measurement somebody
-uses, an argument somebody acts on. Until then it is named here and nowhere
+consumer outside its own tree, in the sense *be fruitful to another tool* means
+— a finding carried, a measurement somebody uses, an argument somebody acts on.
+Until then it is named here and nowhere
 else. **The human decides when that changes**, exactly as a human decides to
 start one, and the decision has three outcomes: it graduates into its own
 repository, it is folded into the parent, or it is retired in place with a line

@@ -35,6 +35,63 @@ prompts now live here. The analyzer, fuzzer, findings system and **policy checke
 remain in [anoieu](https://github.com/ajreynol/anoieu)**. Member CI continues to
 pin that checker; moving the documents does not change those pins.
 
+## Everything here, and where it is
+
+**kanon is the ecosystem's inventory as much as its rulebook**, so this is the
+whole list and nothing else indexes it. Every document in this tree appears
+below; a document not worth a row is not worth adding.
+
+### The shared documents — written for every repository, not just this one
+
+| document | what it settles |
+| --- | --- |
+| [`docs/policy.md`](docs/policy.md) | how a repository is arranged, what its front page must say, and what joining costs. Decidable from a tree, and checked by a program |
+| [`docs/vision.md`](docs/vision.md) | the five tenets this development aims at, and the argument for them. Argued, and never checked |
+| [`docs/practice.md`](docs/practice.md) | what follows from the tenets once a repository is running: front pages, what may be claimed, where speculative work goes, papers |
+| [`docs/laws.md`](docs/laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
+
+### The office, and this term
+
+| document | what it records |
+| --- | --- |
+| [`docs/history.md`](docs/history.md) | kanon's account of its own stretch, and the membership record |
+| [`docs/board.md`](docs/board.md) | cross-repository work and its next steps |
+| [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
+| [`docs/coherence.md`](docs/coherence.md) | the maintenance entry point: the protocols, and what to ask before changing something |
+| [`docs/interface.md`](docs/interface.md) | how a person directs the work |
+| [`docs/instructions.md`](docs/instructions.md) | shared instructions for agents |
+| [`handover.md`](handover.md) | the one file that crosses to the next president — *Established*, *Open*, *Closed*, *In flight* |
+| [`working-summary.md`](working-summary.md) | the draft account of Stretch 2 |
+| [`actionable.md`](actionable.md) | work pending, each item with the condition that closes it |
+| [`whats-next.md`](whats-next.md) | suggestions for the next stretch |
+| [`initial-objections.md`](initial-objections.md) | the reservations recorded when the office was offered |
+
+### Talking to other tools
+
+| where | what it is |
+| --- | --- |
+| [`docs/discussion.md`](docs/discussion.md) | the standing channel — requests, proposals, questions and notices, for a person to carry |
+| [`kanon-balls.md`](kanon-balls.md) | proposed messages, one tool each. What the office does all day |
+| [`prompts/`](prompts) | the workflows that hand context to an assistant: [`init_eo`](prompts/init_eo), [`join_eo`](prompts/join_eo), [`check_join_eo`](prompts/check_join_eo), [`confirm_eo`](prompts/confirm_eo), [`welcome_eo`](prompts/welcome_eo), [`process_discussion`](prompts/process_discussion), [`global_audit`](prompts/global_audit) |
+
+### Commands, registers and the tree
+
+| where | what it is |
+| --- | --- |
+| [`docs/commands.md`](docs/commands.md) | installation, status, prompt previews and local validation |
+| [`scripts/`](scripts) | the commands themselves, their data, and the launcher for anoieu's checker |
+| [`scripts/ecosystem/ecosystem.json`](scripts/ecosystem/ecosystem.json) | the register: one footing per tool, and the authority for who holds the office |
+| [`tools/`](tools) | child projects, each with its own charter. The directory listing is their index; whether one is named anywhere else is its parent's choice |
+| [`FAQ.md`](FAQ.md) | short answers to the questions people arrive with |
+| [`tests/`](tests) | the regression checks this repository runs on itself |
+
+### Background, housed and not required
+
+| where | what it is |
+| --- | --- |
+| [`conversation.md`](conversation.md) | how this repository was decided — the derivation rather than the decision |
+| [`brainstorm-offices.md`](brainstorm-offices.md) | deferred ideas for internal offices. They establish nothing |
+
 ## The president is the only required reading
 
 **The ecosystem should evolve so that the primed president's own pages are the
@@ -58,12 +115,6 @@ is not met.
 **Housed, not required:** [`conversation.md`](conversation.md) records how this
 repository was decided — the derivation rather than the decision. The tree tells
 you what was settled; that page tells you what it was settled *against*.
-
-The [documentation index](docs/README.md) links to the work, decisions and optional
-background kept here.
-
-Questions and proposals to other tools are kept in
-[the discussion file](docs/discussion.md), for a person to carry.
 
 **The distinction that keeps this from collapsing.** The handoff brought
 `ynoia`, `martyria` and `zetesis`, along with two other child projects, under
@@ -94,20 +145,19 @@ with anoieu, as the [role register](docs/roles.md) specifies.
 
 ## The joke
 
-**κανών is a rod, and a rod is not a cannon.** Say the name out loud anyway and
-the unit of work falls out of it: what kanon sends is a **kanon-ball**.
+**Say the name out loud and the unit of work falls out of it: what kanon sends
+is a kanon-ball.**
 
-A kanon-ball is short, goes to exactly one tool, and is fired **for** it rather
-than at it. anoieu's output is a finding *against* you; kanon's is a kanon-ball
-*for* you, and that inversion is the whole reason the two are separate
-repositories. Nobody has to catch one. [`kanon-balls.md`](kanon-balls.md) is
-what the office does all day.
+Short, aimed at exactly one tool, and fired **for** it rather than at it.
+anoieu's output is a finding *against* you; kanon's is a kanon-ball *for* you,
+and that inversion is the whole reason the two are separate repositories. Nobody
+has to catch one. [`kanon-balls.md`](kanon-balls.md) is what the office does all
+day.
 
-LAW 6 asks a president to keep a joke about its own name on its front page for
-the whole term, on the ground that a president who cannot leave one there has
-started to believe the office is important. The test it sets is that the joke
-doubles as description. This one does, and it is the only part of this page that
-would survive being cut to one line.
+[LAW 6](docs/laws.md) asks a president to keep a joke about its own name on its
+front page for the whole term, on the ground that a president who cannot leave
+one there has started to believe the office is important. The test it sets is
+that the joke doubles as description.
 
 ## The mission
 
