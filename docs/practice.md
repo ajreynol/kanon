@@ -1,11 +1,10 @@
 # The vision in practice
 
 **What this page is for.** [`vision.md`](vision.md) states the tenets and
-argues
-for them. This page is what follows from them once a repository is actually
-running: what a front page carries, what may be claimed about a tool and how to
-address one run by agents, where speculative work goes, and what a repository
-with a result owes a reader who will never clone it.
+argues for them. This page is what follows from them once a repository is
+actually running: what a front page carries, what may be claimed about a tool
+and how to address one run by agents, where speculative work goes, and what a
+repository with a result owes a reader who will never clone it.
 
 **Who should read it.** Whoever is about to write something that leaves the
 repository — a README section, a topic, a claim about what a tool does. If you
@@ -23,8 +22,8 @@ repository that has not adopted it.
 
 [`vision.md`](vision.md) asks for a small number of self-contained things, each
 clear from the front README. What *clear* has to survive is not stability — **a
-front page has two layers moving at different speeds, and
-running them at the same speed is the usual failure.**
+front page has two layers moving at different speeds, and running them at the
+same speed is the usual failure.**
 
 **The purpose layer is fixed.** What the tool is for, the question it answers,
 the question it declines to answer, and the caveat governing how its output
@@ -39,18 +38,18 @@ usually a project that has stopped publishing rather than one that is stable.
 Four rules for that layer:
 
 - **Give a casual reader the gist without a click.** One diagnostic rendered in
-place is worth more than a link to a document containing forty.
+  place is worth more than a link to a document containing forty.
 - **Direct evidence is encouraged, where a test backs it.** Show the output,
-the reproducer, the table with the command that regenerates it. The working
-limit is that what goes on the front page is what CI checks — a front-page
-claim nothing verifies is the one that will still be sitting there, wrong, a
-year later.
+  the reproducer, the table with the command that regenerates it. The working
+  limit is that what goes on the front page is what CI checks — a front-page
+  claim nothing verifies is the one that will still be sitting there, wrong, a
+  year later.
 - **Advertise the actionable consequence.** What should somebody do differently
-because of this? It is the difference between *three defects were found in
-CPC* and *a change introducing the next one fails your build*.
+  because of this? It is the difference between *three defects were found in
+  CPC* and *a change introducing the next one fails your build*.
 - **Do not clutter.** The front page is a fixed budget, not an append-only log.
-A new result displaces an older one. Two screens of accumulated announcements
-is the same failure as no announcements, reached from the other direction.
+  A new result displaces an older one. Two screens of accumulated announcements
+  is the same failure as no announcements, reached from the other direction.
 
 *The test:* diff the README against its version from six months ago. The
 purpose paragraphs should be almost untouched and the results almost entirely
@@ -149,9 +148,9 @@ away from you has done everything on this page except the thing it was for.
 ## The report card
 
 **Its own page, kept by [anoieu](https://github.com/ajreynol/anoieu).** How
-each tool stands against the tenets, with the limits on what a paragraph
-there is allowed to be. Everything on this page governs it unchanged — argued
-and never checked, and a person changes a paragraph. It was split out because
+each tool stands against the tenets, with the limits on what a paragraph there
+is allowed to be. Everything on this page governs it unchanged — argued and
+never checked, and a person changes a paragraph. It is a separate page because
 it is the half that moves: the tenets are stable, and the grading is re-done
 every round.
 
@@ -227,11 +226,11 @@ logos, a third project entirely.
 on attention that has so far produced nothing, and what earns it a place is a
 consumer outside its own tree, in the sense *be fruitful to another tool* means
 — a finding carried, a measurement somebody uses, an argument somebody acts on.
-Until then it is named here and nowhere
-else. **The human decides when that changes**, exactly as a human decides to
-start one, and the decision has three outcomes: it graduates into its own
-repository, it is folded into the parent, or it is retired in place with a line
-saying what was learned. What is not an outcome is going quiet.
+Until then it is named here and nowhere else. **The human decides when that
+changes**, exactly as a human decides to start one, and the decision has three
+outcomes: it graduates into its own repository, it is folded into the parent,
+or it is retired in place with a line saying what was learned. What is not an
+outcome is going quiet.
 
 **One has already left.** The fuzzer was a child project here until it stopped
 being one: it had earned its keep, and it broke the island rules in four places

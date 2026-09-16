@@ -430,10 +430,9 @@ it did — it is not part of joining, not part of starting a repository, and not
 something to build machinery for in a tree that has none. **A member that
 honours it changes no file.**
 
-*It was briefly carried in the prompt that bootstraps a new repository, and was
-removed on 2026-09-02 for exactly that reason: a page telling somebody how to
-begin is not the place to introduce a policy whose whole content is `take a
-break in the evening`.*
+*It is deliberately not in the prompt that bootstraps a new repository: a page
+telling somebody how to begin is not the place to introduce a policy whose whole
+content is `take a break in the evening`.*
 
 ### When it fires
 

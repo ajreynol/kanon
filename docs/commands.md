@@ -23,10 +23,10 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 | `python3 scripts/transfer_check.py TARGET` | Reports pending role markers and destination; CI remains unverified |
 | `python3 scripts/ready_check.py NAME --stub-root PATH` | Checks the local name register and a source repository's stub |
 
-`ready_check.py` is the temporary stub check inherited from anoieu. Anoieu
-removed the kanon stub in `eeafbcc`, so checking that name now reports no stub;
-there is no ready job for it in kanon. Use `--stub-root PATH` only when a
-source repository still holds a stub for a future creation.
+`ready_check.py` decides whether a spawned repository is ready for its stub to
+be deleted. No stub for kanon exists and there is no ready job for one here. Use
+`--stub-root PATH` when a source repository holds a stub for a future
+creation.
 Completed transfers no longer have pending role markers, so
 `transfer_check.py kanon` should report that no transfer is pending.
 Neither helper establishes that both repositories' CI passed.
@@ -126,5 +126,4 @@ validation. The separate policy job keeps the existing anoieu checker pin.
 launcher and status readers. `scripts/ecosystem/ecosystem.py` implements
 `status_eo`; `scripts/ecosystem/near.py` checks likely spelling mistakes in
 repository ids. `scripts/child_listing.py` reads the README listing declaration
-for both status and installation. The root `run_handoff` and `run_handoff_anoieu` files record the
-one-time transfer commands and are not installation or verification commands.
+for both status and installation.

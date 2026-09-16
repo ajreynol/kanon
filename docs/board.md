@@ -25,8 +25,7 @@ done, or that nobody will act on, is deleted rather than archived — the record
 of what happened lives in [`reports/reports.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md) and in
 git, and a board that keeps its dead is a board nobody reads to the bottom of.
 
-**The cap was twenty until 2026-09-02, and raising it needs a reason on the
-page.** It was set when the inventory held eight tools. A
+**Raising the cap needs a reason on the page.** A
 cap that never moves stops measuring priority and starts measuring how many
 repositories exist, so the number is set at roughly two items per entity — and
 **it is reviewed when the entity count changes, never when the board is full.**
@@ -110,22 +109,20 @@ says what would change that and who decides.
 
 ## B15 — governance, out of the analyzer, before we ask members to adopt again
 
-**Task:** keep the governance handoff usable while the policy and checker
-live in different repositories. `R4`, `R6` and `R5` moved to kanon; `R1`,
-`R2`, `R3` and `R31` remain in anoieu.
+**Task:** keep governance usable while the policy and the checker live in
+different repositories. `R4`, `R6` and `R5` are kanon's; `R1`, `R2`, `R3` and
+`R31` are anoieu's.
 **Entities:** `anoieu`, `kanon`
-**Status:** files transferred on 2026-09-15 (`7eb9973`); integration follow-up.
+**Status:** integration follow-up. [The history](history.md) records what
+moved.
 **Channel:** **discussion** — a person carries any proposal to the other tool.
 **Next:** decide how a checker pin identifies the policy version it implements.
 The alternatives remain in [the role register](roles.md#r31--the-policy-checker).
-**Prompt — `kanon`:** keep the receiving inventory, links and commands aligned
-with the transferred files. Record the open version relationship without
-changing member pins.
+**Prompt — `kanon`:** keep the register, the links and the commands aligned
+with the documents here. Record the open version relationship without changing
+member pins.
 **Prompt — `anoieu`:** retain the checker interface and decide with kanon how
 the policy version is recorded alongside it.
-**Stub:** the [historical source marker](https://github.com/ajreynol/anoieu/tree/ca58216/tools/kanon)
-was removed by anoieu in `eeafbcc` on 2026-09-15. The temporary ready check no
-longer applies to this completed creation.
 **HUMAN FEEDBACK:**
 
 ## B18 — the associate protocol remains open for ethos
@@ -140,9 +137,8 @@ question is carried by hand.
 **Next:** decide the one open question — the bare maintenance-note heading, or
 that plus the paragraph naming this ecosystem — and write it into
 [`policy.md`](policy.md) as in force.
-**Updated 2026-09-15:** logos joined as a member. Its associate proposal is
-superseded, and it is no longer a party we are waiting on for this item. The
-evidence is in [the history](https://github.com/ajreynol/anoieu/blob/main/docs/history.md#how-long-it-lasted-and-who-joined).
+**logos is a member**, so its associate proposal is superseded and it is not a
+party we are waiting on for this item.
 **Prompt — `kanon`:** do not record ethos as an associate until the protocol is
 decided; `proposed:` is the field that holds the intention, and
 `scripts/status_eo --protocol` is the report. When it is decided, the section in

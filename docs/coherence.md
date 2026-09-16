@@ -34,7 +34,7 @@ rule, and the incident that produced it, are in
 
 ## What this repository is responsible for
 
-The 2026-09-15 handoff moved governance to kanon. The boundary is:
+The boundary between this repository and anoieu:
 
 | what | where |
 | --- | --- |
@@ -316,9 +316,9 @@ organisation membership, no chain of custody. Keep it simple.
 **So *fraud* here is narrow**: a repository that claims to be doing the work and
 is not. That is the only thing being checked, and it is checked by reading it.
 
-**And it is not currently a risk.** One person drives this ecosystem as of
-2026-09-02. The protocol is written now because writing it later, under
-pressure, is the expensive version — not because anybody is knocking.
+**And it is not currently a risk.** One person drives this ecosystem. The
+protocol is written ahead of need because writing it later, under pressure, is
+the expensive version — not because anybody is knocking.
 
 ### CI green, on both sides, non-negotiable
 
@@ -726,7 +726,7 @@ what AI-assisted development in this ecosystem is for, it is addressed to
 repositories that did not write it, and the party with the least standing to
 revise it is the agent it governs. The same holds for
 [`practice.md`](practice.md), which carries what follows from the tenets, and for
-[`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md), which was split out of it and is governed by
+[`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md), which is governed by
 it unchanged: a paragraph there is a judgement about somebody else's project,
 and softening or sharpening one is exactly the edit that should not be made
 quietly.
@@ -1066,8 +1066,8 @@ simplification.
 ### And the honest limit
 
 **Adoption is still small.** The [inventory](../scripts/ecosystem/ecosystem.json)
-records current membership. Logos joined on 2026-09-15; the declaration, pin and
-passing policy run are recorded in [the history](https://github.com/ajreynol/anoieu/blob/main/docs/history.md#how-long-it-lasted-and-who-joined).
+records current membership, and [the history](history.md) records each change
+to it.
 Experience with this group does not establish that the arrangement coordinates
 forty repositories, and each adopter so far has found things the ones before it
 did not.

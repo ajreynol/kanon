@@ -6,11 +6,11 @@
 things, and they are the whole of it:
 
 - **[the register](#the-register)** — who is in this ecosystem, and on what
-footing;
+  footing;
 - **[the documents](#the-documents)** — the policy every member is checked
-against, the vision it is argued from, and the laws of the office;
+  against, the vision it is argued from, and the laws of the office;
 - **[the commands](#the-commands)** — by which a tool starts, joins, and is
-installed.
+  installed.
 
 It also holds the ecosystem's **presidency for Stretch 2**, which is an office
 in this ecosystem's own work and confers nothing over anybody's repository.
@@ -51,11 +51,11 @@ made or worth having is examined elsewhere, and kanon has no opinion to offer.
 Two narrower refusals, for the same reason:
 
 - **Whether a rule should exist.** kanon holds the standard and applies it.
-Amending it is a person's, argued on [the board](docs/board.md). There is no
-vote here.
+  Amending it is a person's, argued on [the board](docs/board.md). There is no
+  vote here.
 - **Whether a finding against you is fair.** Findings stay with the analyzer.
-Moving them here would rebuild the thing this repository exists to take
-apart.
+  Moving them here would rebuild the thing this repository exists to take
+  apart.
 
 **Why it is a separate repository at all.** The tool writing the rules should
 not also be the one filing findings against you. That separation is the entire
@@ -126,7 +126,6 @@ not worth adding.
 | [`working-summary.md`](working-summary.md) | the draft account of Stretch 2, kept current rather than written at the close |
 | [`actionable.md`](actionable.md) | work pending, each item with the condition that closes it |
 | [`whats-next.md`](whats-next.md) | what this president thinks the next term should be *for*. It binds nothing |
-| [`initial-objections.md`](initial-objections.md) | the reservations recorded when the office was offered, before it was held |
 
 ### Talking to other tools
 
@@ -145,12 +144,13 @@ not worth adding.
 | [`tools/`](tools) | child projects, each with its own charter. The directory listing is their index |
 | [`tests/`](tests) | the regression checks this repository runs on itself |
 
-### Background, housed and not required
+### `docs/misc/` — housed, and not required
 
 | where | what it is |
 | --- | --- |
-| [`conversation.md`](conversation.md) | the verbatim transcript of the session that primed this repository. The tree is what was decided; this is what was said |
-| [`brainstorm-offices.md`](brainstorm-offices.md) | the internal office structure, **deferred as premature**. It establishes nothing, and is kept for [the safety scenarios](brainstorm-offices.md#scenarios) and [the ethics notes](brainstorm-offices.md#ethics), which are cited from live work |
+| [`docs/misc/conversation.md`](docs/misc/conversation.md) | the verbatim transcript of the session that primed this repository. The tree is what was decided; this is what was said |
+| [`docs/misc/brainstorm-offices.md`](docs/misc/brainstorm-offices.md) | the internal office structure, **deferred as premature**. It establishes nothing, and is kept for [the safety scenarios](docs/misc/brainstorm-offices.md#scenarios) and [the ethics notes](docs/misc/brainstorm-offices.md#ethics), which are cited from live work |
+| [`docs/misc/initial-objections.md`](docs/misc/initial-objections.md) | the reservations recorded when the office was offered, before it was held |
 
 ## The commands
 
@@ -175,11 +175,11 @@ without that dependency.
 `.github/workflows/anoieu.yml` keeps kanon's existing checker pin; the local
 regression checks also run in CI.
 
-**The governance handoff landed on 2026-09-15, in `7eb9973`.** The policy,
-vision, laws, board, the role and ecosystem registers, the installer and the
-joining prompts moved here. The analyzer, fuzzer, findings system and **policy checker remain
-in [anoieu](https://github.com/ajreynol/anoieu)**. Member CI continues to pin
-that checker; moving the documents did not change those pins.
+**kanon publishes the standard; [anoieu](https://github.com/ajreynol/anoieu)
+publishes the checker.** The policy, the vision, the laws and the registers are
+here. The analyzer, the fuzzer, the findings system and the program that
+decides whether a tree meets the policy are there, and a member pins a commit
+of it.
 
 ## The office
 
@@ -206,9 +206,9 @@ readable and worth reading. They are closer to the work and correspondingly
 less friendly, and **that is a debt rather than a design** — the ecosystem's
 position is that all tools should evolve to be user friendly, which is a safety
 requirement rather than a courtesy. [The ethics
-notes](brainstorm-offices.md#ethics) say why, and [the safety
-scenarios](brainstorm-offices.md#scenarios) say what happens when it is not
-met.
+notes](docs/misc/brainstorm-offices.md#ethics) say why, and [the safety
+scenarios](docs/misc/brainstorm-offices.md#scenarios) say what happens when it
+is not met.
 
 **This is where the budget gets teeth.** *Read in full* and *the only thing you
 have to read* are together a hard size limit on this tree, enforced by a reader
@@ -317,31 +317,22 @@ as still being cut, most likely down to the joining rule and its checker. Cut
 that way, the name gets more accurate rather than less.
 
 **The name is not a title.** Nothing tracks who owns it, and a second
-repository doing this work would be as welcome as this one. The [original stub
-in anoieu](https://github.com/ajreynol/anoieu/tree/ca58216/tools/kanon) records
-where this repository began; anoieu removed it in `eeafbcc` on 2026-09-15, and
-the link is pinned to its last version so the history stays readable.
+repository doing this work would be as welcome as this one.
 
 ## How this repository is maintained
 
 This repository is part of the **Eunoia ecosystem** and follows its shared
 repository policy, kept here in
 [`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
-The [pre-handoff
-policy](https://github.com/ajreynol/anoieu/blob/4d21ec9/docs/policy.md)
-remains available for repositories using the older checker.
 
 **Written by an agent, under a maintainer's supervision.** The tree was settled
 in conversation with the maintainer and written down by an agent working in
-this
-checkout; the maintainer directs it, reads what is published and decides what
-crosses to anybody else. **Nothing leaves this repository by machine.**
+this checkout; the maintainer directs it, reads what is published and decides
+what crosses to anybody else. **Nothing leaves this repository by machine.**
 
 **What the supervision does not cover.** The maintainer has not re-derived
-every
-claim this tree makes about a repository other than this one — those are read
-from other trees and are the reading of whoever did it, correctable by the
+every claim this tree makes about a repository other than this one — those are
+read from other trees and are the reading of whoever did it, correctable by the
 repository they are about. And the supervision is of what is *written*, which
-is
-the scope of their review. Automated checks report only the properties they
+is the scope of their review. Automated checks report only the properties they
 exercise; they do not establish the truth of every claim in these documents.

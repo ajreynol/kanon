@@ -77,6 +77,23 @@ way to find.
 in this repository, and `git log --diff-filter=D -- scripts/ecosystem/ecosystem.json`
 in anoieu.
 
+### What moved, and what did not
+
+The governance handoff landed at `7eb9973`, out of `B15`, which argued that
+governance should leave the analyzer.
+
+- **Moved here:** `R4`, policy and joining; `R6`, the register and
+  installation; `R5`, the development vision; and five child projects, whose
+  own role ids and responsibilities stayed their own.
+- **Stayed in anoieu:** `R1`, the findings system; `R2`, the analyzer; `R3`,
+  the fuzzer; and `R31`, the policy checker.
+- **Unchanged:** member workflows pin anoieu's checker, and a document move does
+  not move a pin. How the policy and the checker stay in version step is an open
+  follow-up under `R31`.
+
+*Re-derive:* `git log --diff-filter=A -- docs/policy.md` in this repository, and
+the same with `--diff-filter=D` in anoieu.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

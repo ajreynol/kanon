@@ -167,7 +167,7 @@ has nowhere to live today even if everybody agrees with it.
 
 **We are doing:** **deferring the office structure, 2026-09-15.** The maintainer
 judged it premature. The proposed range and the earlier reasoning remain in
-[brainstorm-offices.md](brainstorm-offices.md#earlier-structure-proposal); no
+[brainstorm-offices.md](docs/misc/brainstorm-offices.md#earlier-structure-proposal); no
 offices or office-count requirement are established.
 
 **Three instances now, not one.** Since this ball was drafted, two more rules

@@ -103,16 +103,16 @@ Three properties turn CI from a nuisance into the friend it should be, all
 worth paying for in the first week rather than the tenth:
 
 - **It goes red for your reasons only.** Restore recorded versions rather than
-branch tips, and ask separately, on a schedule, whether upstream has moved. A
-build that fails because somebody else pushed trains everybody to ignore red.
+  branch tips, and ask separately, on a schedule, whether upstream has moved. A
+  build that fails because somebody else pushed trains everybody to ignore red.
 - **It is cheap enough to be run rather than deferred.** The corpus here is
-read as text and never built, which is why every push can afford to read all
-of it.
+  read as text and never built, which is why every push can afford to read all
+  of it.
 - **It remembers what you will not.** This is the part specifically about
-agents. An agent does not recall that a check was narrowed last month and
-why, and will widen it back with an excellent explanation. The witness files,
-the oracle and the baseline are the memory, consulted by the machine because
-they will not be consulted by anyone else.
+  agents. An agent does not recall that a check was narrowed last month and
+  why, and will widen it back with an excellent explanation. The witness files,
+  the oracle and the baseline are the memory, consulted by the machine because
+  they will not be consulted by anyone else.
 
 *The test:* you can make a sweeping change to the core and know within minutes
 whether it was wrong. Where you cannot, the next agent to touch that code will
@@ -125,17 +125,14 @@ scatters things that are only useful together and makes every exchange between
 them a release. A repository that accumulates whatever was convenient asks the
 reader to work out which parts are related, and readers do not sort — they
 average. The limit is whether the front page can name everything in the tree
-and
-say how the pieces stand to one another, in a paragraph; past that, something
-belongs somewhere else.
+and say how the pieces stand to one another, in a paragraph; past that,
+something belongs somewhere else.
 
 **Self-contained** means the repository can state its own results without
 anything that is not in it: dependencies declared and pinned, fetched by the
-run
-rather than assumed present, and results that carry whatever regenerates them.
-A
-tool that is only correct on its author's laptop has produced nothing, and a
-number nobody else can re-measure cannot be argued with.
+run rather than assumed present, and results that carry whatever regenerates
+them. A tool that is only correct on its author's laptop has produced nothing,
+and a number nobody else can re-measure cannot be argued with.
 
 **Clear from the front README** means a reader who arrives with no context
 leaves a screen or two later knowing what is here, what it finds, what it
@@ -258,22 +255,22 @@ policy convention all along, and should move.
 Four misreadings, each invited by a tenet as written, and each ruled out.
 
 - ***Fruitful to another tool*** is a property of the artifact — consumable
-format, stable identifiers, documented meaning — and never a licence to push
-anything anywhere. **Nothing crosses a repository boundary automatically.**
+  format, stable identifiers, documented meaning — and never a licence to push
+  anything anywhere. **Nothing crosses a repository boundary automatically.**
 - ***Fast*** applies to the tool and not to what it says about other people's
-files. A candidate may be published quickly under our own name, labelled
-unjudged; a finding is carried only once it is confirmed, reproduced small,
-and put to whoever the authority is.
+  files. A candidate may be published quickly under our own name, labelled
+  unjudged; a finding is carried only once it is confirmed, reproduced small,
+  and put to whoever the authority is.
 - ***Early*** is not *light on caveats*. The fastest thing any of these tools
-could ship is an assurance, and an assurance inferred from a quiet run is the
-one thing that may never be shipped at all: **silence is never evidence**,
-and a false sense of security is much harder to withdraw than a wrong
-finding.
+  could ship is an assurance, and an assurance inferred from a quiet run is the
+  one thing that may never be shipped at all: **silence is never evidence**,
+  and a false sense of security is much harder to withdraw than a wrong
+  finding.
 - ***Making people interested*** is a claim on somebody's attention, earned
-with evidence rather than promotion. No announcements, no adoption declared
-on another project's behalf, and no scoring: the number of findings a tool
-has produced says which of its checks tripped, never how much of anything is
-sound.
+  with evidence rather than promotion. No announcements, no adoption declared
+  on another project's behalf, and no scoring: the number of findings a tool
+  has produced says which of its checks tripped, never how much of anything is
+  sound.
 
 **And none of this starts a child project.** [`policy.md`](policy.md) reserves
 that for a person, explicitly. An agent reading this page has no authority to
@@ -304,9 +301,9 @@ can inspect in the time they have. Tenet 3 is the only cheap defence, and it is
 cheap only while the tool is small.
 
 **The tool that stays vaporware.** Built competently, legible, reaching a
-consumer — and no person ever decides to own it, so it lives exactly as long
-as somebody keeps prompting for it and evaporates on the day they stop. No
-amount of engineering prevents this, because the missing thing is not in the
+consumer — and no person ever decides to own it, so it lives exactly as long as
+somebody keeps prompting for it and evaporates on the day they stop. No amount
+of engineering prevents this, because the missing thing is not in the
 repository. It is listed last because every other failure here can be recovered
 by somebody who has taken the work on, and this one is the absence of that
 somebody.

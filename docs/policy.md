@@ -42,13 +42,38 @@ being true is worse than one never made, because it carries the authority of
 having been checked once.
 
 - **Correct a claim when you notice it has gone false**, in the change that
-made it false where possible.
+  made it false where possible.
 - **Date a claim about somebody else's project**, so a reader can discount it
-by age rather than by trust.
+  by age rather than by trust.
 - **Say which documents are generated.** Those cannot go stale in this sense;
-everything else is as current as the last person to read it.
+  everything else is as current as the last person to read it.
 - **Do not add a page you will not re-read.** An unmaintained page is a claim
-you have stopped standing behind and never withdrawn.
+  you have stopped standing behind and never withdrawn.
+
+### Write in the present tense
+
+**A page says what is true now**: what a tool does, what a rule requires, who
+holds what, where a thing lives. It does not say what used to be true, what
+moved, when it moved, or what something was called before. **One page carries
+the account of how things came to be** — `history.md`, which
+[`laws.md`](laws.md) makes each office-holder's record of its own term — and it
+is the only page that may.
+
+**The reason is a reader, not tidiness.** A document that carries its own
+history asks everybody who opens it to work out which sentences are still
+operative, and the ones that are not are indistinguishable from the ones that
+are. A migration note, a *formerly*, a *since the move*, a commit id explaining
+a layout, a paragraph about which repository something used to be in — each has
+stopped being useful to anyone but a historian, and each is read as current by
+somebody.
+
+**Two things are not history and stay.** A **retirement line** where something
+was removed, because that is a statement about the present shape of the page.
+And a **dated claim about somebody else's project**, which the rule above
+requires, because the date is what lets a reader discount it.
+
+**Nothing checks this.** A sentence in the past tense is not mechanically
+distinguishable from one describing a present state of affairs.
 
 ## The layout
 
@@ -56,6 +81,7 @@ you have stopped standing behind and never withdrawn.
 | --- | --- |
 | `README.md` | the front page, and the whole of what any other document may assume has been read |
 | `docs/` | every written document, each named in the index |
+| `docs/misc/` | documents kept for the record and required of nobody: transcripts, deferred proposals, notes a reader may skip |
 | `tools/` | child projects, with their own code and data |
 | `tests/` | the evidence: cases, recorded behaviour of other people's programs, committed baselines |
 | `scripts/` | commands, helpers and their data: generators, checks, the runner |
@@ -240,9 +266,9 @@ narrower question it can answer is **what would we accept**.
 folded into it, since diluting the one rule enforced as a build failure is a
 worse trade than repeating a sentence. Reported, never fatal **for now**: it
 joins the fatal gate when every member has adopted or declined it, which is a
-person's decision and is recorded here when it is made. The outbound
-prompts in [`../prompts/`](../prompts) do not repeat it: each names the
-repository it is run in, in its first line.
+person's decision and is recorded here when it is made. The outbound prompts in
+[`../prompts/`](../prompts) do not repeat it: each names the repository it is
+run in, in its first line.
 
 ```
 > **A prompt may not be meant for this repository.** These repositories are
@@ -302,14 +328,14 @@ design cannot see.
 so.** Three properties and no others:
 
 1. **It always exists.** No policy, protocol or check may remove it, and a rule
-that would is void on its face.
+   that would is void on its face.
 2. **It is a person's, never an agent's.** An agent may *point out* that a
-deadlock exists and that the hatch is the way out. It may not take it, and
-being certain the override is correct changes nothing.
+   deadlock exists and that the hatch is the way out. It may not take it, and
+   being certain the override is correct changes nothing.
 3. **It is recorded.** What was overridden, what was known at the time, and
-what would have to be true for it not to be needed again. An override nobody
-wrote down is indistinguishable afterwards from a rule never really
-enforced.
+   what would have to be true for it not to be needed again. An override nobody
+   wrote down is indistinguishable afterwards from a rule never really
+   enforced.
 
 **It does not depend on any of this machinery working**, which is the point: a
 hatch implemented as a tool is not a hatch, because the thing it exists to
@@ -338,14 +364,14 @@ informed. So **the tool must not emit the finished block**: it delivers
 evidence, and composing the target is where being informed happens.
 
 - **Run it; do not remember it.** A value carried forward from an earlier turn
-is not evidence, however true it was an hour ago.
+  is not evidence, however true it was an hour ago.
 - **Every line names its command**, so a reader can re-take any field without
-asking.
+  asking.
 - **A field with no command is not a pass.** Write `—` and count it as
-unverified, on the same side of the ledger as a failure.
+  unverified, on the same side of the ledger as a failure.
 - **An unevidenced `PASS` is worse than a `FAIL`.** A failure is information; a
-pass that nothing produced borrows the authority of the shape without doing
-the work behind it.
+  pass that nothing produced borrows the authority of the shape without doing
+  the work behind it.
 
 **Nothing enforces any of that**, which is why it is a protocol and not a
 check; the word *verification* is used loosely and we are not verifying
@@ -484,9 +510,8 @@ the budget.
 
 **Addressing is not contacting.** Writing a topic costs us nothing of theirs;
 carrying it spends somebody's afternoon, and that is **a person's decision
-every
-time**. A member never told about an announcement has not been wronged. Nothing
-here sends anything.
+every time**. A member never told about an announcement has not been wronged.
+Nothing here sends anything.
 
 ### Who may address whom
 
@@ -660,22 +685,22 @@ Most of these requests are good ones, and none of what follows is required — a
 member's CI is theirs.
 
 - **A check must fail for a reason that is in the tree.** Not the clock, not
-the network, not what somebody else pushed this morning. A job that goes red
-without anybody changing anything trains everybody to ignore red.
+  the network, not what somebody else pushed this morning. A job that goes red
+  without anybody changing anything trains everybody to ignore red.
 - **Green must mean one thing, and that thing should be written down** — in the
-job's name, or the first line it prints. A tick nobody can explain is read as
-an endorsement of whatever the reader was hoping for.
+  job's name, or the first line it prints. A tick nobody can explain is read as
+  an endorsement of whatever the reader was hoping for.
 - **Absence is not a pass.** *We asked and it is wrong* and *we could not ask*
-are different facts and neither is success. A **skipped** job reads as *not
-ready*, never as *fine*.
+  are different facts and neither is success. A **skipped** job reads as *not
+  ready*, never as *fine*.
 - **Never relax a check to turn a build green.** If a check is wrong, argue
-with it and change it deliberately, in a commit that says so.
+  with it and change it deliberately, in a commit that says so.
 - **A temporary check must be built so it cannot become permanent.** Give it
-something to assert that stops being true when its purpose ends, so it forces
-its own removal.
+  something to assert that stops being true when its purpose ends, so it forces
+  its own removal.
 - **And the one thing we do ask:** the pinned `anoieu / policy` workflow a
-member adds on joining is a contract with us rather than a check of their
-own. Add anything beside it; do not weaken it quietly.
+  member adds on joining is a contract with us rather than a check of their
+  own. Add anything beside it; do not weaken it quietly.
 
 ## The handoff policy
 
@@ -693,9 +718,8 @@ developments, analyzers, templates, and the child projects they carry.
 **cvc5 is not a candidate and is not meant to become one.** Its footing is
 **foundation**, the arrangement's way of saying it is asked for nothing. CPC is
 cvc5's file, the proofs are cvc5's output, and these conventions were derived
-by
-watching what happens around cvc5, never agreed with it. The same holds for any
-project the ecosystem is built to support rather than built from.
+by watching what happens around cvc5, never agreed with it. The same holds for
+any project the ecosystem is built to support rather than built from.
 
 **Two steps. The first is a sentence; the second is a CI job that checks the
 sentence is true.** Nothing else is required — no discussion file, no link to
@@ -791,12 +815,6 @@ missing link a minor finding. Add the link anyway: *part of the Eunoia
 ecosystem* tells somebody there is an arrangement and gives them no way to find
 out what it asks of you.
 
-An older pin may still expect the declaration to link to anoieu rather than
-here. Where one does, link both — the policy as it stood at that commit, and
-the current one — as [kanon's maintenance
-note](../README.md#how-this-repository-is-maintained) does. A commit URL stays
-valid after the file moves.
-
 ### 2. Run the check
 
 Its own workflow file, `.github/workflows/anoieu.yml`, rather than a step
@@ -840,9 +858,9 @@ a compliant tree that says nothing has not joined anything.
 and moving it is a commit in *your* repository. Without it your build becomes a
 function of a repository your maintainers do not own, and a build that can turn
 **green** without anybody committing cannot be used as evidence that a commit
-was good. Tracking the tip is a reasonable choice for a repository that
-wants to hear about changes immediately; it should be a decision rather than
-what happens if you paste the short version.
+was good. Tracking the tip is a reasonable choice for a repository that wants
+to hear about changes immediately; it should be a decision rather than what
+happens if you paste the short version.
 
 **And only move the pin to a commit where our CI is green — a requirement, not
 a suggestion.** Work we could not get past our own build is not work to take
@@ -856,23 +874,23 @@ not the program.
 **The checker and this page live in different repositories**, so `ANOIEU_REV`
 pins the checker and not the policy text. **How the two stay in step is
 undecided** — the role register records the open choice. Until it is settled,
-record a kanon commit separately when citing the policy, because a checker pin
-alone does not identify it.
+cite the policy by its own commit as well, because a checker pin alone does not
+identify it.
 
 ### What we do not promise
 
 - **No release schedule and no versioning scheme.** A commit is the only
-identifier we can promise is stable, which is why the pin is a commit.
+  identifier we can promise is stable, which is why the pin is a commit.
 - **Checks will be added, and some will fail repositories that pass today.**
-You adopt a change when you move the pin, not when we push.
+  You adopt a change when you move the pin, not when we push.
 - **No compatibility guarantee for the command line or the output format.**
 - **We intend to announce material changes** in
-[`discussion.md`](discussion.md) before they land. That is an intention and
-nothing enforces it. Pin instead, because the pin works whether or not
-anybody remembers.
+  [`discussion.md`](discussion.md) before they land. That is an intention and
+  nothing enforces it. Pin instead, because the pin works whether or not
+  anybody remembers.
 - **We do not maintain your bumping.** One script we maintained on everybody's
-behalf would be a maintenance contract, and this repository is in no position
-to sign one.
+  behalf would be a maintenance contract, and this repository is in no position
+  to sign one.
 
 ### What passing does and does not mean
 

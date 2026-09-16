@@ -38,10 +38,10 @@ maximum of five:
 
 | office | what it holds | in a phrase |
 | --- | --- | --- |
-| [research](brainstorm-offices.md#research) | the home of `ynoia`, the ecosystem's research engine, which is the authority there | what comes **in** |
-| [correspondence](brainstorm-offices.md#correspondence) | what we send, and what came back | what goes **out** |
-| [safety](brainstorm-offices.md#safety) | how this infrastructure could be *persuaded* into failing | what could go **wrong** |
-| [ethics](brainstorm-offices.md#ethics) | how the office behaved, and the ethics projects it custodies | what we **are** |
+| [research](../../brainstorm-offices.md#research | the home of `ynoia`, the ecosystem's research engine, which is the authority there | what comes **in** |
+| [correspondence](../../brainstorm-offices.md#correspondence | what we send, and what came back | what goes **out** |
+| [safety](../../brainstorm-offices.md#safety | how this infrastructure could be *persuaded* into failing | what could go **wrong** |
+| [ethics](../../brainstorm-offices.md#ethics | how the office behaved, and the ethics projects it custodies | what we **are** |
 
 ### Between three and five, and no more
 
@@ -63,8 +63,8 @@ If it is ever a law, somebody other than the president will have made it one.
 readiness, distribution — were a list, an output, a status and a mission
 wearing directories, and the maintainer could not tell what four of them were
 for. **That was the evidence.** Nothing was deleted except the containers: the
-mission is above, the list is [`actionable.md`](actionable.md), the output is
-[`kanon-balls.md`](kanon-balls.md), the findings moved into research, and
+mission is above, the list is [`actionable.md`](../../actionable.md, the output is
+[`kanon-balls.md`](../../kanon-balls.md, the findings moved into research, and
 readiness is what the check reports rather than a place.
 
 **The prefix is the term, and an office does not travel.** The successor opens
@@ -112,7 +112,7 @@ a child project of this office.
 
 **This is an office, not a child project.** `tools/kanon-research/` is a heading
 over work the office custodies. The child projects are the directories *inside*
-it, and [`synkrisis`](brainstorm-offices.md#synkrisis) is the one that exists today; the policy's
+it, and [`synkrisis`](../../brainstorm-offices.md#synkrisis is the one that exists today; the policy's
 rules for a child project reach them and not this heading. The ecosystem's
 checker reads this page, finds it discussing the child projects it houses, and
 holds the office to those rules anyway — recorded here rather than argued,
@@ -185,7 +185,7 @@ answered the authority question in the worst possible way on day one.
 | what | footing | authority |
 | --- | --- | --- |
 | `ynoia/` *(arriving)* | child project | **ynoia's.** Kanon houses and asks; it does not overrule |
-| [`synkrisis/`](brainstorm-offices.md#synkrisis) | child project, **name proposed not claimed** | its own, and deliberately uninformed |
+| [`synkrisis/`](../../brainstorm-offices.md#synkrisis | child project, **name proposed not claimed** | its own, and deliberately uninformed |
 | `ai-novelty.md` *(arriving)* | **a file, not a project** | the maintainer's — kanon keeps it and does not fill it |
 
 ### Conflicting agendas
@@ -220,7 +220,7 @@ on the stated ground that a claim of novelty about one's own practice is the
 cheapest thing an agent can produce and reads exactly like an insight. A
 mechanism that turns out to be ordinary is **kept and relocated**, with one line
 saying where it went and what ruled it out — the same shape as *Closed* in
-[`../../handover.md`](handover.md), reached independently. And it is
+[`../../handover.md`](../../handover.md, reached independently. And it is
 **neither a grade nor a survey**: `report-card.md` judges whether any of this is
 good and stays with anoieu, and nobody here has read the literature.
 
@@ -298,7 +298,7 @@ does not persist: the next agent has only the tree, and the human's recollection
 drifts from it immediately. A human who proceeds on memory then issues
 instructions that contradict the record, and the agent — reading the record —
 follows the record. **That is `misinterpretation` from
-[`../kanon-safety/scenarios.md`](brainstorm-offices.md#scenarios), arriving through
+[`../kanon-safety/scenarios.md`](../../brainstorm-offices.md#scenarios, arriving through
 the human rather than through an attacker: two sources that disagree, and
 whichever is picked is not recorded.**
 
@@ -309,7 +309,7 @@ were caught in one exchange. **Neither was a mistake about the facts; both were
 the durable copy and the remembered copy diverging**, which is exactly what
 `INST-4` exists to close. The
 conflict that proposal runs into is recorded in
-[`synkrisis`](brainstorm-offices.md#synkrisis).
+[`synkrisis`](../../brainstorm-offices.md#synkrisis.
 
 *Offered, not filed. Whether this belongs in `ai-novelty.md` is the maintainer's
 call under that page's own criterion, and the page's own rule applies — it does
@@ -334,7 +334,7 @@ presumptuous form the question has.
 ## Correspondence
 
 **What we send, and what came back.** The office owns
-[`kanon-balls.md`](kanon-balls.md) and the question nobody in this
+[`kanon-balls.md`](../../kanon-balls.md and the question nobody in this
 ecosystem currently owns: *who owes whom an answer, and for how long?*
 
 **It communicates; it does not legislate.** The policy is anoieu's `R4` until a
@@ -369,7 +369,7 @@ promotion.
 **3. One FAQ style, at every node.** Joining cost koine four files and eighteen
 hundred lines of reading. Six documents describe kanon and no two agree. Both
 are the same defect from the reader's side: there is nowhere a tool says the
-short version of itself. **Kanon writes its own first** — [its front page](README.md#common-questions)
+short version of itself. **Kanon writes its own first** — [its front page](../../README.md#common-questions
 — because proposing a style you have not adopted is the move `K2` was built to
 avoid. Carried as `A19`.
 
@@ -413,7 +413,7 @@ case is an agent that can be convinced by a sufficiently good forgery. This
 office's standing job is to find where that pattern is **missing** and should
 not be.
 
-**The kinds of failure are in [`scenarios.md`](brainstorm-offices.md#scenarios)** —
+**The kinds of failure are in [`scenarios.md`](../../brainstorm-offices.md#scenarios** —
 misinterpretation, deadlock, misappropriation, and exhaustion — with the
 ownership stance audited at the end. **This page lists surfaces; that one lists
 modes.**
@@ -932,7 +932,7 @@ transmits bias by exactly the route the tenet was written to close.
 **Uninformed opinion:** they are compatible only if the page carries **reasons
 rather than conclusions**, because a reason can be checked against the tree by
 somebody who has done nothing, and a conclusion cannot. That is now one of the
-four rules [`whats-next.md`](whats-next.md) is written under, and **it
+four rules [`whats-next.md`](../../whats-next.md is written under, and **it
 is a mitigation rather than a resolution** — a sufficiently well-argued
 suggestion is still very hard for an empty reader to decline. Worth revisiting
 when there is a second president to watch, which is the only evidence that would

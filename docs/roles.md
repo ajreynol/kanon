@@ -191,34 +191,20 @@ in a week they had planned otherwise. At that point the steps stop being a
 description and become a requirement — and that is a decision for a person, made
 once, and written down here when it is made.
 
-### The worked example: anoieu to kanon
+### Why the split between kanon and anoieu falls where it does
 
-`B15` proposed moving governance out of the analyzer. The maintainer made
-the handoff on 2026-09-15 in kanon commit `7eb9973`:
+**The argument is about exactly one thing: the repository that writes the rules
+a member is judged by should not also be the one filing findings against them.**
+`R1` is what does the filing, so it sits with the analyzer; `R4` is what writes
+the rules, so it sits here. `R6` follows `R4`, because the audit that reads
+across both wants the register beside the policy rather than beside the ledger.
+And the position on what may be published, which is part of `R1`, stays with the
+tool whose own behaviour it constrains.
 
-- **Moved:** `R4`, policy and joining; `R6`, inventory and installation; and
-  `R5`, development vision, now held by kanon.
-- **Stayed in anoieu:** `R1`, the findings system; `R2`, the analyzer; `R3`,
-  the fuzzer; and `R31`, the policy checker.
-- **Rehoused:** the five child projects now recorded under kanon in the
-  inventory. Their role ids and responsibilities remain their own.
-- **Consumers:** member workflows still pin anoieu's checker. A document move
-  does not move those pins. The policy/checker version relationship is still
-  an open follow-up, described under `R31`.
-
-The split falls where it does because the argument is about exactly one thing:
-the repository that writes the rules a member is judged by should not also be
-the one filing findings against them. `R1` is what does the filing, so it stays;
-`R4` is what writes the rules, so it goes. `R6` follows `R4` because the audit
-that reads across both wants the inventory beside the policy rather than beside
-the ledger. And the position on what may be published, which is part of `R1`,
-stays with the tool whose own behaviour it constrains — an answer that took an
-audit to reach, and the reason step 2 is a step.
-
-Two of the seven steps came out of that audit rather than being designed here:
-*what does the losing repository keep* and *is either half left unable to answer
-a question it used to answer alone*. A procedure that could not ask those would
-keep producing confident answers to a question nobody had asked.
+**Two of the seven steps exist because an audit asked them and the procedure
+could not**: *what does the losing repository keep*, and *is either half left
+unable to answer a question it could answer alone*. A procedure that cannot ask
+those keeps producing confident answers to a question nobody had asked.
 
 ## How many each holds
 
@@ -331,8 +317,8 @@ reproducers under `tests/fuzz/`.
 and the research-quality successor, which is nobody's — it has a name,
 `elenchos`, and no repository.
 
-`R28` and `R29` were retired on 2026-09-15. Neither is an active
-responsibility or a pending role transfer.
+`R28` and `R29` are retired. Neither is an active responsibility or a pending
+role transfer.
 
 `R26` is deliberately not allocated here: koine's `D8` proposes it for the
 low-level formats of the reporting loop, and that request is open. An id claimed
@@ -507,8 +493,7 @@ machine-checked in every member's CI.
 work is *for*, which is `R5` and is argued rather than decided by a program;
 and **deciding whether a tree complies, which is `R31` and stays in anoieu.**
 
-**Moved from anoieu on 2026-09-15 (`7eb9973`).** The checker is a
-separate responsibility, `R31`, and remains in anoieu.
+**The checker is a separate responsibility, `R31`, and is anoieu's.**
 
 ### R6 — the inventory, and getting the ecosystem onto a machine
 
@@ -529,10 +514,10 @@ script writes that file — and the rules a member is checked against, which are
 tenets, and the argument for them. Written for every repository, and argued
 rather than checked; it names no tool and records no tool's current state.
 **Owns:** `docs/vision.md`, and `docs/practice.md`, which carries what follows
-from the tenets. The grading half was split out as `R30` on
-2026-09-02: the two pages have nothing in common operationally — this one is
-argued and changes rarely, that one is re-done every round against recorded
-evidence — and carrying both under one id hid which of them had gone stale.
+from the tenets. **The grading half is `R30`, and is deliberately not this
+role**: the two have nothing in common operationally — this one is argued and
+changes rarely, that one is re-done every round against recorded evidence — and
+carrying both under one id hides which of them has gone stale.
 **Not this role:** anything mechanical. Nothing may ever check this one, which
 is the single rule in this ecosystem that forbids work rather than requiring it;
 the checkable half is `R4`.

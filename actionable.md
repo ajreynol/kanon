@@ -4,7 +4,7 @@
 each with the thing that closes it.
 
 **Update, 2026-09-15:** the office structure is deferred. `tools/` is empty;
-its former documents are proposals in [brainstorm-offices.md](brainstorm-offices.md).
+its former documents are proposals in [brainstorm-offices.md](docs/misc/brainstorm-offices.md).
 The draft handoff uses `tools/<project>/` directly. Earlier dated decisions below
 are retained with their corrections; they do not establish offices.
 
@@ -109,7 +109,7 @@ duplicate record.
 | `A14` | nobody has measured how long an answer takes | **kanon** | every handoff, quietly |
 
 **No offices currently hold these items.** The earlier allocation is retained
-in [the brainstorming notes](brainstorm-offices.md#earlier-allocation-of-work).
+in [the brainstorming notes](docs/misc/brainstorm-offices.md#earlier-allocation-of-work).
 The list remains kanon's work queue; the proposed office structure is deferred.
 
 ---
@@ -239,7 +239,7 @@ is currently not an answer, it is an absence.
 on the ground that a protocol for choosing presidents written by the incumbent
 is the document this arrangement should be most suspicious of.
 **Why last:** it is the largest piece of new governance on the page, and
-objection 5 in [`initial-objections.md`](initial-objections.md) applies to it
+objection 5 in [`initial-objections.md`](docs/misc/initial-objections.md) applies to it
 directly. It is not owed before kanon holds the office and has run a stretch,
 and building it first would be kanon producing governance machinery as its
 opening act.
@@ -309,7 +309,7 @@ a whole term. A figure makes it arguable; *slow* does not.
 
 **Updated 2026-09-15:** the maintainer judged the offices premature. No minimum
 or maximum office count binds kanon. The earlier proposal and its reasoning are
-preserved in [the brainstorming notes](brainstorm-offices.md#earlier-structure-proposal).
+preserved in [the brainstorming notes](docs/misc/brainstorm-offices.md#earlier-structure-proposal).
 `K5` now records the deferral. Revisit the structure only if actual work calls
 for offices.
 
@@ -434,7 +434,7 @@ private figure is gone.
 **Whose:** a person's to approve, ynoia's to register.
 **Why:** `R22` is ynoia's and **a name is claimed when a person approves one,
 never by a document suggesting it.** The directory was removed on 2026-09-15;
-its ideas remain in [the brainstorming notes](brainstorm-offices.md#synkrisis).
+its ideas remain in [the brainstorming notes](docs/misc/brainstorm-offices.md#synkrisis).
 No child project or name claim is established.
 **Closes when:** a person decides whether to pursue the project and its name.
 
@@ -493,7 +493,7 @@ tenet binds at the **start** of a term rather than throughout.
 **The cost it does not answer:** it does not permit an untested president, it
 **guarantees one every term**. kanon is the current evidence — it runs nothing
 and would fail `PROTO-20` today.
-**Written up in [`synkrisis`](brainstorm-offices.md#synkrisis).**
+**Written up in [`synkrisis`](docs/misc/brainstorm-offices.md#synkrisis).**
 **Closes when:** ynoia audits it, or a person adopts or drops it.
 
 ### `A31` — `whats-next.md` is a practice, and proposed as a law
@@ -516,7 +516,7 @@ reasons rather than conclusions. **Making it a law moves it toward what was
 removed**, and that should be weighed before anybody adopts it.
 **And it conflicts with `A30`:** an empty successor is the reader least equipped
 to refuse a considered agenda. Mitigated by requiring reasons rather than
-conclusions; written up in [`synkrisis`](brainstorm-offices.md#synkrisis).
+conclusions; written up in [`synkrisis`](docs/misc/brainstorm-offices.md#synkrisis).
 **Closes when:** a person adopts it, drops it, or says where such a rule lives.
 
 ### `A32` — `science-fiction.md` moving here reverses a written decision
@@ -608,7 +608,7 @@ colour.
 **Why it is ethics too:** the cost is borne by somebody other than the party who
 built the tool, and is invisible to that party.
 **Closes when:** it does not. Stated as a policy in
-[the ethics notes](brainstorm-offices.md#ethics).
+[the ethics notes](docs/misc/brainstorm-offices.md#ethics).
 
 ### `A38` — kanon's own required reading is already too long
 
@@ -660,7 +660,7 @@ asks for the figure any more.
 the governance repository.* `R27` was deleted — `roles.md` says it was allocated
 *in error*, and `E1`'s dry run records its removal. **A page therefore promises
 kanon a role that does not exist**, which is the `misinterpretation` mode in
-[the safety scenarios](brainstorm-offices.md#scenarios): two true
+[the safety scenarios](docs/misc/brainstorm-offices.md#scenarios): two true
 pages made incompatible by an edit that reached one of them. **Fourth instance,
 and the first that is about us.**
 **Closes when:** the sentence names only the roles that exist.

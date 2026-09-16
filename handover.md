@@ -11,7 +11,7 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 ## Established
 
 **Update, 2026-09-15:** the maintainer deferred the internal offices as premature.
-Their six documents are retained in [brainstorm-offices.md](brainstorm-offices.md),
+Their six documents are retained in [brainstorm-offices.md](docs/misc/brainstorm-offices.md),
 and the completed handoff (`7eb9973`, 2026-09-15) uses `tools/<project>/`
 directly, superseding the office destinations below. Governance documents,
 inventory, scripts and five child projects arrived. The policy checker,
@@ -108,7 +108,7 @@ below record the state when they were made.
   (three live documentation contradictions), deadlock (the stub deadline, the
   vacant record, the pins the gate refuses), misappropriation (our own record
   says a human wrote all 323 commits and that is not what happened), and
-  exhaustion. Written up in [the safety scenarios](brainstorm-offices.md#scenarios).
+  exhaustion. Written up in [the safety scenarios](docs/misc/brainstorm-offices.md#scenarios).
 - **The ownership stance protects legibility, not ownership.** No accounts, no
   signatures, no chain of custody — deliberately. What defends provenance here
   is that the record is public and re-derivable, **which holds only while the
@@ -186,7 +186,7 @@ below record the state when they were made.
   so this office must never answer *was kanon a good idea*.
 - **The three-to-five office range — deferred on 2026-09-15.** It was kanon's
   practice and a proposal in `K5`; it no longer binds kanon. The reasoning is
-  retained in [the brainstorming notes](brainstorm-offices.md#earlier-structure-proposal).
+  retained in [the brainstorming notes](docs/misc/brainstorm-offices.md#earlier-structure-proposal).
 - **Six offices — no, two.** *Closed the day it was opened.* Four of the six
   were a status, a list, an output and a mission wearing directories. Corrected
   by the maintainer, who could not tell what four of them were for, which was

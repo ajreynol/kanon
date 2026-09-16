@@ -57,7 +57,7 @@ duplicated with a private measure (`A25`); and reached, several hours late and
 believing it new, a criticism `ai-novelty.md` had already recorded from outside.
 **All three before the term began.** On 2026-09-15 the maintainer judged the
 offices premature: their directories were removed and their ideas retained in
-[brainstorm-offices.md](brainstorm-offices.md). Later that day, `7eb9973` received the governance documents, scripts and five
+[brainstorm-offices.md](docs/misc/brainstorm-offices.md). Later that day, `7eb9973` received the governance documents, scripts and five
 child projects. The earlier draft fields above have not yet been reconciled
 into the formal term record.
 

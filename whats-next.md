@@ -33,7 +33,7 @@ is at its most dangerous exactly under the condition that makes it useful.**
 That is why *reasons, not conclusions* is one of the four rules above. A
 conclusion is hard for an empty successor to refuse; a *reason* can be checked
 against the tree by somebody who has never done anything. Recorded in
-[`synkrisis`](brainstorm-offices.md#synkrisis) as a conflict rather than resolved
+[`synkrisis`](docs/misc/brainstorm-offices.md#synkrisis) as a conflict rather than resolved
 here.
 
 ## The suggestion, as it stands
