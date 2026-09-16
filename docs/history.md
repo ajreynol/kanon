@@ -377,6 +377,24 @@ were made.
 
 ### Closed
 
+**Three more board items removed, and two of them were already dead.** *Nobody
+has measured how long an answer takes* duplicated the topic that asks koine the
+same question, and the front-page claim it existed to back — that latency, not
+willingness, is what constrains every handoff — is no longer on the front page.
+*Stretch 1's figures are quoted here and checked by nobody* rested on a premise
+that has stopped being true: **kanon quotes no Stretch 1 figures anywhere**, so
+there is nothing left to re-derive. The third, *there is no way to find out
+what a tool can be asked for*, was unowned and needed each tool's own answer
+rather than ours about them.
+
+**And a fourth, which was simply wrong.** *A tool is running and is in no
+register* complained that `telos` was missing. **It is in the register** — a
+child of `eschaton`, with its path and its purpose — and the reason it does not
+appear in the default view is that its own README declares `**Eunoia listing:**
+unadvertised`, which is its parent's choice and is the policy working exactly
+as written. An item that had gone false is worse than one nobody will act on.
+
+
 **Eight board items and two topics removed, and the reason is the same one.**
 The office inherited work in the governance handoff that was never its own:
 board items whose whole content was a finding id from anoieu's ledger — ids
