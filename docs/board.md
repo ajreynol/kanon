@@ -110,7 +110,7 @@ This is the finding that taught us to check.
 
 ---
 
-## How to read it, and how to edit it
+## How to maintain this page
 
 **Position is the priority.** The first item is the most important thing
 outstanding; the last is the least. Reordering is done by moving a block, and

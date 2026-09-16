@@ -36,30 +36,9 @@ one of them a commit.** What it costs is that the checker and the policy live
 apart — `ANOIEU_REV` pins only the checker, and how the two stay in version
 step is [undecided](policy.md#2-run-the-check).
 
-### R1 — the bug report system
-
-**Held by:** `anoieu`
-**Role:** carrying a defect in somebody else's file from the check that found it
-to whoever can fix it, and tracking it until it is resolved, declined or
-withdrawn. It includes the position on what may be published about somebody
-else's code, which is the standard the whole record is kept under.
-**Owns:** the findings ledger and its two files, `docs/reports/reports.md`,
-`docs/reports/reporting-workflow.md`, `docs/reports/reporting-policy.md`, and
-the `check_anoieu` and `process_anoieu` prompts.
-**Not this role:** producing the findings, which is `R2` and `R3`, or the shared
-half of the loop that every member runs, which is `R16`.
-
 ### R2 — the static analyzer
 
-**Held by:** `anoieu`
-**Role:** reading Eunoia signatures and semantic configuration files and
-reporting what a checker accepts and should not — the front end, the checks,
-the shallow typing pass and the desugarer. It is also the only thing that
-compares the legs of the triple, which are owned by three different people.
-**Owns:** the analyzer, the check registry, `docs/checks.md`, `docs/usage.md`,
-and the committed baselines.
-**Not this role:** what happens to a finding once it exists, which is `R1`, and
-generating cases nobody wrote, which is `R3`.
+**Held by:** `anoieu` **Role:** reading Eunoia signatures and semantic configuration files and reporting what a checker accepts and should not — the front end, the checks, the shallow typing pass and the desugarer. It is also the only thing that compares the legs of the triple, which are owned by three different people. **Owns:** the analyzer, the check registry, `docs/checks.md`, `docs/usage.md`, and the committed baselines. **Not this role:** what happens to a finding once it exists, which is the reporting workflow rather than a role here, and generating cases nobody wrote, which is `R3`.
 
 ### R3 — the fuzzer
 
@@ -216,16 +195,7 @@ Anything it wants to say leaves through its parent, like any other finding.
 
 ### R4 — the ecosystem's policy, and joining it
 
-**Held by:** `kanon`
-**Role:** how a repository in this ecosystem is arranged, what its front page
-must say about who is writing it, how tools talk to one another, and what a
-child project may do. Written to be adopted rather than admired, and
-machine-checked in every member's CI.
-**Owns:** `docs/policy.md`, and the `init_eo`, `join_eo`, `check_join_eo` and
-`global_audit` prompts.
-**Not this role:** who is actually in the ecosystem, which is `R6`; what the
-work is *for*, which is `R5` and is argued rather than decided by a program;
-and **deciding whether a tree complies, which is `R31` and stays in anoieu.**
+**Held by:** `kanon` **Role:** **what this ecosystem asks of a repository, and what the work is aiming at** — both halves, because they are one position stated twice: the policy is the half a program can decide from a tree, the vision is the half nobody has the authority to settle. How a repository is arranged, what its front page must say about who is writing it, how tools talk to one another, and what a child project may do. Written to be adopted rather than admired, and machine-checked in every member's CI. **Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, and the `init_eo`, `join_eo`, `check_join_eo` and `global_audit` prompts. **Not this role:** who is actually in the ecosystem, which is `R6`; what the work is *for*, which is the other half of `R4` and is argued rather than decided by a program; and **deciding whether a tree complies, which is `R31` and stays in anoieu.**
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
 
@@ -254,67 +224,34 @@ here settles.
 
 ### R33 — the board, and what this ecosystem says to another tool
 
-**Held by:** `kanon`
-**Role:** what is outstanding across the ecosystem and who has to act on it, and
-the standing channel in which one tool addresses another. Both are registers of
-work that crosses a repository boundary, and neither carries anything: a person
-does.
-**Owns:** `docs/board.md` and `docs/discussion.md`.
-**Not this role:** carrying a defect in somebody's file, which is `R1` and has
-its own ledger and its own standard; and the machinery a message runs on, which
-is `R16`.
+**Held by:** `kanon` **Role:** what is outstanding across the ecosystem and who has to act on it, and the standing channel in which one tool addresses another. Both are registers of work that crosses a repository boundary, and neither carries anything: a person does. **Owns:** `docs/board.md` and `docs/discussion.md`. **Not this role:** carrying a defect in somebody's file, which goes through the reporting workflow and has its own ledger and its own standard; and the machinery a message runs on, which is `R16`.
 
-### R34 — the account of this term
+### R34 — the historian of the current stretch
 
 **Held by:** `kanon`
-**Role:** what the term was for, what changed, what went wrong, what crosses to
-whoever holds the office next, and what the next term should be for. LAW 4
-makes it each office-holder's account of its **own** term; it does not travel,
-and kanon inherited none.
+**Role:** **keeping the account of the stretch while it runs** — what it was
+for, what changed, what went wrong, and what crosses to whoever holds the
+office next. LAW 4 makes it each office-holder's account of its **own** term,
+kept current rather than written at the close, with every figure re-derivable
+by somebody else.
 **Owns:** `docs/history.md`.
 **Not this role:** the per-tool commit census, which LAW 4 gives to `epikrisis`
 and **forbids this role from producing**; and grading how well a tool performs,
 which is `R30`.
 
-### R35 — how the work is run, and how a person directs it
-
-**Held by:** `kanon`
-**Role:** the maintenance entry point and the protocols under it — what to ask
-before changing something, how a person steers an agent, and what the commands
-here do.
-**Owns:** `docs/maintenance.md`, `docs/protocols.md` and
-`docs/commands.md`.
-**Not this role:** the commands themselves, which are `R6`'s; and what an agent
-is told about somebody else's repository, which is `R4`'s prompts.
-
-### R5 — the development vision
-
-**Held by:** `kanon`
-**Role:** what AI-assisted development in this ecosystem is aiming at — the
-tenets, and the argument for them. Written for every repository, and argued
-rather than checked; it names no tool and records no tool's current state.
-**Owns:** `docs/vision.md`, and `docs/practice.md`, which carries what follows
-from the tenets. **The grading half is `R30`, and is deliberately not this
-role**: the two have nothing in common operationally — this one is argued and
-changes rarely, that one is re-done every round against recorded evidence — and
-carrying both under one id hides which of them has gone stale.
-**Not this role:** anything mechanical. Nothing may ever check this one, which
-is the single rule in this ecosystem that forbids work rather than requiring
-it; the checkable half is `R4`.
-
 ## koine
 
-### R16 — the shared machinery of the reporting loop
+### R16 — the shared low-level tooling
 
 **Held by:** `koine`
-**Role:** one implementation of the parts of the loop every member runs, rather
-than one per member — the prompt-drift check first, then the branch-state
-reporter and the reply finder. It exists because two tools wrote the same thing
-before anybody had written down that it was one role.
-**Owns:** what its owner decides it owns. The scope is theirs and is not set
-here; what has been named for it is the machinery that already exists twice.
-**Not this role:** the prompts, or what settles a row. Those differ per tool and
-stay with the tool — `R1` here, and its counterpart in `R9`'s tree.
+**Role:** maintaining the machinery every member would otherwise implement
+separately — **one implementation of the shared parts rather than one per
+repository.** The reporting loop is the first of them and is not the boundary
+of the role.
+**Owns:** the shared implementations, and the interfaces other tools build
+against.
+**Not this role:** deciding what any member reports, or what settles a row.
+Those differ per tool and are each tool's own.
 
 ## logos
 
@@ -355,29 +292,13 @@ in a different tree under a different owner. Two legs of one triple, held apart
 
 ### R20 — Eunoia as a language definition
 
-**Held by:** `sapheneia`
-**Role:** a second description of Eunoia, written as a language definition
-rather than as a manual for a program: where the boundary falls between what
-the language requires and what one implementation happens to do.
-**Owns:** its own account, inside its own directory.
-**Not this role:** governing. `R11` remains the authority and this account says
-so on its own front page; where the two disagree, that disagreement is a
-finding and it leaves through `R1`.
+**Held by:** `sapheneia` **Role:** a second description of Eunoia, written as a language definition rather than as a manual for a program: where the boundary falls between what the language requires and what one implementation happens to do. **Owns:** its own account, inside its own directory. **Not this role:** governing. `R11` remains the authority and this account says so on its own front page; where the two disagree, that disagreement is a finding and it leaves through the reporting workflow.
 
 ## stathmos
 
 ### R30 — the report card
 
-**Held by:** `stathmos`
-**Role:** keeping the report card current — assembling, per tool and at the
-recorded version, the evidence a paragraph about that tool would rest on, and
-re-grading each round. It is the half of the vision that goes stale, because it
-is the half that is a claim about somebody else's project this month rather
-than a statement of what the work is for.
-**Owns:** `docs/report-card.md`.
-**Not this role:** the tenets themselves, which are `R5`; deciding whether a
-paragraph is right, which stays a person's; and reading *histories*, which
-another tree already does.
+**Held by:** `stathmos` **Role:** keeping the report card current — assembling, per tool and at the recorded version, the evidence a paragraph about that tool would rest on, and re-grading each round. It is the half of the vision that goes stale, because it is the half that is a claim about somebody else's project this month rather than a statement of what the work is for. **Owns:** `docs/report-card.md`. **Not this role:** the tenets themselves, which are part of `R4`; deciding whether a paragraph is right, which stays a person's; and reading *histories*, which another tree already does.
 
 > **A child project holding a role is not an island, and the exception is
 > deliberate**: the tool writing the report card should not indefinitely be the
@@ -386,22 +307,7 @@ another tree already does.
 
 ## tekmerion
 
-## workflow-launcher
-
 ## ynoia
-
-### R22 — the register of names
-
-**Held by:** `ynoia`
-**Role:** what each reserved name was reserved *for*, which are taken, and how a
-brand new repository picks one — and, of the names nobody has built yet, which
-look most promising, with the argument stated where it can be disagreed with.
-It is consulted by `init_eo` when a repository is started, which makes it the
-one thing here another script already depends on.
-**Owns:** `names.md` and `tools.md`.
-**Not this role:** granting a name, which happens when a person approves one and
-never because a document suggested it; committing anybody to build a tool; and
-ranking work that already exists, which is the board's.
 
 ### R23 — auditing whether an idea deserves a repository
 
@@ -414,23 +320,11 @@ argument about whose existing tree the work belongs in instead.
 person's decision and a person's act, and this role produces an argument with a
 recommendation at the end.
 
-### R25 — which projects are worth a paper
-
-**Held by:** `ynoia`
-**Role:** whether the work in a repository has a result worth writing up for a
-human, as [`vision.md`](vision.md) recommends — one entry per tool, against a
-stated standard, with `no` as the commonest verdict.
-**Owns:** `papers.md`.
-**Not this role:** deciding whether anybody writes one. A repository's own stance
-on publishing settles that for itself and outranks the register, which records
-the disagreement rather than resolving it. Nor is it the findings ledger: that
-is `R1`, it is about somebody else's code, and this is about our own.
-
 ## zetesis
 
 ---
 
-## The rules
+## How to maintain this page
 
 **An id is permanent.** `R4` stays `R4` whoever holds it, because decisions get
 recorded against ids and an id that moves invalidates them silently. A
@@ -509,11 +403,10 @@ where a handoff goes looking for a taker.
 
 **The argument is about exactly one thing: the repository that writes the rules
 a member is judged by should not also be the one filing findings against
-them.** `R1` does the filing, so it sits with the analyzer; `R4` writes the
-rules, so it sits here. `R6` follows `R4`, because the audit that reads across
-both wants the register beside the policy rather than beside the ledger. And
-the position on what may be published, part of `R1`, stays with the tool whose
-own behaviour it constrains.
+them.** The filing sits with the analyzer; `R4` writes the rules, so it sits
+here. `R6` follows `R4`, because the audit that reads across both wants the
+register beside the policy rather than beside the ledger. And the position on
+what may be published stays with the tool whose own behaviour it constrains.
 
 **Two of the seven steps exist because an audit asked them and the procedure
 could not**: *what does the losing repository keep*, and *is either half left

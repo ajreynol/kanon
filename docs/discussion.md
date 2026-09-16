@@ -195,9 +195,9 @@ rather than with anoieu. The original text stands unedited.*
 concentration the presidency was moved to reduce, one level down. **Two have
 since been put down from our side**: the account of the arrangement is no
 longer a role, and the register of tools that do not exist folded into the
-register of names, which it was a second view of. Three remain — `R22` names,
-`R23` whether an idea deserves a repository, and `R25` which projects are worth
-a paper. *Re-derive:* count the entries under `ynoia` in
+register of names, which it was a second view of. **Two more have gone since**
+— the register of names and the paper judgement — leaving `R23`, whether an
+idea deserves a repository. *Re-derive:* count the entries under `ynoia` in
 [`roles.md`](roles.md).
 
 **What we are doing about it.** Carrying you as a child project at

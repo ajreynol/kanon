@@ -74,13 +74,12 @@ The governance handoff landed at `7eb9973`, out of `B15`, which argued that
 governance should leave the analyzer.
 
 - **Moved here:** `R4`, policy and joining; `R6`, the register and
-  installation; `R5`, the development vision; and five child projects, whose
-  own role ids and responsibilities stayed their own.
-- **Stayed in anoieu:** `R1`, the findings system; `R2`, the analyzer; `R3`,
-  the fuzzer; and `R31`, the policy checker.
-- **Unchanged:** member workflows pin anoieu's checker, and a document move
-  does not move a pin. How the policy and the checker stay in version step is
-  an open follow-up under `R31`.
+  installation; the development vision, since folded into `R4`; and five child
+  projects, whose own role ids and responsibilities stayed their own. -
+  **Stayed in anoieu:** the findings system; `R2`, the analyzer; `R3`, the
+  fuzzer; and `R31`, the policy checker. - **Unchanged:** member workflows pin
+  anoieu's checker, and a document move does not move a pin. How the policy and
+  the checker stay in version step is an open follow-up under `R31`.
 
 *Re-derive:* `git log --diff-filter=A -- docs/policy.md` in this repository,
 and the same with `--diff-filter=D` in anoieu.
@@ -234,19 +233,18 @@ were made.
 - **Fifteen of twenty-eight roles are in anoieu's tree**, eight direct and
   seven across its children. *Re-derive:* the *How many each holds* table in
   `roles.md`. **Twenty-one of twenty-two board items name it** (`S4`, quoted in
-  `history.md`).
-- **`R28` sits in the busiest tree while `E1` is blocked.** The role that moves
-  a stretch to `deployed` is held by the tree with least room to run it, and
-  `E1` has been `planned` for a whole term.
-- **`martyria` and `zetesis` are child projects of the repository whose conduct
-  they assess** — anoieu's own words. The `P2` defect in the ethics half.
-- **`ynoia` held five roles and five registers**, more than any other child
+  `history.md`). - **`R28` sits in the busiest tree while `E1` is blocked.**
+  The role that moves a stretch to `deployed` is held by the tree with least
+  room to run it, and `E1` has been `planned` for a whole term. - **`martyria`
+  and `zetesis` are child projects of the repository whose conduct they
+  assess** — anoieu's own words. The `P2` defect in the ethics half. -
+  **`ynoia` held five roles and five registers**, more than any other child
   project. Two were put down: the account of the arrangement stopped being a
-  role, and the register of tools that do not exist folded into `R22`, which it
-  was a second view of. Three remain.
-- **`R22` has a live consumer.** `roles.md` calls it *the one thing here
-  another script already depends on* — `init_eo` reads `names.md` when a
-  repository is started.
+  role, and the register of tools that do not exist folded into the register of
+  names, which it was a second view of. Three remain. - **The register of names
+  has a live consumer.** `roles.md` called it *the one thing here another
+  script already depends on* — `init_eo` reads `names.md` when a repository is
+  started.
 
 **About how slowly this ecosystem answers**
 
