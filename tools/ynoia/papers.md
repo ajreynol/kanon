@@ -1,19 +1,19 @@
 # Which projects are worth a paper
 
 **One entry per tool in the ecosystem, saying whether the work in it has a paper
-in it.** [`../../docs/policy.md`](../../docs/policy.md) asks a repository with a
-result to write it up as a LaTeX document in `report/` — eight to twenty pages,
-addressed to a human who will never clone the tree — and
-[`../../docs/vision.md`](../../docs/vision.md) argues why. Neither says which
-repositories have one. This page is that judgement, and it is a judgement, which
-is why it is here rather than in either of them.
+in it.** [`../../docs/vision.md`](../../docs/vision.md) recommends that a
+repository with a result write it up — eight to twenty pages, addressed to a
+human who will never clone the tree — and argues why. It does not say which
+repositories have one, and the repository policy asks for nothing here at all.
+This page is that judgement, and it is a judgement, which is why it is here
+rather than in either of them.
 
-**The artifact is a *paper* and the directory is `report/`.** Both words are
-already in use: this ecosystem's *reports* are the findings ledgers under
-`docs/reports/`, which are about somebody else's code and are read by whoever
-owns it. A paper is the opposite artifact — it is about our own work, it is read
-by somebody with no stake in it, and nothing generates it. Where this page says
-*paper* it always means the second.
+**The artifact is a *paper*.** The word matters because a neighbouring one is
+already in use: this ecosystem's *reports* are the findings ledgers, which are
+about somebody else's code and are read by whoever owns it. A paper is the
+opposite artifact — it is about our own work, it is read by somebody with no
+stake in it, and nothing generates it. Where this page says *paper* it always
+means the second. Where it goes in a tree is the repository's own business.
 
 **This page decides nothing**, like every other page here, and it decides less
 than most. A repository's own stance settles the question for that repository: a

@@ -63,9 +63,9 @@ So: write it down, make the strongest case against it, and see which survives.
    reserves that for a person. kanon carries proposals in, because it is the
    only tool that may address a child project directly.
 
-5. **Which projects have a paper in them.** The ecosystem's policy asks a
-   repository with a result to write it up for a human, in `report/`, and its
-   vision argues why. Neither says which repositories have one, because that is
+5. **Which projects have a paper in them.** The ecosystem's vision recommends
+   that a repository with a result write it up for a human, and argues why. It
+   does not say which repositories have one, because that is
    a judgement — so it is made here, against a stated standard, one entry per
    tool, in [`papers.md`](papers.md). The commonest verdict is **no**, this
    project returns it about itself first, and a repository's own stance on

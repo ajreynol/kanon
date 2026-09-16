@@ -672,7 +672,7 @@ already exists — that is the board's.
 
 **Held by:** `ynoia`
 **Role:** whether the work in a repository has a result worth writing up for a
-human, in the `report/` the policy asks for — one entry per tool, against a
+human, as [`vision.md`](vision.md) recommends — one entry per tool, against a
 stated standard, with `no` as the commonest verdict.
 **Owns:** `papers.md`.
 **Not this role:** deciding whether anybody writes one. A repository's own stance
