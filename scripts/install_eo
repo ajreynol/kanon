@@ -34,8 +34,9 @@ the newer copy. Nobody is put on a branch they did not choose, and nothing is
 withheld because a directory inside it moves faster than its default branch.
 
 The list is derived from `scripts/ecosystem/ecosystem.json`: every entry that is not a child
-project carries a url and a repo id, and the clone follows from them. Adding a
-tool to the inventory is therefore the whole of adding it here.
+project carries a url and a repo id. Outsiders are tracked for comparison and
+appear in `--status`, but are never cloned, even when named explicitly or with
+`--with-optional`. For other repositories, the clone follows from the entry.
 `scripts/ecosystem/checkouts.json` holds only the exceptions -- a branch that is not the
 default, a clone flag, a repo somebody has to decide about -- and nothing has to
 be edited for the ordinary case.
@@ -171,7 +172,7 @@ class Repo:
 
 
 def plan() -> list[Repo]:
-    """Every tree to clone: the inventory, grouped by repository, plus anything
+    """Every tree to list: the inventory, grouped by repository, plus anything
     `scripts/ecosystem/checkouts.json` names that the inventory does not carry yet."""
     conf = load(CHECKOUTS)
     over = conf.get("overrides", {})
@@ -233,6 +234,9 @@ def select(repos: list[Repo], args) -> list[Repo]:
     named = {n for n in args.ids}
     out = []
     for r in repos:
+        # Outsiders are comparison data, visible in status but never installed.
+        if "outsider" in r.statuses and not args.status:
+            continue
         ids = {r.key, *r.covers, *(c["name"] for c in r.children)}
         if named and not (ids & named):
             continue

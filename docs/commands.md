@@ -33,7 +33,9 @@ Neither helper establishes that both repositories' CI passed.
 ## Checkouts and the checker
 
 The installer defaults to siblings of kanon. `--root PATH` or `EO_ROOT` selects
-another installation directory. It stores checkout locations in the untracked
+another installation directory. Repositories marked `outsider` are never cloned,
+even when named explicitly or with `--with-optional`; `--status` still lists them.
+It stores checkout locations in the untracked
 `scripts/repos.local`, with one `ID PATH` pair per line. Existing mappings are
 preserved. `ANOIEU_REPOS_FILE` selects a shared mapping file for both repositories;
 `ANOIEU_REPOS` is a colon-separated list of search directories. Status and host
