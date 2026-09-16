@@ -21,8 +21,9 @@ the policy. The program every member's CI runs, its checks, its two tiers, its
 skip lines, and its refusal to report coverage it does not have.
 **Owns:** `scripts/policy_check.py`, and the `adoption_interface` case in
 `tests/run.py` that holds it to being a published interface.
-**Not this role:** what the rules *are*, which is `R4` and is held by kanon. This role
-implements somebody else's document and has no standing to change what it says.
+**Not this role:** what the rules *are*, which is `R4` and is held by kanon.
+This role implements somebody else's document and has no standing to change
+what it says.
 
 **Why it is split from `R4`.** The repository writing the rules should not be
 the one filing findings against the repositories judged by them. Separating the
@@ -38,7 +39,16 @@ step is [undecided](policy.md#2-run-the-check).
 
 ### R2 — the static analyzer
 
-**Held by:** `anoieu` **Role:** reading Eunoia signatures and semantic configuration files and reporting what a checker accepts and should not — the front end, the checks, the shallow typing pass and the desugarer. It is also the only thing that compares the legs of the triple, which are owned by three different people. **Owns:** the analyzer, the check registry, `docs/checks.md`, `docs/usage.md`, and the committed baselines. **Not this role:** what happens to a finding once it exists, which is the reporting workflow rather than a role here, and generating cases nobody wrote, which is `R3`.
+**Held by:** `anoieu`
+**Role:** reading Eunoia signatures and semantic configuration files and
+reporting what a checker accepts and should not — the front end, the checks,
+the shallow typing pass and the desugarer. It is also the only thing that
+compares the legs of the triple, which are owned by three different people.
+**Owns:** the analyzer, the check registry, `docs/checks.md`, `docs/usage.md`,
+and the committed baselines.
+**Not this role:** what happens to a finding once it exists, which is the
+reporting workflow rather than a role here, and generating cases nobody wrote,
+which is `R3`.
 
 ### R3 — the fuzzer
 
@@ -99,10 +109,10 @@ that produces a proof, never the proof.
 ### R10 — the proof checker
 
 **Held by:** `ethos`
-**Role:** the fast, unverified C++ checker that production runs against, and the
-implementation every other reading of the language is compared to.
-**Owns:** the checker, and its behaviour, which is the reference the rest of the
-ecosystem measures itself against.
+**Role:** the fast, unverified C++ checker that production runs against, and
+the implementation every other reading of the language is compared to.
+**Owns:** the checker, and its behaviour, which is the reference the rest of
+the ecosystem measures itself against.
 **Not this role:** saying what the language *is*, which is `R11` in the same
 tree, and being verified, which is nobody's — the name `pathos` is reserved for
 it and there is no repository.
@@ -176,16 +186,16 @@ and a semantics, get a Lake project with a checker, its proofs, its regression
 suite and its documentation.
 **Owns:** the template and its generators, and the profile a new calculus
 declares about itself.
-**Not this role:** any particular calculus. CPC is `R8`'s and its development is
-`R17`'s; the subject here is the shape, never the content.
+**Not this role:** any particular calculus. CPC is `R8`'s and its development
+is `R17`'s; the subject here is the shape, never the content.
 
 ## euthyna
 
 ### R15 — the audit of logos's proof
 
 **Held by:** `euthyna`
-**Role:** reads the generated development logos carries and says what it is made
-of and where its weight sits — what is dead, what repeats, and what is
+**Role:** reads the generated development logos carries and says what it is
+made of and where its weight sits — what is dead, what repeats, and what is
 structured in a way that will cost the next regeneration.
 **Owns:** its own account, inside its own directory.
 **Not this role:** maintaining or rewriting what it reads, which stays `R17`.
@@ -193,11 +203,41 @@ Anything it wants to say leaves through its parent, like any other finding.
 
 ## kanon
 
+*These are the **office's** rather than this repository's.*
+[`laws.md`](laws.md#what-the-office-carries) lists what the presidency carries
+— the protocols, the policy and the joining prompts, the vision, the laws, the
+register, the commands, and the account of the stretch. **They move when the
+office moves**, except the account, which stays in the tree that wrote it; a
+successor inherits the rest whole.
+
 ### R4 — the ecosystem's policy, and joining it
 
-**Held by:** `kanon` **Role:** **what this ecosystem asks of a repository, and what the work is aiming at** — both halves, because they are one position stated twice: the policy is the half a program can decide from a tree, the vision is the half nobody has the authority to settle. How a repository is arranged, what its front page must say about who is writing it, how tools talk to one another, and what a child project may do. Written to be adopted rather than admired, and machine-checked in every member's CI. **Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, and the `init_eo`, `join_eo`, `check_join_eo` and `global_audit` prompts. **Not this role:** who is actually in the ecosystem, which is `R6`; what the work is *for*, which is the other half of `R4` and is argued rather than decided by a program; and **deciding whether a tree complies, which is `R31` and stays in anoieu.**
+**Held by:** `kanon`
+**Role:** **what this ecosystem asks of a repository, and what the work is
+aiming at** — both halves, because they are one position stated twice: the
+policy is the half a program can decide from a tree, the vision is the half
+nobody has the authority to settle. How a repository is arranged, what its
+front page must say about who is writing it, how tools talk to one another, and
+what a child project may do. Written to be adopted rather than admired, and
+machine-checked in every member's CI.
+**Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, and the
+`init_eo`, `join_eo`, `check_join_eo` and `global_audit` prompts.
+**Not this role:** who is actually in the ecosystem, which is `R6`; and
+**deciding whether a tree complies, which is `R31` and stays in anoieu.**
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
+
+### R36 — the protocols, and the commands that run the ecosystem
+
+**Held by:** `kanon`
+**Role:** the register of named exchanges every member follows, and the
+commands by which a person gets the ecosystem onto a machine and reads the
+register back. Both come with the office and neither is separable from it: a
+protocol nobody maintains stops being followed, and a command nobody documents
+stops being run.
+**Owns:** `docs/protocols.md`, `docs/commands.md` and `docs/maintenance.md`.
+**Not this role:** the protocols that govern a *finding*, which belong to
+whoever carries findings; and the checker, which is `R31`.
 
 ### R6 — the inventory, and getting the ecosystem onto a machine
 
@@ -205,7 +245,8 @@ Anything it wants to say leaves through its parent, like any other finding.
 **Role:** who is in the ecosystem and on what footing, and the commands that
 clone the rest of it beside a checkout, record where each one landed, and
 report what has drifted.
-**Owns:** `scripts/ecosystem/ecosystem.json`, `scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
+**Owns:** `scripts/ecosystem/ecosystem.json`,
+`scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
 `scripts/install_eo`, `scripts/status_eo`, and the `welcome_eo` prompt.
 **Not this role:** deciding membership — a status is changed by a person and no
 script writes that file — and the rules a member is checked against, which are
@@ -214,9 +255,9 @@ script writes that file — and the rules a member is checked against, which are
 ### R32 — the laws of the office
 
 **Held by:** `kanon`
-**Role:** the candidate laws — what footings exist, what a member owes, and what
-the office owes. LAW 7 gives the page to whoever holds the presidency, which
-makes this role move with the office rather than staying here.
+**Role:** the candidate laws — what footings exist, what a member owes, and
+what the office owes. LAW 7 gives the page to whoever holds the presidency,
+which makes this role move with the office rather than staying here.
 **Owns:** `docs/laws.md`.
 **Not this role:** what a member is *checked* against, which is `R4` and is
 mechanical; and choosing who holds the office, which is a person's and no law
@@ -224,7 +265,15 @@ here settles.
 
 ### R33 — the board, and what this ecosystem says to another tool
 
-**Held by:** `kanon` **Role:** what is outstanding across the ecosystem and who has to act on it, and the standing channel in which one tool addresses another. Both are registers of work that crosses a repository boundary, and neither carries anything: a person does. **Owns:** `docs/board.md` and `docs/discussion.md`. **Not this role:** carrying a defect in somebody's file, which goes through the reporting workflow and has its own ledger and its own standard; and the machinery a message runs on, which is `R16`.
+**Held by:** `kanon`
+**Role:** what is outstanding across the ecosystem and who has to act on it,
+and the standing channel in which one tool addresses another. Both are
+registers of work that crosses a repository boundary, and neither carries
+anything: a person does.
+**Owns:** `docs/board.md` and `docs/discussion.md`.
+**Not this role:** carrying a defect in somebody's file, which goes through the
+reporting workflow and has its own ledger and its own standard; and the
+machinery a message runs on, which is `R16`.
 
 ### R34 — the historian of the current stretch
 
@@ -261,9 +310,11 @@ Those differ per tool and are each tool's own.
 **Role:** an executable proof checker for CPC written in Lean, whose soundness
 is proven against a correctness specification. It is the artifact the
 ecosystem's trust argument actually rests on.
-**Owns:** the generated development, and the soundness statement it establishes.
-**Not this role:** speed, which is `R10`'s and is the reason two checkers exist,
-and whether the development can be read by a person, which is `R15`'s subject.
+**Owns:** the generated development, and the soundness statement it
+establishes.
+**Not this role:** speed, which is `R10`'s and is the reason two checkers
+exist, and whether the development can be read by a person, which is `R15`'s
+subject.
 
 ### R18 — the model of SMT-LIB semantics in Lean
 
@@ -273,14 +324,14 @@ independent of the checker and usable on its own. It is what a soundness
 statement is stated *against*, which makes it load-bearing for `R17` and
 separable from it.
 **Owns:** `Cpc/SmtModel.lean` and its write-up.
-**Not this role:** the Eunoia semantics of a calculus, which is `R13` and `R19`,
-and carrying what it says into Lean's native logic, which is nobody's.
+**Not this role:** the Eunoia semantics of a calculus, which is `R13` and
+`R19`, and carrying what it says into Lean's native logic, which is nobody's.
 
 ### R19 — the semantics of CPC
 
 **Held by:** `logos`
-**Role:** maintains `Cpc.eos`, the semantics the compiler reads for the calculus
-cvc5 emits proofs in.
+**Role:** maintains `Cpc.eos`, the semantics the compiler reads for the
+calculus cvc5 emits proofs in.
 **Owns:** `Cpc.eos` and its cached form.
 **Not this role:** the signature it is the semantics of, which is `R8` and sits
 in a different tree under a different owner. Two legs of one triple, held apart
@@ -292,13 +343,29 @@ in a different tree under a different owner. Two legs of one triple, held apart
 
 ### R20 — Eunoia as a language definition
 
-**Held by:** `sapheneia` **Role:** a second description of Eunoia, written as a language definition rather than as a manual for a program: where the boundary falls between what the language requires and what one implementation happens to do. **Owns:** its own account, inside its own directory. **Not this role:** governing. `R11` remains the authority and this account says so on its own front page; where the two disagree, that disagreement is a finding and it leaves through the reporting workflow.
+**Held by:** `sapheneia`
+**Role:** a second description of Eunoia, written as a language definition
+rather than as a manual for a program: where the boundary falls between what
+the language requires and what one implementation happens to do.
+**Owns:** its own account, inside its own directory.
+**Not this role:** governing. `R11` remains the authority and this account says
+so on its own front page; where the two disagree, that disagreement is a
+finding and it leaves through the reporting workflow.
 
 ## stathmos
 
 ### R30 — the report card
 
-**Held by:** `stathmos` **Role:** keeping the report card current — assembling, per tool and at the recorded version, the evidence a paragraph about that tool would rest on, and re-grading each round. It is the half of the vision that goes stale, because it is the half that is a claim about somebody else's project this month rather than a statement of what the work is for. **Owns:** `docs/report-card.md`. **Not this role:** the tenets themselves, which are part of `R4`; deciding whether a paragraph is right, which stays a person's; and reading *histories*, which another tree already does.
+**Held by:** `stathmos`
+**Role:** keeping the report card current — assembling, per tool and at the
+recorded version, the evidence a paragraph about that tool would rest on, and
+re-grading each round. It is the half of the vision that goes stale, because it
+is the half that is a claim about somebody else's project this month rather
+than a statement of what the work is for.
+**Owns:** `docs/report-card.md`.
+**Not this role:** the tenets themselves, which are part of `R4`; deciding
+whether a paragraph is right, which stays a person's; and reading *histories*,
+which another tree already does.
 
 > **A child project holding a role is not an island, and the exception is
 > deliberate**: the tool writing the report card should not indefinitely be the

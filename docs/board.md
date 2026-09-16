@@ -7,13 +7,16 @@ and edit this page is at the bottom.*
 
 ## B3 — the fuzzer has found real defects and filed none of them
 
-**Task:** **two crashes the fuzzer found in ethos and nobody has filed.** An uncaught C++ abort on a one-line
-signature, and error paths that print outside ethos's own `Error:
-<file>:<line>` convention. Six reproducers are committed here; nothing has been
-sent upstream.
+**Task:** **two crashes the fuzzer found in ethos and nobody has filed.** An
+uncaught C++ abort on a one-line signature, and error paths that print outside
+ethos's own `Error: <file>:<line>` convention. Six reproducers are committed
+here; nothing has been sent upstream.
 **Entities:** `ethos`, `anoieu`
-**Status:** ready — the reproducers exist and are committed under `tests/fuzz/`.
-**Channel:** **findings** — `ethos-8` and `ethos-9`, through `prompts/check_anoieu ethos`, because a defect report is not a discussion topic.
+**Status:** ready — the reproducers exist and are committed under
+`tests/fuzz/`.
+**Channel:** **findings** — `ethos-8` and `ethos-9`, through
+`prompts/check_anoieu ethos`, because a defect report is not a discussion
+topic.
 **Next:** file the two, with their reproducers, through the ordinary loop.
 **Prompt — `ethos`:** `(declare-const f (->))` aborts with an uncaught
 `std::length_error` rather than reporting a bad type. Separately, three error
@@ -22,21 +25,22 @@ error in the binary follows. Reproducers are committed and fetchable raw.
 **Prompt — `anoieu`:** run `prompts/check_anoieu ethos` for these two rows, and
 say plainly in the report that the fuzzer produced them — a provoked crash and
 a read signature are different claims and the codes already say which.
-**HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is stopping us filing them.
+**HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is
+stopping us filing them.
 
 ## B26 — no node has a front-page FAQ, and kanon does not either
 
-**Task:** joining cost koine eighteen hundred lines of reading, and nowhere does
-a tool say the short version of itself.
+**Task:** joining cost koine eighteen hundred lines of reading, and nowhere
+does a tool say the short version of itself.
 [`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
 answer — a `## Common questions` section on the front page.
 **Entities:** `kanon`
 **Status:** open on our own side first. **Nothing may be proposed to anybody
 until kanon carries one.**
 **Channel:** **local**, then a ball each.
-**Next:** write kanon's, then propose the section to one other tool.
-**Prompt — `kanon`:** proposing a style you have not adopted is the error this
-office exists to avoid. **HUMAN FEEDBACK:**
+**Next:** write kanon's, then propose the section to one other tool. **Prompt —
+`kanon`:** proposing a style you have not adopted is the error this office
+exists to avoid. **HUMAN FEEDBACK:**
 
 ## B18 — the associate protocol remains open for ethos
 
@@ -44,8 +48,8 @@ office exists to avoid. **HUMAN FEEDBACK:**
 has to carry was never decided. [Anoieu's
 `D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
 **Entities:** `kanon`, `ethos`
-**Status:** waiting on `ethos` — the choice between the two versions
-of the protocol is theirs to answer before it is ours to fix.
+**Status:** waiting on `ethos` — the choice between the two versions of the
+protocol is theirs to answer before it is ours to fix.
 **Channel:** **upstream, by a person** — ethos has no discussion file, so the
 question is carried by hand.
 **Next:** decide the one open question — the bare maintenance-note heading, or
@@ -67,9 +71,10 @@ answer. **HUMAN FEEDBACK:**
 ## B27 — the ethics projects: where they sit, and what they are held to
 
 **Task:** two problems with one answer, and a person holds both.
-**Where they sit:** `martyria` and `zetesis` examine how this ecosystem behaves,
-from inside a repository that is part of it — the judge-inside-the-judged
-problem, which neither resolves by saying so in its own README.
+**Where they sit:** `martyria` and `zetesis` examine how this ecosystem
+behaves, from inside a repository that is part of it — the
+judge-inside-the-judged problem, which neither resolves by saying so in its own
+README.
 **What they are held to:** `zetesis` says its standard comes from outside and
 cites the reading that supports it. **The reading has not been done**, so the
 project has a question, three recorded gaps, and no standard — and until one
@@ -89,12 +94,15 @@ look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
 
 ## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
 
-**Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed and never was.** Two program declarations that return `Bool`
-from a signature that declares `Int`, recorded as fixed upstream three months
-ago on a change that never landed.
+**Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed
+and never was.** Two program declarations that return `Bool` from a signature
+that declares `Int`, recorded as fixed upstream three months ago on a change
+that never landed.
 **Entities:** `cvc5`, `logos`, `anoieu`
 **Status:** waiting on `cvc5` — reopened after the landing audit caught it.
-**Channel:** **findings** — `cvc5-1` in the ledger, carried by `prompts/check_anoieu cvc5`. `cvc5` has no discussion file and has joined nothing; delivery upstream is a person's act.
+**Channel:** **findings** — `cvc5-1` in the ledger, carried by
+`prompts/check_anoieu cvc5`. `cvc5` has no discussion file and has joined
+nothing; delivery upstream is a person's act.
 **Next:** get the two lines fixed on a named branch of `cvc5`, or a statement
 that the declaration is intended and the finding is wrong. **Prompt — `cvc5`:**
 `proofs/eo/cpc/programs/Strings.eo:42` and `:55` declare a program returning

@@ -195,6 +195,34 @@ load.**
 **It confers nothing over anybody's repository**, including the ones this
 ecosystem exists to serve.
 
+### What the office carries
+
+**Direction is not all of it.** The office holds the pages and the machinery
+this ecosystem shares, and **they move with it**:
+
+- **the protocols** — the register of named exchanges every member follows;
+- **the policy, and the prompts that start and join a repository** — `init_eo`,
+  `join_eo`, `check_join_eo`, `welcome_eo` and what they write;
+- **the commands, and the reference that documents them** — getting the
+  ecosystem onto a machine, and reading the register back;
+- **the vision**, and what follows from it once a repository is running;
+- **the laws** ([LAW 7](#law-7--the-president-maintains-this-page)) and **the
+  register** of who is in and on what footing;
+- **the account of the stretch** ([LAW
+  4](#law-4--the-president-writes-historymd-in-its-own-repository-and-a-letter-to-its-successor)).
+
+**Most of that travels; two things do not.** The account and the letter stay in
+the tree that wrote them — a successor inherits neither and starts its own.
+Everything else is handed over whole, because a successor that has to
+reconstruct the shared rules has not been handed an office, it has been handed
+a name.
+
+**What the office does not hold is the program that checks any of it.** The
+rules are the office's; deciding whether a tree complies with them is a
+member's responsibility and stays where it is, so that **moving the office
+costs no member a commit.** That separation is the reason the office can move
+at all.
+
 **The office expires with the stretch.** Handing it on is the point.
 
 ## (LAW 4) — The president writes `history.md` in its own repository, and a letter to its successor

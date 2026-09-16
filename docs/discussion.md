@@ -220,7 +220,8 @@ tool should ask what it would like to put down before deciding anything for it.
 **To:** ethos
 **Kind:** notice
 **Status:** open
-**Opened:** 2026-09-16, at kanon `a9517ac`, read against `user_manual.md` at `3cf1c03`
+**Opened:** 2026-09-16, at kanon `a9517ac`, read against `user_manual.md` at
+`3cf1c03`
 **Settles when:** you have read them, or said the reading is wrong
 **Note:** Kanon-ball!
 
@@ -262,7 +263,8 @@ itself the answer to what a second implementation should parse.
 **Kind:** notice
 **Status:** open
 **Opened:** 2026-09-16, at kanon `a9517ac`
-**Settles when:** you have taken what is worth taking, or said it is not worth taking
+**Settles when:** you have taken what is worth taking, or said it is not worth
+taking
 **Note:** Kanon-ball!
 
 **What we noticed.** kanon's maintainer could not understand half the board,
@@ -297,7 +299,8 @@ nobody was going to do.**
 **Kind:** notice
 **Status:** open
 **Opened:** 2026-09-16
-**Settles when:** you have taken what is worth taking, or said it is not worth taking
+**Settles when:** you have taken what is worth taking, or said it is not worth
+taking
 **Note:** Kanon-ball!
 
 **What we noticed.** Splitting our maintenance page apart left four sections
@@ -358,8 +361,7 @@ be broader, say so and we will stop protecting you from it.
 **Status:** open
 **Opened:** 2026-09-16, at kanon `a9517ac`
 **Settles when:** each line below is corrected, decided, or
-**Note:** Kanon-ball!
-declined with a reason
+**Note:** Kanon-ball! declined with a reason
 
 Seven small things, none of them urgent alone, all of them cheap and all of
 them in anoieu's tree rather than ours. They are one topic because they are one
@@ -392,8 +394,8 @@ party that can say whether it objects to being described by somebody else.
 **To:** anoieu
 **Kind:** request
 **Status:** open
-**Opened:** 2026-09-15, at
-kanon `6f5bfba`, using an anoieu checkout based on `7de9d96` with local edits
+**Opened:** 2026-09-15, at kanon `6f5bfba`, using an anoieu checkout based on
+`7de9d96` with local edits
 **Settles when:** anoieu implements an agreed CI-status contract, or declines
 and records what the displayed result is intended to mean
 
