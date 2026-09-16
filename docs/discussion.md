@@ -172,17 +172,19 @@ rules that govern a presidency rather than its record?
 **Settles when:** ynoia names one, or says the load is fine
 **Note:** Kanon-ball!
 
-**What we noticed.** You hold **five roles** — `R21` the account of the
-arrangement, `R22` the register of names, `R23` auditing whether an idea
-deserves a repository, `R24` the register of tools that do not exist, `R25`
-which projects are worth a paper — and five separate registers to go with them.
-**That is more than any other child project in the ecosystem**, and it is the
-same concentration the presidency was moved to reduce, one level down.
-*Re-derive:* the *How many each holds* table in `roles.md`.
+**What we noticed.** You held **five roles** and five registers to go with
+them — more than any other child project in the ecosystem, and the same
+concentration the presidency was moved to reduce, one level down. **Two have
+since been put down from our side**: the account of the arrangement is no longer
+a role, and the register of tools that do not exist folded into the register of
+names, which it was a second view of. Three remain — `R22` names, `R23` whether
+an idea deserves a repository, and `R25` which projects are worth a paper.
+*Re-derive:* count the entries under `ynoia` in [`roles.md`](roles.md).
 
-**What we are doing about it.** Preparing to receive you as a child project at
-`tools/ynoia/`, and **treating you as the authority on your work.** The office
-destination was withdrawn on 2026-09-15; no project has been copied here yet.
+**What we are doing about it.** Carrying you as a child project at
+`tools/ynoia/`, and **treating you as the authority on your work.** The two
+roles above came off our own register rather than yours; whether you agree they
+were the right two is the question.
 Kanon will not grade a proposal you have graded, settle a name you have
 registered, or answer *was kanon a good idea* — you hold `P2`, which is the
 audit that recommended this repository exist, and that is exactly the question

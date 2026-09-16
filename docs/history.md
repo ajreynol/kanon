@@ -238,10 +238,10 @@ below record the state when they were made.
   `E1` has been `planned` for a whole term.
 - **`martyria` and `zetesis` are child projects of the repository whose conduct
   they assess** — anoieu's own words. The `P2` defect in the ethics half.
-- **`ynoia` holds five roles and five registers**, more than any other child
-  project: `R21` the account of the arrangement, `R22` the register of names,
-  `R23` auditing whether an idea deserves a repository, `R24` the register of
-  tools that do not exist, `R25` which projects are worth a paper.
+- **`ynoia` held five roles and five registers**, more than any other child
+  project. Two were put down: the account of the arrangement stopped being a
+  role, and the register of tools that do not exist folded into `R22`, which it
+  was a second view of. Three remain.
 - **`R22` has a live consumer.** `roles.md` calls it *the one thing here another
   script already depends on* — `init_eo` reads `names.md` when a repository is
   started.
@@ -359,7 +359,7 @@ below record the state when they were made.
 - **Should presidents be required to start from empty repositories?** The
   maintainer's intuition, and it conflicts with `P2` — governance living with a
   president that must start empty means the shared machinery migrates every
-  term. Written up in `synkrisis`; the verdict is `R21`'s, which is ynoia's.
+  term. The verdict on it is ynoia's.
 - **Is kanon's own required reading already too long?** Probably yes.
   [LAW 8](laws.md) now gives the two pages a length to stay under, and the
   remedy is diagnosed rather than applied in the same breath.
@@ -439,7 +439,7 @@ disagreeing about it.** The required-reading budget is likewise
 
 - **Earlier destination for `ynoia` — superseded on 2026-09-15.** The
   research-office nesting is withdrawn; the draft now uses `tools/ynoia/`. It
-  brings `R21`–`R25` with their ids unchanged. **Kanon inherits its own
+  brings its roles with their ids unchanged. **Kanon inherits its own
   auditor**: `proposals.md` holds `P2`, which recommended this repository exist,
   so this office must never answer *was kanon a good idea*.
 - **The three-to-five office range — deferred on 2026-09-15.** It was kanon's

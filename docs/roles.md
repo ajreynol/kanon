@@ -105,9 +105,16 @@ unable to answer a question it could answer alone*.
 
 ## What the shape says
 
-Twenty-seven roles across seventeen tools. `scripts/status_eo` prints the
-footings; counting the entries below is the only honest way to count the roles,
-and a table here restating them would be a copy nothing compares.
+**`scripts/status_eo` prints the footings**; counting the entries below is the
+only honest way to count the roles, and a table here restating them would be a
+copy nothing compares.
+
+**kanon holds seven, which is the most of any tool, and that is the finding
+rather than an achievement.** The register's own rule says a long section means
+a tool has taken on more than it should or has not decided what it is — and the
+ecosystem's mission says no tool should hold what another tool could. Every one
+of the seven is a candidate to hand off, and `R32` and `R34` move with the
+office by law whether anybody proposes it or not.
 
 **Four sections are empty** — a child project usually has no users and owes
 nobody an artifact, so that is the expected state rather than an omission.
@@ -350,6 +357,52 @@ report what has drifted.
 script writes that file — and the rules a member is checked against, which are
 `R4`.
 
+### R32 — the laws of the office
+
+**Held by:** `kanon`
+**Role:** the candidate laws — what footings exist, what a member owes, and what
+the office owes. LAW 7 gives the page to whoever holds the presidency, which
+makes this role move with the office rather than staying here.
+**Owns:** `docs/laws.md`.
+**Not this role:** what a member is *checked* against, which is `R4` and is
+mechanical; and choosing who holds the office, which is a person's and no law
+here settles.
+
+### R33 — the board, and what this ecosystem says to another tool
+
+**Held by:** `kanon`
+**Role:** what is outstanding across the ecosystem and who has to act on it, and
+the standing channel in which one tool addresses another. Both are registers of
+work that crosses a repository boundary, and neither carries anything: a person
+does.
+**Owns:** `docs/board.md` and `docs/discussion.md`.
+**Not this role:** carrying a defect in somebody's file, which is `R1` and has
+its own ledger and its own standard; and the machinery a message runs on, which
+is `R16`.
+
+### R34 — the account of this term
+
+**Held by:** `kanon`
+**Role:** what the term was for, what changed, what went wrong, what crosses to
+whoever holds the office next, and what the next term should be for. LAW 4
+makes it each office-holder's account of its **own** term; it does not travel,
+and kanon inherited none.
+**Owns:** `docs/history.md`.
+**Not this role:** the per-tool commit census, which LAW 4 gives to `epikrisis`
+and **forbids this role from producing**; and grading how well a tool performs,
+which is `R30`.
+
+### R35 — how the work is run, and how a person directs it
+
+**Held by:** `kanon`
+**Role:** the maintenance entry point and the protocols under it — what to ask
+before changing something, how a person steers an agent, and what the commands
+here do.
+**Owns:** `docs/coherence.md`, `docs/interface.md`, `docs/instructions.md` and
+`docs/commands.md`.
+**Not this role:** the commands themselves, which are `R6`'s; and what an agent
+is told about somebody else's repository, which is `R4`'s prompts.
+
 ### R5 — the development vision
 
 **Held by:** `kanon`
@@ -457,12 +510,14 @@ another tree already does.
 
 **Held by:** `ynoia`
 **Role:** what each reserved name was reserved *for*, which are taken, and how a
-brand new repository picks one. It is consulted by `init_eo` when a repository
-is started, which makes it the one thing here another script already depends
-on.
-**Owns:** `names.md`.
-**Not this role:** granting a name. A name is claimed when a person approves
-one, and never by a document suggesting it.
+brand new repository picks one — and, of the names nobody has built yet, which
+look most promising, with the argument stated where it can be disagreed with.
+It is consulted by `init_eo` when a repository is started, which makes it the
+one thing here another script already depends on.
+**Owns:** `names.md` and `tools.md`.
+**Not this role:** granting a name, which happens when a person approves one and
+never because a document suggested it; committing anybody to build a tool; and
+ranking work that already exists, which is the board's.
 
 ### R23 — auditing whether an idea deserves a repository
 
@@ -474,26 +529,6 @@ argument about whose existing tree the work belongs in instead.
 **Not this role:** approving anything, and creating anything. A repository is a
 person's decision and a person's act, and this role produces an argument with a
 recommendation at the end.
-
-### R21 — the account of the arrangement
-
-**Held by:** `ynoia`
-**Role:** whether the ecosystem's arrangement earns its machinery — the case,
-the case against, the general objections, the arrangements it could take
-instead, and what would change our minds.
-**Owns:** `why-eunoia.md`.
-**Not this role:** deciding. The arrangements are options laid out fairly, and
-nobody holding this role has the authority to rearrange anything.
-
-### R24 — the register of tools that do not exist
-
-**Held by:** `ynoia`
-**Role:** every tool the ecosystem has named and nobody has built, in priority
-order, most promising first, with the argument for each position stated where
-it can be disagreed with.
-**Owns:** `tools.md`.
-**Not this role:** committing anybody to build one, and ranking work that
-already exists — that is the board's.
 
 ### R25 — which projects are worth a paper
 
