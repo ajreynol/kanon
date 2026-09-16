@@ -724,7 +724,8 @@ reason, and wait for a person — do not make it and mention it afterwards.
 **1. [`../docs/vision.md`](vision.md) — ask first, always.** It states
 what AI-assisted development in this ecosystem is for, it is addressed to
 repositories that did not write it, and the party with the least standing to
-revise it is the agent it governs. This includes
+revise it is the agent it governs. The same holds for
+[`practice.md`](practice.md), which carries what follows from the tenets, and for
 [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md), which was split out of it and is governed by
 it unchanged: a paragraph there is a judgement about somebody else's project,
 and softening or sharpening one is exactly the edit that should not be made

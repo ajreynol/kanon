@@ -526,9 +526,10 @@ script writes that file — and the rules a member is checked against, which are
 
 **Held by:** `kanon`
 **Role:** what AI-assisted development in this ecosystem is aiming at — the
-tenets, and the record of what the tools have actually delivered to one another.
-Written for every repository, and argued rather than checked.
-**Owns:** `docs/vision.md`. The grading half was split out as `R30` on
+tenets, and the argument for them. Written for every repository, and argued
+rather than checked; it names no tool and records no tool's current state.
+**Owns:** `docs/vision.md`, and `docs/practice.md`, which carries what follows
+from the tenets. The grading half was split out as `R30` on
 2026-09-02: the two pages have nothing in common operationally — this one is
 argued and changes rarely, that one is re-done every round against recorded
 evidence — and carrying both under one id hid which of them had gone stale.

@@ -9,6 +9,7 @@ Start with [kanon's README](../README.md) for its purpose and current scope.
 | [Commands](commands.md) | Installation, status, prompt previews and local validation |
 | [Policy](policy.md) | The shared repository policy and joining procedure |
 | [Vision](vision.md) | The development goals, argued rather than mechanically checked |
+| [Practice](practice.md) | What follows from the tenets: front pages, claims, speculative work and papers |
 | [Laws](laws.md) | The presidency and its record |
 | [History](history.md) | kanon's account of its own term, and the membership record |
 | [Board](board.md) | Cross-repository work and its next steps |

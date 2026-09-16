@@ -107,14 +107,14 @@ notices — which is an improvement on being unread.
 **Also the place proposals are audited**, which is the first thing this
 project has been asked to produce for somebody else rather than for itself. Its
 first audit, `P1`, was carried to a decision and a repository was approved on the
-strength of it — which is a deliverable in the sense the vision means, and would
+strength of it — which is a consumer in the sense the vision means, and would
 be the thing that earns this project a place there. Whether it has is not this
 project's call.
 
 **The account exists and is long.** Nothing in it has been argued with by
 anybody who disagrees, which is the whole point of writing it and has not
-happened yet. It has produced no deliverable and so has earned no place in
-[`docs/vision.md`](../../docs/vision.md) — with one qualification: of the six projects it named, **euthyna** has since been started
+happened yet. It has reached no consumer and so has earned no place in
+[`docs/practice.md`](../../docs/practice.md) — with one qualification: of the six projects it named, **euthyna** has since been started
 as a child project of eudaimonia, and the register in
 [`names.md`](names.md) is now consulted by `prompts/init_eo` when a new
 repository picks a name. Whether that is this account's doing or

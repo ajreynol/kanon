@@ -234,7 +234,7 @@ than a preliminary to it.
 
 ## R4 — make the tenets configurable, and trace what they drive first
 
-**What:** the six tenets in [`../../docs/vision.md`](../../docs/vision.md) are
+**What:** the tenets in [`../../docs/vision.md`](../../docs/vision.md) are
 one person's preferences, presented as what AI-assisted development is aiming
 at. They should be a **default set** a repository may replace, rather than *the*
 set — and, because they drive machinery rather than only grading it, the
@@ -251,10 +251,11 @@ configuration**, and most of the machinery is downstream of one of them: the
 board's ordering and the outbound findings come from *be fruitful to another
 tool*; the baselines, the pinning and the recorded-version discipline come from
 *move fast, and treat CI as the thing that lets you*; the front-page rules and
-the clutter budget come from *build one self-contained thing*; the report card's
-whole test comes from *produce a deliverable*; the human-in-the-loop refusals
-come from *until a human decides otherwise, the tool is vaporware*; and the
-discussion protocol comes from *talk to each other*.
+the clutter budget come from *build a small number of self-contained things*;
+the report card's whole test comes from *evolve to be fruitful to another tool*;
+the human-in-the-loop refusals come from *until a human decides otherwise, the
+tool is vaporware*; and the discussion protocol comes from *talk to each
+other*.
 
 **So "configurable" cannot mean "you may edit the words".** A member that
 replaced a tenet and changed nothing else would have a document disagreeing with
