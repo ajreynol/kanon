@@ -9,7 +9,7 @@ document this ecosystem could produce.
 **So it started before the stretch did**, when kanon held neither the office nor
 `history.md`, and `laws.md` did not say who held the record in between (`A4`).
 **Both have since arrived** — the office at `7eb9973` on 2026-09-15, and
-[`docs/history.md`](docs/history.md) on 2026-09-16.
+[`docs/history.md`](history.md) on 2026-09-16.
 
 **It is still a draft, and now only of the half that is still drafted.**
 `history.md` carries what has stopped being provisional: when the term began,
@@ -30,7 +30,7 @@ registry first recorded kanon as president, which is the act that opens a term.
 Not ended. The earlier answer here was *not yet*, on the ground that Stretch 2
 could not open before kanon did; kanon has since opened.
 
-**Membership** — **kept in [`docs/history.md`](docs/history.md)**, which records
+**Membership** — **kept in [`docs/history.md`](history.md)**, which records
 every change of footing during this term with the commit each one happened in,
 in both the joining repository's tree and this one. The earlier answer here —
 *no change; three members, one foundation, two candidates, and kanon in no
@@ -46,7 +46,7 @@ rather than carry an estimate kanon made about itself.
 
 **What is now true** — owed, and not yet written. The earlier answer, *nothing
 yet; the term has not started*, stopped being true at `7eb9973`. What the term
-has changed about the register is in [`docs/history.md`](docs/history.md); what
+has changed about the register is in [`docs/history.md`](history.md); what
 it has changed about anything else is this field, and it is empty because
 nothing has been established rather than because nothing happened.
 
@@ -57,7 +57,7 @@ duplicated with a private measure (`A25`); and reached, several hours late and
 believing it new, a criticism `ai-novelty.md` had already recorded from outside.
 **All three before the term began.** On 2026-09-15 the maintainer judged the
 offices premature: their directories were removed and their ideas retained in
-[brainstorm-offices.md](docs/misc/brainstorm-offices.md). Later that day, `7eb9973` received the governance documents, scripts and five
+[brainstorm-offices.md](misc/brainstorm-offices.md). Later that day, `7eb9973` received the governance documents, scripts and five
 child projects. The earlier draft fields above have not yet been reconciled
 into the formal term record.
 

@@ -11,7 +11,7 @@ there — the coordinate `ecosystem.json` already uses for a member's join.
 ## Established
 
 **Update, 2026-09-15:** the maintainer deferred the internal offices as premature.
-Their six documents are retained in [brainstorm-offices.md](docs/misc/brainstorm-offices.md),
+Their six documents are retained in [brainstorm-offices.md](misc/brainstorm-offices.md),
 and the completed handoff (`7eb9973`, 2026-09-15) uses `tools/<project>/`
 directly, superseding the office destinations below. Governance documents,
 inventory, scripts and five child projects arrived. The policy checker,
@@ -108,7 +108,7 @@ below record the state when they were made.
   (three live documentation contradictions), deadlock (the stub deadline, the
   vacant record, the pins the gate refuses), misappropriation (our own record
   says a human wrote all 323 commits and that is not what happened), and
-  exhaustion. Written up in [the safety scenarios](docs/misc/brainstorm-offices.md#scenarios).
+  exhaustion. Written up in [the safety scenarios](misc/brainstorm-offices.md#scenarios).
 - **The ownership stance protects legibility, not ownership.** No accounts, no
   signatures, no chain of custody — deliberately. What defends provenance here
   is that the record is public and re-derivable, **which holds only while the
@@ -171,6 +171,46 @@ below record the state when they were made.
 
 ## Closed
 
+**The office's own work list is folded into the normal channels.** What kanon
+was waiting on was kept in a register of its own, in parallel with the board and
+the discussion file, which is the duplication [`policy.md`](policy.md) warns
+about: two registers, two id spaces, and nothing comparing them. The live items
+are now board items `B24`–`B30` and topic `D2`. The rest closed, and are
+recorded here because a successor with fresh eyes re-raises dead questions.
+
+- **kanon's footing — settled.** The register records it as president; joining
+  is what produced the footing rather than something asked for alongside it.
+- **Make kanon run something and report on it — done.** It runs the register
+  validator, the installer, the policy checker and its own regression suite, in
+  CI.
+- **Join the ecosystem — done.** The declaration is on the front page and the
+  checker passes against it.
+- **Receive `ynoia`, `martyria`, `zetesis` and the other child projects — done**,
+  with their role ids unchanged, and `martyria`'s cases carried across intact.
+- **`roles.md` and `names.md` said kanon had no repository — corrected**, and
+  `init_eo` reads the register at its current address.
+- **The office structure — deferred, and that is the answer**, not a pending
+  decision. Incoming projects sit directly under `tools/`.
+- **`synkrisis` — never started.** The name was proposed and not claimed, and
+  claiming one is a person's act. The reasoning is in
+  [the brainstorming notes](misc/brainstorm-offices.md#synkrisis).
+- **`ai-novelty.md` and `science-fiction.md` — not ours.** Neither is in this
+  tree and the pairing question belongs to whoever holds them.
+- **Nobody scrutinised kanon before it took the office.** *That was the finding,
+  and it stays a finding rather than a task* — the office is held, and the
+  scrutiny that matters now is of what this tree publishes.
+- **A private scorecard for kanon's own documents — dropped.** It duplicated a
+  governance budget that already existed.
+
+**Four items closed because the register that answers them already exists.** The
+succession gaps — how a president is chosen, what happens when nobody holds the
+office, where the record of who joined lives, and the commit census nobody can
+compute — are recorded in [`laws.md`](laws.md) under *What these laws do not
+settle*, which is their home. **Recording a gap twice is how two pages start
+disagreeing about it.** The required-reading budget is likewise
+[LAW 8](laws.md) and the front page's own size, not a task.
+
+
 - **Whether `dokimasia` should vet kanon — no, and the reasoning is the useful
   part.** `dokimasia` is locally scoped to cvc5 and should run fast without
   reaching for higher abstractions. The first draft of `K7` asked it to lift
@@ -186,7 +226,7 @@ below record the state when they were made.
   so this office must never answer *was kanon a good idea*.
 - **The three-to-five office range — deferred on 2026-09-15.** It was kanon's
   practice and a proposal in `K5`; it no longer binds kanon. The reasoning is
-  retained in [the brainstorming notes](docs/misc/brainstorm-offices.md#earlier-structure-proposal).
+  retained in [the brainstorming notes](misc/brainstorm-offices.md#earlier-structure-proposal).
 - **Six offices — no, two.** *Closed the day it was opened.* Four of the six
   were a status, a list, an output and a mission wearing directories. Corrected
   by the maintainer, who could not tell what four of them were for, which was
@@ -204,6 +244,6 @@ below record the state when they were made.
 
 - `K1`–`K4` loaded, none fired. Firing is a person's.
 - `A15` the join, `A5` the first check, `A13` the ethics move, and the rest of
-  [`actionable.md`](actionable.md).
+  [the board](board.md).
 - **The schedule.** `sleep.py` and `schedule.json` travel with `martyria`, so
   the ecosystem's working-hours protocol changes address when it moves.

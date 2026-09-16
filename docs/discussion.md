@@ -33,6 +33,40 @@
 Topics kanon has open with other tools, newest first. A person carries each
 topic; writing it here does not deliver it or authorize work in another tree.
 
+## D2 — corrections and decisions owed in anoieu's own documents
+
+**To:** anoieu
+**Kind:** request
+**Status:** open
+**Opened:** 2026-09-16, at kanon `HEAD`
+**Settles when:** each line below is corrected, decided, or declined with a reason
+
+Seven small things, none of them urgent alone, all of them cheap and all of them
+in anoieu's tree rather than ours. They are one topic because they are one
+afternoon.
+
+- **The stretch numbering in `laws.md` is wrong.** No judgement needed; it does
+  not match the record.
+- **Two dangling pointers in `history.md`**, from Stretch 1, which anoieu wrote
+  and only anoieu can correct.
+- **`coherence.md` lists `R27` as moving to kanon**, and `R27` no longer exists.
+  It promises us a responsibility that is not there.
+- **`R26` is reserved for koine and `D8` is unanswered** — koine is waiting, on
+  a clock anoieu set itself.
+- **`R28` sits in the busiest tree while `E1` is blocked.** Whether it moves is
+  a person's, and nothing here decides it.
+- **A discussion topic for the handoff** was never opened, which is why some of
+  the above had to be found by reading rather than by being told.
+- **Two candidate rules we would take either way**: that a president starts from
+  an empty repository, and `INST-4`, *read a primed repository in full before
+  proceeding*. Both are anoieu's to adopt or decline; kanon behaves the same
+  either way.
+
+**And one that is not a correction:** somebody else's account of Stretch 1 is
+kanon's first obligation under LAW 4, and the natural author is eudaimonia
+through epikrisis rather than anoieu. Raised here because anoieu is the only
+party that can say whether it objects to being described by somebody else.
+
 ## D1 — make the CI result in status_eo agree with the corresponding CI job
 
 **To:** anoieu

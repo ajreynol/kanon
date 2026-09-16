@@ -864,7 +864,7 @@ months, the reservation has stopped protecting koine and started blocking them,
 and the fix is answering `koine-D8` rather than restating why the id is reserved.
 
 **And the same applies to what we hold rather than what we decide.** Governance
-here is temporary by design — `R4`, `R6` and `R27` are all listed as moving to
+here is temporary by design — `R4` and `R6` are listed as moving to
 the governance repository. A convention that only works while we hold it is a
 convention that makes the handoff more expensive, which is a cost we would be
 imposing on a repository that does not exist yet and cannot argue back.

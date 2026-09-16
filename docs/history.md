@@ -47,7 +47,7 @@ public tree.
 **The rest of a term record is drafted and not yet carried here.** Its other
 fields — what the term was for, how long it ran, what became true, what went
 wrong across the whole stretch, what is handed on — are kept as a draft in
-[`../working-summary.md`](../working-summary.md). They move here as they stop
+[`working-summary.md`](working-summary.md). They move here as they stop
 being drafts. That page is optional depth; this one is meant to stand alone.
 
 **An earlier entry may be corrected, and never silently.** The burden is on

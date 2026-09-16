@@ -25,7 +25,7 @@ Six fields. If it needs a seventh it is not a kanon-ball.
 
 1. **Every ball contains something kanon is doing.** A ball with an empty *We
    are doing* is a request with a fun name, and the page becomes an invoice.
-   This is the same guard [`actionable.md`](actionable.md) runs on itself.
+   This is the same guard [the board](board.md) runs on itself.
 2. **Nobody has to catch one.** No footing is implied, no obligation created, no
    answer owed. A ball ignored is a ball that missed, and that is a fact about
    our aim.
@@ -167,7 +167,7 @@ has nowhere to live today even if everybody agrees with it.
 
 **We are doing:** **deferring the office structure, 2026-09-15.** The maintainer
 judged it premature. The proposed range and the earlier reasoning remain in
-[brainstorm-offices.md](docs/misc/brainstorm-offices.md#earlier-structure-proposal); no
+[brainstorm-offices.md](misc/brainstorm-offices.md#earlier-structure-proposal); no
 offices or office-count requirement are established.
 
 **Three instances now, not one.** Since this ball was drafted, two more rules
@@ -280,7 +280,7 @@ Written now so it is recognised rather than re-derived.
 2. **Volume.** A president firing many small things at many tools is a nuisance
    with an office. Few and aimed beats many and general.
 3. **They are never delivered.** Two are loaded and nothing here can fire them.
-   Carried as `A11` on [`actionable.md`](actionable.md).
+   Carried as `B24` on [the board](board.md).
 4. **A ball lands on somebody held to none of this.** The rule against firing
    at `cvc5` exists for that and the boundary is easier to cross than it looks,
    because the tools nearest the work are exactly the ones that never joined.

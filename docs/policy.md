@@ -103,14 +103,23 @@ first thing whoever is doing it needs. Keep it separate — here
 at it.
 
 **Every document is indexed, and the index is itself a document.** One row per
-document saying what it is *for*; a document not worth a row is not worth
-adding. The index may be `docs/README.md`, or a section of the front page where
-a repository is small enough or is itself an inventory — but there is exactly
-one, and it covers the whole tree. Two things are deliberately unindexed: the
-index itself, and a **letter from one office-holder to the next**
-(`letter-to-<name>.md`), which [`laws.md`](laws.md) holds is in no index.
-Checked where the index is `docs/README.md`; the front-page form is not yet
-decidable by the checker.
+document saying what it is *for*. The index may be `docs/README.md`, or a
+section of the front page where a repository is small enough or is itself an
+inventory — but there is exactly one, and it covers everything a reader is
+expected to open. Two things are deliberately unindexed: the index itself, and
+a **letter from one office-holder to the next** (`letter-to-<name>.md`), which
+[`laws.md`](laws.md) holds is in no index. Checked where the index is
+`docs/README.md`; the front-page form is not yet decidable by the checker.
+
+**A document not on the index goes in `docs/misc/`.** That is the whole of what
+the directory means: kept for the record, required of nobody, and discovered by
+listing the directory rather than by being pointed at. It is the shelf for a
+transcript, a deferred proposal, a page whose question has been answered
+elsewhere. **Being in `docs/misc/` is not an argument for keeping a document**
+— it is where a document waits while somebody decides, and a shelf nobody ever
+empties has become an attic. The two real answers are a row on the index or
+deletion; `docs/misc/` is how you hold the question open without pretending it
+is settled.
 
 **Written and generated documents are separated and labelled.** A generated
 document says at the top that it is generated and by what, and generators write

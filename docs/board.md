@@ -16,7 +16,7 @@ that is the main way a person changes what this page says.
 
 **The id is stable.** `B6` stays `B6` when it moves, so ids appear out of order
 and that is correct rather than a mistake to tidy. A row that leaves is not
-reused. **The next unused id is `B24`**, including after completed items are
+reused. **The next unused id is `B31`**, including after completed items are
 removed; their earlier contents remain in git history.
 
 **Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
@@ -106,6 +106,106 @@ it gates anything** while the ecosystem is still settling; the same section
 says what would change that and who decides.
 
 ---
+
+## B24 — kanon-balls have no way to be delivered
+
+**Task:** the office's unit of work is a message to one tool, and nothing
+carries one. Every ball drafted in [`kanon-balls.md`](kanon-balls.md) waits on a
+person with no channel named.
+**Entities:** `kanon`, `koine`
+**Status:** open, and it blocks every other thing this office produces.
+**Channel:** **discussion**, where the receiving tool keeps one; by a person
+otherwise.
+**Next:** decide whether delivery is koine's protocol or a person's habit, and
+write the answer where a ball is drafted.
+**Prompt — `kanon`:** do not build a second delivery mechanism. `koine` exists to
+be the one implementation, and a president building a rival breaks the mission it
+holds the office to serve.
+**HUMAN FEEDBACK:**
+
+## B25 — nobody has measured how long an answer takes
+
+**Task:** the constraint on every handoff this office will ever propose is that
+a question to another tool takes hours to land and can sit a whole term
+unanswered. That is asserted everywhere and measured nowhere.
+**Entities:** `kanon`
+**Status:** open. The figure is re-derivable from discussion files and commit
+dates, and nobody has derived it.
+**Channel:** **local** — it reads public history and asks nobody for anything.
+**Next:** take the measurement once, over the topics that exist, and state the
+method so somebody can disagree with the number.
+**Prompt — `kanon`:** a latency claim with no measurement behind it is the kind
+of sentence [`practice.md`](practice.md) says to cut.
+**HUMAN FEEDBACK:**
+
+## B26 — no node has a front-page FAQ, and kanon does not either
+
+**Task:** joining cost koine eighteen hundred lines of reading, and nowhere does
+a tool say the short version of itself.
+[`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
+answer — a `## Common questions` section on the front page.
+**Entities:** `kanon`
+**Status:** open on our own side first. **Nothing may be proposed to anybody
+until kanon carries one.**
+**Channel:** **local**, then a ball each.
+**Next:** write kanon's, then propose the section to one other tool.
+**Prompt — `kanon`:** proposing a style you have not adopted is the move `K2`
+exists to avoid.
+**HUMAN FEEDBACK:**
+
+## B27 — two ethics projects sit inside the tree they assess
+
+**Task:** `martyria` and `zetesis` examine how this ecosystem behaves, from
+inside a repository that is part of it. That is the ethics half of the
+judge-inside-the-judged problem, and it is not resolved by either of them saying
+so in their own README.
+**Entities:** `kanon`
+**Status:** open. A person decides; no agent has standing to.
+**Channel:** **local** — nothing crosses a boundary until a person moves it.
+**Next:** decide whether either graduates, and say what would make the answer
+different.
+**HUMAN FEEDBACK:**
+
+## B28 — a tool is running and is in no register
+
+**Task:** `telos` is recorded as a child project and is doing work; comparing
+agendas across the ecosystem is impossible while a running tool is missing from
+the view somebody reads.
+**Entities:** `kanon`
+**Status:** open. **Membership is a decision, not a fact about a tree**, so the
+register does not fix itself.
+**Channel:** **local**, then confirm with whoever owns it.
+**Next:** a person decides the footing; `scripts/status_eo --check` reports the
+result.
+**HUMAN FEEDBACK:**
+
+## B29 — Stretch 1's figures are quoted here and checked by nobody
+
+**Task:** LAW 4 asks that every figure in a term record be re-derivable by
+somebody else. Figures from the previous stretch are repeated in this tree
+without anybody re-taking them, which is the weakest form the record can have.
+**Entities:** `kanon`, `anoieu`
+**Status:** open. It is kanon's own defect rather than anoieu's.
+**Channel:** **local** — the public run history is enough.
+**Next:** re-derive or drop them. A number only its author can produce does not
+go on the page.
+**HUMAN FEEDBACK:**
+
+## B30 — there is no way to find out what a tool can be asked for
+
+**Task:** the ecosystem has tools that would answer questions nobody knows to
+ask them. A reader arriving at any tree can find what it *is* and not what it
+*will do for you*.
+**Entities:** `kanon`
+**Status:** open, and it needs each tool's own answer rather than ours about
+them.
+**Channel:** **discussion**, one ask per tool, carried by a person.
+**Next:** ask two tools and see whether the answers have a shape worth
+proposing.
+**Prompt — `kanon`:** do not write this register *about* other tools. A
+description of what somebody else offers, published under our name, is the
+failure [`policy.md`](policy.md) reserves the endorsing footings to prevent.
+**HUMAN FEEDBACK:**
 
 ## B15 — governance, out of the analyzer, before we ask members to adopt again
 
