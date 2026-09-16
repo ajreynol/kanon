@@ -278,7 +278,7 @@ below record the state when they were made.
   that the page itself is the worst offender. Kanon reached it later and
   independently.
 - **`INST-4` is proposed and, unlike the others, has a home.** *Read a primed
-  repository in full before proceeding.* `instructions.md` already holds
+  repository in full before proceeding.* `maintenance.md` already holds
   `INST-1`–`INST-3`, and the agent-facing half is the `Closed` heading here.
 - **Three rules now have nowhere to live**: the office-count range, the
   empty-president tenet, and the suggestion to the next term. `laws.md` governs

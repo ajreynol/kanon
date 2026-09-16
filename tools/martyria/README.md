@@ -121,7 +121,7 @@ putting it where changing it is a commit rather than an edit is the whole of the
 enforcement — which is to say there is almost none, deliberately. The tool can
 be ignored, the file can be rewritten, and neither is a defect. **What it buys
 is that moving the line leaves a mark.** The human-facing half is
-[`INST-1`](../../docs/instructions.md).
+[`INST-1`](../../docs/maintenance.md).
 
 ### It is not an island, and this is the statement saying so
 

@@ -1,26 +1,52 @@
-# The instructions
+# Maintaining kanon
 
-**The short page.** What you do, in your own words, at the end of a long day.
+**If you are a human maintaining this repository — possibly by directing an
+agent — this is the page to start on.** The short one. What you do, in your own
+words, at the end of a long day.
 
-**Written by an agent, for you.** Everything here is an agent's summary of what
-the tools in this ecosystem would tell you if you asked them all at once: **how
-they would recommend a person get started, and what they would want you to know
-before you start.** It is a recommendation and not a rule — the rules are
-elsewhere and are addressed to them, not to you.
+**Written by an agent, for you**, which means it can be wrong in a particular
+way: an agent summarising what the tools here would tell you has no way to
+check that it summarised them fairly. **If a line here does not match what a
+tool actually says, the tool is right and this page is stale.**
 
-**Which means it can be wrong in a particular way.** An agent summarising what
-other tools think has no way to check that it summarised them fairly. **If a
-line here does not match what a tool actually says, the tool is right and this
-page is stale.**
+**Two pages sit behind it, and you do not need either to start.**
+[`coherence.md`](coherence.md) is the protocols and the standing rules;
+[`interface.md`](interface.md) says the same things to an agent, at length,
+with every edge closed.
 
-Its sibling is [`interface.md`](interface.md), which says the same things to an
-agent — at length, with every edge closed. You do not need that page.
+## Where to start
 
-Written for **the human**. The word is plain because the distinction that
-matters here is not what sort of person you are — it is whether the party being
-addressed is a person at all.
+1. **Get the ecosystem**: `scripts/install_eo`, then `--status`. Nothing here
+   reads anything until the other repositories are beside this one.
+2. **Read [`board.md`](board.md)** for what is outstanding and in what order —
+   the shortest answer to *what should I do next*, and the only page that
+   carries one. [`roles.md`](roles.md) answers the question the board assumes
+   you can already answer: *whose is this, and whose is it not*.
+3. **Check the supervision ladder** in [`coherence.md`](coherence.md) before
+   touching any document in it.
+4. **Run** `python3 tests/run.py` and `python3 scripts/policy_check.py`.
 
-## The list
+## What this repository is responsible for
+
+| what | where |
+| --- | --- |
+| policy and joining | [`policy.md`](policy.md), `prompts/` |
+| the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
+| the register, installation and status | [`commands.md`](commands.md), `scripts/ecosystem/` |
+| the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
+| the term record, and what crosses to the next president | [`history.md`](history.md) |
+| what we are saying to other tools | [`discussion.md`](discussion.md) |
+| maintenance | this page, [`coherence.md`](coherence.md), [`interface.md`](interface.md) |
+
+**The analyzer, the fuzzer, the policy checker and the findings workflow are
+[anoieu's](https://github.com/ajreynol/anoieu).** Links below to those
+artifacts name that repository. **A change to the shared policy can affect
+other repositories even though the file is local**, which is what the ladder is
+for.
+
+## What you do
+
+| | what you do |
 
 | | what you do |
 | --- | --- |
@@ -41,8 +67,8 @@ breaks inside them.
 **Do it in daylight.** The urge to keep going turns up later than the judgement
 about whether to.
 
-Outside your hours, you get a reminder to take a break, once a session.
-You still get your answer; nothing is withheld or slowed down.
+Outside your hours, you get a reminder to take a break, once a session. You
+still get your answer; nothing is withheld or slowed down.
 
 **Doing research? Say so, and it stays quiet for the session.** It is yours to
 say; no tool decides that for you.
@@ -66,13 +92,13 @@ you have worked — only what time it is.
 **Every response you get opens with one line**: the tool the agent believes it
 is working for, and what that tool is for.
 
-    <tool> — <what it is for>, powered by <which AI, by name>.
+<tool> — <what it is for>, powered by <which AI, by name>.
 
 **It names the AI, specifically** — which model and which version, not "an
-assistant". You are entitled to know what is answering you: these differ in what
-they are good at and in how they fail, and you cannot weigh an answer without
-knowing that. *The documents here never name one, deliberately, so that anybody's
-agent can do this work; the spoken line always does.*
+assistant". You are entitled to know what is answering you: these differ in
+what they are good at and in how they fail, and you cannot weigh an answer
+without knowing that. *The documents here never name one, deliberately, so that
+anybody's agent can do this work; the spoken line always does.*
 
 **You do not have to ask for it, and it should never stop.** If it stops, the
 protocol has been dropped, which is worth more of your attention than whatever
@@ -82,9 +108,9 @@ was in the answer.
 checkout it is working in and the mission quoted from that tool's own files.
 
 **If it is ever wrong, say so.** The agent is reporting a belief, not proving
-anything, and you are the only one in a position to correct it. The repositories
-here look alike, and an agent in the wrong one is not visibly confused — it is
-confidently helpful in the wrong place.
+anything, and you are the only one in a position to correct it. The
+repositories here look alike, and an agent in the wrong one is not visibly
+confused — it is confidently helpful in the wrong place.
 
 ---
 

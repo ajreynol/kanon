@@ -325,7 +325,7 @@ the agent's drift rather than the person's, and they cost the same.
 
 ## `PROTO-18` — the sleep protocol
 
-*Its facing instruction is [`INST-1`](instructions.md), which is the half
+*Its facing instruction is [`INST-1`](maintenance.md), which is the half
 written for you rather than for the agent.*
 
 **The whole protocol reduces to one sentence the agent says to the human: take

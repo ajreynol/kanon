@@ -81,6 +81,7 @@ distinguishable from one describing a present state of affairs.
 | --- | --- |
 | `README.md` | the front page, and the whole of what any other document may assume has been read |
 | `docs/` | every written document, each named in the index |
+| `docs/maintenance.md` | how a person maintains this repository, possibly by directing an agent. The one entry point a maintainer can guess |
 | `docs/misc/` | documents kept for the record and required of nobody: transcripts, deferred proposals, notes a reader may skip |
 | `tools/` | child projects, with their own code and data |
 | `tests/` | the evidence: cases, recorded behaviour of other people's programs, committed baselines |
@@ -96,11 +97,27 @@ tool is, what it finds, what it refuses to claim, how to run it, and a route to
 everything else. Nothing competes for that role — no second overview in
 `docs/`, no wiki, no `INTRODUCTION.md`. Checked.
 
-**The maintenance entry point is not the front page.** How the work is run is
-noise to somebody deciding whether the tool is worth their attention, and the
-first thing whoever is doing it needs. Keep it separate — here
-[`coherence.md`](coherence.md) — and do not add a file per assistant to point
-at it.
+**The maintenance entry point is `docs/maintenance.md`, and it is not the front
+page.** How the work is run is noise to somebody deciding whether the tool is
+worth their attention, and the first thing whoever is doing it needs. So it is
+a separate page, and **it has a name every repository here uses**, because a
+maintainer arriving from another tree should not have to work out what this one
+called it.
+
+**What belongs on it:** *if you are a human maintaining this repository —
+possibly by directing an agent — here is how.* Where to start, what this
+repository is responsible for, and what the person does. **Addressed to a
+person**, short enough to read before starting, and pointing at whatever depth
+the repository keeps rather than containing it.
+
+**Do not add a file per assistant to point at it.** One page, at a path anybody
+can guess, addressed to whoever is doing the work rather than to what they are.
+A repository that grows one entry-point file per tool that might read it has
+replaced a convention with a directory listing.
+
+Recommended, and not checked: nothing fails on its absence, and a repository
+that keeps its maintenance notes somewhere else is not doing anything wrong —
+it is just harder to arrive at.
 
 **Every document is indexed, and the index is itself a document.** One row per
 document saying what it is *for*. The index may be `docs/README.md`, or a
@@ -732,10 +749,16 @@ any project the ecosystem is built to support rather than built from.
 
 **Two steps. The first is a sentence; the second is a CI job that checks the
 sentence is true.** Nothing else is required — no discussion file, no link to
-one, no document you do not already keep. If the repository is new, nothing is
-required yet: [`prompts/init_eo`](../prompts/init_eo) gives it a README saying
-what it is for and is told not to comply with any of this, because knowing what
-you are building is what makes the rest decidable.
+one, no document you do not already keep. Both are written out below, and
+**[`join_eo`](../prompts/join_eo), run in the joining repository, does them**:
+plain `join_eo` to join, `--soft` for the maintenance note alone, and
+`--show-prompt` on either to read what it would do without running it.
+
+**If the repository is new, nothing is required yet.**
+[`init_eo`](../prompts/init_eo) gives it a README saying what it is for and is
+told not to comply with any of this, because knowing what you are building is
+what makes the rest decidable. Join later, when there is something to join
+with.
 
 ### The footings
 

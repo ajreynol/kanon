@@ -52,9 +52,36 @@ recorded child with its listing preference.
 | [`docs/board.md`](docs/board.md) | cross-repository work and its next steps |
 | [`docs/discussion.md`](docs/discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
-| [`docs/coherence.md`](docs/coherence.md) | the maintenance entry point: the protocols, and what to ask before changing something |
-| [`docs/interface.md`](docs/interface.md) | how a person directs the work, at length |
-| [`docs/instructions.md`](docs/instructions.md) | the same, short, and addressed to the person rather than the agent |
+| [`docs/maintenance.md`](docs/maintenance.md) | **start here to maintain this tree** — where to start, what you do, and what this repository is responsible for |
+| [`docs/coherence.md`](docs/coherence.md) | the depth behind it: the protocols, and what to ask before changing something |
+| [`docs/interface.md`](docs/interface.md) | the protocols by which a person directs an agent, at length and addressed to the agent |
+
+## If you maintain a tool and want to join
+
+**Addressed to whoever maintains a tool built *around* the Eunoia calculus** —
+a checker, a compiler, a Lean development, an analyzer, a template.
+
+**Joining is two steps: a sentence, and a CI job that checks the sentence is
+true.** Nothing else is asked — no discussion file, no document you do not
+already keep. [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem)
+is the authority; this is only the route in.
+
+| where you are | what to run, **in your own repository** |
+| --- | --- |
+| the repository does not exist yet | [`init_eo new`](prompts/init_eo) — writes a README saying what the tool is for, what it declines to answer, and why it is called what it is. **It complies with nothing, deliberately**: knowing what you are building is what makes the rest decidable, and joining comes later |
+| it exists, and you want to join | [`join_eo`](prompts/join_eo) — adds the declaration to your maintenance note and the pinned `anoieu / policy` workflow |
+| it exists, and should *not* join | [`join_eo --soft`](prompts/join_eo) — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
+
+**Read it before you run it.** Every prompt takes `--show-prompt`, which prints
+exactly what it would hand an assistant and does nothing else.
+
+**The answer to *should we join* is often no, and this page is better for
+saying so.** A tool with conventions of its own, or maintainers who have agreed
+to none of this, is worse off adopting a policy it did not choose — which is
+what `--soft` is for. **Joining obliges you to a shared policy and one CI job
+and nothing else**: no ownership of your tree, no authority over how you run
+it, and leaving is a commit. And **a declaration on a shared tree is not one
+maintainer's alone to make**, which is the first thing the prompt asks.
 
 ## The commands
 
@@ -68,14 +95,13 @@ scripts/install_eo --status    # inspect the checkouts on this machine
 ```
 
 [`docs/commands.md`](docs/commands.md) is the full reference, and
-[`prompts/`](prompts) holds the workflows that hand context to an assistant:
-[`init_eo`](prompts/init_eo), [`join_eo`](prompts/join_eo),
+[`prompts/`](prompts) holds the workflows that hand context to an assistant —
+the three above, plus [`welcome_eo`](prompts/welcome_eo),
 [`check_join_eo`](prompts/check_join_eo), [`confirm_eo`](prompts/confirm_eo),
-[`welcome_eo`](prompts/welcome_eo),
 [`process_discussion`](prompts/process_discussion) and
-[`global_audit`](prompts/global_audit).
-`.github/workflows/anoieu.yml` keeps kanon's existing checker pin; the local
-regression checks also run in CI.
+[`global_audit`](prompts/global_audit), which are run here rather than by a
+joining tool. `.github/workflows/anoieu.yml` keeps kanon's checker pin; the
+local regression checks also run in CI.
 
 **The policy checks are maintained in
 [anoieu](https://github.com/ajreynol/anoieu).** The policy, the vision, the

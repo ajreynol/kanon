@@ -34,23 +34,10 @@ full rule, and the incident that produced it, are in
 
 ## What this repository is responsible for
 
-The boundary between this repository and anoieu:
-
-| what | where |
-| --- | --- |
-| policy and joining | [policy.md](policy.md), `prompts/` |
-| development vision | [vision.md](vision.md) |
-| inventory, installation and status | [commands.md](commands.md), `scripts/ecosystem/` |
-| laws, board and role register | [laws.md](laws.md), [board.md](board.md), [roles.md](roles.md) |
-| maintenance protocols | this page, [interface.md](interface.md), [instructions.md](instructions.md) |
-
-The analyzer, fuzzer, policy checker, findings workflow, report card and
-earlier term history remain in [anoieu](https://github.com/ajreynol/anoieu).
-Links below to those artifacts name that repository. Historical examples retain
-their original context; they do not assign anoieu's implementations to kanon.
-The role register distinguishes the shared rules from the checker that reads
-them. Changes to shared policy can affect other repositories even though the
-file is now local.
+**[`maintenance.md`](maintenance.md) is the entry point** and carries the
+boundary table, where to start, and what you do. This page is the depth behind
+it: the protocols, and the rules that govern changing anything a member is held
+to.
 
 ## Protocols, and how they are labelled
 
@@ -308,7 +295,7 @@ identical afterwards.
 
 **A protocol is written for an agent; an instruction is written for a human.**
 Where a rule has two sides, both get written and both get an id: `PROTO-n` in
-the register above, `INST-n` in [`instructions.md`](instructions.md).
+the register above, `INST-n` in [`maintenance.md`](maintenance.md).
 
 **Not every instruction has a protocol.** Some are addressed to a person and to
 nobody else — `INST-3`, *do not outrun your own understanding*, is one — and
@@ -711,7 +698,7 @@ go, make it in pieces that each can be, and say which piece is which.
 
 This is the authorship half of *go only as fast as you understand*, which is
 stated in
-[`instructions.md`](instructions.md#inst-3--do-not-outrun-your-own-understanding)
+[`maintenance.md`](maintenance.md#inst-3--do-not-outrun-your-own-understanding)
 and governs how much is attempted. This one governs how it is written, and it
 is the half an agent controls directly: an agent is fast enough to produce, in
 an afternoon, more change than a person can read in a week, and nothing about
@@ -977,22 +964,3 @@ recorded here because kanon found the shape of it, and it is stated in a
 paragraph rather than a design because **a design for somebody else's CI,
 written in our tree and built by nobody, is the kind of page this repository
 exists to stop accumulating.**
-
-## Where to start
-
-1. Get the ecosystem: `scripts/install_eo`, then `--status`. Nothing here reads
-   anything until the other repositories are beside this one, and the status
-   view is the fastest way to see what the ecosystem currently is.
-2. Read [`board.md`](board.md) for what is outstanding and in what order — it
-   is the shortest answer to *what should I do next*, and the only page that
-   carries one. [`roles.md`](roles.md) sits beside it and answers the other
-   question the board assumes you can already answer: *whose is this, and whose
-   is it not*. Read it before anything that touches a second repository.
-3. Read this page, then
-   [`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md#the-workflow)
-   if you are working a finding, or
-   [`notes.md`](https://github.com/ajreynol/anoieu/blob/main/docs/notes.md#the-design)
-   if you are working on the tool.
-4. Check the ladder above before touching any document in it.
-6. Run `python3 tests/run.py` and `python3 scripts/policy_check.py`.
-7. Leave the work staged.
