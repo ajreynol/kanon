@@ -227,18 +227,6 @@ machine-checked in every member's CI.
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
 
-### R36 — the protocols, and the commands that run the ecosystem
-
-**Held by:** `kanon`
-**Role:** the register of named exchanges every member follows, and the
-commands by which a person gets the ecosystem onto a machine and reads the
-register back. Both come with the office and neither is separable from it: a
-protocol nobody maintains stops being followed, and a command nobody documents
-stops being run.
-**Owns:** `docs/protocols.md`, `docs/commands.md` and `docs/maintenance.md`.
-**Not this role:** the protocols that govern a *finding*, which belong to
-whoever carries findings; and the checker, which is `R31`.
-
 ### R6 — the inventory, and getting the ecosystem onto a machine
 
 **Held by:** `kanon`
