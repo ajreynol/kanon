@@ -993,6 +993,33 @@ the wrong place.
 
 ---
 
+## Mimesis — helping authors write signatures from scratch
+
+**The proposed artifact is an authoring setup**, for somebody with a calculus
+in mind and no Eunoia signature yet. It would help them write the declarations,
+rules and side conditions of an initial `.eo` signature, using worked examples
+and small accepting and rejecting proof tests. The maintainer intends to launch
+it soon, as recorded on 2026-09-16; it has not started and has no assigned home.
+
+**The gap is before checker generation.** Eudaimonia's `--dummy-rule` starter
+already supplies a working one-rule signature, semantics and regression proofs.
+Mimesis would help the author get from that starting point, or a blank file, to
+their own calculus. Its immediate consumers are the author and ethos; a later
+handoff to eudaimonia also needs semantics and soundness work. It would not
+replace either checker or claim that passing proof tests establishes soundness.
+
+**The case is about reason 1's author, not just its notation.** Keeping the
+signature in the solver developer's language earns more if someone can write a
+new one without reconstructing the conventions from a large existing calculus.
+A first test would take one small calculus from its author's rule descriptions
+to an exercised signature and record where help was still needed. If existing
+examples and eudaimonia's starter do that job just as well, the case for a
+separate authoring setup is weak. Whether this needs a repository of its own is
+not decided here. The name, μίμησις, imitation, is for learning through worked
+examples, not for requiring an existing signature as input.
+
+---
+
 # What both columns agree on
 
 Reading them together, the disagreement is narrower than "calculus or Lean".

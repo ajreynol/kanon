@@ -61,6 +61,15 @@ registers names *we* reserved, and theirs were settled by other people before an
 of this existed. An entry in the inventory with no row here is a gap only when
 the name was ours to choose.
 
+## Reserved for an intended launch
+
+An intention recorded by the maintainer, not a launched project. No location
+is assigned until the launch.
+
+| name | Greek | what it would be |
+| --- | --- | --- |
+| **mimesis** | μίμησις, imitation — learning to express a calculus through worked examples | a setup for helping authors write Eunoia signatures from scratch. **The maintainer intends to launch it soon**, recorded 2026-09-16; not started. Scope in [the account](why-eunoia.md#mimesis--helping-authors-write-signatures-from-scratch), listing in [tools.md](tools.md#mimesis--helping-authors-write-signatures-from-scratch) |
+
 ## Reserved, and free to take
 
 Each was named in [`why-eunoia.md`](why-eunoia.md) because some argument there is
