@@ -72,9 +72,15 @@ is the authority; this is only the route in.
 
 | where you are | what to run, **in your own repository** |
 | --- | --- |
-| the repository does not exist yet | [`init_eo new`](prompts/init_eo) — writes a README saying what the tool is for, what it declines to answer, and why it is called what it is. **It complies with nothing, deliberately**: knowing what you are building is what makes the rest decidable, and joining comes later |
-| it exists, and you want to join | [`join_eo`](prompts/join_eo) — adds the declaration to your maintenance note and the pinned `anoieu / policy` workflow |
-| it exists, and should *not* join | [`join_eo --soft`](prompts/join_eo) — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
+| the repository does not exist yet | `eo_init new` — writes a README saying what the tool is for, what it declines to answer, and why it is called what it is. **It complies with nothing, deliberately**: knowing what you are building is what makes the rest decidable, and joining comes later |
+| it exists, and you want to join | `eo_join` — adds the declaration to your maintenance note and the pinned `anoieu / policy` workflow |
+| it exists, and should *not* join | `eo_join --soft` — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
+
+**Both are installed rather than run from here**, and
+[`docs/commands.md`](docs/commands.md#the-joining-commands) says where they live
+and how to get them. **What joining costs is this repository's**:
+[`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the authority
+and the commands state it.
 
 **Read it before you run it.** Every prompt takes `--show-prompt`, which prints
 exactly what it would hand an assistant and does nothing else.

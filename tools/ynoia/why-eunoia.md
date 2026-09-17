@@ -42,7 +42,7 @@ kept in a different directory.
 3. Then the [glossary](../../docs/glossary.md), the authoritative name register,
    and the [naming arguments](proposals.md#arguing-about-names). **Check the trees as
    well as the glossary**: a missing entry does not mean a name is unused.
-4. Then [`../../prompts/init_eo`](../../prompts/init_eo), which
+4. Then `eo_init`, which
    writes a new repository's README from the register and complies with nothing
    else on purpose.
 

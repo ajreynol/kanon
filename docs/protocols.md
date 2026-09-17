@@ -291,8 +291,8 @@ again. **So it asks two things and recommends the rest.**
 2. Move the role's holder **preserving its id**, saying in the same commit what
    the losing tool keeps.
 
-**Green CI on both sides is advice here rather than a precondition**, and that
-is the whole of what changed on 2026-09-17. It stays non-negotiable in
+**Green CI on both sides is advice here rather than a precondition.** It stays
+non-negotiable in
 [`PROTO-20`](#proto-20--the-handoff-protocol), where the act is deleting
 somebody's stub and the asymmetry there decides it: a deletion cannot be undone
 and a role can. Pre-marking the destination and reading the receiving tree
@@ -304,7 +304,7 @@ not verify both commits. `PROTO-20` still governs retiring a source stub.
 
 ## What happens when we add a new tool to the ecosystem
 
-1. Create the repository and use [`init_eo`](../prompts/init_eo) if a README
+1. Create the repository and use `eo_init` if a README
    draft would help. Use `new` for new work or `from-child <path>` for work
    moving from an existing child's charter. Read what it has actually delivered.
 2. Read the project's README and record its current footing in
@@ -324,7 +324,7 @@ not verify both commits. `PROTO-20` still governs retiring a source stub.
    [listing preference](commands.md#child-project-listings), independently of
    its inclusion in the inventory or glossary. `checkouts.json` carries only
    installation exceptions, such as clone flags or optional trees.
-5. [`join_eo`](../prompts/join_eo) and the read-only
+5. `eo_join` and the read-only
    [`check_join_eo`](../prompts/check_join_eo) assessment come later, or never.
    Joining is the owner's choice. No welcome message or post-join grade is
    required; the [retired prompts](commands.md#retired-commands) added neither

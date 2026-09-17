@@ -201,8 +201,8 @@ ecosystem exists to serve.
 this ecosystem shares, and **they move with it**:
 
 - **the protocols** — the register of named exchanges every member follows;
-- **the policy, and whatever starts and joins a repository** — the rule itself,
-  in whatever form it is stated to an agent;
+- **the policy** — what joining costs and what a member is held to, however and
+  wherever that rule is later stated to an agent;
 - **the commands, and the reference that documents them** — getting the
   ecosystem onto a machine, and reading the register back;
 - **the vision**, and what follows from it once a repository is running;
@@ -233,12 +233,13 @@ at all.
 **Which file, and which repository, is not settled here.** This list names what
 the office carries, not where it is kept: where a given page or program that
 states or serves a rule lives is a role, settled in [`roles.md`](roles.md) and
-movable under `PROTO-26` without touching this page. **Amended 2026-09-17**,
-at the maintainer's direction, to say *whatever starts and joins a repository*
-where it used to name `init_eo`, `join_eo` and `check_join_eo`. **Why:** a law
-that enumerates filenames turns an ordinary handoff into an amendment, and this
-page has no amendment process on purpose. Nothing about what a successor
-inherits changed — the rules are handed over whole either way.
+movable under `PROTO-26` without touching this page.
+
+**This list names no filenames on purpose.** A law that enumerates them turns
+an ordinary handoff into an amendment, and this page has no amendment process by
+design. What a successor gets is the rule about what joining costs, handed over
+whole; the program that states it to an agent may be maintained anywhere, and
+[`roles.md`](roles.md) says where.
 
 **The office expires with the stretch.** Handing it on is the point.
 
@@ -378,9 +379,13 @@ sense of quietly** — a change here is in the git history like everything else,
 and **a removal says what went and why.**
 
 **Every change to this page, to [`policy.md`](policy.md) and to
-[`vision.md`](vision.md) is recorded with its reason.** Those three are what
-somebody outside reads to know what is being asked of them. **A logged change
-with no reason is a change nobody could justify.**
+[`vision.md`](vision.md) is recorded with its reason, in
+[`history.md`](history.md).** Those three are what somebody outside reads to
+know what is being asked of them, and a page that carried its own amendment
+notes would make them read the changes to find the rule — which
+[`policy.md`](policy.md#write-in-the-present-tense) forbids. **A logged change
+with no reason is a change nobody could justify**; a reason kept beside the rule
+is a second rule nobody meant to write.
 
 **A rewrite that quietly changes an outcome is the failure this law exists
 against**, and it is the easy one to commit because it looks like editing.

@@ -1,7 +1,8 @@
 # Commands
 
-Use Python 3.10 or newer, Bash and Git. All commands below run from kanon's
-checkout. Commands under `prompts/` launch an assistant unless passed
+Use Python 3.10 or newer, Bash and Git. Every command below runs from kanon's
+checkout; [the joining commands](#the-joining-commands) do not and are described
+at the bottom. Commands under `prompts/` launch an assistant unless passed
 `--show-prompt`; that flag prints the prompt without launching one.
 
 ## Local commands
@@ -101,26 +102,32 @@ only in that README, not copied into kanon's inventory.
 ## Prompt previews
 
 ```sh
-prompts/init_eo new --show-prompt
-prompts/join_eo --show-prompt
 prompts/check_join_eo --show-prompt ../anoieu
 prompts/global_audit --show-prompt
 prompts/process_discussion --show-prompt ../anoieu
 ```
 
-`init_eo` and `join_eo` run in the receiving repository when actually launched.
-`init_eo` reads the [glossary](glossary.md) as the authoritative name register
-and records its source material in an untracked `init-brief.local.md`. A new
-name need not have been reserved; the prompt reports any glossary entry or
-location update owed to the president.
-The other prompts run in kanon. A topic id passed to `process_discussion`
+All three prompts here run in kanon. A topic id passed to `process_discussion`
 authorizes work on that topic; a preview or a call with no topic id authorizes
 no reply. `check_join_eo` runs the local checker even in preview and stops if it
 cannot run. `global_audit` collects `status_eo --all --verbose`, preserving
 unavailable checks in the report. Neither launches an assistant during preview;
 both request read-only assessments when launched. They write no audit file,
-discussion topic, or checkout mapping. Joining and initialization draft changes
-in the receiving repository; named discussion topics are worked here.
+discussion topic, or checkout mapping. Named discussion topics are worked here.
+
+## The joining commands
+
+`eo_init` and `eo_join` are not in this tree. They are the two commands that run
+**inside the repository being started or joined**, they are `R35` in
+[`roles.md`](roles.md), and [koine](https://github.com/ajreynol/koine) maintains
+them. Install them onto a path with that repository's `install_eo_cmd` rather
+than running them from here; `--show-prompt` prints what either would hand an
+assistant.
+
+What they ask of a repository is this repository's: [`policy.md`](policy.md) is
+the authority, and `eo_init` reads [`glossary.md`](glossary.md) as the
+authoritative name register, reporting any glossary entry or location update
+owed to the president.
 
 ## Retired commands
 

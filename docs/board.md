@@ -208,10 +208,10 @@ an id for it, and every consumer whose pin moves. The channel is
 the repositories it costs something, and there is one prompt per entity so that
 each has been asked rather than told.
 
-What is left of the procedure is in
-[`roles.md`](roles.md#how-a-role-is-handed-off) — three things, relaxed on
-2026-09-17 — and `B15` is the worked example, transferred, with policy/checker
-version coordination still open. **None of it gates anything**, and a handoff
-that never appeared on this page is still a handoff.
+The procedure is three things, in
+[`roles.md`](roles.md#how-a-role-is-handed-off), and `B15` is the worked example
+— transferred, with policy/checker version coordination still open. **None of it
+gates anything**, and a handoff that never appeared on this page is still a
+handoff.
 
 ---

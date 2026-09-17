@@ -222,10 +222,12 @@ what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
 **Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, the ecosystem's
 vocabulary and authoritative name register in `docs/glossary.md` (kept current
-by the president), and the `init_eo`, `join_eo`, `check_join_eo` and `global_audit`
-prompts.
-**Not this role:** who is actually in the ecosystem, which is `R6`; and
-**deciding whether a tree complies, which is `R31` and stays in anoieu.**
+by the president), and the `check_join_eo` and `global_audit` prompts, which are
+run here and pointed at somebody else's checkout.
+**Not this role:** who is actually in the ecosystem, which is `R6`; **deciding
+whether a tree complies, which is `R31` and is anoieu's**; and **the commands
+that start and join a repository, which are `R35`.** This role says what joining
+*is*; the program that walks somebody through it is maintained elsewhere.
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
 
@@ -279,6 +281,34 @@ and **forbids this role from producing**; and grading how well a tool performs,
 which is `R30`.
 
 ## koine
+
+### R35 — the commands that start and join a repository
+
+**Held by:** `koine`
+**Role:** **maintaining the two commands a repository outside this ecosystem
+actually runs** — `eo_init`, which gives a new tool a README saying what it is
+for and complies with nothing, and `eo_join`, which writes the declaration and
+the pinned workflow. Their text, their options, and what they ask an assistant
+to do.
+**Owns:** `eo_cmd/eo_init` and `eo_cmd/eo_join`, and `scripts/install_eo_cmd`,
+which puts them on a person's path.
+**Not this role:** **what joining costs and what a member is held to, which is
+`R4` and stays with the office.** This role maintains the program that states
+the rule; it has no standing to change the rule. Nor judging the result, which
+is `check_join_eo` and is also `R4`'s.
+
+**Why this is separate from `R4`.** These two are the only commands in this
+ecosystem that run **inside the repository being started or joined**, rather
+than from the repository that keeps the rule. A command meant for a tree that is
+not the one it lives in belongs with the tool whose job is shared machinery;
+what a member is held to belongs with the office.
+
+**The risk it carries, stated because it is live.** `eo_join` is about two
+hundred lines of argument about whose front page a declaration is, and that
+argument is a *position* rather than plumbing. **The drafting of it sits with a
+tool that does not hold the position**, and the guard is `R4`: the rule those
+lines state is the office's, and a change to what `eo_join` asks of a repository
+is a change to be argued there.
 
 ### R16 — the shared low-level tooling
 
@@ -444,9 +474,6 @@ and **leave the opinions where they landed** — afterwards, a handoff nobody
 objected to and one nobody was asked about look identical unless the asking is
 on the record.
 
-**Relaxed on 2026-09-17**, at the maintainer's direction: four steps went, and
-[`history.md`](history.md) records which and why.
-
 **A role over human-authored work is not ours to move.** No footing and no
 procedure here makes reassigning it a handoff; it is a claim on somebody's
 authorship. **Ask who wrote it and what they agreed to**, not what footing the
@@ -468,8 +495,7 @@ what may be published stays with the tool whose own behaviour it constrains.
 
 **The second of the three exists because an audit asked it and the procedure
 could not**: *what does the losing repository keep*, and *is either half left
-unable to answer a question it could answer alone*. It is the one step that
-survived the 2026-09-17 relaxation on its own merits.
+unable to answer a question it could answer alone*.
 
 ## What the shape says
 

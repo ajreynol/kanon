@@ -30,7 +30,7 @@ directs an agent. [`commands.md`](commands.md) documents the commands.
 
 | what | where |
 | --- | --- |
-| policy and joining | [`policy.md`](policy.md), `prompts/` |
+| policy and joining | [`policy.md`](policy.md), `prompts/` — the rule, not the commands that state it |
 | the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the register, installation and status | [`commands.md`](commands.md), `scripts/ecosystem/` |
@@ -387,8 +387,9 @@ Every prompt takes `--show-prompt`, which prints its assembled instructions
 without launching an assistant. `check_join_eo` runs the local policy checker
 while assembling them; `global_audit` collects the ordinary status report.
 Neither preview writes files. Both assessments are read-only when launched too.
-`init_eo` and `join_eo` draft changes in the receiving repository;
-`process_discussion` acts only on a named topic.
+`process_discussion` acts only on a named topic. `eo_init` and `eo_join`, which
+draft changes in the repository being started or joined, are `R35` and are not
+in this tree.
 
 `install_eo --dry-run` prints the planned clone commands without changing files.
 Normal installation clones missing repositories and updates the checkout map.

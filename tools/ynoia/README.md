@@ -122,7 +122,7 @@ happened yet. It has reached no consumer and so has earned no place in
 **euthyna**, **noesis**, **hermeneia** and **mimesis** — have since been started
 as child projects of eudaimonia. Whether that is this account's doing or
 convergence is not something this project can establish about itself.
-`prompts/init_eo` now reads the president's glossary directly; it does not
+`eo_init` now reads the president's glossary directly; it does not
 depend on ynoia's naming arguments.
 
 ## Is there a paper in this?

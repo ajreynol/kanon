@@ -142,6 +142,67 @@ its bill rather than a surprise.
 and kanon still holds seven roles. *Re-derive:* `git log -p docs/laws.md
 docs/roles.md docs/protocols.md` around this date.
 
+### `eo_init` and `eo_join` went to koine — 2026-09-17
+
+At the maintainer's direction, and the first handoff run under the procedure
+relaxed the same day. **`R35` is a new id rather than a moved one**, because
+this is a split: `R4` keeps the policy, the vision, the glossary and the two
+prompts run from here against somebody else's checkout, and loses only the two
+commands that run *inside* the repository being started or joined. A moved id
+would have claimed the whole of `R4` went, and it did not.
+
+- **Moved:** `prompts/init_eo` and `prompts/join_eo`, deleted here, authoritative
+  in koine as `eo_cmd/eo_init` and `eo_cmd/eo_join`, together with
+  `scripts/install_eo_cmd` which was already koine's.
+- **Stayed:** `docs/policy.md` — what joining costs and what a member is held
+  to; `check_join_eo` and `global_audit`; the vision, practice and glossary.
+- **Renamed:** the commands are `eo_init` and `eo_join` now. koine had already
+  installed them under those names while kanon still owned them.
+- **Unchanged:** no member's CI, no pin, and no line of `policy.md`'s
+  requirements. Joining costs exactly what it cost yesterday.
+
+**Nothing was lost in the move.** koine's copies were byte-identical to kanon's
+files, modulo the documented rename, at the commit they were taken from —
+established by `install_eo_cmd --check` against this checkout before the files
+were deleted, not asserted afterwards.
+
+**Two things this cost, recorded because they are the bill rather than a
+surprise.** `LAW 3`'s carry-list was amended a second time the same day, so the
+office no longer carries the joining commands in any form. And `eo_join` carries
+about two hundred lines arguing whose front page a declaration is — a *position*
+— which now sits in a repository whose own page says positions are kanon's. The
+guard is that `R4` still holds the rule those lines state.
+
+**What was owed back and is not yet done:** koine's `eo_cmd/origin.json`, its
+README and its `coherence.md` all still name kanon as the authority for every
+word of these two, and its `--check` reads kanon's now-deleted files. Until
+koine commits its side, the pair disagrees about who owns them. *Re-derive:*
+`install_eo_cmd --check <this checkout>` in koine, which exits 1.
+
+### The present-tense rule was sharpened — 2026-09-17
+
+`policy.md` already said a page states what is true now and that `history.md` is
+the only page that may carry the account of how things came to be. **It was
+being ignored here, most of all by this office.** Moving two commands out of
+this tree grew a dated clause on every page that had named them — the front
+page, the policy, the laws, the commands reference, the role register, the
+board and a child's proposals — and each one was the kind of sentence the rule
+names: *a paragraph about which repository something used to be in*.
+
+**What changed.** The section now says the rule binds the shared pages hardest,
+that a rule states what is required now while its reasons go here, and that a
+handoff is how these pages usually acquire history. `LAW 7` was the live
+conflict: it requires every change to `laws.md`, `policy.md` and `vision.md` to
+be recorded with its reason, which had been read as *recorded beside the rule*.
+It now names this page as where, and says plainly that a reason kept beside a
+rule is a second rule nobody meant to write.
+
+**Paid for under `LAW 8`.** The addition put `policy.md` over the ten-thousand
+word ceiling. What came out to pay for it was two restatements in the same
+section, which is the fourth item on that law's own list of what goes first.
+The page is back under, and it is not comfortably under: **9,975 against a
+ceiling of 10,000 and a target of 7,000**, which is the number to watch.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

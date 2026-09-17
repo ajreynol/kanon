@@ -246,7 +246,7 @@ class Commands(unittest.TestCase):
         target = self.base / "example"
         (target / ".git").mkdir(parents=True)
         (target / "README.md").write_text("Example\n")
-        cases = [("init_eo", "new"), ("join_eo",), ("global_audit",),
+        cases = [("global_audit",),
                  ("check_join_eo", str(target)),
                  ("process_discussion", str(target))]
         for name, *args in cases:

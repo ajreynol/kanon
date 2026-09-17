@@ -359,8 +359,6 @@ The third has grown since that sentence was written. It is now
 [`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py) — which runs in every
 member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
 [`scripts/ecosystem/ecosystem.py`](../../scripts/ecosystem/ecosystem.py),
-[`prompts/init_eo`](../../prompts/init_eo),
-[`prompts/join_eo`](../../prompts/join_eo),
 [`prompts/check_join_eo`](../../prompts/check_join_eo),
 `prompts/welcome_eo` (since [retired](../../docs/commands.md#retired-commands)),
 [`prompts/global_audit`](../../prompts/global_audit),
@@ -461,7 +459,7 @@ this proposal was wrong.
 runs one, so the protocol has one implementation instead of one per member
 **Verdict:** **needed** — we intend to depend on it
 **If approved:** a person creates the empty repository → its owner decides what
-it is → joining this ecosystem is their choice, and `init_eo` / `join_eo` are
+it is → joining this ecosystem is their choice, and `eo_init` / `eo_join` are
 offered, never required
 **Decided:** **approved 2026-08-31** by the maintainer, as `koine`. Proposed by
 dokimasia in its `D4`; audited at anoieu `441b562`, revised the same day — see
@@ -540,11 +538,11 @@ leaves them free: we are saying we would use it, not that they owe it to us.
    does this and nothing here can: repository creation carries account
    credentials and a runner, so it is a security boundary rather than a
    convention. No name is claimed until it is done.
-2. **Its owner decides what it is.** `init_eo` is offered as a starting point —
+2. **Its owner decides what it is.** `eo_init` is offered as a starting point —
    it takes a name and writes a README saying what the tool is for, and complies
    with nothing else. The **scope is theirs**; the name is the one a person
-   approved. `init_eo` checks it against the glossary and uses the stated scope.
-3. **Joining this ecosystem is their choice, later or never.** `join_eo` exists
+   approved. `eo_init` checks it against the glossary and uses the stated scope.
+3. **Joining this ecosystem is their choice, later or never.** `eo_join` exists
    when they want it. A tool we depend on is not thereby a member, and we can
    pin a commit of a repository that has never adopted a line of our policy.
 

@@ -63,14 +63,23 @@ is the only page that may.
 history asks everybody who opens it to work out which sentences are still
 operative, and the ones that are not are indistinguishable from the ones that
 are. A migration note, a *formerly*, a *since the move*, a commit id explaining
-a layout, a paragraph about which repository something used to be in — each has
-stopped being useful to anyone but a historian, and each is read as current by
-somebody.
+a layout, a paragraph about which repository something used to be in — each is
+read as current by somebody.
 
 **Two things are not history and stay.** A **retirement line** where something
 was removed, because that is a statement about the present shape of the page.
 And a **dated claim about somebody else's project**, which the rule above
 requires, because the date is what lets a reader discount it.
+
+**It binds the shared pages hardest.** **A rule states what is required now and
+its reasons go to `history.md`** — including where a law here requires a change
+to be recorded with its reason, which says the record must exist, not where it
+is kept.
+
+**A handoff is how these pages usually acquire history**: something moves, and
+every page that named it grows a clause saying so. **None of them belong.** Say
+who holds it now — [`roles.md`](roles.md) already does — and let `history.md`
+say when that started being true.
 
 **Nothing checks this.** A sentence in the past tense is not mechanically
 distinguishable from one describing a present state of affairs.
@@ -754,12 +763,13 @@ any project the ecosystem is built to support rather than built from.
 **Two steps. The first is a sentence; the second is a CI job that checks the
 sentence is true.** Nothing else is required — no discussion file, no link to
 one, no document you do not already keep. Both are written out below, and
-**[`join_eo`](../prompts/join_eo), run in the joining repository, does them**:
-plain `join_eo` to join, `--soft` for the maintenance note alone, and
-`--show-prompt` on either to read what it would do without running it.
+**`eo_join`, run in the joining repository, does them**: plain `eo_join` to
+join, `--soft` for the maintenance note alone, and `--show-prompt` on either to
+read what it would do without running it. **This page is the authority for what
+it asks of you**; [`roles.md`](roles.md) says who maintains it.
 
 **If the repository is new, nothing is required yet.**
-[`init_eo`](../prompts/init_eo) gives it a README saying what it is for and is
+`eo_init` gives it a README saying what it is for and is
 told not to comply with any of this, because knowing what you are building is
 what makes the rest decidable. Join later, when there is something to join
 with.
@@ -942,7 +952,7 @@ policy it did not choose. What is worth having from any repository, member or
 not, is the **maintenance note**, and that convention is not ours and never
 was. So it may be adopted on its own.
 
-[`join_eo --soft`](../prompts/join_eo) is that, and it is **a different act
+`eo_join --soft` is that, and it is **a different act
 rather than a partial one**: it declares no membership and links nowhere, since
 a note that gestures at us without joining is worse than either; it adds no
 workflow and no checker; its default claim is human maintenance, because
@@ -966,7 +976,7 @@ The wording is deliberately formal: this is the paragraph a maintainer may one
 day have to stand behind in front of somebody who has read a finding about
 their code and drawn a conclusion from it.
 
-**There is a second form, for a repository happy to be named.** `join_eo --soft
+**There is a second form, for a repository happy to be named.** `eo_join --soft
 --affiliated` writes it, differing by a single paragraph — right for a tool
 this ecosystem is built around, where the outright disclaimer above would be
 wrong:
@@ -989,9 +999,8 @@ nothing.
 
 ### The prompts, and checking from this side
 
-[`prompts/join_eo`](../prompts/join_eo) holds the canonical text of all three
-prompts — full, `--soft` and `--soft --affiliated`; `--show-prompt` prints one
-and does nothing else. They are run in the repository that is adopting
+`eo_join` holds the canonical text of all three prompts — full, `--soft` and
+`--soft --affiliated`; `--show-prompt` prints one and does nothing else. They are run in the repository that is adopting
 something, never here. Each opens by asking whether the repository is solely
 the runner's to speak for: **a declaration on a shared tree is not the runner's
 alone to make, and commit access does not make it so.** Saying *this is not
