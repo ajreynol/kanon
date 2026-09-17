@@ -72,10 +72,13 @@ from it. From Greek ἀρετή, “excellence.” See
 [the report card](../tools/stathmos/report-card.md).
 
 <a id="associate"></a>
-**associate** (footing; *noun*): A tool acknowledged as useful to the ecosystem
-without being held to its policy. The proposed associate [footing](#footing)
-remains undecided and is held by nobody. See
-[the associate protocol](policy.md#the-associate-protocol).
+**associate** ([footing](#footing); *noun*): A repository carrying no
+front-page membership declaration, which **owes this ecosystem nothing** and
+may record on its own `docs/maintenance.md` what it holds itself to. Its tree
+is checked and the result printed as `N tracked` rather than `N failing`:
+**a measurement, not a shortfall, with nobody at fault and nobody asked to
+fix it.** `unadvertised-child` is the counterpart for a child its parent's
+front page does not name. See [the footings](policy.md#the-footings).
 
 <a id="autarkeia"></a>
 **autarkeia** (status; *noun*): The proposed state in which an ecosystem can
@@ -403,17 +406,6 @@ Research toward a solver designed around proofs from the start, retaining
 [cvc5](#cvc5)’s calculus and parts of its checker while replacing the search.
 Research notes; nothing is built.
 [Charter](https://github.com/ajreynol/eschaton/blob/main/tools/telos/README.md).
-
-## U
-
-<a id="unadvertised"></a>
-**unadvertised** (listing choice; *adjective*): Declared by a repository in its
-own README, or by a child project in its own, to keep it out of
-[kanon](#kanon)’s tables and installer summaries. **It is not a
-[footing](#footing) and changes none of one**: an unadvertised
-[member](#member) is a member, its declaration stands and its check still runs.
-What it declines is being advertised, which no footing ever required. See
-[the commands](commands.md#listings).
 
 ## V
 

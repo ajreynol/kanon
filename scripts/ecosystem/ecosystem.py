@@ -61,7 +61,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from anoieu_dependency import policy_checker
-from child_listing import read_listing, read_repo_listing, unverified_note
+from child_listing import read_listing, unverified_note
 INVENTORY = os.path.join(HERE, "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
                             os.path.join(ROOT, "scripts", "repos.local"))
@@ -120,6 +120,10 @@ REQUIRED = {
 #: The footings that are membership. A president is one of them: the office is
 #: held *by* a member, so every count, every policy check and every question
 #: asked of a member's README applies to it unchanged.
+#: Every footing held to the shared policy by its name alone. `associate` is
+#: deliberately not here: what an associate owes is written on its own
+#: maintenance page rather than in this register, so the footing name cannot
+#: decide it and `held_to_policy` reads the marker instead.
 MEMBERS = ("member", "president")
 
 #: The files the office is kept in, and the test for *limbo* -- the registry
@@ -176,7 +180,8 @@ FOOTINGS = {
                  "on who that is; a note says so if the tree cannot hold it",
     "member": "declared membership. Held to the policy, and checked here",
     "candidate": "has not joined. The policy is addressed to them and binds them to nothing",
-    "associate": "load-bearing for us, and owes us nothing. Never checked",
+    "associate": "owes us nothing, and is checked anyway so the result is "
+                 "known. A failure here is nobody's fault",
     "foundation": "the ecosystem is downstream of it. Asked for nothing, ever",
     "child": "a project inside another repository, on its parent's footing",
     "outsider": "published work outside the ecosystem, tracked so our own numbers "
@@ -186,8 +191,11 @@ FOOTINGS = {
 #: Every value the `policy` column can print, and what it means.
 POLICY_VALUES = (
     ("ok", "every check that applies to that tree passed"),
-    ("N failing", "N of our checks failed on it"),
-    ("not held", "an associate or outsider. No policy check was run"),
+    ("N failing", "N of our checks failed on a tree that is held to them"),
+    ("N tracked", "N of our checks failed on an associate, which owes us "
+                  "nothing. A measurement, and not a shortfall: nobody is at "
+                  "fault for it and nobody is asked to fix it"),
+    ("not held", "an outsider. No policy check was run"),
     ("no checkout", "not on this machine, so nothing could be run"),
     ("unverified", "the checker could not run; no compliance verdict is available"),
     ("-", "a child or a foundation: not a repository this table checks"),
@@ -716,7 +724,7 @@ def audit(online: bool) -> int:
 
 USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--health] [--protocol]
 
-  (no arguments)  the table: advertised repositories and advertised children
+  (no arguments)  the table: repositories and advertised children
   --verbose       ... and, per tool, which checks failed and what they found
   --all           every row this table can show, which today means every
                   recorded child including the unadvertised ones. The table
@@ -780,8 +788,7 @@ def main() -> int:
     with open(INVENTORY, encoding="utf-8") as f:
         inv = json.load(f)
     rows, notes = [], []
-    child_listings, parent_paths, unadvertised = {}, {}, []
-    show_all = "--all" in sys.argv
+    child_listings, parent_paths = {}, {}
 
     for name, e in inv.items():
         if name.startswith("_"):
@@ -805,27 +812,25 @@ def main() -> int:
         if not path:
             rows.append((name, status, "no checkout", "-", "-", ""))
             continue
-        # A repository may decline to be listed, in its own README, exactly as a
-        # child does. It stays a member: the footing is unchanged, the checker
-        # still runs below, and only the default view is shorter.
-        #
-        # **Only an explicit declaration opts a repository out**, which is where
-        # this differs from a child. For a child, unverified is not advertised:
-        # we are reading somebody's subdirectory and a README we cannot parse is
-        # a reason not to speak for it. A repository holds a footing, and
-        # dropping a member from the table because its front page did not parse
-        # would hide a member — so unverified is listed, and the row is the
-        # place that shows something is wrong with it.
-        repo_listing = read_repo_listing(path)
-        if repo_listing.state == "unadvertised":
-            unadvertised.append(name)
-            if not show_all:
-                continue
         # An associate is held to none of this, so nothing here runs the checker
         # over its tree. A failure count in that row would be this table
         # grading somebody who never agreed to be graded, which is the whole of
         # what the footing refuses.
-        verdict, fails = ("not held", []) if status in ("associate", "outsider") else check(path)
+        # An associate owes us nothing and is checked anyway: knowing whether
+        # a tree we depend on conforms is worth having, and it costs them
+        # nothing because no answer obliges them. The verdict is spelled
+        # differently on purpose -- `tracked` rather than `failing` -- because
+        # the same number means a shortfall for a member and a measurement
+        # here, and a column that printed them identically would be inviting
+        # the reader to draw a conclusion the footing refuses.
+        if status == "outsider":
+            verdict, fails = "not held", []
+        elif status == "associate":
+            verdict, fails = check(path)
+            if verdict.endswith("failing"):
+                verdict = verdict.replace("failing", "tracked")
+        else:
+            verdict, fails = check(path)
         topics = ""
         disc = os.path.join(path, "docs", "discussion.md")
         if os.path.isfile(disc):
@@ -894,13 +899,6 @@ def main() -> int:
         if note:
             notes.append(note)
 
-    # Say that a row was withheld rather than simply withholding it: a table
-    # that is quietly short is worse than one that is longer than you wanted.
-    if unadvertised and not show_all:
-        n = len(unadvertised)
-        notes.append(f"{n} repositor{'ies' if n != 1 else 'y'} declined listing "
-                     f"in their own README: {', '.join(sorted(unadvertised))}. "
-                     "Their footing is unchanged; --all shows them.")
 
     w = max((len(r[0]) for r in rows), default=4) + 2
     locations = {r[0]: r[5].replace(os.path.expanduser("~"), "~") for r in rows}
@@ -943,8 +941,11 @@ def main() -> int:
     # one sentence because a summary that grows into a paragraph is a second
     # report -- and then there are two of them to keep true.
     print()
-    print(f"In short: {parts}; {passing} of {len(members)} members pass their "
-          f"policy check, {owed} topic{'s' if owed != 1 else ''} "
+    # `members` is every footing held to the policy, which is member *and*
+    # president -- so calling the number "members" contradicted the footing
+    # counts in the same sentence, which say 8 members and 1 president.
+    print(f"In short: {parts}; {passing} of {len(members)} repositories held to "
+          f"the policy pass their check, {owed} topic{'s' if owed != 1 else ''} "
           f"{'are' if owed != 1 else 'is'} owed to us, "
           "and how good any of these tools actually are is a judgement kept in "
           "https://github.com/ajreynol/kanon/blob/main/tools/stathmos/report-card.md "

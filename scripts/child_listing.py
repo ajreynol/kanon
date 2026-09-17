@@ -63,21 +63,6 @@ def read_listing(parent: str, child_path: str) -> Listing:
         return Listing("unverified", "child README unavailable or unreadable")
 
 
-def read_repo_listing(checkout: str) -> Listing:
-    """Read a repository's own listing choice from its own README.
-
-    The same declaration a child uses, read from the tree that is declaring it
-    rather than from its parent. A repository nobody has checked out cannot be
-    read, and unverified never opts anybody out.
-    """
-    if not checkout or not Path(checkout).is_dir():
-        return Listing("unverified", "no checkout to read")
-    try:
-        return declaration((Path(checkout) / "README.md").read_text(encoding="utf-8"))
-    except (OSError, UnicodeError, RuntimeError):
-        return Listing("unverified", "README unavailable or unreadable")
-
-
 def unverified_note(parent: str, listings: list[Listing]) -> str:
     """Report incomplete reads by parent without advertising hidden child names."""
     reasons = Counter(s.reason for s in listings if s.state == "unverified")

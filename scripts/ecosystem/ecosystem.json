@@ -405,7 +405,7 @@
     "status": "child",
     "parent": "eudaimonia",
     "path": "tools/mimesis",
-    "short": "Teaches signature writing from worked examples",
+    "short": "Teaches Eunoia signature writing from worked examples",
     "what": "how a Eunoia signature is written and how one gets into Logos, in two strands: case studies of episodes that already happened, and tutorials that build a signature from a calculus's rule descriptions"
   },
   "cvc6": {

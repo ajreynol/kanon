@@ -783,17 +783,32 @@ the terms are not a single scale.
 | footing | what they owe us | what we say about them | backed by |
 | --- | --- | --- | --- |
 | **member** | the declaration, and a green `anoieu / policy` on every push | they share the approach [`vision.md`](vision.md) argues for | their README, checkably |
-| **associate** | nothing | we have read them, and they are load-bearing for us | *undecided*. **Nobody holds it yet** |
+| **associate** | **nothing** | only what their own marker claims. We run the check and print the result, and a failure is nobody's fault | their `docs/maintenance.md` |
 | **candidate** | nothing | nothing. This page is addressed to them, and that is all | nothing |
 | **foundation** | nothing, ever | the arrangement is downstream of them | nothing, deliberately |
 | **child** | — | not a footing: it is not a repository | its parent's tree |
 
-**Being listed is not part of any footing.** A repository that would rather not
-appear in our tables says so in its own README introduction —
-`**Eunoia listing:** unadvertised`, the line a child project uses — and
-`status_eo` stops printing its row, while `--all` still shows it. **It stays a
-member**: the declaration stands and the check still runs on every push. Our
-advertising was never something it owed.
+**`associate` is the footing for a tree with no front-page declaration, and it
+owes us nothing.** What it holds *itself* to is its own business, recorded if it
+likes on its own `docs/maintenance.md`:
+
+    **Footing:** `associate` — held to the Eunoia ecosystem's shared
+    repository policy; the membership is deliberately not advertised.
+
+**We check an associate anyway, and nobody is at fault for the result.** Knowing
+whether a tree we depend on conforms is worth having, and it costs them nothing
+because no answer obliges them: the row reads `N tracked` rather than
+`N failing`, no note asks anyone to fix it, and it is left out of the count of
+repositories that pass. **A member's number is a shortfall; an associate's is a
+measurement**, and printing them in the same word would invite a conclusion the
+footing refuses.
+
+**So the obligation is self-imposed, and stays that way.** A repository held to
+all of this with reason not to say so out front — it is not published, it is
+one person's working tree, a declaration would oversell what is in it — takes
+this footing and writes the marker. It answers to that marker; it does not
+answer to us. `eo_join --unadvertised` writes it. A child on a parent whose
+front page does not name it records `unadvertised-child` the same way.
 
 **These are not a ladder, and reading them as one is the mistake this table
 exists to prevent.** A member trades compliance for nothing; an associate
@@ -824,23 +839,23 @@ grow the file into a dependency manifest with opinions.
 
 ### The associate protocol
 
-**Drafted, and not in force.** Nobody holds the footing and nothing here is
-required of anybody. **What it would ask for, in full:** a `## How this
-repository is maintained` heading in the README with something under it. **No
-CI job, no workflow file, no pin, no run of our checker, no link to us, no
-membership declaration, and nothing about how their tree is arranged.** The
-thing asked for is a fact a reader of their repository needs whether or not
-this ecosystem exists; the moment it arrives with a job attached it becomes our
-housekeeping running at their expense.
+**The footing is theirs to record, not ours to assert.** That was the open
+question and the marker answers it: an associate is a repository that has
+written what it is held to on its own maintenance page. **We do not put a tool
+on this footing because we have read it.**
 
-**What is undecided:** whether the bare heading or the affiliating paragraph is
-the ask; whether the footing is ours to assert or theirs to accept; who vets,
-how often, and what a stale `vetted` obliges. **It does not stay open
-indefinitely, because leaving it open costs them and not us.** If nobody has
-answered by **2026-12-01**, the weaker reading is adopted — the bare heading,
-without the paragraph naming this ecosystem — and the footing opens on that
-basis. `scripts/status_eo --protocol` reports where each proposed associate
-stands.
+**For a tree that adopts none of this, the ask is still one heading**: a `## How
+this repository is maintained` heading in the README with something under it.
+**No CI job, no workflow file, no pin, no run of our checker, no link to us and
+no membership declaration.** The thing asked for is a fact a reader of their
+repository needs whether or not this ecosystem exists; the moment it arrives
+with a job attached it becomes our housekeeping running at their expense.
+
+**What is still undecided** is whether the bare heading or the affiliating
+paragraph is the ask, and what a stale `vetted` obliges. If nobody has answered
+by **2026-12-01**, the weaker reading is adopted — the bare heading, without the
+paragraph naming this ecosystem. `scripts/status_eo --protocol` reports where
+each proposed associate stands.
 
 ### 1. Declare it, at the top of your maintenance note
 

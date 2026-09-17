@@ -285,22 +285,42 @@ class Verification(unittest.TestCase):
             self.assertEqual(ecosystem.still_true({"example": {
                 "status": "candidate", "proposed": "associate", "url": "unused"}}), ([], []))
 
-    def test_status_does_not_policy_check_associates_or_outsiders(self):
+    def status_of(self, statuses, verdict):
         with tempfile.TemporaryDirectory() as temp:
             inv = Path(temp) / "inventory.json"
             inv.write_text(json.dumps({
-                status: {"status": status, "what": "example"}
-                for status in ("associate", "outsider")
+                s: {"status": s, "what": "example"} for s in statuses
             }))
             out = io.StringIO()
             with patch.object(ecosystem, "INVENTORY", str(inv)), \
                  patch.object(ecosystem, "locate", return_value=temp), \
                  patch.object(ecosystem, "age", return_value="?"), \
-                 patch.object(ecosystem, "check") as checker, \
+                 patch.object(ecosystem, "check", return_value=verdict) as checker, \
                  patch.object(sys, "argv", ["status_eo"]), contextlib.redirect_stdout(out):
                 self.assertEqual(ecosystem.main(), 0)
-            checker.assert_not_called()
-            self.assertEqual(out.getvalue().count("not held"), 2)
+            return out.getvalue(), checker
+
+    def test_status_never_policy_checks_an_outsider(self):
+        output, checker = self.status_of(["outsider"], ("ok", []))
+        checker.assert_not_called()
+        self.assertIn("not held", output)
+
+    def test_an_associate_is_checked_but_is_never_at_fault(self):
+        # It owes us nothing, so the number is a measurement. `tracked` rather
+        # than `failing` is the whole of what keeps it one.
+        output, checker = self.status_of(["associate"], ("2 failing", ["a", "b"]))
+        checker.assert_called_once()
+        row = next(l for l in output.splitlines() if l.startswith("associate "))
+        self.assertIn("2 tracked", row)
+        self.assertNotIn("failing", row)
+        self.assertNotIn("Theirs to fix", output)
+        # and it is not counted against anybody
+        self.assertIn("0 of 0 repositories held to the policy", output)
+
+    def test_a_passing_associate_reads_the_same_as_anybody(self):
+        output, _ = self.status_of(["associate"], ("ok", []))
+        self.assertIn("ok", output)
+        self.assertNotIn("tracked", output)
 
     def test_bump_requires_complete_check_run_response(self):
         success = {"name": "policy", "status": "completed", "conclusion": "success"}
