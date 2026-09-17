@@ -125,12 +125,8 @@ the repository keeps rather than containing it.
 
 **Do not add a file per assistant to point at it.** One page, at a path anybody
 can guess, addressed to whoever is doing the work rather than to what they are.
-A repository that grows one entry-point file per tool that might read it has
-replaced a convention with a directory listing.
 
-Recommended, and not checked: nothing fails on its absence, and a repository
-that keeps its maintenance notes somewhere else is not doing anything wrong —
-it is just harder to arrive at.
+Recommended, and not checked: nothing fails on its absence.
 
 **Every document is indexed, and the index is itself a document.** One row per
 document saying what it is *for*. The index may be `docs/README.md`, or a
@@ -145,11 +141,10 @@ a **letter from one office-holder to the next** (`letter-to-<name>.md`), which
 the directory means: kept for the record, required of nobody, and discovered by
 listing the directory rather than by being pointed at. It is the shelf for a
 transcript, a deferred proposal, a page whose question has been answered
-elsewhere. **Being in `docs/misc/` is not an argument for keeping a document**
-— it is where a document waits while somebody decides, and a shelf nobody ever
-empties has become an attic. The two real answers are a row on the index or
-deletion; `docs/misc/` is how you hold the question open without pretending it
-is settled.
+elsewhere. **Being in `docs/misc/` is not an argument for keeping a document.** The two
+real answers are a row on the index or deletion; `docs/misc/` is how you hold
+the question open without pretending it is settled, and a shelf nobody empties
+has become an attic.
 
 **Written and generated documents are separated and labelled.** A generated
 document says at the top that it is generated and by what, and generators write
@@ -184,9 +179,9 @@ overwhelmingly by **Claude** and **Codex**, and by people who wrote neither.
 
 **Coding style is encouraged, and never blocks.** Follow the style of the file
 you are in. No build fails on formatting, and no agent spends a cycle
-reformatting code it had no other reason to touch — the most available way to
-look productive without being it. Eunoia has no formatter yet, so `.eo` and
-`.eos` are laid out by hand and a difference in layout is not a finding.
+reformatting code it had no other reason to touch. Eunoia has no formatter, so
+`.eo` and `.eos` are laid out by hand and a difference in layout is not a
+finding.
 
 **Every repository explains its own name.** A short front-page section with the
 etymology and why the word fits, written so somebody could disagree with it.
@@ -273,32 +268,17 @@ one place a reader can discover that the arrangement has moved.
 ## A prompt may not be for this repository
 
 **Every prompt an agent receives here may have been meant for a different
-repository.** These repositories are deliberately alike: several are checked
-out as siblings, sharing a
-layout and prompts written to the same shape. There are two independent
-accounts of what somebody wants — the prompt, and the tree you are standing in
-— and where they disagree at least one is wrong.
-
-**"I don't think this prompt is meant for me" is a complete and acceptable
-answer.** It is not a refusal and costs a person ten seconds to correct. Say
-which repository it looks meant for, what in the prompt says so, **and nothing
-else** — do not do the part that would make sense here. The overlapping part is
-the trap: it looks harmless, and it commits a tree to a decision nobody made. A
-human may override, and the fact they were told is recorded.
-
-**Stop only if you can name the repository it was meant for.** If you cannot,
-it is for you. Vague unease is not a signal and a prompt that is merely hard is
-not misaddressed. **Never narrate the check**: an agent that opens with *I have
-confirmed this prompt is for this repository* has made a free rule expensive
-and taught its reader to skip the first paragraph, which is where the real one
-will be on the day it matters.
+repository.** These repositories are deliberately alike, several are checked
+out as siblings, and there are two independent accounts of what somebody wants
+— the prompt, and the tree you are standing in. Where they disagree at least
+one is wrong. **The rule a repository carries is below, and it is the whole of
+it.**
 
 **One shape must always stop: a prompt asking this repository to decide its own
 standing** — whether it should hold a role, be a member, own a protocol, or
-whether its work is worth publishing. An agent asked *should you hold X* will
-find the case for X, because finding it is what it was asked to do, and the
-result is indistinguishable from an answer reached disinterestedly. The
-narrower question it can answer is **what would we accept**.
+whether its work is worth publishing. An agent asked *should you hold X* finds
+the case for X, because finding it is what it was asked to do. The narrower
+question it can answer is **what would we accept**.
 
 **Where the rule is carried:** immediately after the response gate in
 `docs/discussion.md`, in a repository that keeps one — beside the gate and not
@@ -386,36 +366,6 @@ check, a protocol, a status transition, a required field. A gate with no stated
 way past it is a lockout that has not happened yet, and the cost of writing the
 sentence is one sentence.
 
-## The approval protocol
-
-**Where an agent asks a person to approve something, it ends its response with
-a block stating, in a fixed template, exactly what is being approved.** It
-reads like a CI check — one field per line, a verdict beside each, one line at
-the bottom saying whether the gates pass — scannable in three seconds, and a
-*specific* claim rather than a summary. **The block reports the gates; it does
-not grant the approval:** a bottom line of `READY` means the mechanical checks
-pass, never that anybody has agreed.
-
-**The goal is the agent's state, not the reader's impression**, and an agent
-can get better at producing well-formed blocks without becoming better
-informed. So **the tool must not emit the finished block**: it delivers
-evidence, and composing the target is where being informed happens.
-
-- **Run it; do not remember it.** A value carried forward from an earlier turn
-  is not evidence, however true it was an hour ago.
-- **Every line names its command**, so a reader can re-take any field without
-  asking.
-- **A field with no command is not a pass.** Write `—` and count it as
-  unverified, on the same side of the ledger as a failure.
-- **An unevidenced `PASS` is worse than a `FAIL`.** A failure is information; a
-  pass that nothing produced borrows the authority of the shape without doing
-  the work behind it.
-
-**Nothing enforces any of that**, which is why it is a protocol and not a
-check; the word *verification* is used loosely and we are not verifying
-anything. **And it is recorded** — the block goes into the artifact the
-approval was for.
-
 ## The discussion file
 
 **A repository may keep `docs/discussion.md`, and is not asked to.** It is the
@@ -502,12 +452,10 @@ and nothing between the heading and the fields.
 **<tool>, <date>.** <what came back, quoted or summarised>
 ```
 
-**To** names each tool unequivocally — the name the project uses for itself,
-never "the compiler" or "upstream" — because a topic addressed to nobody in
-particular is addressed to nobody. **Opened** carries the commits the topic was
-formed against where it depends on them. **Settles when** is required for every
-topic, because a question with no answerable form is a complaint.
-**Replies are appended**, attributed and dated, while the discussion is live.
+**To** names each tool by the name it uses for itself, never "the compiler" or
+"upstream". **Settles when** is required: a question with no answerable form is
+a complaint. **Replies are appended**, attributed and dated, while the
+discussion is live.
 
 **Kind** is one of five, and a topic that fits none of them is probably a
 finding:
@@ -535,12 +483,10 @@ request: claiming less standing costs us nothing.
 
 ### Pins and global announcements
 
-**A topic may be pinned, and at most one is.** Newest-first buries a notice
-that every member acts on at its own pace, so a pinned topic carries a fifth
-field, `**Pinned:**`, naming what un-pins it. One at a time, because a file
-with three pinned topics has none; the field names what ends it, so un-pinning
-is a fact rather than a fresh decision; and un-pinning is deleting the field
-and restoring date order. The topic stays while the discussion is live.
+**A topic may be pinned, and at most one is** — a file with three pinned topics
+has none. A pinned topic carries a fifth field, `**Pinned:**`, naming what
+un-pins it; un-pinning is deleting the field and restoring date order. The
+topic stays while the discussion is live.
 
 **A global announcement is a topic addressed to every member at once.** It
 carries `**Global:**` after `Settles when`, saying in one line what a member
@@ -548,10 +494,9 @@ has to do, or that nothing is owed. `To:` still enumerates every member by name
 — *the ecosystem* and *everyone* are refused by the checker — and that list is
 a **record of who existed on that date**: a repository that joins next month
 was not addressed and must not later be treated as though it had been. It is
-for something that has already changed on our side; it is not for asking
-everybody for something at once, which is the reliable way to get it from
-nobody. **Who may make one is not decided**; until it is, the one-pin rule is
-the budget.
+for something that has already changed on our side, never for asking everybody
+for something at once. **Who may make one is not decided**; until it is, the
+one-pin rule is the budget.
 
 **Addressing is not contacting.** Writing a topic costs us nothing of theirs;
 carrying it spends somebody's afternoon, and that is **a person's decision
@@ -570,15 +515,13 @@ retire.
 
 **A new repository is a human decision, always.** A topic may propose one,
 argue for one, or ask whether one is warranted, and none of that creates one.
-For a tool this ecosystem's own workflows proposed, the break is a security
-boundary rather than a convention: those workflows can already notice a gap,
-argue a tool should exist, audit that argument against a standard they
-maintain, take a name from a register they also maintain, and write the README.
-Every step is defensible; the composition is not. **A person opens the
-repository by hand and hands over a checkout**, because that step is
-irreversible and outward-facing — it publishes under a name people trust, and
-it arrives with a place to put secrets and a runner that executes whatever
-lands in `.github/workflows/`. A proposal worth a real answer goes to
+The break is a security boundary rather than a convention: this ecosystem's own
+workflows can notice a gap, argue a tool should exist, audit that argument,
+take a name and write the README — every step defensible, the composition not.
+**A person opens the repository by hand and hands over a checkout**, because
+that step is irreversible and outward-facing: it publishes under a name people
+trust, and arrives with a place to put secrets and a runner that executes
+whatever lands in `.github/workflows/`. A proposal worth a real answer goes to
 [`tools/ynoia/proposals.md`](../tools/ynoia/proposals.md), which produces a
 recommendation; **a recommendation is not an approval.**
 

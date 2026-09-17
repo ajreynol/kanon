@@ -45,6 +45,7 @@ named.
 | --- | --- | --- | --- |
 | `PROTO-17` | **the emergency protocol** — one word stops the direction; recency alone justifies a rollback, and a rollback is a forward change that never rewrites history | person → agent | [`protocols.md`](protocols.md) |
 | `PROTO-1` | response clarification — *your answer was too hard to follow* | person → agent | [`protocols.md`](protocols.md) |
+| `PROTO-28` | **the approval protocol** — an agent asking for approval ends with a block stating what is being approved, evidenced field by field | agent → person | [`protocols.md`](protocols.md) |
 | `PROTO-2` | prompt clarification — *do not act on what you do not understand* | agent → person | [`protocols.md`](protocols.md) |
 | `PROTO-3` | going off the deep end — *this cannot be checked from here* | agent → person | [`protocols.md`](protocols.md) |
 | `PROTO-4` | temporal session coherence — the session's open ask survives its branches | agent → person | [`protocols.md`](protocols.md) |
@@ -805,6 +806,36 @@ to bind. **This is not enforcement and must never be described as it** — the
 file is editable, the tool is ignorable, and both of those are correct. What
 the mechanism buys is that moving the line leaves a mark where somebody,
 including the human tomorrow, can see it.
+
+## `PROTO-28` — the approval protocol
+
+**Where an agent asks a person to approve something, it ends its response with
+a block stating, in a fixed template, exactly what is being approved.** It
+reads like a CI check — one field per line, a verdict beside each, one line at
+the bottom saying whether the gates pass — scannable in three seconds, and a
+*specific* claim rather than a summary. **The block reports the gates; it does
+not grant the approval:** a bottom line of `READY` means the mechanical checks
+pass, never that anybody has agreed.
+
+**The goal is the agent's state, not the reader's impression**, and an agent
+can get better at producing well-formed blocks without becoming better
+informed. So **the tool must not emit the finished block**: it delivers
+evidence, and composing the target is where being informed happens.
+
+- **Run it; do not remember it.** A value carried forward from an earlier turn
+  is not evidence, however true it was an hour ago.
+- **Every line names its command**, so a reader can re-take any field without
+  asking.
+- **A field with no command is not a pass.** Write `—` and count it as
+  unverified, on the same side of the ledger as a failure.
+- **An unevidenced `PASS` is worse than a `FAIL`.** A failure is information; a
+  pass that nothing produced borrows the authority of the shape without doing
+  the work behind it.
+
+**Nothing enforces any of that**, which is why it is a protocol and not a
+check; the word *verification* is used loosely and we are not verifying
+anything. **And it is recorded** — the block goes into the artifact the
+approval was for.
 
 ## `PROTO-21` — the identify protocol
 
