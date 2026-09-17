@@ -788,6 +788,13 @@ the terms are not a single scale.
 | **foundation** | nothing, ever | the arrangement is downstream of them | nothing, deliberately |
 | **child** | — | not a footing: it is not a repository | its parent's tree |
 
+**Being listed is not part of any footing.** A repository that would rather not
+appear in our tables says so in its own README introduction —
+`**Eunoia listing:** unadvertised`, the line a child project uses — and
+`status_eo` stops printing its row, while `--all` still shows it. **It stays a
+member**: the declaration stands and the check still runs on every push. Our
+advertising was never something it owed.
+
 **These are not a ladder, and reading them as one is the mistake this table
 exists to prevent.** A member trades compliance for nothing; an associate
 trades nothing for a claim we make. Neither is above the other.
@@ -1009,10 +1016,9 @@ mine to declare* is a correct outcome.
 [`prompts/check_join_eo`](../prompts/check_join_eo) is the counterpart, run
 here and pointed at somebody's checkout. It runs the checker, then has an
 assistant judge what a program cannot — whether a maintenance note says
-anything or merely satisfies the check — and returns **joined**,
-**misconfigured** (it declares membership and the check fails, the serious
-one), **ready**, or **not ready**. It reads their tree and writes nothing to
-it. **A deeper obstacle becomes a topic, not a to-do list:** where joining
+anything or merely satisfies the check. Its verdicts are its own;
+**the serious one is *misconfigured***: membership declared, check failing. It
+reads their tree and writes nothing to it. **A deeper obstacle becomes a topic, not a to-do list:** where joining
 would take more than a sentence, it opens a topic in
 [`discussion.md`](discussion.md) addressed to them by name — staged, never
 sent, and never a row in a findings report.

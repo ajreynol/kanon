@@ -56,7 +56,7 @@ analyses before and after a change.
 <a id="anoieu"></a>
 **anoieu** (Eunoia member; *proper noun*): The static analyzer, fuzzer, findings
 system, and policy checker. Its name is [Eunoia](#eunoia) read backwards.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/anoieu).
 
 <a id="apodeixis"></a>
 **apodeixis** (Eunoia child project of [eudaimonia](#eudaimonia); *proper noun*):
@@ -101,7 +101,7 @@ bind and are not mechanically enforced. See [the laws](laws.md).
 <a id="carcara"></a>
 **carcara** (Eunoia outsider; *proper noun*): An outside proof checker and
 elaborator for [Alethe](#alethe), tracked for comparison.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ufmg-smite/carcara).
 
 <a id="child-project"></a>
 **child project** (project type; *noun*): Also
@@ -118,7 +118,7 @@ semantics, and verification development have different owners. See
 <a id="cvc5"></a>
 **cvc5** (Eunoia foundation; *proper noun*): The SMT solver that produces the
 proofs and owns [CPC](#cpc). The ecosystem exists to serve it and asks it for
-nothing. [Register](../scripts/ecosystem/ecosystem.json).
+nothing. [Repository](https://github.com/cvc5/cvc5).
 
 <a id="cvc6"></a>
 **cvc6** (Eunoia child project of [eschaton](#eschaton); *proper noun*): An
@@ -132,7 +132,7 @@ and it is not an announced successor from the cvc5 project.
 <a id="ddsmt"></a>
 **ddSMT** (Eunoia outsider; *proper noun*): An outside tool for reducing
 [SMT-LIB](#smt-lib) benchmarks to smaller cases that preserve the behaviour
-under investigation. [Register](../scripts/ecosystem/ecosystem.json).
+under investigation. [Repository](https://github.com/ddsmt/ddSMT).
 
 <a id="dioktes"></a>
 **dioktes** (status; *noun*): The state of a repository actively pursuing
@@ -146,7 +146,7 @@ ask. It describes the pursuing repository’s activity. From Greek διώκτη�
 **dokimasia** (Eunoia member; *proper noun*): The analyzer of [cvc5](#cvc5)’s
 proof-production code for work with no proof step behind it. From Greek
 δοκιμασία, “scrutiny before office.”
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/dokimasia).
 
 ## E
 
@@ -169,19 +169,19 @@ ecosystem, according to context. See [the front page](../README.md).
 <a id="epikrisis"></a>
 **epikrisis** (Eunoia member; *proper noun*): The auditor of how repositories
 change over time, using evidence another reader can re-derive.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/epikrisis).
 
 <a id="eschaton"></a>
 **eschaton** (Eunoia member; *proper noun*): The
 [research project](#research-project) comparing approaches to better-founded SMT
 solvers and the costs of trying them.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/eschaton).
 
 <a id="ethos"></a>
 **ethos** (Eunoia candidate; *proper noun*): The fast C++ proof checker and home
 of the authoritative [Eunoia](#eunoia) manual. Proposed as an
 [associate](#associate); it has not joined as a [member](#member).
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/cvc5/ethos).
 
 <a id="ethos-eoc"></a>
 **ethos-eoc** (Eunoia child project of [ethos](#ethos); *proper noun*): The
@@ -192,7 +192,7 @@ checker and the obligations needed to establish its soundness.
 <a id="eudaimonia"></a>
 **eudaimonia** (Eunoia member; *proper noun*): The calculus template that takes
 a signature and supplies a checker and its proof development.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/eudaimonia).
 
 <a id="eunoia"></a>
 **Eunoia** (language; *proper noun*): The language for defining calculi and
@@ -213,8 +213,7 @@ weight sits. From Greek εὔθυνα, “the audit at end of term.”
 the ecosystem: [member](#member), [associate](#associate),
 [president](#president), [candidate](#candidate), [foundation](#foundation),
 child, or [outsider](#outsider). These describe different obligations and
-claims, not ranks. See [the laws](laws.md) and
-[the register](../scripts/ecosystem/ecosystem.json).
+claims, not ranks. See [the laws](laws.md).
 
 <a id="foundation"></a>
 **foundation** (footing; *noun*): The [footing](#footing) for a project the
@@ -247,7 +246,7 @@ investigation of quantified benchmarks where z3 is much faster than
 <a id="isarare"></a>
 **IsaRARE** (Eunoia outsider; *proper noun*): An outside tool that generates
 Isabelle lemmas from RARE rewrite rules, tracked for comparison.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/cvc5/IsaRARE).
 
 ## K
 
@@ -255,7 +254,7 @@ Isabelle lemmas from RARE rewrite rules, tracked for comparison.
 **kanon** (Eunoia president; *proper noun*): The keeper of the ecosystem’s
 governance, policy, vision, laws and registers, including what joining costs.
 From Greek κανών, “the measuring rod.”
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/kanon).
 
 <a id="kanon-ball"></a>
 **kanon-ball** (presidential request; *noun*): A request backed by the laws and
@@ -267,7 +266,7 @@ recipient. See [the joke](../README.md#a-joke-about-the-name).
 **koine** (Eunoia member; *proper noun*): The keeper of the tooling no other
 tool wants to maintain: the ecosystem’s bug database, the history-review tool,
 and the commands that start and join a repository. From Greek κοινή, “the common
-tongue.” [Register](../scripts/ecosystem/ecosystem.json).
+tongue.” [Repository](https://github.com/ajreynol/koine).
 
 ## L
 
@@ -278,17 +277,17 @@ and check the ecosystem’s formal proofs. See [logos’s roles](roles.md#logos)
 <a id="lean-smt"></a>
 **lean-smt** (Eunoia outsider; *proper noun*): An outside tool for discharging
 [Lean](#lean) proof goals through SMT solvers, tracked for comparison.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ufmg-smite/lean-smt).
 
 <a id="lfsc"></a>
 **LFSC** (Eunoia outsider; *proper noun*): An outside proof checker tracked for
 comparison. The register records its authors’ statement that it is deprecated.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/cvc5/LFSC).
 
 <a id="logos"></a>
 **logos** (Eunoia member; *proper noun*): The [Lean](#lean) development
 containing the verified [CPC](#cpc) checker and its semantics. The L in the name
-denotes Lean. [Register](../scripts/ecosystem/ecosystem.json).
+denotes Lean. [Repository](https://github.com/cvc5/logos).
 
 ## M
 
@@ -319,7 +318,7 @@ and bring them into [logos](#logos). From Greek μίμησις, “imitation.”
 <a id="murxla"></a>
 **murxla** (Eunoia outsider; *proper noun*): An outside fuzzer that exercises
 SMT solvers through their APIs, tracked for comparison.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/murxla/murxla).
 
 ## N
 
@@ -390,7 +389,7 @@ kept during it. The laws prescribe no fixed duration. See
 <a id="tachyon"></a>
 **tachyon** (Eunoia member; *proper noun*): The search for improvements to
 [cvc5](#cvc5)’s performance through reproducible benchmark experiments.
-[Register](../scripts/ecosystem/ecosystem.json).
+[Repository](https://github.com/ajreynol/tachyon).
 
 <a id="tekmerion"></a>
 **tekmerion** (Eunoia child project of [anoieu](#anoieu); *proper noun*): The
@@ -404,6 +403,17 @@ Research toward a solver designed around proofs from the start, retaining
 [cvc5](#cvc5)’s calculus and parts of its checker while replacing the search.
 Research notes; nothing is built.
 [Charter](https://github.com/ajreynol/eschaton/blob/main/tools/telos/README.md).
+
+## U
+
+<a id="unadvertised"></a>
+**unadvertised** (listing choice; *adjective*): Declared by a repository in its
+own README, or by a child project in its own, to keep it out of
+[kanon](#kanon)’s tables and installer summaries. **It is not a
+[footing](#footing) and changes none of one**: an unadvertised
+[member](#member) is a member, its declaration stands and its check still runs.
+What it declines is being advertised, which no footing ever required. See
+[the commands](commands.md#listings).
 
 ## V
 

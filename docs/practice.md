@@ -232,6 +232,35 @@ outcomes: it graduates into its own repository, it is folded into the parent,
 or it is retired in place with a line saying what was learned. What is not an
 outcome is going quiet.
 
+### Promote it, or stop advertising it
+
+**Going quiet is what actually happens**, and the register is the evidence: it
+records more child projects than repositories. A child that has found a
+consumer is worth a repository; one that has not is worth a reader's attention
+only if that reader went looking. **Both of those are moves somebody makes, and
+sitting advertised and unfinished is the absence of one.**
+
+**Promote it once something outside its own tree depends on it** — a finding
+carried, a measurement somebody uses, an argument somebody acts on.
+`eo_init from-child <path>` writes the new repository's README from what the
+child delivered rather than from the register. A child that has broken the
+island rules to be useful, as the fuzzer did, is not a project to be tolerated:
+it is a promotion nobody has got round to.
+
+**Otherwise stop advertising it**, the moment it is not something you would
+hand a reader. One standalone line in the child's README —
+`**Eunoia listing:** unadvertised` — drops it out of `status_eo` and the
+installer's summaries, and changes nothing else about the work.
+[`commands.md`](commands.md#child-project-listings) has the mechanics.
+
+**Unadvertised is not a verdict and costs nothing to reverse.** It says who
+should be reading the thing, not whether it was worth starting, and a parent
+decides it alone. It is also not a fourth ending — the three above are the
+endings, and this is the honest state to sit in while none of them has
+arrived. **What a parent should be able to answer is why each child it
+advertises is ready to be read**; a parent advertising all of them has not been
+asked the question.
+
 **One has already left.** The fuzzer was a child project here until it stopped
 being one: it had earned its keep, and it broke the island rules in four places
 in order to be useful — importing from the parent, being imported back, running

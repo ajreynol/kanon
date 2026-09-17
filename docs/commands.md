@@ -65,7 +65,22 @@ The `purpose` column in `status_eo` reads an entry's optional `short` field,
 falling back to `what`. Keep `short` around 60 characters or fewer; longer text
 is shortened at a word boundary with an ellipsis. `what` keeps the full description.
 
-## Child project listings
+## Listings
+
+**A repository and a child project both choose whether to be advertised**, with
+the same declaration and in the same place: the README introduction of whatever
+is declaring. A repository declares for itself; a parent declares for a child by
+reading the child's README. Declining changes the listing and nothing else — the
+footing stands, the policy check still runs, and `--all` shows every row.
+
+**The two differ in one way, and only for an unverified read.** A child whose
+README is missing or unparseable is not advertised: we are reading somebody's
+subdirectory and cannot speak for it. A repository in the same state **is**
+listed, because dropping a member from the table over a README that did not
+parse would hide a member; the row is where the problem shows. `status_eo`
+names any repository it withheld, so a shortened table says it is short.
+
+### Child project listings
 
 A parent repository chooses which children to advertise. Children with a readable
 README are advertised by default. To omit a child from `status_eo` and the

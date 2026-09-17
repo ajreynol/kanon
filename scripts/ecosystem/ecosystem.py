@@ -61,7 +61,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from anoieu_dependency import policy_checker
-from child_listing import read_listing, unverified_note
+from child_listing import read_listing, read_repo_listing, unverified_note
 INVENTORY = os.path.join(HERE, "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
                             os.path.join(ROOT, "scripts", "repos.local"))
@@ -716,7 +716,7 @@ def audit(online: bool) -> int:
 
 USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--health] [--protocol]
 
-  (no arguments)  the table: repositories and advertised children
+  (no arguments)  the table: advertised repositories and advertised children
   --verbose       ... and, per tool, which checks failed and what they found
   --all           every row this table can show, which today means every
                   recorded child including the unadvertised ones. The table
@@ -731,8 +731,10 @@ USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--onl
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
 
-Children opt out with **Eunoia listing:** unadvertised in their README introduction,
-before the first section heading. Missing declarations mean advertised.
+A repository or a child opts out with **Eunoia listing:** unadvertised in its
+README introduction, before the first section heading. Missing declarations mean
+advertised. Opting out changes the listing and nothing else: the footing stands,
+the checker still runs, and --all shows every row.
 Preferences are read from local parent checkouts; unavailable or invalid reads
 are reported as unverified. --check still validates the complete inventory.
 """
@@ -778,7 +780,8 @@ def main() -> int:
     with open(INVENTORY, encoding="utf-8") as f:
         inv = json.load(f)
     rows, notes = [], []
-    child_listings, parent_paths = {}, {}
+    child_listings, parent_paths, unadvertised = {}, {}, []
+    show_all = "--all" in sys.argv
 
     for name, e in inv.items():
         if name.startswith("_"):
@@ -802,6 +805,22 @@ def main() -> int:
         if not path:
             rows.append((name, status, "no checkout", "-", "-", ""))
             continue
+        # A repository may decline to be listed, in its own README, exactly as a
+        # child does. It stays a member: the footing is unchanged, the checker
+        # still runs below, and only the default view is shorter.
+        #
+        # **Only an explicit declaration opts a repository out**, which is where
+        # this differs from a child. For a child, unverified is not advertised:
+        # we are reading somebody's subdirectory and a README we cannot parse is
+        # a reason not to speak for it. A repository holds a footing, and
+        # dropping a member from the table because its front page did not parse
+        # would hide a member — so unverified is listed, and the row is the
+        # place that shows something is wrong with it.
+        repo_listing = read_repo_listing(path)
+        if repo_listing.state == "unadvertised":
+            unadvertised.append(name)
+            if not show_all:
+                continue
         # An associate is held to none of this, so nothing here runs the checker
         # over its tree. A failure count in that row would be this table
         # grading somebody who never agreed to be graded, which is the whole of
@@ -874,6 +893,14 @@ def main() -> int:
         note = unverified_note(parent, listings)
         if note:
             notes.append(note)
+
+    # Say that a row was withheld rather than simply withholding it: a table
+    # that is quietly short is worse than one that is longer than you wanted.
+    if unadvertised and not show_all:
+        n = len(unadvertised)
+        notes.append(f"{n} repositor{'ies' if n != 1 else 'y'} declined listing "
+                     f"in their own README: {', '.join(sorted(unadvertised))}. "
+                     "Their footing is unchanged; --all shows them.")
 
     w = max((len(r[0]) for r in rows), default=4) + 2
     locations = {r[0]: r[5].replace(os.path.expanduser("~"), "~") for r in rows}

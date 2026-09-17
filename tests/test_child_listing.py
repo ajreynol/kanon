@@ -10,7 +10,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from test_handoff import ecosystem, installer
+from support import ecosystem, installer
 from child_listing import declaration, read_listing
 
 
@@ -54,6 +54,75 @@ class Declarations(unittest.TestCase):
             child.mkdir()
             (child / "README.md").write_bytes(b"\xff")
             self.assertEqual(read_listing(str(parent), "child").state, "unverified")
+
+
+class RepositoryListings(unittest.TestCase):
+    """A repository may decline listing in its own README, as a child may."""
+
+    def setUp(self):
+        temp = tempfile.TemporaryDirectory(prefix="kanon-repo-listing-")
+        self.addCleanup(temp.cleanup)
+        self.base = Path(temp.name)
+        self.entries, lines = {}, []
+        # shown: no declaration. hidden: declines. unreadable: no README at all.
+        for name, choice in (("shown", None), ("hidden", "unadvertised"),
+                             ("unreadable", "absent")):
+            tree = self.base / f"{name}-tree"
+            (tree / ".git").mkdir(parents=True)
+            if choice != "absent":
+                text = f"# {name}\n\n"
+                if choice:
+                    text += f"**Eunoia listing:** {choice}\n"
+                (tree / "README.md").write_text(text)
+            self.entries[name] = {"status": "member", "repo": f"{name}-tree",
+                                  "url": f"https://example.invalid/{name}",
+                                  "what": f"the {name} tool"}
+            lines.append(f"{name}-tree {tree}")
+        inventory = self.base / "inventory.json"
+        inventory.write_text(json.dumps(self.entries))
+        mapping = self.base / "repos.local"
+        mapping.write_text("\n".join(lines) + "\n")
+        for p in (patch.object(ecosystem, "INVENTORY", str(inventory)),
+                  patch.object(ecosystem, "REPOS_FILE", str(mapping)),
+                  patch.dict(os.environ, {"ANOIEU_REPOS": str(self.base)}),
+                  patch.object(ecosystem, "check", return_value=("ok", [])),
+                  patch.object(ecosystem, "age", return_value="today")):
+            p.start(); self.addCleanup(p.stop)
+
+    def status(self, *args):
+        out = io.StringIO()
+        with patch.object(sys, "argv", ["status_eo", *args]), contextlib.redirect_stdout(out):
+            self.assertEqual(ecosystem.main(), 0)
+        return out.getvalue()
+
+    def rows(self, output):
+        return {line.split()[0] for line in output.splitlines()
+                if line.split()[:1] and line.split()[0] in self.entries}
+
+    def test_a_declaration_is_what_removes_a_row(self):
+        self.assertEqual(self.rows(self.status()), {"shown", "unreadable"})
+
+    def test_unreadable_is_listed_because_a_member_is_not_hidden_by_accident(self):
+        # The failure this catches: unverified is not advertised, so treating
+        # "not advertised" as "opt out" drops a member whose README did not parse.
+        self.assertIn("unreadable", self.rows(self.status()))
+
+    def test_all_shows_the_row_it_withheld(self):
+        self.assertEqual(self.rows(self.status("--all")),
+                         {"shown", "hidden", "unreadable"})
+
+    def test_the_omission_is_announced_rather_than_silent(self):
+        output = self.status()
+        self.assertIn("declined listing", output)
+        self.assertIn("hidden", output)
+        self.assertIn("footing is unchanged", output)
+        self.assertNotIn("declined listing", self.status("--all"))
+
+    def test_declining_does_not_change_the_footing_or_the_check(self):
+        row = next(line for line in self.status("--all").splitlines()
+                   if line.split()[:1] == ["hidden"])
+        self.assertIn("member", row)
+        self.assertIn("ok", row)
 
 
 class ChildCommands(unittest.TestCase):
