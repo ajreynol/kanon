@@ -11,7 +11,7 @@ what this ecosystem does with a description once something owns its subject.
 | what is it graded against | **a fixed, recorded version of each project — never whatever is on their disk today.** Changing which version is a separate decision, because it changes what the build measures | the report card |
 | which voice does a paragraph use | whichever that project's own maintenance note asks for: **people get an observation, agents get an instruction** | the report card |
 | what shape does a paragraph take | *arete*, *elleipsis*, *parainesis* — **all three** | the report card |
-| who may appear on it at all | tools in the inventory. **A child project may not**, until a person decides it has earned a place | [`../../docs/practice.md`](../../docs/practice.md) |
+| who may appear on it at all | tools in the inventory. **A child project may not**, until a person decides it has earned a place | [`../../docs/policy.md`](../../docs/policy.md#child-projects) |
 
 ## The order, and the one trap
 

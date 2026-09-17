@@ -44,8 +44,7 @@ first.
 | document | what it settles |
 | --- | --- |
 | [`docs/policy.md`](docs/policy.md) | how a repository is arranged, what its front page must say, and what joining costs. Decidable from a tree, and checked by a program |
-| [`docs/vision.md`](docs/vision.md) | the five tenets this development aims at, and the argument for them. Argued, and never checked |
-| [`docs/practice.md`](docs/practice.md) | what follows from the tenets once a repository is running: front pages, what may be claimed, where speculative work goes, papers |
+| [`docs/vision.md`](docs/vision.md) | the five tenets this development aims at, the argument for them, and what follows for anything that leaves the repository. Argued, and never checked |
 | [`docs/laws.md`](docs/laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
 | [`docs/glossary.md`](docs/glossary.md) | the authoritative name register and alphabetized dictionary of eo's terms, maintained by the president |
 | [`docs/protocols.md`](docs/protocols.md) | the register of named exchanges — between a person and an agent, and between one repository and another |

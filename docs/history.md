@@ -210,6 +210,25 @@ to have chosen and not a debt koine owes us, and `D13` says so to them.
 *Re-derive:* `git log --diff-filter=D --name-only 59ed39f^..HEAD` in this
 repository.
 
+### `practice.md` was folded into the vision, and LAW 8 lost a page — 2026-09-17
+
+**LAW 8's own table said the split bought nothing**: *splitting a page in two
+does not buy room*. The numbers agreed — the vision and what-follows-from-it ran
+3,108 and 2,932 words, so the pair fitted inside the 7,000 a single page is
+asked to aim at. The page was also defined by its relationship to another page
+rather than by a subject, which is what made it hard to say what it was for.
+
+**Two sections had no other home and were carried across, compressed**: how to
+write for a reader who is an agent, and who the paper is for. The front-page
+layering, the adoption table, the report-card note and the child-project
+inventory were dropped — `policy.md` carries the rules they elaborated, and the
+register carries the inventory. LAW 8 now covers three pages rather than four.
+
+**What this leaves unfixed.** `policy.md` is 10,243 words and over LAW 8's
+ceiling. That is the page with a length problem, and nothing here touched it.
+
+*Re-derive:* `wc -w docs/policy.md docs/vision.md docs/roles.md`.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

@@ -30,7 +30,7 @@ directs an agent. **Each command documents itself**, at the top of its own file.
 | what | where |
 | --- | --- |
 | policy and joining | [`policy.md`](policy.md) — the rule, not the commands that state it |
-| the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
+| the development vision | [`vision.md`](vision.md) |
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the register, and reading it back | `scripts/ecosystem/` |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
@@ -247,7 +247,7 @@ reason, and wait for a person — do not make it and mention it afterwards.
 
 | | document | what it takes |
 | --- | --- | --- |
-| 1 | [`vision.md`](vision.md), [`practice.md`](practice.md), the report card | **ask first, always**, and **at most five lines of diff** |
+| 1 | [`vision.md`](vision.md), the report card | **ask first, always**, and **at most five lines of diff** |
 | 2 | [`policy.md`](policy.md) | ask before the rules. Append; never renumber; retiring one in place is a person's |
 | 3 | anoieu's reporting policy | not yet stable, so ask before changing what may be said about somebody else's code |
 | 4 | anoieu's reporting workflow | ask before the prompts |

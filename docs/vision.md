@@ -11,10 +11,11 @@ something to *do*, read [`policy.md`](policy.md). If you want to know *why*,
 read this. Somebody deciding whether to use one of these tools needs neither;
 that is what the front page is for.
 
-**Its other half is [`practice.md`](practice.md)**, which is what follows from
-the tenets once a repository is running: the front page, what may be claimed
-about a tool, where speculative work goes, and the paper. This page states the
-tenets and defends them, and stops there.
+**It states the tenets, defends them, and then says what follows from them for
+anything that leaves the repository** — how to write for a reader who is an
+agent, and for the one who will never clone the tree. What a front page must
+carry, and what a child project may do, are decidable from a tree and are
+[`policy.md`](policy.md)'s instead.
 
 **Five tenets, and they are the page.** Be fruitful to another tool, quickly.
 Move fast, on CI that lets you. Build a small number of self-contained things
@@ -250,68 +251,6 @@ no it is vision, and it must never acquire a checker. The asymmetry runs both
 ways — a tenet somebody works out how to check mechanically was probably a
 policy convention all along, and should move.
 
-## What none of this licenses
-
-Four misreadings, each invited by a tenet as written, and each ruled out.
-
-- ***Fruitful to another tool*** is a property of the artifact — consumable
-  format, stable identifiers, documented meaning — and never a licence to push
-  anything anywhere. **Nothing crosses a repository boundary automatically.**
-- ***Fast*** applies to the tool and not to what it says about other people's
-  files. A candidate may be published quickly under our own name, labelled
-  unjudged; a finding is carried only once it is confirmed, reproduced small,
-  and put to whoever the authority is.
-- ***Early*** is not *light on caveats*. The fastest thing any of these tools
-  could ship is an assurance, and an assurance inferred from a quiet run is the
-  one thing that may never be shipped at all: **silence is never evidence**,
-  and a false sense of security is much harder to withdraw than a wrong
-  finding.
-- ***Making people interested*** is a claim on somebody's attention, earned
-  with evidence rather than promotion. No announcements, no adoption declared
-  on another project's behalf, and no scoring: the number of findings a tool
-  has produced says which of its checks tripped, never how much of anything is
-  sound.
-
-**And none of this starts a child project.** [`policy.md`](policy.md) reserves
-that for a person, explicitly. An agent reading this page has no authority to
-name a new one.
-
-## Why this shape
-
-Four failure modes, in increasing order of what they cost.
-
-**The tool that is permanently nearly ready.** Every week's work is real, the
-internals get better, and nothing ever reaches a consumer. This is the
-characteristic failure of agent-written software, because the loop that
-produces it has no natural stopping point and each improvement is defensible on
-its own. Tenet 1 is the stopping point: a consumer outside this tree, named
-before the work starts, and an artifact that actually reaches it.
-
-**Speed that consumes the tool's own credibility.** Agility with no CI produces
-a tool that is quick to change and progressively less trustworthy, and the bill
-does not arrive here — it arrives in somebody else's repository, as a false
-positive they spent an afternoon on. Tenet 2 is the answer, and CI is described
-as a friend rather than a discipline because a team that experiences it as a
-discipline eventually routes around it.
-
-**The tool nobody can evaluate.** Entangled, undocumented, with a front page
-that either overclaims or says nothing precise. Its findings may be excellent
-and cannot be judged, because judging them requires trusting a thing no reader
-can inspect in the time they have. Tenet 3 is the only cheap defence, and it is
-cheap only while the tool is small.
-
-**The tool that stays vaporware.** Built competently, legible, reaching a
-consumer — and no person ever decides to own it, so it lives exactly as long as
-somebody keeps prompting for it and evaporates on the day they stop. No amount
-of engineering prevents this, because the missing thing is not in the
-repository. It is listed last because every other failure here can be recovered
-by somebody who has taken the work on, and this one is the absence of that
-somebody.
-
 ---
-
-**Primary scope: a solver as fast as cvc5, statically verified to be correct.**
-
-**The mission is distribution: no tool should hold what another tool could.**
 
 **Have fun and enjoy the Eunoia ecosystem!**

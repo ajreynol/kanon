@@ -116,7 +116,7 @@ project's call.
 **The account exists and is long.** Nothing in it has been argued with by
 anybody who disagrees, which is the whole point of writing it and has not
 happened yet. It has reached no consumer and so has earned no place in
-[`docs/practice.md`](../../docs/practice.md) — with one qualification: of the seven projects it named, four —
+[`docs/vision.md`](../../docs/vision.md) — with one qualification: of the seven projects it named, four —
 **euthyna**, **noesis**, **hermeneia** and **mimesis** — have since been started
 as child projects of eudaimonia. Whether that is this account's doing or
 convergence is not something this project can establish about itself.

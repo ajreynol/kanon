@@ -400,17 +400,15 @@ governs.
 
 ## (LAW 8) — The shared pages are kept short enough to read in one sitting
 
-**A recommended length, and nothing more.** Four pages are covered, and each
+**A recommended length, and nothing more.** Three pages are covered, and each
 stays **under 10,000 words**, with **7,000 the number to aim at**: the policy,
-the vision, what follows from the vision in practice, and the register of who
-is accountable for what. `wc -w` decides it, anybody can run it, and no build
-fails on the answer.
+the vision, and the register of who is accountable for what. `wc -w` decides it,
+anybody can run it, and no build fails on the answer.
 
 | page | why it is covered |
 | --- | --- |
 | [`policy.md`](policy.md) | what a member is held to |
-| [`vision.md`](vision.md) | what the work is for |
-| [`practice.md`](practice.md) | what follows from the tenets. **Splitting a page in two does not buy room** — it is covered for the same reason the vision is, and a pair that grows past the ceiling together has grown past it |
+| [`vision.md`](vision.md) | what the work is for, and what follows from it for anything that leaves the repository. **Splitting this page in two does not buy room**, which is why it is one |
 | [`roles.md`](roles.md) | who is accountable for what. A register earns its length in entries, so the ceiling binds the prose around them: **the rules for reading it should not outweigh the thing being read** |
 
 **Words rather than lines.** A hand-wrapped file's line count is a fact about

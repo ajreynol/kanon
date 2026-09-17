@@ -220,9 +220,9 @@ nobody has the authority to settle. How a repository is arranged, what its
 front page must say about who is writing it, how tools talk to one another, and
 what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
-**Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, the ecosystem's
-vocabulary and authoritative name register in `docs/glossary.md` (kept current
-by the president).
+**Owns:** `docs/policy.md`, `docs/vision.md`, the ecosystem's vocabulary and
+authoritative name register in `docs/glossary.md` (kept current by the
+president).
 **Not this role:** who is actually in the ecosystem, which is `R6`; **deciding
 whether a tree complies, which is `R31` and is anoieu's**; and **the commands
 that start and join a repository, which are `R35`.** This role says what joining
