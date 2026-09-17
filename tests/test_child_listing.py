@@ -147,6 +147,24 @@ class ChildCommands(unittest.TestCase):
         self.assertIn("broken: Eunoia listing: unverified", output)
         self.assertIn("missing: Eunoia listing: unverified", output)
 
+    def test_all_widens_the_table_without_a_note_per_child(self):
+        output = self.status("--all")
+        self.assertIn("5 children", output)
+        for name in self.choices:
+            self.assertIn(name, output)
+        self.assertNotIn("Eunoia listing:", output)
+
+    def test_an_option_that_is_not_one_is_refused_rather_than_ignored(self):
+        # The failure this catches: an unrecognised flag printed the default
+        # table and looked exactly like a flag that had worked.
+        out, err = io.StringIO(), io.StringIO()
+        with patch.object(sys, "argv", ["status_eo", "--alll"]), \
+             contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            self.assertEqual(ecosystem.main(), 2)
+        self.assertIn("--alll", err.getvalue())
+        self.assertIn("--all-children", err.getvalue())
+        self.assertNotIn("children,", out.getvalue())
+
     def test_missing_parent_is_reported_without_advertising_children(self):
         with patch.object(ecosystem, "locate", return_value=""):
             output = self.status()

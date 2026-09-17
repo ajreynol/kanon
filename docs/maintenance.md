@@ -451,7 +451,7 @@ happened once and is written up below.
 ## The governance budget
 
 **The rule exists and nothing counts against it.**
-[`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md)
+[`report-card.md`](../tools/stathmos/report-card.md)
 grades this repository down for exactly this and states the rule in the same
 paragraph: *every further page here has to displace a check, a finding, or an
 hour of somebody else's reading.* Nothing has ever measured whether it is kept.

@@ -284,9 +284,22 @@ correction gets more expensive every stretch and never gets cheaper.**
   said so, and it was not a formality. **It was built, and joined on
   2026-09-14**, so this one is discharged rather than outstanding.
 - **Hand over the assessment with the office.**
-  [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) stays here. The record of what
+  `report-card.md` stays in anoieu. The record of what
   happened should follow whoever is answerable for it; the grading of everybody
   should not travel with the office being graded.
+
+  > **Overtaken on 2026-09-16, and this stance was right to worry.** The role
+  > `R30` was widened from mediating the report card to writing it, and the page
+  > moved to [`../stathmos/report-card.md`](../stathmos/report-card.md) — which
+  > is a child project of the repository currently holding the office. **The
+  > grading of everybody now sits in the tree of the party being graded**, which
+  > is the exact arrangement this bullet refused. It is recorded here rather
+  > than edited away because the objection has not been answered, only
+  > outvoted: the page's own defence is that its kanon and stathmos entries are
+  > marked as self-assessments and graded in the sharper register, and a
+  > self-assessment declaring itself is weaker than an assessment from outside.
+  > The condition that would settle it is the one stathmos already states for
+  > itself — a repository of its own.
 - **Claim this makes the arrangement legitimate.** A second bestowal is still a
   bestowal. **Nothing here is elected and nothing is in Arete**, and handing on
   a proposed office does not ratify it.

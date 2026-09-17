@@ -11,7 +11,8 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 | `scripts/status_eo --check` | Validates the inventory offline |
 | `scripts/status_eo` | Shows tool purposes, checkout policy results and topics addressed to kanon |
 | `scripts/status_eo --verbose` | Adds the reasons behind policy results |
-| `scripts/status_eo --all-children` | Includes every recorded child and its listing preference |
+| `scripts/status_eo --all` | Shows every row the table can show, which today means every recorded child including the unadvertised ones |
+| `scripts/status_eo --all-children` | The same rows, and a note per child saying what listing it declared and why |
 | `scripts/status_eo --check --online` | Also reads remote membership declarations |
 | `scripts/status_eo --protocol` | Reports on the proposed associate protocol |
 | `scripts/status_eo --health` | Summarizes policy, discussion and working-hours indicators |

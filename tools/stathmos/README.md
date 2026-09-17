@@ -13,17 +13,25 @@ human, read-only, unadvertised, and not part of what this repository ships.
 *σταθμός — a standard weight: the thing an object is weighed against, rather
 than the scale or the verdict.*
 
-**In one line: the mediator of the report card. It says whether a judgement
-passed on a tool was justified.**
+**In one line: it writes and keeps [the report card](report-card.md).**
 
-**It does not grade tools** — [`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md)
-does that. It grades the grading: whether the evidence under a band supports the
-band, whether an axis was applied the same way twice, and whether a paragraph
-about somebody else's project is one they could argue with. **The judge needs
-somebody watching, and this is that somebody.** That is the whole of the scope. This project
-assembles what a tool weighs when it is put against the ecosystem's stated
-tenets. **It does not deliver the verdict**, which is a person's and may never
-become a program's.
+**This is not an island**, and the exception is deliberate. Other documents in
+this repository point at the page — `roles.md` records the role, `laws.md` and
+`vision.md` name it, and `scripts/ecosystem/ecosystem.py` prints a link to it —
+so this project is named by code and by pages outside its own directory. A page
+nobody can find is not an assessment of anything.
+
+**What it does:** assemble, per tool and at a recorded version, the evidence a
+paragraph would rest on; write the paragraph; and re-grade each round. **What it
+still does not do is settle anything.** The page is argued and never checked,
+`vision.md` forbids it from becoming a build step, and **a person may overrule
+any paragraph without giving a reason.** Adherence to policy is tracked
+automatically; adherence to vision must never be.
+
+*It used to be the mediator rather than the author — it graded the grading,
+while anoieu wrote the page. That split is recorded rather than edited away: it
+put the assessment in the tree of the tool assessed most closely, which is the
+arrangement this project was created to complain about.*
 
 The objection worth recording: σταθμός also means a halting-place or station,
 and it sits close to `kanon` — the measuring rod proposed for the governance
@@ -42,11 +50,12 @@ remembering something.
 
 ## Why it is a separate thing at all
 
-**Because the tool that writes the report card should not indefinitely be the
-tool the report card grades most closely.** `anoieu` wrote the vision, keeps the
-page, and is assessed on it. The page itself names that as the only real check
-it has — that its author is graded on the same scale and does not come out best
-— which is an honest arrangement and a fragile one.
+**Because the tool that writes the report card should not be the tool the
+report card grades most closely.** `anoieu` wrote the vision, kept the page, and
+was assessed on it. That arrangement was honest and fragile, and it ended when
+the vision moved to kanon and the page moved here. **The fragility did not
+disappear, it moved**: this project now lives in the tree it grades second most
+closely, so its own entry and kanon's are self-assessments and say so.
 
 **So the intention is stated at the start rather than discovered later: this
 moves to a repository of its own.** Starting inside `anoieu` is the cheap first
@@ -72,19 +81,20 @@ self-assessment producing no unfavourable findings is void.
   [`../martyria/`](../martyria/README.md) and
   [`../zetesis/`](../zetesis/README.md). Utility and ethics are both judged in
   this ecosystem, and they are judged in different places on purpose.
-- **It does not change the page yet.** Nothing here edits
-  `docs/report-card.md` until a person asks for a specific paragraph.
-- **It writes only inside this directory.**
+- **It does not settle anything.** It writes paragraphs; a person may overrule
+  any of them, and no tool may put a verdict against a tenet.
+- **It writes only inside this directory**, which is where the page is.
 
 ## Status
 
 **Started 2026-09-02**, by the maintainer, in an explicit instruction — the only
-way one of these may begin. It is a stub: it holds `R30` and has assembled
-nothing.
+way one of these may begin.
 
-**It is intentionally not graded this round.** A project on its first day has no
-record to weigh, and a paragraph about it would be a description of an intention
-rather than an assessment of anything. Saying so here is better than an empty
-entry on the page, and it is a commitment: the round after it has done work, it
-is graded like everything else, in the sharper register, and it does not get to
-grade itself favourably for having been careful about this.
+**It now holds the page rather than only the role**, since 2026-09-16:
+[`report-card.md`](report-card.md) is written here, supersedes the edition
+anoieu last graded on 2026-09-02, and covers twelve tools.
+
+**And it is graded on it**, which the first edition promised and deferred: *a
+project on its first day has no record to weigh*. It has one now, its entry is
+in the sharper register, and the shortfall it records against itself is that
+[`evidence.md`](evidence.md) is older than the page resting on it.

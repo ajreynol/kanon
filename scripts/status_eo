@@ -5,7 +5,8 @@
 #
 #   status_eo                    # the table: status, policy, channel, moved, where, purpose
 #   status_eo --verbose          # ... and why each policy verdict came out
-#   status_eo --all-children     # include unadvertised and unverified children
+#   status_eo --all              # every row the table can show, and nothing else
+#   status_eo --all-children     # the same rows, plus what each child declared
 #   status_eo --check            # is the inventory itself well formed?
 #   status_eo --check --online   # ... and does each remote still agree with it
 #   status_eo --help             # what every column and every value means

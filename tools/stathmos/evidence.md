@@ -1,9 +1,15 @@
 # Assembled evidence
 
 **What each tool weighs, in numbers somebody else can re-derive. Nothing here is
-judged.** Assembled 2026-09-02. The paragraphs that would rest on this are in
-[`../../docs/report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md) and are a person's to
-write; a row here that reads like a verdict is a defect.
+judged.** Assembled 2026-09-02. The paragraphs that rest on this are in
+[`report-card.md`](report-card.md); a row here that reads like a verdict is a
+defect.
+
+> **This file is older than the page beside it.** The 2026-09-16 edition of the
+> report card was re-derived from the trees rather than from here, which that
+> edition records against this project as its own shortfall. Until it is
+> regenerated, treat these numbers as the 2026-09-02 round's and not as the
+> evidence under the current paragraphs.
 
 ## How to read it, and the discount that applies to every row
 

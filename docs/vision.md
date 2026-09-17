@@ -240,7 +240,7 @@ returned a verdict on *is this tool fruitful* would manufacture an authority
 that does not exist, and a green tick is read as settled in a way a paragraph
 never is. That is the same failure as publishing an assurance because a run
 went quiet: the tick would be believed most by the readers least able to check
-it. It is also why [the report card](https://github.com/ajreynol/anoieu) is
+it. It is also why [the report card](../tools/stathmos/report-card.md) is
 paragraphs somebody can disagree with, produced by a reader rather than by a
 job. **It is not a build step and must not become one.**
 

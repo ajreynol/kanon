@@ -345,15 +345,19 @@ finding and it leaves through the reporting workflow.
 ### R30 — the report card
 
 **Held by:** `stathmos`
-**Role:** keeping the report card current — assembling, per tool and at the
-recorded version, the evidence a paragraph about that tool would rest on, and
-re-grading each round. It is the half of the vision that goes stale, because it
-is the half that is a claim about somebody else's project this month rather
-than a statement of what the work is for.
-**Owns:** `docs/report-card.md`.
-**Not this role:** the tenets themselves, which are part of `R4`; deciding
-whether a paragraph is right, which stays a person's; and reading *histories*,
-which another tree already does.
+**Role:** **writing and keeping the report card** — assembling, per tool and at
+a recorded version, the evidence a paragraph about that tool rests on, writing
+the paragraph, and re-grading each round. It is the half of the vision that goes
+stale, because it is the half that is a claim about somebody else's project this
+month rather than a statement of what the work is for.
+**Owns:** [`tools/stathmos/report-card.md`](../tools/stathmos/report-card.md),
+and the evidence and protocol pages beside it. *Before 2026-09-16 this role
+held the pen over a page anoieu kept; that page is the previous edition and
+stays in anoieu's tree.*
+**Not this role:** the tenets themselves, which are part of `R4`; **settling
+anything** — `vision.md` forbids adherence to vision from being tracked
+automatically, so the page is never a build step and a person may overrule any
+paragraph; and reading *histories*, which another tree already does.
 
 > **A child project holding a role is not an island, and the exception is
 > deliberate**: the tool writing the report card should not indefinitely be the

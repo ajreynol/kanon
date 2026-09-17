@@ -77,9 +77,9 @@ It records what a reader cannot reconstruct from them: how often the build was
 broken, for how long, and what nobody was watching.
 
 **It is not the report card.**
-[`report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md)
-grades how well each tool performs the function it claims and **does not move
-with the office.** Keeping an archive or an assessment is not holding one.
+[`report-card.md`](../tools/stathmos/report-card.md)
+grades how well each tool performs the function it claims, is written by
+`stathmos` under `R30`, and **does not move with the office.** Keeping an archive or an assessment is not holding one.
 
 **It is not a defence.** A page written by the party it describes has an
 obvious failure mode, and the re-derivability requirement in LAW 4 is the only

@@ -723,11 +723,16 @@ def audit(online: bool) -> int:
     return 1 if bad or stale else 0
 
 
-USAGE = """usage: status_eo [--verbose] [--all-children] [--check [--online]] [--health] [--protocol]
+USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--health] [--protocol]
 
   (no arguments)  the table: repositories and advertised children
   --verbose       ... and, per tool, which checks failed and what they found
-  --all-children  include every recorded child, with its listing preference
+  --all           every row this table can show, which today means every
+                  recorded child including the unadvertised ones. The table
+                  and nothing else
+  --all-children  the same rows, and a note per child saying what it declared
+                  and why -- for auditing the preferences rather than reading
+                  the table
   --check         is the inventory itself well formed? No network, no checkouts
   --check --online  ... and does each remote's README still agree with it
   --health        the one-line-per-question health report
@@ -742,7 +747,21 @@ are reported as unverified. --check still validates the complete inventory.
 """
 
 
+#: Every option this command takes. An unrecognised one is refused rather than
+#: ignored, because a silently accepted flag prints the default table and looks
+#: exactly like a flag that worked -- which is how `--all` behaved before it
+#: existed, and is a worse failure than an error.
+FLAGS = frozenset({"--help", "-h", "-help", "--check", "--online", "--health",
+                   "--protocol", "--verbose", "--all", "--all-children"})
+
+
 def main() -> int:
+    unknown = [a for a in sys.argv[1:] if a not in FLAGS]
+    if unknown:
+        print("status_eo: not an option here: " + ", ".join(unknown),
+              file=sys.stderr)
+        print(USAGE, file=sys.stderr)
+        return 2
     if "--help" in sys.argv or "-h" in sys.argv or "-help" in sys.argv:
         print(USAGE)
         print(render_key())
@@ -756,7 +775,12 @@ def main() -> int:
         inv = json.load(open(INVENTORY, encoding="utf-8"))
         return protocol({k: v for k, v in inv.items() if not k.startswith("_")})
     verbose = "--verbose" in sys.argv
-    all_children = "--all-children" in sys.argv
+    all_children = bool({"--all", "--all-children"} & set(sys.argv))
+    #: Both flags widen the table; only one explains itself. `--all-children`
+    #: is for auditing the preferences, so it says what each child declared and
+    #: why. `--all` is for reading the table, where a note per child is a screen
+    #: of prose between you and the rows you asked for.
+    listing_notes = "--all-children" in sys.argv
     with open(INVENTORY, encoding="utf-8") as f:
         inv = json.load(f)
     rows, notes = [], []
@@ -772,10 +796,10 @@ def main() -> int:
                 parent_paths[parent] = locate(inv.get(parent, {}).get("repo", parent))
             listing = read_listing(parent_paths[parent], e.get("path", ""))
             child_listings.setdefault(parent, []).append(listing)
-            if all_children:
+            if listing_notes:
                 detail = f" ({listing.reason})" if listing.reason else ""
                 notes.append(f"{name}: Eunoia listing: {listing.state}{detail}")
-            elif not listing.advertised:
+            if not all_children and not listing.advertised:
                 continue
         if status in ("child", "foundation"):
             rows.append((name, status, "-", "-", "-", e.get("parent", "")))
@@ -902,7 +926,7 @@ def main() -> int:
           f"policy check, {owed} topic{'s' if owed != 1 else ''} "
           f"{'are' if owed != 1 else 'is'} owed to us, "
           "and how good any of these tools actually are is a judgement kept in "
-          "https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md "
+          "https://github.com/ajreynol/kanon/blob/main/tools/stathmos/report-card.md "
           "rather than in this table.")
     return 0
 

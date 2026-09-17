@@ -1,7 +1,7 @@
 # The report card protocol
 
-**Five rules decide how [`../../docs/report-card.md`](https://github.com/ajreynol/anoieu/blob/main/docs/report-card.md)
-is updated, and none of them is new.** They were spread across four documents,
+**Five rules decide how [`report-card.md`](report-card.md) is updated, and none
+of them is new.** They were spread across four documents,
 collected into one, and moved here when this project took the role — which is
 what this ecosystem does with a description once something owns its subject.
 

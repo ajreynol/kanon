@@ -342,8 +342,8 @@
     "status": "child",
     "parent": "kanon",
     "path": "tools/stathmos",
-    "short": "Evidence for assessing tools against ecosystem tenets",
-    "what": "what each tool weighs against the tenets, at the recorded version, and the evidence for it -- the report card's raw material, not its verdicts"
+    "short": "Writes the report card on the ecosystem's tenets",
+    "what": "writes and keeps the report card: how each tool stands against the ecosystem's tenets, at a recorded version, with the evidence each paragraph rests on -- argued and never checked, and a person may overrule any of it"
   },
   "tekmerion": {
     "status": "child",
