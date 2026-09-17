@@ -17,11 +17,9 @@ what we pushed this morning, which is the failure the whole pinning discipline
 exists to prevent.
 
 **It fails closed.** Not green, not finished, or not reachable -- all refuse.
-That is the opposite of how `scripts/status_eo --check --online` treats an
-unreachable remote, and the difference is that adopting a policy commit is *optional and
-deferrable*: refusing costs a member nothing but a later attempt, where a
-fail-closed check inside a build would turn somebody's tree red for a network
-they do not own.
+Adopting a checker commit is optional and deferrable: refusing costs a member
+nothing but a later attempt. Like the online inventory check, an unavailable
+or incomplete response is unverified, not a pass.
 
 **It must never run in CI.** Not ours, not theirs. It reads a remote over the
 network, so a build that called it could go red without anybody committing --
@@ -42,6 +40,7 @@ Exit codes, which are the interface a bump script consumes:
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
@@ -50,7 +49,7 @@ import urllib.error
 import urllib.request
 
 REPO = "ajreynol/anoieu"
-API = "https://api.github.com/repos/{repo}/commits/{rev}/check-runs"
+API = "https://api.github.com/repos/{repo}/commits/{rev}/check-runs?per_page=100"
 
 #: Conclusions that do not stand in the way of adoption. `neutral` and `skipped`
 #: are how a job that correctly decided it had nothing to do reports itself, and
@@ -111,7 +110,13 @@ def ask(rev: str, timeout: int = 20) -> tuple[list[dict], str]:
     })
     try:
         with urllib.request.urlopen(req, timeout=timeout) as r:  # noqa: S310
-            return json.load(r).get("check_runs", []), ""
+            data = json.load(r)
+        runs = data.get("check_runs") if isinstance(data, dict) else None
+        if not isinstance(runs, list) or any(not isinstance(run, dict) for run in runs):
+            return [], "the API returned an invalid check-run list"
+        if data.get("total_count") != len(runs):
+            return [], "the API returned an incomplete check-run list; cannot verify all checks"
+        return runs, ""
     except urllib.error.HTTPError as e:
         if e.code == 404:
             return [], f"{REPO} has no commit {rev}, or it is not public"
@@ -124,23 +129,24 @@ def ask(rev: str, timeout: int = 20) -> tuple[list[dict], str]:
 
 
 def main() -> int:
-    argv = sys.argv[1:]
-
-    def opt(name: str) -> str:
-        return argv[argv.index(name) + 1] if name in argv else ""
-
-    rev, root = opt("--rev"), opt("--root")
-    if root and not rev:
+    parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
+    source = parser.add_mutually_exclusive_group(required=True)
+    source.add_argument("--rev", help="anoieu commit to check")
+    source.add_argument("--root", help="read ANOIEU_REV from this checkout's workflows")
+    parser.add_argument("--dry-run", action="store_true", help="print the query without sending it")
+    args = parser.parse_args()
+    rev, root = args.rev, args.root
+    if root:
         rev, why = pinned_rev(root)
         if why:
             print(f"-- cannot check: {why}")
             return 2
         print(f"-- {root} pins {REPO} at {rev}")
-    if not rev:
-        print(__doc__.strip().split("\n\n")[-2])
+    if not re.fullmatch(r"[0-9a-fA-F]{7,40}", rev or ""):
+        print("-- cannot check: --rev must be a commit hash (7 to 40 hexadecimal characters)")
         return 2
 
-    if "--dry-run" in argv:
+    if args.dry_run:
         print(API.format(repo=REPO, rev=rev))
         return 0
 
@@ -156,7 +162,7 @@ def main() -> int:
     print(f"-- {'ADOPT' if code == 0 else 'REFUSE'}: {REPO} at {rev} is {reason}")
     if code == 0:
         print("   This says those checks passed at that commit, and nothing about "
-              "whether the\n   policy change is any good -- see https://github.com/ajreynol/anoieu/blob/main/docs/reports/"
+              "whether the\n   policy change is any good -- see https://github.com/ajreynol/kanon/blob/main/docs/"
               "reporting-policy.md on silence.")
     return code
 

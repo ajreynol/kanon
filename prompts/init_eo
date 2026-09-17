@@ -7,7 +7,7 @@
 #   init_eo new                    # name it, and write the README
 #   init_eo from-child <path>      # the same, for work that already exists
 #   join_eo                        # later, when there is something to join with
-#   check_join_eo <id>             # run from anoieu, to see where it stands
+#   check_join_eo <id>             # run from kanon, to see where it stands
 #
 # **Two ways a tool starts here, and they are not the same job.** The mode is
 # required rather than defaulted, because the wrong one produces a confident
@@ -67,7 +67,7 @@ because guessing wrong produces a confident README about the wrong thing.
   --print         run non-interactively and print the result
   --show-prompt   print the prompt and exit, running nothing
 
-Run this in the new repository, not in anoieu and not in the parent.
+Run this in the new repository, not in the parent.
 USAGE
   exit 2
 }
@@ -149,11 +149,10 @@ explains the name in a sentence somebody can disagree with; that sentence comes
 across, and the register is what you check it against. **If the register has no
 entry for it, stop and say so** rather than inventing one.
 
-**This README is not the child's README moved.** The old front page was written
-to say the work was speculative, unadvertised and depended on by nobody, because
-that is what a child project has to say about itself. Where those things have
-stopped being true, this one says so plainly; where they are still true, it says
-that instead. **Claim nothing the child did not actually deliver** — a
+**Write for the repository the work is becoming.** Read what the child's front
+page actually says about its scope, maturity, users, and listing preference;
+do not assume them from its status as a child. **Claim nothing the child did
+not actually deliver** — a
 repository that opens by describing what it is going to become has taken the one
 thing graduating was supposed to prove and turned it back into a promise.
 PROMPT_END
@@ -173,20 +172,6 @@ should finish it knowing:
 Write what it is *for*, not what it will contain. A roadmap read as a promise is
 worse than no roadmap, so where something does not exist, say so plainly in the
 present tense.
-
-**If a stub holds your place, say so and prove it.** Some tools are marked in
-anoieu by a **stub**: a placeholder directory carrying one sentence, saying to
-delete it once its replacement is safely in the ecosystem. If there is one for
-this name, you are what it is waiting for. **That makes identifying yourself
-your job and not anoieu's** — the rule, including what gets rejected and why, is
-the handoff protocol here:
-
-  https://github.com/ajreynol/kanon/blob/main/docs/maintenance.md
-
-Two things it is worth knowing now. **You are not claiming a unique title** — no
-ownership is tracked and another repository doing this work would be equally
-welcome. And **the claim is judged by reading your repository, not your
-message**, so there is nothing to write ahead of the work.
 
 **Comply with nothing.** There is a shared repository policy, and this is not
 the moment for it: no maintenance note, no discussion file, no CI, no layout, no
@@ -243,8 +228,7 @@ fi
 
 if [ "$SHOW" = 1 ]; then printf '%s\n' "$PROMPT"; exit 0; fi
 
-# Refuse a typo rather than writing a README from nothing -- the same rule
-# welcome_eo keeps. A directory with no README carries no charter, so there is
+# A directory with no README carries no charter, so there is
 # nothing here that `init_eo new` would not do better.
 if [ "$MODE" = from-child ]; then
   [ -d "$CHILD" ] || { echo "init_eo: $CHILD is not a directory" >&2; exit 2; }

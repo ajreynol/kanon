@@ -698,8 +698,8 @@ where nothing is enforced.
 required](#the-discussion-file), and nothing asks a README to link to one.
 **The right-hand column is not enforced and is the part that matters:** a
 repository that satisfies every check and does none of it has joined the form
-and not the arrangement, which [`confirm_eo`](../prompts/confirm_eo) asks after
-a join.
+and not the arrangement. A person assesses that from the work; no post-join
+grading prompt is required.
 
 **When a member does not meet them, we say so plainly, in the open, and it is
 not an accusation.** `scripts/status_eo` prints one line per tool, names the

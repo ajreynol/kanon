@@ -31,7 +31,7 @@ def load(name, path):
 ecosystem = load("ecosystem_under_test", "scripts/ecosystem/ecosystem.py")
 installer = load("installer_under_test", "scripts/install_eo")
 dependency = load("dependency_under_test", "scripts/anoieu_dependency.py")
-transfer = load("transfer_under_test", "scripts/transfer_check.py")
+bump = load("bump_under_test", "scripts/bump_check.py")
 
 
 def prose(text):
@@ -53,6 +53,18 @@ def anchors(path):
 
 
 class Documents(unittest.TestCase):
+    def test_glossary_project_labels_match_inventory(self):
+        text = (ROOT / "docs/glossary.md").read_text()
+        labels = re.findall(r"^\*\*(.+?)\*\* \(Eunoia ([^;]+);", text, re.M)
+        actual = {name.casefold(): label for name, label in labels}
+        self.assertEqual(len(actual), len(labels), "duplicate glossary project entries")
+        expected = {
+            name.casefold(): (f"child project of {entry['parent']}"
+                              if entry["status"] == "child" else entry["status"])
+            for name, entry in installer.inventory().items()
+        }
+        self.assertEqual(actual, expected)
+
     def test_relative_links_and_anchors(self):
         failures = []
         for path in ROOT.rglob("*.md"):
@@ -140,10 +152,26 @@ class Commands(unittest.TestCase):
         self.assertIn("ANOIEU_ROOT", detail[0])
 
     def test_checker_failures_preserve_the_count(self):
-        self.checker.write_text("print('FAIL a real failure')\nprint('     its cause')\nraise SystemExit(1)\n")
+        self.checker.write_text("print('ok   a passing check')\nprint('     unrelated note')\n"
+                                "print('FAIL a real failure')\nprint('     its cause')\n"
+                                "print('skip something else')\nprint('     another note')\n"
+                                "raise SystemExit(1)\n")
         with patch.dict(os.environ, self.env):
             verdict, detail = ecosystem.check(str(ROOT))
-        self.assertEqual((verdict, detail), ("1 failing", ["its cause"]))
+        self.assertEqual((verdict, detail), ("1 failing", ["a real failure", "its cause"]))
+
+    def test_checker_crash_after_partial_output_is_unverified(self):
+        self.checker.write_text("print('FAIL partial result')\nraise SystemExit(2)\n")
+        with patch.dict(os.environ, self.env):
+            verdict, detail = ecosystem.check(str(ROOT))
+        self.assertEqual(verdict, "unverified")
+        self.assertIn("partial result", detail[0])
+
+    def test_checker_failure_without_indented_detail_is_visible(self):
+        self.checker.write_text("print('FAIL missing declaration')\nraise SystemExit(1)\n")
+        with patch.dict(os.environ, self.env):
+            self.assertEqual(ecosystem.check(str(ROOT)),
+                             ("1 failing", ["missing declaration"]))
 
     def test_online_declaration_reader_uses_anoieu(self):
         with patch.dict(os.environ, self.env), patch.object(ecosystem, "readme_of", return_value=("member", "")):
@@ -217,8 +245,7 @@ class Commands(unittest.TestCase):
         (target / ".git").mkdir(parents=True)
         (target / "README.md").write_text("Example\n")
         cases = [("init_eo", "new"), ("join_eo",), ("global_audit",),
-                 ("check_join_eo", str(target)), ("confirm_eo", str(target)),
-                 ("welcome_eo", "example", str(target)),
+                 ("check_join_eo", str(target)),
                  ("process_discussion", str(target))]
         for name, *args in cases:
             with self.subTest(prompt=name):
@@ -237,6 +264,36 @@ class Commands(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertIn("UNVERIFIED", result.stderr)
 
+    def test_global_preview_preserves_unavailable_checks(self):
+        env = {**self.env, "ANOIEU_ROOT": str(self.base / "missing")}
+        Path(self.env["ANOIEU_REPOS_FILE"]).write_text(f"kanon {self.base}\n")
+        result = self.command("bash", "prompts/global_audit", "--show-prompt", env=env)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("policy unverified", result.stdout)
+        self.assertIn("anoieu's policy checker is unavailable", result.stdout)
+
+    def test_online_flag_without_check_is_not_silently_ignored(self):
+        result = self.command("scripts/status_eo", "--online")
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("--online requires --check", result.stderr)
+
+    def test_bump_arguments_fail_cleanly(self):
+        for args in [("--rev",), ("--unknown",), ("--rev", "main"),
+                     ("--rev", "abcdef0", "--root", ".")]:
+            with self.subTest(args=args):
+                result = self.command(sys.executable, "scripts/bump_check.py", *args)
+                self.assertEqual(result.returncode, 2)
+                self.assertNotIn("Traceback", result.stderr)
+
+    def test_bump_dry_run_uses_the_workflow_pin(self):
+        workflow = self.base / ".github/workflows/anoieu.yml"
+        workflow.parent.mkdir(parents=True)
+        workflow.write_text("env:\n  ANOIEU_REV: abcdef0123\n")
+        result = self.command(sys.executable, "scripts/bump_check.py", "--root",
+                              str(self.base), "--dry-run")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn("/commits/abcdef0123/check-runs", result.stdout)
+
     def test_search_roots_preserve_spaces_and_colons(self):
         target = self.base / "second root" / "example"
         target.mkdir(parents=True)
@@ -245,24 +302,86 @@ class Commands(unittest.TestCase):
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn(str(target), result.stdout)
 
-    def test_source_stub_can_stay_in_anoieu(self):
-        stub = self.source / "tools/kanon/README.md"
-        stub.parent.mkdir(parents=True)
-        stub.write_text("This is a stub.\n")
-        result = self.command(sys.executable, "scripts/ready_check.py", "kanon", "--stub-root", str(self.source))
-        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
-        self.assertIn("HELD:", result.stdout)
-        self.assertIn(str(stub.parent), result.stdout)
 
-    def test_transfer_does_not_claim_local_ci_is_green(self):
-        out = io.StringIO()
-        with patch.object(transfer, "destined", return_value=["R100"]), \
-             patch.object(transfer, "exists", return_value=(True, "fixture")), \
-             patch.object(transfer, "their_ci", return_value=("green", "success")), \
-             contextlib.redirect_stdout(out):
-            result = transfer.main(["example", "--online"])
-        self.assertEqual(result, 2)
-        self.assertIn("our CI:               unverified", out.getvalue())
+
+class Verification(unittest.TestCase):
+    def test_distinct_projects_can_have_similar_names(self):
+        inv = {
+            "eschaton": {"status": "member", "repo": "eschaton",
+                         "url": "https://example.invalid/eschaton", "what": "research"},
+            "cvc5": {"status": "foundation", "repo": "cvc5",
+                     "url": "https://example.invalid/cvc5", "what": "solver"},
+            "cvc6": {"status": "child", "parent": "eschaton",
+                     "path": "tools/cvc6", "what": "research position"},
+        }
+        with patch.object(ecosystem, "board_entities", return_value=set()):
+            self.assertEqual(ecosystem.well_formed(inv), [])
+
+    def test_online_audit_distinguishes_mismatch_from_unverified(self):
+        for failures, unseen, code in [([], [], 0), (["stale"], [], 1),
+                                      ([], ["offline"], 2), (["stale"], ["offline"], 1)]:
+            with self.subTest(failures=failures, unseen=unseen):
+                out = io.StringIO()
+                with patch.object(ecosystem, "still_true", return_value=(failures, unseen)), \
+                     contextlib.redirect_stdout(out):
+                    self.assertEqual(ecosystem.audit(True), code)
+                if unseen:
+                    self.assertIn("UNVERIFIED offline", out.getvalue())
+                    self.assertNotIn("is current", out.getvalue())
+
+    def test_invalid_inventory_stops_before_remote_reads(self):
+        with patch.object(ecosystem, "well_formed", return_value=["missing parent"]), \
+             patch.object(ecosystem, "still_true") as remote, \
+             contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(ecosystem.audit(True), 1)
+        remote.assert_not_called()
+
+    def test_proposed_associate_is_not_an_unreachable_remote(self):
+        checker = unittest.mock.Mock()
+        checker.declaration_in.return_value = ["no declaration"]
+        checker.note_in.return_value = ["no maintenance note"]
+        with patch.object(ecosystem, "policy_checker", return_value=checker), \
+             patch.object(ecosystem, "readme_of", return_value=("README", "")):
+            self.assertEqual(ecosystem.still_true({"example": {
+                "status": "candidate", "proposed": "associate", "url": "unused"}}), ([], []))
+
+    def test_status_does_not_policy_check_associates_or_outsiders(self):
+        with tempfile.TemporaryDirectory() as temp:
+            inv = Path(temp) / "inventory.json"
+            inv.write_text(json.dumps({
+                status: {"status": status, "what": "example"}
+                for status in ("associate", "outsider")
+            }))
+            out = io.StringIO()
+            with patch.object(ecosystem, "INVENTORY", str(inv)), \
+                 patch.object(ecosystem, "locate", return_value=temp), \
+                 patch.object(ecosystem, "age", return_value="?"), \
+                 patch.object(ecosystem, "check") as checker, \
+                 patch.object(sys, "argv", ["status_eo"]), contextlib.redirect_stdout(out):
+                self.assertEqual(ecosystem.main(), 0)
+            checker.assert_not_called()
+            self.assertEqual(out.getvalue().count("not held"), 2)
+
+    def test_bump_requires_complete_check_run_response(self):
+        success = {"name": "policy", "status": "completed", "conclusion": "success"}
+        for data, verified in [({"total_count": 1, "check_runs": [success]}, True),
+                               ({"total_count": 2, "check_runs": [success]}, False),
+                               ({"check_runs": [success]}, False), ({}, False),
+                               ({"total_count": 1, "check_runs": [None]}, False)]:
+            with self.subTest(data=data):
+                response = io.BytesIO(json.dumps(data).encode())
+                with patch.object(bump.urllib.request, "urlopen", return_value=response):
+                    runs, why = bump.ask("abcdef0")
+                self.assertEqual(not why, verified)
+                self.assertEqual(runs, [success] if verified else [])
+
+    def test_bump_verdicts(self):
+        for runs, code in [([], 2),
+                           ([{"status": "in_progress"}], 2),
+                           ([{"status": "completed", "conclusion": "failure"}], 1),
+                           ([{"status": "completed", "conclusion": "success"}], 0)]:
+            with self.subTest(runs=runs):
+                self.assertEqual(bump.verdict(runs)[0], code)
 
 
 if __name__ == "__main__":

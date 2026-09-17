@@ -333,7 +333,7 @@ member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/eco
 [`prompts/init_eo`](../../prompts/init_eo),
 [`prompts/join_eo`](../../prompts/join_eo),
 [`prompts/check_join_eo`](../../prompts/check_join_eo),
-[`prompts/welcome_eo`](../../prompts/welcome_eo),
+`prompts/welcome_eo` (since [retired](../../docs/commands.md#retired-commands)),
 [`prompts/global_audit`](../../prompts/global_audit),
 [`scripts/install_eo`](../../scripts/install_eo) and
 [`scripts/ecosystem/checkouts.json`](../../scripts/ecosystem/checkouts.json). That is a tool, and it is

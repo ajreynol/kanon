@@ -408,6 +408,13 @@
     "short": "Teaches signature writing from worked examples",
     "what": "how a Eunoia signature is written and how one gets into Logos, in two strands: case studies of episodes that already happened, and tutorials that build a signature from a calculus's rule descriptions"
   },
+  "cvc6": {
+    "status": "child",
+    "parent": "eschaton",
+    "path": "tools/cvc6",
+    "short": "Proposes automated upkeep of cvc5; nothing built",
+    "what": "a research position proposing agent-driven maintenance and refactoring of cvc5, retaining its design; a working title, with no implementation"
+  },
   "hawkeye": {
     "status": "child",
     "parent": "eschaton",

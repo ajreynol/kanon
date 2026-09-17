@@ -12,12 +12,12 @@ is exactly what a real run executes, so reading it is a review rather than a
 courtesy, and a paste of it does the same thing this does. The commands are
 printed live rather than commented out: an inert dump would be a different text
 from the one that runs, and the point of this one is that it is not. Every tool
-carries what the ecosystem records about it — member, candidate, served —
+carries what the ecosystem records about it — member, candidate, foundation —
 because *whose repository is this and on what footing* is the question somebody
 cloning several trees is actually asking.
 
 **What it may run is a short list, and it is checked.** The only command that
-changes anything is `git clone`; the directory is made with `os.makedirs` and the
+performs installation is `git clone`; the directory is made with `os.makedirs` and the
 `cd` is a `cwd=` argument, so neither is a command at all. Everything else is a
 read of a checkout — `rev-parse`, `status`, `log`, `rev-list`, `symbolic-ref` —
 plus `fetch`, only when `--status --fetch` asks for it. Both lists are enforced
@@ -93,7 +93,7 @@ NOT_A_REPO = ("child",)
 
 #: The order statuses are dumped in, so a new tool lands somewhere sensible
 #: without anybody choosing. Anything else sorts last.
-STATUS_ORDER = ("president", "member", "candidate", "served")
+STATUS_ORDER = ("president", "member", "candidate", "associate", "foundation", "outsider")
 
 
 def load(path: str) -> dict:
@@ -382,7 +382,7 @@ def repos_local_rows(root: str, repos: list[Repo],
         rows.extend((c, path, live) for c in r.covers)
         # A child project has no repository of its own, and its id is still the
         # handle every other script here takes, so it resolves to the tree it
-        # lives in. `process_anoieu ethos-eoc` has to find something.
+        # lives in. `process_discussion ethos-eoc` reads the parent's channel.
         rows.extend((c["name"], path, live) for c in r.children)
     return rows
 
@@ -401,12 +401,8 @@ def merge_repos_local(root: str, repos: list[Repo], planned: set[str] = frozense
                       path: str = REPOS_FILE) -> tuple[str, list[str]]:
     """Add what is missing to the mapping, and rewrite nothing that is there.
 
-    `prompts/welcome_eo` records an id here by hand and refuses to rewrite an
-    existing one, on the grounds that a repo id changing meaning under the other
-    scripts is worse than an error. This follows that rule rather than
-    contradicting it: a row already recorded is left exactly as it is, and a
-    disagreement with where this list expects the tree is returned to be
-    reported. The person decides which is right.
+    Preserve manually recorded locations. Return disagreements with the install
+    root for a person to resolve; never silently redirect another command.
     """
     known = {name: p for name, p, live in repos_local_rows(root, repos, planned) if live}
     if not os.path.exists(path):
@@ -722,7 +718,7 @@ def main() -> int:
     ap.add_argument("--run", action="store_true",
                     help="clone, which is what it does anyway")
     ap.add_argument("--status", action="store_true", help="what is on this machine")
-    ap.add_argument("--role", default="", metavar="member,candidate,served",
+    ap.add_argument("--role", default="", metavar="STATUS,STATUS",
                     help="only tools recorded with one of these statuses")
     ap.add_argument("--exclude", default="", metavar="ID,ID",
                     help="all but these")
