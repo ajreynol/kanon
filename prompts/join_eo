@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # join_eo -- join the Eunoia ecosystem, from inside the repository that is joining.
 #
-# Run it in a checkout of the repository you want to join, not in anoieu. It
+# Run it in a checkout of the repository you want to join. It
 # starts an assistant with a short fixed prompt that points at the instructions
 # and at the checker; it does not carry the instructions itself.
 #
@@ -57,11 +57,10 @@
 #
 # The prompts are deliberately tiny and deliberately stable. Everything that can
 # change -- what the declaration says, which checks run, what is skipped -- lives
-# on one page in the anoieu repository, and they link to it rather than repeating
+# on one page in the kanon repository, and they link to it rather than repeating
 # it. If the page and this text ever disagree, the page is right.
 #
-# The canonical copy of both is under "Joining the Eunoia ecosystem" in
-# docs/policy.md; tests/run.py fails when a script's copy drifts from the page.
+# docs/policy.md defines the joining requirements and maintenance-note templates.
 
 set -euo pipefail
 
@@ -84,7 +83,7 @@ usage: join_eo [--soft [--affiliated]] [--codex] [--print] [--show-prompt]
   --print         run non-interactively and print the result
   --show-prompt   print the prompt and exit, running nothing
 
-Run this in the repository that is joining, not in anoieu.
+Run this in the repository that is joining.
 USAGE
   exit 2
 }
@@ -126,10 +125,10 @@ Read it, then do what it says, here:
 1. Declare membership at the top of the README's "How this repository is
    maintained" section, creating that section if there is not one.
 2. Add the CI workflow the page gives.
-3. Run the check and fix what it reports:
-
-     git clone --depth 1 https://github.com/ajreynol/anoieu /tmp/anoieu
-     python3 /tmp/anoieu/scripts/policy_check.py --root .
+3. Run the same checker revision and command the workflow uses, and fix what it
+   reports. The checker is maintained in anoieu; read its instructions at the
+   chosen revision. Report which revision you checked. Do not substitute the
+   latest checkout for a pinned revision or claim a local run establishes CI.
 
 Change nothing the check does not ask for, and add no file it does not ask for.
 Where the page and this prompt disagree, the page is right.
@@ -142,7 +141,7 @@ repository -- that last one is worth more to us than a clean run.
 PROMPT_END
 
 read -r -d '' SOFT_PROMPT <<'SOFT_PROMPT_END' || true
-*Produced by `join_eo --soft`, a command kept in the anoieu repository. **That
+*Produced by `join_eo --soft`, a command kept in the kanon repository. **That
 script is the authority for what this prompt asks**, and it can be read without
 running anything:*
 
@@ -181,7 +180,7 @@ could not establish from the tree and left for a person to write.
 SOFT_PROMPT_END
 
 read -r -d '' AFFIL_PROMPT <<'AFFIL_PROMPT_END' || true
-*Produced by `join_eo --soft --affiliated`, a command kept in the anoieu
+*Produced by `join_eo --soft --affiliated`, a command kept in the kanon
 repository. **That script is the authority for what this prompt asks**, and it
 can be read without running anything:*
 

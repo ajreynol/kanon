@@ -1,7 +1,7 @@
 # Glossary
 
-The dictionary of Eunoia’s names and distinctive vocabulary. Each entry gives
-its part of speech; project names also give their footing or parent.
+The dictionary of Eunoia’s project names, footings, and distinctive concepts.
+Each entry gives its part of speech; project names also give their footing or parent.
 
 **Maintained by the president of eo.** The president keeps the definitions
 current and hands this file to the next president with the
@@ -11,9 +11,9 @@ Keep entries alphabetized without regard to case, spaces, or punctuation.
 Include every existing child project, advertised or unadvertised, checking
 the parent trees as well as the [register](../scripts/ecosystem/ecosystem.json).
 Omit unused or merely reserved names, command and configuration identifiers,
-general AI vocabulary, and ordinary English used in its usual sense. A word
-earns an entry when eo gives it a distinct meaning; naming a document or
-appearing in a protocol is not enough. Give a short definition and a source,
+operational protocols, AI and session-management terminology, and ordinary
+English used in its usual sense. Locally named procedures belong in their
+working documents, not this dictionary. Give a short definition and a source,
 and distinguish an existing research project from an implemented tool.
 
 Project descriptions and labels reflect the register and available project
@@ -23,10 +23,6 @@ outside projects listed for comparison did not ask to be measured and owe the
 ecosystem nothing.
 
 ## A
-
-**affiliating form** (*noun*): A maintenance note that names the Eunoia ecosystem while
-explicitly declining its shared policy. It declares affiliation without membership. See
-[affiliation](policy.md#the-soft-form-the-note-without-the-membership).
 
 **Alethe** (proof format; *proper noun*): The proof format chosen as apodeixis’s
 proposed test of whether eudaimonia can support a calculus designed elsewhere. See
@@ -53,6 +49,12 @@ what a tool does well and what others should learn from it. From Greek ἀρετ
 held to its policy. The proposed associate footing remains undecided and is held by
 nobody. See [the associate protocol](policy.md#the-associate-protocol).
 
+**autarkeia** (*noun*): The proposed state in which an ecosystem can develop a verified
+SMT proof checker from one prompt naming the calculus and its purpose, without further
+human intervention, with its proof obligations discharged and trusted base stated.
+From Greek αὐτάρκεια, “self-sufficiency.” See
+[eudaimonia’s definition](https://github.com/ajreynol/eudaimonia/blob/main/docs/autarkeia.md).
+
 ## C
 
 **candidate** (*noun*): The footing for a repository the ecosystem would like to join,
@@ -66,9 +68,9 @@ enforced. See [the laws](laws.md).
 **carcara** (Eunoia outsider; *proper noun*): An outside proof checker and elaborator
 for Alethe, tracked for comparison. [Register](../scripts/ecosystem/ecosystem.json).
 
-**child project** (*noun*): Also **research project**: work on a potential tool in a
-parent's `tools/X/` directory. It is reached through its parent, inherits its footing,
-and has its own charter. See [child projects](policy.md#child-projects).
+**child project** (*noun*): Also **research project**: work on a potential tool housed
+within a parent repository. It has its own purpose and inherits its parent’s footing.
+See [child projects](policy.md#child-projects).
 
 **CPC** (proof calculus; *proper noun*): The **Cooperating Proof Calculus**, maintained
 as a Eunoia signature in cvc5. Its signature, semantics, and verification development
@@ -89,20 +91,10 @@ project. [Charter](https://github.com/ajreynol/eschaton/blob/main/tools/cvc6/REA
 benchmarks to smaller cases that preserve the behaviour under investigation.
 [Register](../scripts/ecosystem/ecosystem.json).
 
-**demotion** (*noun*): Moving a document to `docs/misc/` when properly cleaning it up
-costs more than it is worth now. Links remain usable, but the page is no longer
-presented as a maintained answer. See [the misc
-protocol](protocols.md#proto-22--the-misc-protocol).
-
 **dioktes** (*noun*): A pursuit of defects in an outside tool, undertaken to test a
 disputed claim. Declared by a person with a closing condition, it describes our activity
 and ends if the target’s maintainers ask. From Greek διώκτης, “pursuer.” See [LAW
 10](laws.md#law-10--in-dioktes-when-we-go-looking-for-defects-in-somebody-elses-tool).
-
-**discussion file** (*noun*): The standing channel for requests, proposals, questions,
-notices, and answers that are not defect reports. Topics have permanent ids and
-settlement conditions; a person carries anything to another repository. See [the format
-and rules](policy.md#the-discussion-file).
 
 **dokimasia** (Eunoia member; *proper noun*): The analyzer of cvc5’s proof-production code for
 work with no proof step behind it. From Greek δοκιμασία, “scrutiny before office.”
@@ -162,21 +154,6 @@ register](../scripts/ecosystem/ecosystem.json).
 joins nothing, owes nothing, and is subject to no constraint imposed by this
 arrangement. See [the footings](policy.md#the-footings).
 
-## G
-
-**genuine** (*adjective*): Constructed according to the shared policy from the
-beginning, rather than brought into compliance afterwards; a judgement about history
-that a person records. See [the register’s
-definitions](../scripts/ecosystem/ecosystem.json).
-
-**governance budget** (*noun*): The maintenance practice of measuring governance prose
-against the technical work it displaces. It records evidence for later comparison rather
-than setting a numerical page limit. See [maintenance](maintenance.md).
-
-**graduation** (*noun*): A child project becoming a repository of its own, by human
-decision. Its responsibilities transfer through a handoff and keep their role ids. See
-[role handoffs](roles.md#how-a-role-is-handed-off).
-
 ## H
 
 **hawkeye** (Eunoia child project of eschaton; *proper noun*): An unadvertised proposal
@@ -196,30 +173,12 @@ attention.
 
 ## I
 
-**identify header** (*noun*): The opening line naming the entity an agent acts for, its
-mission, and the AI model answering. It is a statement of the agent's understanding of
-its role. See [the identify protocol](protocols.md#proto-21--the-identify-protocol).
-
 **in dioktes** (*prepositional phrase*): Actively pursuing defects in an outside tool under
 a declared investigation. See **dioktes**.
-
-**in limbo** (*prepositional phrase*): Recorded as president while lacking the laws or term
-account needed to carry out the office. See [the laws](laws.md#in-limbo).
 
 **IsaRARE** (Eunoia outsider; *proper noun*): An outside tool that generates Isabelle
 lemmas from RARE rewrite rules, tracked for comparison.
 [Register](../scripts/ecosystem/ecosystem.json).
-
-**island** (*noun*): The intended independence of a child project: it reads other work,
-writes within its own directory, and can be removed without changing the parent's
-behaviour or CI. Exceptions must be stated. See [child
-projects](policy.md#child-projects).
-
-## J
-
-**joke protocol** (*noun*): The rule placing humour on the president’s front page,
-outside machine interfaces and instructions, and ending a joke when a reader says it
-confuses the work. See [the protocol](protocols.md#proto-25--the-joke-protocol).
 
 ## K
 
@@ -259,10 +218,9 @@ taking stances on particular ethical situations from evidence of conduct. 2. A d
 contradictable piece of that evidence. From Greek μαρτυρία, “testimony.”
 [Charter](../tools/martyria/README.md).
 
-**member** (*noun*): A repository that declares adherence to the shared policy and runs
-its pinned checker in CI. The footing also carries a judgement about sharing the vision,
-which no program decides. Membership can be left. See [the
-footings](policy.md#the-footings).
+**member** (*noun*): A repository that has chosen to adopt eo’s shared policy and
+approach. Membership carries obligations and may be left. See
+[the footings](policy.md#the-footings).
 
 **metagraphe** (Eunoia child project of tachyon; *proper noun*): The search for missing
 cvc5 rewrites and simplifications for strings and bit-vectors, with small reproducible
@@ -273,10 +231,6 @@ examples.
 teaching how to write Eunoia signatures and bring them into logos. From
 Greek μίμησις, “imitation.”
 [Charter](https://github.com/ajreynol/eudaimonia/blob/main/tools/mimesis/README.md).
-
-**misc protocol** (*noun*): The practice of moving a document out of the maintained
-account when cleaning it up is not worthwhile now. See **demotion** and [the
-protocol](protocols.md#proto-22--the-misc-protocol).
 
 **murxla** (Eunoia outsider; *proper noun*): An outside fuzzer that exercises SMT
 solvers through their APIs, tracked for comparison.
@@ -307,66 +261,21 @@ presidency. The office is bestowed for a stretch, sets direction, maintains shar
 governance including this glossary, and confers no control over another tree. See [LAW
 3](laws.md#law-3--there-is-a-president).
 
-**primed** (*adjective*): Prepared through conversation, with the repository’s purpose
-documented before implementation; used especially of an incoming president. See [the
-priming conversation](misc/conversation.md).
-
-**promotion** (*noun*): For a child, graduation into a repository. For a document,
-declaring that a change is significant enough for affected readers to be told, which
-requires a human decision. See [document
-promotion](protocols.md#promoting-a-document-when-a-change-becomes-an-event).
-
-**proposal** (*noun*): In discussion, a suggestion made for the recipient's benefit. If
-the sender wants something for its own benefit, it is a **request**. Research proposals
-may also recommend a new tool without authorizing its creation. See [topic
-kinds](policy.md#the-format).
-
 ## R
-
-**request** (*noun*): The discussion kind used when the sender stands to benefit from
-what it asks, distinguished from a **proposal** made for the recipient’s benefit.
-See [topic kinds](policy.md#the-format).
 
 **research project** (*noun*): Another name for a **child project**.
 
-**response gate** (*noun*): The discussion rule requiring a human to identify the topic
-to act on, with the instruction and topic agreeing. Reading a discussion file does not
-itself authorize a reply. See [the
-gate](policy.md#the-gate-every-discussion-file-carries).
-
 ## S
-
-**same owner loophole** (*noun*): The limitation that dividing responsibilities among
-repositories with the same owner does not divide authority among independent parties.
-See [the laws' account](laws.md#the-same-owner-loophole).
 
 **sapheneia** (Eunoia child project of kanon; *proper noun*): An account of Eunoia as a
 language independent of one checker’s manual; ethos’s manual remains authoritative.
 From Greek σαφήνεια, “clarity of an account.” [Charter](../tools/sapheneia/README.md).
-
-**shared vision evolution** (*noun*): The process described in the priming conversation
-in which a human teaches and corrects an agent's understanding of how a local tool
-serves the wider purpose. This can protect a tool's narrow scope rather than expand it.
-See [the conversation](misc/conversation.md).
-
-**sleep protocol** (*noun*): The practice of reminding a human to take a break outside
-their declared working window, once per session, while continuing to answer. See [the
-protocol](protocols.md#proto-18--the-sleep-protocol).
 
 **SMT-LIB** (language; *proper noun*): The shared language and theory vocabulary used
 for solver inputs and the semantics modeled by logos. Eunoia uses its syntax to express
 the formulas appearing in solver proofs. See [the language
 account](../tools/sapheneia/manual.md#1-what-eunoia-is) and [the Lean model
 role](roles.md#r18--the-model-of-smt-lib-semantics-in-lean).
-
-**soft form** (*noun*): A maintenance note that explains how a repository is maintained
-without naming another project or declaring ecosystem membership. See [the soft
-form](policy.md#the-soft-form-the-note-without-the-membership).
-
-**spawned repository** (*noun*): A new repository claiming to implement a tool
-represented by a stub. It must support that claim before the stub is removed; a reserved
-name alone does not establish it. See [the handoff
-protocol](protocols.md#proto-20--the-handoff-protocol).
 
 **stathmos** (Eunoia child project of kanon; *proper noun*): The author of the report
 card and keeper of its evidence. From Greek σταθμός, “a standard weight.”
@@ -375,11 +284,6 @@ card and keeper of its evidence. From Greek σταθμός, “a standard weight
 **stretch** (*noun*): The period for which a repository holds the presidency, also
 called its term. The office expires with it; the account is kept during it. The laws
 prescribe no fixed duration. See [LAW 3](laws.md#law-3--there-is-a-president).
-
-**supervision ladder** (*noun*): The local ordering of changes by how much human
-supervision they require, from vision changes through ordinary maintenance. It
-identifies the decisions an agent does not make alone. See [the
-ladder](maintenance.md#the-supervision-ladder).
 
 ## T
 
@@ -396,10 +300,6 @@ mere sign.”
 designed around proofs from the start, retaining cvc5’s calculus and parts of its
 checker while replacing the search. Research notes; nothing is built.
 [Charter](https://github.com/ajreynol/eschaton/blob/main/tools/telos/README.md).
-
-**temporal session coherence** (*noun*): The practice of keeping the session's live request
-visible and carrying it through side questions, without inventing additional work. See
-[the protocol](protocols.md#proto-4--temporal-session-coherence).
 
 ## V
 

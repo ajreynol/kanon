@@ -29,8 +29,8 @@ to advertised when the README has no declaration.
 questions, and the second is why it exists:
 
 **Is the inventory well formed?** Offline, and always: every entry has the fields
-its status requires, every parent named by a child exists, no two ids are one
-typo apart, and every repository the board addresses has a row here.
+its status requires, every parent named by a child exists, and every repository
+the board addresses has a row here. Similar names can identify distinct tools.
 
 **Is it still true?** With `--online`, each entry that is somebody's own
 repository has its README fetched from the remote and read for the membership
@@ -42,8 +42,7 @@ long enough that nobody could say from the file alone which of them had.
 
 **What it cannot see** is whether a declaration is backed: that needs their whole
 tree and their own CI is where it is decided. A remote that cannot be reached is
-reported and not counted against anybody -- a network error is evidence about the
-network.
+reported as unverified (exit 2), not as a compliance failure.
 """
 
 from __future__ import annotations
@@ -188,7 +187,7 @@ FOOTINGS = {
 POLICY_VALUES = (
     ("ok", "every check that applies to that tree passed"),
     ("N failing", "N of our checks failed on it"),
-    ("not held", "an associate. Nothing was run, and that is the footing"),
+    ("not held", "an associate or outsider. No policy check was run"),
     ("no checkout", "not on this machine, so nothing could be run"),
     ("unverified", "the checker could not run; no compliance verdict is available"),
     ("-", "a child or a foundation: not a repository this table checks"),
@@ -313,19 +312,21 @@ def check(path: str) -> tuple[str, list[str]]:
          "--root", path], capture_output=True, text=True)
     # count the failing *checks*, not their detail lines: one check that reports
     # three things is one thing wrong, and saying "3 fail" overstates it.
-    failed = [l[5:] for l in out.stdout.splitlines() if l.startswith("FAIL ")]
-    detail = [l.strip() for l in out.stdout.splitlines() if l.startswith("     ")]
-    if out.returncode != 0 and not failed:
+    failed, detail = [], []
+    in_failure = False
+    for line in out.stdout.splitlines():
+        if line.startswith("FAIL "):
+            failed.append(line[5:].strip())
+            detail.append(failed[-1])
+            in_failure = True
+        elif in_failure and line.startswith("     "):
+            detail.append(line.strip())
+        else:
+            in_failure = False
+    if out.returncode not in (0, 1) or (out.returncode == 1 and not failed):
         return "unverified", [out.stderr.strip() or out.stdout.strip()
                               or "the policy checker did not report a result"]
-    return ("ok" if out.returncode == 0 else f"{len(failed)} failing"), detail
-
-
-def near(a: str, b: str) -> bool:
-    """Whether two ids are one edit apart, by the same rule `welcome_eo` uses."""
-    out = subprocess.run([sys.executable, os.path.join(ROOT, "scripts", "ecosystem", "near.py"), a, b],
-                         capture_output=True, text=True)
-    return out.stdout.strip() == "1"
+    return (f"{len(failed)} failing" if failed else "ok"), detail
 
 
 def board_entities() -> set[str]:
@@ -334,10 +335,11 @@ def board_entities() -> set[str]:
     if not os.path.isfile(path):
         return set()
     out = set()
-    for line in open(path, encoding="utf-8"):
-        m = re.match(r"\*\*Entities:\*\* (.+)", line.strip())
-        if m:
-            out |= {e.strip(" `") for e in m.group(1).split(",")}
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            m = re.match(r"\*\*Entities:\*\* (.+)", line.strip())
+            if m:
+                out |= {e.strip(" `") for e in m.group(1).split(",")}
     return out
 
 
@@ -433,12 +435,6 @@ def well_formed(inv: dict) -> list[str]:
         bad.append("two repositories are recorded as president -- "
                    + ", ".join(sorted(held))
                    + " -- and the office is held one at a time")
-    names = sorted(inv)
-    for i, a in enumerate(names):
-        for b in names[i + 1:]:
-            if near(a, b):
-                bad.append(f"`{a}` and `{b}` are one character apart, which is a "
-                           "typo before it is two tools")
     for entity in sorted(board_entities() - set(inv)):
         bad.append(f"docs/board.md addresses `{entity}`, which has no row here")
     return bad
@@ -469,9 +465,8 @@ def readme_of(url: str, timeout: int = 20) -> tuple[str, str]:
 def still_true(inv: dict) -> tuple[list[str], list[str]]:
     """Ask each remote whether the status recorded here is still the right one.
 
-    Returns (failures, unreachable). Unreachable is neither: it is a fact about
-    the network, and counting it as a stale inventory would make this job red for
-    something nobody here can fix.
+    Returns (failures, unreachable). Unreachable leaves the claim unverified;
+    it is not evidence of stale membership.
     """
     policy_check = policy_checker()
 
@@ -494,13 +489,8 @@ def still_true(inv: dict) -> tuple[list[str], list[str]]:
             bad.append(f"{name} is recorded here as a {status} and its README "
                        f"does not declare membership: {missing[0]}")
         if e.get("proposed") == "associate" and status != "associate":
-            # Reported through the return value's second channel, which is what
-            # `unreachable` uses: this is not a stale inventory. The file says we
-            # intend something and it has not happened, which is exactly true.
-            if policy_check.note_in(text):
-                unseen.append(f"{name}: proposed as an associate and its README "
-                              "carries no maintenance note -- `--protocol` is the "
-                              "report, and nothing here is owed")
+            # Proposed affiliations are reported by --protocol, not a failed
+            # fetch or a requirement of the repository's current footing.
             continue
         if status == "associate":
             # The affiliating note is asked about first, and a tree that carries
@@ -689,18 +679,21 @@ def audit(online: bool) -> int:
     checkout. The two were briefly the same name, and the table stopped working
     for as long as that was true.
     """
-    inv = json.load(open(INVENTORY, encoding="utf-8"))
+    with open(INVENTORY, encoding="utf-8") as f:
+        inv = json.load(f)
     inv = {k: v for k, v in inv.items() if not k.startswith("_")}
 
     bad = well_formed(inv)
     for b in bad:
         print(f"FAIL {b}")
-    print(f"-- the inventory is well formed: {len(bad)} failure(s), "
+    print(f"-- inventory structure: {len(bad)} failure(s), "
           f"{len(inv)} entries")
 
+    if bad:
+        return 1
     if not online:
-        print("-- whether it is still true was not asked: --online does that")
-        return 1 if bad else 0
+        print("-- structure only; --online compares remote README declarations")
+        return 0
 
     try:
         stale, unseen = still_true(inv)
@@ -710,9 +703,10 @@ def audit(online: bool) -> int:
     for b in stale:
         print(f"FAIL {b}")
     for u in unseen:
-        print(f"     unreachable, so unasked: {u}")
+        print(f"UNVERIFIED {u}")
     asked = sum(1 for e in inv.values() if e.get("status") in OWN_REPO) - len(unseen)
-    print(f"-- who has joined is current: {len(stale)} failure(s), {asked} asked")
+    print(f"-- remote README declarations: {len(stale)} mismatch(es), "
+          f"{asked} read, {len(unseen)} unverified")
     print("   One section of one README is what this reads: a declaration for a "
           "member,\n   an affiliating note for an associate. Whether their tree "
           "backs a declaration is\n   decided by their own CI, running the same "
@@ -720,7 +714,7 @@ def audit(online: bool) -> int:
     print("   Whether an associate is still worth vetting is nobody's to decide "
           "from here\n   either: the `vetted` date says when a person last did, "
           "and it does not expire\n   on its own.")
-    return 1 if bad or stale else 0
+    return 1 if stale else (2 if unseen else 0)
 
 
 USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--health] [--protocol]
@@ -766,6 +760,9 @@ def main() -> int:
         print(USAGE)
         print(render_key())
         return 0
+    if "--online" in sys.argv and "--check" not in sys.argv:
+        print("status_eo: --online requires --check", file=sys.stderr)
+        return 2
     if "--check" in sys.argv:
         return audit("--online" in sys.argv)
     if "--health" in sys.argv:
@@ -812,7 +809,7 @@ def main() -> int:
         # over its tree. A failure count in that row would be this table
         # grading somebody who never agreed to be graded, which is the whole of
         # what the footing refuses.
-        verdict, fails = ("not held", []) if status == "associate" else check(path)
+        verdict, fails = ("not held", []) if status in ("associate", "outsider") else check(path)
         topics = ""
         disc = os.path.join(path, "docs", "discussion.md")
         if os.path.isfile(disc):
@@ -874,7 +871,7 @@ def main() -> int:
                              "hand-written line in scripts/repos.local rather "
                              "than by its name")
         if verbose and fails:
-            notes.append(f"{name}: " + "; ".join(fails[:6]))
+            notes.append(f"{name}: " + "; ".join(fails))
 
     for parent, listings in child_listings.items():
         note = unverified_note(parent, listings)

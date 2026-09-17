@@ -202,7 +202,7 @@ this ecosystem shares, and **they move with it**:
 
 - **the protocols** — the register of named exchanges every member follows;
 - **the policy, and the prompts that start and join a repository** — `init_eo`,
-  `join_eo`, `check_join_eo`, `welcome_eo` and what they write;
+  `join_eo`, `check_join_eo` and what they write;
 - **the commands, and the reference that documents them** — getting the
   ecosystem onto a machine, and reading the register back;
 - **the vision**, and what follows from it once a repository is running;

@@ -2,8 +2,8 @@
 # process_discussion -- work the topics another tool has addressed to us.
 #
 # Run it here, in kanon, naming a repository whose docs/discussion.md may have
-# something for us. The checkout is resolved from scripts/repos.local, the same
-# file process_anoieu uses and whose format its header documents.
+# something for us. Checkouts resolve through scripts/repos.local and the
+# search locations documented in docs/commands.md.
 #
 #   process_discussion ethos        # read only: what have they addressed to us?
 #   process_discussion ethos D3     # work that one topic
@@ -34,7 +34,7 @@ usage() {
 usage: process_discussion [--codex] [--print] [--show-prompt] NAME [Dn]
 
   NAME            a directory, or a repo id looked up in scripts/repos.local
-                  (shared with process_anoieu), then under $ANOIEU_REPOS.
+                  then under $ANOIEU_REPOS, beside kanon, or under $HOME.
   Dn              the topic to work. Omitted, nothing is acted on: the run
                   reads their file and reports what is addressed to us.
   --codex         run codex instead of claude
@@ -90,8 +90,8 @@ FILE="$TARGET/docs/discussion.md"
 if [ ! -f "$FILE" ] && [ "$SHOW" = 0 ]; then
   echo "process_discussion: $NAME has no docs/discussion.md at $FILE" >&2
   echo "                    that is not a finding and not a topic; it means they" >&2
-  echo "                    have not adopted the protocol. prompts/check_join_eo" >&2
-  echo "                    is the thing to run instead." >&2
+  echo "                    keep no discussion file at this path. There is" >&2
+  echo "                    nothing for this command to process." >&2
   exit 1
 fi
 

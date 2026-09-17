@@ -9,22 +9,22 @@ way: an agent summarising what the tools here would tell you has no way to
 check that it summarised them fairly. **If a line here does not match what a
 tool actually says, the tool is right and this page is stale.**
 
-**Two pages sit behind it, and you do not need either to start.**
-[`protocols.md`](protocols.md) is the register of named exchanges every member
-follows; [`protocols.md`](protocols.md) is the half of that register about how
-a person directs an agent, at length.
+[`protocols.md`](protocols.md) records the named exchanges and how a person
+directs an agent. [`commands.md`](commands.md) documents the commands.
 
 ## Where to start
 
-1. **Get the ecosystem**: `scripts/install_eo`, then `--status`. Nothing here
-   reads anything until the other repositories are beside this one.
+1. **Inspect the checkouts**: `scripts/install_eo --status`. Use
+   `scripts/install_eo --dry-run` to review missing clones before installing.
+   Inventory validation and the regression suite also work without them.
 2. **Read [`board.md`](board.md)** for what is outstanding and in what order —
    the shortest answer to *what should I do next*, and the only page that
    carries one. [`roles.md`](roles.md) answers the question the board assumes
    you can already answer: *whose is this, and whose is it not*.
 3. **Check [the supervision ladder](#the-supervision-ladder)** below before
    touching any document in it.
-4. **Run** `python3 tests/run.py` and `python3 scripts/policy_check.py`.
+4. **Run** `python3 -m unittest discover -s tests -v`,
+   `scripts/status_eo --check`, and `python3 scripts/policy_check.py --root .`.
 
 ## What this repository is responsible for
 
@@ -47,8 +47,6 @@ other repositories even though the file is local**, which is what the ladder is
 for.
 
 ## What you do
-
-| | what you do |
 
 | | what you do |
 | --- | --- |
@@ -379,75 +377,40 @@ binds another repository can be caught.
 
 ## The scripts, and the prompts
 
-**Two kinds, and the directory says which.** `scripts/` holds commands and
-their helpers — generators, checks, the runner; `prompts/` holds the ones that
-assemble context and hand it to an assistant. **The partition is the whole of
-the convention**: anything in `scripts/` can be run without deciding to spend a
-turn, and anything in `prompts/` is a turn by definition. `repos.local` maps a
-repo id to a checkout on this machine, is untracked, and is read by both halves
-— `install_eo` and `welcome_eo` are what write it.
+`scripts/` contains deterministic commands; `prompts/` assembles context for an
+assistant. [`commands.md`](commands.md) is the reference for both. The installer
+writes the untracked `scripts/repos.local` checkout map, preserving existing
+entries; a person can edit that map for checkouts elsewhere.
 
-**[`commands.md`](commands.md) is the table of what each command does**, and is
-not repeated here.
+Every prompt takes `--show-prompt`, which prints its assembled instructions
+without launching an assistant. `check_join_eo` runs the local policy checker
+while assembling them; `global_audit` collects the ordinary status report.
+Neither preview writes files. Both assessments are read-only when launched too.
+`init_eo` and `join_eo` draft changes in the receiving repository;
+`process_discussion` acts only on a named topic.
 
-| prompt | run in | what it does |
-| --- | --- | --- |
-| `init_eo new` / `init_eo from-child <path>` | the **new** repository | the README saying what the tool is for, what it does not answer, and the name explained. `new` writes it from the name register, `from-child` from an existing child's charter and what it delivered. The mode is required, never guessed. Complies with nothing, deliberately |
-| `welcome_eo <id> <path>` | here | records the checkout, syncs the list, reads the new tool, drafts a first message. A welcome, never an audit. Refuses a typo rather than recording one |
-| `join_eo` / `--soft` / `--soft --affiliated` | the **joining** repository | the membership declaration and the pinned `anoieu / policy` workflow. `--soft` is a different act rather than a smaller one — the maintenance note alone, joining nothing; `--affiliated` names the ecosystem and says the repository is not held to its policy |
-| `check_join_eo <id>` | here | joined, ready, misconfigured or not ready — and whether the obstacle is ours |
-| `confirm_eo <id>` / `--president <id>` | here | **after** a join: whether the way they joined meets the benchmark, in four bands. `--president` adds the office. **It confirms and never appoints** |
-| `process_discussion <id> [Dn]` | here | works what another repository addressed to us. **Read-only until a person names a topic** |
-| `global_audit` | here | the whole ecosystem against policy and vision, fast, no deep analysis |
-
-**Every prompt takes `--show-prompt`**, which prints what it would send and
-runs nothing — the only way to review one without spending a turn on it.
-`install_eo --dry-run` is the same idea for the one command that changes a
-machine, and the installer executes nothing but `git clone`.
+`install_eo --dry-run` prints the planned clone commands without changing files.
+Normal installation clones missing repositories and updates the checkout map.
+`--status` reads existing checkouts; adding `--fetch` explicitly fetches first.
 
 ## The build
 
-**It has been red far more often than green, and it stopped being read.**
-Sixty-one consecutive runs failed, from 2026-08-30 to 2026-08-31, on two
-defects that had nothing to do with each other and neither of which was in the
-change that first turned it red. That is what this section guards against — not
-the failures, which were real, but a build everybody has learned to expect
-nothing from, which is worth the same as not having one.
+The `checks` workflow runs the offline regression suite and inventory validation.
+The suite covers local document links, glossary project labels, command behavior,
+checker discovery and errors, child listings, and prompt previews. It launches
+no assistant, clones no repository, and makes no network requests.
 
-Both defects had the same shape: **a check that was a function of something
-other than the tree it was checking.**
+The separate `anoieu / policy` job fetches the checker at the commit pinned in
+`.github/workflows/anoieu.yml` and runs it against kanon. Other members also pin
+**anoieu**, which owns the checker implementation; kanon's `scripts/policy_check.py`
+is a local launcher, not that shared implementation. A local launch uses the
+available anoieu checkout and does not establish that CI ran at the pinned
+revision. `scripts/bump_check.py` can query checks for a proposed anoieu commit;
+it is an explicit online command, not part of CI.
 
-- The pinned corpus restore cloned a *branch* before fetching the commit, so a
-  pin was only as durable as the branch it happened to sit on. logos's was
-  deleted upstream, the clone failed before the pin was ever tried, and the job
-  whose entire design is to depend on nothing but this repository went red
-  because somebody else removed a ref. The failure it printed was worse than
-  the defect: *the report is not current; run `scripts/run.py` and commit*
-  named a fix that would have dropped logos from the lock and recorded the
-  shortfall.
-- A recorded oracle verdict held part of the recording machine's home
-  directory. ethos names the source file it was *built* from when it fails
-  internally, and the normaliser only knew how to strip the directory of a
-  witness — so the record could not match on another machine, and never would.
-
-**Be careful, and do not make the build slow.** Those pull against each other
-only if care is spelled *more steps*. It is not: both fixes above make a step
-depend on less rather than adding one, and the pinned restore now costs one
-network request per project instead of two. A run people wait on is a run
-people skip, and a skipped run is not evidence. Prefer the fix that removes an
-input over the fix that adds a guard.
-
-**The `policy` job is a contract, and it is the one place where no ground may
-be given.** Everything else here is ours to break and ours to fix on our own
-schedule. `scripts/policy_check.py` is not: other repositories run it in their
-own CI, pinned at a commit of this one, and what it decides is what this
-repository is handing them downstream. So it is never relaxed to turn a build
-green, never made conditional on the rest passing, and never left to rot while
-something noisier is being fixed — and a check removed from it is a promise
-withdrawn from somebody else rather than a tidy-up here. A regression in any
-other job costs us a morning. A regression in that one costs a maintainer who
-does not work here, in a build they did not schedule, which has already
-happened once and is written up below.
+A passing build establishes only what those checks actually exercise. It does
+not verify definitions, tool quality, consent, or another repository's handoff.
+Keep failures actionable and the local suite independent of remote state.
 
 ## The governance budget
 

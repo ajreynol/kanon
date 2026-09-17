@@ -8,19 +8,8 @@
 #   check_join_eo ethos             # by repo id, or by path
 #   check_join_eo --show-prompt eo  # print the prompt and exit
 #
-# It reads their tree and writes nothing to it. Two halves, deliberately split:
-#
-#   scripts/policy_check.py --root decides everything a program can decide, and
-#   its output is quoted into the prompt as fact.
-#
-#   The assistant judges only what is left -- whether a maintenance note says
-#   anything, whether a discussion file is real or a stub -- and its verdict is a
-#   candidate for a person, not a decision.
-#
-# The checkout is resolved the same way process_anoieu resolves one, from the
-# same scripts/repos.local: an existing path is used as it stands, then the
-# mapping file, then a scan of $ANOIEU_REPOS (default $HOME). That file's format
-# is documented in its own header, which process_anoieu writes.
+# Runs the policy checker, then asks for a read-only assessment of the README.
+# Resolves a path, scripts/repos.local, $ANOIEU_REPOS, siblings, then $HOME.
 
 set -euo pipefail
 
@@ -37,10 +26,10 @@ usage() {
 usage: check_join_eo [--codex] [--print] [--show-prompt] NAME
 
   NAME            a directory, or a repo id looked up in scripts/repos.local
-                  (shared with process_anoieu), then under $ANOIEU_REPOS.
+                  then under $ANOIEU_REPOS, beside kanon, or under $HOME.
   --codex         run codex instead of claude
   --print         run non-interactively and print the result
-  --show-prompt   print the prompt and exit, running nothing
+  --show-prompt   run the local check and print the prompt; no assistant
 
 Run this in kanon, pointed at the repository you are asking about.
 USAGE
@@ -61,8 +50,7 @@ while [ $# -gt 0 ]; do
 done
 [ -n "$NAME" ] || usage
 
-# -- the checkout: a path, then repos.local, then a scan. Same order, same file
-#    and same environment variables as process_anoieu.
+# Resolve the checkout without changing it or the mapping.
 TARGET=""
 if [ -d "$NAME" ]; then
   TARGET=$(cd "$NAME" && pwd)
@@ -98,75 +86,32 @@ if [ "$REPORT_STATUS" -gt 1 ]; then
 fi
 
 read -r -d '' PROMPT <<PROMPT_END || true
-Decide where $NAME stands with respect to the Eunoia ecosystem. It is checked
-out at $TARGET. **Read it; change nothing in it.**
+Assess $NAME, checked out at $TARGET, against docs/policy.md in $ROOT.
+Read only: change no files, stage nothing, open no topics, and send nothing.
 
-The policy is docs/policy.md here, and its "Joining the Eunoia ecosystem"
-section is what a repository has to do. The mechanical half has already been
-run, and this is its output. Treat it as fact -- do not re-derive it, and do not
-argue with it:
+The local policy checker exited with code $REPORT_STATUS. Its complete output:
 
 $REPORT
 
-Your job is the half a program cannot decide. Read their README, their
-docs/discussion.md if there is one, and enough of the tree to answer: does the
-maintenance note actually say who does the work and what the supervision does
-not cover, or is it a sentence that satisfies the check and tells a reader
-nothing? And where there is a discussion file, is it a channel somebody would
-use, or a stub? Keeping none is not a defect and is not a verdict: the policy
-asks nobody for one, so say nothing about its absence.
+Read the current README and the policy's joining requirements. Establish whether
+the README actually declares membership before choosing an assessment:
 
-Then give exactly one verdict:
+  JOINED         declares membership and passes the applicable checks.
+  MISCONFIGURED  declares membership but fails a check; quote the failure.
+  NOT JOINED     does not declare membership; report any readiness obstacles
+                 without treating joining as something this repository owes us.
 
-  JOINED         -- declares membership, and the check passes.
-  MISCONFIGURED  -- declares membership and the check fails. Say which claim is
-                    unbacked; this is the serious one, because a declaration
-                    nothing supports is what the check exists to prevent.
-  READY          -- does not declare membership, but nothing else is in the way.
-                    Say what the one sentence would be.
-  NOT READY      -- does not declare, and something else is missing too. List it.
+The check measures repository form. It cannot establish consent, the quality of
+the work, or whether CI passed at a particular commit. If its output conflicts
+with what you read, identify the conflict instead of forcing a verdict.
 
-The answer then lands in one or two places, and the second is the one that gets
-skipped.
+Briefly say whether the maintenance note explains who does the work and what
+supervision covers. A discussion file is optional; its absence is no defect.
+Separate concrete issues in their tree from stale instructions or checker defects
+on our side. Cite paths and passages, and suggest the smallest useful correction.
+Checker implementation defects belong to anoieu; policy and instruction defects
+belong here. Report suggestions for a person to review; implement none of them.
 
-**Theirs, and small.** What they would have to change, smallest first. Say it in
-the verdict and leave it there.
-
-**Ours.** If the reason they cannot join is a defect on this side, that is ours
-to fix rather than theirs to work around. Three shapes it takes: a check that
-fires on something that is not actually a problem; a policy that does not fit a
-legitimate shape of repository; an instruction that is wrong, missing or
-ambiguous enough that a careful reader would get it wrong. Say so plainly, and
-then make the change here in kanon -- reword the page or clarify the instruction -- and `git add` it, leaving it staged and not committed
-for a maintainer to review. Do not soften the
-verdict to avoid the work. If the defect is in the checker, name it for anoieu,
-which still owns that implementation; do not edit its checkout from here.
-
-Say explicitly when the fault is *not* ours, too, so that silence is not the
-only evidence either way.
-
-This is worth more than a clean verdict. A policy that fits only the repository
-that wrote it is not a policy, and the first repositories to try joining are the
-cheapest chance we will ever get to find that out.
-
-**Theirs, and deep.** Some obstacles are not a sentence they can add. A
-documentation layout they would have to restructure, a convention that collides
-with one of their own, a channel they do not have, a decision only their
-maintainer can take. Do not bury those in the verdict, where they read as a
-to-do list somebody wrote for them. Open a topic in docs/discussion.md here,
-addressed to them by name, in the format docs/policy.md sets out: To, Kind,
-Status, Opened, Settles when. Choose the Kind honestly -- a request if we want
-something from them, a proposal if they gain and we do not, a question if we do
-not know their intent -- and write what would settle it, because an obstacle
-with no answerable form is a complaint. One topic per obstacle. Stage it and
-send nothing; a person carries it, as with everything else that leaves here.
-
-Never a row in a findings report. That is for defects in their code, and what it
-would take somebody to join is not one.
-
-This is a candidate assessment for a person to read, never a decision and never
-an endorsement. A passing check is a claim about form and nothing else. File
-nothing, open nothing, and send nothing anywhere.
 PROMPT_END
 
 if [ "$SHOW" = 1 ]; then printf '%s\n' "$PROMPT"; exit 0; fi

@@ -8,7 +8,7 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 
 | Command | What it does |
 | --- | --- |
-| `scripts/status_eo --check` | Validates the inventory offline |
+| `scripts/status_eo --check` | Validates inventory structure offline; does not read remote trees |
 | `scripts/status_eo` | Shows tool purposes, checkout policy results and topics addressed to kanon |
 | `scripts/status_eo --verbose` | Adds the reasons behind policy results |
 | `scripts/status_eo --all` | Shows every row the table can show, which today means every recorded child including the unadvertised ones |
@@ -21,16 +21,16 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 | `scripts/install_eo --status` | Reads the checkouts on this machine |
 | `python3 scripts/policy_check.py --root .` | Runs anoieu's checker against this tree |
 | `python3 scripts/bump_check.py --root . --dry-run` | Prints the query for the pinned **anoieu** commit; omit `--dry-run` to query CI |
-| `python3 scripts/transfer_check.py TARGET` | Reports pending role markers and destination; CI remains unverified |
-| `python3 scripts/ready_check.py NAME --stub-root PATH` | Checks the local name register and a source repository's stub |
 
-`ready_check.py` decides whether a spawned repository is ready for its stub to
-be deleted. No stub for kanon exists and there is no ready job for one here. Use
-`--stub-root PATH` when a source repository holds a stub for a future
-creation.
-Completed transfers no longer have pending role markers, so
-`transfer_check.py kanon` should report that no transfer is pending.
-Neither helper establishes that both repositories' CI passed.
+`status_eo --check --online` returns 0 when all requested README comparisons
+succeed, 1 for invalid inventory or observed mismatches, and 2 when verification
+is incomplete. A network failure is unverified, not evidence against a project.
+The ordinary status table is a report, not a CI gate: inspect its policy column
+and notes. Associates and outsiders are not checked against the policy.
+
+`bump_check.py` checks a commit hash, never a branch name. Missing, unfinished,
+unavailable, or incomplete check-run results cannot authorize a bump. The query
+requests up to 100 runs and refuses if GitHub reports more than it returns.
 
 ## Checkouts and the checker
 
@@ -98,8 +98,6 @@ only in that README, not copied into kanon's inventory.
 prompts/init_eo new --show-prompt
 prompts/join_eo --show-prompt
 prompts/check_join_eo --show-prompt ../anoieu
-prompts/confirm_eo --show-prompt ../anoieu
-prompts/welcome_eo --show-prompt anoieu ../anoieu
 prompts/global_audit --show-prompt
 prompts/process_discussion --show-prompt ../anoieu
 ```
@@ -107,7 +105,30 @@ prompts/process_discussion --show-prompt ../anoieu
 `init_eo` and `join_eo` run in the receiving repository when actually launched.
 The other prompts run in kanon. A topic id passed to `process_discussion`
 authorizes work on that topic; a preview or a call with no topic id authorizes
-no reply. Policy-reading previews require the anoieu checker too.
+no reply. `check_join_eo` runs the local checker even in preview and stops if it
+cannot run. `global_audit` collects `status_eo --all --verbose`, preserving
+unavailable checks in the report. Neither launches an assistant during preview;
+both request read-only assessments when launched. They write no audit file,
+discussion topic, or checkout mapping. Joining and initialization draft changes
+in the receiving repository; named discussion topics are worked here.
+
+## Retired commands
+
+`confirm_eo` and `welcome_eo` were removed. Confirmation repeated the joining
+assessment, assigned subjective grades, and carried stale handoff instructions.
+Welcoming mixed checkout registration with unsolicited topic drafting and assumed
+the target had not joined. Neither is a necessary verification step.
+
+Use `policy_check.py --root PATH` for mechanical checks and `check_join_eo PATH`
+only when a read-only interpretation would help. Use `install_eo --status ID` to
+inspect a checkout. For existing checkouts elsewhere, edit `scripts/repos.local`
+with one `ID PATH` pair per line; registration does not change membership.
+
+The temporary `ready_check.py` and `transfer_check.py` were also removed: no CI
+job used them, and neither established both repositories' CI at the commits
+being transferred. Follow the [role-transfer protocol](protocols.md#proto-26--transferring-roles-to-another-project)
+and inspect those runs directly. Presidency decisions remain with a person
+under [the laws](laws.md).
 
 ## Validation
 
@@ -117,7 +138,8 @@ scripts/status_eo --check
 python3 scripts/policy_check.py --root .
 ```
 
-The regression suite checks document links, transferred project locations,
+The regression suite checks document links, glossary project footings and parents,
+transferred project locations,
 installer behavior, checker discovery and unavailable-checker reporting, and
 prompt previews. It uses temporary fixtures and does not launch assistants,
 clone repositories or contact the network. CI runs it alongside inventory
@@ -125,6 +147,5 @@ validation. The separate policy job keeps the existing anoieu checker pin.
 
 `scripts/anoieu_dependency.py` supplies checkout discovery for the local
 launcher and status readers. `scripts/ecosystem/ecosystem.py` implements
-`status_eo`; `scripts/ecosystem/near.py` checks likely spelling mistakes in
-repository ids. `scripts/child_listing.py` reads the README listing declaration
+`status_eo`. `scripts/child_listing.py` reads the README listing declaration
 for both status and installation.

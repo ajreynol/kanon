@@ -280,108 +280,51 @@ doing any work.**
 
 ## `PROTO-26` — transferring roles to another project
 
-**Roles move when both repositories are in order, and *both* is the word doing
-the work.** Ours and theirs. The check is `scripts/transfer_check.py`, and CI
-carries it as a **report** rather than a gate.
+Roles move when both repositories are in order. Before a person completes a
+transfer:
 
-### What has to be true
+1. Mark the role's intended destination in [`roles.md`](roles.md).
+2. Confirm the destination has an actual repository recorded in the inventory;
+   a placeholder or child entry alone does not establish that.
+3. Confirm the relevant CI runs passed for the exact source and destination
+   commits.
+4. Read the receiving tree to confirm it carries the work, then update the
+   role's holder while preserving its id.
 
-1. **The role is marked.** A role destined for another project carries a
-   `Destined for` line in [`roles.md`](roles.md). **A transfer nobody wrote
-   down is an intention, not a pending move**, and the marker is what the check
-   reads.
-2. **The target exists.** In the inventory, with a repository. **A stub is not
-   a destination** — it is a note saying one is expected.
-3. **Our CI is green**, which the job enforces by depending on the others: it
-   cannot report while anything else is red.
-4. **Their CI is green**, which **cannot be established from here.**
-
-### Why the fourth is a person's step and not a job
-
-**Asking GitHub about somebody else's build from inside our build would make
-our CI fail for reasons in somebody else's tree.** [`policy.md`](policy.md)
-names that as how a suite becomes noise, and it applies to us first. So the
-check reports *unverified from here* and a person runs it with `--online`
-before anything moves.
-
-**Unverified is its own outcome and is not a pass**, with its own exit code,
-for the same reason the bump gate has three: *we asked and it is wrong* and *we
-could not ask* are different facts.
-
-### Why it reports rather than gates
-
-**Not every proposed transfer is ready**, so a job that failed on that would be
-red while a human decision or handoff is still pending. **A check that is red
-for months trains everybody to ignore red**, and then the checks that matter
-are ignored too. The job is named for what it does: it produces a report, and
-**a green tick on it means only that we looked.**
-
-**It becomes a gate the day it can pass**, and that day is the day the roles
-move.
+There is no transfer CI job here. The retired `transfer_check.py` could read
+markers and a destination's latest run, but could not verify both commits.
+An unavailable check leaves the transfer unverified. The similarly retired
+`ready_check.py` checked a name and stub text, not readiness to delete a stub.
+The [handoff protocol](#proto-20--the-handoff-protocol)
+still governs retiring a source stub.
 
 ## What happens when we add a new tool to the ecosystem
 
-A new tool is a decision, and `welcome_eo` is what turns the decision into the
-files. The sequence, which nothing enforces:
-
-1. Somebody creates the repository, and [`init_eo`](../prompts/init_eo) gives
-   it a README. **There are two ways a tool arrives here and the script makes
-   you say which**, because there is no default that is safe: `init_eo new` for
-   a repository with nothing in it, and `init_eo from-child <path>` when the
-   tool already exists as a child project in somebody's tree and a person has
-   decided it graduates — the first of the three endings a child project can
-   have. The second is not the first with an extra file to read. It writes the
-   README from that directory's charter and from its record of what it
-   delivered, because **that record is the reason the repository exists**, and
-   it is told not to move the child's own front page across: a child project's
-   README is written to say the work is speculative and depended on by nobody,
-   which is the opposite of what graduating means. The register is what the
-   name is checked against in both, rather than where the scope comes from in
-   either.
-2. [`welcome_eo <id> <path>`](../prompts/welcome_eo) is run here, once there is
-   something worth reading. It records the checkout in `scripts/repos.local` —
-   the file every other script resolves an id through — **and syncs the
-   ecosystem's own list**, by running `scripts/install_eo --status <id>` and
-   printing what comes back, before it reads the tree and drafts a first
-   message.
-3. That sync reports and never edits. If the tool is not in
-   [`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json)
-   it says a status is owed, and a person adds the entry: `status`, `repo`,
-   `url`, `what` — plus `vetted` and `why` where the footing is `associate`,
-   because a footing that rests on our judgement carries the date somebody made
-   it and what they made it about. Membership is a decision a person makes,
-   which is why no script writes that file. **A child project** — a tool inside
-   somebody else's tree, like `ethos-eoc` at `ethos/tools/eoc` — takes `status:
-   child` with `parent` and `path` instead of a `repo` and a `url`: nothing
-   clones it, it arrives with its parent, and its id still resolves to the
-   parent's checkout so the other scripts can take it. Where the child's
-   current work is on another branch of the parent, `branch` says which. A
-   child is **listed** by `status_eo` and the installer's generated summaries
-   according to its local README introduction's `**Eunoia listing:**
-   advertised` or `unadvertised` declaration. For advertised children the
-   installer repeats the branch advice without acting on it. An absent
-   declaration means advertised, while IDs still resolve to the parent. [The
-   listing rules](commands.md#child-project-listings) describe the choice and
-   the explicit `--all-children` inspection view. A *name* with no work behind
-   it does not earn a row — the register in
-   [`../tools/ynoia/names.md`](../tools/ynoia/names.md) is where those live,
-   and an install that advertised them would be a list of things to go and not
-   find.
-4. **The entry is the whole of the work.** `install_eo` derives what to clone
-   from the inventory, so a new repository appears in the dump, in `--status`,
-   and in `scripts/repos.local` on the next machine with nothing else edited.
-   Outsiders are never cloned; children choose whether to appear in generated
-   listings through their own README declaration.
-   [`../scripts/ecosystem/checkouts.json`](../scripts/ecosystem/checkouts.json)
-   carries only what cannot be derived — a clone flag, or a tree nobody should
-   fetch unasked. The ordinary case needs none of it.
-5. `join_eo` and `check_join_eo` come later, or never. Joining is its owner's
-   choice, and a tool that never joins is still in the inventory.
-
-**What the sync is there to prevent** is a tool that exists only on the machine
-of whoever welcomed it: recorded in `repos.local`, absent from the inventory,
-and missing from every other checkout. `welcome_eo` is where it is caught
-because that is the one moment somebody is already thinking about the new tool.
+1. Create the repository and use [`init_eo`](../prompts/init_eo) if a README
+   draft would help. Use `new` for new work or `from-child <path>` for work
+   moving from an existing child's charter. Read what it has actually delivered.
+2. Read the project's README and record its current footing in
+   [`ecosystem.json`](../scripts/ecosystem/ecosystem.json). A repository needs
+   `status`, `repo`, `url`, and `what`; footings such as associate and outsider
+   require additional evidence. A child needs `status: child`, `parent`, `path`,
+   and `what`, with `branch` if relevant. Include existing unadvertised children;
+   unused names stay in the name register. Update [`glossary.md`](glossary.md)
+   to match, including each project's footing or parent.
+3. Run `scripts/status_eo --check` and the offline regression suite. For an
+   existing checkout outside the normal search locations, add its `ID PATH`
+   mapping to `scripts/repos.local`. This local map is not the shared inventory.
+   Use `scripts/install_eo --status ID` to inspect it; that command reports and
+   does not synchronize or edit the inventory.
+4. The installer derives clones from the inventory. Outsiders are never cloned;
+   children arrive with their parent. A child's README controls its
+   [listing preference](commands.md#child-project-listings), independently of
+   its inclusion in the inventory or glossary. `checkouts.json` carries only
+   installation exceptions, such as clone flags or optional trees.
+5. [`join_eo`](../prompts/join_eo) and the read-only
+   [`check_join_eo`](../prompts/check_join_eo) assessment come later, or never.
+   Joining is the owner's choice. No welcome message or post-join grade is
+   required; the [retired prompts](commands.md#retired-commands) added neither
+   reliable verification nor a necessary step.
 
 ## Promoting a document: when a change becomes an event
 
