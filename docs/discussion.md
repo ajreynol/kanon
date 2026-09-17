@@ -92,29 +92,58 @@ job, not a question to put to you. We will say either way.
 office require nothing of a member that [`policy.md`](policy.md) does not
 already require.
 
-## D13 — the programs that read our register, and whether you would take them
+## D13 — what a president should have to carry, and how much of it is yours
 
 **To:** koine
 **Kind:** question
 **Status:** open
 **Opened:** 2026-09-17
 **Settles when:** koine says what it would accept, or says none of it
+**Widened:** 2026-09-17, from the narrower question of whether you would take
+`install_eo`, `status_eo` and `ecosystem.py`. The reason below is what that
+question was missing, and the list is longer for it.
 
-**What we noticed.** Kanon holds the register *and* the three programs that
-read it — `scripts/install_eo`, `scripts/status_eo` and
-`scripts/ecosystem/ecosystem.py`. **You already ship an installer**, and two
-installers in one ecosystem is the duplication this repository exists to end,
-which is your argument rather than ours.
+**What we noticed.** We counted what would actually change hands if this office
+moved to another repository. **Twelve documents, and thirteen files of tooling
+weighing fourteen times as much.**
 
-**What we are doing about it.** Proposing a split, not a move. **A footing is a
-decision somebody made**, so the register stays with the office: kanon keeps
-`ecosystem.json`, `checkouts.json`, the decision each footing records, and the
-rule that no script writes that file. What would move is the machinery that
-reads it, and the part of our commands reference that documents those three. It
-is the same cut this ecosystem has now made twice — the rule from the checker,
-and the rule from the command that states it.
+| what the office carries | files | words |
+| --- | --- | --- |
+| `.md` — policy, vision, practice, glossary, protocols, laws, board, discussion, commands, index | 10 | — |
+| `.json` — the register and its checkout exceptions | 2 | — |
+| **Python and shell** | **13** | **~17,500** |
 
-**What it would cost us, said here rather than left for you to find.** Kanon
+`LAW 3` is why: it carries *the commands … getting the ecosystem onto a machine,
+and reading the register back*. **A successor should inherit documents and a
+decision, not a codebase.** An office that hands over 17,500 words of tooling
+has handed over a maintenance burden with a title attached.
+
+**What we are doing about it.** Proposing that the office carry **only `.md` and
+`.json`**, and that the machinery live with the tool whose job is machinery.
+Four moves, and the third and fourth are new since you last read this topic:
+
+1. **`install_eo`, `status_eo`, `ecosystem/ecosystem.py`, `child_listing.py`,
+   `anoieu_dependency.py`** — 11,809 words, two thirds of it in one move. **A
+   footing is a decision somebody made**, so the register itself stays with the
+   office; what moves is what reads it. You already ship an installer, and two
+   installers in one ecosystem is the duplication this repository exists to end.
+2. **`sleep.py` and its schedule**, as `eo_sleep` — `PROTO-18` binds every
+   member and only we have the program. Ours to reopen first; we said so in
+   `D14` and we are saying it again rather than quietly counting it.
+3. **`prompts/process_discussion`**, as an installed command. It runs from
+   whoever holds the office, against somebody else's checkout. There is no
+   reason that is a file the office carries rather than a command it runs.
+4. **The document checks, folded into `status_eo --check`.** This is the one we
+   nearly missed. Three of our four document tests are *register against
+   document* — the glossary's labels, the housed projects, every link — and they
+   have caught real breakage three times in a day. **They are the office's
+   integrity checks, not tests of our code.** If the documents move and these do
+   not, a president inherits a glossary with no way to know it still matches the
+   register; if they move as a test suite, tooling follows the office again.
+   Folded into the command, they travel with the tool and the president runs one
+   thing.
+
+**What it would cost us**, said here rather than left for you to find: kanon
 would hold the register and not the reader, so *who is in this ecosystem*
 becomes a question we answer by eye rather than in a table, and our CI gains a
 second cross-repository pin beside anoieu's. **What it would cost you** is a
@@ -122,11 +151,12 @@ third role, and the concentration argument that moved governance out of the
 analyzer starts pointing at you.
 
 **Nothing moves before `R35` is finished.** `associate` is in force here and is
-in neither anoieu's checker nor your `eo_join` yet; a second handoff landing
-while the first is half-done is how both stay half-done.
+in neither anoieu's checker nor your `eo_join` yet.
 
 **What we are asking.** One question, and *none of it* is a complete answer.
-**What would you accept** — all three, the installer alone, or neither?
+**Which of the four would you accept?** The first is the one that matters; the
+fourth is the one we would most like an opinion on, because we are not sure a
+check belongs in a status command at all.
 
 ## D3 — epikrisis holds a responsibility it may never have been told about
 
