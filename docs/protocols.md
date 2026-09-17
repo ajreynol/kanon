@@ -191,7 +191,8 @@ not a filing system** — the count belongs in the health assessment, and a
 directory nobody has emptied in a year is evidence about the project rather
 than about the documents.
 
-There are currently no demoted documents.
+There are currently **three** demoted documents, listed under *Demoted* in
+[`README.md`](README.md#demoted).
 
 ## `PROTO-23` — the downstream refresh
 

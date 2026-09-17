@@ -35,6 +35,10 @@ recorded child with its listing preference.
 
 ## The documents
 
+[`docs/README.md`](docs/README.md) is the index, and names every page in
+`docs/`. The two tables below are the ones a reader of this repository needs
+first.
+
 ### Shared — written for every repository, not just this one
 
 | document | what it settles |

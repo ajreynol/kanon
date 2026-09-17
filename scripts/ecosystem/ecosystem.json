@@ -400,5 +400,33 @@
     "path": "tools/hermeneia",
     "short": "Connects embedded SMT-LIB semantics to Lean's logic",
     "what": "researches correspondence definitions and lemmas that carry checked refutations from embedded SMT-LIB semantics into native Lean propositions"
+  },
+  "mimesis": {
+    "status": "child",
+    "parent": "eudaimonia",
+    "path": "tools/mimesis",
+    "short": "Teaches signature writing from worked examples",
+    "what": "how a Eunoia signature is written and how one gets into Logos, in two strands: case studies of episodes that already happened, and tutorials that build a signature from a calculus's rule descriptions"
+  },
+  "hawkeye": {
+    "status": "child",
+    "parent": "eschaton",
+    "path": "tools/hawkeye",
+    "short": "Intention to build a new solver with agents; one page",
+    "what": "a one-page intention to build a new SMT solver from nothing, written mostly by autonomous agents; nothing is built"
+  },
+  "heuresis": {
+    "status": "child",
+    "parent": "tachyon",
+    "path": "tools/heuresis",
+    "short": "Finds cvc5 shortcomings where z3 is much faster",
+    "what": "investigates cvc5 performance shortcomings in quantified benchmarks where z3 is much faster, recording enough evidence for a human to judge which are worth pursuing"
+  },
+  "metagraphe": {
+    "status": "child",
+    "parent": "tachyon",
+    "path": "tools/metagraphe",
+    "short": "Finds missing cvc5 rewrites for strings and bit-vectors",
+    "what": "finds concrete gaps in cvc5's rewriting and simplification for strings and bit-vectors, each with a small reproducible example and the evidence behind it"
   }
 }
