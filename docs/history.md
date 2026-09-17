@@ -101,9 +101,11 @@ independence from the ecosystem whose conduct they examine.
 ### The glossary became the name register — 2026-09-17
 
 At the maintainer's direction, `docs/glossary.md` became the authoritative
-register of names in use, kept by the president. Ynoia's `names.md` now links
-to it and argues about naming; its taken, reserved, and in-use tables were
-removed. Unused candidates remain in proposals, outside the dictionary.
+register of names in use, kept by the president. Ynoia's taken, reserved, and
+in-use tables were removed. The remaining guidance from `names.md` was merged
+into [proposals.md](../tools/ynoia/proposals.md#arguing-about-names), and the
+separate page was deleted. Unused candidates remain in proposals, outside the
+dictionary.
 `init_eo` now reads the glossary directly. Earlier accounts of the register's
 location in ynoia record the arrangement at the time.
 

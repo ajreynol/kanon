@@ -376,7 +376,7 @@ paragraph; and reading *histories*, which another tree already does.
 **Role:** *should this become a repository of its own*, answered against a
 stated standard with a verdict attached — and, where the answer is no, an
 argument about whose existing tree the work belongs in instead.
-**Owns:** `proposals.md` and `requests.md`; naming arguments in `names.md`
+**Owns:** `proposals.md` and `requests.md`; naming arguments in `proposals.md`
 refer to the authoritative register in `docs/glossary.md`.
 **Not this role:** approving anything, and creating anything. A repository is a
 person's decision and a person's act, and this role produces an argument with a

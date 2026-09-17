@@ -470,7 +470,8 @@ has to pay for it is the second row.
 
 [`glossary.md`](glossary.md) is the authoritative name register, maintained by
 the president. [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) records
-membership and checkout locations. Ynoia's [naming page](../tools/ynoia/names.md)
+membership and checkout locations. Ynoia's
+[naming guidance](../tools/ynoia/proposals.md#arguing-about-names)
 links to the glossary to argue names; it keeps no parallel register.
 
 | when | the edit |

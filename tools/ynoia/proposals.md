@@ -35,16 +35,45 @@ reason to build it and also an obligation nobody has agreed to. *Welcome* is a
 smaller and often kinder answer: build it for your own reasons, on your own
 schedule, and if it turns out well we will come to you.
 
-**Nothing on this page approves anything.** A proposal is a claim on a name in a
-shared namespace and on somebody's attention for years, and the policy reserves
+**Nothing on this page approves anything.** Creating a repository claims a name
+in a shared namespace and years of somebody's attention; the policy reserves
 that decision for a person. What this page produces is an argument with a
 recommendation at the end, written so that agreeing or disagreeing with it takes
 a minute rather than an afternoon.
 
 The account asks whether the ecosystem's arrangement earns its machinery;
-this page applies that question to one proposed repository. Naming arguments
-refer to the president's [glossary](../../docs/glossary.md), which keeps the
-name register outside this research project.
+this page applies that question to one proposed repository.
+
+## Arguing about names
+
+The president's [glossary](../../docs/glossary.md) is the authoritative name
+register: what a name means and which work it identifies. Ynoia argues how a
+name fits its work, keeping no list of taken, reserved, or supposedly free names.
+
+A name should describe what the work does to its subject. Explain that fit in
+one sentence, then state the strongest likely misreading. If the explanation
+is strained, revisit the scope before searching for a more elaborate word.
+Greek draws on vocabulary already used by the ecosystem, but the etymology is
+an argument a reader can challenge. A descriptive name can earn its place too.
+Distinctive names help readers distinguish a project from its subject; that is
+a reason for the convention, not a reason to force a word onto unsuitable work.
+
+For an existing name, cite its glossary entry and the project's own explanation.
+Say which reading works, which misleads, and why. Suggest a correction without
+keeping a competing definition here.
+
+For proposed work, put the candidate name, scope, etymology, alternatives, and
+objections with its proposal here or in [tools.md](tools.md). A suggestion
+reserves nothing. Check the glossary and existing project trees before treating
+a candidate as available. The discussions for
+[kanon](#p2--the-ecosystems-governance-out-of-the-analyzer) and
+[koine](#p1--central-tooling-for-reporting) show the form: what the name claims,
+and the objection to it. They preserve the choices considered then; the glossary
+records the names in use now.
+
+When a person adopts a name and the work exists, its definition belongs in the
+glossary. When the work moves, update the inventory and the glossary's parent
+or location. Ynoia keeps the reasoning, not another register to synchronize.
 
 ## The standard
 
@@ -316,7 +345,7 @@ this table preserves the arguments, not a list of available names.
 | **epistates** | ἐπιστάτης, the presiding member of the council, for one day | presides and does not rule: it runs the meeting, and the decisions stay with people. That is precisely the relationship the policy has to members | needs the footnote to land at all, which weakens the argument that it describes the work |
 | **oikonomia** | οἰκονομία, *management of the house* | the unglamorous half is true: the inventory, the checkouts, who lives where | *economy* in English, and it says nothing about the rules, which are the part that matters |
 
-**Recommended: `kanon`.** The [naming argument](names.md) favours a word for what
+**Recommended: `kanon`.** The [naming argument](#arguing-about-names) favours a word for what
 the tool does to its subject, and this one *measures a tree against a stated
 standard*. The objection is real and worth stating on the repository's own front
 page: this is a rod, not a canon, and nothing in it is scripture.

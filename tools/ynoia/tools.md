@@ -20,8 +20,7 @@ disagree is moving a block.
 | page | its question |
 | --- | --- |
 | [glossary](../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
-| [`names.md`](names.md) | why a name fits its work, and the objections to it |
-| [`proposals.md`](proposals.md) | should this be a repository of its own |
+| [`proposals.md`](proposals.md) | should this be a repository of its own, and why does its name fit |
 | [`requests.md`](requests.md) | whose tree should this work live in |
 | [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up |
 | **this page** | **which of them is worth building first** |
@@ -161,7 +160,8 @@ Enough to fill the seven fields, or an honest gap where it cannot:
 
 - **A working name**, checked against the [glossary](../../docs/glossary.md)
   and existing trees. Explain a new candidate with the proposal, following the
-  [naming arguments](names.md); do not create a second name for work already listed.
+  [naming arguments](proposals.md#arguing-about-names); do not create a second
+  name for work already listed.
 - **One line on the artifact** — what would exist that does not. Not the case
   for it; that goes somewhere it can be disagreed with.
 - **What it would settle**, by the ids in [`why-eunoia.md`](why-eunoia.md) where

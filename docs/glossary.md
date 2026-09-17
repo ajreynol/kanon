@@ -9,9 +9,10 @@ Each entry gives its part of speech; project names also give their footing or pa
 current and hands this file to the next president with the
 [office’s shared documents](laws.md#what-the-office-carries).
 
-Ynoia [argues about names](../tools/ynoia/names.md) and proposes alternatives;
-it keeps no separate register and reserves no names by proposing them. When a
-name enters use, the president records it here with its meaning and source.
+Ynoia [argues about names](../tools/ynoia/proposals.md#arguing-about-names)
+and proposes alternatives; it keeps no separate register and reserves no names
+by proposing them. When a name enters use, the president records it here with
+its meaning and source.
 Absence from this page is not proof that a name is free: check the project
 trees as well. The [inventory](../scripts/ecosystem/ecosystem.json) remains the
 authority for membership and checkout locations; keep project labels here in

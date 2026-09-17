@@ -48,9 +48,10 @@ So: write it down, make the strongest case against it, and see which survives.
 
 3. **The naming arguments.** Whether a name describes the work, what it might
    mislead a reader into expecting, and why an alternative would fit better.
-   [`names.md`](names.md) states the approach; proposals carry the individual
-   arguments. The president's [glossary](../../docs/glossary.md) is the
-   authoritative name register. Ynoia neither duplicates it nor reserves names.
+   [The naming guidance](proposals.md#arguing-about-names) states the approach;
+   proposals carry the individual arguments. The president's
+   [glossary](../../docs/glossary.md) is the authoritative name register.
+   Ynoia neither duplicates it nor reserves names.
 
 4. **Auditing proposals.** Whether a given idea deserves a repository of its
    own is the account's general question applied to one case, with a decision
@@ -122,7 +123,7 @@ happened yet. It has reached no consumer and so has earned no place in
 as child projects of eudaimonia. Whether that is this account's doing or
 convergence is not something this project can establish about itself.
 `prompts/init_eo` now reads the president's glossary directly; it does not
-depend on ynoia's naming page.
+depend on ynoia's naming arguments.
 
 ## Is there a paper in this?
 
@@ -146,8 +147,7 @@ other tool.
 | file | what it is |
 | --- | --- |
 | [`why-eunoia.md`](why-eunoia.md) | the account: the case, the case against, the objections, six arrangements, the projects that do not exist, and what would change our minds |
-| [`names.md`](names.md) | how to argue names, referring to the authoritative glossary. Goal 3 |
-| [`proposals.md`](proposals.md) | should this become a repository? The standard, and one section per proposal. Goal 4 |
+| [`proposals.md`](proposals.md) | naming arguments, referring to the authoritative glossary; whether an idea deserves a repository, against a stated standard. Goals 3 and 4 |
 | [`requests.md`](requests.md) | work the ecosystem wants that needs no repository of its own, and whose tree it would live in instead. Goal 4 |
 | [`tools.md`](tools.md) | the tools that do not exist, in priority order — most promising first, and what a request for a listing should arrive with. Goal 2 |
 | [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up as a paper. Goal 5 |

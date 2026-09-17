@@ -40,7 +40,7 @@ kept in a different directory.
 2. Then [`tools.md`](tools.md) — the tools that do not exist, in priority order,
    each with the argument for its position rather than a wish list.
 3. Then the [glossary](../../docs/glossary.md), the authoritative name register,
-   and [`names.md`](names.md) for the naming arguments. **Check the trees as
+   and the [naming arguments](proposals.md#arguing-about-names). **Check the trees as
    well as the glossary**: a missing entry does not mean a name is unused.
 4. Then [`../../prompts/init_eo`](../../prompts/init_eo), which
    writes a new repository's README from the register and complies with nothing
