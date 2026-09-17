@@ -7,6 +7,7 @@ imported by the suites rather than run as one.
 import importlib.machinery
 import importlib.util
 from pathlib import Path
+import json
 import re
 import sys
 
@@ -23,8 +24,20 @@ def load(name, path):
     return module
 
 
+import policy_check  # scripts/ is on the path, set just above
+
 ecosystem = load("ecosystem_under_test", "scripts/ecosystem/ecosystem.py")
-installer = load("installer_under_test", "scripts/install_eo")
+
+
+def register() -> dict:
+    """The register itself, read the way every reader of it reads it.
+
+    The installer used to supply this, and the document tests borrowed it from
+    there. It went to koine on 2026-09-17, and reading the file is what those
+    tests were always doing through it.
+    """
+    with open(ROOT / "scripts/ecosystem/ecosystem.json", encoding="utf-8") as f:
+        return {k: v for k, v in json.load(f).items() if not k.startswith("_")}
 
 # Loaded here so every suite shares one instance; importing them is also the
 # cheapest check that each still parses against the current tree.

@@ -238,7 +238,7 @@ clone the rest of it beside a checkout, record where each one landed, and
 report what has drifted.
 **Owns:** `scripts/ecosystem/ecosystem.json`,
 `scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
-`scripts/install_eo` and `scripts/eo_status_audit`.
+and `scripts/eo_status_audit`.
 **Not this role:** deciding membership — a status is changed by a person and no
 script writes that file — and the rules a member is checked against, which are
 `R4`.

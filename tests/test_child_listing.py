@@ -10,9 +10,8 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from support import ecosystem, installer
+from support import ecosystem
 from child_listing import declaration, read_listing
-
 
 class Declarations(unittest.TestCase):
     def test_the_footing_marker_is_read_as_well_as_the_older_line(self):
@@ -71,7 +70,6 @@ class Declarations(unittest.TestCase):
             (child / "README.md").write_bytes(b"\xff")
             self.assertEqual(read_listing(str(parent), "child").state, "unverified")
 
-
 class ChildCommands(unittest.TestCase):
     def setUp(self):
         temp = tempfile.TemporaryDirectory(prefix="kanon-child-commands-")
@@ -98,23 +96,14 @@ class ChildCommands(unittest.TestCase):
                 (child / "README.md").write_text(text)
         self.inventory = self.base / "inventory.json"
         self.inventory.write_text(json.dumps(self.entries))
-        self.checkouts = self.base / "checkouts.json"
-        self.checkouts.write_text("{}")
         mapping = self.base / "repos.local"
         mapping.write_text(f"host-tree {self.parent}\nquiet {self.parent}\n")
         patches = [
             patch.object(ecosystem, "INVENTORY", str(self.inventory)),
-            patch.object(installer, "INVENTORY", str(self.inventory)),
-            patch.object(installer, "CHECKOUTS", str(self.checkouts)),
             patch.object(ecosystem, "REPOS_FILE", str(mapping)),
-            patch.object(installer, "REPOS_FILE", str(mapping)),
             patch.dict(os.environ, {"ANOIEU_REPOS": str(self.base)}),
             patch.object(ecosystem, "check", return_value=("ok", [])),
             patch.object(ecosystem, "age", return_value="today"),
-            patch.object(installer, "age", return_value="today"),
-            patch.object(installer, "deps", return_value={}),
-            patch.object(installer, "git", return_value=(0, "")),
-            patch.object(installer, "execute", side_effect=AssertionError("unexpected clone")),
         ]
         for p in patches:
             p.start()
@@ -124,13 +113,6 @@ class ChildCommands(unittest.TestCase):
         out = io.StringIO()
         with patch.object(sys, "argv", ["eo_status_audit", *args]), contextlib.redirect_stdout(out):
             self.assertEqual(ecosystem.main(), 0)
-        return out.getvalue()
-
-    def install(self, *args):
-        out = io.StringIO()
-        argv = ["install_eo", "--root", str(self.base), "--no-repos-local", *args]
-        with patch.object(sys, "argv", argv), contextlib.redirect_stdout(out):
-            self.assertEqual(installer.main(), 0)
         return out.getvalue()
 
     def assert_only_advertised(self, output):
@@ -214,50 +196,6 @@ class ChildCommands(unittest.TestCase):
         self.assertIn("parent checkout unavailable", output)
         row = next(line for line in output.splitlines() if line.split()[:1] == ["host"])
         self.assertTrue(row.endswith(self.entries["host"]["what"]), row)
-
-    def test_installer_views_and_branch_advice_share_the_preference(self):
-        for mode in ("--dry-run", "--status", "--run"):
-            with self.subTest(mode=mode):
-                self.assert_only_advertised(self.install(mode))
-
-    def test_unadvertised_ids_still_resolve_and_are_mapped(self):
-        output = self.install("--dry-run", "quiet")
-        self.assertIn("git clone https://example.invalid/host host-tree", output)
-        self.assertNotIn("so nothing here fetches it", output)
-        self.assertNotIn("quiet", output)
-        repos = installer.plan()
-        self.assertEqual(installer.unknown(repos, list(self.choices)), [])
-        rows = installer.repos_local_rows(str(self.base), repos)
-        mapped = {name: path for name, path, live in rows if live}
-        for name in self.choices:
-            self.assertEqual(mapped[name], str(self.parent))
-
-    def test_branch_observation_does_not_name_an_unadvertised_child(self):
-        def git(path, *args):
-            return (0, "quiet-work" if args == ("rev-parse", "--abbrev-ref", "HEAD") else "")
-
-        with patch.object(installer, "git", side_effect=git), \
-             patch.object(installer, "default_branch", return_value="main"):
-            _, notes, _ = installer.observe(str(self.parent), installer.plan()[0], False)
-        self.assertNotIn("quiet's current work", "\n".join(notes))
-
-    def test_clone_reads_the_declaration_after_checkout_arrives(self):
-        destination = self.base / "fresh"
-
-        def clone(cmd, cwd):
-            for name in ("published", "implicit"):
-                child = Path(cwd) / "host-tree" / "tools" / name
-                child.mkdir(parents=True)
-                text = "**Eunoia listing:** advertised\n" if name == "published" else "# Child\n"
-                (child / "README.md").write_text(text)
-            return 0
-
-        out = io.StringIO()
-        with patch.object(installer, "execute", side_effect=clone), contextlib.redirect_stdout(out):
-            repos = installer.plan()
-            self.assertEqual(installer.run(str(destination), repos, repos, False), 0)
-        self.assert_only_advertised(out.getvalue())
-
 
 if __name__ == "__main__":
     unittest.main()

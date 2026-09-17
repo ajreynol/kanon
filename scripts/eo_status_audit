@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
-# eo_status_audit -- who is in the Eunoia ecosystem, and how each one looks.
+# eo_status_audit -- the AUDIT of the register, not the reading of it.
+#
+# **This is not koine's `eo_status`, and the difference is the word audit.**
+# `eo_status` reads the register in the tree that holds it and prints what it
+# says. This goes further and checks the register against the world: it reads
+# **other people's remotes** and asks whether each one still declares what we
+# recorded (`--check --online`), and it reports where each proposed associate
+# stands (`--protocol`). Reading is a fact about our file; auditing is a claim
+# about somebody else's tree, and only the second can be wrong about them.
+#
+# **Run `eo_status` for the table. Run this when the question is whether the
+# table is still true.**
 #
 # The public command for the implementation in scripts/ecosystem/ecosystem.py.
 #

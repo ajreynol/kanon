@@ -360,7 +360,6 @@ The third has grown since that sentence was written. It is now
 member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
 [`scripts/ecosystem/ecosystem.py`](../../scripts/ecosystem/ecosystem.py),
 `prompts/welcome_eo` (since [retired](../../docs/commands.md#retired-commands)),
-[`scripts/install_eo`](../../scripts/install_eo) and
 [`scripts/ecosystem/checkouts.json`](../../scripts/ecosystem/checkouts.json). That is a tool, and it is
 not the analyzer.
 
@@ -414,7 +413,7 @@ transfer asks two more:
    One: *does this finding's project comply?* — today one tree holds both the
    finding and the checker. After a split, the policy lives in one tree and the
    findings in another, and the audit that reads across both needs two
-   checkouts. `install_eo` already makes that a one-line problem, which
+   checkouts. An installer makes that a one-line problem, which
    is an argument for doing this **after** the install script settles, not
    before.
 

@@ -14,9 +14,8 @@ directs an agent. [`commands.md`](commands.md) documents the commands.
 
 ## Where to start
 
-1. **Inspect the checkouts**: `scripts/install_eo --status`. Use
-   `scripts/install_eo --dry-run` to review missing clones before installing.
-   Inventory validation and the regression suite also work without them.
+1. **Read the register**: `scripts/eo_status_audit`. Inventory validation and
+   the regression suite work without any checkout but kanon's.
 2. **Read [`board.md`](board.md)** for what is outstanding and in what order —
    the shortest answer to *what should I do next*, and the only page that
    carries one. [`roles.md`](roles.md) answers the question the board assumes
@@ -30,7 +29,7 @@ directs an agent. [`commands.md`](commands.md) documents the commands.
 
 | what | where |
 | --- | --- |
-| policy and joining | [`policy.md`](policy.md), `prompts/` — the rule, not the commands that state it |
+| policy and joining | [`policy.md`](policy.md) — the rule, not the commands that state it |
 | the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the register, installation and status | [`commands.md`](commands.md), `scripts/ecosystem/` |
@@ -378,18 +377,16 @@ binds another repository can be caught.
 
 ## The scripts, and the prompts
 
-`scripts/` contains deterministic commands; `prompts/` assembles context for an
+`scripts/` contains deterministic commands; the prompts that assemble context for an
 assistant. [`commands.md`](commands.md) is the reference for both. The installer
 writes the untracked `scripts/repos.local` checkout map, preserving existing
 entries; a person can edit that map for checkouts elsewhere.
 
 Every prompt takes `--show-prompt`, which prints its assembled instructions
-without launching an assistant and writes no files. `process_discussion` acts
-only on a named topic. `eo_init` and `eo_join`, which
+without launching an assistant and writes no files. `eo_init` and `eo_join`, which
 draft changes in the repository being started or joined, are `R35` and are not
 in this tree.
 
-`install_eo --dry-run` prints the planned clone commands without changing files.
 Normal installation clones missing repositories and updates the checkout map.
 `--status` reads existing checkouts; adding `--fetch` explicitly fetches first.
 
@@ -437,7 +434,7 @@ commands, and worth nothing until there is a second row.
 | — child projects, shipped by nothing and advertised nowhere | 10 | 4,550 |
 | — **written prose: the number this section is about** | 18 | **9,450** |
 | Python | 54 | 13,382 |
-| `scripts/` and `prompts/` | 11 | 2,481 |
+| `scripts/` | 9 | 2,481 |
 | checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | | 63 |
 | findings in the ledger | | 39 open, 43 closed |
 

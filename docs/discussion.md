@@ -121,17 +121,20 @@ has handed over a maintenance burden with a title attached.
 `.json`**, and that the machinery live with the tool whose job is machinery.
 Four moves, and the third and fourth are new since you last read this topic:
 
-1. **`install_eo`, `eo_status_audit`, `ecosystem/ecosystem.py`, `child_listing.py`
-   and `policy_check.py`** — about 11,000 words, two thirds of it in one move. **A
+1. **`eo_status_audit`, `ecosystem/ecosystem.py`, `child_listing.py` and
+   `policy_check.py`** — about 7,000 words. **`install_eo` is already gone**:
+   we deleted it on 2026-09-17 on the maintainer's word that a replacement is
+   being built here, so until that lands this ecosystem has no installer. That
+   is a gap we chose, and it is ours to have chosen, not a debt you owe us. **A
    footing is a decision somebody made**, so the register itself stays with the
    office; what moves is what reads it. You already ship an installer, and two
    installers in one ecosystem is the duplication this repository exists to end.
 2. **`sleep.py` and its schedule**, as `eo_sleep` — `PROTO-18` binds every
    member and only we have the program. Ours to reopen first; we said so in
    `D14` and we are saying it again rather than quietly counting it.
-3. **`prompts/process_discussion`**, as an installed command. It runs from
-   whoever holds the office, against somebody else's checkout. There is no
-   reason that is a file the office carries rather than a command it runs.
+3. ~~`prompts/process_discussion`, as an installed command.~~ **Done** — you
+   built `eo_process_discussion`, it works from this tree, and we have deleted
+   ours. `prompts/` is gone with it.
 4. **The document checks, folded into `eo_status_audit --check`.** This is the one we
    nearly missed. Three of our four document tests are *register against
    document* — the glossary's labels, the housed projects, every link — and they

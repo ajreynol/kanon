@@ -10,8 +10,8 @@ split rather than describing it.
 
 Use Python 3.10 or newer, Bash and Git. Every command below runs from kanon's
 checkout; [the joining commands](#the-joining-commands) do not and are described
-at the bottom. Commands under `prompts/` launch an assistant unless passed
-`--show-prompt`; that flag prints the prompt without launching one.
+at the bottom. **Nothing here launches an assistant**: the commands that do are
+installed, and each takes `--show-prompt` to print what it would hand one.
 
 ## Local commands
 
@@ -25,9 +25,6 @@ at the bottom. Commands under `prompts/` launch an assistant unless passed
 | `scripts/eo_status_audit --check --online` | Also reads remote membership declarations |
 | `scripts/eo_status_audit --protocol` | Reports on the proposed associate protocol |
 | `python3 scripts/sleep.py` | Reads the local working-hours schedule; returns 0 inside the window, 1 outside it or during a break, and 2 for a refused schedule |
-| `scripts/install_eo --dry-run` | Prints the planned clones |
-| `scripts/install_eo` | Clones missing repositories and records their locations |
-| `scripts/install_eo --status` | Reads the checkouts on this machine |
 | `python3 scripts/policy_check.py --root .` | Runs anoieu's checker against this tree |
 
 `eo_status_audit --check --online` returns 0 when all requested README comparisons
@@ -117,15 +114,13 @@ Existing child READMEs without the declaration remain advertised. A parent can
 opt individual children out by adding the declaration above. The choice is kept
 only in that README, not copied into kanon's inventory.
 
-## Prompt previews
+## Working a discussion topic
 
-```sh
-prompts/process_discussion --show-prompt ../anoieu
-```
-
-**One prompt is left here, and it runs in kanon.** A topic id authorizes work on
-that topic; a preview or a call with no topic id authorizes no reply. It writes
-no audit file, discussion topic or checkout mapping.
+`eo_process_discussion` reads another repository's discussion file and works
+what is addressed to this one. It is koine's and installed rather than kept
+here. **A topic id is what authorises acting**: with no id the run is read-only,
+and `--show-prompt` prints what it would hand an assistant and launches
+nothing.
 
 ## The joining commands
 
@@ -160,8 +155,11 @@ reading it is. What went with them is the interpretive half, *whether a
 maintenance note says anything or merely satisfies the check*: no program
 decided that, and asking it does not need a stored launcher.
 
-Use `install_eo --status ID` to inspect a checkout. For existing checkouts elsewhere, edit `scripts/repos.local`
-with one `ID PATH` pair per line; registration does not change membership.
+**Getting the ecosystem onto a machine is no longer done from here.**
+`scripts/install_eo` was deleted on 2026-09-17; koine is building the
+replacement, and until it lands there is no installer in this ecosystem.
+`scripts/repos.local` is now written by hand — one `ID PATH` pair per line —
+and registering a checkout has never changed anybody's membership.
 
 The temporary `ready_check.py` and `transfer_check.py` were also removed: no CI
 job used them, and neither established both repositories' CI at the commits

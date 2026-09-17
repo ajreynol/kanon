@@ -25,7 +25,7 @@ that have been demoted.
 | [`discussion.md`](discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`roles.md`](roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`maintenance.md`](maintenance.md) | **start here to maintain this tree**: what this repository is responsible for, what it checks, and what is outstanding |
-| [`commands.md`](commands.md) | the commands in [`../scripts/`](../scripts) and the assistant launchers in [`../prompts/`](../prompts), with what each takes and prints |
+| [`commands.md`](commands.md) | the commands in [`../scripts/`](../scripts), with what each takes and prints |
 
 ## Demoted
 

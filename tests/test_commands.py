@@ -1,4 +1,4 @@
-"""The commands behave offline: the checker launcher, the installer, the
+"""The commands behave offline: the checker launcher, the
 prompt previews, the status reader and the bump check.
 
 No real assistants, no clones, no network.
@@ -16,7 +16,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from support import ROOT, ecosystem, installer
+from support import ROOT, ecosystem, policy_check
 
 class Commands(unittest.TestCase):
     def setUp(self):
@@ -96,104 +96,28 @@ class Commands(unittest.TestCase):
             finally:
                 ecosystem.policy_checker.cache_clear()
 
-    def test_installer_status_without_anoieu(self):
-        env = {**self.env, "ANOIEU_ROOT": str(self.base / "missing")}
-        result = self.command(sys.executable, "scripts/install_eo", "--status", "--root", str(self.base), env=env)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("absent", result.stdout)
-        self.assertNotIn("Traceback", result.stderr)
-
-    def test_installer_reads_report_pins_from_anoieu(self):
-        (self.source / "scripts/deps.json").write_text(json.dumps({"example": {"ref": "pinned"}}))
-        with patch.dict(os.environ, self.env):
-            self.assertEqual(installer.deps(), {"example": {"ref": "pinned"}})
-
-    def test_dry_run_has_no_side_effects(self):
-        dest = self.base / "new destination"
-        result = self.command(sys.executable, "scripts/install_eo", "--dry-run", "--root", str(dest), "kanon")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("git clone", result.stdout)
-        self.assertFalse(dest.exists())
-        self.assertFalse(Path(self.env["ANOIEU_REPOS_FILE"]).exists())
-
-    def test_installer_never_clones_outsiders(self):
-        outsiders = {name: entry for name, entry in installer.inventory().items()
-                     if entry["status"] == "outsider"}
-        self.assertTrue(outsiders)
-        outsider_urls = {entry["url"] for entry in outsiders.values()}
-        selections = [[], ["--with-optional"], ["--role", "outsider"],
-                      list(outsiders), [entry["repo"] for entry in outsiders.values()]]
-        for selection in selections:
-            for dry_run in (False, True):
-                with self.subTest(selection=selection, dry_run=dry_run):
-                    argv = ["install_eo", "--root", str(self.base / "install"),
-                            "--no-repos-local", *selection]
-                    if dry_run:
-                        argv.append("--dry-run")
-                    out = io.StringIO()
-                    with patch.object(sys, "argv", argv), \
-                         patch.object(installer, "execute", return_value=0) as execute, \
-                         contextlib.redirect_stdout(out):
-                        self.assertEqual(installer.main(), 0)
-                    for url in outsider_urls:
-                        self.assertNotIn(url, out.getvalue())
-                    cloned_urls = {call.args[0][-2] for call in execute.call_args_list}
-                    self.assertTrue(cloned_urls.isdisjoint(outsider_urls))
-                    if dry_run:
-                        execute.assert_not_called()
-                    elif selection in ([], ["--with-optional"]):
-                        self.assertIn(installer.inventory()["kanon"]["url"], cloned_urls)
-                    else:
-                        execute.assert_not_called()
-
-    def test_installer_status_still_lists_outsiders(self):
-        result = self.command(sys.executable, "scripts/install_eo", "--status",
-                              "--role", "outsider", "--root", str(self.base))
-        self.assertEqual(result.returncode, 0, result.stderr)
-        for name, entry in installer.inventory().items():
-            if entry["status"] == "outsider":
-                self.assertIn(f"{name} -- outsider", result.stdout)
-
-    def test_prompt_previews(self):
-        target = self.base / "example"
-        (target / ".git").mkdir(parents=True)
-        (target / "README.md").write_text("Example\n")
-        cases = [("process_discussion", str(target))]
-        for name, *args in cases:
-            with self.subTest(prompt=name):
-                result = self.command("bash", f"prompts/{name}", *args, "--show-prompt")
-                self.assertEqual(result.returncode, 0, result.stderr)
-                self.assertNotIn("Traceback", result.stdout + result.stderr)
-                self.assertNotIn("can't open file", result.stdout + result.stderr)
-                self.assertTrue(result.stdout.strip())
-                if name == "process_discussion":
-                    self.assertIn("To: names kanon", result.stdout)
-        self.assertFalse(Path(self.env["ANOIEU_REPOS_FILE"]).exists())
-
     def test_online_flag_without_check_is_not_silently_ignored(self):
         result = self.command("scripts/eo_status_audit", "--online")
         self.assertEqual(result.returncode, 2)
         self.assertIn("--online requires --check", result.stderr)
 
     def test_search_roots_preserve_spaces_and_colons(self):
-        target = self.base / "second root" / "example"
-        target.mkdir(parents=True)
-        env = {**self.env, "ANOIEU_REPOS": f"{self.base / 'first root'}:{target.parent}"}
-        result = self.command("bash", "prompts/process_discussion", "--show-prompt", "example", env=env)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn(str(target), result.stdout)
+        # ANOIEU_REPOS is colon-separated and its entries may contain spaces.
+        # A bash launcher used to split it with IFS; that launcher is gone and
+        # the Python reader of the same variable is what is left to guard.
+        first, second = self.base / "first root", self.base / "second root"
+        (second / "anoieu" / "scripts").mkdir(parents=True)
+        (second / "anoieu" / "scripts" / "policy_check.py").write_text("")
+        # The mapping file is consulted before the search roots, so point it
+        # at nothing: this is a test of the roots, not of the mapping.
+        env = {"ANOIEU_REPOS": f"{first}:{second}",
+               "ANOIEU_REPOS_FILE": str(self.base / "no-such-map")}
+        with patch.dict(os.environ, env, clear=False):
+            os.environ.pop("ANOIEU_ROOT", None)
+            found = policy_check.checkout()
+        self.assertEqual(found, (second / "anoieu").resolve())
 
 class Verification(unittest.TestCase):
-
-    def test_moved_children_resolve_to_epikrisis(self):
-        repos = installer.plan()
-        with tempfile.TemporaryDirectory() as temp:
-            (Path(temp) / "epikrisis/.git").mkdir(parents=True)
-            locations = {name: path for name, path, live in installer.repos_local_rows(temp, repos)
-                         if live}
-        for name in ("martyria", "zetesis"):
-            with self.subTest(project=name):
-                self.assertEqual(locations[name], str(Path(temp) / "epikrisis"))
 
     def test_distinct_projects_can_have_similar_names(self):
         inv = {

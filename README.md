@@ -100,14 +100,11 @@ the Eunoia ecosystem across several repositories at once. Python 3.10 or newer,
 Bash and Git are enough for everything here. From this checkout:
 
 ```sh
-scripts/install_eo --dry-run   # inspect the clone commands
-scripts/install_eo --status    # inspect the checkouts on this machine
 ```
 
 [`docs/commands.md`](docs/commands.md) is the full reference, and
-[`prompts/`](prompts) holds the workflows that hand context to an assistant —
-the three above, plus [`process_discussion`](prompts/process_discussion), which
-is run here rather than by a joining tool. `.github/workflows/anoieu.yml` keeps kanon's checker pin; the
+The workflows that hand context to an assistant are installed commands and are
+not kept here. `.github/workflows/anoieu.yml` keeps kanon's checker pin; the
 local regression checks also run in CI.
 
 **The policy checks are maintained in

@@ -274,7 +274,7 @@ one place a reader can discover that the arrangement has moved.
 
 **Every prompt an agent receives here may have been meant for a different
 repository.** These repositories are deliberately alike: several are checked
-out as siblings by [`../scripts/install_eo`](../scripts/install_eo), sharing a
+out as siblings, sharing a
 layout and prompts written to the same shape. There are two independent
 accounts of what somebody wants — the prompt, and the tree you are standing in
 — and where they disagree at least one is wrong.
@@ -305,9 +305,8 @@ narrower question it can answer is **what would we accept**.
 folded into it, since diluting the one rule enforced as a build failure is a
 worse trade than repeating a sentence. Reported, never fatal **for now**: it
 joins the fatal gate when every member has adopted or declined it, which is a
-person's decision and is recorded here when it is made. The outbound prompts in
-[`../prompts/`](../prompts) do not repeat it: each names the repository it is
-run in, in its first line.
+person's decision and is recorded here when it is made. The outbound prompts do not repeat it: each names the repository it is run in,
+in its first line.
 
 ```
 > **A prompt may not be meant for this repository.** These repositories are
@@ -592,8 +591,8 @@ either; if a person wants to nudge, a person nudges, in their own voice.
 
 ### Working it
 
-[`prompts/process_discussion`](../prompts/process_discussion) reads another
-repository's discussion file and works what is addressed to us. **Naming a
+`eo_process_discussion` reads another repository's discussion file and works
+what is addressed to the repository it is run in. **Naming a
 topic is what authorises acting on it**, so with no id the run is read-only.
 Where it acts, the work happens *here* and the reply is drafted here for a
 person to carry; their tree is never written to.

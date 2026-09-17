@@ -8,7 +8,7 @@ import subprocess
 import unittest
 from urllib.parse import unquote, urlsplit
 
-from support import ROOT, anchors, installer, prose
+from support import ROOT, anchors, prose, register
 
 
 class Documents(unittest.TestCase):
@@ -22,7 +22,7 @@ class Documents(unittest.TestCase):
         expected = {
             name.casefold(): (f"child project of {entry['parent']}"
                               if entry["status"] == "child" else entry["status"])
-            for name, entry in installer.inventory().items()
+            for name, entry in register().items()
         }
         self.assertEqual(actual, expected)
 
@@ -47,19 +47,21 @@ class Documents(unittest.TestCase):
         self.assertEqual(failures, [])
 
     def test_housed_projects_match_inventory(self):
-        inv = installer.inventory()
+        inv = register()
         projects = [p for p in (ROOT / "tools").iterdir() if (p / "README.md").is_file()]
         self.assertTrue(projects)
         for path in projects:
             with self.subTest(project=path.name):
+                self.assertEqual(inv[path.name]["status"], "child")
                 self.assertEqual(inv[path.name]["parent"], "kanon")
                 self.assertEqual(inv[path.name]["path"], path.relative_to(ROOT).as_posix())
-                host = next(r for r in installer.plan() if path.name in
-                            {c["name"] for c in r.children})
-                self.assertEqual(host.key, "kanon")
+        # and nothing claims to be housed here that is not on disk
+        housed = {n for n, e in inv.items()
+                  if e.get("status") == "child" and e.get("parent") == "kanon"}
+        self.assertEqual(housed, {p.name for p in projects})
 
     def test_shell_syntax(self):
-        for path in [ROOT / "scripts/eo_status_audit", *sorted((ROOT / "prompts").iterdir())]:
+        for path in [ROOT / "scripts/eo_status_audit"]:
             with self.subTest(script=path.name):
                 result = subprocess.run(["bash", "-n", str(path)], capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr)

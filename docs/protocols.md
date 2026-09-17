@@ -317,8 +317,8 @@ not verify both commits. `PROTO-20` still governs retiring a source stub.
 3. Run `scripts/eo_status_audit --check` and the offline regression suite. For an
    existing checkout outside the normal search locations, add its `ID PATH`
    mapping to `scripts/repos.local`. This local map is not the shared inventory.
-   Use `scripts/install_eo --status ID` to inspect it; that command reports and
-   does not synchronize or edit the inventory.
+   Inspecting a checkout is a `git` command; nothing here synchronizes or edits
+   the inventory from a checkout.
 4. The installer derives clones from the inventory. Outsiders are never cloned;
    children arrive with their parent. A child's README controls its
    [listing preference](commands.md#child-project-listings), independently of
