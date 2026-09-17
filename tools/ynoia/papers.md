@@ -25,7 +25,8 @@ resolving it. Nobody here can commission a paper, and nobody here writes one.
 
 | page | its question |
 | --- | --- |
-| [`names.md`](names.md) | what does this name mean, and is it free |
+| [glossary](../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
+| [`names.md`](names.md) | why a name fits its work, and the objections to it |
 | [`proposals.md`](proposals.md) | should this be a repository of its own |
 | [`requests.md`](requests.md) | whose tree should this work live in |
 | [`tools.md`](tools.md) | which tool that does not exist is worth building first |

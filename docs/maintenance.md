@@ -32,7 +32,7 @@ directs an agent. [`commands.md`](commands.md) documents the commands.
 | --- | --- |
 | policy and joining | [`policy.md`](policy.md), `prompts/` |
 | the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
-| the ecosystem's vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
+| the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the register, installation and status | [`commands.md`](commands.md), `scripts/ecosystem/` |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
@@ -466,31 +466,23 @@ And this section is itself the thing it measures. It costs about fifty lines of
 written prose and displaces nothing today, which is the honest accounting; what
 has to pay for it is the second row.
 
-## Keeping ynoia's registers true when the ecosystem moves
+## Keeping names and ynoia's arguments current
 
-Three files in [`../tools/ynoia/`](../tools/ynoia) are **registers about the
-ecosystem** rather than arguments about it, and they are the ones that go stale
-without anybody noticing, because nothing consumes them and no build reads
-them. The trigger and the edit, in full:
+[`glossary.md`](glossary.md) is the authoritative name register, maintained by
+the president. [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) records
+membership and checkout locations. Ynoia's [naming page](../tools/ynoia/names.md)
+links to the glossary to argue names; it keeps no parallel register.
 
 | when | the edit |
 | --- | --- |
-| a name is taken | a row in `names.md`, **saying where it lives** |
-| a tool moves — a child started, a child graduated, a repository created | the *where it lives* clause on its existing row |
-| a tool on `tools.md` starts existing | its block **leaves** `tools.md`. A page that keeps its graduates is a page whose first entries are all finished work |
-| a tool enters [`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json) | an entry in `papers.md`, even where the verdict is `no` |
+| a name enters use | add its meaning and source to the glossary; include the project's footing or parent |
+| a project moves | update its inventory location and glossary label together |
+| a naming idea is proposed | keep the rationale and alternatives with the proposal; unused names stay out of the glossary |
+| a tool discussed in ynoia starts existing | update the argument in `tools.md` to reflect what now exists |
+| a project's publication prospects change | update the judgement in `papers.md`, citing the project's own position |
 
-**The cross-check is one pass and it is worth doing whenever the inventory
-moves.** `ecosystem.json` is the authority on who exists, so anything in it
-with no row in `names.md` is either a gap or a name somebody else chose — the
-latter being `cvc5` and `ethos-eoc`, which will never be there and which
-`names.md` now says so about. Run on 2026-09-01 it found three:
-`workflow-launcher` missing entirely, `koine` still recorded as awaiting a
-repository it has had for days, and two child projects with no *where it lives*
-clause.
-
-**Why this is a paragraph and not a check.** A research project is not in the
-test suite, not in CI, and nothing breaks when its directory is deleted — that
-island property is what makes carrying one cheap, and a check here that read
-`names.md` would quietly end it. The registers being stale is a real cost and
-it is the smaller of the two.
+The offline suite compares glossary project labels with the inventory. Review
+meanings against their sources as well: a matching label does not establish a
+correct definition, and a name missing from the glossary may still be used in
+a neighbouring tree. Ynoia's arguments are reading, not a CI requirement or a
+second naming authority.

@@ -39,10 +39,9 @@ kept in a different directory.
    one way would be worth nothing to somebody deciding.
 2. Then [`tools.md`](tools.md) — the tools that do not exist, in priority order,
    each with the argument for its position rather than a wish list.
-3. Then [`names.md`](names.md), which is deliberately one page rather than an
-   argument, and is where a name is taken. **Check the trees as well as the
-   register**: a name can be in use without being claimed, which has already
-   caught somebody here.
+3. Then the [glossary](../../docs/glossary.md), the authoritative name register,
+   and [`names.md`](names.md) for the naming arguments. **Check the trees as
+   well as the glossary**: a missing entry does not mean a name is unused.
 4. Then [`../../prompts/init_eo`](../../prompts/init_eo), which
    writes a new repository's README from the register and complies with nothing
    else on purpose.

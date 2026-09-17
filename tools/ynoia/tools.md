@@ -6,11 +6,10 @@ and no argument on the page: the argument for each is in
 [`why-eunoia.md`](why-eunoia.md) or in [`proposals.md`](proposals.md), and this
 page links to it rather than restating it.
 
-It exists because naming work that does not exist is most of what this project
-produces, and until now the names were spread across an account nobody reads end
-to end, a register that deliberately says nothing about merit, and an audit page
-ordered by date. None of those answers the question somebody with an afternoon
-actually has, which is *which one of these is worth starting*.
+It brings the ideas in the account and proposals into an order somebody with
+an afternoon can question: *which one of these is worth starting?* The
+[glossary](../../docs/glossary.md) records names in use; this page argues the
+priority of work that does not exist yet.
 
 **This page decides nothing**, like every other page here. An ordering is a
 judgement, it is this project's judgement, and the whole of what it costs to
@@ -20,7 +19,8 @@ disagree is moving a block.
 
 | page | its question |
 | --- | --- |
-| [`names.md`](names.md) | what does this name mean, and is it free |
+| [glossary](../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
+| [`names.md`](names.md) | why a name fits its work, and the objections to it |
 | [`proposals.md`](proposals.md) | should this be a repository of its own |
 | [`requests.md`](requests.md) | whose tree should this work live in |
 | [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up |
@@ -50,10 +50,10 @@ entries here had become before that sweep.
 worth starting; the last is the least. Reordering is done by moving a block, and
 that is the main way a person changes what this page says.
 
-**The name is the id, and it is stable.** There are no numbers here because
-there is already a register of names, and inventing a second key for the same
-things would be one more thing to keep in step. A name is taken from
-[`names.md`](names.md) and never reused for different work.
+**The working name identifies the proposal.** Check the
+[glossary](../../docs/glossary.md) before using a name for different work.
+Proposed names here describe ideas; listing one neither reserves it nor creates
+a glossary entry. Keep naming arguments with the proposal.
 
 **Most promising means what it would change, weighed against whether anybody
 could start it.** Both halves are load-bearing. A page ordered only by what a
@@ -159,8 +159,9 @@ to.
 
 Enough to fill the seven fields, or an honest gap where it cannot:
 
-- **A name**, taken from [`names.md`](names.md) or proposed there. Never a
-  second name for work already listed under one.
+- **A working name**, checked against the [glossary](../../docs/glossary.md)
+  and existing trees. Explain a new candidate with the proposal, following the
+  [naming arguments](names.md); do not create a second name for work already listed.
 - **One line on the artifact** — what would exist that does not. Not the case
   for it; that goes somewhere it can be disagreed with.
 - **What it would settle**, by the ids in [`why-eunoia.md`](why-eunoia.md) where
@@ -250,8 +251,8 @@ against the deliberating itself. Chosen for what it claims and does not: it
 names an advisor's virtue rather than an authority, which is the whole of the
 office. It shares its prefix with **eunoia** by construction rather than by
 accident. Its near neighbour `bouleusis` — deliberation about particulars —
-stays free and stays the better name for anything that decides cases, which
-this does not; `martyria` already holds particulars, and if this ever starts
+would better describe something that decides cases, which this does not;
+`martyria` already holds particulars, and if this ever starts
 deciding them, it has taken the wrong job.*
 
 ## elenchos — differential fuzzing as a derived artifact
@@ -259,8 +260,8 @@ deciding them, it has taken the wrong job.*
 **What:** a research-quality fuzzer for the ecosystem's checkers — coverage
 guidance, a generator that assembles derivations which *should* be accepted, and
 the semantics itself as an oracle.
-**State:** `named` — reserved in [`names.md`](names.md), described in the
-account, and started by nobody.
+**State:** `named` — a proposed name for the work described in the account,
+not a reservation or an existing project.
 **Settles:** **O6**. The arrangement manufactures its own second implementation
 and the claim that this is close to free has never been tested against the other
 half: whether the free second implementation is *worth having*, measured in

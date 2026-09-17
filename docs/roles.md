@@ -221,8 +221,9 @@ front page must say about who is writing it, how tools talk to one another, and
 what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
 **Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, the ecosystem's
-vocabulary in `docs/glossary.md` (kept current by the president), and the
-`init_eo`, `join_eo`, `check_join_eo` and `global_audit` prompts.
+vocabulary and authoritative name register in `docs/glossary.md` (kept current
+by the president), and the `init_eo`, `join_eo`, `check_join_eo` and `global_audit`
+prompts.
 **Not this role:** who is actually in the ecosystem, which is `R6`; and
 **deciding whether a tree complies, which is `R31` and stays in anoieu.**
 
@@ -375,7 +376,8 @@ paragraph; and reading *histories*, which another tree already does.
 **Role:** *should this become a repository of its own*, answered against a
 stated standard with a verdict attached — and, where the answer is no, an
 argument about whose existing tree the work belongs in instead.
-**Owns:** `proposals.md` and `requests.md`.
+**Owns:** `proposals.md` and `requests.md`; naming arguments in `names.md`
+refer to the authoritative register in `docs/glossary.md`.
 **Not this role:** approving anything, and creating anything. A repository is a
 person's decision and a person's act, and this role produces an argument with a
 recommendation at the end.

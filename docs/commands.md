@@ -109,6 +109,10 @@ prompts/process_discussion --show-prompt ../anoieu
 ```
 
 `init_eo` and `join_eo` run in the receiving repository when actually launched.
+`init_eo` reads the [glossary](glossary.md) as the authoritative name register
+and records its source material in an untracked `init-brief.local.md`. A new
+name need not have been reserved; the prompt reports any glossary entry or
+location update owed to the president.
 The other prompts run in kanon. A topic id passed to `process_discussion`
 authorizes work on that topic; a preview or a call with no topic id authorizes
 no reply. `check_join_eo` runs the local checker even in preview and stops if it

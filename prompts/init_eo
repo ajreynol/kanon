@@ -13,8 +13,8 @@
 # required rather than defaulted, because the wrong one produces a confident
 # README about the wrong thing and nothing downstream catches it:
 #
-#   new           a repository with nothing in it. The name is in the register,
-#                 the scope is a line, and everything else is ahead of it.
+#   new           a repository with nothing in it. The person chose a name and
+#                 scope; the glossary records names already in use.
 #
 #   from-child    the work exists already, as `tools/<name>/` in some other
 #                 repository in this ecosystem, and a person has decided it
@@ -54,7 +54,7 @@ The two ways a tool starts. Pick the one that is true; there is no default,
 because guessing wrong produces a confident README about the wrong thing.
 
   new                a repository with nothing in it yet. The README is written
-                     from the ecosystem's name register and from what you say
+                     from the ecosystem's glossary and from what you say
                      the tool is for.
 
   from-child <path>  work that already exists as a child project in another
@@ -108,17 +108,18 @@ read -r -d '' OPEN_NEW <<'PROMPT_END' || true
 This is a brand new tool in the Eunoia ecosystem: a repository with nothing in
 it yet. Write the README that says what it is for. That is the whole of the job.
 
-**The name is already decided.** You do not choose it, and you do not propose an
-alternative — it was settled before this repository existed, and it is recorded
-in the ecosystem's register:
+**The person chose the name and scope.** Read the ecosystem's authoritative
+name register before describing this repository:
 
-  https://github.com/ajreynol/kanon/blob/main/tools/ynoia/names.md
+  https://github.com/ajreynol/kanon/blob/main/docs/glossary.md
 
-Find the entry whose name matches this repository's. It carries the etymology and
-a line of scope, and it may point at a proposal with more. **If there is no
-entry, stop and say so** rather than inventing one: a name nobody registered
-means a step was skipped, and that is much cheaper to find out now than after a
-README argues for it.
+If it has an entry, use its meaning and cited source. If it identifies different
+work, stop and report the conflict. The glossary omits unused proposals, so a
+new name may not have an entry yet: check existing project trees for collisions,
+use the person's stated scope and any proposal they supplied, and report the
+new entry as owed to the president. Do not invent an etymology or treat absence
+as proof that a name is free. If the person has not supplied enough scope to
+write the README, ask for it rather than deriving it from the name alone.
 PROMPT_END
 
 read -r -d '' OPEN_CHILD <<'PROMPT_END' || true
@@ -139,15 +140,17 @@ true of it, read that most carefully of all: **that list is the reason this
 repository exists.** A child project graduates because it acquired users, and
 that statement is where it said so.
 
-**The name is already taken, and by this work.** It is in the ecosystem's
-register, with a line saying where it has been living:
+**Keep the child's existing name.** Check it against the authoritative glossary,
+which records its meaning and parent:
 
-  https://github.com/ajreynol/kanon/blob/main/tools/ynoia/names.md
+  https://github.com/ajreynol/kanon/blob/main/docs/glossary.md
 
 Do not re-derive the etymology and do not improve on it. The child's own README
 explains the name in a sentence somebody can disagree with; that sentence comes
-across, and the register is what you check it against. **If the register has no
-entry for it, stop and say so** rather than inventing one.
+across, and the glossary is what you check it against. If its entry is missing
+or stale, report the correction owed to the president. A genuine conflict about
+which work the name identifies needs a person's decision; do not resolve it by
+inventing a new name or rewriting the register.
 
 **Write for the repository the work is becoming.** Read what the child's front
 page actually says about its scope, maturity, users, and listing preference;
@@ -182,9 +185,10 @@ what makes the rest of it decidable, and that order is deliberate.
 PROMPT_END
 
 read -r -d '' TAIL_NEW <<'PROMPT_END' || true
-**Leave a record of what you read.** Copy, verbatim, the register entry for the
-name you took and the proposal section it points to if there is one, into
-`ynoia-brief.local.md` at the root. Do not stage it: `*.local.md` is the
+**Leave a record of what you read.** Copy the glossary entry, if one exists, and
+any supplied proposal into `init-brief.local.md` at the root, naming their
+sources. Otherwise record the person's stated name and scope and the missing
+glossary entry. Do not stage it: `*.local.md` is the
 ecosystem's suffix for a file that is deliberately not committed. It is there so
 that if this README turns out to be wrong, somebody can see what you were working
 from instead of guessing — the register moves, and the version you read is the
@@ -193,7 +197,7 @@ PROMPT_END
 
 read -r -d '' TAIL_CHILD <<'PROMPT_END' || true
 **Leave a record of what you read.** Copy, verbatim, the child project's charter
-and its statement of what it delivered, into `ynoia-brief.local.md` at the root,
+and its statement of what it delivered, into `init-brief.local.md` at the root,
 naming the path and the parent's commit you read them at. Do not stage it:
 `*.local.md` is the ecosystem's suffix for a file that is deliberately not
 committed. The parent keeps moving and the child's directory may be retired in
@@ -205,8 +209,8 @@ account, the ledger, the history — is a person's decision rather than yours.
 Copy nothing on your own initiative except the README you are writing.
 
 **Two things are owed elsewhere, and neither of them is yours to do.** Say so
-at the end instead. The register entry for the name has to say where it lives
-now rather than where it lived. And any role the child held in kanon's
+at the end instead. The president must update the glossary entry and inventory
+to say where the work lives now. And any role the child held in kanon's
 `docs/roles.md` moves under this repository's own heading and **keeps its id**
 — a role that changes hands keeps its number, which is what makes every
 decision recorded against it survive the move.

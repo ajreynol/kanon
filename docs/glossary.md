@@ -1,22 +1,32 @@
 # Glossary
 
-The dictionary of Eunoia’s project names, footings, and distinctive concepts.
+The dictionary of Eunoia’s project names, footings, and distinctive concepts,
+and **the authoritative name register for the ecosystem**. This page records
+names in use, what they mean, and which work they identify.
 Each entry gives its part of speech; project names also give their footing or parent.
 
 **Maintained by the president of eo.** The president keeps the definitions
 current and hands this file to the next president with the
 [office’s shared documents](laws.md#what-the-office-carries).
 
+Ynoia [argues about names](../tools/ynoia/names.md) and proposes alternatives;
+it keeps no separate register and reserves no names by proposing them. When a
+name enters use, the president records it here with its meaning and source.
+Absence from this page is not proof that a name is free: check the project
+trees as well. The [inventory](../scripts/ecosystem/ecosystem.json) remains the
+authority for membership and checkout locations; keep project labels here in
+step with it.
+
 Keep entries alphabetized without regard to case, spaces, or punctuation.
 Include every existing child project, advertised or unadvertised, checking
-the parent trees as well as the [register](../scripts/ecosystem/ecosystem.json).
+the parent trees as well as the [inventory](../scripts/ecosystem/ecosystem.json).
 Omit unused or merely reserved names, command and configuration identifiers,
 operational protocols, AI and session-management terminology, and ordinary
 English used in its usual sense. Locally named procedures belong in their
 working documents, not this dictionary. Give a short definition and a source,
 and distinguish an existing research project from an implemented tool.
 
-Project descriptions and labels reflect the register and available project
+Project descriptions and labels reflect the inventory and available project
 READMEs read on **2026-09-17**. Including an unadvertised child here does not
 change its listing preference. The linked sources govern their subjects;
 outside projects listed for comparison did not ask to be measured and owe the

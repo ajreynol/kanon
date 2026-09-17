@@ -46,12 +46,11 @@ So: write it down, make the strongest case against it, and see which survives.
    The register of the ones that have not, in priority order, is
    [`tools.md`](tools.md); the arguments stay in the account.
 
-3. **The names.** Naming work that does not exist is most of what goal 2
-   produces, so the register lives on its own page: what each reserved name was
-   reserved *for*, which are taken, and how to choose one that is not there.
-   [`names.md`](names.md). It is the page a brand new repository is pointed at,
-   and it is deliberately short — a repository choosing its name should not have
-   to read an argument about the ecosystem first.
+3. **The naming arguments.** Whether a name describes the work, what it might
+   mislead a reader into expecting, and why an alternative would fit better.
+   [`names.md`](names.md) states the approach; proposals carry the individual
+   arguments. The president's [glossary](../../docs/glossary.md) is the
+   authoritative name register. Ynoia neither duplicates it nor reserves names.
 
 4. **Auditing proposals.** Whether a given idea deserves a repository of its
    own is the account's general question applied to one case, with a decision
@@ -95,6 +94,8 @@ The boundary matters more than the goals, so it is stated first.
 - **It does not commit anybody to the tools it names.** A named project with a
   paragraph attached is a description of work that would change an argument, not
   a roadmap, not an assignment, and not a claim that anybody intends to build it.
+- **It does not keep the name register.** Names in use and their meanings belong
+  in the [glossary](../../docs/glossary.md). Naming arguments here cite it.
 - **It does not describe the language.** What Eunoia *is*, independently of any
   checker, is a different question with a different child project.
 
@@ -118,10 +119,10 @@ anybody who disagrees, which is the whole point of writing it and has not
 happened yet. It has reached no consumer and so has earned no place in
 [`docs/practice.md`](../../docs/practice.md) — with one qualification: of the seven projects it named, four —
 **euthyna**, **noesis**, **hermeneia** and **mimesis** — have since been started
-as child projects of eudaimonia, and the register in
-[`names.md`](names.md) is now consulted by `prompts/init_eo` when a new
-repository picks a name. Whether that is this account's doing or
+as child projects of eudaimonia. Whether that is this account's doing or
 convergence is not something this project can establish about itself.
+`prompts/init_eo` now reads the president's glossary directly; it does not
+depend on ynoia's naming page.
 
 ## Is there a paper in this?
 
@@ -145,7 +146,7 @@ other tool.
 | file | what it is |
 | --- | --- |
 | [`why-eunoia.md`](why-eunoia.md) | the account: the case, the case against, the objections, six arrangements, the projects that do not exist, and what would change our minds |
-| [`names.md`](names.md) | the register of names: taken, reserved, and how to pick one. Goal 3 |
+| [`names.md`](names.md) | how to argue names, referring to the authoritative glossary. Goal 3 |
 | [`proposals.md`](proposals.md) | should this become a repository? The standard, and one section per proposal. Goal 4 |
 | [`requests.md`](requests.md) | work the ecosystem wants that needs no repository of its own, and whose tree it would live in instead. Goal 4 |
 | [`tools.md`](tools.md) | the tools that do not exist, in priority order — most promising first, and what a request for a listing should arrive with. Goal 2 |

@@ -41,11 +41,10 @@ that decision for a person. What this page produces is an argument with a
 recommendation at the end, written so that agreeing or disagreeing with it takes
 a minute rather than an afternoon.
 
-This is the third thing ynoia does. The account asks whether the ecosystem's
-arrangement earns its machinery; the register keeps the names; and this audits
-the specific question *should this become a repository*, which is the same
-question the account asks in general, applied to one case with a decision
-attached.
+The account asks whether the ecosystem's arrangement earns its machinery;
+this page applies that question to one proposed repository. Naming arguments
+refer to the president's [glossary](../../docs/glossary.md), which keeps the
+name register outside this research project.
 
 ## The standard
 
@@ -92,8 +91,8 @@ stopped being applied.
 
 ## P3 — the semantics and the compiler, defined in Lean
 
-**Name:** **`noesis`** — already reserved in [`names.md`](names.md); this audit
-claims nothing
+**Name:** **`noesis`** — already in use, recorded in the
+[glossary](../../docs/glossary.md); this audit concerns where the work belongs
 **What:** the `.eos` semantics written as Lean definitions over the SMT-LIB model
 logos already carries, the compiler as a Lean metaprogram over those
 definitions, and a theorem relating what it emits to what they say
@@ -113,10 +112,10 @@ is that the thing does not exist.*
 
 ### The name
 
-Unlike `P1` and `P2` there is no name to choose. `noesis` was reserved in
-[`names.md`](names.md) when the account named it, the etymology is written down
-in [`why-eunoia.md`](why-eunoia.md), and nothing here takes it — a name is
-claimed when a person approves one.
+Unlike `P1` and `P2` there is no name to choose. The
+[glossary](../../docs/glossary.md) records `noesis` and its existing project.
+The argument for the name is in [`why-eunoia.md`](why-eunoia.md); this audit
+does not rename or reserve it.
 
 Worth saying because it changes what this audit is. `P1` and `P2` were asked
 *should this exist, and what should it be called*. This one is asked *where does
@@ -306,18 +305,19 @@ thing this page is for.
 
 ### The names
 
-None is taken. A name is claimed when a person approves one, so nothing here
-touches [`names.md`](names.md).
+These were the alternatives considered before kanon existed. The
+[glossary](../../docs/glossary.md) records its current name and meaning;
+this table preserves the arguments, not a list of available names.
 
 | name | Greek | the claim it makes | the objection to it |
 | --- | --- | --- | --- |
 | **kanon** | κανών, *the measuring rod* — the standard a thing is held against | the policy is exactly a rod: `policy_check.py` lays it alongside a tree and reports where the tree is short. It names the instrument rather than the authority, which is what this actually is | *canon* in English is about scripture and lists of approved works, and a governance repository is the one place that misreading does real harm |
 | **thesmos** | θεσμός, *a thing laid down* — an institution before it is a law | it is the arrangement itself, written down: what a repository is, what a member owes, what a child project may do | heavier than the thing. A `thesmos` sounds founding and permanent, and this is a policy somebody amends on a Tuesday |
-| **epistates** | ἐπιστάτης, the presiding member of the council, for one day | presides and does not rule: it runs the meeting, and the decisions stay with people. That is precisely the relationship the policy has to members | needs the footnote to land at all, which by the register's own test means it is not following the convention |
+| **epistates** | ἐπιστάτης, the presiding member of the council, for one day | presides and does not rule: it runs the meeting, and the decisions stay with people. That is precisely the relationship the policy has to members | needs the footnote to land at all, which weakens the argument that it describes the work |
 | **oikonomia** | οἰκονομία, *management of the house* | the unglamorous half is true: the inventory, the checkouts, who lives where | *economy* in English, and it says nothing about the rules, which are the part that matters |
 
-**Recommended: `kanon`.** The register asks for a word for what the tool does to
-its subject, and what this one does is *measure a tree against a stated
+**Recommended: `kanon`.** The [naming argument](names.md) favours a word for what
+the tool does to its subject, and this one *measures a tree against a stated
 standard*. The objection is real and worth stating on the repository's own front
 page: this is a rod, not a canon, and nothing in it is scripture.
 
@@ -427,7 +427,7 @@ this proposal was wrong.
 
 ## P1 — central tooling for reporting
 
-**Name:** **`koine`** — chosen, and now taken in [`names.md`](names.md)
+**Name:** **`koine`** — chosen, and now recorded in the [glossary](../../docs/glossary.md)
 **What:** the shared machinery of the reporting loop, fetched by every tool that
 runs one, so the protocol has one implementation instead of one per member
 **Verdict:** **needed** — we intend to depend on it
@@ -441,10 +441,11 @@ approving it is not creating it — and it exists now, as a member.
 
 ### The names
 
-Five candidates, none taken. All are free in [`names.md`](names.md), and a name
-is claimed when a person approves one — not when a document suggests it. Each
-etymology below is written to be disagreed with, which is the test: if the
-sentence explaining a name is strained, the scope is what is unclear.
+Five candidates considered before `koine` was chosen. The
+[glossary](../../docs/glossary.md) records the adopted name; this table argues
+the alternatives and makes no claim about their availability today. Each
+etymology is written to be disagreed with: if the explanation is strained,
+the scope may be what is unclear.
 
 | name | Greek | the claim it makes | the objection to it |
 | --- | --- | --- | --- |
@@ -461,7 +462,7 @@ table: it is a name about *communication in general* attached to a tool about
 reporting in particular.
 
 **The name is ours to decide, and it is decided before the repository exists.**
-It comes out of a shared register and a proposal argued here, so it is not a
+It comes out of a proposal argued here, checked against the shared glossary, so it is not a
 thing to hand to whoever picks the work up — a name chosen at build time is a
 name nobody else can plan around. What is *theirs* is everything after: the
 scope, the interface, the pace, and whether the tool ever joins this ecosystem.
@@ -512,8 +513,8 @@ leaves them free: we are saying we would use it, not that they owe it to us.
    convention. No name is claimed until it is done.
 2. **Its owner decides what it is.** `init_eo` is offered as a starting point —
    it takes a name and writes a README saying what the tool is for, and complies
-   with nothing else. The **scope is theirs**; the name is not, and `init_eo` is
-   written to take it from the register rather than invite one.
+   with nothing else. The **scope is theirs**; the name is the one a person
+   approved. `init_eo` checks it against the glossary and uses the stated scope.
 3. **Joining this ecosystem is their choice, later or never.** `join_eo` exists
    when they want it. A tool we depend on is not thereby a member, and we can
    pin a commit of a repository that has never adopted a line of our policy.

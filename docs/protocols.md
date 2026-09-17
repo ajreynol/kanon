@@ -309,8 +309,8 @@ still governs retiring a source stub.
    `status`, `repo`, `url`, and `what`; footings such as associate and outsider
    require additional evidence. A child needs `status: child`, `parent`, `path`,
    and `what`, with `branch` if relevant. Include existing unadvertised children;
-   unused names stay in the name register. Update [`glossary.md`](glossary.md)
-   to match, including each project's footing or parent.
+   unused naming ideas stay in proposals. Record names in use in the authoritative
+   [`glossary.md`](glossary.md), including each project's footing or parent.
 3. Run `scripts/status_eo --check` and the offline regression suite. For an
    existing checkout outside the normal search locations, add its `ID PATH`
    mapping to `scripts/repos.local`. This local map is not the shared inventory.
