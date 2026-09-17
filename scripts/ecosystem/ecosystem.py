@@ -201,6 +201,19 @@ POLICY_VALUES = (
     ("-", "a child or a foundation: not a repository this table checks"),
 )
 
+#: Every value the `advertised?` column can print. Only a widened table shows
+#: it: in the default view every row is one the default view kept, so the
+#: column would say `yes` all the way down and answer nothing.
+ADVERTISED_VALUES = (
+    ("yes", "a child its parent advertises, which the default table also shows"),
+    ("no", "a child its parent does not advertise. Here only because --all "
+           "or --all-children asked for it"),
+    ("?", "a child whose README could not be read, or which declared two "
+          "things at once. Not advertised, and not a choice either"),
+    ("-", "a repository, which has no listing preference to declare: this "
+          "column is a child's"),
+)
+
 #: Every value the `channel` column can print, and what it means.
 CHANNEL_VALUES = (
     ("N for us", "N topics in it are addressed to kanon"),
@@ -248,6 +261,9 @@ def render_key() -> str:
     out.append("  channel  their docs/discussion.md, which is optional and which "
                "most tools do not keep")
     block(CHANNEL_VALUES)
+    out.append("  advertised?  what a child's README declares, shown only by "
+               "--all and --all-children")
+    block(ADVERTISED_VALUES)
     out.append("  moved    days since the last commit in the checkout on this "
                "disk, not on their remote")
     out.append("  where    where that checkout is")
@@ -806,11 +822,13 @@ def main() -> int:
             if not all_children and not listing.advertised:
                 continue
         if status in ("child", "foundation"):
-            rows.append((name, status, "-", "-", "-", e.get("parent", "")))
+            listed = {"advertised": "yes", "unadvertised": "no"}.get(
+                listing.state, "?") if status == "child" else "-"
+            rows.append((name, status, "-", "-", "-", e.get("parent", ""), listed))
             continue
         path = locate(e.get("repo", name))
         if not path:
-            rows.append((name, status, "no checkout", "-", "-", ""))
+            rows.append((name, status, "no checkout", "-", "-", "", "-"))
             continue
         # An associate is held to none of this, so nothing here runs the checker
         # over its tree. A failure count in that row would be this table
@@ -839,7 +857,7 @@ def main() -> int:
             topics = f"{for_us} for us" if for_us else "yes"
         else:
             topics = "none"
-        rows.append((name, status, verdict, topics, age(path), path))
+        rows.append((name, status, verdict, topics, age(path), path, "-"))
         # Both notes name the disagreement and then say whose move it is.
         # They used to state the rule instead -- "this is the state the check
         # exists to catch" -- which explains the check to somebody who already
@@ -903,14 +921,16 @@ def main() -> int:
     w = max((len(r[0]) for r in rows), default=4) + 2
     locations = {r[0]: r[5].replace(os.path.expanduser("~"), "~") for r in rows}
     where_width = max([len("where")] + [len(path) for path in locations.values()]) + 2
+    # The column earns its width only where unadvertised rows can appear.
+    ad = f"{'advertised?':<13}" if all_children else ""
     print(f"{'tool':<{w}}{'status':<11}{'policy':<12}"
-          f"{'channel':<10}{'moved':<8}{'where':<{where_width}}purpose")
-    for name, status, verdict, topics, moved, where in rows:
+          f"{'channel':<10}{ad}{'moved':<8}{'where':<{where_width}}purpose")
+    for name, status, verdict, topics, moved, where, listed in rows:
         purpose = textwrap.shorten(inv[name].get("short") or inv[name].get("what") or "-",
                                    width=60, placeholder="…")
         print(f"{name:<{w}}{status:<11}{verdict:<12}"
-              f"{topics:<10}{moved:<8}{locations[name]:<{where_width}}"
-              f"{purpose}")
+              f"{topics:<10}{f'{listed:<13}' if all_children else ''}"
+              f"{moved:<8}{locations[name]:<{where_width}}{purpose}")
 
     # The pointer, not the key. One line, immediately under the table, because
     # the moment somebody needs the legend is the moment they are looking at a

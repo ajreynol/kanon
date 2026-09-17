@@ -412,7 +412,7 @@
     "status": "child",
     "parent": "eschaton",
     "path": "tools/cvc6",
-    "short": "Proposes automated upkeep of cvc5; nothing built",
+    "short": "Proposes automated refactoring of cvc5; nothing built",
     "what": "a research position proposing agent-driven maintenance and refactoring of cvc5, retaining its design; a working title, with no implementation"
   },
   "hawkeye": {
@@ -426,14 +426,14 @@
     "status": "child",
     "parent": "tachyon",
     "path": "tools/heuresis",
-    "short": "Finds cvc5 shortcomings where z3 is much faster",
+    "short": "Finds cvc5 performance shortcomings, especially for quantifiers",
     "what": "investigates cvc5 performance shortcomings in quantified benchmarks where z3 is much faster, recording enough evidence for a human to judge which are worth pursuing"
   },
   "metagraphe": {
     "status": "child",
     "parent": "tachyon",
     "path": "tools/metagraphe",
-    "short": "Finds missing cvc5 rewrites for strings and bit-vectors",
+    "short": "Finds missing cvc5 rewrites, especially for strings and bit-vectors",
     "what": "finds concrete gaps in cvc5's rewriting and simplification for strings and bit-vectors, each with a small reproducible example and the evidence behind it"
   }
 }

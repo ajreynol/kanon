@@ -108,7 +108,7 @@ elaborator for [Alethe](#alethe), tracked for comparison.
 
 <a id="child-project"></a>
 **child project** (project type; *noun*): Also
-**[research project](#research-project)**: work on a potential tool housed
+**research project**: work on a potential tool housed
 within a parent repository. It has its own purpose and inherits its parent’s
 [footing](#footing). See [child projects](policy.md#child-projects).
 
@@ -176,7 +176,7 @@ change over time, using evidence another reader can re-derive.
 
 <a id="eschaton"></a>
 **eschaton** (Eunoia member; *proper noun*): The
-[research project](#research-project) comparing approaches to better-founded SMT
+[research project](#child-project) comparing approaches to better-founded SMT
 solvers and the costs of trying them.
 [Repository](https://github.com/ajreynol/eschaton).
 

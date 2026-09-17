@@ -171,6 +171,23 @@ class ChildCommands(unittest.TestCase):
         self.assertIn("broken: Eunoia listing: unverified", output)
         self.assertIn("missing: Eunoia listing: unverified", output)
 
+    def test_the_advertised_column_appears_only_on_a_widened_table(self):
+        # In the default view every row is one the default view kept, so the
+        # column would read `yes` all the way down and answer nothing.
+        self.assertNotIn("advertised?", self.status())
+        for flag in ("--all", "--all-children"):
+            with self.subTest(flag=flag):
+                self.assertIn("advertised?", self.status(flag))
+
+    def test_the_column_says_what_each_child_declared(self):
+        rows = {line.split()[0]: line for line in self.status("--all").splitlines()
+                if line.split()[:1] and line.split()[0] in self.entries}
+        self.assertIn("yes", rows["published"])     # declares advertised
+        self.assertIn("yes", rows["implicit"])      # no declaration; the default
+        self.assertIn("no", rows["quiet"])          # declares unadvertised
+        self.assertIn("?", rows["broken"])          # unreadable declaration
+        self.assertIn("-", rows["host"])            # a repository has no preference
+
     def test_all_widens_the_table_without_a_note_per_child(self):
         output = self.status("--all")
         self.assertIn("5 children", output)
