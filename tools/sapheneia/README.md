@@ -48,6 +48,17 @@ analyzer needs, and it is what this project tries to supply.
    holds what the shape would have to be and what currently blocks it. This is a
    wishue and is expected to remain one for a while.
 
+4. **The two readings, compared.** Eunoia has a second implementation, reached
+   by a different route: logos checks proofs against a Lean package that
+   `ethos-eoc` compiled from the signature, so the language is read once by a
+   C++ evaluator and once by a compiler, a native layer and a hand-written
+   semantics set. Where the two come apart is
+   [`docs/ethos-logos.md`](docs/ethos-logos.md), kept as a living register. It
+   serves goal 1 the way goal 2 does — a disagreement between two
+   implementations is evidence about where the language is undefined, and the
+   rows that land in [`manual.md`](manual.md)'s unsettled chapter are the ones
+   worth the most.
+
 ## What this project does not do
 
 The boundary matters more than the goals, so it is stated first-class.
@@ -122,6 +133,7 @@ convention.
 | [`manual.md`](manual.md) | the account. Goal 1 |
 | [`feedback.md`](feedback.md) | candidate feedback to the ethos manual, as a ledger. Goal 2 |
 | [`semantics.md`](semantics.md) | the formalization: shape, judgement forms, blockers. Goal 3, wishue |
+| [`docs/ethos-logos.md`](docs/ethos-logos.md) | the living comparison: where ethos's Eunoia and logos's Eunoia come apart. Goal 4 |
 
 ## Status
 
@@ -131,6 +143,13 @@ exists; the ones on desugaring, evaluation and the type system are the ones
 worth reading, and the chapters on files and on the grammar are thin. Nothing
 here has been checked by anybody who knows Eunoia. The feedback ledger has
 entries and none of them has been carried anywhere.
+
+**The comparison, first cut 2026-09-17.** Twenty rows, read against ethos
+`ethosEoc3` (`4d1ba77c`) and logos `main` (`be479120`). Its ethos-side claims
+were run against a build; its logos-side claims were read off generated Lean and
+not executed. Four of the rows are instances of questions
+[`manual.md`](manual.md) §11 already lists as unsettled, which is the part worth
+pursuing.
 
 ## Is there a paper in this?
 
