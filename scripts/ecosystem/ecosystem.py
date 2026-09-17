@@ -617,82 +617,6 @@ def protocol(inv: dict) -> int:
     return 0
 
 
-#: A health summary is a small, fixed list of **indicators**. Each is a name, a
-#: value a person can read, and one of three verdicts. The set is deliberately
-#: short and is expected to grow; adding one is a decision rather than a
-#: convenience, because every renderer shows all of them.
-#:
-#: `unknown` is a verdict and not a missing value. It sits with `attention`
-#: rather than with `ok`, for the same reason the bump gate has three exit codes:
-#: *we asked and it is wrong* and *we could not ask* are different facts, and
-#: neither is a pass.
-VERDICTS = ("ok", "attention", "unknown")
-
-
-def health(inv: dict | None = None) -> list[tuple[str, str, str]]:
-    """The ecosystem's health, as (indicator, value, verdict).
-
-    **Offline and cheap on purpose.** Everything here is read off this disk, so
-    any surface can render it without deciding whether it can afford to. What
-    costs a network call -- whether our build is green at a commit -- is
-    deliberately not here: use `eo_bump` when considering a new policy pin.
-
-    Returned as data rather than printed, because several surfaces render it and
-    a second implementation of the rendering is how they drift apart.
-    """
-    if inv is None:
-        inv = {k: v for k, v in json.load(open(INVENTORY, encoding="utf-8")).items()
-               if not k.startswith("_")}
-    members = [k for k, v in inv.items() if v.get("status") in MEMBERS]
-
-    passing, unknown, owed = 0, 0, 0
-    for name in members:
-        path = locate(inv[name].get("repo", name))
-        if not path:
-            unknown += 1
-            continue
-        verdict, _ = check(path)
-        unknown += 1 if verdict == "unverified" else 0
-        passing += 1 if verdict == "ok" else 0
-        disc = os.path.join(path, "docs", "discussion.md")
-        if os.path.isfile(disc):
-            owed += open(disc, encoding="utf-8").read().count("**To:** kanon")
-
-    # Working-hours tooling stays in scripts/ when the ethics projects move.
-    # An unavailable mechanism leaves this indicator unknown, without taking
-    # down the other local health observations.
-    try:
-        import sleep as sleep_tool  # noqa: PLC0415
-        clock = sleep_tool.state()
-    except Exception:  # noqa: BLE001
-        sleep_tool, clock = None, None
-
-    def verdict(ok, unsure=False):
-        return "unknown" if unsure else ("ok" if ok else "attention")
-
-    return [
-        ("members", str(len(members)), "ok"),
-        ("policy", f"{passing} of {len(members)} passing",
-         verdict(passing == len(members), unknown > 0)),
-        ("topics owed to us", str(owed), verdict(owed == 0)),
-        # The one indicator that is about the runner rather than the tree, and
-        # the one whose value changes without anybody committing anything. It
-        # is marked `attention` outside the window because the mark is the
-        # whole intervention -- see PROTO-18. A missing schedule uses the
-        # default window; an unavailable mechanism is reported as unknown.
-        ("hours",
-         sleep_tool.summary(clock) if clock else "no schedule mechanism",
-         verdict(clock and clock["status"] == "awake", clock is None)),
-    ]
-
-
-def render_health(rows: list[tuple[str, str, str]]) -> str:
-    """One rendering, used everywhere a health summary appears."""
-    w = max(len(n) for n, _, _ in rows)
-    mark = {"ok": " ", "attention": "!", "unknown": "?"}
-    return "\n".join(f"  {m} {n:<{w}}  {v}"
-                      for n, v, k in rows for m in [mark[k]])
-
 
 def audit(online: bool) -> int:
     """`--check`: the inventory as a document, and optionally as a claim.
@@ -739,7 +663,7 @@ def audit(online: bool) -> int:
     return 1 if stale else (2 if unseen else 0)
 
 
-USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--health] [--protocol]
+USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--protocol]
 
   (no arguments)  the table: repositories and advertised children
   --verbose       ... and, per tool, which checks failed and what they found
@@ -751,7 +675,6 @@ USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--onl
                   the table
   --check         is the inventory itself well formed? No network, no checkouts
   --check --online  ... and does each remote's README still agree with it
-  --health        the one-line-per-question health report
   --protocol      where each tool proposed for `associate` stands against the
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
@@ -769,7 +692,7 @@ are reported as unverified. --check still validates the complete inventory.
 #: ignored, because a silently accepted flag prints the default table and looks
 #: exactly like a flag that worked -- which is how `--all` behaved before it
 #: existed, and is a worse failure than an error.
-FLAGS = frozenset({"--help", "-h", "-help", "--check", "--online", "--health",
+FLAGS = frozenset({"--help", "-h", "-help", "--check", "--online",
                    "--protocol", "--verbose", "--all", "--all-children"})
 
 
@@ -789,9 +712,6 @@ def main() -> int:
         return 2
     if "--check" in sys.argv:
         return audit("--online" in sys.argv)
-    if "--health" in sys.argv:
-        print(render_health(health()))
-        return 0
     if "--protocol" in sys.argv:
         inv = json.load(open(INVENTORY, encoding="utf-8"))
         return protocol({k: v for k, v in inv.items() if not k.startswith("_")})

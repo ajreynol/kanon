@@ -254,7 +254,11 @@ def moved_during_sleep(s: dict) -> bool:
 
 
 def summary(s: dict) -> str:
-    """One line, for a health table. Short enough to sit in a column."""
+    """One line, short enough to sit in a column.
+
+    It fed the status table's health summary until that was removed on
+    2026-09-17. `--health` still prints it, because a one-line form is worth
+    having whether or not anything else is folding it into a report."""
     if s["status"] == "refused":
         return "schedule refused"
     win = s["available"]

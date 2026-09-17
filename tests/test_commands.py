@@ -16,7 +16,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from support import ROOT, ecosystem, installer, working_hours
+from support import ROOT, ecosystem, installer
 
 class Commands(unittest.TestCase):
     def setUp(self):
@@ -184,20 +184,6 @@ class Commands(unittest.TestCase):
         self.assertIn(str(target), result.stdout)
 
 class Verification(unittest.TestCase):
-    def test_health_uses_local_working_hours_after_ethics_move(self):
-        schedule = json.loads((ROOT / "scripts/schedule.json").read_text())
-        loaded = working_hours.load()
-        self.assertEqual(loaded["source"], "schedule.json")
-        self.assertEqual(loaded["available"], schedule["available"])
-        self.assertEqual(loaded["set_on"], schedule["set_on"])
-        fixed_time = datetime.datetime(2026, 9, 17, 12)
-        with patch.object(working_hours, "now_local", return_value=fixed_time), \
-             patch.object(ecosystem, "locate", side_effect=AssertionError("no checkout needed")):
-            rows = ecosystem.health({})
-            clock = working_hours.state()
-        hours = next((value, verdict) for name, value, verdict in rows if name == "hours")
-        self.assertEqual(hours, (working_hours.summary(clock),
-                                 "ok" if clock["status"] == "awake" else "attention"))
 
     def test_moved_children_resolve_to_epikrisis(self):
         repos = installer.plan()

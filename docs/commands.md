@@ -16,7 +16,6 @@ at the bottom. Commands under `prompts/` launch an assistant unless passed
 | `scripts/status_eo --all-children` | The same rows, and a note per child saying what listing it declared and why |
 | `scripts/status_eo --check --online` | Also reads remote membership declarations |
 | `scripts/status_eo --protocol` | Reports on the proposed associate protocol |
-| `scripts/status_eo --health` | Summarizes policy, discussion and working-hours indicators |
 | `python3 scripts/sleep.py` | Reads the local working-hours schedule; returns 0 inside the window, 1 outside it or during a break, and 2 for a refused schedule |
 | `scripts/install_eo --dry-run` | Prints the planned clones |
 | `scripts/install_eo` | Clones missing repositories and records their locations |
@@ -29,10 +28,10 @@ is incomplete. A network failure is unverified, not evidence against a project.
 The ordinary status table is a report, not a CI gate: inspect its policy column
 and notes. Associates and outsiders are not checked against the policy.
 
-The working-hours program reads `scripts/schedule.json`, beside it. Both stay
-in kanon after martyria and zetesis moved to epikrisis; the health report does
-not need an epikrisis checkout to read the schedule. Do not run the clock-based
-reminder as a CI gate.
+The working-hours program reads `scripts/schedule.json`, beside it. **Nothing
+else here reads either**: the summary that once folded working hours into the
+status table was removed on 2026-09-17, so `sleep.py` now stands alone. Do not
+run the clock-based reminder as a CI gate.
 
 **This repository's pin is `anoieu.lock`, and `eo_bump` moves it.** That command
 is koine's and is installed rather than kept here; `eo_bump.json` beside the lock
