@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Is the human supposed to be working right now?
 
-Kept in kanon's scripts when the ethics projects moved to epikrisis. The
-program and schedule stay local; the ethical inquiry lives with those projects.
+The program and its schedule are kanon's; the ethical inquiry into working
+hours lives in epikrisis.
 
 **The end goal of this file is one sentence spoken to a person: take a break.**
 Everything else here exists to make that sentence land at the right time and to
@@ -256,9 +256,8 @@ def moved_during_sleep(s: dict) -> bool:
 def summary(s: dict) -> str:
     """One line, short enough to sit in a column.
 
-    It fed the status table's health summary until that was removed on
-    2026-09-17. `--health` still prints it, because a one-line form is worth
-    having whether or not anything else is folding it into a report."""
+    `--health` prints it. Nothing else here folds it into a report, and a
+    one-line form is worth having whether or not anything ever does."""
     if s["status"] == "refused":
         return "schedule refused"
     win = s["available"]

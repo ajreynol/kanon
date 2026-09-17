@@ -139,12 +139,10 @@ PRESIDENT_FILES = {
 }
 
 #: The repositories that have held the shared policy, and so the only ones a
-#: `joined` coordinate may name. The policy moved from anoieu to kanon in the
-#: 2026-09-15 handoff, which is why that field names a repository as well as a
-#: commit: a bare sha stopped identifying anything the moment there were two
-#: trees it could have come from, and the policy is expected to move again
-#: every time the office does. A name added here is a statement that a
-#: repository once kept the policy, and is never removed when it stops.
+#: `joined` coordinate may name. That field names a repository as well as a
+#: commit because a bare sha identifies nothing once more than one tree could
+#: have produced it, and the policy moves with the office. A name here is a
+#: statement that a repository has kept the policy, and is never removed.
 POLICY_HOLDERS = ("anoieu", "kanon")
 
 #: A short git object name, the only form `joined` is written in. Long enough
@@ -679,12 +677,20 @@ USAGE = """usage: eo_status_audit [--verbose] [--all | --all-children] [--check 
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
 
-A repository or a child opts out with **Eunoia listing:** unadvertised in its
-README introduction, before the first section heading. Missing declarations mean
+A child opts out by recording **Footing:** `unadvertised-child` in its own
+README, spelled exactly as anoieu's checker reads it. Missing declarations mean
 advertised. Opting out changes the listing and nothing else: the footing stands,
 the checker still runs, and --all shows every row.
 Preferences are read from local parent checkouts; unavailable or invalid reads
 are reported as unverified. --check still validates the complete inventory.
+A fenced example, an HTML comment or ordinary prose is not a declaration, an
+unsupported value is unverified, and so is a README carrying two that disagree.
+
+exit codes
+  0  the table, or every requested comparison succeeded
+  1  invalid inventory, or a remote README that disagrees with the register
+  2  verification is incomplete -- a network failure is unverified, and not
+     evidence against anybody. The ordinary table is a report, not a CI gate.
 """
 
 
@@ -779,11 +785,10 @@ def main() -> int:
         else:
             topics = "none"
         rows.append((name, status, verdict, topics, age(path), path, "-"))
-        # Both notes name the disagreement and then say whose move it is.
-        # They used to state the rule instead -- "this is the state the check
-        # exists to catch" -- which explains the check to somebody who already
-        # knows why it is there, and tells a reader arriving cold nothing they
-        # can act on.
+        # Both notes name the disagreement and then say whose move it is,
+        # rather than stating the rule -- "this is the state the check exists
+        # to catch" explains the check to somebody who already knows why it is
+        # there, and tells a reader arriving cold nothing they can act on.
         if verdict == "ok" and status == "candidate":
             notes.append(
                 f"{name} passes our checks but we still have it down as a "

@@ -10,7 +10,7 @@ check that it summarised them fairly. **If a line here does not match what a
 tool actually says, the tool is right and this page is stale.**
 
 [`protocols.md`](protocols.md) records the named exchanges and how a person
-directs an agent. [`commands.md`](commands.md) documents the commands.
+directs an agent. **Each command documents itself**, at the top of its own file.
 
 ## Where to start
 
@@ -32,7 +32,7 @@ directs an agent. [`commands.md`](commands.md) documents the commands.
 | policy and joining | [`policy.md`](policy.md) — the rule, not the commands that state it |
 | the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
-| the register, installation and status | [`commands.md`](commands.md), `scripts/ecosystem/` |
+| the register, and reading it back | `scripts/ecosystem/` |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
 | what we are saying to other tools | [`discussion.md`](discussion.md) |
@@ -378,28 +378,28 @@ binds another repository can be caught.
 ## The scripts
 
 `scripts/` contains deterministic commands and nothing that launches an
-assistant; [`commands.md`](commands.md) is the reference. The untracked
-`scripts/repos.local` checkout map is **written by hand** — one `ID PATH` pair
-per line — since the installer that used to maintain it was deleted on
-2026-09-17.
+assistant. **Each states its subject at the top of its own file**, and
+`eo_status_audit --help` carries the key to the table. The untracked
+`scripts/repos.local` checkout map is **written by hand**, one `ID PATH` pair
+per line.
 
-Every prompt takes `--show-prompt`, which prints its assembled instructions
-without launching an assistant and writes no files. `eo_init` and `eo_join`, which
-draft changes in the repository being started or joined, are `R35` and are not
-in this tree.
-
-Installing the ecosystem is not done from here: the command was deleted on
-2026-09-17 and koine is building its replacement.
+**There are no prompts in this tree**, and installing the ecosystem is not done
+from here. The commands that hand context to an assistant are koine's and are
+installed: `eo_init` and `eo_join`, which draft changes in the repository being
+started or joined, are `R35`; `eo_process_discussion` reads another tree's
+discussion file; `eo_bump` moves the pin. Each takes `--show-prompt`, which
+prints its assembled instructions without launching an assistant and writes no
+files.
 
 ## The build
 
 The `checks` workflow runs the offline regression suite and inventory validation.
 The suite covers local document links, glossary project labels, command behavior,
-checker discovery and errors, child listings, and prompt previews. It launches
+checker discovery and errors, and child listings. It launches
 no assistant, clones no repository, and makes no network requests.
 
 The separate `anoieu / policy` job fetches the checker at the commit pinned in
-`.github/workflows/anoieu.yml` and runs it against kanon. Other members also pin
+[`anoieu.lock`](../anoieu.lock) and runs it against kanon. Other members also pin
 **anoieu**, which owns the checker implementation; kanon's `scripts/policy_check.py`
 is a local launcher, not that shared implementation. A local launch uses the
 available anoieu checkout and does not establish that CI ran at the pinned

@@ -22,9 +22,8 @@ class Listing(NamedTuple):
 
 
 #: The footing marker, spelled as anoieu's checker spells it so that the two
-#: read one line the same way. `unadvertised_child_in` looks for it in the same
-#: file this module reads, and a child that carries it is the ecosystem's
-#: current way of saying *not advertised*.
+#: read one line the same way. A child that carries it is saying
+#: *not advertised*.
 FOOTING_LINE = r"^\*\*Footing:\*\*\s*`([\w-]+)`"
 UNADVERTISED_CHILD = "unadvertised-child"
 
@@ -32,9 +31,9 @@ UNADVERTISED_CHILD = "unadvertised-child"
 def declaration(text: str) -> Listing:
     """What a child's README declares about being listed.
 
-    Two spellings are read. **The footing marker is the current one**, and is
-    what anoieu's checker enforces; `**Eunoia listing:**` predates it and still
-    works. Where a README carries both and they disagree, neither is taken:
+    Two spellings are read. **The footing marker is the one to write**, and is
+    what anoieu's checker enforces; `**Eunoia listing:**` is also accepted.
+    Where a README carries both and they disagree, neither is taken:
     a tree saying two things has not said one.
     """
     text = re.sub(r"<!--.*?(?:-->|\Z)", "", text, flags=re.S)

@@ -298,9 +298,10 @@ somebody's stub and the asymmetry there decides it: a deletion cannot be undone
 and a role can. Pre-marking the destination and reading the receiving tree
 before the entry moves are both worth doing, and neither holds up a transfer.
 
-There is no transfer CI job here and there is not meant to be: the retired
-`transfer_check.py` could read markers and a destination's latest run but could
-not verify both commits. `PROTO-20` still governs retiring a source stub.
+**There is no transfer CI job here and there is not meant to be.** A job can
+read markers and a destination's latest run; it cannot verify that both
+repositories were green at the commits being transferred, which is the thing
+worth verifying. `PROTO-20` governs retiring a source stub.
 
 ## What happens when we add a new tool to the ecosystem
 
@@ -319,15 +320,16 @@ not verify both commits. `PROTO-20` still governs retiring a source stub.
    mapping to `scripts/repos.local`. This local map is not the shared inventory.
    Inspecting a checkout is a `git` command; nothing here synchronizes or edits
    the inventory from a checkout.
-4. The installer derives clones from the inventory. Outsiders are never cloned;
-   children arrive with their parent. A child's README controls its
-   [listing preference](commands.md#child-project-listings), independently of
+4. Clones are derived from the inventory by whoever installs it, which is **not
+   done from here**. Outsiders are never cloned; children arrive with their
+   parent. A child's README controls its
+   [listing preference](policy.md#child-projects), independently of
    its inclusion in the inventory or glossary. `checkouts.json` carries only
    installation exceptions, such as clone flags or optional trees.
 5. `eo_join` comes later, or never.
-   Joining is the owner's choice. No welcome message or post-join grade is
-   required; the [retired prompts](commands.md#retired-commands) added neither
-   reliable verification nor a necessary step.
+   Joining is the owner's choice. **No welcome message and no post-join grade
+   is required**, and neither adds a verification the checker does not already
+   make.
 
 ## Promoting a document: when a change becomes an event
 

@@ -205,8 +205,8 @@ Anything it wants to say leaves through its parent, like any other finding.
 
 *These are the **office's** rather than this repository's.*
 [`laws.md`](laws.md#what-the-office-carries) lists what the presidency carries
-— the protocols, the policy and the joining prompts, the vision, the laws, the
-register, the glossary, the commands, and the account of the stretch. **They
+— the protocols, the policy, the vision, the laws, the register, the glossary,
+the commands that read the register back, and the account of the stretch. **They
 move when the office moves**, except the account, which stays in the tree that
 wrote it; a successor inherits the rest whole.
 
@@ -230,18 +230,18 @@ that start and join a repository, which are `R35`.** This role says what joining
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
 
-### R6 — the inventory, and getting the ecosystem onto a machine
+### R6 — the inventory, and reading it back
 
 **Held by:** `kanon`
-**Role:** who is in the ecosystem and on what footing, and the commands that
-clone the rest of it beside a checkout, record where each one landed, and
-report what has drifted.
+**Role:** who is in the ecosystem and on what footing, the command that reads
+that register, and the audit that checks it against the trees it describes and
+reports what has drifted.
 **Owns:** `scripts/ecosystem/ecosystem.json`,
 `scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
 and `scripts/eo_status_audit`.
 **Not this role:** deciding membership — a status is changed by a person and no
-script writes that file — and the rules a member is checked against, which are
-`R4`.
+script writes that file; the rules a member is checked against, which are `R4`;
+and **getting the ecosystem onto a machine, which is not done from here.**
 
 ### R32 — the laws of the office
 
@@ -381,9 +381,7 @@ the paragraph, and re-grading each round. It is the half of the vision that goes
 stale, because it is the half that is a claim about somebody else's project this
 month rather than a statement of what the work is for.
 **Owns:** [`tools/stathmos/report-card.md`](../tools/stathmos/report-card.md),
-and the evidence and protocol pages beside it. *Before 2026-09-16 this role
-held the pen over a page anoieu kept; that page is the previous edition and
-stays in anoieu's tree.*
+and the evidence and protocol pages beside it.
 **Not this role:** the tenets themselves, which are part of `R4`; **settling
 anything** — `vision.md` forbids adherence to vision from being tracked
 automatically, so the page is never a build step and a person may overrule any

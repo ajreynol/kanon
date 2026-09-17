@@ -2,6 +2,9 @@
   "_comment": [
     "The exceptions to installing the Eunoia ecosystem, and nothing else.",
     "",
+    "**Nothing in this repository reads this file.** It is the register's",
+    "rather than any one installer's, and is kept for whoever installs.",
+    "",
     "What to clone is derived from scripts/ecosystem/ecosystem.json: every entry there that",
     "is not a child project carries a url and a repo id. Outsiders appear only",
     "in the status view and mapping, and are never cloned. For other entries,",
@@ -10,7 +13,7 @@
     "file -- which is the point, because a second list to maintain is a second",
     "list to forget.",
     "",
-    "**Only a default branch is ever installed.** scripts/install_eo prints and",
+    "**Only a default branch is ever installed.** An installer prints and",
     "runs `git clone <url> <dir>` and nothing else: no `-b`, no checkout, no",
     "branch switch. Where a child project's current work is on some other",
     "branch of its parent -- ethos-eoc, on ethosEoc3 -- that is a fact about",

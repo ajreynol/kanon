@@ -248,10 +248,10 @@ island rules to be useful, as the fuzzer did, is not a project to be tolerated:
 it is a promotion nobody has got round to.
 
 **Otherwise stop advertising it**, the moment it is not something you would
-hand a reader. One standalone line in the child's README —
-`**Eunoia listing:** unadvertised` — drops it out of `eo_status_audit` and the
-installer's summaries, and changes nothing else about the work.
-[`commands.md`](commands.md#child-project-listings) has the mechanics.
+hand a reader. One standalone line in the child's README — a `Footing:` marker
+reading `unadvertised-child` — drops it out of `eo_status_audit`, and changes
+nothing else about the work.
+[`policy.md`](policy.md#child-projects) has the rule.
 
 **Unadvertised is not a verdict and costs nothing to reverse.** It says who
 should be reading the thing, not whether it was worth starting, and a parent

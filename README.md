@@ -16,7 +16,7 @@ anybody's repository.
 **Who is in the Eunoia ecosystem, and on what terms.** A footing says what a
 tool owes us and what we say about it, and the two are not the same scale —
 [`docs/laws.md`](docs/laws.md) defines them and
-[`docs/policy.md`](docs/policy.md#the-footings) says what each costs whom. Read
+[`docs/policy.md`](docs/policy.md#the-footings) says what each costs whom. Audit
 the register with:
 
 ```sh
@@ -48,6 +48,7 @@ first.
 | [`docs/practice.md`](docs/practice.md) | what follows from the tenets once a repository is running: front pages, what may be claimed, where speculative work goes, papers |
 | [`docs/laws.md`](docs/laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
 | [`docs/glossary.md`](docs/glossary.md) | the authoritative name register and alphabetized dictionary of eo's terms, maintained by the president |
+| [`docs/protocols.md`](docs/protocols.md) | the register of named exchanges — between a person and an agent, and between one repository and another |
 
 ### The office, and this term's work
 
@@ -58,14 +59,13 @@ first.
 | [`docs/discussion.md`](docs/discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`docs/maintenance.md`](docs/maintenance.md) | **start here to maintain this tree** — where to start, what you do, and what this repository is responsible for |
-| [`docs/protocols.md`](docs/protocols.md) | the register of named exchanges — between a person and an agent, and between one repository and another |
 
 ## If you maintain a tool and want to join
 
-**Addressed to whoever maintains a tool built *around* the Eunoia calculus** —
+**Addressed to whoever maintains a tool built *related* the Eunoia ecosystem** —
 a checker, a compiler, a Lean development, an analyzer, a template.
 
-**Joining is two steps: a sentence, and a CI job that checks the sentence is
+**Joining has two requirements: a reference in your README, and a CI job that checks the reference is
 true.** Nothing else is asked — no discussion file, no document you do not
 already keep. [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem)
 is the authority; this is only the route in.
@@ -76,11 +76,12 @@ is the authority; this is only the route in.
 | it exists, and you want to join | `eo_join` — adds the declaration to your maintenance note and the pinned `anoieu / policy` workflow |
 | it exists, and should *not* join | `eo_join --soft` — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
 
-**Both are installed rather than run from here**, and
-[`docs/commands.md`](docs/commands.md#the-joining-commands) says where they live
-and how to get them. **What joining costs is this repository's**:
+These commands are available in
+[koine](https://github.com/ajreynol/koine).
+The easiest way is to use koine's `install_eo_cmd`. **What joining
+costs is this repository's**:
 [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the authority
-and the commands state it.
+on what guidelines repositories that join the Eunoia ecosystem are held to..
 
 **Read it before you run it.** Every prompt takes `--show-prompt`, which prints
 exactly what it would hand an assistant and does nothing else.
@@ -92,26 +93,6 @@ what `--soft` is for. **Joining obliges you to a shared policy and one CI job
 and nothing else**: no ownership of your tree, no authority over how you run
 it, and leaving is a commit. And **a declaration on a shared tree is not one
 maintainer's alone to make**, which is the first thing the prompt asks.
-
-## The commands
-
-This repository is also the recommended way to get started with development in
-the Eunoia ecosystem across several repositories at once. Python 3.10 or newer,
-Bash and Git are enough for everything here. From this checkout:
-
-```sh
-```
-
-[`docs/commands.md`](docs/commands.md) is the full reference, and
-The workflows that hand context to an assistant are installed commands and are
-not kept here. `.github/workflows/anoieu.yml` keeps kanon's checker pin; the
-local regression checks also run in CI.
-
-**The policy checks are maintained in
-[anoieu](https://github.com/ajreynol/anoieu).** The policy, the vision, the
-laws and the registers are here; the analyzer, the fuzzer, the findings system
-and the program that decides whether a tree meets the policy are there, and a
-member pins a commit of it.
 
 ## A joke about the name
 

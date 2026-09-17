@@ -1,5 +1,5 @@
-"""The commands behave offline: the checker launcher, the
-prompt previews, the status reader and the bump check.
+"""The commands behave offline: the checker launcher, the status reader
+and the register audit.
 
 No real assistants, no clones, no network.
 """

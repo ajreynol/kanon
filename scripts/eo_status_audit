@@ -28,13 +28,12 @@
 # that never joined is a measurement and not a shortfall. The table itself
 # prints one line pointing at the key, and not the key.
 #
-# **Not a prompt**, which is why it is here and not in prompts/: no
-# assistant, no turn spent, nothing to review before running it.
+# **Nothing here launches an assistant**: no turn spent, nothing to review
+# before running it. The commands that do are koine's and are installed.
 #
-# Two questions that sound alike and are not. This one is *who is in the
-# ecosystem and on what footing*, which is a fact about the inventory and about
-# other people's trees. `install_eo --status` is *what is on this machine*,
-# which is a fact about your disk. Neither answers the other.
+# This answers *who is in the ecosystem and on what footing*, which is a fact
+# about the inventory and about other people's trees. It does not answer *what
+# is on this machine*, which is a fact about your disk.
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
 exec python3 "$HERE/ecosystem/ecosystem.py" "$@"

@@ -1,8 +1,5 @@
 # stathmos
 
-**Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
-Earlier observations below retain their original context and dates.
-
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, and advertised in ecosystem listings.
 
@@ -26,11 +23,6 @@ still does not do is settle anything.** The page is argued and never checked,
 any paragraph without giving a reason.** Adherence to policy is tracked
 automatically; adherence to vision must never be.
 
-*It used to be the mediator rather than the author — it graded the grading,
-while anoieu wrote the page. That split is recorded rather than edited away: it
-put the assessment in the tree of the tool assessed most closely, which is the
-arrangement this project was created to complain about.*
-
 The objection worth recording: σταθμός also means a halting-place or station,
 and it sits close to `kanon` — the measuring rod proposed for the governance
 repository — closely enough that somebody could confuse the two. The difference
@@ -49,11 +41,11 @@ remembering something.
 ## Why it is a separate thing at all
 
 **Because the tool that writes the report card should not be the tool the
-report card grades most closely.** `anoieu` wrote the vision, kept the page, and
-was assessed on it. That arrangement was honest and fragile, and it ended when
-the vision moved to kanon and the page moved here. **The fragility did not
-disappear, it moved**: this project now lives in the tree it grades second most
-closely, so its own entry and kanon's are self-assessments and say so.
+report card grades most closely.** A repository that writes the vision, keeps
+the page and is assessed on it is in an honest but fragile arrangement.
+**Moving the page does not remove the fragility, it moves it**: this project
+lives in the tree it grades second most closely, so its own entry and kanon's
+are self-assessments and say so.
 
 **So the intention is stated at the start rather than discovered later: this
 moves to a repository of its own.** Starting inside `anoieu` is the cheap first

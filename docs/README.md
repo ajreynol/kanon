@@ -25,7 +25,6 @@ that have been demoted.
 | [`discussion.md`](discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`roles.md`](roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`maintenance.md`](maintenance.md) | **start here to maintain this tree**: what this repository is responsible for, what it checks, and what is outstanding |
-| [`commands.md`](commands.md) | the commands in [`../scripts/`](../scripts), with what each takes and prints |
 
 ## Demoted
 
@@ -47,6 +46,10 @@ below is the thing to watch.
 **Nothing in `docs/` is generated.** Every page above is written by hand, which
 is why none of them carries a generated-file banner and why anything a tool
 produces belongs somewhere else.
+
+**No page here documents the commands.** Each one says what it takes and prints
+at the top of its own file, and `eo_status_audit --help` carries the key to the
+table — which is where a reader who is about to run something already looks.
 
 **The child projects under [`../tools/`](../tools) are not documentation and are
 not indexed here.** Each documents itself at its source, and they are reached

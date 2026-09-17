@@ -181,6 +181,35 @@ checkout.
 CI was green is the policy; the program is a convenience and nothing obliges a
 member to use koine's.
 
+### The installer and the prompt directory were deleted — 2026-09-17
+
+**The largest deletion of the term, and the only one with no replacement in
+place.** `scripts/install_eo`, 762 lines, was deleted on the maintainer's word
+that koine is building the replacement — so **this ecosystem has no installer
+today**. `scripts/repos.local` is written by hand instead, one `ID PATH` pair
+per line, and registering a checkout never changed anybody's membership.
+
+`prompts/` went with it and the directory is gone. `process_discussion` because
+koine shipped `eo_process_discussion` and it works from this tree;
+`check_join_eo` and `global_audit` because both were assistant wrappers over
+commands this repository already runs without one. `scripts/anoieu_dependency.py`
+was folded into `scripts/policy_check.py` — locating the checker and running it
+were two files for one job — and `status_eo` became `eo_status_audit`, a name
+that says what is left here once koine's `eo_status` prints the plain table.
+
+**What it came to.** Eight files and 1,866 lines deleted across the stretch from
+`59ed39f^`. The tooling this office carries fell from 24,177 words to 13,325,
+against the thirteen files and ~17,500 words `D13` tabled when it asked koine
+what a president should have to carry. **The register, the documents and the
+decisions stayed**; what left was the machinery that read them.
+
+**What it cost is not all known.** The installer gap is real and was chosen: a
+person cloning this ecosystem today has no command to do it with. That is ours
+to have chosen and not a debt koine owes us, and `D13` says so to them.
+
+*Re-derive:* `git log --diff-filter=D --name-only 59ed39f^..HEAD` in this
+repository.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
@@ -612,8 +641,11 @@ start disagreeing about it.** The required-reading budget is likewise [LAW
   person's.
 - Everything open on [the board](board.md), which is where this office's work
   is now kept.
-- **The schedule.** `sleep.py` and `schedule.json` travel with `martyria`, so
-  the ecosystem's working-hours protocol changes address when it moves.
+- **The schedule.** `sleep.py` and `schedule.json` stayed here when the ethics
+  projects went to epikrisis, at the maintainer's direction, so they no longer
+  travel with `martyria`. `D13` proposes them to koine as `eo_sleep` and is
+  unanswered: `PROTO-18` binds every member and only this repository has the
+  program.
 
 ## What the next term should be for
 

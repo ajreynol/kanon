@@ -12,9 +12,9 @@ and carries no copy of the rules.
 `ANOIEU_REPOS`, a sibling `anoieu/`, then `$HOME`. An unavailable checker is
 `UNVERIFIED` with exit code 2, which is not a pass.
 
-**Locating and running were two files until 2026-09-17.** They are one job:
-nothing wanted the locator without the runner, and the split made three
-importers learn two names for it.
+**Locating the checker and running it are one job**, and one file: nothing
+wants the locator without the runner, and splitting them makes every importer
+learn two names for it.
 """
 
 from functools import lru_cache

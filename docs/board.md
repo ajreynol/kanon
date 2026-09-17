@@ -173,7 +173,7 @@ is not a formality:
 
 | channel | what it means | who acts |
 | --- | --- | --- |
-| **discussion** | a topic in [`discussion.md`](discussion.md) addressed to them, or a reply into a topic of theirs — the standing channel for anything that is **not** a defect report | a person carries it; `prompts/process_discussion` reads theirs, and nothing here writes into anybody else's file |
+| **discussion** | a topic in [`discussion.md`](discussion.md) addressed to them, or a reply into a topic of theirs — the standing channel for anything that is **not** a defect report | a person carries it; koine's installed `eo_process_discussion` reads theirs, and nothing here writes into anybody else's file |
 | **findings** | a row in the ledger, carried by `prompts/check_anoieu <id>` and answered through `prompts/process_anoieu` | the same person, through the reporting workflow, which is a separate protocol on purpose |
 | **upstream, by a person** | a message, an issue or a pull request in a tree that has no discussion file | a person, entirely — no script here has a way to do it, and none should |
 
