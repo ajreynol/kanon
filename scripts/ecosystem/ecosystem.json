@@ -443,14 +443,14 @@
     "status": "child",
     "parent": "tachyon",
     "path": "tools/heuresis",
-    "short": "Finds cvc5 performance shortcomings, especially for quantifiers",
+    "short": "Finds cvc5 performance issues, esp. for quantifiers",
     "what": "investigates cvc5 performance shortcomings in quantified benchmarks where z3 is much faster, recording enough evidence for a human to judge which are worth pursuing"
   },
   "metagraphe": {
     "status": "child",
     "parent": "tachyon",
     "path": "tools/metagraphe",
-    "short": "Finds missing cvc5 rewrites, especially for strings and bit-vectors",
+    "short": "Finds missing cvc5 rewrites, esp. for strings and BV",
     "what": "finds concrete gaps in cvc5's rewriting and simplification for strings and bit-vectors, each with a small reproducible example and the evidence behind it"
   }
 }
