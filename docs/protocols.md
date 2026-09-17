@@ -65,7 +65,7 @@ named.
 | `PROTO-23` | **the downstream refresh** — fetch and read another repository before making a claim about it, and say how far behind you were | us → downstream | this page |
 | `PROTO-24` | **the upstream refresh** — a member makes its copy of the shared arrangements current before relying on them, and only onto a green commit | member → us | this page |
 | `PROTO-25` | **the joke protocol** — humour lives on the president's front page and nowhere a machine parses or a stranger reads for instructions. Any tool may say *that's not funny*, meaning *you are confusing everyone*, and it ends there | any tool → any tool | this page |
-| `PROTO-26` | **transferring roles** — a role moves when it is marked, the target exists, and **both** repositories' CI is green. Theirs is a person's check, not a job | us → another project | this page |
+| `PROTO-26` | **transferring roles** — a role moves once the target repository is in the register and the entry moves with its id. Reversible, so green CI is advice here; deleting a stub is not, and `PROTO-20` still binds | us → another project | this page |
 | `PROTO-27` | retired, 2026-09-15 | — | no active protocol |
 
 **`PROTO-18` is the first entry addressed to every member rather than to
@@ -281,23 +281,26 @@ doing any work.**
 
 ## `PROTO-26` — transferring roles to another project
 
-Roles move when both repositories are in order. Before a person completes a
-transfer:
+**A role transfer is reversible and deleting a stub is not.** This protocol was
+written as though they were the same act, and they are not: moving a role
+changes a heading in [`roles.md`](roles.md), and moving it back changes it
+again. **So it asks two things and recommends the rest.**
 
-1. Mark the role's intended destination in [`roles.md`](roles.md).
-2. Confirm the destination has an actual repository recorded in the inventory;
+1. Confirm the destination has an actual repository recorded in the inventory;
    a placeholder or child entry alone does not establish that.
-3. Confirm the relevant CI runs passed for the exact source and destination
-   commits.
-4. Read the receiving tree to confirm it carries the work, then update the
-   role's holder while preserving its id.
+2. Move the role's holder **preserving its id**, saying in the same commit what
+   the losing tool keeps.
 
-There is no transfer CI job here. The retired `transfer_check.py` could read
-markers and a destination's latest run, but could not verify both commits.
-An unavailable check leaves the transfer unverified. The similarly retired
-`ready_check.py` checked a name and stub text, not readiness to delete a stub.
-The [handoff protocol](#proto-20--the-handoff-protocol)
-still governs retiring a source stub.
+**Green CI on both sides is advice here rather than a precondition**, and that
+is the whole of what changed on 2026-09-17. It stays non-negotiable in
+[`PROTO-20`](#proto-20--the-handoff-protocol), where the act is deleting
+somebody's stub and the asymmetry there decides it: a deletion cannot be undone
+and a role can. Pre-marking the destination and reading the receiving tree
+before the entry moves are both worth doing, and neither holds up a transfer.
+
+There is no transfer CI job here and there is not meant to be: the retired
+`transfer_check.py` could read markers and a destination's latest run but could
+not verify both commits. `PROTO-20` still governs retiring a source stub.
 
 ## What happens when we add a new tool to the ecosystem
 

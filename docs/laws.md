@@ -201,8 +201,8 @@ ecosystem exists to serve.
 this ecosystem shares, and **they move with it**:
 
 - **the protocols** — the register of named exchanges every member follows;
-- **the policy, and the prompts that start and join a repository** — `init_eo`,
-  `join_eo`, `check_join_eo` and what they write;
+- **the policy, and whatever starts and joins a repository** — the rule itself,
+  in whatever form it is stated to an agent;
 - **the commands, and the reference that documents them** — getting the
   ecosystem onto a machine, and reading the register back;
 - **the vision**, and what follows from it once a repository is running;
@@ -229,6 +229,16 @@ rules are the office's; deciding whether a tree complies with them is a
 member's responsibility and stays where it is, so that **moving the office
 costs no member a commit.** That separation is the reason the office can move
 at all.
+
+**Which file, and which repository, is not settled here.** This list names what
+the office carries, not where it is kept: where a given page or program that
+states or serves a rule lives is a role, settled in [`roles.md`](roles.md) and
+movable under `PROTO-26` without touching this page. **Amended 2026-09-17**,
+at the maintainer's direction, to say *whatever starts and joins a repository*
+where it used to name `init_eo`, `join_eo` and `check_join_eo`. **Why:** a law
+that enumerates filenames turns an ordinary handoff into an amendment, and this
+page has no amendment process on purpose. Nothing about what a successor
+inherits changed — the rules are handed over whole either way.
 
 **The office expires with the stretch.** Handing it on is the point.
 

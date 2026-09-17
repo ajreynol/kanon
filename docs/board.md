@@ -208,9 +208,10 @@ an id for it, and every consumer whose pin moves. The channel is
 the repositories it costs something, and there is one prompt per entity so that
 each has been asked rather than told.
 
-The seven steps are in [`roles.md`](roles.md#how-a-role-is-handed-off), and
-`B15` is the worked example — transferred, with policy/checker version
-coordination still open. **None of it gates anything** while the ecosystem is
-still settling; the same section says what would change that and who decides.
+What is left of the procedure is in
+[`roles.md`](roles.md#how-a-role-is-handed-off) — three things, relaxed on
+2026-09-17 — and `B15` is the worked example, transferred, with policy/checker
+version coordination still open. **None of it gates anything**, and a handoff
+that never appeared on this page is still a handoff.
 
 ---

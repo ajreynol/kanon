@@ -109,6 +109,39 @@ dictionary.
 `init_eo` now reads the glossary directly. Earlier accounts of the register's
 location in ynoia record the arrangement at the time.
 
+### Role handoffs were relaxed — 2026-09-17
+
+At the maintainer's direction, in preparation for proposing shared tooling to
+koine. Three pages changed and one of them is a law, so the reasons are here
+rather than only in the commit.
+
+- **[`roles.md`](roles.md), *How a role is handed off*:** seven ordered steps
+  became three unordered ones. **Out:** the required order, the `board.md`
+  entry with one prompt per entity, and naming consumers as a step. **Kept:**
+  name the role not the files, say what stays, move the entry alone with its id
+  — and the last two demoted to habits worth a sentence rather than steps.
+- **[`protocols.md`](protocols.md), `PROTO-26`:** green CI on both sides is now
+  advice rather than a precondition, on the ground that a role transfer is
+  reversible and a stub deletion is not. **`PROTO-20` is unchanged**, and green
+  CI stays non-negotiable there, which is where the irreversible act is.
+- **[`laws.md`](laws.md), *What the office carries*:** the bullet naming
+  `init_eo`, `join_eo` and `check_join_eo` now reads *whatever starts and joins
+  a repository*. **Why:** a law that enumerates filenames turns an ordinary
+  handoff into an amendment, and LAW 7 provides no amendment process by design.
+  What a successor inherits is unchanged.
+
+**What this cost.** The procedure existed because an earlier audit asked two
+questions the old text could not answer, and one of those — *what does the
+losing repository keep* — survives as the second of the three. The other guard,
+that a handoff nobody objected to and one nobody was asked about should not
+look identical afterwards, is now a habit and not a step; if a handoff lands
+here with nobody recorded as having been asked, that is the relaxation showing
+its bill rather than a surprise.
+
+**Nothing was handed off by this change.** `R4` still owns the joining prompts
+and kanon still holds seven roles. *Re-derive:* `git log -p docs/laws.md
+docs/roles.md docs/protocols.md` around this date.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

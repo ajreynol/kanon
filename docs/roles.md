@@ -425,31 +425,27 @@ register](../scripts/ecosystem/ecosystem.json) is right and this page is stale.
 ## How a role is handed off
 
 **A handoff is the same role under a different heading**, and the id does not
-change. Seven steps, in this order because each is cheap to get wrong and
-expensive to discover later.
+change. **Three things, and they are not a sequence.**
 
-1. **Name the roles, not the files.** A proposal phrased as a list of paths is
-   a migration nobody can hold an opinion about.
+1. **Name the role, not the files.** A proposal phrased as a list of paths is a
+   migration nobody can hold an opinion about — and the id is what makes the
+   move reversible.
 2. **Say what stays.** The losing tool's remaining section is written out in
    full, because the line between the two halves is where every argument about
    it will actually happen.
-3. **Name the consumers**, by id. Where a role carries a CI contract that is
-   *every member*, and the count grows with each tool that joins first —
-   usually the strongest argument for doing it sooner.
-4. **Put it on [`board.md`](board.md)**, with one prompt per entity. A prompt
-   written to be answered is a different artifact from an announcement.
-5. **Collect the opinions, and leave them where they landed.** Afterwards, a
-   handoff nobody objected to and one nobody was asked about look identical
-   unless the asking is on the record.
-6. **Move the entry, and only the entry**, in one commit, so this register is
-   never half-handed-over.
-7. **The pins move last, and each consumer picks when.** A consumer still
-   pinned to the old holder is not behind; it is correct.
+3. **Move the entry, and only the entry**, in one commit, so this register is
+   never half-handed-over. **The pins move last and each consumer picks when**:
+   a consumer still pinned to the old holder is not behind, it is correct.
 
-**None of them is a gate.** They describe the honest way to hand a role over
-and stop nobody's work. What would change that is the ecosystem being stable
-enough that a handoff nobody was asked about costs somebody a red build — and
-that is a person's decision, made once and written here.
+**None of it is a gate and none of it is an order**, and a handoff that skipped
+all three is a handoff rather than a defect. Two habits are worth keeping
+anyway, because both cost a sentence: **name the consumers whose pins move**,
+and **leave the opinions where they landed** — afterwards, a handoff nobody
+objected to and one nobody was asked about look identical unless the asking is
+on the record.
+
+**Relaxed on 2026-09-17**, at the maintainer's direction: four steps went, and
+[`history.md`](history.md) records which and why.
 
 **A role over human-authored work is not ours to move.** No footing and no
 procedure here makes reassigning it a handoff; it is a claim on somebody's
@@ -470,9 +466,10 @@ here. `R6` follows `R4`, because the audit that reads across both wants the
 register beside the policy rather than beside the ledger. And the position on
 what may be published stays with the tool whose own behaviour it constrains.
 
-**Two of the seven steps exist because an audit asked them and the procedure
+**The second of the three exists because an audit asked it and the procedure
 could not**: *what does the losing repository keep*, and *is either half left
-unable to answer a question it could answer alone*.
+unable to answer a question it could answer alone*. It is the one step that
+survived the 2026-09-17 relaxation on its own merits.
 
 ## What the shape says
 
