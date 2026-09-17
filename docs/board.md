@@ -119,27 +119,6 @@ plainly which of our claims it does and does not reach.
 did. A gap in the literature is a result; a plausible bibliography assembled to
 look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
 
-## B32 — we permit two forms of the policy check and run only one
-
-**Task:** anoieu publishes a versioned policy contract and a shared workflow;
-[`policy.md`](policy.md#2-run-the-check) now says either that or a pinned
-commit satisfies membership. **This repository is on the pin.**
-**Entities:** `kanon`, `anoieu`
-**Status:** open — the pin moved to `154228a` on 2026-09-17, verified green by
-`eo_bump` before the lock was written, so nothing is failing either way.
-**Channel:** **internal** — nobody is waiting on the answer.
-**Next:** decide whether `.github/workflows/anoieu.yml` calls anoieu's shared
-workflow at `main` naming contract 1, or keeps the pin, and say which in the
-maintenance note.
-**Prompt — `kanon`:** the case for moving is that the office should run what it
-permits and that `eo_bump`, `anoieu.lock` and `eo_bump.json` all stop being
-needed for this check. The case against is [`vision.md`](vision.md)'s second
-tenet — *restore recorded versions rather than branch tips* — and that a form
-which cannot be exercised offline is one we would find out about from a red
-build. **Neither is obviously right, which is why it is a decision and not a
-tidy-up.**
-**HUMAN FEEDBACK:**
-
 ## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
 
 **Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed

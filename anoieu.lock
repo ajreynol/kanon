@@ -1,7 +1,0 @@
-# The commit of anoieu's policy checker this repository is held to.
-# Moved by `eo_bump` and never by hand: the pin moves only onto a commit the
-# `policy` workflow was green at. `eo_bump.json` beside this file is the
-# configuration. The checker path in .github/workflows/anoieu.yml belongs to
-# this pin -- it was tools/policy_check.py before the commit below and
-# scripts/policy_check.py at it, so the two move together.
-154228a40d21584b95f4029742ccc8f432ea87f5

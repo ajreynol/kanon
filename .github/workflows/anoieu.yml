@@ -1,17 +1,23 @@
 name: anoieu
 
+# The policy check, run by anoieu's own shared workflow at `main`, asking for
+# the mechanical contract this repository is held to. Contract 1 fixes the
+# obligations and their severity; the implementation behind it stays free to
+# change, so this build can turn red with nothing committed here -- and within
+# a contract that is a violation already in the tree which has started being
+# reported, never a new requirement arriving.
+#
+# `docs/policy.md`, section `2. Run the check`, is the rule. It accepts a pinned
+# commit instead, and this repository ran that form until 2026-09-17; there is
+# nothing left here to pin, and nothing here to bump.
+
 on: [push, pull_request]
+
+permissions:
+  contents: read
 
 jobs:
   policy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: the policy, at the commit this repository pins
-        # The pin is `anoieu.lock`, moved by `eo_bump` and never by hand. That
-        # file also records why the pin and the checker path below move
-        # together.
-        run: |
-          git clone --quiet https://github.com/ajreynol/anoieu /tmp/anoieu
-          git -C /tmp/anoieu checkout --quiet "$(grep -v '^#' anoieu.lock | head -1)"
-      - run: python3 /tmp/anoieu/scripts/policy_check.py --root .
+    uses: ajreynol/anoieu/.github/workflows/policy.yml@main
+    with:
+      policy-version: '1'

@@ -174,8 +174,9 @@ repositories had written the job themselves in three naming conventions, and
 five had written nothing. **Kanon deleted its own and adopted theirs** — 171
 lines of script, four tests and a loader gone, and `ANOIEU_REV` in the workflow
 replaced by `anoieu.lock` with `eo_bump.json` beside it, which is the format
-every other lock here already used. *Re-derive:* `eo_bump --show` in this
-checkout.
+every other lock here already used. **Both files were deleted hours later**,
+when this repository moved to anoieu's contract — the entry below. *Re-derive:*
+`git log -- anoieu.lock eo_bump.json`.
 
 **What did not change:** the requirement. Moving a pin only onto a commit whose
 CI was green is the policy; the program is a convenience and nothing obliges a
@@ -229,17 +230,40 @@ ceiling. That is the page with a length problem, and nothing here touched it.
 
 *Re-derive:* `wc -w docs/policy.md docs/vision.md docs/roles.md`.
 
-### The checker contract, and the pin — 2026-09-17
+### The checker contract, and the end of the pin — 2026-09-17
 
 anoieu published a versioned policy-checker contract and a shared CI workflow.
 [`policy.md`](policy.md#2-run-the-check) now accepts either form for
-membership — a pinned commit, or the shared workflow at a named contract — and
+membership — a pinned commit, or that shared workflow at a named contract — and
 attributes what is not promised about the checker to anoieu instead of
 promising it here; the claim that there is *no versioning scheme* was true
-until that day and is gone. `eo_bump` found anoieu's `policy` job green at
-`154228a` and moved the lock onto it. **This repository stays on the pinned
-form**, which is a decision and is `B32`. anoieu and eschaton asked from both
-ends and are answered in `D15`. *Re-derive:* `eo_bump --show`.
+until that day and is gone.
+
+**This repository took the contract form**, at the maintainer's direction and
+within the hour of permitting it. `.github/workflows/anoieu.yml` calls anoieu's
+workflow at `main` asking for contract 1; `anoieu.lock` and `eo_bump.json` are
+deleted, so **kanon pins nothing**, the root carries no file but the README, and
+`eo_bump` has nothing here to move. The pin it replaced had been moved onto
+`154228a` earlier the same day, after `eo_bump` found anoieu's `policy` job
+green there.
+
+**What was traded, and what is unverified.** This build can go red with nothing
+committed here, which [`vision.md`](vision.md)'s second tenet argues against;
+contract 1 holds the obligations still, so a red build means a violation
+already in this tree has started being reported rather than a new requirement
+arriving. **A called workflow cannot be exercised from a checkout**, so the
+first push is what establishes that the job runs and what the check is named —
+a third segment is expected, `anoieu / policy / policy`. anoieu and eschaton
+asked from both ends and are answered in `D15`.
+
+*Re-derive:* `.github/workflows/anoieu.yml`, and
+`git log --diff-filter=D -- anoieu.lock eo_bump.json`.
+
+*Commit note, and delete it whenever it stops helping:* `911c3ca`, "Hk",
+carries this day's housekeeping as it stood at 16:23 — the four `associate`
+corrections, two command fixes, the budget row, the topics, **and the pin move
+that the commit after it deletes**. Its message describes none of that, so a
+reader looking for any of it by subject will not find it there.
 
 ### Two commands were reporting the wrong thing — 2026-09-17
 

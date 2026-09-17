@@ -860,6 +860,10 @@ for, and leaves room for anything else we ever ask to become another job in the
 same file, muted or deleted in one place. Nothing is installed and nothing is
 built.
 
+**A called workflow nests one level deeper**, so on the contract form the
+displayed check may carry the called job's name as well. What this rule asks
+for is the file and the job — `anoieu / policy` — and both forms have them.
+
 **It passes if and only if two things hold.** The README declares membership,
 and the tree upholds the policies that apply to it. Either alone is a failure —
 a declaration nothing backs is what this check exists to prevent, and a

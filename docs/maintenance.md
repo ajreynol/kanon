@@ -401,16 +401,21 @@ The suite covers local document links, glossary project labels, command behavior
 checker discovery and errors, and child listings. It launches
 no assistant, clones no repository, and makes no network requests.
 
-The separate `anoieu / policy` job fetches the checker at the commit pinned in
-[`anoieu.lock`](../anoieu.lock) and runs it against kanon. **Two forms of that
-job satisfy the policy** — this pin, or anoieu's shared workflow at a named
-contract — and a member may be on either, so read a member's own workflow file
-rather than assuming a pin. **anoieu** owns the checker implementation; kanon's
-`scripts/policy_check.py` is a local launcher, not that shared implementation.
-A local launch uses the available anoieu checkout and does not establish that
-CI ran at the pinned revision. `eo_bump --check` asks whether the upstream tip
-is green; it is an explicit online command, not part of CI, and a repository on
-the contract form has no pin for it to move.
+The separate `anoieu / policy` job is
+[anoieu's shared workflow](https://github.com/ajreynol/anoieu/blob/main/docs/policy-checker.md)
+called at `main`, asking for **policy contract 1**. **This repository pins
+nothing for it**, so there is no lock here and nothing for `eo_bump` to move;
+what is held still is the contract, and the implementation behind it may change
+between two runs of the same commit. [`policy.md`](policy.md#2-run-the-check)
+accepts a pinned commit just as well, and a member may be on either form — read
+a member's own workflow file rather than assuming.
+
+**anoieu** owns the checker implementation; kanon's `scripts/policy_check.py`
+is a local launcher, not that shared implementation. A local launch uses
+whatever anoieu checkout is on this machine, at whatever revision it is on, and
+establishes nothing about what CI ran. **That gap is the subject of `D1`** and
+it widened with this change: there is no pinned revision here to reproduce
+against any more, only a contract to ask for.
 
 A passing build establishes only what those checks actually exercise. It does
 not verify definitions, tool quality, consent, or another repository's handoff.

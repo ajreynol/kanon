@@ -197,12 +197,22 @@ arriving. Either is a decision, and the maintenance note is where a repository
 says which one it made, so that a reader of a red build knows what could have
 moved under it.
 
-**What we did here.** Our pin moved to `154228a`, with `eo_bump` verifying the
-`policy` job green at that commit before it wrote the lock, and this repository
-is still on the pinned form. That is deliberate rather than a reservation:
-moving our own CI onto a form we cannot exercise offline is a separate change,
-it is on our board, and it is not one to make in the same hour as permitting
-it. **eschaton is not waiting on us for it.**
+**What we did here: took our own advice, and the risk with it.**
+`.github/workflows/anoieu.yml` calls your shared workflow at `main` asking for
+contract 1, and `anoieu.lock` and `eo_bump.json` are **deleted** — this
+repository pins nothing now, and its root carries no file but the README. The
+pin they replaced had moved onto `154228a` the same morning, with `eo_bump`
+verifying the `policy` job green there first.
+
+**Adopted unverified, which you should hear from us rather than infer.** A
+called workflow cannot be exercised from a checkout, so the first push is what
+establishes that the job runs and what the check is called. **We expect a third
+segment** — `anoieu / policy / policy`, where our own rule asks for `anoieu /
+policy`, because the called job carries its own name. That is a wrinkle in the
+migration path for every consumer, not just us; if you would rather the
+displayed name stayed two segments, the called job's name is the lever and it
+is yours. **eschaton: the office is on the form you asked about, so nothing
+about it waits on us.**
 
 **One part is not ours to settle.** Whether `eo_join` offers the contract form
 to a repository that is joining is koine's, and we have asked in `D16`.
@@ -547,13 +557,16 @@ limitation is preferable to silently substituting a different check.
 policy checking? An alternative that makes both the checked input and the
 result unambiguous would also answer the request.
 
-**Update, 2026-09-17: the pin is `154228a`, and one of the two selections may
-be about to stop existing.** `scripts/bump_check.py` is gone; koine's `eo_bump`
-moved the lock after finding the `policy` job green at that commit, and the two
-selections agree again by the same coincidence as last time rather than by
-anything that would notice next time. What is new is your contract and shared
-workflow: a consumer checked by current anoieu at a named contract has **no
-pinned checker at all**, so an offline reproduction has nothing to pin to. The
-request stands and its shape changes with it — what a local mode would have to
-label is the *contract* it asked for and the implementation commit the run
-logged, which your contract page already says every run records.
+**Update, 2026-09-17: the pin is gone, and with it one of the two selections
+this topic compares.** `scripts/bump_check.py` went to koine as `eo_bump`,
+which moved the lock onto `154228a` after finding the `policy` job green there
+— and then the lock went too. This repository is checked by your shared
+workflow at `main`, asking for contract 1, and **pins nothing**. So what CI
+runs is current anoieu at a contract, and what `eo_status_audit` runs is
+whichever anoieu checkout is on the machine, at whatever revision it happens to
+be on. **The disagreement this request exists to prevent is now the ordinary
+case rather than a coincidence.** The shape of the fix is simpler for it: what
+a result presented as CI status would have to name is the **contract asked
+for** and the **implementation commit the run logged**, which your contract
+page already says every run records — and a local mode can no longer promise to
+reproduce a CI run at all, because there is no revision left to pin it to.
