@@ -210,7 +210,7 @@ the commands that read the register back, and the account of the stretch. **They
 move when the office moves**, except the account, which stays in the tree that
 wrote it; a successor inherits the rest whole.
 
-### R4 — the ecosystem's policy, and joining it
+### R4 — the ecosystem's shared policy and vision
 
 **Held by:** `kanon`
 **Role:** **what this ecosystem asks of a repository, and what the work is
@@ -230,7 +230,7 @@ that start and join a repository, which are `R35`.** This role says what joining
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
 
-### R6 — the inventory, and reading it back
+### R6 — the inventory, and its auditing
 
 **Held by:** `kanon`
 **Role:** who is in the ecosystem and on what footing, the command that reads
@@ -254,7 +254,7 @@ which makes this role move with the office rather than staying here.
 mechanical; and choosing who holds the office, which is a person's and no law
 here settles.
 
-### R33 — the board, and what this ecosystem says to another tool
+### R33 — the board of next actions
 
 **Held by:** `kanon`
 **Role:** what is outstanding across the ecosystem and who has to act on it,
@@ -281,7 +281,7 @@ which is `R30`.
 
 ## koine
 
-### R35 — the commands that start and join a repository
+### R35 — the shared commands that managing a new repository joining the ecosystem
 
 **Held by:** `koine`
 **Role:** **maintaining the two commands a repository outside this ecosystem
