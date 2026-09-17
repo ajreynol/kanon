@@ -32,6 +32,7 @@ a person directs an agent, at length.
 | --- | --- |
 | policy and joining | [`policy.md`](policy.md), `prompts/` |
 | the development vision | [`vision.md`](vision.md), [`practice.md`](practice.md) |
+| the ecosystem's vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the register, installation and status | [`commands.md`](commands.md), `scripts/ecosystem/` |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
