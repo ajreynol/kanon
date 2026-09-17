@@ -452,6 +452,13 @@ child projects and hold one role.
 **The tool ids are the register's**, and where the two disagree [the
 register](../scripts/ecosystem/ecosystem.json) is right and this page is stale.
 
+**Nothing here is aspired.** This page is an account of what is true and a note
+on keeping it that way. A role somebody thinks should move is a proposal, and a
+proposal lives in [`discussion.md`](discussion.md) where the tool it would cost
+something can disagree with it, or on [`board.md`](board.md) as work. **An
+aspiration recorded here reads as a fact to somebody skimming**, and the entry
+next to it is a fact — which is the whole reason the two cannot share a page.
+
 ## How a role is handed off
 
 **A handoff is the same role under a different heading**, and the id does not

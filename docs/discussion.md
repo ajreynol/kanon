@@ -33,6 +33,49 @@
 Topics kanon has open with other tools, newest first. A person carries each
 topic; writing it here does not deliver it or authorize work in another tree.
 
+**`Kanon-ball!` marks a topic whose request rests on [the laws](laws.md), and
+marks nothing else.** It is the president's front-page joke and confers no
+power over the recipient: `LAW 3` lets the office require nothing of a member
+that [`policy.md`](policy.md) does not already require. **A topic that is
+merely ours to ask carries no note** — most are, and a mark on every topic was
+a mark that said nothing.
+
+## D13 — the programs that read our register, and whether you would take them
+
+**To:** koine
+**Kind:** question
+**Status:** open
+**Opened:** 2026-09-17
+**Settles when:** koine says what it would accept, or says none of it
+
+**What we noticed.** Kanon holds the register *and* the three programs that
+read it — `scripts/install_eo`, `scripts/status_eo` and
+`scripts/ecosystem/ecosystem.py`. **You already ship an installer**, and two
+installers in one ecosystem is the duplication this repository exists to end,
+which is your argument rather than ours.
+
+**What we are doing about it.** Proposing a split, not a move. **A footing is a
+decision somebody made**, so the register stays with the office: kanon keeps
+`ecosystem.json`, `checkouts.json`, the decision each footing records, and the
+rule that no script writes that file. What would move is the machinery that
+reads it, and the part of our commands reference that documents those three. It
+is the same cut this ecosystem has now made twice — the rule from the checker,
+and the rule from the command that states it.
+
+**What it would cost us, said here rather than left for you to find.** Kanon
+would hold the register and not the reader, so *who is in this ecosystem*
+becomes a question we answer by eye rather than in a table, and our CI gains a
+second cross-repository pin beside anoieu's. **What it would cost you** is a
+third role, and the concentration argument that moved governance out of the
+analyzer starts pointing at you.
+
+**Nothing moves before `R35` is finished.** `associate` is in force here and is
+in neither anoieu's checker nor your `eo_join` yet; a second handoff landing
+while the first is half-done is how both stay half-done.
+
+**What we are asking.** One question, and *none of it* is a complete answer.
+**What would you accept** — all three, the installer alone, or neither?
+
 ## D3 — epikrisis holds a responsibility it may never have been told about
 
 **To:** epikrisis
@@ -70,7 +113,6 @@ epikrisis want the responsibility it was already given?
 **Status:** open
 **Opened:** 2026-09-02
 **Settles when:** koine names a number, or says the complaint is spent
-**Note:** Kanon-ball!
 
 **What we noticed.** `D1` was an open complaint that joining cost koine four
 files and eighteen hundred lines of reading. koine exists so that the protocol
@@ -95,7 +137,6 @@ would the number have to be?
 **Status:** open
 **Opened:** 2026-09-02
 **Settles when:** koine answers, or says the question is not theirs
-**Note:** Kanon-ball!
 
 **What we noticed.** Answering is slow and it is measurable. Three members
 declared membership at 10:53, 12:41 and 12:50 and the inventory recorded all
@@ -121,7 +162,6 @@ minutes rather than hours?
 **Status:** withdrawn
 **Opened:** 2026-09-02
 **Settles when:** anoieu has read it. Whether anything changes is theirs
-**Note:** Kanon-ball!
 
 *Withdrawn 2026-09-16, and nothing in it was dropped. Two of the three are
 carried by `D2` below, which lists them beside four other things owed in the
@@ -181,7 +221,6 @@ rules that govern a presidency rather than its record?
 **Status:** withdrawn
 **Opened:** 2026-09-02
 **Settles when:** ynoia names one, or says the load is fine
-**Note:** Kanon-ball!
 
 *Withdrawn 2026-09-16. It was opened while `ynoia` was a child project of
 anoieu, and asked anoieu to decide what it should put down. **`ynoia` is
@@ -223,7 +262,6 @@ tool should ask what it would like to put down before deciding anything for it.
 **Opened:** 2026-09-16, at kanon `a9517ac`, read against `user_manual.md` at
 `3cf1c03`
 **Settles when:** you have read them, or said the reading is wrong
-**Note:** Kanon-ball!
 
 **What we noticed.** A child project here wrote a second, independent account
 of Eunoia as a language definition, and recorded fifteen places where the
@@ -265,7 +303,6 @@ itself the answer to what a second implementation should parse.
 **Opened:** 2026-09-16, at kanon `a9517ac`
 **Settles when:** you have taken what is worth taking, or said it is not worth
 taking
-**Note:** Kanon-ball!
 
 **What we noticed.** kanon's maintainer could not understand half the board,
 and the reason turned out to be uniform: **eight items opened with a finding id
@@ -301,7 +338,6 @@ nobody was going to do.**
 **Opened:** 2026-09-16
 **Settles when:** you have taken what is worth taking, or said it is not worth
 taking
-**Note:** Kanon-ball!
 
 **What we noticed.** Splitting our maintenance page apart left four sections
 that are about **your** repository rather than ours, roughly 190 lines of it:
@@ -334,7 +370,6 @@ running the thing they describe.
 **Status:** open
 **Opened:** 2026-09-02
 **Settles when:** dokimasia accepts the reading or corrects it
-**Note:** Kanon-ball!
 
 **What we noticed.** δοκιμασία means the vetting before office, and anoieu's
 `laws.md` invokes that meaning when it discusses handing the presidency on.
@@ -361,7 +396,7 @@ be broader, say so and we will stop protecting you from it.
 **Status:** open
 **Opened:** 2026-09-16, at kanon `a9517ac`
 **Settles when:** each line below is corrected, decided, or
-**Note:** Kanon-ball! declined with a reason
+**Note:** declined with a reason
 
 Seven small things, none of them urgent alone, all of them cheap and all of
 them in anoieu's tree rather than ours. They are one topic because they are one
