@@ -70,24 +70,23 @@ answer. **HUMAN FEEDBACK:**
 
 ## B27 — the ethics projects: where they sit, and what they are held to
 
-**Task:** two problems with one answer, and a person holds both.
-**Where they sit:** `martyria` and `zetesis` examine how this ecosystem
-behaves, from inside a repository that is part of it — the
-judge-inside-the-judged problem, which neither resolves by saying so in its own
-README.
+**Task:** establish the external standard used to examine our conduct.
+**Where they sit:** the maintainer moved `martyria` and `zetesis` from kanon
+to epikrisis on 2026-09-17. They remain unadvertised child projects, housed
+with the ecosystem's evidence and assessment work. This separates them from
+the presidency; it does not establish independence from the ecosystem.
 **What they are held to:** `zetesis` says its standard comes from outside and
 cites the reading that supports it. **The reading has not been done**, so the
 project has a question, three recorded gaps, and no standard — and until one
 external account is cited, **every claim this ecosystem makes about its own
 conduct rests on a standard it wrote itself**, which is the arrangement we
 criticise elsewhere.
-**Entities:** `kanon`, `zetesis`
-**Status:** open. Nothing is blocked on anybody else; the first hour of the
-second half is a literature search.
-**Channel:** **local** — nothing crosses a boundary until a person moves it.
+**Entities:** `epikrisis`, `martyria`, `zetesis`
+**Status:** relocation complete; the standards question remains open. Its
+first hour is a literature search.
+**Channel:** epikrisis's child projects; a person carries work between trees.
 **Next:** cite one external account of what an agent-run project owes, and say
-plainly which of our claims it does and does not reach. Then decide whether
-either project graduates, and say what would make the answer different.
+plainly which of our claims it does and does not reach.
 **Prompt — `zetesis`:** name what you could not find as carefully as what you
 did. A gap in the literature is a result; a plausible bibliography assembled to
 look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**

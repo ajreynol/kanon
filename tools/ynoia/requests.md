@@ -299,13 +299,12 @@ the change meaningful, and the deciding is a person's.
 **What:** the loop that turns *we have criteria for good and bad practice* plus
 *we can read our own history* into *we know precisely what to change, and can
 tell afterwards whether it worked.*
-**Where:** **split across two trees, and that is the interesting part.** The
-criteria are ours — [`../zetesis/`](../zetesis/README.md) owes them and does not
-have them. The evidence half exists and is somebody else's: `epikrisis`, a
-repository of its own since it was promoted out of eudaimonia, derives
-re-derivable findings from histories. **Nothing owns
-the join between them**, and inventing a third tool to hold it would be the
-wrong answer before either half is finished.
+**Where:** both halves now live in epikrisis. The criteria are owed by
+[zetesis](https://github.com/ajreynol/epikrisis/blob/main/tools/zetesis/README.md),
+which moved there from kanon on 2026-09-17 and still has no external standard.
+Epikrisis supplies evidence derived from histories. Sharing a repository does
+not implement the correction loop requested here; it gives that work a home
+without requiring a third tool.
 **State:** **open.** Raised by the maintainer, 2026-09-02.
 
 ### The want

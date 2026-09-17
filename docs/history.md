@@ -84,6 +84,20 @@ governance should leave the analyzer.
 *Re-derive:* `git log --diff-filter=A -- docs/policy.md` in this repository,
 and the same with `--diff-filter=D` in anoieu.
 
+### Ethics projects moved to epikrisis — 2026-09-17
+
+The maintainer copied martyria and zetesis to epikrisis. Before removing the
+source directories, all nine tracked files were compared with the receiving
+checkout and were byte-identical, including the cases and findings. They remain
+distinct, unadvertised child projects; the inventory now names epikrisis as
+their parent. Earlier accounts of their arrival in kanon remain unchanged.
+
+At the maintainer's direction, the working-hours program and schedule stay in
+kanon at `scripts/sleep.py` and `scripts/schedule.json`. The health report uses
+those local files; the ethical arguments and case records live in epikrisis.
+This separates their custody from the presidency, without establishing
+independence from the ecosystem whose conduct they examine.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

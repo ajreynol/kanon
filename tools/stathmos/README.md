@@ -1,12 +1,12 @@
 # stathmos
 
-**Eunoia listing:** unadvertised
+**Eunoia listing:** advertised
 
 **Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
 Earlier observations below retain their original context and dates.
 
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
-human, read-only, unadvertised, and not part of what this repository ships.
+human, read-only, and advertised in ecosystem listings.
 
 ## The name
 
@@ -78,8 +78,8 @@ self-assessment producing no unfavourable findings is void.
   project changed did well and badly* is an instrument another tree already
   built. This one asks it a question rather than rebuilding it.
 - **It does not grade conduct.** Whether this ecosystem behaves well is
-  [`../martyria/`](../martyria/README.md) and
-  [`../zetesis/`](../zetesis/README.md). Utility and ethics are both judged in
+  [martyria](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md) and
+  [zetesis](https://github.com/ajreynol/epikrisis/blob/main/tools/zetesis/README.md). Both now live in epikrisis. Utility and ethics are judged in
   this ecosystem, and they are judged in different places on purpose.
 - **It does not settle anything.** It writes paragraphs; a person may overrule
   any of them, and no tool may put a verdict against a tenet.

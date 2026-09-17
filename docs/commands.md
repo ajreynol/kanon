@@ -16,6 +16,7 @@ checkout. Commands under `prompts/` launch an assistant unless passed
 | `scripts/status_eo --check --online` | Also reads remote membership declarations |
 | `scripts/status_eo --protocol` | Reports on the proposed associate protocol |
 | `scripts/status_eo --health` | Summarizes policy, discussion and working-hours indicators |
+| `python3 scripts/sleep.py` | Reads the local working-hours schedule; returns 0 inside the window, 1 outside it or during a break, and 2 for a refused schedule |
 | `scripts/install_eo --dry-run` | Prints the planned clones |
 | `scripts/install_eo` | Clones missing repositories and records their locations |
 | `scripts/install_eo --status` | Reads the checkouts on this machine |
@@ -27,6 +28,11 @@ succeed, 1 for invalid inventory or observed mismatches, and 2 when verification
 is incomplete. A network failure is unverified, not evidence against a project.
 The ordinary status table is a report, not a CI gate: inspect its policy column
 and notes. Associates and outsiders are not checked against the policy.
+
+The working-hours program reads `scripts/schedule.json`, beside it. Both stay
+in kanon after martyria and zetesis moved to epikrisis; the health report does
+not need an epikrisis checkout to read the schedule. Do not run the clock-based
+reminder as a CI gate.
 
 `bump_check.py` checks a commit hash, never a branch name. Missing, unfinished,
 unavailable, or incomplete check-run results cannot authorize a bump. The query

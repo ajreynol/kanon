@@ -1,6 +1,7 @@
 """Offline regressions for the governance handoff; no real assistants or clones."""
 
 import contextlib
+import datetime
 import importlib.machinery
 import importlib.util
 import io
@@ -18,6 +19,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+import sleep as working_hours
 
 
 def load(name, path):
@@ -305,6 +307,31 @@ class Commands(unittest.TestCase):
 
 
 class Verification(unittest.TestCase):
+    def test_health_uses_local_working_hours_after_ethics_move(self):
+        schedule = json.loads((ROOT / "scripts/schedule.json").read_text())
+        loaded = working_hours.load()
+        self.assertEqual(loaded["source"], "schedule.json")
+        self.assertEqual(loaded["available"], schedule["available"])
+        self.assertEqual(loaded["set_on"], schedule["set_on"])
+        fixed_time = datetime.datetime(2026, 9, 17, 12)
+        with patch.object(working_hours, "now_local", return_value=fixed_time), \
+             patch.object(ecosystem, "locate", side_effect=AssertionError("no checkout needed")):
+            rows = ecosystem.health({})
+            clock = working_hours.state()
+        hours = next((value, verdict) for name, value, verdict in rows if name == "hours")
+        self.assertEqual(hours, (working_hours.summary(clock),
+                                 "ok" if clock["status"] == "awake" else "attention"))
+
+    def test_moved_children_resolve_to_epikrisis(self):
+        repos = installer.plan()
+        with tempfile.TemporaryDirectory() as temp:
+            (Path(temp) / "epikrisis/.git").mkdir(parents=True)
+            locations = {name: path for name, path, live in installer.repos_local_rows(temp, repos)
+                         if live}
+        for name in ("martyria", "zetesis"):
+            with self.subTest(project=name):
+                self.assertEqual(locations[name], str(Path(temp) / "epikrisis"))
+
     def test_distinct_projects_can_have_similar_names(self):
         inv = {
             "eschaton": {"status": "member", "repo": "eschaton",

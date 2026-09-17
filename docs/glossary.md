@@ -213,10 +213,10 @@ CPC checker and its semantics. The L in the name denotes Lean.
 
 ## M
 
-**martyria** (Eunoia child project of kanon; *proper noun; also noun*): 1. The project
+**martyria** (Eunoia child project of epikrisis; *proper noun; also noun*): 1. The project
 taking stances on particular ethical situations from evidence of conduct. 2. A dated,
 contradictable piece of that evidence. From Greek μαρτυρία, “testimony.”
-[Charter](../tools/martyria/README.md).
+[Charter](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md).
 
 **member** (*noun*): A repository that has chosen to adopt eo’s shared policy and
 approach. Membership carries obligations and may be left. See
@@ -326,6 +326,6 @@ Eunoia.” [Charter](../tools/ynoia/README.md).
 
 ## Z
 
-**zetesis** (Eunoia child project of kanon; *proper noun*): The inquiry into ethical standards
+**zetesis** (Eunoia child project of epikrisis; *proper noun*): The inquiry into ethical standards
 drawn from outside the ecosystem and whether its record could demonstrate that they were
-met. From Greek ζήτησις, “inquiry.” [Charter](../tools/zetesis/README.md).
+met. From Greek ζήτησις, “inquiry.” [Charter](https://github.com/ajreynol/epikrisis/blob/main/tools/zetesis/README.md).

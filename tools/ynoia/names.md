@@ -30,7 +30,7 @@ island by grepping the tree for **the bare project name**, so a common word matc
 about the *subject* rather than about the project, and reports an island break
 that is not one. An unusual name reads unambiguously and greps unambiguously,
 and those turn out to be the same property. The case is written up in
-[`../martyria/README.md`](../martyria/README.md), which was named `ethics` for
+[martyria’s charter](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md), which was named `ethics` for
 about an hour.
 
 ## Taken
@@ -48,8 +48,8 @@ about an hour.
 | **euthyna** | εὔθυνα, the audit at end of term: what logos's proof is made of. **Started**, in eudaimonia |
 | **stathmos** | σταθμός, a standard weight — the thing an object is weighed against, not the scale and not the verdict: what each tool weighs against the ecosystem's tenets, and the evidence for it. Holds `R30`, and is intended to move to a repository of its own. **Started**, in kanon |
 | **tekmerion** | τεκμήριον, conclusive evidence as against a mere sign: the evidence that what these documents say is still true, claim by claim. The name is the standard it is held to rather than a description of what it has. **Started**, in anoieu |
-| **martyria** | μαρτυρία, testimony — the evidence a witness gives: the **actionable** ethics project. One situation at a time, the evidence it rests on, and a stance somebody can act on. Also the name of one entry in its register. **Started**, in kanon |
-| **zetesis** | ζήτησις, inquiry — the seeking, as against the having-found: the **general** half. What standard this ecosystem is held to, taken from work done outside, and whether our record could show we met it. It has no standard yet, which is why the name is the one it is. **Started**, in kanon |
+| **martyria** | μαρτυρία, testimony — the evidence a witness gives: the **actionable** ethics project. One situation at a time, the evidence it rests on, and a stance somebody can act on. Also the name of one entry in its register. **Started; now in epikrisis** |
+| **zetesis** | ζήτησις, inquiry — the seeking, as against the having-found: the **general** half. What standard this ecosystem is held to, taken from work done outside, and whether our record could show we met it. It has no standard yet, which is why the name is the one it is. **Started; now in epikrisis** |
 | **kanon** | κανών, the measuring rod — the standard a thing is held straight against: the ecosystem's governance, out of the analyzer — the policy, vision, inventory and joining scripts, in a repository that is not also the tool that files findings against members. The checker stays in anoieu. Argued as `B15` on the board and `P2` in [`proposals.md`](proposals.md). **Its own repository**, joined 2026-09-14; governance arrived 2026-09-15 |
 | **koine** | κοινή, *the common tongue* — the shared dialect that let people who spoke differently understand each other. The shared machinery of the reporting loop, so the protocol has one implementation rather than one per member. **Its own repository**, and a member; audited as [`P1`](proposals.md) |
 | **noesis** | νόησις, *the act of understanding* — the semantics and the compiler defined **in** Lean rather than compiled into it: a verified Eunoia compiler. **Started**, in eudaimonia, and found there rather than declared here — see the note under *Reserved* |
@@ -88,7 +88,7 @@ exists.
 | name | Greek | what it would be |
 | --- | --- | --- |
 | **nomophylax** | νομοφύλαξ, guardian of the laws — the office that held the statutes and checked that magistrates acted within them | **the tool that maintains `docs/laws.md`**, and checks a closed stretch entry against the rules it was supposed to be written under. Not a lawgiver: amendments stay a person's. Suggested 2026-09-02. It completes a family already here by accident — `dokimasia` scrutinises **before** office, `euthyna` audits **after**, this watches **during**. `thesmos` was the alternative |
-| **euboulia** | εὐβουλία, good counsel — the quality of deliberating well, as against the deliberating itself. It shares its prefix with *eunoia* by construction | **the ethical advisor to whoever holds the laws.** The ecosystem's ethics gathered into one place, advising `nomophylax` and deciding nothing. Would accumulate `martyria` and `zetesis`, which moved to kanon on 2026-09-15 and are child projects there. Suggested 2026-09-02. `bouleusis` stays free and stays the better name for anything that decides cases |
+| **euboulia** | εὐβουλία, good counsel — the quality of deliberating well, as against the deliberating itself. It shares its prefix with *eunoia* by construction | **the ethical advisor to whoever holds the laws.** The ecosystem's ethics gathered into one place, advising `nomophylax` and deciding nothing. Would accumulate `martyria` and `zetesis`, which moved through kanon on 2026-09-15 and are now child projects of epikrisis (2026-09-17). Suggested 2026-09-02. `bouleusis` stays free and stays the better name for anything that decides cases |
 | **pathos** | πάθος, the third mode of persuasion | an efficient *verified* proof checker — the one that would let the ecosystem ship what it proves rather than a second implementation |
 | **iogos** | not Greek: `logos` with the **L** of Lean swapped for the **I** of Isabelle. The one joke in the register, and it earns its place by fixing the scope in the name | the same calculus, semantics and soundness development redone against Isabelle/HOL — an Isabelle backend for `ethos-eoc`, and logos rebuilt on it, as an independence check |
 | **elenchos** | ἔλεγχος, cross-examination | differential fuzzing derived from the calculus rather than written by hand — what the fuzzer here is a deliberate baseline for |

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """Is the human supposed to be working right now?
 
+Kept in kanon's scripts when the ethics projects moved to epikrisis. The
+program and schedule stay local; the ethical inquiry lives with those projects.
+
 **The end goal of this file is one sentence spoken to a person: take a break.**
 Everything else here exists to make that sentence land at the right time and to
 leave a trace when the window it rests on is moved.
@@ -59,7 +62,7 @@ import zoneinfo
 #: **Where the zone data comes from.** `zoneinfo` reads the operating system's
 #: IANA database on Linux and macOS. Windows ships none, and the documented
 #: remedy is the `tzdata` package from PyPI. **We do not add it.** A dependency
-#: that exists to serve one optional field of one child project's advisory tool
+#: that exists to serve one optional field of an advisory tool
 #: is a bad trade in a repository that pins and audits what it fetches, so a
 #: missing database degrades to system local time with the reason said out loud
 #: rather than raising.
@@ -105,8 +108,8 @@ SCHEDULE = os.path.join(HERE, "schedule.json")
 #:
 #: **Ten is provisional and is expected to be refined.** It was chosen by the
 #: maintainer rather than derived from anything, which is recorded as an open
-#: shortcoming in the ecosystem's general ethics register rather than left
-#: implied -- this project's README links it. A
+#: shortcoming in zetesis's findings register, now in epikrisis, rather than
+#: left implied. A
 #: schedule that exceeds it is **refused outright** -- not clamped to it, not
 #: warned about and honoured. Clamping would silently answer a question the
 #: human asked, and this file does not have the standing to do that.
@@ -115,7 +118,7 @@ MAX_HOURS = 10
 #: The window used when there is no schedule on disk. It is *at* the ceiling
 #: rather than under it, which is worth noticing rather than smoothing over:
 #: it means the recommended state is also the most work this tool will condone.
-#: Argued, not settled, in the general ethics register this project links to.
+#: Argued, not settled, in zetesis's findings register in epikrisis.
 DEFAULT = {"from": "08:00", "to": "18:00"}
 
 #: Breaks are windows *inside* the working window, declared the same way and
@@ -279,7 +282,7 @@ def main(argv: list[str]) -> int:
     if s["status"] in ("sleep", "break"):
         print()
         # On the off chance somebody reads this far and wonders what a working
-        # day is doing inside a static analyzer: in clinical use, *eunoia* names
+        # day is doing inside a governance repository: in clinical use, *eunoia* names
         # a state of normal mental health. The ecosystem is named after it. So
         # this file is, strictly speaking, the only one here on topic.
         if s["status"] == "break":

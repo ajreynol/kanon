@@ -72,9 +72,10 @@ named.
 anoieu**, because the thing it is about — a person working at four in the
 morning — does not happen in one repository. **It is also the entry that asks
 least of them: its whole content is one sentence said to a person, and a member
-that honours it changes no file.** The mechanism is maintained by
-[martyria](../tools/martyria/README.md), which is where its ethics are argued
-and its schedule lives.
+that honours it changes no file.** Kanon keeps the program and schedule in
+`scripts/`; its ethical arguments live in
+[martyria](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md)
+in epikrisis.
 
 ## `PROTO-20` — the handoff protocol
 
@@ -759,10 +760,10 @@ unlimited one. **Ten hours is provisional** and expected to be refined; what is
 not up for refinement is that the number lives in code the human would have to
 commit to change.
 
-**The agent does not estimate any of this.** It asks `tools/martyria/sleep.py`,
-which reads the schedule and the clock. An agent guessing the hour from context
-is how this becomes a nuisance that fires on the wrong day, and the whole value
-of the thing is that it is boring and correct.
+**The agent does not estimate any of this.** It asks `scripts/sleep.py` in kanon,
+which reads `scripts/schedule.json` and the clock. An agent guessing the hour
+from context is how this becomes a nuisance that fires on the wrong day, and the
+whole value of the thing is that it is boring and correct.
 
 ### What it may not become
 

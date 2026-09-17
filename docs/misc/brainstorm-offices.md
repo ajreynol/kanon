@@ -12,6 +12,10 @@ promised destinations describe that earlier proposal; they are not current
 assignments or requirements. The existing names and reasoning remain available
 if actual work later calls for an office.
 
+**Update, 2026-09-17:** martyria and zetesis now live in epikrisis. Kanon keeps
+the working-hours program and schedule under `scripts/`. The proposed ethics
+office and custody arrangements below remain historical design notes.
+
 The handoff is separate. Its current draft would receive projects directly under
 `tools/<project>/`, without office nesting. It does not establish any of these
 offices. In anoieu's current handoff table, `ai-novelty.md` and

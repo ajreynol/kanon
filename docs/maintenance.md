@@ -153,11 +153,12 @@ say; no tool decides that for you.
 ### Setting it
 
 ```text
-python3 tools/martyria/sleep.py
+python3 scripts/sleep.py
 ```
 
-That prints your window and where you stand in it. The schedule is the small
-file beside it — a start, an end, any breaks, and optionally your timezone.
+That prints your window and where you stand in it. Edit `scripts/schedule.json`
+for the start, end, breaks, and optional timezone. These operational files stay
+in kanon; the ethics projects and their case records now live in epikrisis.
 
 **Two things it cannot do.** It cannot stop you. And it does not know how much
 you have worked — only what time it is.

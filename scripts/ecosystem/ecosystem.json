@@ -326,14 +326,14 @@
   },
   "martyria": {
     "status": "child",
-    "parent": "kanon",
+    "parent": "epikrisis",
     "path": "tools/martyria",
     "short": "Ethical concerns, responses, and evidence of conduct",
     "what": "specific ethical concerns, with a stance attached: what we do about one situation, and what can be shown about how we behaved in it"
   },
   "zetesis": {
     "status": "child",
-    "parent": "kanon",
+    "parent": "epikrisis",
     "path": "tools/zetesis",
     "short": "Examines ethical standards and evidence of meeting them",
     "what": "the general inquiry: what standard this ecosystem is held to, taken from outside, and whether our record could show we met it"

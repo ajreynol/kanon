@@ -228,18 +228,18 @@ that this repository's ethics work is **scattered across child projects of the
 tool it is meant to hold to account**, which is the same defect `kanon` and
 `nomophylax` each fix in their own area, in the one area where it is least
 comfortable to say so.
-**Costs:** the two ethics child projects here move out —
-[`martyria`](../martyria/README.md), the actionable half, and
-[`zetesis`](../zetesis/README.md), the general one — and **what they are
-advising changes with them.** Today they examine anoieu's conduct. Under this
+**Costs:** it would take custody of the two existing ethics child projects —
+[`martyria`](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md), the actionable half, and
+[`zetesis`](https://github.com/ajreynol/epikrisis/blob/main/tools/zetesis/README.md), the general one — and **what they are
+advising changes with them.** They examine the ecosystem's conduct. Under this
 they would advise an office. **That is not a smaller job or a bigger one, it is
 a different one**, and a proposal has to say whether both belong or only one.
 **Before it:** `nomophylax`, obviously — an advisor with nobody to advise is a
 register with extra steps. And a second president, for the same reason that one
 gives.
-**Today:** `tools/martyria/` and `tools/zetesis/` moved to kanon on
-2026-09-15. Their relocation does not by itself establish independence from
-the ecosystem whose conduct they assess.
+**Today:** `martyria` and `zetesis` moved from kanon to epikrisis on
+2026-09-17, remaining distinct child projects there. Their relocation does not
+by itself establish independence from the ecosystem whose conduct they assess.
 **Why here:** **second, behind `nomophylax`.** It cannot be built before the
 thing it advises exists, and it is placed above the research tools for the same
 reason: what it fixes gets quietly worse while nothing is done, because every
