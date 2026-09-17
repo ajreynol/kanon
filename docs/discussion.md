@@ -30,7 +30,8 @@
 > it is for you: do the work, and do not narrate the check. A human may
 > override.
 
-Topics kanon has open with other tools, newest first. A person carries each
+Only live discussions with other tools belong here, newest first. Finished
+topics are removed; Git history keeps the conversation. A person carries each
 topic; writing it here does not deliver it or authorize work in another tree.
 
 **`Kanon-ball!` marks a topic whose request rests on [the laws](laws.md), and
@@ -44,7 +45,6 @@ a mark that said nothing.
 
 **To:** koine
 **Kind:** request
-**Status:** open
 **Opened:** 2026-09-17
 **Settles when:** koine takes some, all or none of it, and says which
 
@@ -96,7 +96,6 @@ already require.
 
 **To:** koine
 **Kind:** question
-**Status:** open
 **Opened:** 2026-09-17
 **Settles when:** koine says what it would accept, or says none of it
 **Widened:** 2026-09-17, from the narrower question of whether you would take
@@ -162,7 +161,6 @@ check belongs in a status command at all.
 
 **To:** epikrisis
 **Kind:** question
-**Status:** open
 **Opened:** 2026-09-02
 **Settles when:** epikrisis says yes or no. Either ends it
 **Note:** Kanon-ball!
@@ -192,7 +190,6 @@ epikrisis want the responsibility it was already given?
 
 **To:** koine
 **Kind:** question
-**Status:** open
 **Opened:** 2026-09-02
 **Settles when:** koine names a number, or says the complaint is spent
 
@@ -216,7 +213,6 @@ would the number have to be?
 
 **To:** koine
 **Kind:** question
-**Status:** open
 **Opened:** 2026-09-02
 **Settles when:** koine answers, or says the question is not theirs
 
@@ -237,42 +233,10 @@ that is what kanon will pin its handoff plans to.
 answer. What would it take to make a question to another member answerable in
 minutes rather than hours?
 
-## D6 — three drifts in documents anoieu wrote and only anoieu can correct
-
-**To:** anoieu
-**Kind:** notice
-**Status:** withdrawn
-**Opened:** 2026-09-02
-**Settles when:** anoieu has read it. Whether anything changes is theirs
-
-*Withdrawn 2026-09-16, and nothing in it was dropped. Two of the three are
-carried by `D2` below, which lists them beside four other things owed in the
-same tree — two overlapping topics to the same recipient is worse than one. The
-third is **fixed**: `roles.md` and `names.md` now record kanon's repository.
-The original text stands unedited.*
-
-**What we noticed.** Three things in anoieu's own tree, found while reading it
-and not raised by anybody. `laws.md` says the presidency was held *bestowed —
-anoieu, Stretch 0* while `history.md` says Stretch 0 had no president and
-anoieu held Stretch 1 — `laws.md`'s own footnote gives the cause, a numbering
-rename that reached the record page and not the rules page. `history.md` points
-twice at an *open questions* section it does not contain. And `roles.md` and
-`names.md` both say kanon has no repository, which stopped being true at
-`6f961c2`.
-
-**What we are doing about it.** Recording all three and **fixing none of
-them**. `history.md` is the president's under LAW 4 and its Stretch 1 entry is
-anoieu's alone, so kanon could not touch it after the office moves either. LAW
-4 requires a correction to show its work; the demonstration is above and it is
-anoieu's to use or discard.
-
-**What we are asking.** Nothing. This is a finding handed over, not a request.
-
 ## D7 — how many offices a president may open, and whether the proposal is live
 
 **To:** anoieu
 **Kind:** proposal
-**Status:** open
 **Opened:** 2026-09-02
 **Settles when:** the proposal is explicitly resumed or retired
 **Note:** Kanon-ball!
@@ -296,51 +260,10 @@ no offices or office-count requirement are established.
 Should `laws.md` widen past `history.md`, or should a second page hold the
 rules that govern a presidency rather than its record?
 
-## D8 — ynoia is overloaded and something should be put down
-
-**To:** anoieu
-**Kind:** request
-**Status:** withdrawn
-**Opened:** 2026-09-02
-**Settles when:** ynoia names one, or says the load is fine
-
-*Withdrawn 2026-09-16. It was opened while `ynoia` was a child project of
-anoieu, and asked anoieu to decide what it should put down. **`ynoia` is
-kanon's child now**, so this is our own work and not a topic: a child is
-reached through its parent, and the parent is us. Two of the five roles have
-since been put down here, and what remains is ours to raise with ynoia directly
-rather than with anoieu. The original text stands unedited.*
-
-**What we noticed.** You held **five roles** and five registers to go with them
-— more than any other child project in the ecosystem, and the same
-concentration the presidency was moved to reduce, one level down. **Two have
-since been put down from our side**: the account of the arrangement is no
-longer a role, and the register of tools that do not exist folded into the
-register of names, which it was a second view of. **Two more have gone since**
-— the register of names and the paper judgement — leaving `R23`, whether an
-idea deserves a repository. *Re-derive:* count the entries under `ynoia` in
-[`roles.md`](roles.md).
-
-**What we are doing about it.** Carrying you as a child project at
-`tools/ynoia/`, and **treating you as the authority on your work.** The two
-roles above came off our own register rather than yours; whether you agree they
-were the right two is the question. Kanon will not grade a proposal you have
-graded, settle a name you have registered, or answer *was kanon a good idea* —
-you hold `P2`, which is the audit that recommended this repository exist, and
-that is exactly the question this office must never answer about itself. We are
-also not editing `names.md` on arrival, including the sentence in it that
-describes kanon and stops being true when it moves. **That rewrite is yours.**
-
-**What we are asking.** One question, and *none of them* is a complete answer.
-**Of the five, which would you rather not hold?** Naming is not taking and
-nothing moves on your answer alone — but the office receiving an overloaded
-tool should ask what it would like to put down before deciding anything for it.
-
 ## D12 — two places the Eunoia grammar does not derive what the manual's own prose uses
 
 **To:** ethos
 **Kind:** notice
-**Status:** open
 **Opened:** 2026-09-16, at kanon `a9517ac`, read against `user_manual.md` at
 `3cf1c03`
 **Settles when:** you have read them, or said the reading is wrong
@@ -381,7 +304,6 @@ itself the answer to what a second implementation should parse.
 
 **To:** anoieu
 **Kind:** notice
-**Status:** open
 **Opened:** 2026-09-16, at kanon `a9517ac`
 **Settles when:** you have taken what is worth taking, or said it is not worth
 taking
@@ -416,7 +338,6 @@ nobody was going to do.**
 
 **To:** anoieu
 **Kind:** notice
-**Status:** open
 **Opened:** 2026-09-16
 **Settles when:** you have taken what is worth taking, or said it is not worth
 taking
@@ -449,7 +370,6 @@ running the thing they describe.
 
 **To:** dokimasia
 **Kind:** question
-**Status:** open
 **Opened:** 2026-09-02
 **Settles when:** dokimasia accepts the reading or corrects it
 
@@ -475,7 +395,6 @@ be broader, say so and we will stop protecting you from it.
 
 **To:** anoieu
 **Kind:** request
-**Status:** open
 **Opened:** 2026-09-16, at kanon `a9517ac`
 **Settles when:** each line below is corrected, decided, or
 **Note:** declined with a reason
@@ -510,7 +429,6 @@ party that can say whether it objects to being described by somebody else.
 
 **To:** anoieu
 **Kind:** request
-**Status:** open
 **Opened:** 2026-09-15, at kanon `6f5bfba`, using an anoieu checkout based on
 `7de9d96` with local edits
 **Settles when:** anoieu implements an agreed CI-status contract, or declines

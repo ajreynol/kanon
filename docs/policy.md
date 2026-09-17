@@ -429,6 +429,13 @@ somebody who is not listening. **Where there is no discussion file there is no
 wire**, and anything said to that repository is carried by a person;
 [`board.md`](board.md) has a row for it.
 
+**Only live discussions belong in this file.** Presence means a discussion is
+open; there is no status field. When it ends, remove the whole topic, including
+its replies. Before removing it, record any lasting decision in the document
+it governs and carry any continuing work and necessary context to where that
+work belongs. Git history preserves the conversation; keep no archive or
+placeholder in the discussion file.
+
 **This is not the bug-report channel.** A finding has its own template, ids,
 states and prompts: **anoieu keeps the reporting workflow and the reporting
 policy** that govern how one is carried and what may be said in it, and where
@@ -478,7 +485,7 @@ asked for, and a safety rule that degrades to a warning is eventually ignored.
 
 ### The format
 
-One `##` section per topic, newest first, opening with a five-line field block
+One `##` section per topic, newest first, opening with a four-field block
 and nothing between the heading and the fields.
 
 ```
@@ -486,7 +493,6 @@ and nothing between the heading and the fields.
 
 **To:** <tool>, <tool>
 **Kind:** request | proposal | question | notice | answer
-**Status:** open | answered | declined | withdrawn | settled
 **Opened:** <date>[, at <project> `<commit>`]
 **Settles when:** <what would end this>
 
@@ -500,10 +506,9 @@ and nothing between the heading and the fields.
 **To** names each tool unequivocally — the name the project uses for itself,
 never "the compiler" or "upstream" — because a topic addressed to nobody in
 particular is addressed to nobody. **Opened** carries the commits the topic was
-formed against where it depends on them. **Settles when** is required while a
-topic is open, because a question with no answerable form is a complaint.
-**Replies are appended**, attributed and dated, and nothing above them is
-rewritten.
+formed against where it depends on them. **Settles when** is required for every
+topic, because a question with no answerable form is a complaint.
+**Replies are appended**, attributed and dated, while the discussion is live.
 
 **Kind** is one of five, and a topic that fits none of them is probably a
 finding:
@@ -517,9 +522,11 @@ finding:
 | `answer` | a reply to one of the above, raised as its own topic because it needs room |
 
 **Ids** are `D<n>`, allocated once and never reused; another repository's topic
-is cited as `<repo>-D<n>`. **Append; do not rewrite** — a topic's body is what
-was said at the time, amended only to correct something false, visibly. **The
-shape of a topic is a minor finding**, reported and never fatal.
+is cited as `<repo>-D<n>`. Allocate above the highest id ever used, including
+removed topics in Git history. **While a discussion is live, append; do not
+rewrite** — a topic's body is what was said at the time, amended only to
+correct something false, visibly. Removing a finished discussion is the rule
+above. **The shape of a topic is a minor finding**, reported and never fatal.
 
 **A request dressed as a proposal is the characteristic failure of this file.**
 It asks somebody to spend their afternoon for our benefit while implying the
@@ -530,11 +537,11 @@ request: claiming less standing costs us nothing.
 ### Pins and global announcements
 
 **A topic may be pinned, and at most one is.** Newest-first buries a notice
-that every member acts on at its own pace, so a pinned topic carries a sixth
+that every member acts on at its own pace, so a pinned topic carries a fifth
 field, `**Pinned:**`, naming what un-pins it. One at a time, because a file
 with three pinned topics has none; the field names what ends it, so un-pinning
 is a fact rather than a fresh decision; and un-pinning is deleting the field
-and restoring date order, not closing the topic.
+and restoring date order. The topic stays while the discussion is live.
 
 **A global announcement is a topic addressed to every member at once.** It
 carries `**Global:**` after `Settles when`, saying in one line what a member
