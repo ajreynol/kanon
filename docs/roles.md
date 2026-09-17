@@ -31,8 +31,10 @@ the tool whose whole mission is checking things.
 **What it buys is the part worth the split.** Members' workflows do not change.
 **Moving the rules costs a member nothing; moving the checker would cost every
 one of them a commit.** What it costs is that the checker and the policy live
-apart — `ANOIEU_REV` pins only the checker, and how the two stay in version
-step is [undecided](policy.md#2-run-the-check).
+apart: a pin names an implementation and anoieu's contract number fixes the
+mechanical requirements, and neither of them says which revision of the policy
+*text* a tree was read against — so how the two stay in version step is still
+[undecided](policy.md#2-run-the-check).
 
 ### R2 — the static analyzer
 
@@ -246,6 +248,12 @@ to do.
 **Owns:** `eo_cmd/eo_init` and `eo_cmd/eo_join`, and `scripts/install_eo_cmd`,
 which puts them on a person's path.
 
+**The rest of `eo_cmd/` is [`R16`](#r16--the-shared-low-level-tooling), and the
+line is where the command runs.** Only these two run inside a repository that is
+being started or joined, which is the whole reason this role is separate from
+`R4`. koine's own manifest files every installed command under `R35`; the split
+here is the register's and settles nothing else.
+
 **Why this is separate from `R4`.** These two are the only commands in this
 ecosystem that run **inside the repository being started or joined**, rather
 than from the repository that keeps the rule. A command meant for a tree that is
@@ -266,8 +274,12 @@ is a change to be argued there.
 separately — **one implementation of the shared parts rather than one per
 repository.** The bug database and the history-review tool are two of them and
 are not the boundary of the role.
-**Owns:** the shared implementations, and the interfaces other tools build
-against.
+**Owns:** the shared implementations and the interfaces other tools build
+against, including the commands `install_eo_cmd` puts on a person's path that
+are not `R35`'s: `eo_bump`, which moves a pin only onto a commit whose CI was
+green, `eo_status`, which reads the register in the tree that holds it,
+`eo_respond`, which answers one topic another tool addressed to you, and
+`eo_housekeeping`, which reports what a repository has outstanding.
 
 ## logos
 

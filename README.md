@@ -73,8 +73,9 @@ authority; this is only the route in.
 | where you are | what to run, **in your own repository** |
 | --- | --- |
 | the repository does not exist yet | `eo_init new` — writes a README saying what the tool is for, what it declines to answer, and why it is called what it is. **It complies with nothing, deliberately**: knowing what you are building is what makes the rest decidable, and joining comes later |
-| it exists, and you want to join | `eo_join` — adds the declaration to your maintenance note and the pinned `anoieu / policy` workflow |
+| it exists, and you want to join | `eo_join` — adds the declaration to your maintenance note and the `anoieu / policy` workflow, in either of the two forms [`policy.md`](docs/policy.md#2-run-the-check) accepts |
 | it exists, and should *not* join | `eo_join --soft` — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
+| it exists, and is held to the policy without saying so out front | `eo_join --associate` — the footing marker on your own maintenance page, saying what you hold yourself to. No front-page declaration, and you answer to that marker rather than to us |
 
 **These commands live in [koine](https://github.com/ajreynol/koine)**, and
 koine's `install_eo_cmd` puts them on your path. **What joining costs is this

@@ -116,7 +116,7 @@ guard against it.
 | footing | what it means | whose act it is |
 | --- | --- | --- |
 | **member** | holds the shared policy, runs the checker in its own CI, pins a commit of ours | **theirs.** They declared it |
-| **associate** | names the ecosystem and states it is **not** held to the policy | **theirs** |
+| **associate** | records on its own maintenance page what it holds itself to, and puts no declaration on its front page | **theirs** |
 | **president** | a member that also holds the office, for a stretch | **a person's.** Bestowed, and theirs to take back |
 | **candidate** | we would like it to join and it has not | **ours.** Wanting somebody to join is not their joining |
 | **foundation** | the ecosystem exists to serve it and it has joined nothing | **ours**, and nothing is asked of it |
@@ -133,9 +133,11 @@ becomes a formality somebody deletes.
 
 - **member** — a repository that runs our checker has our defects in its build.
   That relationship needs a name and a way out of it.
-- **associate** — requiring a repository to be bound in order to be
-  acknowledged is coercive. There has to be a way to say *this exists and we
-  are not claiming it*.
+- **associate** — requiring a repository to advertise an arrangement in order
+  to keep it is coercive, and there are honest reasons not to advertise one: a
+  tree that is not published, one person's working copy, a declaration that
+  would oversell what is in it. So the claim moves to their maintenance page
+  rather than disappearing, and it is theirs to make and theirs to withdraw.
 - **president** — direction has to sit somewhere. **The footing expires with
   the stretch**, which is what stops it accumulating.
 - **candidate** — conflating wanting and having lets a register lie.

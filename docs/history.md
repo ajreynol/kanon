@@ -190,7 +190,7 @@ today**. `scripts/repos.local` is written by hand instead, one `ID PATH` pair
 per line, and registering a checkout never changed anybody's membership.
 
 `prompts/` went with it and the directory is gone. `process_discussion` because
-koine shipped `eo_process_discussion` and it works from this tree;
+koine shipped the replacement, `eo_respond`, and it works from this tree;
 `check_join_eo` and `global_audit` because both were assistant wrappers over
 commands this repository already runs without one. `scripts/anoieu_dependency.py`
 was folded into `scripts/policy_check.py` — locating the checker and running it
@@ -228,6 +228,45 @@ register carries the inventory. LAW 8 now covers three pages rather than four.
 ceiling. That is the page with a length problem, and nothing here touched it.
 
 *Re-derive:* `wc -w docs/policy.md docs/vision.md docs/roles.md`.
+
+### The checker contract, and the pin — 2026-09-17
+
+anoieu published a versioned policy-checker contract and a shared CI workflow.
+[`policy.md`](policy.md#2-run-the-check) now accepts either form for
+membership — a pinned commit, or the shared workflow at a named contract — and
+attributes what is not promised about the checker to anoieu instead of
+promising it here; the claim that there is *no versioning scheme* was true
+until that day and is gone. `eo_bump` found anoieu's `policy` job green at
+`154228a` and moved the lock onto it. **This repository stays on the pinned
+form**, which is a decision and is `B32`. anoieu and eschaton asked from both
+ends and are answered in `D15`. *Re-derive:* `eo_bump --show`.
+
+### Two commands were reporting the wrong thing — 2026-09-17
+
+Both were found while answering anoieu's `D28`, which listed four sentences in
+this tree still defining `associate` as the footing it stopped being. The
+sentences are corrected and the newer reading stands: the footing is recorded
+by the repository itself, on its own maintenance page.
+
+- **`--check --online` graded an associate by the wrong page.** It read the
+  README for the *affiliating* note — the paragraph saying a repository is
+  **not** held to this policy — so `iogos` was reported as a mismatch while its
+  `docs/maintenance.md` carried the marker the register records. It reads
+  `associate_in` over that page now, as our record going stale rather than
+  their shortfall, and `--protocol` reports the marker.
+- **The `channel` column under-counted what we are owed.** It counted the
+  string `**To:** kanon`, so a notice addressed to several tools at once was
+  counted for whichever was named first and a name merely beginning with ours
+  counted as ours. Four topics are addressed to us; the table said three.
+
+*Re-derive:* `scripts/eo_status_audit --check --online` and `--protocol`.
+
+### The governance budget got its second row — 2026-09-17
+
+Written prose fell 801 lines since the 2026-09-01 baseline while **neither the
+check count nor the finding count moved** — the rule kept by deleting pages
+rather than by earning them. The table, and the part of it that is not to our
+credit, are in [`maintenance.md`](maintenance.md#the-governance-budget).
 
 ## Membership changes during this term
 
@@ -662,9 +701,11 @@ start disagreeing about it.** The required-reading budget is likewise [LAW
   is now kept.
 - **The schedule.** `sleep.py` and `schedule.json` stayed here when the ethics
   projects went to epikrisis, at the maintainer's direction, so they no longer
-  travel with `martyria`. `D13` proposes them to koine as `eo_sleep` and is
-  unanswered: `PROTO-18` binds every member and only this repository has the
-  program.
+  travel with `martyria`. koine has said it would host them as `eo_sleep`, and
+  `D18` asks the maintainer whether that direction also decides this: an agent
+  reading it narrowly enough to hand the program away is the reading that
+  should not be made here. `PROTO-18` binds every member and only this
+  repository has the program, which is the whole of the argument for moving it.
 
 ## What the next term should be for
 

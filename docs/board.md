@@ -42,6 +42,34 @@ until kanon carries one.**
 `kanon`:** proposing a style you have not adopted is the error this office
 exists to avoid. **HUMAN FEEDBACK:**
 
+## B31 — the office's tooling is still here, and koine has agreed to host it
+
+**Task:** **`eo_sleep` first, then the register readers.** `PROTO-18` binds
+every member and only this tree has the program, so every other member
+honouring it has nothing to run. koine accepted the register readers, `eo_sleep`
+and `eo_respond` in its `D11`; `eo_respond` has landed and the other two have
+not. **The register itself does not move** — a footing is a decision somebody
+made, and koine has said it does not want it.
+**Entities:** `kanon`, `koine`
+**Status:** **waiting on the maintainer**, and on one question only: does the
+2026-09-17 direction that the working-hours program stays in kanon — given
+about the epikrisis move — also mean it does not go to koine? koine has said
+yes to hosting it; nobody here may answer that on their behalf.
+**Channel:** **discussion** — [`D18`](discussion.md) answers koine's `D11`, says
+the question is reopened, recommends handing it over, and tells koine not to
+start building until the direction comes back.
+**Next:** get that one answer. Then hand over `scripts/sleep.py` and
+`scripts/schedule.json`, or close the question and say so in `D18`.
+**Prompt — `koine`:** the program would be yours and the protocol stays ours,
+which is the split `eo_join` already runs. Two asks and neither is a condition:
+a schedule is one person's working hours and belongs in their own config rather
+than in any repository, and the ten-hour ceiling stays in code somebody has to
+commit to change.
+**Prompt — `kanon`:** `PROTO-18` and `INST-1` describe a program in this tree
+and go on describing it until one exists elsewhere — the present-tense rule, not
+an oversight. Nothing here is deleted before a replacement runs.
+**HUMAN FEEDBACK:**
+
 ## B18 — the associate protocol remains open for ethos
 
 **Task:** `associate` is defined and proposed for ethos, but what a repository
@@ -91,6 +119,27 @@ plainly which of our claims it does and does not reach.
 did. A gap in the literature is a result; a plausible bibliography assembled to
 look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
 
+## B32 — we permit two forms of the policy check and run only one
+
+**Task:** anoieu publishes a versioned policy contract and a shared workflow;
+[`policy.md`](policy.md#2-run-the-check) now says either that or a pinned
+commit satisfies membership. **This repository is on the pin.**
+**Entities:** `kanon`, `anoieu`
+**Status:** open — the pin moved to `154228a` on 2026-09-17, verified green by
+`eo_bump` before the lock was written, so nothing is failing either way.
+**Channel:** **internal** — nobody is waiting on the answer.
+**Next:** decide whether `.github/workflows/anoieu.yml` calls anoieu's shared
+workflow at `main` naming contract 1, or keeps the pin, and say which in the
+maintenance note.
+**Prompt — `kanon`:** the case for moving is that the office should run what it
+permits and that `eo_bump`, `anoieu.lock` and `eo_bump.json` all stop being
+needed for this check. The case against is [`vision.md`](vision.md)'s second
+tenet — *restore recorded versions rather than branch tips* — and that a form
+which cannot be exercised offline is one we would find out about from a red
+build. **Neither is obviously right, which is why it is a decision and not a
+tidy-up.**
+**HUMAN FEEDBACK:**
+
 ## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
 
 **Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed
@@ -125,7 +174,7 @@ that is the main way a person changes what this page says.
 
 **The id is stable.** `B6` stays `B6` when it moves, so ids appear out of order
 and that is correct rather than a mistake to tidy. A row that leaves is not
-reused. **The next unused id is `B31`**, including after completed items are
+reused. **The next unused id is `B33`**, including after completed items are
 removed; their earlier contents remain in git history.
 
 **Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
@@ -173,7 +222,7 @@ is not a formality:
 
 | channel | what it means | who acts |
 | --- | --- | --- |
-| **discussion** | a topic in [`discussion.md`](discussion.md) addressed to them, or a reply into a topic of theirs — the standing channel for anything that is **not** a defect report | a person carries it; koine's installed `eo_process_discussion` reads theirs, and nothing here writes into anybody else's file |
+| **discussion** | a topic in [`discussion.md`](discussion.md) addressed to them, or a reply into a topic of theirs — the standing channel for anything that is **not** a defect report | a person carries it; koine's installed `eo_respond` reads theirs, and nothing here writes into anybody else's file |
 | **findings** | a row in the ledger, carried by `prompts/check_anoieu <id>` and answered through `prompts/process_anoieu` | the same person, through the reporting workflow, which is a separate protocol on purpose |
 | **upstream, by a person** | a message, an issue or a pull request in a tree that has no discussion file | a person, entirely — no script here has a way to do it, and none should |
 

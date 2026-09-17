@@ -184,7 +184,9 @@ change over time, using evidence another reader can re-derive.
 <a id="eschaton"></a>
 **eschaton** (Eunoia member; *proper noun*): The
 [research project](#child-project) comparing approaches to better-founded SMT
-solvers and the costs of trying them.
+solvers and the costs of trying them. From Greek ἔσχατον, “the last thing” —
+which its own README reads as the finished proof, the end the design question
+is asked backwards from.
 [Repository](https://github.com/ajreynol/eschaton).
 
 <a id="ethos"></a>

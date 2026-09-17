@@ -386,10 +386,13 @@ per line.
 **There are no prompts in this tree**, and installing the ecosystem is not done
 from here. The commands that hand context to an assistant are koine's and are
 installed: `eo_init` and `eo_join`, which draft changes in the repository being
-started or joined, are `R35`; `eo_process_discussion` reads another tree's
-discussion file; `eo_bump` moves the pin. Each takes `--show-prompt`, which
-prints its assembled instructions without launching an assistant and writes no
-files.
+started or joined, are `R35`; `eo_respond`, which answers one topic another tree
+has addressed to us and refuses a run that names none; and `eo_housekeeping`,
+which reads what is outstanding across the checkouts. Each takes
+`--show-prompt`, which prints its assembled instructions without launching an
+assistant and writes no files. `eo_bump`, which moves the pin, and `eo_status`,
+which reads the register, are programs: they do the work themselves and hand
+nothing to an assistant.
 
 ## The build
 
@@ -399,12 +402,15 @@ checker discovery and errors, and child listings. It launches
 no assistant, clones no repository, and makes no network requests.
 
 The separate `anoieu / policy` job fetches the checker at the commit pinned in
-[`anoieu.lock`](../anoieu.lock) and runs it against kanon. Other members also pin
-**anoieu**, which owns the checker implementation; kanon's `scripts/policy_check.py`
-is a local launcher, not that shared implementation. A local launch uses the
-available anoieu checkout and does not establish that CI ran at the pinned
-revision. `eo_bump --check` asks whether the upstream tip is green;
-it is an explicit online command, not part of CI.
+[`anoieu.lock`](../anoieu.lock) and runs it against kanon. **Two forms of that
+job satisfy the policy** — this pin, or anoieu's shared workflow at a named
+contract — and a member may be on either, so read a member's own workflow file
+rather than assuming a pin. **anoieu** owns the checker implementation; kanon's
+`scripts/policy_check.py` is a local launcher, not that shared implementation.
+A local launch uses the available anoieu checkout and does not establish that
+CI ran at the pinned revision. `eo_bump --check` asks whether the upstream tip
+is green; it is an explicit online command, not part of CI, and a repository on
+the contract form has no pin for it to move.
 
 A passing build establishes only what those checks actually exercise. It does
 not verify definitions, tool quality, consent, or another repository's handoff.
@@ -425,19 +431,31 @@ practice appears to be doing, which reads six checkouts and writes down what is
 wrong with them beside what is not. It is a child project in eudaimonia's tree,
 at `tools/workflow-launcher`, and `docs/ai-workflows.md` is the document.
 
-So: the baseline, measured over this tree on 2026-09-01. Reproducible in three
-commands, and worth nothing until there is a second row.
+So: the rows, measured over this tree, each as *files, lines*. Reproducible in
+three commands, and the second row is what the first was worth waiting for.
 
-| what | files | lines |
+| what | 2026-09-01 | 2026-09-17 |
 | --- | --- | --- |
-| tracked Markdown outside `deps/` | 32 | 15,142 |
-| — generated, written by a tool | 4 | 1,142 |
-| — child projects, shipped by nothing and advertised nowhere | 10 | 4,550 |
-| — **written prose: the number this section is about** | 18 | **9,450** |
-| Python | 54 | 13,382 |
-| `scripts/` | 9 | 2,481 |
-| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | | 63 |
-| findings in the ledger | | 39 open, 43 closed |
+| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 |
+| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written |
+| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 |
+| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** |
+| Python | 54, 13,382 | 8, 2,069 |
+| `scripts/` | 9, 2,481 | 8, 2,025 |
+| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | 63 | 63 |
+| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed |
+
+**What the second row says, including the part that is not to our credit.**
+Written prose fell by 801 lines while **neither the check count nor the finding
+count moved** — both read from anoieu's tree on 2026-09-17 and both are
+anoieu's to change, not ours. So the rule was kept in the only direction
+available to a repository that writes documents: by deleting pages, not by
+earning them. The Python column fell by 11,313 lines for two reasons that are
+not the same, and only one is a saving: commands went to koine or were deleted
+outright, and `martyria` and `zetesis` moved to epikrisis, which moves lines off
+this table without removing them from the ecosystem. **Child-project prose grew
+by 2,558 lines**, which is the row to watch next: it is the part of this tree
+that nothing advertises and nobody is asked to read.
 
 ```
 git ls-files '*.md' | grep -v '^deps/' | xargs wc -l | tail -1
@@ -459,9 +477,9 @@ having: it reports its own metric going the wrong way, three rounds running,
 rather than being quietly retired. A counter that only ever confirms is not a
 counter.
 
-And this section is itself the thing it measures. It costs about fifty lines of
-written prose and displaces nothing today, which is the honest accounting; what
-has to pay for it is the second row.
+And this section is itself the thing it measures. It costs about sixty lines of
+written prose, and with a second row it has at last reported something a reader
+can check — which is the first time it has paid for any of itself.
 
 ## Keeping names and ynoia's arguments current
 

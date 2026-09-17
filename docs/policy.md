@@ -224,7 +224,7 @@ published about somebody else's code. Checked.
 | --- | --- |
 | a **member** | part of the ecosystem. Its own maintainer runs it; the owner is accountable for the arrangement it belongs to |
 | a **child project** | through its parent, on its parent's footing |
-| an **associate** | **nothing.** We have read it and say it is load-bearing for us — a statement about *our* arrangement |
+| an **associate** | **nothing of ours.** What it holds itself to is on its own maintenance page, and that claim is theirs |
 | a **candidate** | nothing |
 | a **foundation** | nothing, emphatically. The arrangement is downstream of it |
 | **Eunoia**, and **CPC** | not ours and never were. They are cvc5's |
@@ -534,11 +534,11 @@ either; if a person wants to nudge, a person nudges, in their own voice.
 
 ### Working it
 
-`eo_process_discussion` reads another repository's discussion file and works
-what is addressed to the repository it is run in. **Naming a
-topic is what authorises acting on it**, so with no id the run is read-only.
-Where it acts, the work happens *here* and the reply is drafted here for a
-person to carry; their tree is never written to.
+`eo_respond` reads another repository's discussion file and works the one topic
+in it that is addressed to the repository the command is run in. **Naming a
+topic is what authorises acting on it**, so a run that names none is refused
+before it reaches an assistant. The work happens *here* and the reply is
+drafted here for a person to carry; their tree is read and never written to.
 
 ## Child projects
 
@@ -750,19 +750,19 @@ footing refuses.
 all of this with reason not to say so out front — it is not published, it is
 one person's working tree, a declaration would oversell what is in it — takes
 this footing and writes the marker. It answers to that marker; it does not
-answer to us. `eo_join --unadvertised` writes it. A child on a parent whose
+answer to us. `eo_join --associate` writes it. A child on a parent whose
 front page does not name it records `unadvertised-child` the same way.
 
 **These are not a ladder, and reading them as one is the mistake this table
-exists to prevent.** A member trades compliance for nothing; an associate
-trades nothing for a claim we make. Neither is above the other.
+exists to prevent.** A member trades compliance for a claim we make; an
+associate trades nothing and makes its own. Neither is above the other.
 
-**Two of them are claims about somebody else, published under our name.**
-`associate` and `foundation` describe what we *think* about a project that did
-not ask, so **an endorsing footing is phrased as a fact about our arrangement,
-never as a status conferred on theirs.** *The ecosystem is downstream of cvc5*
-is ours to say; *cvc5 is a member of the Eunoia ecosystem* is a claim on their
-name they never made.
+**One of them is a claim about somebody else, published under our name.**
+`foundation` describes what we *think* about a project that did not ask, so
+**an endorsing footing is phrased as a fact about our arrangement, never as a
+status conferred on theirs.** *The ecosystem is downstream of cvc5* is ours to
+say; *cvc5 is a member of the Eunoia ecosystem* is a claim on their name they
+never made.
 
 **`member` carries a judgement, and only the mechanical half is ever checked.**
 Declaring and passing is decidable from a tree; sharing the approach is a
@@ -872,34 +872,52 @@ Tracking the tip is a reasonable choice for a repository that wants to hear
 about changes immediately; it should be a decision rather than what happens if
 you paste the short version.
 
-**And only move the pin to a commit where our CI is green — a requirement, not
-a suggestion.** Work we could not get past our own build is not work to take
-on. Ask it **about that commit and never about our tip**, so the answer never
-changes after you have taken it; **fail closed**, which is affordable because
-bumping is optional; and **do not run it in your CI**, since it reads a remote.
-**`eo_bump` is that check**, maintained by koine so that every member does not
-write it separately — the requirement is the refusal, not the program, and
-nothing obliges you to use that one.
+**Or hold a contract still instead of a commit.** anoieu publishes a shared
+workflow that a repository calls, naming the **policy contract** it is checked
+against rather than a checker revision; [its contract
+page](https://github.com/ajreynol/anoieu/blob/main/docs/policy-checker.md)
+is the authority on what a contract fixes and carries the file to copy, which
+belongs there rather than here for the reason above.
+
+**Both forms satisfy this rule**, and what differs is what may move under you.
+A pin moves when you move it. A contract fixes the *obligations* and lets the
+implementation change, so a build can go red with nothing committed — and
+within a contract that means a violation already in the tree has started being
+reported, not a new requirement arriving. **Whichever you take, take it as a
+decision**, and say which in your maintenance note so a reader of a red build
+knows what could have moved.
+
+**And only move a pin to a commit where anoieu's CI is green — a requirement,
+not a suggestion.** Work anoieu could not get past its own build is not work to
+take on. Ask **about that commit and never about anoieu's tip**, so the answer
+never changes after you have taken it; **fail closed**, which is affordable
+because bumping is optional; and **do not run it in your CI**, since it reads a
+remote. **`eo_bump` is that check**, maintained by koine so that every member
+does not write it separately — the requirement is the refusal, not the program,
+and nothing obliges you to use that one. A repository on the contract form pins
+nothing for this check and has nothing here to bump.
 
 **The checker and this page live in different repositories**, so the pin names
 the checker and not the policy text. **How the two stay in version step is
 undecided**; until it is settled, cite the policy by its own commit as well.
 
-### What we do not promise
+### What is not promised
 
-- **No release schedule and no versioning scheme.** A commit is the only
-  identifier we can promise is stable, which is why the pin is a commit.
-- **Checks will be added, and some will fail repositories that pass today.**
-  You adopt a change when you move the pin, not when we push.
-- **No compatibility guarantee for the command line or the output format.**
-- **We intend to announce material changes** in
-  [`discussion.md`](discussion.md) before they land. That is an intention and
-  nothing enforces it. Pin instead, because the pin works whether or not
-  anybody remembers.
-- **We do not maintain your bumping.** A script this repository maintained on
-  everybody's behalf would be a maintenance contract, and the office is in no
-  position to sign one — which is why `eo_bump` is koine's, under the role that
-  exists to hold exactly that kind of contract.
+**These are anoieu's to make and to change**, and its contract page states
+them. Three matter to a repository deciding how to run the check:
+
+- **No numbered releases.** What is versioned is the **contract**, which fixes
+  the obligations while the implementation stays free to change; a commit
+  identifies an implementation instead.
+- **Checks will be added, and some will fail repositories that pass today.** A
+  pinned tree adopts one by moving its pin, and a tree on the contract form by
+  naming a later contract — an added obligation is a new contract and never a
+  fix.
+- **Nobody maintains your bumping for you.** A script this repository kept on
+  everybody's behalf would be a maintenance contract and the office is in no
+  position to sign one, which is why `eo_bump` is koine's. **An announcement is
+  an intention and nothing enforces it**; a pin or a named contract works
+  whether or not anybody remembers.
 
 ### What passing does and does not mean
 
@@ -957,11 +975,15 @@ this repository, that assessment is that tool's own work and not ours.
 **Naming an ecosystem and joining it are different claims, and only the first
 is made here.** The refusal is stated rather than implied: a note that named us
 and said nothing else would be read as a declaration by everybody who has seen
-one. This is the note an **associate** would carry under the stronger of the
-two readings still on the table. **A repository that later joins rewrites the
-section rather than adding to it**, since the independence paragraph and the
-membership declaration are contradictory claims and a note carrying both says
-nothing.
+one. **This is not an associate's note**, and the two read almost oppositely:
+an associate is held to this policy by its own choice and records that on its
+maintenance page, while this paragraph says the repository is held to none of
+it. It is the stronger of the two readings still on the table for what to ask
+of a tree that adopts nothing — a different question, and the one *The
+associate protocol* above leaves open. **A repository that later joins rewrites
+the section rather than adding to it**, since the independence paragraph and
+the membership declaration are contradictory claims and a note carrying both
+says nothing.
 
 ### The prompts, and checking from this side
 

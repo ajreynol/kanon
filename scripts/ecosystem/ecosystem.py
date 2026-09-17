@@ -33,12 +33,14 @@ its status requires, every parent named by a child exists, and every repository
 the board addresses has a row here. Similar names can identify distinct tools.
 
 **Is it still true?** With `--online`, each entry that is somebody's own
-repository has its README fetched from the remote and read for the membership
-declaration, by `policy_check.declaration_in` — the same function that decides it
-on a checkout. A tool recorded as a candidate that now declares membership is a
-stale inventory, and so is a member that has stopped declaring. That is the
-failure this was written for: three tools joined and the file did not move for
-long enough that nobody could say from the file alone which of them had.
+repository has one page fetched from the remote and read by the same function
+that decides it on a checkout: a member's README for the membership
+declaration, by `policy_check.declaration_in`, and an associate's
+`docs/maintenance.md` for the footing marker, by `policy_check.associate_in`.
+A tool recorded as a candidate that now declares membership is a stale
+inventory, and so is a member that has stopped declaring. That is the failure
+this was written for: three tools joined and the file did not move for long
+enough that nobody could say from the file alone which of them had.
 
 **What it cannot see** is whether a declaration is backed: that needs their whole
 tree and their own CI is where it is decided. A remote that cannot be reached is
@@ -124,7 +126,7 @@ REQUIRED = {
 #: Every footing held to the shared policy by its name alone. `associate` is
 #: deliberately not here: what an associate owes is written on its own
 #: maintenance page rather than in this register, so the footing name cannot
-#: decide it and `held_to_policy` reads the marker instead.
+#: decide it -- `still_true` and `--protocol` read that page's marker instead.
 MEMBERS = ("member", "president")
 
 #: The files the office is kept in, and the test for *limbo* -- the registry
@@ -352,6 +354,30 @@ def check(path: str) -> tuple[str, list[str]]:
     return (f"{len(failed)} failing" if failed else "ok"), detail
 
 
+def addressed_to(line: str, who: str) -> bool:
+    """Does this `**To:**` line address `who`?
+
+    A topic may name several tools at once -- a global notice names every
+    member -- so the field is a list and not a name. Reading it as a name is
+    what this used to do, by counting the string `**To:** kanon`, and every
+    topic that named somebody else first was silently not counted: the table
+    said a tool owed us nothing while a notice addressed to us sat in its file.
+    """
+    m = re.match(r"\*\*To:\*\*\s*(.+)", line.strip())
+    return bool(m) and who in {n.strip(" `") for n in m.group(1).split(",")}
+
+
+def topics_for(path: str, who: str = "kanon") -> str:
+    """The `channel` column: whether a tool keeps a discussion file, and how
+    many topics in it are addressed to us."""
+    disc = os.path.join(path, "docs", "discussion.md")
+    if not os.path.isfile(disc):
+        return "none"
+    with open(disc, encoding="utf-8") as f:
+        for_us = sum(1 for line in f if addressed_to(line, who))
+    return f"{for_us} for us" if for_us else "yes"
+
+
 def board_entities() -> set[str]:
     """Every repository the board addresses, from its `Entities` lines."""
     path = os.path.join(ROOT, "docs", "board.md")
@@ -463,26 +489,34 @@ def well_formed(inv: dict) -> list[str]:
     return bad
 
 
-def readme_of(url: str, timeout: int = 20) -> tuple[str, str]:
-    """A repository's README, from its remote. Returns (text, why-not).
+def remote_file(url: str, rel: str, timeout: int = 20) -> tuple[str, str]:
+    """One file from a repository's remote. Returns (text, why-not).
 
     Read over https rather than by cloning, because this runs on every push and
     the question is one file. Only GitHub urls can be turned into a raw one from
     here; anything else is reported as unreadable rather than guessed at.
+
+    Two files are asked for: a README, which is where a member declares, and
+    `docs/maintenance.md`, which is where an associate records its footing.
     """
     m = re.match(r"https://github\.com/([^/]+)/([^/]+?)(?:\.git)?/?$", url)
     if not m:
         return "", f"{url} is not a github url this can read a file from"
-    raw = f"https://raw.githubusercontent.com/{m.group(1)}/{m.group(2)}/HEAD/README.md"
+    raw = f"https://raw.githubusercontent.com/{m.group(1)}/{m.group(2)}/HEAD/{rel}"
     try:
         with urllib.request.urlopen(raw, timeout=timeout) as r:  # noqa: S310
             return r.read().decode("utf-8", "replace"), ""
     except urllib.error.HTTPError as e:
         if e.code == 404:
-            return "", ""          # no README is an answer, not a failure to ask
+            return "", ""          # an absent file is an answer, not a failure to ask
         return "", f"{raw}: HTTP {e.code}"
     except (urllib.error.URLError, OSError, ValueError) as e:
         return "", f"{raw}: {str(e)[:60]}"
+
+
+def readme_of(url: str, timeout: int = 20) -> tuple[str, str]:
+    """A repository's README, from its remote."""
+    return remote_file(url, "README.md", timeout)
 
 
 def still_true(inv: dict) -> tuple[list[str], list[str]]:
@@ -516,39 +550,64 @@ def still_true(inv: dict) -> tuple[list[str], list[str]]:
             # fetch or a requirement of the repository's current footing.
             continue
         if status == "associate":
-            # The affiliating note is asked about first, and a tree that carries
-            # one is settled: its refusal clause is what stops `declaration_in`
-            # reading it as a declaration, so the two can never both be true.
-            # Only a tree with no affiliating note can have joined outright.
-            gone = policy_check.affiliation_in(text)
-            if not gone:
-                pass
-            elif declares:
-                bad.append(f"{name} declares full membership and is recorded here "
-                           "as an associate: it has joined, and this file has not "
-                           "been told")
-            else:
+            # **The footing is recorded on their own maintenance page**, which
+            # is what the associate protocol settled it to be, so that is the
+            # page this asks. It used to ask the README for the *affiliating*
+            # note -- the paragraph a repository writes to say it is **not**
+            # held to this policy -- which is very nearly the opposite claim,
+            # and reported a correctly marked associate as a mismatch.
+            if declares:
+                bad.append(f"{name} declares full membership on its front page "
+                           "and is recorded here as an associate: it has joined, "
+                           "and this file has not been told")
+                continue
+            marker_in = getattr(policy_check, "associate_in", None)
+            if marker_in is None:
+                unseen.append(f"{name}: this checker cannot read an associate's "
+                              "footing marker; a newer anoieu can")
+                continue
+            page, why = remote_file(e.get("url", ""), "docs/maintenance.md")
+            if why:
+                unseen.append(f"{name}: {why}")
+                continue
+            gone = marker_in(page)
+            # Their tree owes us nothing, so this is phrased as our record being
+            # out of step rather than as their shortfall. `vetted` and `why` in
+            # the entry are a person's reading of a marker that can be rewritten
+            # without anybody here noticing, and this is what notices.
+            if gone:
                 bad.append(f"{name} is recorded here as an associate and its "
-                           f"README does not carry the affiliating note: {gone[0]}")
+                           f"docs/maintenance.md no longer records that footing: "
+                           f"{gone[0]}. Ours to re-read, not theirs to fix")
     return bad, unseen
 
 
-def readme_for(name: str, e: dict) -> tuple[str, str]:
-    """A tool's README, from its checkout if there is one and from its remote
-    otherwise. Returns (text, source), where source is what to print.
+def page_for(name: str, e: dict, rel: str) -> tuple[str, str]:
+    """One page of a tool's tree, from its checkout if that checkout has it and
+    from its remote otherwise. Returns (text, source), where source is what to
+    print.
 
     The checkout is preferred because this report is run while somebody is
     deciding something and a network round trip per tool makes it a job rather
     than a command. Which one answered is printed, because a stale checkout and
-    a published README are different claims and the difference matters here.
+    a published page are different claims and the difference matters here.
+
+    **Per file, and not per tree.** A checkout can be half a checkout -- a clone
+    that failed leaves a working tree with a README and no history and no
+    `docs/` -- and resolving the tree once would then report a repository as
+    missing a page its remote carries.
     """
     path = locate(e.get("repo", name))
-    if path:
-        rel = os.path.join(path, "README.md")
-        if os.path.isfile(rel):
-            return open(rel, encoding="utf-8").read(), "checkout"
-    text, why = readme_of(e.get("url", ""))
+    if path and os.path.isfile(os.path.join(path, rel)):
+        with open(os.path.join(path, rel), encoding="utf-8") as f:
+            return f.read(), "checkout"
+    text, why = remote_file(e.get("url", ""), rel)
     return (text, "remote") if not why else ("", "unreachable")
+
+
+def readme_for(name: str, e: dict) -> tuple[str, str]:
+    """A tool's README, wherever `page_for` finds it."""
+    return page_for(name, e, "README.md")
 
 
 def protocol(inv: dict) -> int:
@@ -565,12 +624,20 @@ def protocol(inv: dict) -> int:
     require, and a person deciding that should be able to see what each would
     cost today rather than predict it:
 
+      marker        the settled half: `**Footing:** associate` on their own
+                    `docs/maintenance.md`, saying what they hold themselves to.
+                    A recorded associate carries this and a proposed one need
+                    not, since nobody has asked them for anything yet
       note          a `How this repository is maintained` heading, with
                     something under it. The drafted protocol, and the whole of it
       affiliating   that, and a paragraph naming the ecosystem and saying the
                     repository is not held to its policy. The stronger option
       declares      a full membership declaration, which no associate needs and
                     which would mean the footing is the wrong one
+
+    **The marker and the other three answer different questions**, and the
+    table used to carry only the second kind. What an associate records is
+    settled; what to ask of a tree that adopts none of this is not.
     """
     try:
         policy_check = policy_checker()
@@ -578,6 +645,7 @@ def protocol(inv: dict) -> int:
         print(f"UNVERIFIED: {exc}")
         return 2
 
+    marker_in = getattr(policy_check, "associate_in", None)
     rows = []
     for name, e in inv.items():
         status, want = e.get("status", ""), e.get("proposed", "")
@@ -585,14 +653,23 @@ def protocol(inv: dict) -> int:
             continue
         text, source = readme_for(name, e)
         if source == "unreachable":
-            rows.append((name, status, want, "?", "?", "?", "unreachable"))
+            rows.append((name, status, want, "?", "?", "?", "?", "unreachable"))
             continue
         yes = lambda missing: "no" if missing else "yes"  # noqa: E731
-        rows.append((name, status, want,
+        page, page_source = page_for(name, e, "docs/maintenance.md")
+        if marker_in is None:
+            marker = "?"
+        elif page_source == "unreachable":
+            marker = "?"
+        else:
+            marker = yes(marker_in(page))
+        where = (source if page_source in (source, "unreachable")
+                 else f"{source}/{page_source}")
+        rows.append((name, status, want, marker,
                      yes(policy_check.note_in(text)),
                      yes(policy_check.affiliation_in(text)),
                      yes(policy_check.declaration_in(text)),
-                     source))
+                     where))
 
     if not rows:
         print("-- nobody holds or is proposed for `associate`, so there is "
@@ -600,14 +677,16 @@ def protocol(inv: dict) -> int:
         return 0
 
     w = max(len(r[0]) for r in rows) + 2
-    print(f"{'tool':<{w}}{'footing':<12}{'proposed':<11}"
+    print(f"{'tool':<{w}}{'footing':<12}{'proposed':<11}{'marker':<9}"
           f"{'note':<7}{'affiliating':<13}{'declares':<10}read from")
-    for name, status, want, a, b, c, source in rows:
-        print(f"{name:<{w}}{status:<12}{want or '-':<11}{a:<7}{b:<13}{c:<10}{source}")
+    for name, status, want, marker, a, b, c, source in rows:
+        print(f"{name:<{w}}{status:<12}{want or '-':<11}{marker:<9}"
+              f"{a:<7}{b:<13}{c:<10}{source}")
 
     print()
-    print("The protocol is drafted, not decided: docs/policy.md, "
-          "`The associate protocol`.")
+    print("`marker` is settled and the three columns after it are not: "
+          "docs/policy.md,")
+    print("`The associate protocol`, says which question is still open.")
     print("Nothing here is a verdict and nothing here fails. Every tool in this "
           "table is held")
     print("to none of this repository's policy, and most of them have not been "
@@ -636,7 +715,8 @@ def audit(online: bool) -> int:
     if bad:
         return 1
     if not online:
-        print("-- structure only; --online compares remote README declarations")
+        print("-- structure only; --online compares each remote with what is "
+              "recorded here")
         return 0
 
     try:
@@ -649,12 +729,13 @@ def audit(online: bool) -> int:
     for u in unseen:
         print(f"UNVERIFIED {u}")
     asked = sum(1 for e in inv.values() if e.get("status") in OWN_REPO) - len(unseen)
-    print(f"-- remote README declarations: {len(stale)} mismatch(es), "
+    print(f"-- remote declarations: {len(stale)} mismatch(es), "
           f"{asked} read, {len(unseen)} unverified")
-    print("   One section of one README is what this reads: a declaration for a "
-          "member,\n   an affiliating note for an associate. Whether their tree "
-          "backs a declaration is\n   decided by their own CI, running the same "
-          "checker, and is not visible from here.")
+    print("   One section of one page is what this reads, and which page depends "
+          "on the\n   footing: the README for a member's declaration, "
+          "`docs/maintenance.md` for an\n   associate's footing marker. Whether "
+          "their tree backs a declaration is decided\n   by their own CI, running "
+          "the same checker, and is not visible from here.")
     print("   Whether an associate is still worth vetting is nobody's to decide "
           "from here\n   either: the `vetted` date says when a person last did, "
           "and it does not expire\n   on its own.")
@@ -672,7 +753,8 @@ USAGE = """usage: eo_status_audit [--verbose] [--all | --all-children] [--check 
                   and why -- for auditing the preferences rather than reading
                   the table
   --check         is the inventory itself well formed? No network, no checkouts
-  --check --online  ... and does each remote's README still agree with it
+  --check --online  ... and does each remote still agree with it -- a member's
+                  README, an associate's maintenance page
   --protocol      where each tool proposed for `associate` stands against the
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
@@ -688,7 +770,7 @@ unsupported value is unverified, and so is a README carrying two that disagree.
 
 exit codes
   0  the table, or every requested comparison succeeded
-  1  invalid inventory, or a remote README that disagrees with the register
+  1  invalid inventory, or a remote page that disagrees with the register
   2  verification is incomplete -- a network failure is unverified, and not
      evidence against anybody. The ordinary table is a report, not a CI gate.
 """
@@ -776,14 +858,7 @@ def main() -> int:
                 verdict = verdict.replace("failing", "tracked")
         else:
             verdict, fails = check(path)
-        topics = ""
-        disc = os.path.join(path, "docs", "discussion.md")
-        if os.path.isfile(disc):
-            text = open(disc, encoding="utf-8").read()
-            for_us = text.count("**To:** kanon")
-            topics = f"{for_us} for us" if for_us else "yes"
-        else:
-            topics = "none"
+        topics = topics_for(path)
         rows.append((name, status, verdict, topics, age(path), path, "-"))
         # Both notes name the disagreement and then say whose move it is,
         # rather than stating the rule -- "this is the state the check exists

@@ -159,6 +159,76 @@ class Verification(unittest.TestCase):
             self.assertEqual(ecosystem.still_true({"example": {
                 "status": "candidate", "proposed": "associate", "url": "unused"}}), ([], []))
 
+    def test_a_topic_naming_several_tools_is_still_addressed_to_us(self):
+        # The channel column counted the string `**To:** kanon`, so a notice
+        # addressed to every member at once was not counted for anybody but the
+        # first name on it -- and a tool whose name merely starts with ours was
+        # counted twice over.
+        with tempfile.TemporaryDirectory() as temp:
+            docs = Path(temp) / "docs"
+            docs.mkdir()
+            (docs / "discussion.md").write_text(
+                "## D1 — for us\n\n**To:** kanon\n\n"
+                "## D2 — a notice to everybody\n\n**To:** anoieu, kanon, koine\n\n"
+                "## D3 — two of us\n\n**To:** koine, kanon\n\n"
+                "## D4 — not for us\n\n**To:** koine\n\n"
+                "## D5 — somebody else entirely\n\n**To:** kanonikos\n")
+            self.assertEqual(ecosystem.topics_for(temp), "3 for us")
+            (docs / "discussion.md").write_text("## D1 — theirs\n\n**To:** koine\n")
+            self.assertEqual(ecosystem.topics_for(temp), "yes")
+            (docs / "discussion.md").unlink()
+            self.assertEqual(ecosystem.topics_for(temp), "none")
+
+    def associate_seen_as(self, pages, **readers):
+        """`--check --online` over one recorded associate, with its remote
+        pages and the checker's readers supplied."""
+        checker = unittest.mock.Mock()
+        checker.declaration_in.return_value = ["no declaration"]
+        # The affiliating note says a repository is **not** held to the policy,
+        # so an associate has no reason to carry one and the real one does not.
+        # Reading the README for it is the mistake these tests keep out.
+        checker.affiliation_in.return_value = ["README.md has no maintenance note"]
+        checker.associate_in.return_value = []
+        for name, value in readers.items():
+            getattr(checker, name).return_value = value
+        with patch.object(ecosystem, "policy_checker", return_value=checker), \
+             patch.object(ecosystem, "remote_file",
+                          side_effect=lambda url, rel, *a: (pages.get(rel, ""), "")):
+            return ecosystem.still_true({"example": {
+                "status": "associate", "url": "unused",
+                "vetted": "2026-09-17", "why": "its marker says so"}})
+
+    def test_an_associate_is_read_from_its_own_maintenance_page(self):
+        stale, unseen = self.associate_seen_as(
+            {"README.md": "a front page that declares nothing",
+             "docs/maintenance.md": "**Footing:** `associate`"})
+        self.assertEqual((stale, unseen), ([], []))
+
+    def test_a_missing_marker_is_our_record_going_stale(self):
+        stale, _ = self.associate_seen_as(
+            {"README.md": "a front page", "docs/maintenance.md": "# Maintaining"},
+            associate_in=["no `**Footing:**` line"])
+        self.assertEqual(len(stale), 1)
+        self.assertIn("docs/maintenance.md", stale[0])
+        self.assertIn("Ours to re-read", stale[0])
+
+    def test_an_associate_that_has_joined_outright_is_a_mismatch(self):
+        stale, _ = self.associate_seen_as(
+            {"README.md": "part of the Eunoia ecosystem"}, declaration_in=[])
+        self.assertEqual(len(stale), 1)
+        self.assertIn("it has joined", stale[0])
+
+    def test_a_checker_too_old_to_read_the_marker_is_unverified(self):
+        checker = unittest.mock.Mock(spec=["declaration_in", "affiliation_in", "note_in"])
+        checker.declaration_in.return_value = ["no declaration"]
+        with patch.object(ecosystem, "policy_checker", return_value=checker), \
+             patch.object(ecosystem, "remote_file", return_value=("", "")):
+            stale, unseen = ecosystem.still_true({"example": {
+                "status": "associate", "url": "unused",
+                "vetted": "2026-09-17", "why": "its marker says so"}})
+        self.assertEqual(stale, [])
+        self.assertIn("cannot read an associate's footing marker", unseen[0])
+
     def status_of(self, statuses, verdict):
         with tempfile.TemporaryDirectory() as temp:
             inv = Path(temp) / "inventory.json"
