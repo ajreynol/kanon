@@ -206,6 +206,8 @@ this ecosystem shares, and **they move with it**:
 - **the commands, and the reference that documents them** — getting the
   ecosystem onto a machine, and reading the register back;
 - **the vision**, and what follows from it once a repository is running;
+- **the glossary** — the alphabetized dictionary of the ecosystem's terms and
+  names, kept current by the president in `docs/glossary.md`;
 - **the laws** ([LAW 7](#law-7--the-president-maintains-this-page)) and **the
   register** of who is in and on what footing;
 - **the account of the stretch** ([LAW

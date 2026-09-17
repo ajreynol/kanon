@@ -47,6 +47,7 @@ first.
 | [`docs/vision.md`](docs/vision.md) | the five tenets this development aims at, and the argument for them. Argued, and never checked |
 | [`docs/practice.md`](docs/practice.md) | what follows from the tenets once a repository is running: front pages, what may be claimed, where speculative work goes, papers |
 | [`docs/laws.md`](docs/laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
+| [`docs/glossary.md`](docs/glossary.md) | the alphabetized dictionary of eo's terms and names, maintained by the president |
 
 ### The office, and this term's work
 

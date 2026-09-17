@@ -13,6 +13,7 @@ that have been demoted.
 | [`vision.md`](vision.md) | the five tenets this development aims at, and the argument for them. Argued, and never checked |
 | [`practice.md`](practice.md) | what follows from the tenets once a repository is running: front pages, what may be claimed, where speculative work goes, and what a repository with a result owes a reader who will never clone it |
 | [`laws.md`](laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
+| [`glossary.md`](glossary.md) | the alphabetized dictionary of eo's terms and names, maintained by the president |
 | [`protocols.md`](protocols.md) | the register of named exchanges: between a person and an agent, and between one repository and another |
 
 ## The office, and this term's work

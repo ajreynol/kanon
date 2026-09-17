@@ -206,9 +206,9 @@ Anything it wants to say leaves through its parent, like any other finding.
 *These are the **office's** rather than this repository's.*
 [`laws.md`](laws.md#what-the-office-carries) lists what the presidency carries
 — the protocols, the policy and the joining prompts, the vision, the laws, the
-register, the commands, and the account of the stretch. **They move when the
-office moves**, except the account, which stays in the tree that wrote it; a
-successor inherits the rest whole.
+register, the glossary, the commands, and the account of the stretch. **They
+move when the office moves**, except the account, which stays in the tree that
+wrote it; a successor inherits the rest whole.
 
 ### R4 — the ecosystem's policy, and joining it
 
@@ -220,7 +220,8 @@ nobody has the authority to settle. How a repository is arranged, what its
 front page must say about who is writing it, how tools talk to one another, and
 what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
-**Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, and the
+**Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, the ecosystem's
+vocabulary in `docs/glossary.md` (kept current by the president), and the
 `init_eo`, `join_eo`, `check_join_eo` and `global_audit` prompts.
 **Not this role:** who is actually in the ecosystem, which is `R6`; and
 **deciding whether a tree complies, which is `R31` and stays in anoieu.**
