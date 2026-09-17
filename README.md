@@ -62,13 +62,14 @@ first.
 
 ## If you maintain a tool and want to join
 
-**Addressed to whoever maintains a tool built *related* the Eunoia ecosystem** —
+**Addressed to whoever maintains a tool *related to* the Eunoia ecosystem** —
 a checker, a compiler, a Lean development, an analyzer, a template.
 
-**Joining has two requirements: a reference in your README, and a CI job that checks the reference is
-true.** Nothing else is asked — no discussion file, no document you do not
-already keep. [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem)
-is the authority; this is only the route in.
+**Joining has two requirements: a reference in your README, and a CI job that
+checks the reference is true.** Nothing else is asked — no discussion file, no
+document you do not already keep.
+[`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the
+authority; this is only the route in.
 
 | where you are | what to run, **in your own repository** |
 | --- | --- |
@@ -76,14 +77,13 @@ is the authority; this is only the route in.
 | it exists, and you want to join | `eo_join` — adds the declaration to your maintenance note and the pinned `anoieu / policy` workflow |
 | it exists, and should *not* join | `eo_join --soft` — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
 
-These commands are available in
-[koine](https://github.com/ajreynol/koine).
-The easiest way is to use koine's `install_eo_cmd`. **What joining
-costs is this repository's**:
+**These commands live in [koine](https://github.com/ajreynol/koine)**, and
+koine's `install_eo_cmd` puts them on your path. **What joining costs is this
+repository's**:
 [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the authority
-on what guidelines repositories that join the Eunoia ecosystem are held to..
+on what a repository that joins is held to.
 
-**Read it before you run it.** Every prompt takes `--show-prompt`, which prints
+**Read it before you run it.** Each takes `--show-prompt`, which prints
 exactly what it would hand an assistant and does nothing else.
 
 **The answer to *should we join* is often no, and this page is better for
@@ -92,7 +92,7 @@ to none of this, is worse off adopting a policy it did not choose — which is
 what `--soft` is for. **Joining obliges you to a shared policy and one CI job
 and nothing else**: no ownership of your tree, no authority over how you run
 it, and leaving is a commit. And **a declaration on a shared tree is not one
-maintainer's alone to make**, which is the first thing the prompt asks.
+maintainer's alone to make**, which is the first thing `eo_join` asks.
 
 ## A joke about the name
 
