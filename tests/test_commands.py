@@ -158,9 +158,7 @@ class Commands(unittest.TestCase):
         target = self.base / "example"
         (target / ".git").mkdir(parents=True)
         (target / "README.md").write_text("Example\n")
-        cases = [("global_audit",),
-                 ("check_join_eo", str(target)),
-                 ("process_discussion", str(target))]
+        cases = [("process_discussion", str(target))]
         for name, *args in cases:
             with self.subTest(prompt=name):
                 result = self.command("bash", f"prompts/{name}", *args, "--show-prompt")
@@ -171,20 +169,6 @@ class Commands(unittest.TestCase):
                 if name == "process_discussion":
                     self.assertIn("To: names kanon", result.stdout)
         self.assertFalse(Path(self.env["ANOIEU_REPOS_FILE"]).exists())
-
-    def test_prompt_refuses_unavailable_checker(self):
-        env = {**self.env, "ANOIEU_ROOT": str(self.base / "missing")}
-        result = self.command("bash", "prompts/check_join_eo", "--show-prompt", str(self.base), env=env)
-        self.assertEqual(result.returncode, 2)
-        self.assertIn("UNVERIFIED", result.stderr)
-
-    def test_global_preview_preserves_unavailable_checks(self):
-        env = {**self.env, "ANOIEU_ROOT": str(self.base / "missing")}
-        Path(self.env["ANOIEU_REPOS_FILE"]).write_text(f"kanon {self.base}\n")
-        result = self.command("bash", "prompts/global_audit", "--show-prompt", env=env)
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("policy unverified", result.stdout)
-        self.assertIn("anoieu's policy checker is unavailable", result.stdout)
 
     def test_online_flag_without_check_is_not_silently_ignored(self):
         result = self.command("scripts/status_eo", "--online")

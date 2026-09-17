@@ -222,8 +222,7 @@ what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
 **Owns:** `docs/policy.md`, `docs/vision.md`, `docs/practice.md`, the ecosystem's
 vocabulary and authoritative name register in `docs/glossary.md` (kept current
-by the president), and the `check_join_eo` and `global_audit` prompts, which are
-run here and pointed at somebody else's checkout.
+by the president).
 **Not this role:** who is actually in the ecosystem, which is `R6`; **deciding
 whether a tree complies, which is `R31` and is anoieu's**; and **the commands
 that start and join a repository, which are `R35`.** This role says what joining
@@ -294,8 +293,7 @@ to do.
 which puts them on a person's path.
 **Not this role:** **what joining costs and what a member is held to, which is
 `R4` and stays with the office.** This role maintains the program that states
-the rule; it has no standing to change the rule. Nor judging the result, which
-is `check_join_eo` and is also `R4`'s.
+the rule; it has no standing to change the rule.
 
 **Why this is separate from `R4`.** These two are the only commands in this
 ecosystem that run **inside the repository being started or joined**, rather

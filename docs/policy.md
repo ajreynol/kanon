@@ -591,13 +591,6 @@ topic is what authorises acting on it**, so with no id the run is read-only.
 Where it acts, the work happens *here* and the reply is drafted here for a
 person to carry; their tree is never written to.
 
-[`prompts/global_audit`](../prompts/global_audit) runs the checker over every
-member checked out on this machine and reads across the results. **Membership
-is a decision, not a fact about a tree**, so the audit may report that a status
-looks wrong and does not change one. It is fast by construction — no corpus
-run, no build, no fuzzing — because an audit that takes an afternoon is an
-audit nobody runs.
-
 ## Child projects
 
 A **child project** (also *research project*) is `tools/X/`, where `X` names a
@@ -1030,13 +1023,12 @@ the runner's to speak for: **a declaration on a shared tree is not the runner's
 alone to make, and commit access does not make it so.** Saying *this is not
 mine to declare* is a correct outcome.
 
-[`prompts/check_join_eo`](../prompts/check_join_eo) is the counterpart, run
-here and pointed at somebody's checkout. It runs the checker, then has an
-assistant judge what a program cannot — whether a maintenance note says
-anything or merely satisfies the check. Its verdicts are its own;
-**the serious one is *misconfigured***: membership declared, check failing. It
-reads their tree and writes nothing to it. **A deeper obstacle becomes a topic, not a to-do list:** where joining
-would take more than a sentence, it opens a topic in
+**Checking from this side is two commands and no assistant.**
+`policy_check.py --root PATH` decides the mechanical half, and `status_eo`
+already names the serious case on every run: a repository that **declares
+membership while our checks fail on its tree**. Neither writes to anybody's
+tree. **A deeper obstacle becomes a topic, not a to-do list:** where joining
+would take more than a sentence, it goes in
 [`discussion.md`](discussion.md) addressed to them by name — staged, never
 sent, and never a row in a findings report.
 

@@ -106,10 +106,8 @@ scripts/install_eo --status    # inspect the checkouts on this machine
 
 [`docs/commands.md`](docs/commands.md) is the full reference, and
 [`prompts/`](prompts) holds the workflows that hand context to an assistant —
-the three above, plus [`check_join_eo`](prompts/check_join_eo),
-[`process_discussion`](prompts/process_discussion) and
-[`global_audit`](prompts/global_audit), which are run here rather than by a
-joining tool. `.github/workflows/anoieu.yml` keeps kanon's checker pin; the
+the three above, plus [`process_discussion`](prompts/process_discussion), which
+is run here rather than by a joining tool. `.github/workflows/anoieu.yml` keeps kanon's checker pin; the
 local regression checks also run in CI.
 
 **The policy checks are maintained in

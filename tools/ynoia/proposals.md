@@ -359,9 +359,7 @@ The third has grown since that sentence was written. It is now
 [`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py) — which runs in every
 member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
 [`scripts/ecosystem/ecosystem.py`](../../scripts/ecosystem/ecosystem.py),
-[`prompts/check_join_eo`](../../prompts/check_join_eo),
 `prompts/welcome_eo` (since [retired](../../docs/commands.md#retired-commands)),
-[`prompts/global_audit`](../../prompts/global_audit),
 [`scripts/install_eo`](../../scripts/install_eo) and
 [`scripts/ecosystem/checkouts.json`](../../scripts/ecosystem/checkouts.json). That is a tool, and it is
 not the analyzer.
@@ -414,9 +412,9 @@ transfer asks two more:
    governance repository holds what a repository *is*, not what a report may say.
 6. **Is either half left unable to answer a question it used to answer alone?**
    One: *does this finding's project comply?* — today one tree holds both the
-   finding and the checker. After a split, `global_audit` lives with the policy
-   and the findings live with the analyzer, and the audit that reads across both
-   needs two checkouts. `install_eo` already makes that a one-line problem, which
+   finding and the checker. After a split, the policy lives in one tree and the
+   findings in another, and the audit that reads across both needs two
+   checkouts. `install_eo` already makes that a one-line problem, which
    is an argument for doing this **after** the install script settles, not
    before.
 

@@ -384,10 +384,8 @@ writes the untracked `scripts/repos.local` checkout map, preserving existing
 entries; a person can edit that map for checkouts elsewhere.
 
 Every prompt takes `--show-prompt`, which prints its assembled instructions
-without launching an assistant. `check_join_eo` runs the local policy checker
-while assembling them; `global_audit` collects the ordinary status report.
-Neither preview writes files. Both assessments are read-only when launched too.
-`process_discussion` acts only on a named topic. `eo_init` and `eo_join`, which
+without launching an assistant and writes no files. `process_discussion` acts
+only on a named topic. `eo_init` and `eo_join`, which
 draft changes in the repository being started or joined, are `R35` and are not
 in this tree.
 

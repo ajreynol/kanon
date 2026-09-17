@@ -3,8 +3,8 @@
 
 No assistant and no prompting -- this is a local command that reads trees and
 reports. It is the thing to run when the question is *where does everything
-stand*; `prompts/global_audit` is the thing to run when the question needs
-somebody to read across the answer and form a view.
+stand*; `--all --verbose` is what to read when the question needs somebody to
+read across the answer and form a view.
 
     scripts/status_eo            # the table
     scripts/status_eo --verbose  # and why each policy verdict came out

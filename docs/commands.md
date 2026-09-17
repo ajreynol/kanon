@@ -113,18 +113,12 @@ only in that README, not copied into kanon's inventory.
 ## Prompt previews
 
 ```sh
-prompts/check_join_eo --show-prompt ../anoieu
-prompts/global_audit --show-prompt
 prompts/process_discussion --show-prompt ../anoieu
 ```
 
-All three prompts here run in kanon. A topic id passed to `process_discussion`
-authorizes work on that topic; a preview or a call with no topic id authorizes
-no reply. `check_join_eo` runs the local checker even in preview and stops if it
-cannot run. `global_audit` collects `status_eo --all --verbose`, preserving
-unavailable checks in the report. Neither launches an assistant during preview;
-both request read-only assessments when launched. They write no audit file,
-discussion topic, or checkout mapping. Named discussion topics are worked here.
+**One prompt is left here, and it runs in kanon.** A topic id authorizes work on
+that topic; a preview or a call with no topic id authorizes no reply. It writes
+no audit file, discussion topic or checkout mapping.
 
 ## The joining commands
 
@@ -147,9 +141,19 @@ assessment, assigned subjective grades, and carried stale handoff instructions.
 Welcoming mixed checkout registration with unsolicited topic drafting and assumed
 the target had not joined. Neither is a necessary verification step.
 
-Use `policy_check.py --root PATH` for mechanical checks and `check_join_eo PATH`
-only when a read-only interpretation would help. Use `install_eo --status ID` to
-inspect a checkout. For existing checkouts elsewhere, edit `scripts/repos.local`
+`check_join_eo` and `global_audit` were removed on 2026-09-17, unused by any
+person, job or other repository. **Both were assistant wrappers over commands
+this repository already runs.** `check_join_eo` ran the checker and then asked
+for a reading of it; `policy_check.py --root PATH` decides the mechanical half,
+and `status_eo` already reports the serious case — a repository that declares
+membership while our checks fail on its tree — for every member on every run,
+with no assistant and no turn spent. `global_audit` collected
+`status_eo --all --verbose` and asked somebody to read across it, which is what
+reading it is. What went with them is the interpretive half, *whether a
+maintenance note says anything or merely satisfies the check*: no program
+decided that, and asking it does not need a stored launcher.
+
+Use `install_eo --status ID` to inspect a checkout. For existing checkouts elsewhere, edit `scripts/repos.local`
 with one `ID PATH` pair per line; registration does not change membership.
 
 The temporary `ready_check.py` and `transfer_check.py` were also removed: no CI

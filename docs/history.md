@@ -145,8 +145,8 @@ repository being started or joined.
 
 - **Moved:** `prompts/init_eo` and `prompts/join_eo`, deleted here, maintained
   in koine as `eo_init` and `eo_join`.
-- **Stayed:** what joining costs, in `policy.md`; `check_join_eo` and
-  `global_audit`.
+- **Stayed:** what joining costs, in `policy.md`, with the vision and the
+  glossary.
 - **Unchanged:** no member's CI, no pin, no requirement in `policy.md`.
 
 **Nothing was lost in the move**, established before the files were deleted

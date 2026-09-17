@@ -324,8 +324,7 @@ not verify both commits. `PROTO-20` still governs retiring a source stub.
    [listing preference](commands.md#child-project-listings), independently of
    its inclusion in the inventory or glossary. `checkouts.json` carries only
    installation exceptions, such as clone flags or optional trees.
-5. `eo_join` and the read-only
-   [`check_join_eo`](../prompts/check_join_eo) assessment come later, or never.
+5. `eo_join` comes later, or never.
    Joining is the owner's choice. No welcome message or post-join grade is
    required; the [retired prompts](commands.md#retired-commands) added neither
    reliable verification nor a necessary step.
