@@ -1532,6 +1532,20 @@ is off by default.
 
 ## 8. The type system
 
+> **Correction, 2026-09-17.** This chapter opens by repeating the ethos manual's
+> framing — that proof checking is a special instance of type checking — which
+> this account took over rather than checked. We no longer think it is the right
+> account: checking a Eunoia proof is *running a program*, and the typed
+> presentation reaches neither `:assumption`, `:premise-list` nor
+> `:conclusion-explicit`, states a kind for `Proof` that is not enforced, and
+> hides the evaluator inside the `=` of its side conditions. The argument, with
+> what was run to establish it, is
+> [`docs/account-vs-manual.md` MD-01](docs/account-vs-manual.md). **The chapter
+> below is accurate as a description of the typing rules and wrong as an
+> account of proof checking**; rewriting it around the state, the commands and
+> the match/evaluate/produce order — keeping the typed reading as the
+> explanation of dependency, which is what it is good for — is outstanding work.
+
 Everything in [chapter 7](#7-proof-rules-and-proofs) is notation. Underneath,
 **a proof is a term and proof checking is type checking**, in a type system with
 two types a signature cannot name:

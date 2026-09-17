@@ -68,7 +68,7 @@ anybody's bug tracker.
 | id | where | in one line | kind | settled? |
 | --- | --- | --- | --- | --- |
 | [EL-01](#el-01) | evaluation | decimal collapses into rational, hexadecimal into binary | divergence | yes |
-| [EL-02](#el-02) | evaluation | a failed evaluation is a residual term in ethos and a single `Stuck` in logos | divergence | yes |
+| [EL-02](#el-02) | evaluation | a failed evaluation is a residual term in ethos and a single `Stuck` in logos — mechanism differs, no witness found | divergence | yes |
 | [EL-03](#el-03) | evaluation | `eo::extract` clamps to the operand's width in ethos and not in the embedding | divergence | yes |
 | [EL-04](#el-04) | evaluation | `eo::cmp` orders terms by two unrelated orders, and `eo::hash` has no Lean at all | divergence + hole | **no** |
 | [EL-05](#el-05) | programs | Lean demands a termination argument Eunoia never asks for | hole | **no** |
@@ -142,9 +142,7 @@ logos.**
 The manual's phrase for a computational operator that cannot compute is *does
 not evaluate*, and it means the application survives as a term: `(BitVec
 (eo::add a b))` is a legitimate type when `a` and `b` are not values, and
-`(eo::to_z "451")` is a legitimate term. Residuals keep their identity — two
-different failures are two different terms, and a program case with a parameter
-in that position **matches one**.
+`(eo::to_z "451")` is a legitimate term that says which computation failed.
 
 The compiled Lean has one failure value, `Term.Stuck`, and the `lean-meta`
 stage prepends stuck-propagation cases to every program that matches a
@@ -158,26 +156,40 @@ def __poly_add : Term -> Term -> Term
   ...
 ```
 
-So given
+**Evidence.** logos: read, off the generated guard cases (2588 lines of
+`Cpc/Logos.lean` name `Term.Stuck`) and the stage that writes them. ethos: the
+manual, and run for the negative result below.
 
-```lisp
-(program f ((T Type) (x T)) :signature (T) Bool (((f x) true)))
-```
+**Whether it bites: no witness found, and the obvious one does not work.** The
+example to reach for is a program with a catch-all case applied to a residual —
+it should match in ethos and go to `Stuck` in Lean. It does not: **ethos does
+not invoke a program on an argument that failed to evaluate**, and the manual
+says so ("Programs are *not* invoked on terms that fail to evaluate"). Run
+against the build below, `(f (eo::to_z "451"))` with `f` a one-case catch-all
+program does not evaluate, exactly as the compiled Lean returns `Stuck`. The
+same holds for a program applied to a program and for one applied to an `eo::`
+operator.
 
-`(f (eo::to_z "451"))` is `true` in ethos — the catch-all case matches the
-residual — and `Term.Stuck` in the compiled Lean.
+That rule is what closes most of the gap: a residual can be *built*, but a
+signature cannot get a program to look at one, so the extra information a
+residual carries is mostly unreachable from Eunoia. What is left is two
+narrower things, neither yet witnessed changing an answer:
 
-**Evidence.** ethos: run. logos: read, off the generated guard cases (2588 lines
-of `Cpc/Logos.lean` name `Term.Stuck`) and the stage that writes them.
+- `eo::is_ok` asks *is this term fully reduced* in ethos
+  (`!isEvaluatable`, `src/type_checker.cpp`) and *is this the one failure
+  constant* in Lean (`native_not (native_teq x Term.Stuck)`). Every case tried
+  here agrees, because `__eo_mk_apply` propagates stuckness out to the whole
+  term wherever the compiler could not rule it out statically. Whether the
+  compiler's static judgement — `Term.Apply` unguarded versus `__eo_mk_apply`
+  guarded, decided by `isEvaluatable()` at compile time — is right everywhere
+  is not checked by anything.
+- A residual inside a **non-ground** type is how computational type rules work
+  at all, and the compiled Lean has no representation for either. That is
+  [EL-06](#el-06)'s territory rather than this row's.
 
-**Whether it bites.** This is the widest of the divergences in principle and one
-of the narrowest in practice: a proof's terms are ground, so most side
-conditions never see a residual. It bites exactly where a signature *uses*
-non-evaluation as a value — a guard written as "did this evaluate?", a type
-carrying an unevaluated `eo::add`. `eo::is_ok` is the operator that asks the
-question, and in the embedding it is `native_not (native_teq x Term.Stuck)`,
-which is a different question: *is this the one failure value*, not *did this
-particular application fail*.
+**Kept in the ledger anyway**, because the mechanisms genuinely differ and the
+reason they agree is a third rule that could be relaxed. If ethos ever invoked
+a program on a residual, this row would acquire its witness immediately.
 
 ### EL-03
 
@@ -590,24 +602,26 @@ that a refresh can redo the right one.
 
 **The probe.** ethos has no command that prints an evaluated term, and a
 `define` body is not type checked, so neither is a way to observe evaluation.
-What works is to make the answer decide a *type*, which is checked:
+What works is to make the answer decide a *type*, which is checked. The
+shortest form is the one the ethos tree uses for its own regressions
+(`tests/eo-definitions-test.eo`) — a declaration whose type is an
+`eo::requires` that only reduces when the question comes out the way it says:
 
 ```lisp
-(declare-const Int Type)
-(declare-consts <numeral> Int)
-(declare-const Real Type)
-(declare-consts <rational> Real)
-(declare-const BitVec (-> Int Type))
-(declare-consts <binary> (BitVec (eo::len eo::self)))
-(declare-const c (BitVec (eo::ite <THE-QUESTION> 1 2)))
-(declare-const g (-> (BitVec 1) Bool))   ; and a second file with (BitVec 2)
-(assume a (g c))
+(declare-const probe (eo::requires <THE-QUESTION> true Bool))
 ```
 
-The width-1 file checks iff the question evaluates to `true`, the width-2 file
-iff it evaluates to `false`, and neither checks if it does not evaluate — which
-distinguishes all three outcomes. `(eo::len t)` reads a width, so
-`(eo::is_eq (eo::len <term>) 5)` asks how wide a bit-vector came out.
+This checks iff the question evaluates to `true`. Run it again with `false` in
+place of `true`, and the three outcomes are distinguished: first file checks =
+`true`, second checks = `false`, neither checks = did not evaluate. A failed
+`eo::requires` leaves a ground unreduced type, which is what the declaration
+rejects.
+
+Where a *width* rather than a truth value is wanted, `(eo::len t)` reads one, so
+`(eo::is_eq (eo::len <term>) 5)` asks how wide a bit-vector came out. An earlier
+form of the same probe put the answer in a bit-vector width directly —
+`(declare-const c (BitVec (eo::ite <Q> 1 2)))` applied to `(-> (BitVec 1) Bool)`
+— which works and is longer.
 
 **The builds used.** `eo/ethos/build-eoc/ethos-eoc` is an ethos binary with the
 compiler plugins and behaves as the ordinary checker when no `--plugin` is
