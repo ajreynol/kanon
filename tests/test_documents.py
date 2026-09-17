@@ -59,7 +59,7 @@ class Documents(unittest.TestCase):
                 self.assertEqual(host.key, "kanon")
 
     def test_shell_syntax(self):
-        for path in [ROOT / "scripts/status_eo", *sorted((ROOT / "prompts").iterdir())]:
+        for path in [ROOT / "scripts/eo_status_audit", *sorted((ROOT / "prompts").iterdir())]:
             with self.subTest(script=path.name):
                 result = subprocess.run(["bash", "-n", str(path)], capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr)

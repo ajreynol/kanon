@@ -171,7 +171,7 @@ class Commands(unittest.TestCase):
         self.assertFalse(Path(self.env["ANOIEU_REPOS_FILE"]).exists())
 
     def test_online_flag_without_check_is_not_silently_ignored(self):
-        result = self.command("scripts/status_eo", "--online")
+        result = self.command("scripts/eo_status_audit", "--online")
         self.assertEqual(result.returncode, 2)
         self.assertIn("--online requires --check", result.stderr)
 
@@ -246,7 +246,7 @@ class Verification(unittest.TestCase):
                  patch.object(ecosystem, "locate", return_value=temp), \
                  patch.object(ecosystem, "age", return_value="?"), \
                  patch.object(ecosystem, "check", return_value=verdict) as checker, \
-                 patch.object(sys, "argv", ["status_eo"]), contextlib.redirect_stdout(out):
+                 patch.object(sys, "argv", ["eo_status_audit"]), contextlib.redirect_stdout(out):
                 self.assertEqual(ecosystem.main(), 0)
             return out.getvalue(), checker
 

@@ -50,7 +50,7 @@ produces belongs somewhere else.
 
 **The child projects under [`../tools/`](../tools) are not documentation and are
 not indexed here.** Each documents itself at its source, and they are reached
-through the front page and through `scripts/status_eo --all-children`. Naming
+through the front page and through `scripts/eo_status_audit --all-children`. Naming
 one here is one of the things that makes a child project stop being an island,
 and that is a declaration for the child's own charter to make rather than for an
 index to make on its behalf.

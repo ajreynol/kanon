@@ -122,7 +122,7 @@ class ChildCommands(unittest.TestCase):
 
     def status(self, *args):
         out = io.StringIO()
-        with patch.object(sys, "argv", ["status_eo", *args]), contextlib.redirect_stdout(out):
+        with patch.object(sys, "argv", ["eo_status_audit", *args]), contextlib.redirect_stdout(out):
             self.assertEqual(ecosystem.main(), 0)
         return out.getvalue()
 
@@ -199,7 +199,7 @@ class ChildCommands(unittest.TestCase):
         # The failure this catches: an unrecognised flag printed the default
         # table and looked exactly like a flag that had worked.
         out, err = io.StringIO(), io.StringIO()
-        with patch.object(sys, "argv", ["status_eo", "--alll"]), \
+        with patch.object(sys, "argv", ["eo_status_audit", "--alll"]), \
              contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
             self.assertEqual(ecosystem.main(), 2)
         self.assertIn("--alll", err.getvalue())

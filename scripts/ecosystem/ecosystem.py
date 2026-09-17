@@ -6,10 +6,10 @@ reports. It is the thing to run when the question is *where does everything
 stand*; `--all --verbose` is what to read when the question needs somebody to
 read across the answer and form a view.
 
-    scripts/status_eo            # the table
-    scripts/status_eo --verbose  # and why each policy verdict came out
-    scripts/status_eo --check    # is the inventory itself still true?
-    scripts/status_eo --check --online   # ... and ask each remote
+    scripts/eo_status_audit            # the table
+    scripts/eo_status_audit --verbose  # and why each policy verdict came out
+    scripts/eo_status_audit --check    # is the inventory itself still true?
+    scripts/eo_status_audit --check --online   # ... and ask each remote
 
 Health here means **what can be established from a checkout in about a second**:
 does it declare membership, does the policy check pass, is there a channel to
@@ -60,7 +60,7 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from anoieu_dependency import policy_checker
+from policy_check import policy_checker
 from child_listing import read_listing, unverified_note
 INVENTORY = os.path.join(HERE, "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
@@ -663,7 +663,7 @@ def audit(online: bool) -> int:
     return 1 if stale else (2 if unseen else 0)
 
 
-USAGE = """usage: status_eo [--verbose] [--all | --all-children] [--check [--online]] [--protocol]
+USAGE = """usage: eo_status_audit [--verbose] [--all | --all-children] [--check [--online]] [--protocol]
 
   (no arguments)  the table: repositories and advertised children
   --verbose       ... and, per tool, which checks failed and what they found
@@ -699,7 +699,7 @@ FLAGS = frozenset({"--help", "-h", "-help", "--check", "--online",
 def main() -> int:
     unknown = [a for a in sys.argv[1:] if a not in FLAGS]
     if unknown:
-        print("status_eo: not an option here: " + ", ".join(unknown),
+        print("eo_status_audit: not an option here: " + ", ".join(unknown),
               file=sys.stderr)
         print(USAGE, file=sys.stderr)
         return 2
@@ -708,7 +708,7 @@ def main() -> int:
         print(render_key())
         return 0
     if "--online" in sys.argv and "--check" not in sys.argv:
-        print("status_eo: --online requires --check", file=sys.stderr)
+        print("eo_status_audit: --online requires --check", file=sys.stderr)
         return 2
     if "--check" in sys.argv:
         return audit("--online" in sys.argv)
@@ -858,7 +858,7 @@ def main() -> int:
     # column they cannot read.
     print()
     print("-- what the columns mean, and what to do about a failing row: "
-          "status_eo --help")
+          "eo_status_audit --help")
 
     if notes:
         print()

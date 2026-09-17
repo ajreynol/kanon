@@ -1,5 +1,13 @@
 # Commands
 
+**`eo_status_audit` was `status_eo` until 2026-09-17.** The name says what is
+left for this repository to do once the plain table is an installed command:
+koine's `eo_status` reads the register and prints it, and what stays here is the
+audit — `--check --online` against remote declarations, and `--protocol`.
+**Today this command still does both**, because the audit shares its
+register-loading and checker plumbing with the table; the name is ahead of the
+split rather than describing it.
+
 Use Python 3.10 or newer, Bash and Git. Every command below runs from kanon's
 checkout; [the joining commands](#the-joining-commands) do not and are described
 at the bottom. Commands under `prompts/` launch an assistant unless passed
@@ -9,20 +17,20 @@ at the bottom. Commands under `prompts/` launch an assistant unless passed
 
 | Command | What it does |
 | --- | --- |
-| `scripts/status_eo --check` | Validates inventory structure offline; does not read remote trees |
-| `scripts/status_eo` | Shows tool purposes, checkout policy results and topics addressed to kanon |
-| `scripts/status_eo --verbose` | Adds the reasons behind policy results |
-| `scripts/status_eo --all` | Shows every row the table can show, which today means every recorded child including the unadvertised ones |
-| `scripts/status_eo --all-children` | The same rows, and a note per child saying what listing it declared and why |
-| `scripts/status_eo --check --online` | Also reads remote membership declarations |
-| `scripts/status_eo --protocol` | Reports on the proposed associate protocol |
+| `scripts/eo_status_audit --check` | Validates inventory structure offline; does not read remote trees |
+| `scripts/eo_status_audit` | Shows tool purposes, checkout policy results and topics addressed to kanon |
+| `scripts/eo_status_audit --verbose` | Adds the reasons behind policy results |
+| `scripts/eo_status_audit --all` | Shows every row the table can show, which today means every recorded child including the unadvertised ones |
+| `scripts/eo_status_audit --all-children` | The same rows, and a note per child saying what listing it declared and why |
+| `scripts/eo_status_audit --check --online` | Also reads remote membership declarations |
+| `scripts/eo_status_audit --protocol` | Reports on the proposed associate protocol |
 | `python3 scripts/sleep.py` | Reads the local working-hours schedule; returns 0 inside the window, 1 outside it or during a break, and 2 for a refused schedule |
 | `scripts/install_eo --dry-run` | Prints the planned clones |
 | `scripts/install_eo` | Clones missing repositories and records their locations |
 | `scripts/install_eo --status` | Reads the checkouts on this machine |
 | `python3 scripts/policy_check.py --root .` | Runs anoieu's checker against this tree |
 
-`status_eo --check --online` returns 0 when all requested README comparisons
+`eo_status_audit --check --online` returns 0 when all requested README comparisons
 succeed, 1 for invalid inventory or observed mismatches, and 2 when verification
 is incomplete. A network failure is unverified, not evidence against a project.
 The ordinary status table is a report, not a CI gate: inspect its policy column
@@ -60,7 +68,7 @@ Installation status can be read before anoieu is installed. When available,
 anoieu's `scripts/deps.json` supplies its report dependency pins; kanon does
 not keep a duplicate. The installer and status commands share
 [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) as their inventory.
-The `purpose` column in `status_eo` reads an entry's optional `short` field,
+The `purpose` column in `eo_status_audit` reads an entry's optional `short` field,
 falling back to `what`. Keep `short` around 60 characters or fewer; longer text
 is shortened at a word boundary with an ellipsis. `what` keeps the full description.
 
@@ -99,7 +107,7 @@ README leaves the preference unverified; a note names the parent and the reason,
 without listing the affected children. The installer reads from `--root` (or its
 default), and reads again after cloning when producing branch advice.
 
-`status_eo --all-children` includes every recorded child with its preference and
+`eo_status_audit --all-children` includes every recorded child with its preference and
 any read error. Normal table counts include only displayed children. Inventory
 validation, child ID resolution and `scripts/repos.local` mappings still use
 the complete inventory. Choosing to advertise does not change a child's status
@@ -144,10 +152,10 @@ the target had not joined. Neither is a necessary verification step.
 person, job or other repository. **Both were assistant wrappers over commands
 this repository already runs.** `check_join_eo` ran the checker and then asked
 for a reading of it; `policy_check.py --root PATH` decides the mechanical half,
-and `status_eo` already reports the serious case — a repository that declares
+and `eo_status_audit` already reports the serious case — a repository that declares
 membership while our checks fail on its tree — for every member on every run,
 with no assistant and no turn spent. `global_audit` collected
-`status_eo --all --verbose` and asked somebody to read across it, which is what
+`eo_status_audit --all --verbose` and asked somebody to read across it, which is what
 reading it is. What went with them is the interpretive half, *whether a
 maintenance note says anything or merely satisfies the check*: no program
 decided that, and asking it does not need a stored launcher.
@@ -165,7 +173,7 @@ under [the laws](laws.md).
 
 ```sh
 python3 -m unittest discover -s tests -v
-scripts/status_eo --check
+scripts/eo_status_audit --check
 python3 scripts/policy_check.py --root .
 ```
 
@@ -176,7 +184,7 @@ prompt previews. It uses temporary fixtures and does not launch assistants,
 clone repositories or contact the network. CI runs it alongside inventory
 validation. The separate policy job keeps the existing anoieu checker pin.
 
-`scripts/anoieu_dependency.py` supplies checkout discovery for the local
-launcher and status readers. `scripts/ecosystem/ecosystem.py` implements
-`status_eo`. `scripts/child_listing.py` reads the README listing declaration
+`scripts/policy_check.py` locates anoieu's checkout and runs the checker, and
+supplies that discovery to the status readers and the installer. `scripts/ecosystem/ecosystem.py` implements
+`eo_status_audit`. `scripts/child_listing.py` reads the README listing declaration
 for both status and installation.

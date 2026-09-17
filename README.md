@@ -20,8 +20,8 @@ tool owes us and what we say about it, and the two are not the same scale —
 the register with:
 
 ```sh
-scripts/status_eo --check      # validate the register, offline
-scripts/status_eo              # policy and discussion status across checkouts
+scripts/eo_status_audit --check      # validate the register, offline
+scripts/eo_status_audit              # policy and discussion status across checkouts
 ```
 
 > **[`scripts/ecosystem/ecosystem.json`](scripts/ecosystem/ecosystem.json) is
@@ -30,7 +30,7 @@ scripts/status_eo              # policy and discussion status across checkouts
 > copy; where a copy disagrees with the register, the register is right.
 
 **Child projects are reached through their parent**, on their parent's footing.
-`scripts/status_eo` lists the advertised ones; `--all-children` shows every
+`scripts/eo_status_audit` lists the advertised ones; `--all-children` shows every
 recorded child with its listing preference.
 
 ## The documents

@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
-# status_eo -- who is in the Eunoia ecosystem, and how each one looks.
+# eo_status_audit -- who is in the Eunoia ecosystem, and how each one looks.
 #
 # The public command for the implementation in scripts/ecosystem/ecosystem.py.
 #
-#   status_eo                    # the table: status, policy, channel, moved, where, purpose
-#   status_eo --verbose          # ... and why each policy verdict came out
-#   status_eo --all              # every row the table can show, and nothing else
-#   status_eo --all-children     # the same rows, plus what each child declared
-#   status_eo --check            # is the inventory itself well formed?
-#   status_eo --check --online   # ... and does each remote still agree with it
-#   status_eo --help             # what every column and every value means
+#   eo_status_audit                    # the table: status, policy, channel, moved, where, purpose
+#   eo_status_audit --verbose          # ... and why each policy verdict came out
+#   eo_status_audit --all              # every row the table can show, and nothing else
+#   eo_status_audit --all-children     # the same rows, plus what each child declared
+#   eo_status_audit --check            # is the inventory itself well formed?
+#   eo_status_audit --check --online   # ... and does each remote still agree with it
+#   eo_status_audit --help             # what every column and every value means
 #
 # `--help` carries the key: each column, each value it can take, and what to do
 # about a `N failing` row -- including the part the table cannot show, which is

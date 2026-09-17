@@ -712,7 +712,7 @@ and not the arrangement. A person assesses that from the work; no post-join
 grading prompt is required.
 
 **When a member does not meet them, we say so plainly, in the open, and it is
-not an accusation.** `scripts/status_eo` prints one line per tool, names the
+not an accusation.** `scripts/eo_status_audit` prints one line per tool, names the
 disagreement, says whose move it is, and gives the command that shows what
 failed — with the failing check quoted and dated, never as a characterisation
 of the project. **The failure we take more seriously is ours:** a member that
@@ -824,7 +824,7 @@ name they never made.
 
 **`member` carries a judgement, and only the mechanical half is ever checked.**
 Declaring and passing is decidable from a tree; sharing the approach is a
-vision question. `scripts/status_eo --check --online` decides *declares / does
+vision question. `scripts/eo_status_audit --check --online` decides *declares / does
 not declare* and nothing more. **`associate` carries an expiry:** its entry
 records `vetted`, the date a person last read the tree and meant it, and `why`
 — what we vetted them *as*. Nothing expires on its own; the date is there so a
@@ -855,7 +855,7 @@ with a job attached it becomes our housekeeping running at their expense.
 **What is still undecided** is whether the bare heading or the affiliating
 paragraph is the ask, and what a stale `vetted` obliges. If nobody has answered
 by **2026-12-01**, the weaker reading is adopted — the bare heading, without the
-paragraph naming this ecosystem. `scripts/status_eo --protocol` reports where
+paragraph naming this ecosystem. `scripts/eo_status_audit --protocol` reports where
 each proposed associate stands.
 
 ### 1. Declare it, at the top of your maintenance note
@@ -1031,7 +1031,7 @@ alone to make, and commit access does not make it so.** Saying *this is not
 mine to declare* is a correct outcome.
 
 **Checking from this side is two commands and no assistant.**
-`policy_check.py --root PATH` decides the mechanical half, and `status_eo`
+`policy_check.py --root PATH` decides the mechanical half, and `eo_status_audit`
 already names the serious case on every run: a repository that **declares
 membership while our checks fail on its tree**. Neither writes to anybody's
 tree. **A deeper obstacle becomes a topic, not a to-do list:** where joining

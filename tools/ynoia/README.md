@@ -12,7 +12,7 @@ human, read-only, and not part of the governance commands this repository ships.
 Deleting this directory changes no running command. **This is not an island:**
 kanon carries it in
 [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json) and
-`scripts/status_eo` lists it among the advertised children; it is therefore not
+`scripts/eo_status_audit` lists it among the advertised children; it is therefore not
 unadvertised.
 
 ## The question

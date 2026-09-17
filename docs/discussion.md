@@ -99,7 +99,7 @@ already require.
 **Opened:** 2026-09-17
 **Settles when:** koine says what it would accept, or says none of it
 **Widened:** 2026-09-17, from the narrower question of whether you would take
-`install_eo`, `status_eo` and `ecosystem.py`. The reason below is what that
+`install_eo`, `eo_status_audit` and `ecosystem.py`. The reason below is what that
 question was missing, and the list is longer for it.
 
 **What we noticed.** We counted what would actually change hands if this office
@@ -121,8 +121,8 @@ has handed over a maintenance burden with a title attached.
 `.json`**, and that the machinery live with the tool whose job is machinery.
 Four moves, and the third and fourth are new since you last read this topic:
 
-1. **`install_eo`, `status_eo`, `ecosystem/ecosystem.py`, `child_listing.py`,
-   `anoieu_dependency.py`** — 11,809 words, two thirds of it in one move. **A
+1. **`install_eo`, `eo_status_audit`, `ecosystem/ecosystem.py`, `child_listing.py`
+   and `policy_check.py`** — about 11,000 words, two thirds of it in one move. **A
    footing is a decision somebody made**, so the register itself stays with the
    office; what moves is what reads it. You already ship an installer, and two
    installers in one ecosystem is the duplication this repository exists to end.
@@ -132,7 +132,7 @@ Four moves, and the third and fourth are new since you last read this topic:
 3. **`prompts/process_discussion`**, as an installed command. It runs from
    whoever holds the office, against somebody else's checkout. There is no
    reason that is a file the office carries rather than a command it runs.
-4. **The document checks, folded into `status_eo --check`.** This is the one we
+4. **The document checks, folded into `eo_status_audit --check`.** This is the one we
    nearly missed. Three of our four document tests are *register against
    document* — the glossary's labels, the housed projects, every link — and they
    have caught real breakage three times in a day. **They are the office's
@@ -425,7 +425,7 @@ kanon's first obligation under LAW 4, and the natural author is eudaimonia
 through epikrisis rather than anoieu. Raised here because anoieu is the only
 party that can say whether it objects to being described by somebody else.
 
-## D1 — make the CI result in status_eo agree with the corresponding CI job
+## D1 — make the CI result in eo_status_audit agree with the corresponding CI job
 
 **To:** anoieu
 **Kind:** request
@@ -443,14 +443,14 @@ time.
 
 Kanon's [published `policy`
 job](https://github.com/ajreynol/kanon/actions/runs/35016127497/job/104539885912)
-passed at `6f5bfba`, while `status_eo` reported `1 failing`. The immediate
+passed at `6f5bfba`, while `eo_status_audit` reported `1 failing`. The immediate
 cause was ours: preparing the handoff created an empty `docs/` directory. The
 local checker required an index; Git did not record the empty directory, so CI
 never saw it. We have since added our index, and both checks pass locally. That
 fix is staged at the time of writing.
 
 There are also two different checker selections. Our workflow pinned anoieu
-`4d21ec9`; `status_eo` runs the checker from its own checkout. Before fixing
+`4d21ec9`; `eo_status_audit` runs the checker from its own checkout. Before fixing
 the index, we reproduced the following with both versions:
 
 | Tree checked | CI's pinned checker | Current checkout's checker |
@@ -463,7 +463,7 @@ did. Both can produce disagreements in general.
 
 **Update, 2026-09-16: the version difference has since caused one, which is why
 this request is worth more than it looked.** Our `policy` job was red and
-`status_eo` reported `ok`, for a week, and nobody here noticed because the local
+`eo_status_audit` reported `ok`, for a week, and nobody here noticed because the local
 command never runs the pinned checker. The pinned `4d21ec9` predated the
 governance handoff: its membership rule still required a maintenance note to
 link **anoieu's** `docs/policy.md`, and the policy moved to kanon on 2026-09-15,

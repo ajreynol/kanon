@@ -25,7 +25,6 @@ def load(name, path):
 
 ecosystem = load("ecosystem_under_test", "scripts/ecosystem/ecosystem.py")
 installer = load("installer_under_test", "scripts/install_eo")
-dependency = load("dependency_under_test", "scripts/anoieu_dependency.py")
 
 # Loaded here so every suite shares one instance; importing them is also the
 # cheapest check that each still parses against the current tree.

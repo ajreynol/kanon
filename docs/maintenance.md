@@ -24,7 +24,7 @@ directs an agent. [`commands.md`](commands.md) documents the commands.
 3. **Check [the supervision ladder](#the-supervision-ladder)** below before
    touching any document in it.
 4. **Run** `python3 -m unittest discover -s tests -v`,
-   `scripts/status_eo --check`, and `python3 scripts/policy_check.py --root .`.
+   `scripts/eo_status_audit --check`, and `python3 scripts/policy_check.py --root .`.
 
 ## What this repository is responsible for
 
@@ -218,11 +218,11 @@ party that cannot make it.*
 **Start here after a break.**
 
 ```text
-./scripts/status_eo
+./scripts/eo_status_audit
 ```
 
 One line per tool: what footing it is on, whether our checks pass on it, how
-many topics it has addressed to you, and when it last moved. `status_eo --help`
+many topics it has addressed to you, and when it last moved. `eo_status_audit --help`
 says what every column and every value means, and what to do about a failing
 row. **It ends in a single sentence summarising all of it.**
 

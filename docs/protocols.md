@@ -314,7 +314,7 @@ not verify both commits. `PROTO-20` still governs retiring a source stub.
    and `what`, with `branch` if relevant. Include existing unadvertised children;
    unused naming ideas stay in proposals. Record names in use in the authoritative
    [`glossary.md`](glossary.md), including each project's footing or parent.
-3. Run `scripts/status_eo --check` and the offline regression suite. For an
+3. Run `scripts/eo_status_audit --check` and the offline regression suite. For an
    existing checkout outside the normal search locations, add its `ID PATH`
    mapping to `scripts/repos.local`. This local map is not the shared inventory.
    Use `scripts/install_eo --status ID` to inspect it; that command reports and

@@ -58,7 +58,7 @@ that plus the paragraph naming this ecosystem — and write it into
 proposal is superseded and it is not a party we are waiting on for this item.
 **Prompt — `kanon`:** do not record ethos as an associate until the protocol is
 decided; `proposed:` is the field that holds the intention, and
-`scripts/status_eo --protocol` is the report. When it is decided, the section
+`scripts/eo_status_audit --protocol` is the report. When it is decided, the section
 in `policy.md` stops saying *drafted, and not in force* and the ethos entry
 moves in one commit. **Prompt — `ethos`:** we would like to record you as an
 associate: a footing that obliges you to nothing, runs nothing in your CI, and

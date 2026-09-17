@@ -75,7 +75,7 @@ import shlex
 import subprocess
 import sys
 
-from anoieu_dependency import checkout
+from policy_check import checkout
 from child_listing import read_listing, unverified_note
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -699,7 +699,7 @@ def show(root: str, repos: list[Repo], inv: dict, do_fetch: bool,
             print(f"note: {n}")
     print()
     print("What a checkout says, and nothing about what is in it. Membership and "
-          "policy are\n`scripts/status_eo`; whether a tool is any good "
+          "policy are\n`scripts/eo_status_audit`; whether a tool is any good "
           "is not a thing either prints.")
     return 0
 

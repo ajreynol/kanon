@@ -226,7 +226,7 @@ anoieu** and **Fast answers**. A person picks.
 
 **Span** — opened above, and not ended.
 
-**Membership** — the table above, and `scripts/status_eo` for the current count
+**Membership** — the table above, and `scripts/eo_status_audit` for the current count
 rather than a figure quoted from this page.
 
 **Commits** — **not available, and kanon will not compute it.** LAW 4 gives the
@@ -274,7 +274,7 @@ morning. In between, the tree could not hold the office — a named state, the
 registry saying a repository is president while its tree does not carry the
 files the office is kept in. One of the two was there from the start: the same
 commit that moved the office carried `laws.md` and the check that reports the
-state, so `../scripts/status_eo` printed it against kanon's row for the whole
+state, so `../scripts/eo_status_audit` printed it against kanon's row for the whole
 fifteen hours, correctly, and this page was the only thing missing. It is
 supposed to be fixed quickly. Fifteen hours is not quickly, and past some point
 the honest repair stops being to write the account and becomes to put the
@@ -284,7 +284,7 @@ registry line back.
 tachyon declared at 05:23 and the register moved at 06:32, sixty-nine minutes
 later. eschaton declared at 07:02 and the register moved at 07:22, twenty
 minutes later. Neither lag did any damage, and neither was noticed by anybody
-reading: eschaton's was found by `../scripts/status_eo --check --online`, which
+reading: eschaton's was found by `../scripts/eo_status_audit --check --online`, which
 reads each member's front page and fails when the register disagrees with it.
 **That is the check working and the habit not**, and the check is the weaker of
 the two, because it only ever runs when somebody runs it.

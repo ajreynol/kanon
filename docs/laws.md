@@ -304,12 +304,12 @@ a letter was addressed to — those are all downstream, and where any of them
 disagrees with the registry, **the registry is right and the other is the thing
 to fix.**
 
-**Read it with [`../scripts/status_eo`](../scripts/status_eo)**, which prints
+**Read it with [`../scripts/eo_status_audit`](../scripts/eo_status_audit)**, which prints
 one row per tool: whoever prints `president` in the status column is the
 president, today, and that is the whole of the question. It is one command, it
 takes no argument, and it needs nobody's recollection.
 
-**One at a time**, which `scripts/status_eo --check` decides and CI runs. A
+**One at a time**, which `scripts/eo_status_audit --check` decides and CI runs. A
 file recording two presidents has recorded a handover that did not finish —
 both rows look correct alone, which is why it is checked rather than noticed.
 
@@ -338,7 +338,7 @@ stretch is lost, and past some point the honest repair is to put the line back
 rather than to write the account from memory. **A president in limbo has one
 job, which is to stop being in limbo.**
 
-**It is reported and never enforced.** `status_eo` says so in a note against
+**It is reported and never enforced.** `eo_status_audit` says so in a note against
 the row, because a state that has to be fixed quickly has to be visible without
 anybody going looking. Nothing fails a build over it: the remedy is somebody
 doing the carrying, and a red build does not carry anything.

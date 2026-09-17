@@ -249,7 +249,7 @@ it is a promotion nobody has got round to.
 
 **Otherwise stop advertising it**, the moment it is not something you would
 hand a reader. One standalone line in the child's README —
-`**Eunoia listing:** unadvertised` — drops it out of `status_eo` and the
+`**Eunoia listing:** unadvertised` — drops it out of `eo_status_audit` and the
 installer's summaries, and changes nothing else about the work.
 [`commands.md`](commands.md#child-project-listings) has the mechanics.
 
