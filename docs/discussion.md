@@ -414,7 +414,7 @@ local checker required an index; Git did not record the empty directory, so CI
 never saw it. We have since added our index, and both checks pass locally. That
 fix is staged at the time of writing.
 
-There are also two different checker selections. Our workflow pins anoieu
+There are also two different checker selections. Our workflow pinned anoieu
 `4d21ec9`; `status_eo` runs the checker from its own checkout. Before fixing
 the index, we reproduced the following with both versions:
 
@@ -425,6 +425,19 @@ the index, we reproduced the following with both versions:
 
 The version difference did not cause this incident. The filesystem difference
 did. Both can produce disagreements in general.
+
+**Update, 2026-09-16: the version difference has since caused one, which is why
+this request is worth more than it looked.** Our `policy` job was red and
+`status_eo` reported `ok`, for a week, and nobody here noticed because the local
+command never runs the pinned checker. The pinned `4d21ec9` predated the
+governance handoff: its membership rule still required a maintenance note to
+link **anoieu's** `docs/policy.md`, and the policy moved to kanon on 2026-09-15,
+so a tree that is correct today failed a checker cut before it moved. The pin is
+now `87ad682`, verified green by `scripts/bump_check.py`, and the two selections
+agree again — by coincidence of the bump rather than by anything that would
+notice next time. **A local command that reports `ok` while the published job is
+red is the failure this request exists to prevent**, and it is now an observed
+one rather than a hypothetical.
 
 ### Suggested behavior
 
