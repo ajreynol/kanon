@@ -42,6 +42,12 @@ analyzer needs, and it is what this project tries to supply.
    and are carried upstream — if at all — by a person, under the host
    repository's ordinary reporting discipline. Nothing here is filed by machine.
 
+   **Two registers, because a silence and a disagreement are not the same
+   thing.** `feedback.md` holds what the manual does not say;
+   [`docs/account-vs-manual.md`](docs/account-vs-manual.md) holds what it says
+   that we think is not so. The second is the shorter and heavier list, and its
+   first row is a correction to this project rather than to the manual.
+
 3. **Wishue: a formal semantics.** Judgement forms and rules for the type
    system, the desugaring, and evaluation, at the level of detail where two
    people could implement from them and agree. [`semantics.md`](semantics.md)
@@ -83,8 +89,9 @@ The boundary matters more than the goals, so it is stated first-class.
   the authority, in the sense that it governs and this does not — which is not
   the same as being presumed correct. This is a second account a reader may
   consult and check the first against: additive, never authoritative. Where the two disagree, either may be at fault; the disagreement goes
-  to `feedback.md` as a candidate and stays unjudged until somebody who knows
-  the language rules on it.
+  to `feedback.md`, or to [`docs/account-vs-manual.md`](docs/account-vs-manual.md)
+  where we think the manual asserts something that is not so, as a candidate,
+  and stays unjudged until somebody who knows the language rules on it.
 - **It says nothing about soundness.** Whether a calculus written in Eunoia
   proves only true things is a question about that calculus. This is a question
   about the language it is written in.
@@ -134,6 +141,7 @@ convention.
 | [`feedback.md`](feedback.md) | candidate feedback to the ethos manual, as a ledger. Goal 2 |
 | [`semantics.md`](semantics.md) | the formalization: shape, judgement forms, blockers. Goal 3, wishue |
 | [`docs/ethos-logos.md`](docs/ethos-logos.md) | the living comparison: where ethos's Eunoia and logos's Eunoia come apart. Goal 4 |
+| [`docs/account-vs-manual.md`](docs/account-vs-manual.md) | the disagreements: what we think the ethos manual gets wrong. Goal 2, the heavier half |
 
 ## Status
 
@@ -150,6 +158,12 @@ were run against a build; its logos-side claims were read off generated Lean and
 not executed. Four of the rows are instances of questions
 [`manual.md`](manual.md) §11 already lists as unsettled, which is the part worth
 pursuing.
+
+**The disagreements, first cut 2026-09-17.** Ten rows, one of which — that the
+manual presents proof checking as type checking where it is closer to program
+evaluation — is most of the page and is first of all a correction to
+[`manual.md`](manual.md) §8, which repeated the framing without checking it.
+That chapter now carries a correction note and is owed a rewrite.
 
 ## Is there a paper in this?
 
