@@ -3,7 +3,9 @@
 The dictionary of Eunoia’s project names, footings, and distinctive concepts,
 and **the authoritative name register for the ecosystem**. This page records
 names in use, what they mean, and which work they identify.
-Each entry gives its part of speech; project names also give their footing or parent.
+Each entry gives its kind and part of speech; project names give their footing
+or parent. Statuses and assessment terms describe conditions, activities, or
+judgements, not tools or projects.
 
 **Maintained by the president of eo.** The president keeps the definitions
 current and hands this file to the next president with the
@@ -52,15 +54,15 @@ eudaimonia can support a calculus designed elsewhere, with Alethe as its propose
 target. Paused pending collaboration and permission from Alethe’s maintainers.
 [Charter](https://github.com/ajreynol/eudaimonia/blob/main/tools/apodeixis/README.md).
 
-**arete** (*noun*): Excellence in performing a thing’s function; in the report card,
+**arete** (assessment term; *noun*): Excellence in performing a thing’s function; in the report card,
 what a tool does well and what others should learn from it. From Greek ἀρετή,
 “excellence.” See [the report card](../tools/stathmos/report-card.md).
 
-**associate** (*noun*): A tool acknowledged as useful to the ecosystem without being
+**associate** (footing; *noun*): A tool acknowledged as useful to the ecosystem without being
 held to its policy. The proposed associate footing remains undecided and is held by
 nobody. See [the associate protocol](policy.md#the-associate-protocol).
 
-**autarkeia** (*noun*): The proposed state in which an ecosystem can develop a verified
+**autarkeia** (status; *noun*): The proposed state in which an ecosystem can develop a verified
 SMT proof checker from one prompt naming the calculus and its purpose, without further
 human intervention, with its proof obligations discharged and trusted base stated.
 From Greek αὐτάρκεια, “self-sufficiency.” See
@@ -68,18 +70,18 @@ From Greek αὐτάρκεια, “self-sufficiency.” See
 
 ## C
 
-**candidate** (*noun*): The footing for a repository the ecosystem would like to join,
+**candidate** (footing; *noun*): The footing for a repository the ecosystem would like to join,
 but which has not joined and owes nothing. It records our interest, not their consent.
 See [the footings](policy.md#the-footings).
 
-**candidate laws** (*plural noun*): The voluntarily followed rules about footings and
+**candidate laws** (governance rules; *plural noun*): The voluntarily followed rules about footings and
 the presidency. They are maintained by the party they bind and are not mechanically
 enforced. See [the laws](laws.md).
 
 **carcara** (Eunoia outsider; *proper noun*): An outside proof checker and elaborator
 for Alethe, tracked for comparison. [Register](../scripts/ecosystem/ecosystem.json).
 
-**child project** (*noun*): Also **research project**: work on a potential tool housed
+**child project** (project type; *noun*): Also **research project**: work on a potential tool housed
 within a parent repository. It has its own purpose and inherits its parent’s footing.
 See [child projects](policy.md#child-projects).
 
@@ -102,9 +104,10 @@ project. [Charter](https://github.com/ajreynol/eschaton/blob/main/tools/cvc6/REA
 benchmarks to smaller cases that preserve the behaviour under investigation.
 [Register](../scripts/ecosystem/ecosystem.json).
 
-**dioktes** (*noun*): A pursuit of defects in an outside tool, undertaken to test a
-disputed claim. Declared by a person with a closing condition, it describes our activity
-and ends if the target’s maintainers ask. From Greek διώκτης, “pursuer.” See [LAW
+**dioktes** (status; *noun*): The state of a repository actively pursuing defects
+in an outside tool, used in the phrase “in dioktes.” Declared by a person with a
+closing condition; the pursuit ends if the target’s maintainers ask. It describes
+the pursuing repository’s activity. From Greek διώκτης, “pursuer.” See [LAW
 10](laws.md#law-10--in-dioktes-when-we-go-looking-for-defects-in-somebody-elses-tool).
 
 **dokimasia** (Eunoia member; *proper noun*): The analyzer of cvc5’s proof-production code for
@@ -113,7 +116,7 @@ work with no proof step behind it. From Greek δοκιμασία, “scrutiny be
 
 ## E
 
-**elleipsis** (*noun*): A shortcoming, with the evidence that establishes it; the
+**elleipsis** (assessment term; *noun*): A shortcoming, with the evidence that establishes it; the
 report-card field paired with arete and parainesis. From Greek ἔλλειψις, “a falling
 short.” See [the report card](../tools/stathmos/report-card.md).
 
@@ -121,7 +124,7 @@ short.” See [the report card](../tools/stathmos/report-card.md).
 cvc5 bug reports and learning from maintainer responses to improve the next fix.
 [Charter](https://github.com/ajreynol/dokimasia/blob/main/tools/empeiria/README.md).
 
-**eo** (*proper noun*): Short for Eunoia or the Eunoia ecosystem, according to context.
+**eo** (abbreviation; *proper noun*): Short for Eunoia or the Eunoia ecosystem, according to context.
 See [the front page](../README.md).
 
 **epikrisis** (Eunoia member; *proper noun*): The auditor of how repositories change
@@ -156,12 +159,12 @@ end of term.”
 
 ## F
 
-**footing** (*noun*): A tool's recorded relationship to the ecosystem: member,
+**footing** (ecosystem relationship; *noun*): A tool's recorded relationship to the ecosystem: member,
 associate, president, candidate, foundation, child, or outsider. These describe
 different obligations and claims, not ranks. See [the laws](laws.md) and [the
 register](../scripts/ecosystem/ecosystem.json).
 
-**foundation** (*noun*): The footing for a project the ecosystem exists to serve. It
+**foundation** (footing; *noun*): The footing for a project the ecosystem exists to serve. It
 joins nothing, owes nothing, and is subject to no constraint imposed by this
 arrangement. See [the footings](policy.md#the-footings).
 
@@ -184,9 +187,6 @@ attention.
 
 ## I
 
-**in dioktes** (*prepositional phrase*): Actively pursuing defects in an outside tool under
-a declared investigation. See **dioktes**.
-
 **IsaRARE** (Eunoia outsider; *proper noun*): An outside tool that generates Isabelle
 lemmas from RARE rewrite rules, tracked for comparison.
 [Register](../scripts/ecosystem/ecosystem.json).
@@ -197,7 +197,7 @@ lemmas from RARE rewrite rules, tracked for comparison.
 vision, laws, registers, and joining arrangements. From Greek κανών, “the measuring
 rod.” [Register](../scripts/ecosystem/ecosystem.json).
 
-**kanon-ball** (*noun*): A request backed by the laws and addressed by kanon to one tool
+**kanon-ball** (presidential request; *noun*): A request backed by the laws and addressed by kanon to one tool
 in its discussion file. The name is the president's front-page joke, not an additional
 power over the recipient. See [the joke](../README.md#a-joke-about-the-name).
 
@@ -229,7 +229,7 @@ taking stances on particular ethical situations from evidence of conduct. 2. A d
 contradictable piece of that evidence. From Greek μαρτυρία, “testimony.”
 [Charter](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md).
 
-**member** (*noun*): A repository that has chosen to adopt eo’s shared policy and
+**member** (footing; *noun*): A repository that has chosen to adopt eo’s shared policy and
 approach. Membership carries obligations and may be left. See
 [the footings](policy.md#the-footings).
 
@@ -256,25 +256,25 @@ From Greek νόησις, “the act of understanding.”
 
 ## O
 
-**outsider** (*noun*): A tool outside the ecosystem that is tracked for comparison and
+**outsider** (footing; *noun*): A tool outside the ecosystem that is tracked for comparison and
 is not proposed for promotion. Its released artifact and published contribution are
 recorded separately, and neither imposes obligations on it. See [LAW
 9](laws.md#law-9--released-is-not-published-and-tracking-respects-the-difference).
 
 ## P
 
-**parainesis** (*noun*): Counsel following an assessment: what should follow from a
+**parainesis** (assessment term; *noun*): Counsel following an assessment: what should follow from a
 tool’s strengths and shortcomings. From Greek παραίνεσις, “counsel.” See [the report
 card](../tools/stathmos/report-card.md).
 
-**president** (*noun*): The human maintainer of the repository recorded as holding the
+**president** (office; *noun*): The human maintainer of the repository recorded as holding the
 presidency. The office is bestowed for a stretch, sets direction, maintains shared
 governance including this glossary, and confers no control over another tree. See [LAW
 3](laws.md#law-3--there-is-a-president).
 
 ## R
 
-**research project** (*noun*): Another name for a **child project**.
+**research project** (project type; *noun*): Another name for a **child project**.
 
 ## S
 
@@ -292,7 +292,7 @@ role](roles.md#r18--the-model-of-smt-lib-semantics-in-lean).
 card and keeper of its evidence. From Greek σταθμός, “a standard weight.”
 [Charter](../tools/stathmos/README.md).
 
-**stretch** (*noun*): The period for which a repository holds the presidency, also
+**stretch** (term of office; *noun*): The period for which a repository holds the presidency, also
 called its term. The office expires with it; the account is kept during it. The laws
 prescribe no fixed duration. See [LAW 3](laws.md#law-3--there-is-a-president).
 
@@ -314,13 +314,13 @@ checker while replacing the search. Research notes; nothing is built.
 
 ## V
 
-**vaporware** (*noun*): The vision's default status for a tool until a human chooses to
+**vaporware** (status; *noun*): The vision's default status for a tool until a human chooses to
 take responsibility for it. Existing code and a passing build do not make that decision.
 See [the tenet](vision.md#4-until-a-human-decides-otherwise-the-tool-is-vaporware).
 
 ## W
 
-**wishue** (*noun*): The goal a child project would pursue if the work went unusually
+**wishue** (project aspiration; *noun*): The goal a child project would pursue if the work went unusually
 well, explicitly without committing to it. It belongs in the charter when there is one.
 See [child projects](policy.md#child-projects).
 
