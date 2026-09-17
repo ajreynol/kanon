@@ -15,6 +15,22 @@ from child_listing import declaration, read_listing
 
 
 class Declarations(unittest.TestCase):
+    def test_the_footing_marker_is_read_as_well_as_the_older_line(self):
+        M = "**Footing:** `unadvertised-child` — anoieu's front page does not name it"
+        cases = [
+            (f"# x\n\n{M}\n", "unadvertised"),                      # the current spelling
+            (f"# x\n\n{M}\n\n## Charter\n", "unadvertised"),
+            (f"# x\n\n## Charter\n\n{M}\n", "unadvertised"),      # read past a heading
+            (f"# x\n\n```\n{M}\n```\n", "advertised"),            # a fenced example is not one
+            (f"# x\n\n<!--\n{M}\n-->\n", "advertised"),
+            ("# x\n\n**Footing:** `child` — ordinary\n", "advertised"),
+            (f"# x\n\n{M}\n**Eunoia listing:** unadvertised\n", "unadvertised"),
+            (f"# x\n\n{M}\n**Eunoia listing:** advertised\n", "unverified"),
+        ]
+        for text, expected in cases:
+            with self.subTest(text=text):
+                self.assertEqual(declaration(text).state, expected)
+
     def test_only_introductory_metadata_changes_the_default(self):
         marker = "**Eunoia listing:** unadvertised"
         cases = [

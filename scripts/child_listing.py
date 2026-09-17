@@ -21,10 +21,24 @@ class Listing(NamedTuple):
         return self.state == "advertised"
 
 
+#: The footing marker, spelled as anoieu's checker spells it so that the two
+#: read one line the same way. `unadvertised_child_in` looks for it in the same
+#: file this module reads, and a child that carries it is the ecosystem's
+#: current way of saying *not advertised*.
+FOOTING_LINE = r"^\*\*Footing:\*\*\s*`([\w-]+)`"
+UNADVERTISED_CHILD = "unadvertised-child"
+
+
 def declaration(text: str) -> Listing:
+    """What a child's README declares about being listed.
+
+    Two spellings are read. **The footing marker is the current one**, and is
+    what anoieu's checker enforces; `**Eunoia listing:**` predates it and still
+    works. Where a README carries both and they disagree, neither is taken:
+    a tree saying two things has not said one.
+    """
     text = re.sub(r"<!--.*?(?:-->|\Z)", "", text, flags=re.S)
-    values = []
-    fence = ""
+    values, footings, fence, intro = [], [], "", True
     for line in text.splitlines():
         if fence:
             if re.fullmatch(r" {0,3}" + re.escape(fence[0]) +
@@ -35,16 +49,31 @@ def declaration(text: str) -> Listing:
         if opening:
             fence = opening[1]
             continue
+        # A fenced example is not a declaration, in either spelling. The
+        # footing marker is read past the first heading because a maintenance
+        # page states it wherever it states it; the older line is introductory
+        # by its own rule, and that rule is not widened here.
         if re.match(r"^ {0,3}#{2,6}(?:\s|$)", line):
-            break
-        if line.startswith("**Eunoia listing:**"):
+            intro = False
+        marker = re.match(FOOTING_LINE, line)
+        if marker:
+            footings.append(marker[1])
+        if intro and line.startswith("**Eunoia listing:**"):
             values.append(line[len("**Eunoia listing:**"):].strip())
+    if len(set(footings)) > 1:
+        return Listing("unverified", "multiple Footing declarations")
+    marked = footings[:1] == [UNADVERTISED_CHILD]
     if not values:
+        if marked:
+            return Listing("unadvertised", f"footing `{UNADVERTISED_CHILD}`")
         return Listing("advertised", "no declaration; default")
     if len(values) != 1:
         return Listing("unverified", "multiple Eunoia listing declarations")
     if values[0] not in ("advertised", "unadvertised"):
         return Listing("unverified", "expected advertised or unadvertised")
+    if marked and values[0] != "unadvertised":
+        return Listing("unverified",
+                       f"footing `{UNADVERTISED_CHILD}` but Eunoia listing: {values[0]}")
     return Listing(values[0])
 
 

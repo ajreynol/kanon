@@ -267,7 +267,7 @@ recipient. See [the joke](../README.md#a-joke-about-the-name).
 
 <a id="koine"></a>
 **koine** (Eunoia member; *proper noun*): The keeper of the tooling no other
-tool wants to maintain: the ecosystem’s bug database, the history-review tool,
+tool wants to maintain: the ecosystem’s bug database tooling
 and the commands that start and join a repository. From Greek κοινή, “the common
 tongue.” [Repository](https://github.com/ajreynol/koine).
 
@@ -296,9 +296,8 @@ denotes Lean. [Repository](https://github.com/cvc5/logos).
 
 <a id="martyria"></a>
 **martyria** (Eunoia child project of [epikrisis](#epikrisis); *proper noun; also noun*):
-1. The project taking stances on particular ethical situations from evidence of
-conduct. 2. A dated, contradictable piece of that evidence. From Greek μαρτυρία,
-“testimony.”
+The project taking stances on particular ethical situations from evidence of
+conduct.
 [Charter](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md).
 
 <a id="member"></a>
@@ -353,12 +352,6 @@ should follow from a tool’s strengths and shortcomings. From Greek παραί�
 as holding the presidency. The office is bestowed for a [stretch](#stretch),
 sets direction, maintains shared governance including this glossary, and confers
 no control over another tree. See [LAW 3](laws.md#law-3--there-is-a-president).
-
-## R
-
-<a id="research-project"></a>
-**research project** (project type; *noun*): Another name for a
-**[child project](#child-project)**.
 
 ## S
 

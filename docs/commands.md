@@ -83,8 +83,16 @@ this standalone line in the child's `README.md` introduction, before the first
 **Eunoia listing:** unadvertised
 ```
 
-Use `advertised` to explicitly opt in. A README without a declaration is
-advertised by default. Code examples, HTML comments, block quotes and ordinary
+**The current spelling is the footing marker**, in the child's own README and
+read exactly as anoieu's checker reads it:
+
+```markdown
+**Footing:** `unadvertised-child` — the parent's front page does not name it
+```
+
+`**Eunoia listing:** unadvertised` predates it and still works; `advertised`
+explicitly opts in. A README with neither is advertised by default, and one
+carrying both spellings in disagreement is unverified. Code examples, HTML comments, block quotes and ordinary
 prose do not count as declarations. Multiple declarations or an unsupported
 value are unverified and do not opt in.
 
