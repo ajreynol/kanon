@@ -375,20 +375,21 @@ right. Nothing waits on it and nothing is blocked by it being there or gone.
 This is not a formality: it is the last place where a change to a document that
 binds another repository can be caught.
 
-## The scripts, and the prompts
+## The scripts
 
-`scripts/` contains deterministic commands; the prompts that assemble context for an
-assistant. [`commands.md`](commands.md) is the reference for both. The installer
-writes the untracked `scripts/repos.local` checkout map, preserving existing
-entries; a person can edit that map for checkouts elsewhere.
+`scripts/` contains deterministic commands and nothing that launches an
+assistant; [`commands.md`](commands.md) is the reference. The untracked
+`scripts/repos.local` checkout map is **written by hand** — one `ID PATH` pair
+per line — since the installer that used to maintain it was deleted on
+2026-09-17.
 
 Every prompt takes `--show-prompt`, which prints its assembled instructions
 without launching an assistant and writes no files. `eo_init` and `eo_join`, which
 draft changes in the repository being started or joined, are `R35` and are not
 in this tree.
 
-Normal installation clones missing repositories and updates the checkout map.
-`--status` reads existing checkouts; adding `--fetch` explicitly fetches first.
+Installing the ecosystem is not done from here: the command was deleted on
+2026-09-17 and koine is building its replacement.
 
 ## The build
 

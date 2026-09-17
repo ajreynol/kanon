@@ -45,10 +45,11 @@ changes nothing — and `--force` is a person's decision that the run records.
 
 ## Checkouts and the checker
 
-The installer defaults to siblings of kanon. `--root PATH` or `EO_ROOT` selects
-another installation directory. Repositories marked `outsider` are never cloned,
-even when named explicitly or with `--with-optional`; `--status` still lists them.
-It stores checkout locations in the untracked
+**Repositories marked `outsider` are never cloned**, whatever asks: they are
+published work tracked for comparison, and cloning one would be this ecosystem
+helping itself to somebody's tree. That rule belongs to whoever writes the
+installer, and this page records it because the register is what it reads.
+Checkout locations live in the untracked
 `scripts/repos.local`, with one `ID PATH` pair per line. Existing mappings are
 preserved. `ANOIEU_REPOS_FILE` selects a shared mapping file for both repositories;
 `ANOIEU_REPOS` is a colon-separated list of search directories. Status and host
@@ -63,8 +64,11 @@ It does not fetch or update the checkout.
 
 Installation status can be read before anoieu is installed. When available,
 anoieu's `scripts/deps.json` supplies its report dependency pins; kanon does
-not keep a duplicate. The installer and status commands share
-[`ecosystem.json`](../scripts/ecosystem/ecosystem.json) as their inventory.
+not keep a duplicate. [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) is
+the inventory every reader of it shares, and
+[`checkouts.json`](../scripts/ecosystem/checkouts.json) beside it holds the
+installation exceptions — **nothing here reads that second file any more**, and
+it is kept because it is the register's, not the installer's.
 The `purpose` column in `eo_status_audit` reads an entry's optional `short` field,
 falling back to `what`. Keep `short` around 60 characters or fewer; longer text
 is shortened at a word boundary with an ellipsis. `what` keeps the full description.
@@ -101,8 +105,7 @@ Both commands read the local parent checkout and the child's inventory `path`.
 They read the currently checked-out version, without fetching or switching to
 the child's recorded `branch`. A missing parent, missing path, or unreadable
 README leaves the preference unverified; a note names the parent and the reason,
-without listing the affected children. The installer reads from `--root` (or its
-default), and reads again after cloning when producing branch advice.
+without listing the affected children.
 
 `eo_status_audit --all-children` includes every recorded child with its preference and
 any read error. Normal table counts include only displayed children. Inventory
@@ -177,12 +180,12 @@ python3 scripts/policy_check.py --root .
 
 The regression suite checks document links, glossary project footings and parents,
 transferred project locations,
-installer behavior, checker discovery and unavailable-checker reporting, and
+checker discovery and unavailable-checker reporting, and
 prompt previews. It uses temporary fixtures and does not launch assistants,
 clone repositories or contact the network. CI runs it alongside inventory
 validation. The separate policy job keeps the existing anoieu checker pin.
 
 `scripts/policy_check.py` locates anoieu's checkout and runs the checker, and
-supplies that discovery to the status readers and the installer. `scripts/ecosystem/ecosystem.py` implements
+supplies that discovery to the status readers. `scripts/ecosystem/ecosystem.py` implements
 `eo_status_audit`. `scripts/child_listing.py` reads the README listing declaration
 for both status and installation.
