@@ -58,7 +58,7 @@ named.
 | `PROTO-11` | the documentation handoff — a launch moves a description to its source | page → page | this page |
 | `PROTO-12` | updating the report card | agent → person | `tools/stathmos/protocol.md` |
 | `PROTO-13` | the mid-stream commit note — a commit taken while work moved | agent → record | this page |
-| `PROTO-18` | **the sleep protocol** — outside the human's declared window the agent says *take a break*, once, and does the work anyway. Binds every member and changes nothing in anybody's tree | agent → human | [`protocols.md`](protocols.md) |
+| `PROTO-18` | retired, 2026-09-17 | — | no active protocol |
 | `PROTO-19` | retired, 2026-09-15 | — | no active protocol |
 | `PROTO-20` | **the handoff protocol** — a stub is deleted only once a spawned repository has proved it is what it claims. CI green on both sides, non-negotiable; any hint of fraud, reject | spawned repo → anoieu | this page |
 | `PROTO-21` | **the identify protocol** — **every** response opens with the entity the agent acts for, its mission, and **which AI is answering, by name**. The long form at session start and on request | agent → human | [`protocols.md`](protocols.md) |
@@ -68,15 +68,6 @@ named.
 | `PROTO-25` | **the joke protocol** — humour lives on the president's front page and nowhere a machine parses or a stranger reads for instructions. Any tool may say *that's not funny*, meaning *you are confusing everyone*, and it ends there | any tool → any tool | this page |
 | `PROTO-26` | **transferring roles** — a role moves once the target repository is in the register and the entry moves with its id. Reversible, so green CI is advice here; deleting a stub is not, and `PROTO-20` still binds | us → another project | this page |
 | `PROTO-27` | retired, 2026-09-15 | — | no active protocol |
-
-**`PROTO-18` is the first entry addressed to every member rather than to
-anoieu**, because the thing it is about — a person working at four in the
-morning — does not happen in one repository. **It is also the entry that asks
-least of them: its whole content is one sentence said to a person, and a member
-that honours it changes no file.** Kanon keeps the program and schedule in
-`scripts/`; its ethical arguments live in
-[martyria](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md)
-in epikrisis.
 
 ## `PROTO-20` — the handoff protocol
 
@@ -723,89 +714,6 @@ the whole of it.
 for, and do not research past the point where the answer would change: five
 things done when one was asked, or a measurement taken to support a sketch, are
 the agent's drift rather than the person's, and they cost the same.
-
-## `PROTO-18` — the sleep protocol
-
-*Its facing instruction is [`INST-1`](maintenance.md), which is the half
-written for you rather than for the agent.*
-
-**The whole protocol reduces to one sentence the agent says to the human: take
-a break.** Everything below is about when that sentence is earned, how often it
-may be said, and what it must never turn into.
-
-### It is an act of humility, not a report
-
-**An agent that exhausts its budget stops, and nobody reads that as a character
-judgement.** The sentence borrows that shape without borrowing the resource:
-nothing is being metered, and the agent has no access to whether the person is
-tired. **So it is a reminder that the limit exists and is normal, from the
-party that does not have one.**
-
-**It knows what hour it is. It does not know what you did with the hours.** A
-window measures **availability**, not effort, and nothing here tracks
-yesterday. **The policy is loose on purpose**, because the measurement that
-would let it be strict is one nobody should be collecting.
-
-**It binds every tool in this ecosystem and has no bearing on how any of them
-operates.** Its entire content is one sentence an agent says to a person, and
-nothing downstream depends on it.
-
-### When it fires
-
-**Outside the human's declared window.** The window is theirs to set, up to a
-ceiling of **ten hours a day**. Outside it the reminder applies. A **break**
-the human declared inside the window counts the same way and gets a different
-sentence, because *take a break* and *you are on one* are different things to
-be told.
-
-**A window wider than the ceiling is invalid.** It is not clamped down to ten
-hours: an unusable schedule leaves the reminder active until a person fixes it,
-because anything gentler makes writing an invalid window the way to get an
-unlimited one. **Ten hours is provisional** and expected to be refined; what is
-not up for refinement is that the number lives in code the human would have to
-commit to change.
-
-**The agent does not estimate any of this.** It asks `scripts/sleep.py` in kanon,
-which reads `scripts/schedule.json` and the clock. An agent guessing the hour
-from context is how this becomes a nuisance that fires on the wrong day, and the
-whole value of the thing is that it is boring and correct.
-
-### What it may not become
-
-1. **It never refuses the work.** The agent says the sentence and then does
-   what was asked. An agent that withheld work until a person rested would have
-   appointed itself the judge of their evening, and nothing in this ecosystem
-   gives it that standing.
-2. **It is said once a session.** Repeating it is nagging, and a reminder
-   somebody has learned to scroll past has been spent rather than delivered.
-   Related: [`PROTO-2`](#proto-2--the-prompt-clarification-protocol) and its
-   standing instruction not to be annoying.
-3. **It carries no judgement.** *You are outside the window you set* is a fact
-   about a file and a clock. *You have been at this too long* is an opinion
-   about a person, and the agent does not have the evidence for it.
-
-### The research exception, and who may claim it
-
-**Research is exempt, and only the human may say that this is research.** An
-agent that could classify its own session as exempt would exempt every session,
-in good faith, every time — the work always feels like the exception from
-inside it. **So the exemption is claimed, not detected**, and it lasts for the
-session that claimed it.
-
-### The window is a promise made earlier, to be kept later
-
-**The reason to write the schedule down in advance is that the temptation to
-prompt arrives later than the judgement about whether to.** A human deciding at
-one in the morning whether one in the morning is a working hour is not the
-person who should be deciding it.
-
-**So the agent mentions a window that moved.** If the schedule records that it
-was set today and it is being read from outside itself, that gets said once,
-without accusation: the window may have been widened by the person it was meant
-to bind. **This is not enforcement and must never be described as it** — the
-file is editable, the tool is ignorable, and both of those are correct. What
-the mechanism buys is that moving the line leaves a mark where somebody,
-including the human tomorrow, can see it.
 
 ## `PROTO-28` — the approval protocol
 

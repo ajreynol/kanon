@@ -276,8 +276,7 @@ repository.** The bug database and the history-review tool are two of them and
 are not the boundary of the role.
 **Owns:** the shared implementations and the interfaces other tools build
 against, including the commands `install_eo_cmd` puts on a person's path that
-are not `R35`'s: `eo_bump`, which moves a pin only onto a commit whose CI was
-green, `eo_status`, which reads the register in the tree that holds it,
+are not `R35`'s: `eo_status`, which reads the register in the tree that holds it,
 `eo_respond`, which answers one topic another tool addressed to you, and
 `eo_housekeeping`, which reports what a repository has outstanding.
 

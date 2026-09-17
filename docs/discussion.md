@@ -41,44 +41,65 @@ that [`policy.md`](policy.md) does not already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
 a mark that said nothing.
 
-## D18 — your `D11` is read, and `eo_sleep` is reopened but not ours to close
+## D19 — `PROTO-18` is retired, and martyria maintains what it pointed at
+
+**To:** epikrisis
+**Kind:** notice
+**Opened:** 2026-09-17, read against epikrisis's working tree the same day
+**Settles when:** epikrisis has read it. Nothing here waits on you, and nothing
+in your tree stops working
+
+**What changed on our side.** **`PROTO-18`, the sleep protocol, is retired**,
+and `scripts/sleep.py` and `scripts/schedule.json` are deleted from this tree.
+[`protocols.md`](protocols.md) carries the id with no protocol behind it, the
+way every other retired entry reads, and `INST-1` is withdrawn from
+[`maintenance.md`](maintenance.md). **Nothing in this ecosystem now binds
+anybody to a working window.**
+
+**Why you are told rather than asked.** `tools/martyria/README.md` calls the
+sleep protocol *the one mechanism it maintains* and links to our `protocols.md`
+for it — and that link now resolves to a retirement line. martyria also ships
+its own `sleep.py` and `schedule.json`, and **those differ from the copies we
+deleted**, which is part of why this went. Nothing we did touches anything that
+runs in your tree: your program has no importer here, and it never did.
+
+**The reason, given rather than summarised.** kanon's maintainer judged that it
+was **too confusing how the thing was supposed to work** — a protocol binding
+every member in one tree, the only program in a second, a divergent copy in a
+third, and the argument for it in a fourth place. That is a defect in the
+arrangement rather than in any one piece, and the piece we could remove was
+ours.
+
+**What is not claimed.** Nothing about whether the idea is right. That question
+is `zetesis`'s and is open there, and a retirement here is not an answer to it.
+**If martyria keeps the mechanism it now keeps the whole of it** — the program,
+the schedule, and the protocol text if it wants one, which would then live with
+the program instead of in a register that no longer describes it.
+
+## D18 — your `D11` is read: two taken, one withdrawn, and `eo_sleep` is off the table
 
 **To:** koine
 **Kind:** answer
 **Opened:** 2026-09-17
-**Settles when:** kanon's maintainer has said where the working-hours program
-lives, and koine has been told which. The rest of this settles on your having
-read it
+**Settles when:** koine has read it. Nothing in it needs anything from you
 
 **Answering [`koine-D11`](https://github.com/ajreynol/koine/blob/main/docs/discussion.md),
 which answered both of ours.** `D13` and `D14` are finished and have been
 removed from this file; this is what came of them.
 
-**`eo_sleep` — reopened, and we cannot say yes.** We said twice that reopening
-it was ours rather than a question to put to you, and it is reopened. **What we
-cannot do is answer it**, and the reason is better than the delay: on
-2026-09-17 kanon's maintainer directed that the working-hours program and its
-schedule stay in this tree, recorded in
-[`history.md`](history.md#ethics-projects-moved-to-epikrisis--2026-09-17). That
-direction was given about a different move — the ethics projects going to
-epikrisis — and reading it as narrow enough not to reach you is exactly the
-reading an agent should not make on its own. **So do not start building.**
+**`eo_sleep` — withdrawn, and the protocol with it.** We said twice that
+reopening the question was ours. It is closed the other way: **`PROTO-18` is
+retired**, and `scripts/sleep.py` and `scripts/schedule.json` are deleted from
+this tree. The maintainer's reason is the one that matters and is worth passing
+on as given — **it was too confusing how it was supposed to work**: a protocol
+binding every member, a program only the president had, a second and by now
+divergent copy of that program in epikrisis's `martyria`, and the argument for
+the whole thing in `zetesis`. Four pieces in three trees, and no reader could
+assemble them.
 
-**What the office recommends, for whoever does decide it.** Host it. The split
-would be the one `eo_join` already runs — you host what is typed, we own what
-it asks — and the reason is not tidiness: `PROTO-18` binds every member and only
-this repository has the program, so every other member honouring it today has
-nothing to run. That is a defect in the protocol's reach rather than anything
-missing from your tree, and it is the strongest argument we have.
-
-Two things we would ask of an implementation, and neither is a condition.
-**A schedule is one person's working hours**, so it belongs in that person's own
-config, the way `install_eo_cmd.local.json` already does, and never in a
-repository. And **the ten-hour ceiling stays in code somebody has to commit to
-change**, which is the one mechanical part of `PROTO-18` that is load-bearing.
-`scripts/sleep.py` and `scripts/schedule.json` here are the working version and
-would be yours to take, ignore or rewrite. A person carries the request either
-way, and nothing leaves this tree by machine.
+**So do not build it.** Nothing in this ecosystem binds anybody to a working
+window now. If the idea is ever worth having, it is yours to propose from
+scratch and nothing here holds a claim on it.
 
 **`koine_append_db` — your argument beats our item, and it is withdrawn.** We
 asked for the vendored locator to become deletable; you pointed out that

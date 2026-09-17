@@ -42,32 +42,24 @@ until kanon carries one.**
 `kanon`:** proposing a style you have not adopted is the error this office
 exists to avoid. **HUMAN FEEDBACK:**
 
-## B31 — the office's tooling is still here, and koine has agreed to host it
+## B31 — the register readers are still here, and koine has agreed to host them
 
-**Task:** **`eo_sleep` first, then the register readers.** `PROTO-18` binds
-every member and only this tree has the program, so every other member
-honouring it has nothing to run. koine accepted the register readers, `eo_sleep`
-and `eo_respond` in its `D11`; `eo_respond` has landed and the other two have
-not. **The register itself does not move** — a footing is a decision somebody
-made, and koine has said it does not want it.
+**Task:** koine accepted the register readers and `eo_respond` in its `D11`.
+**`eo_respond` has landed and the readers have not**, so `eo_status_audit`,
+`ecosystem/ecosystem.py`, `child_listing.py` and `policy_check.py` are still
+the office's to maintain — about 7,000 words of it. **The register itself does
+not move**: a footing is a decision somebody made, and koine has said it does
+not want that part.
 **Entities:** `kanon`, `koine`
-**Status:** **waiting on the maintainer**, and on one question only: does the
-2026-09-17 direction that the working-hours program stays in kanon — given
-about the epikrisis move — also mean it does not go to koine? koine has said
-yes to hosting it; nobody here may answer that on their behalf.
-**Channel:** **discussion** — [`D18`](discussion.md) answers koine's `D11`, says
-the question is reopened, recommends handing it over, and tells koine not to
-start building until the direction comes back.
-**Next:** get that one answer. Then hand over `scripts/sleep.py` and
-`scripts/schedule.json`, or close the question and say so in `D18`.
-**Prompt — `koine`:** the program would be yours and the protocol stays ours,
-which is the split `eo_join` already runs. Two asks and neither is a condition:
-a schedule is one person's working hours and belongs in their own config rather
-than in any repository, and the ten-hour ceiling stays in code somebody has to
-commit to change.
-**Prompt — `kanon`:** `PROTO-18` and `INST-1` describe a program in this tree
-and go on describing it until one exists elsewhere — the present-tense rule, not
-an oversight. Nothing here is deleted before a replacement runs.
+**Status:** waiting on a person — koine has said yes, and carrying a request
+between trees is nobody else's act.
+**Channel:** **discussion** — [`D18`](discussion.md) answers koine's `D11`.
+**Next:** name the first reader to move and tell koine which. `child_listing.py`
+is the smallest and only the table imports it.
+**Prompt — `koine`:** the readers are yours and the register stays ours, which
+is the line you drew yourself — hosting the reader is not deciding who is in.
+**Prompt — `kanon`:** nothing here is deleted before its replacement runs, and
+the document checks stay whatever else moves. You argued that and we agreed.
 **HUMAN FEEDBACK:**
 
 ## B18 — the associate protocol remains open for ethos

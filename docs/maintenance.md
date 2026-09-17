@@ -49,7 +49,7 @@ for.
 
 | | what you do |
 | --- | --- |
-| [`INST-1`](#inst-1--your-working-window) | set your working hours, once, and let us hold you to them |
+| `INST-1` | withdrawn, 2026-09-17 |
 | [`INST-2`](#inst-2--every-answer-says-who-it-is-from) | type *identify* whenever you want to know which tool the agent thinks it is working for |
 | [`INST-3`](#inst-3--do-not-outrun-your-own-understanding) | do not push development faster than you understand it |
 | [`INST-4`](#inst-4--picking-it-back-up) | the command that tells you where everything stands |
@@ -134,35 +134,6 @@ costs a full turn of rework.
 **Give the principle rather than the edit** where you can. *You can do anything
 you want if the repository's policy says it is AI generated* produced a rule
 that generalises; the equivalent list of permitted actions would not have.
-
-## `INST-1` — your working window
-
-**Write down the hours you mean to work.** Up to ten a day, and you can name
-breaks inside them.
-
-**Do it in daylight.** The urge to keep going turns up later than the judgement
-about whether to.
-
-Outside your hours, you get a reminder to take a break, once a session. You
-still get your answer; nothing is withheld or slowed down.
-
-**Doing research? Say so, and it stays quiet for the session.** It is yours to
-say; no tool decides that for you.
-
-### Setting it
-
-```text
-python3 scripts/sleep.py
-```
-
-That prints your window and where you stand in it. Edit `scripts/schedule.json`
-for the start, end, breaks, and optional timezone. These operational files stay
-in kanon; the ethics projects and their case records now live in epikrisis.
-
-**Two things it cannot do.** It cannot stop you. And it does not know how much
-you have worked — only what time it is.
-
----
 
 ## `INST-2` — every answer says who it is from
 
@@ -390,9 +361,8 @@ started or joined, are `R35`; `eo_respond`, which answers one topic another tree
 has addressed to us and refuses a run that names none; and `eo_housekeeping`,
 which reads what is outstanding across the checkouts. Each takes
 `--show-prompt`, which prints its assembled instructions without launching an
-assistant and writes no files. `eo_bump`, which moves the pin, and `eo_status`,
-which reads the register, are programs: they do the work themselves and hand
-nothing to an assistant.
+assistant and writes no files. `eo_status` reads the register directly and
+hands nothing to an assistant.
 
 ## The build
 
@@ -404,8 +374,8 @@ no assistant, clones no repository, and makes no network requests.
 The separate `anoieu / policy` job is
 [anoieu's shared workflow](https://github.com/ajreynol/anoieu/blob/main/docs/policy-checker.md)
 called at `main`, asking for **policy contract 1**. **This repository pins
-nothing for it**, so there is no lock here and nothing for `eo_bump` to move;
-what is held still is the contract, and the implementation behind it may change
+nothing for it**, so there is no checker lock to update. What is held still
+is the contract, and the implementation behind it may change
 between two runs of the same commit. [`policy.md`](policy.md#2-run-the-check)
 accepts a pinned commit just as well, and a member may be on either form — read
 a member's own workflow file rather than assuming.

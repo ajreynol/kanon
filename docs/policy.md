@@ -896,10 +896,10 @@ not a suggestion.** Work anoieu could not get past its own build is not work to
 take on. Ask **about that commit and never about anoieu's tip**, so the answer
 never changes after you have taken it; **fail closed**, which is affordable
 because bumping is optional; and **do not run it in your CI**, since it reads a
-remote. **`eo_bump` is that check**, maintained by koine so that every member
-does not write it separately — the requirement is the refusal, not the program,
-and nothing obliges you to use that one. A repository on the contract form pins
-nothing for this check and has nothing here to bump.
+remote. Before editing a checker lock, inspect anoieu's CI result for the
+exact candidate commit and leave the lock unchanged if success cannot be
+established. A repository on the contract form pins nothing for this check
+and has nothing here to bump.
 
 **The checker and this page live in different repositories**, so the pin names
 the checker and not the policy text. **How the two stay in version step is
@@ -917,11 +917,10 @@ them. Three matter to a repository deciding how to run the check:
   pinned tree adopts one by moving its pin, and a tree on the contract form by
   naming a later contract — an added obligation is a new contract and never a
   fix.
-- **Nobody maintains your bumping for you.** A script this repository kept on
-  everybody's behalf would be a maintenance contract and the office is in no
-  position to sign one, which is why `eo_bump` is koine's. **An announcement is
-  an intention and nothing enforces it**; a pin or a named contract works
-  whether or not anybody remembers.
+- **Nobody maintains your bumping for you.** A repository choosing a checker
+  pin is responsible for checking and updating it. **An announcement is an
+  intention and nothing enforces it**; a pin or a named contract works whether
+  or not anybody remembers.
 
 ### What passing does and does not mean
 

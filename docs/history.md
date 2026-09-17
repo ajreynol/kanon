@@ -92,11 +92,12 @@ checkout and were byte-identical, including the cases and findings. They remain
 distinct, unadvertised child projects; the inventory now names epikrisis as
 their parent. Earlier accounts of their arrival in kanon remain unchanged.
 
-At the maintainer's direction, the working-hours program and schedule stay in
-kanon at `scripts/sleep.py` and `scripts/schedule.json`. The health report uses
-those local files; the ethical arguments and case records live in epikrisis.
-This separates their custody from the presidency, without establishing
-independence from the ecosystem whose conduct they examine.
+At the maintainer's direction the working-hours program and schedule stayed in
+kanon, at `scripts/sleep.py` and `scripts/schedule.json`, with the ethical
+arguments and case records in epikrisis. That separated their custody from the
+presidency without establishing independence from the ecosystem whose conduct
+they examine. **Both files were deleted later the same day** and `PROTO-18` went
+with them — two entries below.
 
 ### The glossary became the name register — 2026-09-17
 
@@ -262,8 +263,10 @@ asked from both ends and are answered in `D15`.
 *Commit note, and delete it whenever it stops helping:* `911c3ca`, "Hk",
 carries this day's housekeeping as it stood at 16:23 — the four `associate`
 corrections, two command fixes, the budget row, the topics, **and the pin move
-that the commit after it deletes**. Its message describes none of that, so a
-reader looking for any of it by subject will not find it there.
+that the next commit deletes**. `1e029ef`, "Rm lock", carries the move to the
+contract: the workflow, both deleted files, and every page and topic change that
+went with them. Neither message describes its contents, so a reader looking for
+any of this by subject will not find it under either.
 
 ### Two commands were reporting the wrong thing — 2026-09-17
 
@@ -284,6 +287,29 @@ by the repository itself, on its own maintenance page.
   counted as ours. Four topics are addressed to us; the table said three.
 
 *Re-derive:* `scripts/eo_status_audit --check --online` and `--protocol`.
+
+### `PROTO-18` was retired and the sleep machinery deleted — 2026-09-17
+
+**At the maintainer's direction, and the reason is itself the finding.** The
+sleep protocol bound every member; the program existed only in the president's
+tree; a second and by then divergent copy of that program was in epikrisis's
+`martyria`; and the argument for having it at all was in `zetesis`. Four pieces
+in three trees, and **no reader could assemble how it was supposed to work** —
+a defect in the arrangement rather than in any one piece.
+
+Retired in place: [`protocols.md`](protocols.md) carries `PROTO-18` with no
+protocol behind it, `INST-1` is withdrawn from
+[`maintenance.md`](maintenance.md), and `scripts/sleep.py` and
+`scripts/schedule.json` are deleted. **Nothing in this ecosystem now binds
+anybody to a working window**, and the office no longer ships a program at all
+outside `scripts/`'s register readers. epikrisis is told in `D19` and koine,
+which had offered to host it as `eo_sleep`, is told in `D18` not to build it.
+
+**What is not settled by this.** Whether an agent should tell a person to stop
+working is `zetesis`'s question and stays open there; retiring the mechanism is
+not an answer to it.
+
+*Re-derive:* `git log --diff-filter=D -- scripts/sleep.py scripts/schedule.json`.
 
 ### The governance budget got its second row — 2026-09-17
 
@@ -487,8 +513,8 @@ were made.
   that the page itself is the worst offender. Kanon reached it later and
   independently.
 - **`INST-4` is proposed and, unlike the others, has a home.** *Read a primed
-  repository in full before proceeding.* `maintenance.md` already holds
-  `INST-1`–`INST-3`, and the agent-facing half is the `Closed` heading here.
+  repository in full before proceeding.* `maintenance.md` already holds the
+  other `INST-n` ids, and the agent-facing half is the `Closed` heading here.
 - **Three rules now have nowhere to live**: the office-count range, the
   empty-president tenet, and the suggestion to the next term. `laws.md` governs
   `history.md` and nothing else by its own statement, so the ecosystem has a
@@ -723,13 +749,6 @@ start disagreeing about it.** The required-reading budget is likewise [LAW
   person's.
 - Everything open on [the board](board.md), which is where this office's work
   is now kept.
-- **The schedule.** `sleep.py` and `schedule.json` stayed here when the ethics
-  projects went to epikrisis, at the maintainer's direction, so they no longer
-  travel with `martyria`. koine has said it would host them as `eo_sleep`, and
-  `D18` asks the maintainer whether that direction also decides this: an agent
-  reading it narrowly enough to hand the program away is the reading that
-  should not be made here. `PROTO-18` binds every member and only this
-  repository has the program, which is the whole of the argument for moving it.
 
 ## What the next term should be for
 
