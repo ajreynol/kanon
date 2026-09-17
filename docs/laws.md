@@ -75,6 +75,8 @@ reader wanting to know what happened does not skip past procedure.
 **It is not a changelog.** The commits are the changelog and are better at it.
 It records what a reader cannot reconstruct from them: how often the build was
 broken, for how long, and what nobody was watching.
+[LAW 11](#law-11--historymd-is-kept-short-enough-that-a-successor-reads-it) puts
+a ceiling on it and says what earns an entry.
 
 **It is not the report card.**
 [`report-card.md`](../tools/stathmos/report-card.md)
@@ -580,3 +582,33 @@ is why the entry names what closes it before it opens.
 **And the honest reason this law exists:** a fuzzer pointed at somebody else's
 tool produces findings indefinitely, and volume is the thing that turns help
 into pressure. **The limit is never the tool's; it is ours.**
+## (LAW 11) — `history.md` is kept short enough that a successor reads it
+
+**A recommended length, and nothing more.** The account stays **under 10,000
+words**. `wc -w` decides it, anybody can run it, and no build fails on the
+answer.
+
+**Why this page needs a ceiling of its own.**
+[LAW 8](#law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting)
+covers the four pages a stranger reads. This one is read by exactly one person
+who has no choice about it, and it is **the only page allowed to carry the
+past** — which makes it the page with no natural brake. Everything the
+present-tense rule turns out of the other pages lands here, so a rule that says
+*put it in `history.md`* is a rule that fills `history.md`.
+
+**What earns an entry is something the next president cannot do the job
+without**: a role that left or arrived, a law added, removed or reversed, a
+footing that changed, a build that was broken and for how long, what went
+wrong, and what is still owed. **What does not earn one:** a page corrected, a
+stale description brought current, a link fixed, a routine sweep. **Those are
+the commits' job**, and the commits are better at it.
+
+**Re-derivability beats narration, and `LAW 4` is what the ceiling must not
+cost.** An entry says what changed and how to check it; it does not reproduce
+the argument, which is in the tree it changed. A successor who cannot re-derive
+a figure has been handed a story — and one who reads four hundred words about a
+correction has been handed somebody's afternoon.
+
+**Over the ceiling is not a violation**, and neither is an entry somebody later
+judges too small. Both are signals that the page has started recording the work
+instead of the term.

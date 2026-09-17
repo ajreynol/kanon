@@ -315,8 +315,8 @@ is a change to be argued there.
 **Held by:** `koine`
 **Role:** maintaining the machinery every member would otherwise implement
 separately — **one implementation of the shared parts rather than one per
-repository.** The reporting loop is the first of them and is not the boundary
-of the role.
+repository.** The bug database and the history-review tool are two of them and
+are not the boundary of the role.
 **Owns:** the shared implementations, and the interfaces other tools build
 against.
 **Not this role:** deciding what any member reports, or what settles a row.

@@ -293,15 +293,15 @@
     "repo": "kanon",
     "url": "https://github.com/ajreynol/kanon",
     "short": "Ecosystem policy, governance, and inventory",
-    "what": "the ecosystem's governance: the policy, vision, inventory and joining scripts; the checker stays in anoieu"
+    "what": "the ecosystem's governance: the policy, vision, laws and inventory"
   },
   "koine": {
     "status": "member",
     "joined": "anoieu 5668c20",
     "repo": "koine",
     "url": "https://github.com/ajreynol/koine",
-    "short": "Shared reporting protocol and tooling",
-    "what": "the shared machinery of the reporting loop: one implementation of the protocol rather than one per member"
+    "short": "Bug database, shared ecosystem commands",
+    "what": "the (shared) tooling no other tool wants to maintain"
   },
   "sapheneia": {
     "status": "child",

@@ -37,9 +37,13 @@ ecosystem nothing.
 
 ## A
 
-**Alethe** (proof format; *proper noun*): The proof format chosen as apodeixis’s
-proposed test of whether eudaimonia can support a calculus designed elsewhere. See
-[the project register](../scripts/ecosystem/ecosystem.json).
+**Alethe** (proof format; *proper noun*): A format for recording the proofs
+SMT solvers produce, defined and maintained outside this ecosystem by its own
+maintainers. Within the ecosystem it is **apodeixis**’s proposed target for
+testing whether eudaimonia can support a calculus designed elsewhere, and that
+work is paused pending its maintainers’ collaboration and permission.
+[Apodeixis’s charter](https://github.com/ajreynol/eudaimonia/blob/main/tools/apodeixis/README.md)
+records the ecosystem’s interest in it.
 
 **anakrisis** (Eunoia child project of dokimasia; *proper noun*): The project reviewing
 cvc5 pull requests through proof-completeness analyses before and after a change.
@@ -193,17 +197,18 @@ lemmas from RARE rewrite rules, tracked for comparison.
 
 ## K
 
-**kanon** (Eunoia president; *proper noun*): The keeper of the ecosystem’s governance, policy,
-vision, laws, registers, and joining arrangements. From Greek κανών, “the measuring
-rod.” [Register](../scripts/ecosystem/ecosystem.json).
+**kanon** (Eunoia president; *proper noun*): The keeper of the ecosystem’s governance,
+policy, vision, laws and registers, including what joining costs. From Greek κανών,
+“the measuring rod.” [Register](../scripts/ecosystem/ecosystem.json).
 
 **kanon-ball** (presidential request; *noun*): A request backed by the laws and addressed by kanon to one tool
 in its discussion file. The name is the president's front-page joke, not an additional
 power over the recipient. See [the joke](../README.md#a-joke-about-the-name).
 
-**koine** (Eunoia member; *proper noun*): The shared machinery of the reporting loop,
-maintained so members need not implement it separately. From Greek κοινή, “the
-common tongue.” [Register](../scripts/ecosystem/ecosystem.json).
+**koine** (Eunoia member; *proper noun*): The keeper of the tooling no other tool
+wants to maintain: the ecosystem’s bug database, the history-review tool, and the
+commands that start and join a repository. From Greek κοινή, “the common tongue.”
+[Register](../scripts/ecosystem/ecosystem.json).
 
 ## L
 
