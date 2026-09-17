@@ -58,7 +58,9 @@ class Documents(unittest.TestCase):
     def test_glossary_project_labels_match_inventory(self):
         text = (ROOT / "docs/glossary.md").read_text()
         labels = re.findall(r"^\*\*(.+?)\*\* \(Eunoia ([^;]+);", text, re.M)
-        actual = {name.casefold(): label for name, label in labels}
+        # a label may cross-link its parent: "child project of [x](#x)"
+        unlink = lambda s: re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
+        actual = {name.casefold(): unlink(label) for name, label in labels}
         self.assertEqual(len(actual), len(labels), "duplicate glossary project entries")
         expected = {
             name.casefold(): (f"child project of {entry['parent']}"
