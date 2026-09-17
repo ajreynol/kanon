@@ -407,7 +407,7 @@ The separate `anoieu / policy` job fetches the checker at the commit pinned in
 **anoieu**, which owns the checker implementation; kanon's `scripts/policy_check.py`
 is a local launcher, not that shared implementation. A local launch uses the
 available anoieu checkout and does not establish that CI ran at the pinned
-revision. `scripts/bump_check.py` can query checks for a proposed anoieu commit;
+revision. `eo_bump --check` asks whether the upstream tip is green;
 it is an explicit online command, not part of CI.
 
 A passing build establishes only what those checks actually exercise. It does

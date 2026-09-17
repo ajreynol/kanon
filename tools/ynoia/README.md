@@ -1,7 +1,5 @@
 # ynoia
 
-**Eunoia listing:** advertised
-
 *The name is **"why Eunoia"**, elided. It keeps the root and drops the
 judgement: εὔνοια is εὖ + νοῦς, **good thinking** — and this project removes the
 εὖ and asks whether the thinking is good. That is a claim somebody can disagree

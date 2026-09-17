@@ -163,6 +163,24 @@ the authority for these two, and `eo_join --soft` writes onto the README of
 whoever runs it a link to a file this repository no longer has. Until koine's
 side lands, the pair disagrees about who owns them.
 
+### The bump check went to koine, and the pin became a lock — 2026-09-17
+
+Kanon published `scripts/bump_check.py` *so every member does not write it
+separately*, on a page that also said **we do not maintain your bumping**. Both
+sentences were in `policy.md` and only one could be true.
+
+koine built `eo_bump` under `R16` after `D14` reported the shape: four
+repositories had written the job themselves in three naming conventions, and
+five had written nothing. **Kanon deleted its own and adopted theirs** — 171
+lines of script, four tests and a loader gone, and `ANOIEU_REV` in the workflow
+replaced by `anoieu.lock` with `eo_bump.json` beside it, which is the format
+every other lock here already used. *Re-derive:* `eo_bump --show` in this
+checkout.
+
+**What did not change:** the requirement. Moving a pin only onto a commit whose
+CI was green is the policy; the program is a convenience and nothing obliges a
+member to use koine's.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

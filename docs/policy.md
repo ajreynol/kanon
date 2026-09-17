@@ -629,10 +629,11 @@ document.
 When the parent opts out there is no entry in the README, no row in the
 documentation index or status table, no mention in a report, and no link inward
 from anything a user reads; the directory listing of `tools/` is enough to
-discover it. The choice is recorded in the child's own `README.md`
-introduction, before the first heading, as the standalone line `**Eunoia
-listing:** unadvertised` or `advertised`. An absent declaration means
-advertised, and an invalid one gives no permission to list the child. Commands
+discover it. **Only the exception is written down**: a child that is advertised declares
+nothing, because that is the default and a charter should not carry a line
+saying the usual thing happened. To opt out, the child's own `README.md`
+records `**Footing:** `unadvertised-child`` with the reason. An invalid
+declaration gives no permission to list the child. Commands
 read this exact field rather than inferring from prose; the reading rules are
 in [`commands.md`](commands.md#child-project-listings). Opting out lets a
 parent avoid lending its own credibility to speculative work, and unadvertised
@@ -934,12 +935,12 @@ a suggestion.** Work we could not get past our own build is not work to take
 on. Ask it **about that commit and never about our tip**, so the answer never
 changes after you have taken it; **fail closed**, which is affordable because
 bumping is optional; and **do not run it in your CI**, since it reads a remote.
-[`../scripts/bump_check.py`](../scripts/bump_check.py) is that check, published
-so every member does not write it separately — the requirement is the refusal,
-not the program.
+**`eo_bump` is that check**, maintained by koine so that every member does not
+write it separately — the requirement is the refusal, not the program, and
+nothing obliges you to use that one.
 
-**The checker and this page live in different repositories**, so `ANOIEU_REV`
-pins the checker and not the policy text. **How the two stay in version step is
+**The checker and this page live in different repositories**, so the pin names
+the checker and not the policy text. **How the two stay in version step is
 undecided**; until it is settled, cite the policy by its own commit as well.
 
 ### What we do not promise
@@ -953,9 +954,10 @@ undecided**; until it is settled, cite the policy by its own commit as well.
   [`discussion.md`](discussion.md) before they land. That is an intention and
   nothing enforces it. Pin instead, because the pin works whether or not
   anybody remembers.
-- **We do not maintain your bumping.** One script we maintained on everybody's
-  behalf would be a maintenance contract, and this repository is in no position
-  to sign one.
+- **We do not maintain your bumping.** A script this repository maintained on
+  everybody's behalf would be a maintenance contract, and the office is in no
+  position to sign one — which is why `eo_bump` is koine's, under the role that
+  exists to hold exactly that kind of contract.
 
 ### What passing does and does not mean
 

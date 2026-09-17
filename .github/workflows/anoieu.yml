@@ -8,16 +8,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: the policy, at the commit this repository pins
-        env:
-          # The checker this repository is held to. Bumped 2026-09-16 from
-          # 4d21ec9, which predated the governance handoff: its membership rule
-          # still required the maintenance note to link anoieu's docs/policy.md,
-          # and the policy moved here on 2026-09-15. Green at this commit across
-          # 7 check runs, per scripts/bump_check.py --rev 87ad682.
-          ANOIEU_REV: 87ad682
+        # The pin is `anoieu.lock`, moved by `eo_bump` and never by hand. That
+        # file also records why the pin and the checker path below move
+        # together.
         run: |
           git clone --quiet https://github.com/ajreynol/anoieu /tmp/anoieu
-          git -C /tmp/anoieu checkout --quiet "$ANOIEU_REV"
-      # The path belongs to the pin: the checker was tools/policy_check.py when
-      # 4d21ec9 was cut and is scripts/policy_check.py here. Move them together.
+          git -C /tmp/anoieu checkout --quiet "$(grep -v '^#' anoieu.lock | head -1)"
       - run: python3 /tmp/anoieu/scripts/policy_check.py --root .

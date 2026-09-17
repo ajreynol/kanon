@@ -50,6 +50,15 @@
     "what": "tactics for discharging Lean goals into SMT solvers",
     "why": "comparison data, and the closest outside neighbour to logos: it joins Lean and SMT from the other direction"
   },
+  "iogos": {
+    "status": "associate",
+    "repo": "iogos",
+    "url": "https://github.com/ajreynol/iogos",
+    "vetted": "2026-09-17",
+    "why": "its docs/maintenance.md records the `associate` footing and says the obligation is self-imposed, kept off the front page because the calculus is not installed yet and a declaration would oversell the tree",
+    "short": "Isabelle/HOL counterpart of logos; experimental",
+    "what": "an executable proof checker for CPC in Isabelle/HOL, with the soundness scaffolding a proof development about it starts from. Its own README warns it is a research scaffold, not for use, with no soundness proof"
+  },
   "isarare": {
     "status": "outsider",
     "repo": "IsaRARE",
@@ -209,6 +218,14 @@
     "             according to them. The property distinguishes what came after",
     "             from what came first, which is most of why it is worth having."
   ],
+  "aisthesis": {
+    "status": "member",
+    "joined": "kanon 16921b2",
+    "repo": "aisthesis",
+    "url": "https://github.com/ajreynol/aisthesis",
+    "short": "What can be seen about how this ecosystem develops",
+    "what": "two documents about the practice of building this ecosystem rather than about the calculus: how that practice relates to the state of the art, and where writing about the future stops being a plan"
+  },
   "anoieu": {
     "status": "member",
     "repo": "anoieu",

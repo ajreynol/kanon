@@ -1,7 +1,5 @@
 # stathmos
 
-**Eunoia listing:** advertised
-
 **Handoff, 2026-09-15:** this project moved from anoieu to kanon in `7eb9973`.
 Earlier observations below retain their original context and dates.
 

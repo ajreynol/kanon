@@ -22,7 +22,6 @@ at the bottom. Commands under `prompts/` launch an assistant unless passed
 | `scripts/install_eo` | Clones missing repositories and records their locations |
 | `scripts/install_eo --status` | Reads the checkouts on this machine |
 | `python3 scripts/policy_check.py --root .` | Runs anoieu's checker against this tree |
-| `python3 scripts/bump_check.py --root . --dry-run` | Prints the query for the pinned **anoieu** commit; omit `--dry-run` to query CI |
 
 `status_eo --check --online` returns 0 when all requested README comparisons
 succeed, 1 for invalid inventory or observed mismatches, and 2 when verification
@@ -35,9 +34,10 @@ in kanon after martyria and zetesis moved to epikrisis; the health report does
 not need an epikrisis checkout to read the schedule. Do not run the clock-based
 reminder as a CI gate.
 
-`bump_check.py` checks a commit hash, never a branch name. Missing, unfinished,
-unavailable, or incomplete check-run results cannot authorize a bump. The query
-requests up to 100 runs and refuses if GitHub reports more than it returns.
+**This repository's pin is `anoieu.lock`, and `eo_bump` moves it.** That command
+is koine's and is installed rather than kept here; `eo_bump.json` beside the lock
+is its configuration. Unknown is not green — a run that cannot reach an answer
+changes nothing — and `--force` is a person's decision that the run records.
 
 ## Checkouts and the checker
 
@@ -73,28 +73,25 @@ maintenance page. It owes us nothing, its tree is checked anyway, and the row
 reads `N tracked` because nobody is at fault for the number. See
 [the footings](policy.md#the-footings).
 
-A parent repository chooses which children to advertise. Children with a readable
-README are advertised by default. To omit a child from `status_eo` and the
-installer's generated child summaries and branch advice, put
-this standalone line in the child's `README.md` introduction, before the first
-`##` (or deeper) heading:
+**Advertised is the default, and a child that is advertised writes nothing.**
+There is no line to add, no field to keep current, and a charter that says
+nothing about listing has said the usual thing. Only the exception is written
+down.
 
-```markdown
-**Eunoia listing:** unadvertised
-```
-
-**The current spelling is the footing marker**, in the child's own README and
-read exactly as anoieu's checker reads it:
+**To omit a child**, put the footing marker in its own `README.md` — the
+current spelling, read exactly as anoieu's checker reads it:
 
 ```markdown
 **Footing:** `unadvertised-child` — the parent's front page does not name it
 ```
 
-`**Eunoia listing:** unadvertised` predates it and still works; `advertised`
-explicitly opts in. A README with neither is advertised by default, and one
-carrying both spellings in disagreement is unverified. Code examples, HTML comments, block quotes and ordinary
-prose do not count as declarations. Multiple declarations or an unsupported
-value are unverified and do not opt in.
+`**Eunoia listing:** unadvertised` in the README introduction, before the first
+`##` (or deeper) heading, predates the marker and still works. So does an
+explicit `**Eunoia listing:** advertised`, which is accepted and does nothing
+the default does not — **there is no reason to write one.** Code examples, HTML
+comments, block quotes and ordinary prose do not count as declarations, an
+unsupported value is unverified, and so is a README carrying two declarations
+that disagree.
 
 Both commands read the local parent checkout and the child's inventory `path`.
 They read the currently checked-out version, without fetching or switching to

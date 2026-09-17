@@ -16,8 +16,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from support import ROOT, bump, ecosystem, installer, working_hours
-
+from support import ROOT, ecosystem, installer, working_hours
 
 class Commands(unittest.TestCase):
     def setUp(self):
@@ -192,23 +191,6 @@ class Commands(unittest.TestCase):
         self.assertEqual(result.returncode, 2)
         self.assertIn("--online requires --check", result.stderr)
 
-    def test_bump_arguments_fail_cleanly(self):
-        for args in [("--rev",), ("--unknown",), ("--rev", "main"),
-                     ("--rev", "abcdef0", "--root", ".")]:
-            with self.subTest(args=args):
-                result = self.command(sys.executable, "scripts/bump_check.py", *args)
-                self.assertEqual(result.returncode, 2)
-                self.assertNotIn("Traceback", result.stderr)
-
-    def test_bump_dry_run_uses_the_workflow_pin(self):
-        workflow = self.base / ".github/workflows/anoieu.yml"
-        workflow.parent.mkdir(parents=True)
-        workflow.write_text("env:\n  ANOIEU_REV: abcdef0123\n")
-        result = self.command(sys.executable, "scripts/bump_check.py", "--root",
-                              str(self.base), "--dry-run")
-        self.assertEqual(result.returncode, 0, result.stderr)
-        self.assertIn("/commits/abcdef0123/check-runs", result.stdout)
-
     def test_search_roots_preserve_spaces_and_colons(self):
         target = self.base / "second root" / "example"
         target.mkdir(parents=True)
@@ -216,8 +198,6 @@ class Commands(unittest.TestCase):
         result = self.command("bash", "prompts/process_discussion", "--show-prompt", "example", env=env)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn(str(target), result.stdout)
-
-
 
 class Verification(unittest.TestCase):
     def test_health_uses_local_working_hours_after_ethics_move(self):
@@ -322,27 +302,3 @@ class Verification(unittest.TestCase):
         self.assertIn("ok", output)
         self.assertNotIn("tracked", output)
 
-    def test_bump_requires_complete_check_run_response(self):
-        success = {"name": "policy", "status": "completed", "conclusion": "success"}
-        for data, verified in [({"total_count": 1, "check_runs": [success]}, True),
-                               ({"total_count": 2, "check_runs": [success]}, False),
-                               ({"check_runs": [success]}, False), ({}, False),
-                               ({"total_count": 1, "check_runs": [None]}, False)]:
-            with self.subTest(data=data):
-                response = io.BytesIO(json.dumps(data).encode())
-                with patch.object(bump.urllib.request, "urlopen", return_value=response):
-                    runs, why = bump.ask("abcdef0")
-                self.assertEqual(not why, verified)
-                self.assertEqual(runs, [success] if verified else [])
-
-    def test_bump_verdicts(self):
-        for runs, code in [([], 2),
-                           ([{"status": "in_progress"}], 2),
-                           ([{"status": "completed", "conclusion": "failure"}], 1),
-                           ([{"status": "completed", "conclusion": "success"}], 0)]:
-            with self.subTest(runs=runs):
-                self.assertEqual(bump.verdict(runs)[0], code)
-
-
-if __name__ == "__main__":
-    unittest.main()

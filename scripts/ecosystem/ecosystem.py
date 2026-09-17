@@ -69,11 +69,12 @@ REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
 
 #: What each status requires of an entry, beyond `what`.
 #:
-#: `associate` requires `vetted` and `why`, and nothing else requires either. A
-#: footing that rests on our judgement rather than on their declaration carries
-#: the date a person last made that judgement and what they made it about, or it
-#: becomes a claim that only ever accumulates. `why` is what we vetted them
-#: *as* -- why they are load-bearing for us -- and is not a second `what`.
+#: `associate` requires `vetted` and `why`, and nothing else requires either.
+#: **The footing rests on their declaration rather than on our judgement**, so
+#: what these two record is our reading of it: `vetted` is the date a person
+#: last read their marker, and `why` is what that marker said. A marker can be
+#: rewritten in their tree without anybody here noticing, which is the whole
+#: reason the date is required and is not a second `what`.
 REQUIRED = {
     "member": ("repo", "url"),
     "associate": ("repo", "url", "vetted", "why"),
@@ -634,7 +635,7 @@ def health(inv: dict | None = None) -> list[tuple[str, str, str]]:
     **Offline and cheap on purpose.** Everything here is read off this disk, so
     any surface can render it without deciding whether it can afford to. What
     costs a network call -- whether our build is green at a commit -- is
-    deliberately not here: use bump_check.py when considering a new policy pin.
+    deliberately not here: use `eo_bump` when considering a new policy pin.
 
     Returned as data rather than printed, because several surfaces render it and
     a second implementation of the rendering is how they drift apart.

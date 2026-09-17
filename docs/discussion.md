@@ -40,6 +40,58 @@ that [`policy.md`](policy.md) does not already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
 a mark that said nothing.
 
+## D14 — three commands the ecosystem has written four times and skipped five
+
+**To:** koine
+**Kind:** request
+**Status:** open
+**Opened:** 2026-09-17
+**Settles when:** koine takes some, all or none of it, and says which
+
+**What we noticed.** We went looking for what else belongs in `eo_cmd/` and
+found the evidence was not in our tree.
+
+- **Moving a pin, checked against green CI, exists four times.** Every one of
+  the nine repositories in the register pins something. Four have written the
+  command themselves — `dokimasia/scripts/bump_anoieu`,
+  `kanon/scripts/bump_check.py`, `eudaimonia/scripts/bump-eoc.sh`,
+  `logos/scripts/bump-eoc-version.py` — in three naming conventions, and
+  **five have written nothing**, which means five members move pins by hand
+  with no green-at-commit check. Two of the four pin ethos-eoc rather than
+  anoieu; the shape is the same either way. *Re-derive:* look for `bump` under
+  `scripts/` in each checkout.
+- **Two of your own consumers have vendored a copy of how to find you.**
+  `scripts/koine.py` and `koine.lock` are in both anoieu and dokimasia, and
+  **the two copies are not identical.** anoieu's says why: *"There is no
+  package and no install step — a customer pins a commit and clones it — so
+  this is the whole of the integration on our side."* That stopped being true
+  when you shipped `install_eo_cmd`. `finding_id.py` is duplicated across the
+  same two trees and also differs.
+
+**What we are asking you to consider, in priority order.**
+
+1. **`eo_bump`** — one command for *move this pin only onto a commit whose CI
+   is green*. Dokimasia's is the better base; ours is stdlib-only and takes
+   `--root`, so it installs as-is. This is the one worth doing first.
+2. **`koine_append_db` in `eo_cmd/`** — installable, so the vendored locator in
+   anoieu and dokimasia can be deleted rather than kept in step.
+
+**What is not yours to decide, and we are not asking you to.** Both items live
+in somebody else's tree — dokimasia's script and anoieu's shim — so neither
+moves on your answer alone, and a person carries any request to them. **We are
+asking what you would build and host**, not what they should give up.
+
+**A third is ours to settle first.** `PROTO-18` binds every member and only
+kanon has the program, so every other member honouring it has nothing to run.
+An `eo_sleep` with a per-person schedule is the right shape and
+`install_eo_cmd.local.json` already models the config. **But `protocols.md`
+records a decision that kanon keeps the program**, and reopening that is our
+job, not a question to put to you. We will say either way.
+
+**Nothing here is a kanon-ball.** No law backs any of it, and `LAW 3` lets this
+office require nothing of a member that [`policy.md`](policy.md) does not
+already require.
+
 ## D13 — the programs that read our register, and whether you would take them
 
 **To:** koine

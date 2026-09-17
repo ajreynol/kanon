@@ -37,6 +37,13 @@ ecosystem nothing.
 
 ## A
 
+<a id="aisthesis"></a>
+**aisthesis** (Eunoia member; *proper noun*): Two documents about the practice
+of building this ecosystem rather than about the calculus: how that practice
+relates to the state of the art, and where writing about the future stops being
+a plan. From Greek αἴσθησις, “perception.”
+[Repository](https://github.com/ajreynol/aisthesis).
+
 <a id="alethe"></a>
 **Alethe** (proof format; *proper noun*): A format for recording the proofs SMT
 solvers produce, defined and maintained outside this ecosystem by its own
@@ -245,6 +252,16 @@ investigation of quantified benchmarks where z3 is much faster than
 [Charter](https://github.com/ajreynol/tachyon/blob/main/tools/heuresis/README.md).
 
 ## I
+
+<a id="iogos"></a>
+**iogos** (Eunoia associate; *proper noun*): The Isabelle/HOL counterpart of
+[logos](#logos) — an executable checker for [CPC](#cpc) and the soundness
+scaffolding a proof development about it starts from. Holds the
+[associate](#associate) footing by its own marker: held to the shared policy by
+its own choice, owing this ecosystem nothing. **Its own README warns it is a
+research scaffold and not for use**, with no soundness proof and a generated,
+unverified checker. From [logos](#logos), with the Greek article.
+[Repository](https://github.com/ajreynol/iogos).
 
 <a id="isarare"></a>
 **IsaRARE** (Eunoia outsider; *proper noun*): An outside tool that generates
