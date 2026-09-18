@@ -82,9 +82,9 @@ remain included in kanon's test run. The public commands keep their locations.
 
 The laws now have dotted subclause numbers and stable link targets. A reference
 to evidence can point to
-[re-derivable figures (LAW 4.3)](laws.md#law-43--evidence-for-figures-and-claims-in-historymd),
+[re-derivable figures (LAW 4.3)](https://github.com/ajreynol/kanon/blob/92ade49b9a39f9a227d262a05354a209627d4da2/docs/laws.md#law-43--evidence-for-figures-and-claims-in-historymd),
 while one about keeping a successor letter out of the index can point to
-[the letter's status (LAW 4.5)](laws.md#law-45--recording-experience-in-the-successor-letter).
+[the letter's status (LAW 4.5)](https://github.com/ajreynol/kanon/blob/92ade49b9a39f9a227d262a05354a209627d4da2/docs/laws.md#law-45--recording-experience-in-the-successor-letter).
 Both previously sent readers to the whole law, which governs several different
 obligations.
 
@@ -102,9 +102,8 @@ obligations.
 - For a claim about an earlier rule, cite the version that applied. Do not
   retarget an old claim to a current clause that no longer supports it.
 
-Our current documentation links to the numbered paragraphs, such as
-`laws.md#law-43--evidence-for-figures-and-claims-in-historymd`. Existing whole-law heading links
-still resolve. This is a recommendation, not a new membership requirement or
+The examples above cite the law text at `92ade49`, before the history
+requirements were relaxed. Existing whole-law heading links still resolve. This is a recommendation, not a new membership requirement or
 checker rule; the policy's instruction to cite policy rules by name is unchanged.
 
 **Checker limitation, 2026-09-18.** Subclauses are paragraph markers with

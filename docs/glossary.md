@@ -418,7 +418,7 @@ Greek σταθμός, “a standard weight.” [Charter](../tools/stathmos/READM
 <a id="stretch"></a>
 **stretch** (term of office; *noun*): The period for which a repository holds
 the presidency, also called its term. The office expires with it; the account is
-[kept during it](laws.md#law-42--updating-historymd-during-the-term). The laws
+[kept during it](laws.md#law-41--keeping-and-revising-the-terms-history). The laws
 prescribe no fixed duration. See
 [LAW 3](laws.md#law-3--presidency-appointment-authority-and-succession).
 

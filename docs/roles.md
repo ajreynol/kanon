@@ -214,8 +214,8 @@ and `scripts/ecosystem/checkouts.json`.
 **Held by:** `kanon`
 **Role:** the candidate laws — what footings exist, what a member owes, and
 what the office owes. [LAW 7](laws.md#law-7--maintaining-and-amending-the-laws)
-gives the page to whoever holds the presidency, which makes this role move
-with the office rather than staying here.
+currently assigns this work to the president, so the role moves with the office.
+That assignment may change; it is not a permanent condition of the presidency.
 **Owns:** `docs/laws.md`.
 
 ### R33 — the board of next actions
@@ -230,13 +230,10 @@ anything: a person does.
 ### R34 — the historian of the current stretch
 
 **Held by:** `kanon`
-**Role:** **keeping the account of the stretch while it runs** — what it was
-for, what changed, what went wrong, and what crosses to whoever holds the
-office next. [LAW 4.1](laws.md#law-41--keeping-term-records-in-their-authoring-repository) makes it each
-office-holder's account of its **own** term, kept current rather than written
-at the close under [LAW 4.2](laws.md#law-42--updating-historymd-during-the-term), with
-every figure re-derivable by somebody else under
-[LAW 4.3](laws.md#law-43--evidence-for-figures-and-claims-in-historymd).
+**Role:** keeping `history.md` as the account of the current stretch. Under
+[LAW 4.1](laws.md#law-41--keeping-and-revising-the-terms-history), the president
+may add, revise or remove entries during the term as it sees fit. The account
+stays with its authoring repository when the presidency moves.
 **Owns:** `docs/history.md`.
 
 ## koine

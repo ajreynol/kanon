@@ -5,9 +5,8 @@ ecosystem.** It stays in this tree. It does not travel to whoever holds the
 office next, and kanon inherited no such page from anyone: the accounts
 scatter, one per repository that has held the office.
 
-**It is kept current while the term runs, not written at the end from memory.**
-A summary composed afterwards is a reconstruction, and a reconstruction by the
-party being described is the weakest document this ecosystem produces.
+The president may add, revise or remove entries during the term under
+[LAW 4.1](laws.md#law-41--keeping-and-revising-the-terms-history).
 
 ## What you need to know to read this page, and nothing more
 
@@ -31,21 +30,9 @@ the repository whose entry reads `status: president` is the president. Anything
 else that says so — a front page, a letter, this page — is downstream, and
 where one of them disagrees with that file, that file is right.
 
-**Everything below is a fact somebody else can check.** Every commit named here
-is public, and the command that re-derives each figure is given beside it. A
-number only kanon can produce would be the party being described choosing the
-numbers that describe it, and does not go on this page.
-
-**The eleven fields below are `laws.md`'s, in its order.** *Nothing to report*
-is an answer and is written down; an omitted field is not. Several are still
-provisional and say so — a field marked *owed* is a field nobody has been able
-to answer honestly yet, which is information.
-
-**An earlier entry may be corrected, and never silently.** The burden is on
-whoever edits it to show that the earlier text was wrong or can be bettered,
-and the demonstration goes in the edit. *It was unclear* is not a
-demonstration; *this figure disagrees with the commit history, here* is.
-Corrections are collected at the foot of this page.
+The sections below are this repository's way of organizing its account.
+Source references and commands accompany entries where useful; the laws do
+not prescribe fields, evidence or a separate correction record for this page.
 
 ## The term
 
@@ -397,7 +384,7 @@ provisions. The earlier restriction cited as LAW 9.4 is now
 [LAW 9.5](laws.md#law-95--permission-for-unreleased-and-unpublished-work). `D20` visibly
 records the revised recommendation so new subdivisions follow reading order.
 
-Former LAW 11 was condensed into [LAW 4.6](laws.md#law-46--recommended-length-of-historymd),
+Former LAW 11 was condensed into [LAW 4.6](https://github.com/ajreynol/kanon/blob/92ade49b9a39f9a227d262a05354a209627d4da2/docs/laws.md#law-46--recommended-length-of-historymd),
 placing the account's length guidance with its other duties.
 
 ### The directory outline was clarified — 2026-09-18
@@ -483,6 +470,29 @@ guidance sits under LAW 9, and reporting limits sit under LAW 10.2. LAW 8.1's
 table became prose; LAW 1 keeps the page's only table. The requirements, law
 numbers and existing link targets are preserved.
 
+### Definitions were sharpened and history requirements relaxed — 2026-09-18
+
+At the maintainer's request, LAW 1 defines an outsider as an external project
+listed for comparison, without proposed membership or obligations. Its second
+list of rationales was removed, along with tangents elsewhere about checker
+defects, rewards, report cards, publishing speed and fuzzer output. Specialized
+terms link to the glossary. The right to leave is now LAW 2.1. These edits
+clarify the rules without changing them.
+
+LAW 4 is a rule change: the former 4.1–4.4 become one clause allowing the
+president to add, revise or remove history entries freely during its term.
+The requirements for a self-contained account, prescribed updates, reproducible
+figures, failure analysis and visible, evidenced corrections are removed. The
+letter and length provisions become 4.2 and 4.3; shortening the account no
+longer has a separate evidence-preservation requirement. Custody of the history
+and letter, and the protection of a predecessor's account, are unchanged.
+This page and the historian role no longer restate the removed requirements.
+Earlier examples citing them point to revision `92ade49`.
+
+LAW 7 now explicitly assigns maintenance of the laws to the president for the
+current arrangement and allows that responsibility to be reassigned. No role
+has changed holder. The amendment-recording requirement remains in place.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
@@ -549,9 +559,8 @@ holder. Laws written by a different repository than the one they bind, which is
 the first real separation and arrives by the office moving rather than by
 design. **The only real check remains the maintainer.**
 
-**Evidence** — every figure here re-derivable from the repositories and the
-public run history, per [LAW 4.3](laws.md#law-43--evidence-for-figures-and-claims-in-historymd), with the
-command beside it.
+**Evidence** — source references and reproduction commands accompany the
+entries that use them.
 
 **The joke** — on the front page for the whole term, per
 [LAW 6](laws.md#law-6--presidency-a-readme-joke-about-the-repositorys-name): what kanon sends is a
@@ -1006,5 +1015,4 @@ getting flattering.
 
 ## Corrections
 
-**None yet.** An entry corrected after the fact is listed here with the
-demonstration that the earlier text was wrong.
+**None recorded separately.**

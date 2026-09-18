@@ -1,7 +1,7 @@
 # The candidate laws
 
-Candidate laws, followed voluntarily. They describe the ecosystem's
-footings, the presidency and its obligations, and what we owe to projects
+[Candidate laws][candidate-laws], followed voluntarily. They describe the ecosystem's
+[footings][footing], the presidency and its obligations, and what we owe to projects
 outside the ecosystem. Programs can check recorded facts and policy compliance;
 passing those checks does not establish that these commitments have been met.
 
@@ -10,7 +10,7 @@ define its scope. [`maintenance.md`](maintenance.md) locates the current tools
 and registers, and [`policy.md`](policy.md) states the shared requirements.
 Moving a responsibility or its files does not itself change a law.
 
-The president maintains these laws under
+The president currently maintains these laws under
 [LAW 7](#law-7--maintaining-and-amending-the-laws). They are written by the people
 they govern and give no authority over anyone who has not adopted them.
 
@@ -19,7 +19,7 @@ they govern and give no authority over anyone who has not adopted them.
 
 The human maintainer decides what a repository adopts and may withdraw that
 choice. When these laws say a repository acts, they mean its maintainer acts.
-The *president* is the maintainer of the repository holding that office.
+The [president][president] is the maintainer of the repository holding that office.
 
 Agents may produce work under a person's direction, but hold no office, role or
 footing and make no decisions on their own behalf. A person commits, pushes,
@@ -51,7 +51,7 @@ These laws leave the following questions unsettled:
    the office, and leaves the case of no holder unsettled.
 3. Who says no. Nothing here overrules a president, and [LAW 7](#law-7--maintaining-and-amending-the-laws) gives the
    president the page it would be overruled from.
-4. Where the record of who joined lives. [LAW 4.1](#law-41--keeping-term-records-in-their-authoring-repository) makes `history.md` each
+4. Where the record of who joined lives. [LAW 4.1](#law-41--keeping-and-revising-the-terms-history) makes `history.md` each
    president's account of its own repository. Who joined, when, and on
    what footing is a fact about somebody else's repository as much as ours,
    and no law here assigns a continuing record across terms.
@@ -63,44 +63,30 @@ These laws leave the following questions unsettled:
 
 ## (LAW 1) — Ecosystem footings: membership and other relationships
 
-A footing records a project's relationship to the ecosystem.
+A [footing][footing] records a project's relationship to the ecosystem.
 
 | footing | what it means | whose act it is |
 | --- | --- | --- |
-| member | adopts the shared policy and verifies compliance through a method that policy accepts | theirs. They declared it |
-| associate | records on its own maintenance page what it holds itself to, and puts no declaration on its front page | theirs |
-| president | a member that also holds the office, for a stretch | a person's. Bestowed, and theirs to take back |
-| candidate | we would like it to join and it has not | ours. Wanting somebody to join is not their joining |
-| foundation | the ecosystem exists to serve it and it has joined nothing | ours, and nothing is asked of it |
-| child | reached through its parent, on its parent's footing | its parent's, and nothing of its own |
-| outsider | external work we track for comparison, and not proposed for promotion. [LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons) governs what may be tracked | ours. It was never asked |
+| [member][member] | adopts the shared policy and verifies compliance through a method that policy accepts | theirs. They declared it |
+| [associate][associate] | records on its own maintenance page what it holds itself to, and puts no declaration on its front page | theirs |
+| [president][president] | a member that also holds the office, for a stretch | a person's. Bestowed, and theirs to take back |
+| [candidate][candidate] | we would like it to join and it has not | ours. Wanting somebody to join is not their joining |
+| [foundation][foundation] | the ecosystem exists to serve it and it has joined nothing | ours, and nothing is asked of it |
+| [child][child-project] | reached through its parent, on its parent's footing | its parent's, and nothing of its own |
+| [outsider][outsider] | an external project we list for comparison, without proposing that it join the ecosystem | ours; listing imposes no obligation on the project |
 
 Membership and association are a repository's own acts. Candidacy, foundation
 and outsider status record our position about somebody else. A child's
 footing follows its parent; the presidency is granted by a person. Recording
 our interest in a project does not record its consent.
 
-Each footing carries its reason. A footing whose reason is forgotten
-becomes a formality somebody deletes.
+Each recorded footing includes its reason. A repository may withdraw its
+membership or its self-imposed association.
 
-- member — a repository that runs our checker has our defects in its build.
-  That relationship needs a name and a way out of it.
-- associate — requiring a repository to advertise an arrangement in order
-  to keep it is coercive, and there are honest reasons not to advertise one: a
-  tree that is not published, one person's working copy, a declaration that
-  would oversell what is in it. So the claim moves to their maintenance page
-  rather than disappearing, and it is theirs to make and theirs to withdraw.
-- president — direction has to sit somewhere. The footing expires with
-  the stretch, which is what stops it accumulating.
-- outsider — *how active were we* means nothing until it sits beside
-  comparable work over the same days. What may be compared depends on the
-  release and publication distinctions in [LAW 9.1](#law-91--distinguishing-released-code-from-published-research); the finding is about us.
-
-Nothing recorded under a footing that is ours belongs to the repository it
-describes. They did not ask to be listed and owe this ecosystem nothing. No
-view written under such a footing represents the people who wrote that tool.
-Where an entry repeats something its authors said, it says so and attributes
-it.
+Listings we make about other projects impose no obligations and do not speak
+for their maintainers. Attribute any statements taken from a project's authors.
+[LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons)
+sets the limits on recording and comparing outsiders' work.
 
 <a id="law-2--a-member-follows-these-laws-policymdpolicymd-and-visionmdvisionmd"></a>
 <a id="law-2--a-member-follows-these-laws-policymd-and-visionmd"></a>
@@ -118,18 +104,21 @@ bound exactly as its parent is, and no further.
 A president is a member and this law binds it like any other. The office
 adds responsibilities; it removes no membership obligation.
 
-A member may leave, and [`policy.md`](policy.md) describes the way out. A
-membership nobody can exit is not one anybody agreed to.
-
 Where the three disagree, the vision decides. The policy is what a member
 runs, these laws are how the office behaves, the vision is what the whole
 thing is for.
+
+### (LAW 2.1) — A member's right to leave
+
+A member may leave the ecosystem. [`policy.md`](policy.md) describes the way
+out.
 
 <a id="law-3--there-is-a-president"></a>
 
 ## (LAW 3) — Presidency: appointment, authority and succession
 
-One repository holds the presidency at a time, for a term called a *stretch*.
+One repository holds the presidency at a time, for a term called a
+[stretch][stretch]. The office expires when that term ends.
 
 The office is recorded against a repository, because a repository persists
 across a stretch and a session does not. It is carried out by that
@@ -144,17 +133,10 @@ procedure for removing a holder.
 
 ### (LAW 3.1) — Limits on presidential authority
 
-It sets direction and nothing more. It does not own another tree, cannot
-commit to one, and cannot require anything of a member that
-[`policy.md`](policy.md) does not already require. Direction, not permission.
-
-It is not a reward and carries no merit. An office awarded for having done
-the most goes to whoever already holds the most, which is the concentration
-this ecosystem is trying to leave. Accepting it is agreeing to carry a
-load.
-
-It confers nothing over anybody's repository, including the ones this
-ecosystem exists to serve.
+The president sets direction but has no authority over another repository,
+including projects the ecosystem serves. It cannot commit to another tree or
+require anything of a member beyond [`policy.md`](policy.md). Holding the
+office confers responsibilities without implying a project's merit.
 
 <a id="law-31--transfers-with-the-office"></a>
 <a id="law-32--transfers-with-the-office"></a>
@@ -179,6 +161,8 @@ register. Keep the role's id, update its holder, and record in the same change
 what the previous holder retains. Passing CI in both repositories is
 recommended for a role transfer.
 
+Local maintenance instructions stay with the repository they describe.
+
 <a id="law-32--policy-checking-and-status-auditing"></a>
 <a id="law-33--policy-checking-and-status-auditing"></a>
 
@@ -191,69 +175,38 @@ does not transfer the checking rules, change membership, or turn mechanical
 observations into judgements against the vision. Each responsibility follows
 its own recorded terms of transfer.
 
-A term's account and letter stay with their authoring repository, as
-[LAW 4.1](#law-41--keeping-term-records-in-their-authoring-repository) requires. A successor begins its own account. Local maintenance instructions
-also stay with the repository they describe.
-
-The office expires with the stretch. Handing it on is the point.
-
 <a id="law-4--the-president-writes-historymd-in-its-own-repository-and-a-letter-to-its-successor"></a>
 
 ## (LAW 4) — Presidential records: `history.md` and the successor letter
 
-The president writes `history.md` in its own repository and a letter to its
-successor.
+The president keeps `history.md` and writes a letter to its successor. Both
+stay in the repository that wrote them; each successor starts its own account.
 
 <a id="law-44--where-term-records-stay"></a>
 <a id="what-historymd-is-and-is-not"></a>
 <a id="law-41--where-term-records-stay"></a>
-
-### (LAW 4.1) — Keeping term records in their authoring repository
-
-The history and letter stay in the repository that wrote them. Each
-successor starts its own account.
-
-`history.md` explains how that repository developed. It must be readable
-without opening another page. Leave routine changes to the commit log; explain
-what it cannot show on its own, such as why a build stayed broken or which work
-went unreviewed. The report card separately assesses tools against the
-ecosystem's aims; [`roles.md`](roles.md) records who keeps it.
-
 <a id="law-45--keeping-the-account-current"></a>
 <a id="law-42--keeping-the-account-current"></a>
-
-### (LAW 4.2) — Updating `history.md` during the term
-
-Update the account during the term. A summary written afterwards is a
-reconstruction based on memory and hindsight.
-
 <a id="law-41--re-derivable-figures"></a>
 <a id="law-43--re-derivable-figures"></a>
-
-### (LAW 4.3) — Evidence for figures and claims in `history.md`
-
-Every figure must be reproducible by another reader from the repository and
-public run history. Give the evidence and method; omit numbers only the
-president can produce.
-
-The account examines what went wrong and what remains uncertain. If it
-reports no failures, it says what was examined and what the evidence does not
-establish. Inventing a failure does not make an account more honest.
-
 <a id="law-42--visible-corrections"></a>
 <a id="law-44--visible-corrections"></a>
+<a id="law-41--keeping-term-records-in-their-authoring-repository"></a>
+<a id="law-42--updating-historymd-during-the-term"></a>
+<a id="law-43--evidence-for-figures-and-claims-in-historymd"></a>
+<a id="law-44--documenting-corrections-to-historymd"></a>
 
-### (LAW 4.4) — Documenting corrections to `history.md`
+### (LAW 4.1) — Keeping and revising the term's history
 
-Corrections must be visible and supported by evidence. Show what was wrong
-or how the entry can be improved. For example, cite the run history that
-disproves a figure. Saying only that the text was unclear is insufficient.
-Do not silently replace an earlier account.
+Keep `history.md` as an account of the current [stretch][stretch].
+The president may add, revise or remove entries during the term as it sees fit.
 
 <a id="law-43--the-successor-letter"></a>
 <a id="law-45--the-successor-letter"></a>
 
-### (LAW 4.5) — Recording experience in the successor letter
+<a id="law-45--recording-experience-in-the-successor-letter"></a>
+
+### (LAW 4.2) — Recording experience in the successor letter
 
 The letter records what the outgoing president learned, including mistakes
 and uncertainties where the evidence supports them. It gives no instructions
@@ -274,12 +227,13 @@ alone do not establish its completeness or honesty.
 <a id="law-11--historymd-is-kept-short-enough-that-a-successor-reads-it"></a>
 <a id="law-46--keeping-the-account-short"></a>
 
-### (LAW 4.6) — Recommended length of `history.md`
+<a id="law-46--recommended-length-of-historymd"></a>
 
-Aim to keep `history.md` under 10,000 words. Record what a successor
-needs, stating what changed and how to verify it; leave routine cleanup to
-commits. Preserve evidence when shortening. Excess length or a minor entry is
-not a violation and must not fail a build.
+### (LAW 4.3) — Recommended length of `history.md`
+
+Aim to keep `history.md` under 10,000 words, focused on what a successor may
+find useful. Excess length or a minor entry is not a violation and must not
+fail a build.
 
 <a id="law-5--the-registry-says-who-the-president-is"></a>
 
@@ -293,11 +247,6 @@ disagree, the register is authoritative and the other account is corrected.
 
 One holder at a time. Recording multiple holders is an inconsistency that
 must be resolved. An audit can detect it; the human decision grants the office.
-
-Why a register rather than a narrative. Each term's account stays in its
-authoring repository. Reconstructing the current holder from those accounts
-requires establishing which is the latest. The register states the holder
-directly.
 
 <a id="in-limbo"></a>
 <a id="law-51--limbo"></a>
@@ -330,12 +279,11 @@ says the joke is confusing, remove or replace it without argument.
 
 ## (LAW 7) — Maintaining and amending the laws
 
-The president may add a law, remove one, or rewrite one, at its own discretion and taking
-advice from the rest of the ecosystem.
-
-Informally, in the sense that no vote is required. Not informally in the
-sense of quietly — a change here is in the git history like everything else,
-and a removal says what went and why.
+The president currently maintains these laws. This responsibility may be
+reassigned; it is not permanently tied to the presidency. The current holder
+may add, remove or rewrite laws, taking advice from the rest of the ecosystem.
+No vote or formal amendment procedure is required. Changes remain in Git
+history, and a removal states what was removed and why.
 
 <a id="law-71--recording-amendments"></a>
 
@@ -343,10 +291,8 @@ and a removal says what went and why.
 
 Every change to this page, to [`policy.md`](policy.md) and to
 [`vision.md`](vision.md) is recorded with its reason, in
-[`history.md`](history.md). Those three are what somebody outside reads to
-know what is being asked of them, and a page that carried its own amendment
-notes would make them read the changes to find the rule — which
-[`policy.md`](policy.md#write-in-the-present-tense) forbids.
+[`history.md`](history.md). Keep amendment notes there so the shared pages
+state the current rules.
 
 <a id="law-72--preserving-outcomes"></a>
 
@@ -354,8 +300,6 @@ notes would make them read the changes to find the rule — which
 
 A rewrite must preserve outcomes. If the same cases produce
 different outcomes, record it as a rule change, not an editorial rewrite.
-
-There is no amendment process.
 
 <a id="law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting"></a>
 
@@ -376,8 +320,7 @@ responsibility. Splitting the vision across files does not increase its budget.
 For the role register, the limit applies to explanatory prose around the
 entries, so instructions for reading the register do not outweigh the entries.
 
-Words rather than lines. A hand-wrapped file's line count is a fact about
-its wrapping; what a reader spends is words.
+Count words, not lines.
 
 Over the ceiling is not a violation. It is a signal that something on the
 page has stopped being load-bearing, and the repair is to find that thing
@@ -391,13 +334,8 @@ carries; an account of how a rule came to be; a paragraph defending a rule
 against an objection nobody raised; and a second sentence that restates the
 first.
 
-Shortening is a rewrite, and [LAW 7.2](#law-72--preserving-rules-when-rewriting-them)'s test applies — do the same cases come
-out the same way? A cut that quietly changes an outcome is the failure that law
-exists against, and it is easiest to commit while trimming.
-
-Why these documents. They state what the ecosystem asks of its members and
-who is accountable. They must be short enough that the people accepting those
-obligations can understand them.
+Shortening must preserve the rules, as required by
+[LAW 7.2](#law-72--preserving-rules-when-rewriting-them).
 
 This page is not covered by the count and is expected to stay shorter than
 the documents above.
@@ -413,10 +351,9 @@ research is published.
 <a id="what-tracking-is"></a>
 <a id="comparing-our-work-with-external-projects"></a>
 
-Tracking is analysing our own positioning against somebody else's work —
-reading what is public about it and setting our own record beside it, so that a
-number of ours acquires a scale. The finding it produces is about us. A
-difference in activity over a period does not establish a difference in quality.
+Tracking means recording external work as context for assessing our own.
+Its conclusions concern our work. Differences in activity over a period do
+not establish differences in quality.
 
 It is never an assessment of their work, a grade, a report-card row, a finding
 filed against them, or a proposal that they join anything. An outsider is
@@ -426,13 +363,8 @@ nothing.
 <a id="why-it-binds-us-and-nobody-else"></a>
 <a id="our-responsibilities-when-recording-external-work"></a>
 
-The `outsider` footing is the one place this ecosystem writes about projects
-that never agreed to anything, and this ecosystem publishes quickly by design.
-Speed is ours to take with our own work and nobody else's: the tenets say a
-tool should reach a consumer early, and none of that reaches a claim about
-somebody's unpublished contribution. Anything written under this footing
-carries the date it was read and says plainly that the project did not ask to
-be measured.
+Anything written under the `outsider` footing carries the date its source was
+read and states that the project did not ask to be measured.
 
 <a id="law-95--release-and-publication"></a>
 <a id="law-91--release-and-publication"></a>
@@ -508,8 +440,7 @@ asked.
 
 ## (LAW 10) — External defect investigations: declaring and ending a pursuit
 
-*διώκτης — the pursuer, from διώκω, to chase or pursue.* A repository here is
-*in dioktes* when it is actively searching for defects in a tool outside this
+A repository is [in dioktes][dioktes] when it is actively searching for defects in a tool outside this
 ecosystem. Running a fuzzer at it, reading its source for faults, building
 cases against it: work whose object is to find something wrong with somebody
 else's artifact.
@@ -519,12 +450,6 @@ footing, it confers nothing and asks nothing, and a tool does not become
 anything by our having pointed a fuzzer at it. This is a state that a
 repository here enters, and the law is about what we owe while we are in it.
 
-Finding real defects in a neighbour's tool and carrying them to its authors is
-a service, and this ecosystem was built to do it. What the name does is stop it happening
-quietly, because the same activity — same fuzzer, same hours, same findings —
-is a service when the results go to the owner and an attack when they go on a
-scoreboard, and nothing in the work itself distinguishes the two.
-
 <a id="entering-it"></a>
 <a id="starting-an-external-defect-investigation"></a>
 <a id="law-101--declaring-a-pursuit"></a>
@@ -533,9 +458,6 @@ scoreboard, and nothing in the work itself distinguishes the two.
 
 A person decides, and it is declared. The state is recorded
 against that tool in the register, with the date it began and what closes it.
-A pursuit nobody declared is indistinguishable afterwards from one nobody would have
-approved, and the declaration is what lets somebody object while it is
-happening rather than after.
 
 Only against a released tool. [LAW 9.5](#law-95--permission-for-unreleased-and-unpublished-work) restricts tracking work
 that is neither released nor published. Whether
@@ -572,17 +494,21 @@ nothing.
 
 ### (LAW 10.3) — Ending an investigation on request or resolution
 
-The target's maintainers can end the pursuit. If the maintainers
-of that tool ask us to stop, we stop — no appeal, no argument about whether the
-findings were useful, and no continuing quietly. They did not ask to be
-pursued, and a pursuit that outlives its target's patience has stopped being
-a service whatever it is producing.
+If the target's maintainers ask us to stop, we stop without appeal, argument
+or continuing quietly.
 
-It ends when the claim is settled. Confirmed, refuted, withdrawn by its
-authors, or abandoned by us — and the register stops recording the state when
-it closes. A state with no end is a posture rather than an investigation, which
-is why the entry names what closes it before it opens.
+The pursuit also ends when the claim is confirmed, refuted, withdrawn by its
+authors or abandoned by us. Remove the active state from the register when it
+closes.
 
-And the honest reason this law exists: a fuzzer pointed at somebody else's
-tool produces findings indefinitely, and volume is the thing that turns help
-into pressure. The limit is never the tool's; it is ours.
+[candidate-laws]: glossary.md#candidate-laws
+[footing]: glossary.md#footing
+[member]: glossary.md#member
+[associate]: glossary.md#associate
+[president]: glossary.md#president
+[candidate]: glossary.md#candidate
+[foundation]: glossary.md#foundation
+[child-project]: glossary.md#child-project
+[outsider]: glossary.md#outsider
+[stretch]: glossary.md#stretch
+[dioktes]: glossary.md#dioktes
