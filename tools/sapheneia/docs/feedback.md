@@ -8,7 +8,7 @@ sentence they cite; others are judgement, and those are the ones most likely to
 be a defect in our reading rather than in the manual.
 
 **Nothing here has been carried anywhere.** This is a ledger, not a report. Under
-[`docs/policy.md`](../../docs/policy.md), anything that leaves this directory does
+[`docs/policy.md`](../../../docs/policy.md), anything that leaves this directory does
 so through the host repository's ordinary reporting discipline
 (`docs/reports/reporting-workflow.md`), carried by a person who can answer the follow-up,
 and only once confirmed. Rows here are *candidates* in the sense of

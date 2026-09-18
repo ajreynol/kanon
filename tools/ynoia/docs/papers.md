@@ -1,7 +1,7 @@
 # Which projects are worth a paper
 
 **One entry per tool in the ecosystem, saying whether the work in it has a paper
-in it.** [`../../docs/vision.md`](../../docs/vision.md) recommends that a
+in it.** [`../../../docs/vision.md`](../../../docs/vision.md) recommends that a
 repository with a result write it up — eight to twenty pages, addressed to a
 human who will never clone the tree — and argues why. It does not say which
 repositories have one, and the repository policy asks for nothing here at all.
@@ -25,7 +25,7 @@ resolving it. Nobody here can commission a paper, and nobody here writes one.
 
 | page | its question |
 | --- | --- |
-| [glossary](../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
+| [glossary](../../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
 | [`proposals.md`](proposals.md) | should this be a repository of its own, and why does its name fit |
 | [`requests.md`](requests.md) | whose tree should this work live in |
 | [`tools.md`](tools.md) | which tool that does not exist is worth building first |
@@ -66,7 +66,7 @@ found a paper in every tool would have stopped being a judgement.
 ## How to read it, and how to edit it
 
 **Position is the priority**, as on [`tools.md`](tools.md) and
-[`../../docs/board.md`](../../docs/board.md): the first entry has the most
+[`../../../docs/board.md`](../../../docs/board.md): the first entry has the most
 paper in it. Reordering is done by moving a block.
 
 Four labelled fields each, the same four every time, always present, and a field

@@ -1,7 +1,7 @@
 # Where our account disagrees with the ethos manual
 
 **A living register of what we think the manual gets wrong.** Not what it leaves
-out, and not how it words things — those are [`feedback.md`](../feedback.md).
+out, and not how it words things — those are [`feedback.md`](feedback.md).
 This page is the shorter and heavier list: sentences that appear to say
 something that is not so.
 
@@ -12,13 +12,13 @@ either may be at fault, and nothing here is settled until somebody who knows
 Eunoia rules on it. Nothing here has been carried anywhere, and nothing leaves
 this directory by machine.
 
-| this page | [`feedback.md`](../feedback.md) |
+| this page | [`feedback.md`](feedback.md) |
 | --- | --- |
 | the manual **asserts** something we believe is not the case | the manual is **silent**, ambiguous, or inconsistent in its wording |
 | fixed by changing what it says | fixed by adding a sentence |
 | the first row is fixed by changing **how the language is explained** | no row is that large |
 
-**The first row is also a correction to us.** [`manual.md`](../manual.md) §8
+**The first row is also a correction to us.** [`manual.md`](manual.md) §8
 opens *"a proof is a term and proof checking is type checking"*, which we took
 from the manual rather than derived. We now think that account is the wrong way
 round, and [MD-01](#md-01) is the argument. A second account that repeats the
@@ -164,7 +164,7 @@ Under the typed reading a rule concluding an `Int` builds `(Proof a)` with
 The declaration goes through, and the failure arrives later, at the *step*, and
 as a check on the term the step produced. This is what an evaluator does and not
 what a kind system does. (It is also
-[`manual.md` §11](../manual.md)'s *rule that could conclude a non-`Bool` term*,
+[`manual.md` §11](manual.md)'s *rule that could conclude a non-`Bool` term*,
 reached here from a different direction.)
 
 ### 6. Typing is demand-driven and order-dependent
@@ -440,7 +440,7 @@ term that silently matches nothing written with `as` rather than an error.
 **The two meanings of *value* make two operator specifications wrong, rather
 than merely ambiguous.**
 
-[`feedback.md` EOM-09](../feedback.md) records that the manual uses *value* for
+[`feedback.md` EOM-09](feedback.md) records that the manual uses *value* for
 both *literal* and *fully reduced ground term*. Two specifications are not just
 unclear under that ambiguity — they are false under one reading and silent under
 the other.
@@ -486,7 +486,7 @@ place a second implementation has to guess.
 
 ## What this page does not do
 
-- **It does not propose wording.** [`feedback.md`](../feedback.md) does, because
+- **It does not propose wording.** [`feedback.md`](feedback.md) does, because
   a silence has an obvious repair and a disagreement does not. Here we say what
   we think is not so and stop; [MD-01](#md-01) in particular proposes no
   replacement text, only that a replacement is needed.
@@ -523,7 +523,7 @@ and behaves as the ordinary checker when no `--plugin` is passed.
 has been checked by anybody who knows Eunoia and nothing has been carried
 anywhere.
 
-**What is owed to [`manual.md`](../manual.md).** Its §8 asserts the framing
+**What is owed to [`manual.md`](manual.md).** Its §8 asserts the framing
 [MD-01](#md-01) rejects, and currently carries a pointer here rather than a
 rewrite. Rewriting that chapter around the machine — state, commands,
 match/evaluate/produce, stuckness — with the typed reading kept as the

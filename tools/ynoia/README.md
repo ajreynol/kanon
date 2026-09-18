@@ -37,7 +37,7 @@ So: write it down, make the strongest case against it, and see which survives.
 1. **The argument, both directions.** The case for the calculus, the case for
    doing it in Lean instead, the general objections to each, and six coherent
    ways the ecosystem could be arranged — stated so that somebody who disagrees
-   has something to disagree *with*. [`why-eunoia.md`](why-eunoia.md).
+   has something to disagree *with*. [`docs/why-eunoia.md`](docs/why-eunoia.md).
 
 2. **The tools that do not exist.** Every argument above is stated relative to
    what exists today, so the cheapest way to see which arguments are about the
@@ -45,11 +45,11 @@ So: write it down, make the strongest case against it, and see which survives.
    work that would move each one. Some of those names have since been taken up
    as real projects, which is the closest thing this project has to a result.
    The register of the ones that have not, in priority order, is
-   [`tools.md`](tools.md); the arguments stay in the account.
+   [`docs/tools.md`](docs/tools.md); the arguments stay in the account.
 
 3. **The naming arguments.** Whether a name describes the work, what it might
    mislead a reader into expecting, and why an alternative would fit better.
-   [The naming guidance](proposals.md#arguing-about-names) states the approach;
+   [The naming guidance](docs/proposals.md#arguing-about-names) states the approach;
    proposals carry the individual arguments. The president's
    [glossary](../../docs/glossary.md) is the authoritative name register.
    Ynoia neither duplicates it nor reserves names.
@@ -57,9 +57,9 @@ So: write it down, make the strongest case against it, and see which survives.
 4. **Auditing proposals.** Whether a given idea deserves a repository of its
    own is the account's general question applied to one case, with a decision
    attached — so it is answered here, against a stated standard, in
-   [`proposals.md`](proposals.md). Most wants are not that question, and the
+   [`docs/proposals.md`](docs/proposals.md). Most wants are not that question, and the
    ones that are work rather than repositories are tracked in
-   [`requests.md`](requests.md) with an argument about whose tree they belong
+   [`docs/requests.md`](docs/requests.md) with an argument about whose tree they belong
    in. The output is an argument with a
    recommendation at the end. **It approves nothing:** a repository is a claim
    on a shared namespace and on years of somebody's attention, and the policy
@@ -70,7 +70,7 @@ So: write it down, make the strongest case against it, and see which survives.
    that a repository with a result write it up for a human, and argues why. It
    does not say which repositories have one, because that is
    a judgement — so it is made here, against a stated standard, one entry per
-   tool, in [`papers.md`](papers.md). The commonest verdict is **no**, this
+   tool, in [`docs/papers.md`](docs/papers.md). The commonest verdict is **no**, this
    project returns it about itself first, and a repository's own stance on
    publishing outranks anything on the page.
 
@@ -140,15 +140,9 @@ worth reading and worth disagreeing with; neither of those makes it a result.
 Stated because [`../../docs/policy.md`](../../docs/policy.md) asks every child
 project to say whether a paper exists for it, what the plan is, or that there is
 nothing in it worth writing up. This is the third answer, and it is the
-commonest. [`papers.md`](papers.md) is where the same question is asked of every
+commonest. [`docs/papers.md`](docs/papers.md) is where the same question is asked of every
 other tool.
 
 ## Layout
 
-| file | what it is |
-| --- | --- |
-| [`why-eunoia.md`](why-eunoia.md) | the account: the case, the case against, the objections, six arrangements, the projects that do not exist, and what would change our minds |
-| [`proposals.md`](proposals.md) | naming arguments, referring to the authoritative glossary; whether an idea deserves a repository, against a stated standard. Goals 3 and 4 |
-| [`requests.md`](requests.md) | work the ecosystem wants that needs no repository of its own, and whose tree it would live in instead. Goal 4 |
-| [`tools.md`](tools.md) | the tools that do not exist, in priority order — most promising first, and what a request for a listing should arrive with. Goal 2 |
-| [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up as a paper. Goal 5 |
+[`docs/README.md`](docs/README.md) indexes this project's documents.

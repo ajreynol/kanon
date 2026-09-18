@@ -134,7 +134,7 @@ constructor, type rule, evaluator case and verification condition per symbol.
 > **Aspired handoff: `R12` to `noesis`** — the semantics *defined in* Lean, and
 > the compiler a metaprogram over those definitions rather than a translator
 > into them. **The gaining tool does not exist**, so it is named here and never
-> in an `Entities` field; [`proposals.md`](../tools/ynoia/proposals.md) audits
+> in an `Entities` field; [`proposals.md`](../tools/ynoia/docs/proposals.md) audits
 > it as `P3` with the verdict **not yet**.
 >
 > **The authorship point applies, less sharply than for `R11`.** The compiler
@@ -336,7 +336,7 @@ a recorded version, the evidence a paragraph about that tool rests on, writing
 the paragraph, and re-grading each round. It is the half of the vision that goes
 stale, because it is the half that is a claim about somebody else's project this
 month rather than a statement of what the work is for.
-**Owns:** [`tools/stathmos/report-card.md`](../tools/stathmos/report-card.md),
+**Owns:** [`tools/stathmos/docs/report-card.md`](../tools/stathmos/docs/report-card.md),
 and the evidence and protocol pages beside it.
 
 > **A child project holding a role is not an island, and the exception is
@@ -355,6 +355,7 @@ Split from `R6` on 2026-09-18; kanon retains the register.
 [`tools/stathmos/scripts/child_listing.py`](../tools/stathmos/scripts/child_listing.py),
 and the local checker launcher
 [`tools/stathmos/scripts/policy_check.py`](../tools/stathmos/scripts/policy_check.py).
+Their regressions live in [`tools/stathmos/tests/`](../tools/stathmos/tests/).
 The checking rules and their implementation remain anoieu's under `R31`.
 
 ## tekmerion
@@ -370,7 +371,8 @@ repository that holds the office.
 **Role:** *should this become a repository of its own*, answered against a
 stated standard with a verdict attached — and, where the answer is no, an
 argument about whose existing tree the work belongs in instead.
-**Owns:** `proposals.md` and `requests.md`; naming arguments in `proposals.md`
+**Owns:** [`proposals.md`](../tools/ynoia/docs/proposals.md) and
+[`requests.md`](../tools/ynoia/docs/requests.md); naming arguments in `proposals.md`
 refer to the authoritative register in `docs/glossary.md`.
 
 ## zetesis

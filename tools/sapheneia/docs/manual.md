@@ -12,7 +12,7 @@
 > come apart exactly where the language is unclear — so what we do with one is
 > record it in [`feedback.md`](feedback.md) as a candidate and leave it
 > unjudged. What we do not do is assume it settles in either direction. See
-> [`README.md`](README.md) for why this exists.
+> [`../README.md`](../README.md) for why this exists.
 >
 > Read against `user_manual.md` at `ethosEoc3` (`3cf1c03`).
 
@@ -1540,7 +1540,7 @@ is off by default.
 > `:conclusion-explicit`, states a kind for `Proof` that is not enforced, and
 > hides the evaluator inside the `=` of its side conditions. The argument, with
 > what was run to establish it, is
-> [`docs/account-vs-manual.md` MD-01](docs/account-vs-manual.md). **The chapter
+> [`docs/account-vs-manual.md` MD-01](account-vs-manual.md). **The chapter
 > below is accurate as a description of the typing rules and wrong as an
 > account of proof checking**; rewriting it around the state, the commands and
 > the match/evaluate/produce order — keeping the typed reading as the
@@ -1847,7 +1847,7 @@ Not gaps — deliberate exclusions, listed so a reader can tell the two apart.
 | --- | --- |
 | building, installing and invoking a checker; command-line options; streaming | the checker's own documentation |
 | trace tags, statistics, error message formatting, dagified printing | likewise |
-| the `.eos` semantics-set language and the compiler that reads it | their own reference; out of charter ([`README.md`](README.md)) |
-| the case for the ecosystem's arrangement | `tools/ynoia/why-eunoia.md`; out of charter |
+| the `.eos` semantics-set language and the compiler that reads it | their own reference; out of charter ([`../README.md`](../README.md)) |
+| the case for the ecosystem's arrangement | `tools/ynoia/docs/why-eunoia.md`; out of charter |
 | proposed changes to Eunoia | the host repository's report to the language's maintainers |
 | the derived-operator signature reconstructing the list operators in pure Eunoia | the manual's appendix, which is the right place for it |

@@ -969,7 +969,7 @@ def main() -> int:
           f"the policy pass their check, {owed} topic{'s' if owed != 1 else ''} "
           f"{'are' if owed != 1 else 'is'} owed to us, "
           "and how good any of these tools actually are is a judgement kept in "
-          "https://github.com/ajreynol/kanon/blob/main/tools/stathmos/report-card.md "
+          "https://github.com/ajreynol/kanon/blob/main/tools/stathmos/docs/report-card.md "
           "rather than in this table.")
     return 0
 

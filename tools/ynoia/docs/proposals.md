@@ -46,7 +46,7 @@ this page applies that question to one proposed repository.
 
 ## Arguing about names
 
-The president's [glossary](../../docs/glossary.md) is the authoritative name
+The president's [glossary](../../../docs/glossary.md) is the authoritative name
 register: what a name means and which work it identifies. Ynoia argues how a
 name fits its work, keeping no list of taken, reserved, or supposedly free names.
 
@@ -121,7 +121,7 @@ stopped being applied.
 ## P3 — the semantics and the compiler, defined in Lean
 
 **Name:** **`noesis`** — already in use, recorded in the
-[glossary](../../docs/glossary.md); this audit concerns where the work belongs
+[glossary](../../../docs/glossary.md); this audit concerns where the work belongs
 **What:** the `.eos` semantics written as Lean definitions over the SMT-LIB model
 logos already carries, the compiler as a Lean metaprogram over those
 definitions, and a theorem relating what it emits to what they say
@@ -142,7 +142,7 @@ is that the thing does not exist.*
 ### The name
 
 Unlike `P1` and `P2` there is no name to choose. The
-[glossary](../../docs/glossary.md) records `noesis` and its existing project.
+[glossary](../../../docs/glossary.md) records `noesis` and its existing project.
 The argument for the name is in [`why-eunoia.md`](why-eunoia.md); this audit
 does not rename or reserve it.
 
@@ -161,7 +161,7 @@ working tool, proposed while the tool is being actively improved, by the tree
 that maintains it.
 
 The role it would hold is already written down as vacant.
-[`roles.md`](../../docs/roles.md) `R13` — the shipped semantics sets — carries
+[`roles.md`](../../../docs/roles.md) `R13` — the shipped semantics sets — carries
 this line: *"In the absence of any other definition, what a `.eos` file means is
 what this role makes of it, which is a larger responsibility than it looks"*,
 and its **Not this role** ends *"any account of the semantics that does not
@@ -245,7 +245,7 @@ exactly why it is worth refusing: anoieu's evidence is signature analysis, and
 noesis's is compilation and Lean. Ynoia is not the counter-example — its subject
 is the arrangement, and anoieu is the ecosystem's reader. Another child here
 would make anoieu the ecosystem's speculation warehouse, which
-[`roles.md`](../../docs/roles.md)'s own philosophy says to read as a measurement
+[`roles.md`](../../../docs/roles.md)'s own philosophy says to read as a measurement
 rather than tidy away.
 
 **`eudaimonia`. Yes, if it must start now.** Three reasons, in order of weight.
@@ -335,7 +335,7 @@ thing this page is for.
 ### The names
 
 These were the alternatives considered before kanon existed. The
-[glossary](../../docs/glossary.md) records its current name and meaning;
+[glossary](../../../docs/glossary.md) records its current name and meaning;
 this table preserves the arguments, not a list of available names.
 
 | name | Greek | the claim it makes | the objection to it |
@@ -355,11 +355,11 @@ page: this is a rod, not a canon, and nothing in it is scripture.
 anoieu is currently three things, and its own README says so: an analyzer, a
 reporting system, and *the place the Eunoia ecosystem's shared policy is kept*.
 The third has grown since that sentence was written. It is now
-[`docs/policy.md`](../../docs/policy.md),
+[`docs/policy.md`](../../../docs/policy.md),
 [`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py) — which runs in every
-member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
-the audit (now [`tools/stathmos/scripts/status_audit.py`](../stathmos/scripts/status_audit.py)),
-[`scripts/ecosystem/checkouts.json`](../../scripts/ecosystem/checkouts.json). That is a tool, and it is
+member's CI — [`scripts/ecosystem/ecosystem.json`](../../../scripts/ecosystem/ecosystem.json),
+the audit (now [`tools/stathmos/scripts/status_audit.py`](../../stathmos/scripts/status_audit.py)),
+[`scripts/ecosystem/checkouts.json`](../../../scripts/ecosystem/checkouts.json). That is a tool, and it is
 not the analyzer.
 
 The argument is not that the machinery is bad. It is that **one repository both
@@ -450,7 +450,7 @@ this proposal was wrong.
 
 ## P1 — central tooling for reporting
 
-**Name:** **`koine`** — chosen, and now recorded in the [glossary](../../docs/glossary.md)
+**Name:** **`koine`** — chosen, and now recorded in the [glossary](../../../docs/glossary.md)
 **What:** the shared machinery of the reporting loop, fetched by every tool that
 runs one, so the protocol has one implementation instead of one per member
 **Verdict:** **needed** — we intend to depend on it
@@ -465,7 +465,7 @@ approving it is not creating it — and it exists now, as a member.
 ### The names
 
 Five candidates considered before `koine` was chosen. The
-[glossary](../../docs/glossary.md) records the adopted name; this table argues
+[glossary](../../../docs/glossary.md) records the adopted name; this table argues
 the alternatives and makes no claim about their availability today. Each
 etymology is written to be disagreed with: if the explanation is strained,
 the scope may be what is unclear.

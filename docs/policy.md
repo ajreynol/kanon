@@ -537,7 +537,7 @@ take a name and write the README — every step defensible, the composition not.
 that step is irreversible and outward-facing: it publishes under a name people
 trust, and arrives with a place to put secrets and a runner that executes
 whatever lands in `.github/workflows/`. A proposal worth a real answer goes to
-[`tools/ynoia/proposals.md`](../tools/ynoia/proposals.md), which produces a
+[`tools/ynoia/docs/proposals.md`](../tools/ynoia/docs/proposals.md), which produces a
 recommendation; **a recommendation is not an approval.**
 
 **Never open a topic about somebody else's discussion file** — not that it is

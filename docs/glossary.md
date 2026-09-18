@@ -11,7 +11,7 @@ judgements, not tools or projects.
 current and hands this file to the next president with the
 [office’s shared documents](laws.md#law-32--transfers-with-the-office).
 
-Ynoia [argues about names](../tools/ynoia/proposals.md#arguing-about-names)
+Ynoia [argues about names](../tools/ynoia/docs/proposals.md#arguing-about-names)
 and proposes alternatives; it keeps no separate register and reserves no names
 by proposing them. When a name enters use, the president records it here with
 its meaning and source.
@@ -76,7 +76,7 @@ pending collaboration and permission from Alethe’s maintainers.
 **arete** (assessment term; *noun*): Excellence in performing a thing’s
 function; in the report card, what a tool does well and what others should learn
 from it. From Greek ἀρετή, “excellence.” See
-[the report card](../tools/stathmos/report-card.md).
+[the report card](../tools/stathmos/docs/report-card.md).
 
 <a id="associate"></a>
 **associate** ([footing](#footing); *noun*): A repository carrying no
@@ -165,7 +165,7 @@ proof-production code for work with no proof step behind it. From Greek
 **elleipsis** (assessment term; *noun*): A shortcoming, with the evidence that
 establishes it; the report-card field paired with [arete](#arete) and
 [parainesis](#parainesis). From Greek ἔλλειψις, “a falling short.” See
-[the report card](../tools/stathmos/report-card.md).
+[the report card](../tools/stathmos/docs/report-card.md).
 
 <a id="empeiria"></a>
 **empeiria** (Eunoia child project of [dokimasia](#dokimasia); *proper noun*):
@@ -211,7 +211,7 @@ a signature and supplies a checker and its proof development.
 **Eunoia** (language; *proper noun*): The language for defining calculi and
 checking solver proofs around which the ecosystem is built. From Greek εὔνοια,
 “good thinking.” See
-[the language account](../tools/sapheneia/manual.md#1-what-eunoia-is).
+[the language account](../tools/sapheneia/docs/manual.md#1-what-eunoia-is).
 
 <a id="euthyna"></a>
 **euthyna** (Eunoia child project of [eudaimonia](#eudaimonia); *proper noun*):
@@ -366,7 +366,7 @@ obligations on it.
 <a id="parainesis"></a>
 **parainesis** (assessment term; *noun*): Counsel following an assessment: what
 should follow from a tool’s strengths and shortcomings. From Greek παραίνεσις,
-“counsel.” See [the report card](../tools/stathmos/report-card.md).
+“counsel.” See [the report card](../tools/stathmos/docs/report-card.md).
 
 <a id="president"></a>
 **president** (office; *noun*): The human maintainer of the repository recorded
@@ -388,7 +388,7 @@ an account.” [Charter](../tools/sapheneia/README.md).
 used for solver inputs and the semantics modeled by [logos](#logos).
 [Eunoia](#eunoia) uses its syntax to express the formulas appearing in solver
 proofs. See
-[the language account](../tools/sapheneia/manual.md#1-what-eunoia-is) and
+[the language account](../tools/sapheneia/docs/manual.md#1-what-eunoia-is) and
 [the Lean model role](roles.md#r18--the-model-of-smt-lib-semantics-in-lean).
 
 <a id="stathmos"></a>

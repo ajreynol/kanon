@@ -17,7 +17,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from support import ROOT, ecosystem, policy_check
+from stathmos_support import ROOT, ecosystem, policy_check
 
 class Commands(unittest.TestCase):
     def setUp(self):

@@ -26,6 +26,10 @@ directs an agent. **Each command documents itself**, at the top of its own file.
    `scripts/eo_status_audit --check`, and
    `python3 tools/stathmos/scripts/policy_check.py --root .`.
 
+The regression suite includes stathmos's tests from
+[`tools/stathmos/tests/`](../tools/stathmos/tests/). Run those alone with
+`python3 -m unittest discover -s tools/stathmos/tests -v`.
+
 The authoritative register is
 [`scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json).
 An entry with `status: president` identifies the current holder. The offline
@@ -406,7 +410,7 @@ Keep failures actionable and the local suite independent of remote state.
 ## The governance budget
 
 **The rule exists and nothing counts against it.**
-[`report-card.md`](../tools/stathmos/report-card.md)
+[`report-card.md`](../tools/stathmos/docs/report-card.md)
 grades this repository down for exactly this and states the rule in the same
 paragraph: *every further page here has to displace a check, a finding, or an
 hour of somebody else's reading.* Nothing has ever measured whether it is kept.
@@ -473,7 +477,7 @@ can check — which is the first time it has paid for any of itself.
 [`glossary.md`](glossary.md) is the authoritative name register, maintained by
 the president. [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) records
 membership and checkout locations. Ynoia's
-[naming guidance](../tools/ynoia/proposals.md#arguing-about-names)
+[naming guidance](../tools/ynoia/docs/proposals.md#arguing-about-names)
 links to the glossary to argue names; it keeps no parallel register.
 
 | when | the edit |

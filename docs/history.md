@@ -104,7 +104,7 @@ with them — two entries below.
 At the maintainer's direction, `docs/glossary.md` became the authoritative
 register of names in use, kept by the president. Ynoia's taken, reserved, and
 in-use tables were removed. The remaining guidance from `names.md` was merged
-into [proposals.md](../tools/ynoia/proposals.md#arguing-about-names), and the
+into [proposals.md](../tools/ynoia/docs/proposals.md#arguing-about-names), and the
 separate page was deleted. Unused candidates remain in proposals, outside the
 dictionary.
 `init_eo` now reads the glossary directly. Earlier accounts of the register's
@@ -407,6 +407,11 @@ per self-contained tool or feature outside the directories with defined
 purposes. It also applies the same outline relative to each child's root, so
 implementation boundaries and file locations remain clear inside `tools/X/`.
 `D21` announces the guidance, with anoieu's three tools as an example.
+
+At the maintainer's direction, kanon then applied the outline to its own
+children: their documents now live in local `docs/` directories with indexes,
+and stathmos's regressions live in its `tests/`. The parent test run still
+includes them; public commands and child charters retain their locations.
 
 ## Membership changes during this term
 

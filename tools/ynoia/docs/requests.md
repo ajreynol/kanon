@@ -31,7 +31,7 @@ with the reason.
 somebody's tree should carry some work; whether it does is theirs. Nothing on
 this page is a ticket in anybody's tracker, and nothing here is filed anywhere:
 a request that a member should act on reaches them through
-[`docs/discussion.md`](../../docs/discussion.md), by a person, or not at all.
+[`docs/discussion.md`](../../../docs/discussion.md), by a person, or not at all.
 
 ## R8 — a tool that ranks documentation by importance, and finds the dead weight
 
@@ -234,7 +234,7 @@ than a preliminary to it.
 
 ## R4 — make the tenets configurable, and trace what they drive first
 
-**What:** the tenets in [`../../docs/vision.md`](../../docs/vision.md) are
+**What:** the tenets in [`../../../docs/vision.md`](../../../docs/vision.md) are
 one person's preferences, presented as what AI-assisted development is aiming
 at. They should be a **default set** a repository may replace, rather than *the*
 set — and, because they drive machinery rather than only grading it, the
@@ -331,7 +331,7 @@ already been told from outside that it is better at diagnosis than treatment.
 Reading three trees and running one existing command produced, in minutes, a
 result nobody had suspected: **all three members pinned a commit our own CI had
 failed**, so a requirement we published as hard has never been satisfiable. It
-is written up in [`../../docs/protocols.md`](../../docs/protocols.md).
+is written up in [`../../../docs/protocols.md`](../../../docs/protocols.md).
 
 That is a real demonstration and it demonstrates **detection**, not correction.
 Three honest limits, and they are the content of this request:

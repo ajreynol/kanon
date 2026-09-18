@@ -1,32 +1,15 @@
-"""Shared fixtures for kanon's regressions: module loaders and document helpers.
+"""Shared document helpers for kanon's regressions.
 
 Not a test module. `unittest discover` collects only `test*.py`, so this is
 imported by the suites rather than run as one.
 """
 
-import importlib.machinery
-import importlib.util
 from pathlib import Path
 import json
 import re
-import sys
 
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT))
-
-
-def load(name, path):
-    loader = importlib.machinery.SourceFileLoader(name, str(ROOT / path))
-    spec = importlib.util.spec_from_loader(name, loader)
-    module = importlib.util.module_from_spec(spec)
-    loader.exec_module(module)
-    return module
-
-
-from tools.stathmos.scripts import policy_check
-
-ecosystem = load("ecosystem_under_test", "tools/stathmos/scripts/status_audit.py")
 
 
 def register() -> dict:
@@ -38,9 +21,6 @@ def register() -> dict:
     """
     with open(ROOT / "scripts/ecosystem/ecosystem.json", encoding="utf-8") as f:
         return {k: v for k, v in json.load(f).items() if not k.startswith("_")}
-
-# Loaded here so every suite shares one instance; importing them is also the
-# cheapest check that each still parses against the current tree.
 
 
 def prose(text):

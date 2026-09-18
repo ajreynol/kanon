@@ -10,7 +10,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from support import ecosystem
+from stathmos_support import ecosystem
 from tools.stathmos.scripts.child_listing import declaration, read_listing
 
 class Declarations(unittest.TestCase):

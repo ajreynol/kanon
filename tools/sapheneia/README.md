@@ -29,11 +29,11 @@ analyzer needs, and it is what this project tries to supply.
 
 1. **The account.** A description of Eunoia written as a language definition:
    ethos-agnostic, with implementation behaviour quarantined and labelled rather
-   than mixed in. [`manual.md`](manual.md).
+   than mixed in. [`docs/manual.md`](docs/manual.md).
 
 2. **Feedback to the ethos manual.** Writing a second account of something is
    the most reliable way to find the places the first one is silent, ambiguous,
-   or contradicts itself. Those go in [`feedback.md`](feedback.md) as a ledger,
+   or contradicts itself. Those go in [`docs/feedback.md`](docs/feedback.md) as a ledger,
    and are carried upstream — if at all — by a person, under the host
    repository's ordinary reporting discipline. Nothing here is filed by machine.
 
@@ -45,7 +45,7 @@ analyzer needs, and it is what this project tries to supply.
 
 3. **Wishue: a formal semantics.** Judgement forms and rules for the type
    system, the desugaring, and evaluation, at the level of detail where two
-   people could implement from them and agree. [`semantics.md`](semantics.md)
+   people could implement from them and agree. [`docs/semantics.md`](docs/semantics.md)
    holds what the shape would have to be and what currently blocks it. This is a
    wishue and is expected to remain one for a while.
 
@@ -57,7 +57,7 @@ analyzer needs, and it is what this project tries to supply.
    [`docs/ethos-logos.md`](docs/ethos-logos.md), kept as a living register. It
    serves goal 1 the way goal 2 does — a disagreement between two
    implementations is evidence about where the language is undefined, and the
-   rows that land in [`manual.md`](manual.md)'s unsettled chapter are the ones
+   rows that land in [`docs/manual.md`](docs/manual.md)'s unsettled chapter are the ones
    worth the most.
 
 ## What this project does not do
@@ -67,7 +67,7 @@ The boundary matters more than the goals, so it is stated first-class.
 - **It does not justify any tool.** Not anoieu, not ethos, not the compiler, not
   the Lean development. If a paragraph here reads as an argument for something
   being built, it is off-charter and should be cut. The case for the ecosystem's
-  arrangement is argued in `tools/ynoia/why-eunoia.md`, which is a different document
+  arrangement is argued in `tools/ynoia/docs/why-eunoia.md`, which is a different document
   with a different audience, and this project does not participate in it.
 - **It does not propose language changes.** Where the language is underspecified
   this account says so and stops. Proposing the resolution is a change to
@@ -130,13 +130,7 @@ convention.
 
 ## Layout
 
-| file | what it is |
-| --- | --- |
-| [`manual.md`](manual.md) | the account. Goal 1 |
-| [`feedback.md`](feedback.md) | candidate feedback to the ethos manual, as a ledger. Goal 2 |
-| [`semantics.md`](semantics.md) | the formalization: shape, judgement forms, blockers. Goal 3, wishue |
-| [`docs/ethos-logos.md`](docs/ethos-logos.md) | the living comparison: where ethos's Eunoia and logos's Eunoia come apart. Goal 4 |
-| [`docs/account-vs-manual.md`](docs/account-vs-manual.md) | the disagreements: what we think the ethos manual gets wrong. Goal 2, the heavier half |
+[`docs/README.md`](docs/README.md) indexes this project's documents.
 
 ## Status
 
@@ -151,13 +145,13 @@ entries and none of them has been carried anywhere.
 `ethosEoc3` (`4d1ba77c`) and logos `main` (`be479120`). Its ethos-side claims
 were run against a build; its logos-side claims were read off generated Lean and
 not executed. Four of the rows are instances of questions
-[`manual.md`](manual.md) §11 already lists as unsettled, which is the part worth
+[`docs/manual.md`](docs/manual.md) §11 already lists as unsettled, which is the part worth
 pursuing.
 
 **The disagreements, first cut 2026-09-17.** Ten rows, one of which — that the
 manual presents proof checking as type checking where it is closer to program
 evaluation — is most of the page and is first of all a correction to
-[`manual.md`](manual.md) §8, which repeated the framing without checking it.
+[`docs/manual.md`](docs/manual.md) §8, which repeated the framing without checking it.
 That chapter now carries a correction note and is owed a rewrite.
 
 ## Is there a paper in this?

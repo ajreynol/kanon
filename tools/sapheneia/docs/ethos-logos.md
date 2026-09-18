@@ -7,7 +7,7 @@ and whether the language says which is right.
 It is part of [sapheneia](../README.md) and inherits its charter: it describes,
 it does not adjudicate, and it proposes no change to anything. Where the two
 readings disagree and the manual does not settle it, the row says so and stops
-— which is the same three-way split [`manual.md`](../manual.md) uses, applied to
+— which is the same three-way split [`manual.md`](manual.md) uses, applied to
 two implementations instead of to one implementation and a document.
 
 ---
@@ -58,7 +58,7 @@ one of those four**, and the `kind` column says which sort of difference it is:
 
 And `settled?` says whether the ethos manual adjudicates. **No** means the row
 is not a defect in either tool — it is a place the language is undefined, and it
-belongs to [`manual.md` §11](../manual.md) as an instance rather than to
+belongs to [`manual.md` §11](manual.md) as an instance rather than to
 anybody's bug tracker.
 
 ---
@@ -130,7 +130,7 @@ for the probe. The logos column is *read* off `Cpc/Logos.lean`
 **Whether it bites.** `eo::is_q` is reached 4 times and `eo::is_bin` 5 times in
 the CPC signature logos compiled, so this is live rather than latent. It is
 also the mechanism behind sapheneia's existing *category preservation in
-arithmetic* question ([`manual.md` §11](../manual.md)): `eo::add` on two
+arithmetic* question ([`manual.md` §11](manual.md)): `eo::add` on two
 decimals gives a decimal in ethos and a `Term.Rational` in logos, and every
 predicate downstream inherits the difference.
 
@@ -262,7 +262,7 @@ Lean is what reports that.
 rather than to either tool. The manual says `eo::cmp` "corresponds to an
 arbitrary total order on terms" and says nothing about stability or about
 agreement between checkers — which is exactly the open question
-[`manual.md` §11](../manual.md) already records under *What is `eo::hash`
+[`manual.md` §11](manual.md) already records under *What is `eo::hash`
 allowed to be?*. **This row is that question's first concrete instance.**
 
 **Whether it bites.** `$compare_var` is CPC's one use of `eo::cmp`, and it is
@@ -396,7 +396,7 @@ Eunoia signatures", and because it puts a floor under every other row: a
 question about a construct CPC does not use has no logos side to compare.
 
 **Settled?** No — the language has no notion of a well-formed signature at all
-(the first entry of [`manual.md` §11](../manual.md)), so it has nothing to say
+(the first entry of [`manual.md` §11](manual.md)), so it has nothing to say
 about a reading that fixes one.
 
 ### EL-10
@@ -484,7 +484,7 @@ type is not used, an error in the body is reported at the use site, and a
 recursive `define` is rejected.
 
 **Settled?** No, and this one connects to a question sapheneia already has open.
-[`manual.md` §11](../manual.md) asks whether a `define` body is part of the
+[`manual.md` §11](manual.md) asks whether a `define` body is part of the
 language's type discipline, having verified that ethos does not check one. logos
 does not check one either, by a different route — it never has a body and a
 type in hand at the same time. **Two implementations reaching the same silence
@@ -573,7 +573,7 @@ divergence would overstate the ledger.
 - **It does not describe `.eos`.** The semantics-set language has its own
   reference (`tools/eoc/semantics/README.md` in the ethos tree). Rows cite a set
   where the set is the evidence; the language is out of scope, as it is for
-  [`manual.md`](../manual.md).
+  [`manual.md`](manual.md).
 - **It does not compare soundness.** logos proves things about its own checker
   against its own SMT-LIB semantics. Whether that semantics conforms to SMT-LIB
   is [`logos/docs/smt-lib-conformance.md`](https://github.com/cvc5/logos/blob/main/docs/smt-lib-conformance.md),
@@ -654,7 +654,7 @@ been carried to either repository.
 [`../README.md`](../README.md) says of the feedback ledger: rows that have been
 put to the people who own the two readings, and answered. Four of these rows
 ([EL-04](#el-04), [EL-05](#el-05), [EL-06](#el-06), [EL-15](#el-15)) are
-instances of questions [`manual.md` §11](../manual.md) already lists as
+instances of questions [`manual.md` §11](manual.md) already lists as
 unsettled, which is the more interesting half — **a second implementation
 disagreeing in exactly the places a second *account* found underspecified is
 evidence the account found the right places.** That correspondence, counted and

@@ -68,6 +68,10 @@ implementations; the directory recommendation is advisory.
 Its README remains its charter and entry point. Only create directories the
 child needs; the existing charter and isolation rules still apply.
 
+**Kanon applied this locally, 2026-09-18:** each child's documents now live in
+its own `docs/` with an index. Stathmos's regressions live in its `tests/` and
+remain included in kanon's test run. The public commands keep their locations.
+
 ## D20 — cite the provision a claim depends on
 
 **To:** aisthesis, anoieu, dokimasia, epikrisis, eschaton, eudaimonia, kanon, koine, logos, tachyon
@@ -453,6 +457,9 @@ at `tools/sapheneia/feedback.md` in this tree and are not being carried.
 **What we are asking.** Nothing, and *the reading is wrong* is a complete
 answer — the grammar may be deliberately partial, in which case saying so is
 itself the answer to what a second implementation should parse.
+
+**Location update, 2026-09-18:** the ledger moved to
+[`tools/sapheneia/docs/feedback.md`](../tools/sapheneia/docs/feedback.md).
 
 ## D11 — eight board items of ours that are entries in your ledger
 

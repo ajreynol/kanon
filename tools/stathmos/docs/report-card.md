@@ -1,8 +1,8 @@
 # The report card
 
 **How each tool stands against the five tenets of
-[`vision.md`](../../docs/vision.md).** Written and kept by stathmos, which is
-the whole of what `R30` in [`roles.md`](../../docs/roles.md) is.
+[`vision.md`](../../../docs/vision.md).** Written and kept by stathmos, which is
+the whole of what `R30` in [`roles.md`](../../../docs/roles.md) is.
 
 **It is not a build step and must not become one.** That is vision.md's rule
 rather than this page's: *adherence to policy is tracked automatically, and

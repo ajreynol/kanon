@@ -139,7 +139,7 @@ This is the finding that taught us to check.
 ## B33 — update the ethos user manual from sapheneia's advice
 
 **Task:** update ethos's `user_manual.md` using the advice in
-[sapheneia's feedback ledger](../tools/sapheneia/feedback.md).
+[sapheneia's feedback ledger](../tools/sapheneia/docs/feedback.md).
 **Entities:** `ethos`, `sapheneia`
 **Status:** not started — requested 2026-09-18; the ledger's fifteen entries
 are candidates read against `ethosEoc3` at `3cf1c03`.

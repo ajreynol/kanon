@@ -12,7 +12,7 @@ moves with its work and roles to the repository that holds the presidency.
 than the scale or the verdict.*
 
 **In one line: it audits ecosystem status and keeps
-[the report card](report-card.md).**
+[the report card](docs/report-card.md).**
 
 **This is not an island**, and the exception is deliberate. Other documents in
 this repository point at the page — `roles.md` records its roles, `laws.md` and
@@ -108,10 +108,19 @@ way one of these may begin.
 `scripts/eo_status_audit` remains the public entry point.
 
 **It now holds the page rather than only the role**, since 2026-09-16:
-[`report-card.md`](report-card.md) is written here, supersedes the edition
+[`docs/report-card.md`](docs/report-card.md) is written here, supersedes the edition
 anoieu last graded on 2026-09-02, and covers twelve tools.
 
 **And it is graded on it**, which the first edition promised and deferred: *a
 project on its first day has no record to weigh*. It has one now, its entry is
 in the sharper register, and the shortfall it records against itself is that
-[`evidence.md`](evidence.md) is older than the page resting on it.
+[`docs/evidence.md`](docs/evidence.md) is older than the page resting on it.
+
+## Layout
+
+- [`docs/README.md`](docs/README.md) indexes the report card, evidence and protocol.
+- [`scripts/`](scripts/) holds the audit and its helpers.
+- [`tests/`](tests/) holds their offline regressions. Kanon's test run includes them.
+
+From this directory, run `python3 -m unittest discover -s tests -v` to test
+stathmos on its own.

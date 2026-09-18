@@ -8,7 +8,7 @@ page links to it rather than restating it.
 
 It brings the ideas in the account and proposals into an order somebody with
 an afternoon can question: *which one of these is worth starting?* The
-[glossary](../../docs/glossary.md) records names in use; this page argues the
+[glossary](../../../docs/glossary.md) records names in use; this page argues the
 priority of work that does not exist yet.
 
 **This page decides nothing**, like every other page here. An ordering is a
@@ -19,7 +19,7 @@ disagree is moving a block.
 
 | page | its question |
 | --- | --- |
-| [glossary](../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
+| [glossary](../../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
 | [`proposals.md`](proposals.md) | should this be a repository of its own, and why does its name fit |
 | [`requests.md`](requests.md) | whose tree should this work live in |
 | [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up |
@@ -32,11 +32,11 @@ that is the line, and it is why the dependency auditor `R1` is not here.
 **A tool leaves this page when it exists**, rather than being marked done and
 kept. **euthyna** left when eudaimonia started it and **koine** left when its
 repository existed; both are now in
-[`../../docs/roles.md`](../../docs/roles.md), which is where a tool with a role
+[`../../../docs/roles.md`](../../../docs/roles.md), which is where a tool with a role
 is described. **Five more left on 2026-09-16**: **kanon**, whose governance
 transfer completed on 2026-09-15, and **epikrisis**, promoted out of eudaimonia
 — both members in
-[`ecosystem.json`](../../scripts/ecosystem/ecosystem.json) — and **noesis**,
+[`ecosystem.json`](../../../scripts/ecosystem/ecosystem.json) — and **noesis**,
 **hermeneia** and **mimesis**, each started as a child project in eudaimonia's
 tree and documented at its source. A page that keeps its graduates is a page
 whose first entries are all finished work, which is exactly what the first two
@@ -45,12 +45,12 @@ entries here had become before that sweep.
 ## How to read it, and how to edit it
 
 **Position is the priority**, exactly as on
-[`../../docs/board.md`](../../docs/board.md). The first entry is the one most
+[`../../../docs/board.md`](../../../docs/board.md). The first entry is the one most
 worth starting; the last is the least. Reordering is done by moving a block, and
 that is the main way a person changes what this page says.
 
 **The working name identifies the proposal.** Check the
-[glossary](../../docs/glossary.md) before using a name for different work.
+[glossary](../../../docs/glossary.md) before using a name for different work.
 Proposed names here describe ideas; listing one neither reserves it nor creates
 a glossary entry. Keep naming arguments with the proposal.
 
@@ -158,7 +158,7 @@ to.
 
 Enough to fill the seven fields, or an honest gap where it cannot:
 
-- **A working name**, checked against the [glossary](../../docs/glossary.md)
+- **A working name**, checked against the [glossary](../../../docs/glossary.md)
   and existing trees. Explain a new candidate with the proposal, following the
   [naming arguments](proposals.md#arguing-about-names); do not create a second
   name for work already listed.

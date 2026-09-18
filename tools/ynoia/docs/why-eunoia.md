@@ -1,7 +1,7 @@
 # Why a proof calculus, and not just Lean
 
-*The account of [ynoia](README.md), a child project under
-[`docs/policy.md`](../../docs/policy.md): read-only, advertised, and not part
+*The account of [ynoia](../README.md), a child project under
+[`docs/policy.md`](../../../docs/policy.md): read-only, advertised, and not part
 of what this repository ships. It decides nothing and commits nobody. anoieu is
 a participant in this argument rather than a referee — it exists because one
 side of it is right — and where that shows, it is meant to.*
@@ -39,7 +39,7 @@ kept in a different directory.
    one way would be worth nothing to somebody deciding.
 2. Then [`tools.md`](tools.md) — the tools that do not exist, in priority order,
    each with the argument for its position rather than a wish list.
-3. Then the [glossary](../../docs/glossary.md), the authoritative name register,
+3. Then the [glossary](../../../docs/glossary.md), the authoritative name register,
    and the [naming arguments](proposals.md#arguing-about-names). **Check the trees as
    well as the glossary**: a missing entry does not mean a name is unused.
 4. Then `eo_init`, which
@@ -124,7 +124,7 @@ deleted — not marked stale — and it documents itself at its source; what is 
 behind is one line saying where it went. Whatever argument this page was making
 *with* it stays, because the argument is what this page is for. The general form
 of the rule, and why deletion beats a stale-marker, is in
-[`../../docs/protocols.md`](../../docs/protocols.md).
+[`../../../docs/protocols.md`](../../../docs/protocols.md).
 
 ## How the numbering works
 

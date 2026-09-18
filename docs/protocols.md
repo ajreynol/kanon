@@ -56,7 +56,7 @@ named.
 | `PROTO-9` | retired, 2026-09-15 | — | no active protocol |
 | `PROTO-10` | the role handoff — a responsibility changes hands, keeping its id | tool → tool | [`roles.md`](roles.md) |
 | `PROTO-11` | the documentation handoff — a launch moves a description to its source | page → page | this page |
-| `PROTO-12` | updating the report card | agent → person | `tools/stathmos/protocol.md` |
+| `PROTO-12` | updating the report card | agent → person | `tools/stathmos/docs/protocol.md` |
 | `PROTO-13` | the mid-stream commit note — a commit taken while work moved | agent → record | this page |
 | `PROTO-18` | retired, 2026-09-17 | — | no active protocol |
 | `PROTO-19` | retired, 2026-09-15 | — | no active protocol |
@@ -383,7 +383,7 @@ takes claims and not their justifications.
 sharp in the way that matters: **it can fail.** A solver that is verified and
 slow does not meet it. A solver that is fast and unverified does not meet it.
 **Both halves at once is the whole of the difficulty**, and it is why
-[`pathos`](../tools/ynoia/tools.md) — a checker that is both — is named in the
+[`pathos`](../tools/ynoia/docs/tools.md) — a checker that is both — is named in the
 register and unbuilt.
 
 **Everything else here is instrumental to that, including this page.** The
