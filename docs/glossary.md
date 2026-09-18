@@ -437,6 +437,15 @@ Research toward a solver designed around proofs from the start, retaining
 Research notes; nothing is built.
 [Charter](https://github.com/ajreynol/eschaton/blob/main/tools/telos/README.md).
 
+<a id="tracking"></a>
+**tracking** (activity; *noun*): Recording projects' changes and activity over
+time as evidence for understanding the ecosystem's work. For example,
+[epikrisis](https://github.com/ajreynol/epikrisis) tracks repository histories
+and commit activity (README read 2026-09-18). For projects outside the ecosystem,
+tracking provides context for assessing our own work; what may be inspected,
+recorded or compared is governed by
+[LAW 9](laws.md#law-9--external-research-release-publication-and-permitted-comparisons).
+
 ## V
 
 <a id="vaporware"></a>

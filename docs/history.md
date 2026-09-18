@@ -552,6 +552,20 @@ about what Eunoia does not research. It names aisthesis as the current holder
 of that account and links to its repository. The wording deliberately leaves
 the boundaries with aisthesis rather than enumerating them in the laws.
 
+### Tracking was defined in the glossary — 2026-09-18
+
+At the maintainer's request, the glossary now defines tracking, with epikrisis's
+repository histories and commit activity as an example. LAW 9 links to the
+definition and keeps its existing limits on tracking external projects.
+
+### Defect investigations use tracking's eligibility rules — 2026-09-18
+
+At the maintainer's request, LAW 10 now permits targeting an external repository
+whenever LAW 9 permits tracking it, under the same conditions. This removes
+the separate released-and-published prerequisite and includes LAW 9.5's
+permission exception. The introduction is shorter; declaration, reporting and
+ending requirements remain. The inventory guidance uses the same eligibility.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

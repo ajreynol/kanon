@@ -367,7 +367,7 @@ on whether their code is released and their research is published.
 <a id="what-tracking-is"></a>
 <a id="comparing-our-work-with-external-projects"></a>
 
-Tracking means recording external work as context for assessing our own.
+For external projects, [tracking][tracking] records their work as context for assessing our own.
 Its conclusions concern our work. Differences in activity over a period do
 not establish differences in quality.
 
@@ -419,7 +419,7 @@ examine unpublished research.
 Publication unknown: treat the work as private under
 [LAW 9.2](#law-92--released-code-without-published-research). Record its status
 as unknown, rather than claiming that no publication exists. Until publication
-is established, the same prohibition on inspection and tracking applies.
+is established, the same prohibition on inspection and [tracking][tracking] applies.
 
 <a id="law-93--published-work"></a>
 <a id="law-94--published-work"></a>
@@ -437,7 +437,7 @@ what we compare against; the repository is only where the code is.
 
 ### (LAW 9.5) — Permission for unreleased and unpublished work
 
-Neither released nor published: no tracking without permission.
+Neither released nor published: no [tracking][tracking] without permission.
 No entry, no measurement, no positioning, no note that it exists. The one way
 through is the permission of that work's maintainer, recorded with the entry,
 and its absence means the entry does not exist rather than that nobody has
@@ -447,15 +447,9 @@ asked.
 
 ## (LAW 10) — External defect investigations: declaring and ending a pursuit
 
-A repository is [in dioktes][dioktes] when it is actively searching for defects in a tool outside this
-ecosystem. Running a fuzzer at it, reading its source for faults, building
-cases against it: work whose object is to find something wrong with somebody
-else's artifact.
-
-The word names our posture, not their standing. Being pursued is not a
-footing, it confers nothing and asks nothing, and a tool does not become
-anything by our having pointed a fuzzer at it. This is a state that a
-repository here enters, and the law is about what we owe while we are in it.
+A repository is [in dioktes][dioktes] when it actively searches for defects
+in a tool outside this ecosystem. The term describes the pursuing repository's
+activity; it gives the target no new footing or obligations.
 
 <a id="entering-it"></a>
 <a id="starting-an-external-defect-investigation"></a>
@@ -463,14 +457,12 @@ repository here enters, and the law is about what we owe while we are in it.
 
 ### (LAW 10.1) — Declaring an external defect investigation
 
+An external repository may be targeted whenever
+[LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons)
+permits [tracking][tracking] it, subject to the same conditions.
+
 A person decides, and it is declared. The state is recorded
 against that tool in the register, with the date it began and what closes it.
-
-Only against a released tool with published research. Work treated as private
-under [LAW 9.2](#law-92--released-code-without-published-research) or
-[LAW 9.3](#law-93--external-work-with-unknown-publication-status) must not be
-investigated.
-
 
 <a id="law-102--informing-the-owner-first"></a>
 
@@ -517,3 +509,4 @@ closes.
 [outsider]: glossary.md#outsider
 [stretch]: glossary.md#stretch
 [dioktes]: glossary.md#dioktes
+[tracking]: glossary.md#tracking
