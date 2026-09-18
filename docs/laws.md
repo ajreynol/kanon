@@ -70,7 +70,7 @@ A [footing][footing] records a project's relationship to the ecosystem.
 | --- | --- | --- |
 | [member][member] | adopts the shared policy and verifies compliance through a method that policy accepts | theirs. They declared it |
 | [associate][associate] | records on its own maintenance page what it holds itself to, and puts no declaration on its front page | theirs |
-| [president][president] | a member that also holds the office, for a stretch | a person's. Bestowed, and theirs to take back |
+| [president][president] | a member that also holds the office, for a [stretch][stretch] | a person's. Bestowed, and theirs to take back |
 | [candidate][candidate] | we would like it to join and it has not | ours. Wanting somebody to join is not their joining |
 | [foundation][foundation] | the ecosystem exists to serve it and it has joined nothing | ours, and nothing is asked of it |
 | [child][child-project] | reached through its parent, on its parent's footing | its parent's, and nothing of its own |

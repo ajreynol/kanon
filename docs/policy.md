@@ -600,7 +600,10 @@ resolves every disagreement in the incumbent's favour has become a paraphrase.
 
 **7. Nothing leaves the island by machine.** Anything a child wants to say to
 the project that owns its subject goes through the parent's ordinary reporting
-discipline — no separate channel and no lighter standard. What it may do on its
+discipline — no separate channel and no lighter standard. **That discipline is
+both routes and not only the findings one**: a defect with a path and a line
+number travels the reporting workflow, and anything without one is a topic in
+the parent's discussion file, in the parent's voice. What it may do on its
 own is accumulate a **ledger** of candidate feedback inside its own directory;
 a person decides whether any of it is carried anywhere.
 

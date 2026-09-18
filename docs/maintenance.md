@@ -434,10 +434,10 @@ three commands, and the second row is what the first was worth waiting for.
 
 | what | 2026-09-01 | 2026-09-17 | 2026-09-18 |
 | --- | --- | --- | --- |
-| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 16,322 |
+| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 |
 | — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none |
-| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,485 |
-| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,837** |
+| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 |
+| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** |
 | Python | 54, 13,382 | 8, 2,069 | 9, 1,986 |
 | `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 |
 | checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | 63 | 63 | 63 |
@@ -465,20 +465,21 @@ git ls-files 'scripts/*'              | xargs wc -l | tail -1
 The fourth was added on 2026-09-18, because the `scripts/` row had been in the
 table with no command behind it since the table was written.
 
-**The third row, and it reports against the day it was taken.** Written prose
-grew by **188 lines** in one day while the check count did not move. Two
-findings opened, and **they are anoieu's** — the first time any counter on the
-right of this table has moved at all, and not to this repository's credit. So
-**the rule was not kept on 2026-09-18**, by the section's own test, and the
-number says so before anybody has to argue it.
+**The third row, and the day it measures went both ways.** Written prose fell by
+**256 lines**, and **almost all of the movement is one file**: `discussion.md`
+went from 1,185 lines to 697. Six finished topics were removed, and six bundled
+answers to other tools — 619 lines, written earlier the same day — were replaced
+by three short ones totalling 109. **The first version of that work would have
+put this row at +188**, and the row is worth having because somebody read the
+file rather than the number.
 
-**What the prose bought, stated so the trade can be disagreed with rather than
-assumed.** Twenty-two topics addressed to this office were answered and six of
-ours were closed, which is most of the growth; the joining section gained a
-measured account of the minimal passing tree; and two broken commands were fixed
-with regression tests. **None of that is a check or a finding**, which is
-exactly what the rule is pointing at: correspondence is the cheapest thing this
-office produces and the hardest for it to stop producing.
+**What the rule actually caught.** Correspondence is the cheapest thing this
+office produces and the hardest for it to stop producing, and a discussion file
+is where it accumulates without looking like accumulation — every topic is
+individually defensible. **The check that shrank it was not this counter**; it
+was reading the settling condition of each incoming topic and noticing that most
+name an artifact, so the artifact is the answer and no topic is owed. The
+counter's job was to make the first version's cost visible, and it would have.
 
 **Two columns moved for reasons that are not savings, and reading them as such
 would be the second failure this table exists to prevent.** `scripts/` fell from

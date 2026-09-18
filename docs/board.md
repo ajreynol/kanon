@@ -218,7 +218,8 @@ would mean real absence, which makes this a request rather than a proposal.
 **Task:** decide whether ynoia's request ids and the role ids stop sharing a
 namespace, and which one moves.
 **Entities:** `kanon`, `ynoia`
-**Status:** ready — found 2026-09-18 while reading `aisthesis-D3`.
+**Status:** ready — found 2026-09-18. It is a defect of this tree and
+stands on its own.
 [`roles.md`](roles.md) allocates twenty-six ids from `R2` to `R37`;
 [`requests.md`](../tools/ynoia/docs/requests.md) allocates `R1`–`R8`. **Six of
 the eight collide**: `R2` is both *the static analyzer* and *a check that a
@@ -235,32 +236,6 @@ renumbers for free.
 recorded against ids, and a topic citing `R4` in either tree is already
 ambiguous to a reader who does not know which register was meant. A prefix
 (`Y4`, or `REQ-4`) is the smaller change and keeps both pages' permanence rules.
-**HUMAN FEEDBACK:**
-
-## B42 — decide whether to place aisthesis's six recommendations in ynoia
-
-**Task:** decide whether this office spends the time writing
-[aisthesis's recommendations](https://github.com/ajreynol/aisthesis/blob/main/docs/recommendations.md)
-into ynoia's registers.
-**Entities:** `kanon`, `aisthesis`, `ynoia`, `anoieu`
-**Status:** parked — **the maintainer decided on 2026-09-18 not to address it
-yet, and not to reply.** `aisthesis-D3` asks for it, is a `request`, and says
-*we gain*. A drafted answer was written and withdrawn on that instruction, so
-**nothing has been said to aisthesis and their topic stays open on their side.**
-**Channel:** **internal** until the decision changes; **discussion** if it does.
-**Next:** decide. If yes, `B41` should be settled first, or the placement adds
-four more colliding ids.
-**Prompt — `kanon`:** the entries are three requests naming anoieu's tree, one
-tool proposal for nobody's tree, one *not yet*, and one observation for
-`papers.md`. **Placing them moves nothing on its own** — the three that name
-anoieu move when anoieu agrees, not when ynoia lists them — so the question is
-whether a register entry is worth the afternoon. Against: the governance budget
-already reports prose growing while the check and finding counts do not.
-For: the entries meet a stricter entry standard than ynoia's own, each naming
-the source read and the fact it collides with.
-**Prompt — `aisthesis`:** nothing yet, deliberately. If the answer is ever *no*,
-their own settling condition already names *left where it is* as a complete
-outcome, so a reply costs one topic whenever somebody wants to close it.
 **HUMAN FEEDBACK:**
 
 ## B34 — determine whether another president is necessary

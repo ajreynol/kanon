@@ -631,64 +631,70 @@ for each repository. The board's maintenance advice was condensed to ordering,
 stable ids, the active-item cap, fields, delivery and closure. Repeated
 explanations and the stale handoff example were removed.
 
-### Twenty-two topics were answered and two commands were found broken — 2026-09-18
+### Twenty-two topics were worked, three replies written, two commands found broken — 2026-09-18
 
-**The discussion work.** Every topic in another tool's tree whose `To:` names
-kanon was read: twenty-two, across eight repositories. **Twenty-one were
-answered** — `D22` through `D26` and `D28`, one per recipient — and six topics
-of ours were removed as finished — `D3` (epikrisis answered yes), `D4` and `D5`
-(koine's `D15` answered both), `D9` (dokimasia accepted the remit reading),
-`D12` (ethos fixed both grammar items) and `D16` (`eo_join` now branches on the
-two check forms). `D15` and `D21` gained replies rather than being rewritten.
+**The discussion work, and the mistake in how it was first done.** Every topic
+in another tool's tree whose `To:` names kanon was read — twenty-two, across
+eight repositories — and the first attempt answered them in **six bundled
+topics, 619 lines**, more than doubling `discussion.md`. **That was a misreading
+of this file's own rules**, caught by the maintainer: the policy says
+`eo_respond` works *the one topic*, that an `answer` gets its own topic
+**because it needs room**, and that the file holds **live** discussions. Six
+topics bundling two to seven answers each, most born finished, are none of those.
 
-**Two answers are refusals and say so.** Whether citing a child project in the
-parent's channel counts as advertising it, and whether `vision.md` must record
-why it changed, are decisions this repository declined to make for itself —
-the first because it changes what an unadvertised child is for, the second
-because `vision.md` is first on the supervision ladder and an agent agreeing
-with a proposal about it is not evidence. Both are on the board with the
-requester's argument attached, as are the three status transitions
-`eudaimonia-D3` asks for and the fatal-gate decision `anoieu-D33` reports the
-condition for.
+**The test that replaced it: read the settling condition.** Most topics
+addressed to us settle on an artifact — *the role register names
+`scripts/install_eo`*, *the two entries link to charters that resolve*.
+**Where the artifact exists, the artifact is the answer and no topic is
+written.** Only where a condition asks us to *say* something — *or the ecosystem
+says deliberately that it does not want one* — is a topic the only vehicle.
+That left **three, 109 lines**: `D22`, a notice that status auditing is
+stathmos's; `D23`, the six statements eudaimonia's topics asked for; `D24`,
+declining `anoieu-D30`'s second ask with a measurement. One further answer moved
+into [the policy](policy.md#child-projects), where eudaimonia had asked for it.
+
+**Six topics of ours were removed as finished** — `D3`, `D4`, `D5`, `D9`, `D12`
+and `D16`, each settled by the other side. `D15` and `D21` gained replies rather
+than being rewritten, which is the mechanism the file already had.
+
+**Three of the twenty-two were withdrawn by their authors the same day**, so
+nineteen stand: aisthesis retracted `D2` and `D3` in `71a6f9b`, rewriting
+`recommendations.md` as hypothetical; dokimasia removed `D11`.
+
+**Four questions were declined rather than decided**, and that is the part worth
+reviewing: whether citing a child project in the parent's channel advertises it;
+whether `vision.md` must record why it changed; whether three status transitions
+become fields; whether the misaddressed-prompt check joins the fatal gate. The
+first changes what an unadvertised child is *for*, the second is first on the
+supervision ladder where an agent's agreement is not evidence, the third is a
+schema change to a register no script writes. All four are on the board.
 
 **Two commands were broken and nothing said so**, described under
 [what went wrong](#what-went-wrong). `eo_status_audit --protocol` raised
-`AttributeError` instead of printing its table and `--check --online` would have
-done the same; **stathmos's loader now looks for anoieu's declaration readers by
-name across the layouts they have lived in, and names the paths it read when it
-cannot find them**, held by two regression tests, one of which fails against the
-old loader.
+`AttributeError` instead of printing its table, and `--check --online` would
+have done the same. **Stathmos's loader now looks for anoieu's declaration
+readers by name across the layouts they have lived in**, held by two regression
+tests, one of which fails against the old loader.
 
-**The joining section now names the minimal passing tree, and the number was
-measured rather than asserted.** `anoieu-D30` asked for that and also asked us
-to say the discussion file is in the joining set. **It is not**, and anoieu's
-own conditional-skip fix is what took it out: a tree of one README and one
-workflow file checks clean at contract 1 — `0 failure(s), 14 skipped` — with
-every remaining check naming the path that would switch it on. That ask is
-declined, with the measurement, rather than satisfied.
+**The joining section names the minimal passing tree, measured rather than
+asserted**: one README and one workflow file, `0 failure(s), 14 skipped` at
+contract 1. `anoieu-D30` also asked us to say the discussion file is in the
+joining set; **it is not**, and anoieu's own conditional-skip fix is what took
+it out.
 
-**In the child projects.** Ynoia's `tools.md` still carried `iogos` as a tool
-that does not exist; it is a repository and an associate, and the page's own
-rule says a tool leaves when it exists, so it left — with a note saying where
-the fork it argued is kept. **`aisthesis-D3` is the one topic of the twenty-two
-that was not answered, and that was the maintainer's decision.** It asks this
-office to write another repository's recommendations into ynoia's registers; it
-is a `request` and says *we gain*. The entries were drafted into `requests.md`,
-`tools.md` and `papers.md`, and a reply was drafted as `D27`; **all of it was
-withdrawn on the maintainer's instruction to leave it unaddressed for now**, so
-nothing has been said to aisthesis and their topic stays open on their side.
-**`D27` is spent and will not be reused**, which is why the answers above skip
-from `D26` to `D28`; it was withdrawn before it was ever committed, so git
-history does not hold it and this sentence is the only record that it existed.
-Reading it did turn up a defect of ours worth keeping — six of the eight ids in
-ynoia's `requests.md` collide with ids in `roles.md` — which is on the board
-without the entries. Sapheneia's ledger was
-rechecked against ethos `21fc6c7d`: `EOM-01` and `EOM-02` are fixed, six more
-stand with their evidence recorded, and seven are marked unchecked rather than
-re-confirmed, because confirming a judgement by grep would be the inflation the
-recheck exists to avoid. Stathmos's report card had two claims about epikrisis
-that had gone false; the graded paragraph is left standing with a dated note
-under it rather than rewritten.
+**In the child projects.** Ynoia's `tools.md` carried `iogos` as a tool that
+does not exist; it is a repository, and the page's own rule says a tool leaves
+when it exists. **Nothing was written into ynoia's registers**: aisthesis's six
+recommendations were drafted in and a reply drafted as `D27`, the maintainer
+withdrew all of it, and aisthesis then retracted the request. **`D27` is spent
+and will not be reused** — it never reached a commit, so this sentence is the
+only record it existed. One defect survives the retraction: six of the eight ids
+in ynoia's `requests.md` collide with ids in `roles.md`, which is `B41`.
+Sapheneia's ledger was rechecked against ethos `21fc6c7d` — `EOM-01` and
+`EOM-02` fixed, six standing with evidence, seven marked unchecked rather than
+re-confirmed, because confirming a judgement by grep is inflation. Stathmos's
+report card had two claims about epikrisis that had gone false; the graded
+paragraph stands with a dated note under it rather than rewritten.
 
 **What was corrected in the shared pages.** The policy said both that we check
 an associate anyway and that nothing runs against one; it now says the one
@@ -696,7 +702,7 @@ thing both halves meant. `roles.md` named `install_eo_cmd`, said koine's
 manifest files every installed command under `R35`, and described
 `eo_housekeeping` as a reporter; all three are corrected against koine's tree.
 
-**And this page is now about 11,000 words, against the 10,000 that LAW 4.3
+**And this page is now about 11,200 words, against the 10,000 that LAW 4.3
 recommends.** It was already over before this entry, by roughly 200. The law
 says excess length is not a violation and must not fail a build, which is
 correct and is also how a page gets to 12,000 — so the number is recorded here
@@ -1241,3 +1247,19 @@ getting flattering.
 ## Corrections
 
 **None recorded separately.**
+
+### Commits taken while the work was still moving
+
+*A note about the record, not a record. Anyone may delete it, without asking,
+once the commits it names have stopped being confusing.*
+
+- **`4165736` "Hk", 2026-09-18 14:45** carries a day's housekeeping, not a
+  subject: the checker-loader fix and its two regression tests, the
+  `install_eo` and `R35`/`R16` corrections in `roles.md`, the associate
+  contradiction in `policy.md`, the minimal-tree measurement in the joining
+  section, sapheneia's ledger recheck, stathmos's report-card correction,
+  `iogos` leaving ynoia's `tools.md`, and board items `B36`–`B42`. **It also
+  carries a version of the discussion work that has since been replaced** —
+  six bundled answer topics, 619 lines, which the next commit cuts to three
+  totalling 109. A reader looking for why `discussion.md` doubled and then
+  halved will find both halves under one message that says neither.
