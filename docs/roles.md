@@ -175,12 +175,12 @@ structured in a way that will cost the next regeneration.
 
 ## kanon
 
-*These are the **office's** rather than this repository's.*
-[`laws.md`](laws.md#what-the-office-carries) lists what the presidency carries
-— the protocols, the policy, the vision, the laws, the register, the glossary,
-the commands that read the register back, and the account of the stretch. **They
-move when the office moves**, except the account, which stays in the tree that
-wrote it; a successor inherits the rest whole.
+**The roles in this section are attached to the presidency.** Their ongoing
+responsibilities transfer to the successor under
+[`laws.md`](laws.md#what-the-office-carries). The completed term account stays
+with its authoring repository; the successor starts its own. Shared commands
+and child projects are recorded under their own holders below and follow their
+own terms of transfer.
 
 ### R4 — the ecosystem's shared policy and vision
 
@@ -192,7 +192,8 @@ nobody has the authority to settle. How a repository is arranged, what its
 front page must say about who is writing it, how tools talk to one another, and
 what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
-**Owns:** `docs/policy.md`, `docs/vision.md`, the ecosystem's vocabulary and
+**Owns:** `docs/policy.md`, `docs/vision.md`, the named exchanges in
+`docs/protocols.md`, and the ecosystem's vocabulary and
 authoritative name register in `docs/glossary.md` (kept current by the
 president).
 

@@ -26,6 +26,14 @@ directs an agent. **Each command documents itself**, at the top of its own file.
    `scripts/eo_status_audit --check`, and
    `python3 tools/stathmos/scripts/policy_check.py --root .`.
 
+The authoritative register is
+[`scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json).
+An entry with `status: president` identifies the current holder. The offline
+audit rejects multiple holders. In the status table, the audit reports limbo
+when the recorded president lacks `docs/laws.md` or `docs/history.md`; that
+observation does not fail a build or withdraw the appointment. The command's
+`--help` describes its current coverage and limits.
+
 ## What this repository is responsible for
 
 | what | where |

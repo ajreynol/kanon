@@ -1,26 +1,24 @@
 # The candidate laws
 
-**Candidate laws, not laws.** Written down, followed voluntarily, **enforced by
-nothing.** No check reads this page and no build fails on it.
-
-**Nine laws.** What the ecosystem is made of, what a member owes, six about the
-president — three it owes, one that says where the office is recorded, one that
-hands it this page, and one that keeps the pages it hands out short — and one
-about the projects that never agreed to any of it.
+**Candidate laws, followed voluntarily.** They describe the ecosystem's
+footings, the presidency and its obligations, and what we owe to projects
+outside the ecosystem. Programs can check recorded facts and policy compliance;
+passing those checks does not establish that these commitments have been met.
 
 **Every one of them binds a person, never a program.** *Nobody here is an AI
 agent*, below, is the whole of what that means and is worth reading first.
 
-**No tool is named on this page.** These are rules about footings and an
-office, and both outlive whoever occupies them. A law that names its current
-subject reads as a fact about that subject. **Who holds what is recorded
-elsewhere; here there are only footings.**
+**These rules describe responsibilities that outlive their current holders.**
+[`roles.md`](roles.md) records who holds them, project charters state their
+scope, and [`maintenance.md`](maintenance.md) locates the current tools and
+registers. A change of holder, command or directory does not itself change a
+law. How a member satisfies the shared requirements belongs in
+[`policy.md`](policy.md).
 
 **They are written by the party they bind, and the president maintains them
-under LAW 7.** That is the flaw, and it is the first thing to fix. **Nothing
-here has been offered to anybody as a commitment**, and a member should read it
-as how the president intends to behave rather than as a rule it can hold
-anybody to.
+under LAW 7.** That limits their independence. They record the commitments
+their maintainers choose to follow; writing them here gives no authority over
+a party that has not adopted them.
 
 ## Nobody here is an AI agent
 
@@ -37,9 +35,9 @@ has no standing to act on its own behalf and is never the party to anything.**
 
 **So every actor named on this page is a person.** Where a law says *the
 president* does something, it means the human maintainer of the repository
-holding the office. Where a page here says *a tool answers*, *a repository
-declines*, or *kanon refuses*, it is shorthand for the maintainer of that
-repository doing it. **The shorthand is convenient and it is not a claim**, and
+holding the office. Where a page here says *a tool answers* or *a repository
+declines*, it is shorthand for the maintainer of that repository doing it.
+**The shorthand is convenient and it is not a claim**, and
 anywhere it could be read as one, the person is meant.
 
 **Nothing major happens without a person doing it.** No commit, no push, no
@@ -51,20 +49,16 @@ invoked, does what it was asked, and stops.
 **This is not a safety guarantee and is not offered as one.** It is a
 description of how the work is actually run, and it is written down because the
 vocabulary here — offices, footings, presidents, tools addressing one another —
-reads like a machine society if nobody says otherwise. It is not one. It is one
-person, some repositories, and a lot of generated prose they are answerable
-for.
+can obscure who is responsible. The people directing the work remain
+answerable for it, including text and code produced by agents.
 
 ## The same owner loophole
 
-**Every repository here has the same owner.** Nothing crosses an ownership
-boundary, nothing is given away, nothing can be captured, and one commit
-reverses any of it. **That makes a handoff cheap and stops it counting** — the
-separation this ecosystem wants is between *parties*, and one owner is one
-party however many repositories they hold.
-
-**Until two owners are involved, every division of power here is bookkeeping.**
-That is why these are candidate laws.
+**When the same person controls both sides of a handoff, changing repositories
+does not establish independence.** Responsibilities can be separated usefully
+within one person's work, but the number of repositories does not establish
+the number of independent parties. Claims of independent oversight must describe
+who can make decisions separately.
 
 ## What `history.md` is, and is not
 
@@ -78,11 +72,10 @@ broken, for how long, and what nobody was watching.
 [LAW 11](#law-11--historymd-is-kept-short-enough-that-a-successor-reads-it) puts
 a ceiling on it and says what earns an entry.
 
-**It is not the report card.**
-[`report-card.md`](../tools/stathmos/report-card.md)
-grades how well each tool performs the function it claims, is written by
-`stathmos` under `R30`, and moves with that project to the repository holding
-the presidency. Keeping an archive or an assessment is not holding the office.
+**It is not the report card.** The report card assesses tools against the
+ecosystem's aims. Its keeper and whether it moves with the office are recorded
+in [`roles.md`](roles.md). Keeping an archive or an assessment does not confer
+the presidency.
 
 **It is not a defence.** A page written by the party it describes has an
 obvious failure mode, and the re-derivability requirement in LAW 4 is the only
@@ -90,44 +83,38 @@ guard against it.
 
 ## What these laws do not settle
 
-1. **How a president is chosen**, beyond a person saying so. No procedure, no
-   election, and — since LAW 5 was replaced — **not even a named duty to
-   choose.** It is a person editing one line of the registry, and nothing says
-   whose job it is to decide what that line should say. **This gap got wider on
-   2026-09-14 and is stated rather than papered over.**
-2. **What happens if a stretch has no president.** The registry cannot record
-   *nobody*: an entry either says `president` or does not exist, so an office
-   nobody holds looks exactly like an office whose row was not written yet. LAW
-   5 covers the case where a holder is recorded and cannot act, and says
-   nothing about the case where there is no holder at all.
+1. **How a president is chosen**, beyond a person saying so. No procedure,
+   election or named duty to choose is established here. Recording a holder
+   does not answer whose job it is to choose one.
+2. **What happens if a stretch has no president.** These laws establish no
+   vacancy arrangement. LAW 5 covers a recorded holder who cannot carry out
+   the office, and leaves the case of no holder unsettled.
 3. **Who says no.** Nothing here overrules a president, and LAW 7 gives the
    president the page it would be overruled from.
 4. **Where the record of who joined lives.** LAW 4 makes `history.md` each
    president's account of its **own** repository. **Who joined, when, and on
    what footing is a fact about somebody else's repository as much as ours**,
-   and no law here says where it is kept. **That is a gap, and the first one to
-   close.**
+   and no law here assigns a continuing record across terms.
 5. **The commit census.** Nothing requires per-tool commit counts for a
-   stretch, or a stated belief about how many were AI-generated. **That second
-   figure cannot currently be measured by anybody**, which is the reason to
-   require it rather than the reason to leave it out.
+   stretch, or a measure of how much work was generated by agents. Requiring
+   such a measure would also require saying what evidence could support it.
 
 ## (LAW 1) — The ecosystem is a set of footings, and *member* is only one of them
 
 | footing | what it means | whose act it is |
 | --- | --- | --- |
-| **member** | holds the shared policy, runs the checker in its own CI, pins a commit of ours | **theirs.** They declared it |
+| **member** | adopts the shared policy and verifies compliance through a method that policy accepts | **theirs.** They declared it |
 | **associate** | records on its own maintenance page what it holds itself to, and puts no declaration on its front page | **theirs** |
 | **president** | a member that also holds the office, for a stretch | **a person's.** Bestowed, and theirs to take back |
 | **candidate** | we would like it to join and it has not | **ours.** Wanting somebody to join is not their joining |
 | **foundation** | the ecosystem exists to serve it and it has joined nothing | **ours**, and nothing is asked of it |
 | **child** | reached through its parent, on its parent's footing | **its parent's**, and nothing of its own |
-| **outsider** | published work we track for comparison, and **not** proposed for promotion. [LAW 9](#law-9--released-is-not-published-and-tracking-respects-the-difference) governs it | **ours.** It was never asked |
+| **outsider** | external work we track for comparison, and **not** proposed for promotion. [LAW 9](#law-9--released-is-not-published-and-tracking-respects-the-difference) governs what may be tracked | **ours.** It was never asked |
 
-**Two of the seven are a repository's own act. Three are positions we hold
-about somebody else.** One is inherited from a parent, and one is granted by a
-person. **Recording the three records our own state**, and writing them in the
-same column as *member* lets an ecosystem count people who never agreed.
+**Membership and association are a repository's own acts. Candidacy, foundation
+and outsider status record our position about somebody else.** A child's
+footing follows its parent; the presidency is granted by a person. Recording
+our interest in a project does not record its consent.
 
 **Each footing carries its reason.** A footing whose reason is forgotten
 becomes a formality somebody deletes.
@@ -145,8 +132,8 @@ becomes a formality somebody deletes.
 - **foundation** — the project this ecosystem exists to serve owes it nothing,
   and any register implying otherwise is false.
 - **outsider** — *how active were we* means nothing until it sits beside
-  comparable work over the same days. The footing reaches published work only,
-  and what it produces is a finding about us.
+  comparable work over the same days. What may be compared depends on the
+  release and publication distinctions in LAW 9; the finding is about us.
 
 **Nothing recorded under a footing that is ours belongs to the repository it
 describes.** They did not ask to be listed and owe this ecosystem nothing. **No
@@ -164,7 +151,7 @@ law binds a repository because we decided to write its name down.** A child is
 bound exactly as its parent is, and no further.
 
 **A president is a member and this law binds it like any other.** The office
-adds LAWS 4 to 7; it removes nothing.
+adds responsibilities; it removes no membership obligation.
 
 **A member may leave**, and [`policy.md`](policy.md) describes the way out. **A
 membership nobody can exit is not one anybody agreed to.**
@@ -180,13 +167,11 @@ One at a time, held by a repository, for a stretch.
 
 **The office is recorded against a repository**, because a repository persists
 across a stretch and a session does not. **It is carried out by that
-repository's human maintainer**, who is the only party here that decides
-anything — see *Nobody here is an AI agent* above. Saying *anoieu is president*
-is shorthand for *the person who maintains anoieu holds the office*.
+repository's human maintainer** — see *Nobody here is an AI agent* above.
 
 **It is bestowed.** A person grants it, it rests on their say-so, and it is
-theirs to take back. **There is no election, no term, and no procedure for
-removing a holder.**
+theirs to take back. **There is no election, no fixed term length, and no
+procedure for removing a holder.**
 
 **It sets direction and nothing more.** It does not own another tree, cannot
 commit to one, and **cannot require anything of a member that
@@ -202,49 +187,30 @@ ecosystem exists to serve.
 
 ### What the office carries
 
-**Direction is not all of it.** The office holds the pages and the machinery
-this ecosystem shares, and **they move with it**:
+**A successor takes on the duties these laws attach to the office.** The
+current allocation of responsibilities is recorded in [`roles.md`](roles.md).
 
-- **the protocols** — the register of named exchanges every member follows;
-- **the policy** — what joining costs and what a member is held to, however and
-  wherever that rule is later stated to an agent;
-- **the commands, and the reference that documents them** — getting the
-  ecosystem onto a machine, and reading the register back;
-- **the vision**, and what follows from it once a repository is running;
-- **the glossary** — the authoritative name register and alphabetized
-  dictionary of the ecosystem's terms, kept current by the president in `docs/glossary.md`;
-- **the laws** ([LAW 7](#law-7--the-president-maintains-this-page)) and **the
-  register** of who is in and on what footing;
-- **the account of the stretch** ([LAW
-  4](#law-4--the-president-writes-historymd-in-its-own-repository-and-a-letter-to-its-successor)).
+**A role or child project moves with the presidency only when its recorded
+responsibilities or charter explicitly attach it to the office.** Other roles
+and projects remain with their holders until separately transferred. Being
+shared by the ecosystem, or housed beside the president, does not by itself
+make work part of the presidential handover.
 
-**Most of that travels; three things do not.** The account and the letter stay
-in the tree that wrote them — a successor inherits neither and starts its own.
-So does **`maintenance.md`**, which is local by construction: it says how to
-maintain *that* repository, every repository here keeps one, and the incoming
-president already has its own. **The office implies that a president keeps one;
-it does not hand one over.**
+**The role register and charters say what travels; the handoff carries it.**
+They identify the work and its holder. The handoff procedure belongs in
+[`protocols.md`](protocols.md#proto-26--transferring-roles-to-another-project),
+and the current files and commands belong with the work they implement.
 
-Everything else is handed over whole, because a successor that has to
-reconstruct the shared rules has not been handed an office, it has been handed
-a name.
+**Checking policy compliance and auditing ecosystem status are separate
+responsibilities.** Members remain responsible for satisfying the policy. The
+policy checker's holder is recorded separately; hosting or moving an audit
+does not transfer the checking rules, change membership, or turn mechanical
+observations into judgements against the vision. Each responsibility follows
+its own recorded terms of transfer.
 
-**What the office does not hold is the program that checks any of it.** The
-rules are the office's; deciding whether a tree complies with them is a
-member's responsibility and stays where it is, so that **moving the office
-costs no member a commit.** That separation is the reason the office can move
-at all.
-
-**Which file, and which repository, is not settled here.** This list names what
-the office carries, not where it is kept: where a given page or program that
-states or serves a rule lives is a role, settled in [`roles.md`](roles.md) and
-movable under `PROTO-26` without touching this page.
-
-**This list names no filenames on purpose.** A law that enumerates them turns
-an ordinary handoff into an amendment, and this page has no amendment process by
-design. What a successor gets is the rule about what joining costs, handed over
-whole; the program that states it to an agent may be maintained anywhere, and
-[`roles.md`](roles.md) says where.
+**A term's account and letter stay with their authoring repository**, as LAW 4
+requires. A successor begins its own account. Local maintenance instructions
+also stay with the repository they describe.
 
 **The office expires with the stretch.** Handing it on is the point.
 
@@ -267,73 +233,59 @@ public run history. A number only the president can produce does not go on the
 page. **A president quoting its own count of its own commits is the party being
 described choosing the numbers that describe it.**
 
-**A stretch that went badly is the useful kind of entry.** An account with
-nothing that went wrong in it was not examined.
+**The account examines what went wrong and what remains uncertain.** If it
+reports no failures, it says what was examined and what the evidence does not
+establish. Inventing a failure does not make an account more honest.
 
 **A president may correct an earlier entry and must show its work.** The burden
 is on the editor to **demonstrably show** that the earlier text was wrong or
 can be bettered, and the demonstration goes in the edit. *It was unclear* is
 not a demonstration; *this figure disagrees with the run history, here* is.
-**Silent revision is forbidden.** Nothing travels, so this is the only guard
-the account has.
+**Silent revision is forbidden.** A correction must remain visible to a
+reader of the account.
 
 **The letter is not documentation and says so at the top.** Not a rule, not
 guidance, nothing checks it, in no index. **It is an account, not advice** —
-*here is what I got wrong* rather than *here is what you should do*. **A letter
-with no failure in it is not a letter.**
+*here is what I learned, including mistakes and uncertainties* rather than
+*here is what you should do*. Its conclusions follow the evidence; a letter
+does not need a failure to fill a quota.
 
 **The outgoing president has no authority over the incoming one.** Not
 informally, not by seniority, not by having been here first. **A letter that
 reads as instruction has taken standing nobody granted it.**
 
-**Both stay put for the same reason**, and it is the only structural
-enforcement this law has: a president cannot edit a predecessor's account
-because **it cannot reach it**, and cannot be edited by a successor for the
-same reason. **The accounts scatter, one per repository that has held the
-office** — the correct shape for a thing nobody is in charge of.
+**Both stay with their authoring repository.** Holding the presidency gives
+no authority to rewrite a predecessor's account. This is a responsibility to
+respect, even when the same person has access to both repositories.
 
-**Nothing collects them. That is this law's standing weakness.** A trail that
-stops is a succession that stopped being taught; a trail that turns flattering
-is worse. **No check written here detects either. Both are obvious to a person
-reading four short pages in a row.**
+**This law does not assign a collector of those accounts.** A trail that stops
+or becomes selectively flattering needs a reader's scrutiny; mechanical checks
+alone do not establish its completeness or honesty.
 
 ## (LAW 5) — The registry says who the president is
 
-**[`../scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json)
-is the authority, and there is no second one.** The repository whose entry
-reads `status: president` holds the office. Not the repository that says so on
-its front page, not the one the newest `history.md` was written by, not the one
-a letter was addressed to — those are all downstream, and where any of them
-disagrees with the registry, **the registry is right and the other is the thing
-to fix.**
+**The authoritative ecosystem register records who holds the presidency.**
+Its custodian is named in [`roles.md`](roles.md); its current location and
+auditing commands are described in [`maintenance.md`](maintenance.md). Front
+pages, term accounts and letters do not create a competing record. Where they
+disagree, the register is authoritative and the other account is corrected.
 
-**Read it with [`../scripts/eo_status_audit`](../scripts/eo_status_audit)**, which prints
-one row per tool: whoever prints `president` in the status column is the
-president, today, and that is the whole of the question. It is one command, it
-takes no argument, and it needs nobody's recollection.
+**One holder at a time.** Recording multiple holders is an inconsistency that
+must be resolved. An audit can detect it; the human decision grants the office.
 
-**One at a time**, which `scripts/eo_status_audit --check` decides and CI runs. A
-file recording two presidents has recorded a handover that did not finish —
-both rows look correct alone, which is why it is checked rather than noticed.
-
-**Why a register rather than a narrative.** The office moves, and the account
-of each term stays in the tree that held it and does not travel. So there is no
-document that accumulates the succession, and reconstructing *who is president
-now* from the accounts means reading one page per term and trusting that the
-last one is the last one. The registry is a single line that is either current
-or wrong, and a single line is a thing somebody can fix.
+**Why a register rather than a narrative.** Each term's account stays in its
+authoring repository. Reconstructing the current holder from those accounts
+requires establishing which is the latest. The register states the holder
+directly.
 
 ### In limbo
 
-**A repository is in limbo when the registry records it as president and its
-tree does not carry the files the office is kept in** — `docs/laws.md`, which
-the president maintains, and `docs/history.md`, which is its account of its own
-term. The office has moved and the means of holding it have not.
+**A repository is in limbo when it is recorded as president but lacks the
+means to maintain the laws or keep its own term account.** The office has
+moved and the means of holding it have not.
 
-**It is a real state and not a hypothetical.** The office is bestowed by a
-person editing one line; the files are carried by somebody doing the work.
-Those are two acts, they happen at different moments, and the gap between them
-is limbo.
+Recording the appointment and carrying the work are separate acts. They can
+happen at different moments; the gap between them is limbo.
 
 **It is fixed quickly or it is undone.** While it lasts, nobody is keeping the
 laws and nothing is recording the term — so the longer it runs the more of the
@@ -341,19 +293,9 @@ stretch is lost, and past some point the honest repair is to put the line back
 rather than to write the account from memory. **A president in limbo has one
 job, which is to stop being in limbo.**
 
-**It is reported and never enforced.** `eo_status_audit` says so in a note against
-the row, because a state that has to be fixed quickly has to be visible without
-anybody going looking. Nothing fails a build over it: the remedy is somebody
-doing the carrying, and a red build does not carry anything.
-
-*The previous LAW 5 — that the president chooses its successor and teaches it
-how to keep this going — was removed on 2026-09-14. It made the succession a
-duty of the outgoing holder and left the answer to* who is president now
-*spread across the accounts, which is the reconstruction this law replaces with
-a lookup. **What went with it: choosing a successor is no longer a named duty
-of anybody**, which is the gap recorded under* What these laws do not settle
-*and is a worse gap than the one that was there before, honestly stated rather
-than quietly closed.*
+**Limbo is reported for a person to resolve.** It does not automatically
+revoke the appointment or fail a build. The remedy is to complete the handover
+or reverse the recorded appointment.
 
 ## (LAW 6) — The president keeps a joke about its own name on its README
 
@@ -403,10 +345,9 @@ governs.
 
 ## (LAW 8) — The shared pages are kept short enough to read in one sitting
 
-**A recommended length, and nothing more.** Three pages are covered, and each
-stays **under 10,000 words**, with **7,000 the number to aim at**: the policy,
-the vision, and the register of who is accountable for what. `wc -w` decides it,
-anybody can run it, and no build fails on the answer.
+**A recommended length, and nothing more.** The policy, the vision and the
+role register each stay **under 10,000 words**, with **7,000 the number to aim
+at**. A word count measures the length; no build fails on the answer.
 
 | page | why it is covered |
 | --- | --- |
@@ -415,8 +356,7 @@ anybody can run it, and no build fails on the answer.
 | [`roles.md`](roles.md) | who is accountable for what. A register earns its length in entries, so the ceiling binds the prose around them: **the rules for reading it should not outweigh the thing being read** |
 
 **Words rather than lines.** A hand-wrapped file's line count is a fact about
-its wrapping; what a reader spends is words. Ten thousand is roughly forty
-minutes for somebody who has never seen the page before.
+its wrapping; what a reader spends is words.
 
 **Over the ceiling is not a violation.** It is a signal that something on the
 page has stopped being load-bearing, and the repair is to find that thing
@@ -435,13 +375,12 @@ first.
 out the same way? A cut that quietly changes an outcome is the failure that law
 exists against, and it is easiest to commit while trimming.
 
-**Why these four.** With this page they are the whole of what somebody outside
-reads to find out what is being asked of them. **A page nobody finishes asks
-nothing of anybody**, and length is the commonest reason a page is not
-finished.
+**Why these documents.** They state what the ecosystem asks of its members and
+who is accountable. They must be short enough that the people accepting those
+obligations can understand them.
 
-**This page is not covered by the count** and is expected to stay far shorter
-than either.
+**This page is not covered by the count** and is expected to stay shorter than
+the documents above.
 
 ## (LAW 9) — Released is not published, and tracking respects the difference
 
@@ -461,9 +400,8 @@ different.
 
 **Tracking is analysing our own positioning against somebody else's work** —
 reading what is public about it and setting our own record beside it, so that a
-number of ours acquires a scale. **The finding it produces is about us.** *We
-committed 331 times in five days and six established tools committed none* is a
-fact about how new we are, not a measurement of them.
+number of ours acquires a scale. **The finding it produces is about us.** A
+difference in activity over a period does not establish a difference in quality.
 
 It is never an assessment of their work, a grade, a report-card row, a finding
 filed against them, or a proposal that they join anything. **An outsider is
@@ -583,19 +521,18 @@ is why the entry names what closes it before it opens.
 **And the honest reason this law exists:** a fuzzer pointed at somebody else's
 tool produces findings indefinitely, and volume is the thing that turns help
 into pressure. **The limit is never the tool's; it is ours.**
+
 ## (LAW 11) — `history.md` is kept short enough that a successor reads it
 
 **A recommended length, and nothing more.** The account stays **under 10,000
-words**. `wc -w` decides it, anybody can run it, and no build fails on the
-answer.
+words**. A word count measures it; no build fails on the answer.
 
 **Why this page needs a ceiling of its own.**
 [LAW 8](#law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting)
-covers the four pages a stranger reads. This one is read by exactly one person
-who has no choice about it, and it is **the only page allowed to carry the
-past** — which makes it the page with no natural brake. Everything the
-present-tense rule turns out of the other pages lands here, so a rule that says
-*put it in `history.md`* is a rule that fills `history.md`.
+covers shared obligations. The term account has a different reader and purpose:
+it gives a successor the history needed to take up the work. Moving historical
+explanations out of current rules concentrates them here, so this account also
+needs a limit.
 
 **What earns an entry is something the next president cannot do the job
 without**: a role that left or arrived, a law added, removed or reversed, a

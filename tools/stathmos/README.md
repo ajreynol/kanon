@@ -76,9 +76,10 @@ their numbers when it moves, under the handoff described in
 
 Assessments made while this project was in anoieu remain marked as
 self-assessments. **New assessments of kanon are self-assessments**, since it
-now houses this project. Moving the directory does not establish independence. That rule is borrowed rather than invented — a
-neighbouring tool that audits histories holds itself to it, and a
-self-assessment producing no unfavourable findings is void.
+now houses this project. Moving the directory does not establish independence.
+A self-assessment states its evidence, what was examined and the limits of that
+examination. Favorable and unfavorable conclusions need the same support;
+there is no required number of unfavorable findings.
 
 ## What it does not do
 

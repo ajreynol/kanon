@@ -344,6 +344,30 @@ say so. This replaces stathmos's proposed destination of a separate repository
 and the statement in `laws.md` that its report card does not move with the
 office; those passages conflicted with the chosen arrangement.
 
+### The laws were separated from their current implementation — 2026-09-18
+
+At the maintainer's direction, LAW 3 now transfers a role or child project
+with the presidency only when its recorded responsibilities or charter say so.
+The role register explicitly attaches the current governance roles to the
+office, including the protocol register under `R4`; other holders retain their
+work until a separate transfer. Policy checking and status auditing follow
+their own roles, removing the old blanket exclusion of checking programs from
+the office.
+
+LAW 1 now refers membership verification to the accepted methods in policy,
+which already permits a pin or a named contract. Tool names, register fields,
+command paths, incidental counts and historical details were removed from the
+laws; current locations and audit behavior are described in maintenance.
+The claim that every repository has one owner became a conditional rule about
+shared control. LAW 4 and stathmos's charter now require evidence and disclosed
+limits, replacing requirements to produce an unfavorable finding or failure.
+The existing word limits remain the stated recommendations.
+
+The displaced succession note is historical: the former LAW 5, requiring the
+outgoing president to choose and teach its successor, was removed on
+2026-09-14. Selection and vacancy remain unsettled; this pass neither restores
+that duty nor changes LAW 7's assignment of the laws to the president.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
