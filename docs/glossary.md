@@ -359,10 +359,12 @@ act of understanding.”
 
 <a id="outsider"></a>
 **outsider** (footing; *noun*): A tool outside the ecosystem that is tracked for
-[comparison](laws.md#law-9--external-research-release-publication-and-permitted-comparisons) and is not proposed for promotion. Its
-released artifact and published contribution are recorded separately under
-[LAW 9.1](laws.md#law-91--distinguishing-released-code-from-published-research), and neither imposes
-obligations on it.
+[comparison](laws.md#law-91--tracking-external-projects) and is not proposed for
+promotion. Eligibility follows
+[LAW 9.2](laws.md#law-92--requirements-for-outsider-status), with an exception
+for tools volunteered by their owners under
+[LAW 9.4](laws.md#law-94--owners-volunteering-external-tools).
+Listing imposes no obligations on the project.
 
 ## P
 

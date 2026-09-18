@@ -381,7 +381,7 @@ The maintainer requested sequential numbers and paragraph markers such as
 `(3.1)`. Laws 3, 4 and 9 were renumbered without moving or changing their prose;
 current references were updated, and old anchors remain aliases for the same
 provisions. The earlier restriction cited as LAW 9.4 is now
-[LAW 9.5](laws.md#law-95--permission-for-unreleased-and-unpublished-work). `D20` visibly
+[LAW 9.5](https://github.com/ajreynol/kanon/blob/19c27232018ee8b3e090f4d7131be1355f4c563f/docs/laws.md#law-95--permission-for-unreleased-and-unpublished-work). `D20` visibly
 records the revised recommendation so new subdivisions follow reading order.
 
 Former LAW 11 was condensed into [LAW 4.6](https://github.com/ajreynol/kanon/blob/92ade49b9a39f9a227d262a05354a209627d4da2/docs/laws.md#law-46--recommended-length-of-historymd),
@@ -574,6 +574,15 @@ detailed editing advice was reduced to cutting repetition and unnecessary
 explanation. LAW 10.2 now delegates reporting and publication to anoieu's
 reporting policy, removing its separate maintainer-first publication rule and
 reporting restrictions. Existing section links still resolve.
+
+### The revised LAW 9 received sublaw markers — 2026-09-18
+
+The maintainer's revised points are numbered LAW 9.1–9.6 in reading order.
+Grammar and formatting were polished without changing their substance. The
+unknown-publication clause and glossary now reference the matching sublaws;
+the historical link to the earlier permission rule names its recorded revision.
+LAW 9.6 explicitly connects unknown publication status to the inventory's
+`published` field, which records the publication required by LAW 9.2.
 
 ## Membership changes during this term
 
