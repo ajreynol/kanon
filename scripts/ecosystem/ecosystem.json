@@ -391,6 +391,13 @@
     "short": "Guides a new tool's first hour and records lessons",
     "what": "the first hour of a new tool's life, and a register of what this ecosystem's practice has turned out to be doing"
   },
+  "ydoki": {
+    "status": "child",
+    "parent": "dokimasia",
+    "path": "tools/ydoki",
+    "short": "Ranks which safe-mode theories deserve proof support",
+    "what": "of the theories cvc5's safe mode switches off, which are worth making proof-supported and in what order -- a ranked argument a maintainer can disagree with, never a measurement"
+  },
   "anakrisis": {
     "status": "child",
     "parent": "paideia",

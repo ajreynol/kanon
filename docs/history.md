@@ -682,6 +682,18 @@ contract 1. `anoieu-D30` also asked us to say the discussion file is in the
 joining set; **it is not**, and anoieu's own conditional-skip fix is what took
 it out.
 
+**A new child was recorded: `ydoki`, dokimasia's.** The maintainer started it
+the same day; the register and [the glossary](glossary.md) now carry it, and the
+audit reads its own `unadvertised-child` marker, so it appears under
+`--all-children` and not in the default table. **Its name is a recorded
+exception rather than a slip**: the policy asks a child for a Greek name that
+describes its work, and `ydoki` is formed from δοκιμασία the way `ynoia` is
+formed from εὔνοια. Writing a strained Greek etymology to satisfy the rule would
+have been the worse answer, since the rule exists because a strained explanation
+means the scope has not been decided — and the scope is decided. **A sweep of
+every tree's `tools/` against the register found nothing else unrecorded**, and
+the glossary already agreed with the register on all 42 projects.
+
 **In the child projects.** Ynoia's `tools.md` carried `iogos` as a tool that
 does not exist; it is a repository, and the page's own rule says a tool leaves
 when it exists. **Nothing was written into ynoia's registers**: aisthesis's six
@@ -1260,6 +1272,8 @@ once the commits it names have stopped being confusing.*
   section, sapheneia's ledger recheck, stathmos's report-card correction,
   `iogos` leaving ynoia's `tools.md`, and board items `B36`–`B42`. **It also
   carries a version of the discussion work that has since been replaced** —
-  six bundled answer topics, 619 lines, which the next commit cuts to three
-  totalling 109. A reader looking for why `discussion.md` doubled and then
-  halved will find both halves under one message that says neither.
+  six bundled answer topics, 619 lines.
+- **`adc9316` "Simplifications, to discussions", 2026-09-18** cuts those six to
+  three totalling 109, and its message does describe it. It is named here only
+  so the pair reads in order: a reader looking for why `discussion.md` doubled
+  and then halved needs both commits, and only the second says so.
