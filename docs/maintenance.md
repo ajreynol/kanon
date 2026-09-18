@@ -278,9 +278,8 @@ applies**, because guessing wrong in that direction is the cheaper error.
 
 Three gates do not move, whatever the note says: nothing that **creates or
 publishes**, nothing that **crosses a repository boundary**, and the discussion
-file's own gate. The worked example is on the board today — `B3`'s two defects
-are filed into `ethos`, which nobody claims is AI-maintained, so carrying them
-is a person's errand however ready the reproducers are.
+file's own gate. Filing a defect against ethos is a person's errand however
+ready the reproducer is; its human-maintained checker is not ours to change.
 
 **Ramp up gradually, and on evidence rather than on a date.** New latitude
 starts with the reversible things and widens when something has actually been

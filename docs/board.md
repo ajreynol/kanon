@@ -5,33 +5,29 @@ each item with the next thing to do and who has to do it. **Position is the
 priority**, so the first is the most important thing outstanding. *How to read
 and edit this page is at the bottom.*
 
-## B3 — the fuzzer has found real defects and filed none of them
+## B3 — resolve the remaining unreported ethos diagnostic
 
-**Task:** **two crashes the fuzzer found in ethos and nobody has filed.** An
-uncaught C++ abort on a one-line signature, and error paths that print outside
-ethos's own `Error: <file>:<line>` convention. Six reproducers are committed
-here; nothing has been sent upstream.
+**Task:** determine whether the missing-include error in `ethos-9` should be
+reported: `(include "no-such-file.eo")` prints without a source location.
 **Entities:** `ethos`, `anoieu`
-**Status:** ready — the reproducers exist and are committed under
-`tests/fuzz/`.
-**Channel:** **findings** — `ethos-8` and `ethos-9`, through
-`prompts/check_anoieu ethos`, because a defect report is not a discussion
-topic.
-**Next:** file the two, with their reproducers, through the ordinary loop.
-**Prompt — `ethos`:** `(declare-const f (->))` aborts with an uncaught
-`std::length_error` rather than reporting a bad type. Separately, three error
-paths exit without a file or line, which breaks the convention every other
-error in the binary follows. Reproducers are committed and fetchable raw.
-**Prompt — `anoieu`:** run `prompts/check_anoieu ethos` for these two rows, and
-say plainly in the report that the fuzzer produced them — a provoked crash and
-a read signature are different claims and the codes already say which.
+**Status:** in progress — [anoieu's ledger](https://github.com/ajreynol/anoieu/blob/5835c6fdbe1a64afa4480f8e8b7f20b33255d7e7/docs/reports/reports.md#ethos--the-proof-checker-and-its-own-signatures),
+read 2026-09-18, closes `ethos-8` and two `ethos-9` paths on an accepted fix;
+this third path remains unreported. Landing is audited separately by anoieu.
+**Channel:** **findings** — through `prompts/check_anoieu ethos`, carried by
+a person.
+**Next:** reproduce the missing-include diagnostic against a named ethos
+revision and decide whether to file it or withdraw the observation.
+**Prompt — `ethos`:** assess whether a missing-include diagnostic should carry
+the location of the include command, using the confirmed reproducer.
+**Prompt — `anoieu`:** recheck the unreported third path in `ethos-9`. Record
+the revision and reproducer, then prepare a report or explain why the
+observation should be withdrawn. Do not refile the accepted findings.
 **HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is
 stopping us filing them.
 
-## B26 — no node has a front-page FAQ, and kanon does not either
+## B26 — add kanon's front-page FAQ
 
-**Task:** joining cost koine eighteen hundred lines of reading, and nowhere
-does a tool say the short version of itself.
+**Task:** give kanon short, settled answers to its recurring questions.
 [`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
 answer — a `## Common questions` section on the front page.
 **Entities:** `kanon`
@@ -63,31 +59,25 @@ reader; the authoritative register and membership decisions remain kanon's.
 **HUMAN FEEDBACK:** 2026-09-18: keep `eo_status_audit` in `scripts/`, with its
 internal implementation in `tools/stathmos/scripts/`. Implemented.
 
-## B18 — the associate protocol remains open for ethos
+## B18 — settle the associate proposal for ethos
 
-**Task:** `associate` is defined and proposed for ethos, but what a repository
-has to carry was never decided. [Anoieu's
-`D11`](https://github.com/ajreynol/anoieu/blob/main/docs/discussion.md#d11--we-have-a-footing-for-you-and-no-protocol-to-put-you-in-it).
+**Task:** reconcile the current associate footing with the older proposal for
+ethos. [LAW 1](laws.md#law-1--ecosystem-footings-membership-and-other-relationships) and the policy define an associate
+by its own maintenance-page marker; the policy's
+[outstanding proposal](policy.md#the-associate-protocol) still asks whether a
+README heading or an affiliating paragraph is required.
 **Entities:** `kanon`, `ethos`
-**Status:** waiting on `ethos` — the choice between the two versions of the
-protocol is theirs to answer before it is ours to fix.
-**Channel:** **upstream, by a person** — ethos has no discussion file, so the
-question is carried by hand.
-**Next:** decide the one open question — the bare maintenance-note heading, or
-that plus the paragraph naming this ecosystem — and write it into
-[`policy.md`](policy.md) as in force. **logos is a member**, so its associate
-proposal is superseded and it is not a party we are waiting on for this item.
-**Prompt — `kanon`:** do not record ethos as an associate until the protocol is
-decided; `proposed:` is the field that holds the intention, and
-`scripts/eo_status_audit --protocol` is the report. When it is decided, the section
-in `policy.md` stops saying *drafted, and not in force* and the ethos entry
-moves in one commit. **Prompt — `ethos`:** we would like to record you as an
-associate: a footing that obliges you to nothing, runs nothing in your CI, and
-says that every other reading of the language is measured against your
-checker's behaviour. The only thing it would ask is a `How this repository is
-maintained` heading. Which would you rather be asked for — that alone, or that
-plus a paragraph saying you are not held to our policy? Neither is also an
-answer. **HUMAN FEEDBACK:**
+**Status:** blocked on policy clarification — ethos remains a candidate with
+`associate` proposed in the inventory, reviewed 2026-09-18.
+**Channel:** **internal**, then **upstream, by a person** if an ask remains.
+**Next:** separate the associate marker from the optional README note in the
+policy's outstanding proposal.
+**Prompt — `kanon`:** reconcile the proposal with the current footing before
+asking ethos to choose. Keep the inventory at candidate unless ethos records
+the associate marker itself; its README maintenance heading is not that marker.
+**Prompt — `ethos`:** after that clarification, say whether you want to record
+an associate footing on your own maintenance page. Declining is a complete
+answer and leaves you owing this ecosystem nothing. **HUMAN FEEDBACK:**
 
 ## B27 — the ethics projects: where they sit, and what they are held to
 
@@ -141,19 +131,21 @@ This is the finding that taught us to check.
 **Task:** update ethos's `user_manual.md` using the advice in
 [sapheneia's feedback ledger](../tools/sapheneia/docs/feedback.md).
 **Entities:** `ethos`, `sapheneia`
-**Status:** not started — requested 2026-09-18; the ledger's fifteen entries
-are candidates read against `ethosEoc3` at `3cf1c03`.
+**Status:** in progress — checked 2026-09-18 against ethos `21fc6c7d`;
+`EOM-01` and `EOM-02` are addressed by the grammar changes in
+[`72a0c162`](https://github.com/cvc5/ethos/commit/72a0c162c80fab55986932c3976f4bd28fd9847c).
 **Channel:** **upstream, by a person** — ethos has no discussion file;
 sapheneia's preparation is internal to kanon.
-**Next:** recheck `EOM-01` through `EOM-15` against the current ethos manual
+**Next:** recheck `EOM-03` through `EOM-15` against the current ethos manual
 and identify which still need a change.
 **Prompt — `ethos`:** update the user manual using the confirmed advice from
 sapheneia's feedback ledger. Separate wording and documentation corrections
 from questions that require a language decision, and record which suggestions
 were applied, declined or left open.
-**Prompt — `sapheneia`:** recheck the fifteen feedback entries against a named
-revision of the ethos manual and prepare supported corrections for a person to
-carry upstream. Keep language decisions explicit as questions for ethos.
+**Prompt — `sapheneia`:** record the fixes for `EOM-01` and `EOM-02`, then
+recheck the remaining entries against a named revision of the ethos manual.
+Prepare supported corrections for a person to carry upstream, keeping language
+decisions explicit as questions for ethos.
 **HUMAN FEEDBACK:**
 
 ## B34 — determine whether another president is necessary
@@ -172,6 +164,26 @@ Compare the costs and benefits of succession with continuing the current
 arrangement, and leave the appointment and kanon's footing to the maintainer.
 **HUMAN FEEDBACK:**
 
+## B35 — determine whether hermeneia is in proper standing with lean-smt
+
+**Task:** determine whether hermeneia is in proper standing with lean-smt.
+**Entities:** `kanon`, `hermeneia`, `lean-smt`
+**Status:** not started — requested 2026-09-18. Hermeneia's
+[assessment](https://github.com/ajreynol/eudaimonia/blob/79dd6010db64a0194af95ffb046cce77867357de/tools/hermeneia/docs/lean-smt.md#7-what-this-investigation-does-not-establish)
+says its integration proposal has not been put to lean-smt.
+**Channel:** **internal** review; a person carries any follow-up, reaching
+hermeneia through eudaimonia.
+**Next:** review the stated relationship and the evidence for any agreement
+or unresolved concern involving lean-smt.
+**Prompt — `kanon`:** assess the relationship from the available evidence.
+Distinguish proposed work from an agreed relationship, and identify anything
+that needs clarification from lean-smt's maintainers.
+**Prompt — `hermeneia`:** supply the account of work involving lean-smt and any
+recorded agreements or objections, through eudaimonia.
+**Prompt — `lean-smt`:** if clarification is needed, say what relationship with
+hermeneia you would accept and whether any current claim needs correction.
+**HUMAN FEEDBACK:**
+
 ---
 
 ## How to maintain this page
@@ -182,7 +194,7 @@ that is the main way a person changes what this page says.
 
 **The id is stable.** `B6` stays `B6` when it moves, so ids appear out of order
 and that is correct rather than a mistake to tidy. A row that leaves is not
-reused. **The next unused id is `B35`**, including after completed items are
+reused. **The next unused id is `B36`**, including after completed items are
 removed; their earlier contents remain in git history.
 
 **Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
