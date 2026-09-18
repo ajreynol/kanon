@@ -42,6 +42,32 @@ already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
 a mark that said nothing.
 
+## D21 — organize implementations by tool or feature, including inside children
+
+**To:** aisthesis, anoieu, dokimasia, epikrisis, eschaton, eudaimonia, kanon, koine, logos, tachyon
+**Kind:** notice
+**Opened:** 2026-09-18
+**Settles when:** recipients have read the layout clarification; no reply is required
+**Global:** The policy's directory guidance is clarified; no new CI check is introduced
+
+The [tool and feature directory guidance](policy.md#tool-and-feature-directories)
+now recommends one top-level directory for each self-contained tool or feature.
+Directories with defined purposes, such as `docs/`, `scripts/`, `prompts/` and
+`tests/`, keep those purposes. Other top-level directories should each contain
+one named implementation with clear entry points.
+
+**For anoieu, the recommendation is three implementation directories:** one for
+the static analyzer, one for the fuzzer, and one for the policy checker.
+Anoieu chooses the names. Shared commands in `scripts/` can launch those
+implementations; the directory recommendation is advisory.
+
+**A child follows the same outline from its own root.** Under
+[Child projects](policy.md#child-projects), `tools/X/` acts as the root:
+`tools/X/docs/` holds its documents, `tools/X/scripts/` its commands,
+`tools/X/prompts/` its assistant workflows, and `tools/X/tests/` its evidence.
+Its README remains its charter and entry point. Only create directories the
+child needs; the existing charter and isolation rules still apply.
+
 ## D20 — cite the provision a claim depends on
 
 **To:** aisthesis, anoieu, dokimasia, epikrisis, eschaton, eudaimonia, kanon, koine, logos, tachyon

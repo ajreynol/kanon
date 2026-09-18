@@ -400,6 +400,14 @@ records the revised recommendation so new subdivisions follow reading order.
 Former LAW 11 was condensed into [LAW 4.6](laws.md#law-46--keeping-the-account-short),
 placing the account's length guidance with its other duties.
 
+### The directory outline was clarified — 2026-09-18
+
+At the maintainer's direction, policy now recommends one top-level directory
+per self-contained tool or feature outside the directories with defined
+purposes. It also applies the same outline relative to each child's root, so
+implementation boundaries and file locations remain clear inside `tools/X/`.
+`D21` announces the guidance, with anoieu's three tools as an example.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

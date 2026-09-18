@@ -98,8 +98,9 @@ distinguishable from one describing a present state of affairs.
 | `scripts/ecosystem/` | internal ecosystem helpers, inventory and checkout settings |
 | `prompts/` | workflows that hand context to an assistant, kept apart from `scripts/` so that running a command never means deciding to spend a turn |
 | `deps/` | other people's repositories, fetched by a run and never committed |
+| `scratch/` | untracked working space |
 | `.github/workflows/` | what runs on every push |
-| the package itself | at the top level, named after the tool |
+| [tool or feature directories](#tool-and-feature-directories) | one named, self-contained implementation per top-level directory; recommended |
 
 **One entry point, and it is the front page.** `README.md` carries what the
 tool is, what it finds, what it refuses to claim, how to run it, and a route to
@@ -187,6 +188,19 @@ finding.
 **Every repository explains its own name.** A short front-page section with the
 etymology and why the word fits, written so somebody could disagree with it.
 Recommended; a minor finding, never fatal.
+
+### Tool and feature directories
+
+**Recommend one top-level directory per self-contained tool or feature.** The
+directories with defined purposes in [the layout](#the-layout) keep those
+purposes. Each other top-level directory should contain the implementation of
+one named tool or feature, with clear entry points. A repository containing
+several tools should give each its own directory.
+
+Shared documentation, command launchers, assistant workflows and test evidence
+belong in `docs/`, `scripts/`, `prompts/` and `tests/`, respectively. A launcher
+in `scripts/` may call the implementation in its tool's directory. This
+organization is recommended, not mechanically checked.
 
 ### Copies, and the thing that compares them
 
@@ -632,6 +646,15 @@ stopped being true of it**, and **that the promotion decision is open, and with
 whom**. A named exception is a decision somebody can defend; an unnamed one is
 drift. **The rules a child has to break in order to be useful are the evidence
 that it is no longer research.**
+
+**11. The child's directory is its layout root.** Apply [the layout](#the-layout)
+with `tools/X/` as the root: its charter and front page are `tools/X/README.md`,
+its documents go in `tools/X/docs/`, its commands and helpers in
+`tools/X/scripts/`, its assistant workflows in `tools/X/prompts/`, and its test
+evidence in `tools/X/tests/`. Keep its documentation index inside that root.
+The [tool and feature directory recommendation](#tool-and-feature-directories)
+applies there too. Create only directories the child uses; its charter and
+isolation rules still apply.
 
 ## What a member is asked for
 
