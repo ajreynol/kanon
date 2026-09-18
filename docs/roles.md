@@ -177,7 +177,7 @@ structured in a way that will cost the next regeneration.
 
 **The roles in this section are attached to the presidency.** Their ongoing
 responsibilities transfer to the successor under
-[LAW 3.1](laws.md#law-31--transfers-with-the-office). The completed term account
+[LAW 3.2](laws.md#law-32--transfers-with-the-office). The completed term account
 stays with its authoring repository; the successor starts its own. Shared commands
 and child projects are recorded under their own holders below and follow their
 own terms of transfer.
@@ -232,11 +232,11 @@ anything: a person does.
 **Held by:** `kanon`
 **Role:** **keeping the account of the stretch while it runs** — what it was
 for, what changed, what went wrong, and what crosses to whoever holds the
-office next. [LAW 4.4](laws.md#law-44--where-term-records-stay) makes it each
+office next. [LAW 4.1](laws.md#law-41--where-term-records-stay) makes it each
 office-holder's account of its **own** term, kept current rather than written
-at the close under [LAW 4.5](laws.md#law-45--keeping-the-account-current), with
+at the close under [LAW 4.2](laws.md#law-42--keeping-the-account-current), with
 every figure re-derivable by somebody else under
-[LAW 4.1](laws.md#law-41--re-derivable-figures).
+[LAW 4.3](laws.md#law-43--re-derivable-figures).
 **Owns:** `docs/history.md`.
 
 ## koine

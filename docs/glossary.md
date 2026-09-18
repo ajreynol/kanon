@@ -9,7 +9,7 @@ judgements, not tools or projects.
 
 **Maintained by the president of eo.** The president keeps the definitions
 current and hands this file to the next president with the
-[office’s shared documents](laws.md#law-31--transfers-with-the-office).
+[office’s shared documents](laws.md#law-32--transfers-with-the-office).
 
 Ynoia [argues about names](../tools/ynoia/proposals.md#arguing-about-names)
 and proposes alternatives; it keeps no separate register and reserves no names
@@ -358,7 +358,7 @@ act of understanding.”
 **outsider** (footing; *noun*): A tool outside the ecosystem that is tracked for
 [comparison](laws.md#what-tracking-is) and is not proposed for promotion. Its
 released artifact and published contribution are recorded separately under
-[LAW 9.5](laws.md#law-95--release-and-publication), and neither imposes
+[LAW 9.1](laws.md#law-91--release-and-publication), and neither imposes
 obligations on it.
 
 ## P
@@ -372,7 +372,7 @@ should follow from a tool’s strengths and shortcomings. From Greek παραί�
 **president** (office; *noun*): The human maintainer of the repository recorded
 as holding the presidency. The office is bestowed for a [stretch](#stretch),
 sets direction, maintains shared governance including this glossary, and confers
-[no control over another tree](laws.md#law-33--authority-over-members).
+[no control over another tree](laws.md#law-31--authority-over-members).
 See [LAW 3](laws.md#law-3--there-is-a-president).
 
 ## S
@@ -400,7 +400,7 @@ Greek σταθμός, “a standard weight.” [Charter](../tools/stathmos/READM
 <a id="stretch"></a>
 **stretch** (term of office; *noun*): The period for which a repository holds
 the presidency, also called its term. The office expires with it; the account is
-[kept during it](laws.md#law-45--keeping-the-account-current). The laws
+[kept during it](laws.md#law-42--keeping-the-account-current). The laws
 prescribe no fixed duration. See
 [LAW 3](laws.md#law-3--there-is-a-president).
 

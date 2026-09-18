@@ -388,6 +388,15 @@ The existing link targets are retained. Kanon's link tests accept them;
 anoieu's heading-only checker reports them as missing headings, a limitation
 recorded with the recommendation in `D20`.
 
+### Subclauses were numbered in reading order — 2026-09-18
+
+The maintainer requested sequential numbers and paragraph markers such as
+`(3.1)`. Laws 3, 4 and 9 were renumbered without moving or changing their prose;
+current references were updated, and old anchors remain aliases for the same
+provisions. The earlier restriction cited as LAW 9.4 is now
+[LAW 9.5](laws.md#law-95--unreleased-and-unpublished-work). `D20` visibly
+records the revised recommendation so new subdivisions follow reading order.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
@@ -455,7 +464,7 @@ the first real separation and arrives by the office moving rather than by
 design. **The only real check remains the maintainer.**
 
 **Evidence** — every figure here re-derivable from the repositories and the
-public run history, per [LAW 4.1](laws.md#law-41--re-derivable-figures), with the
+public run history, per [LAW 4.3](laws.md#law-43--re-derivable-figures), with the
 command beside it.
 
 **The joke** — on the front page for the whole term, per
