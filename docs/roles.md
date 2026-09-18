@@ -321,6 +321,9 @@ the language requires and what one implementation happens to do.
 
 ## stathmos
 
+This project moves with the presidency, carrying its work and roles to the
+repository that holds the office.
+
 ### R30 — the report card
 
 **Held by:** `stathmos`
@@ -333,9 +336,8 @@ month rather than a statement of what the work is for.
 and the evidence and protocol pages beside it.
 
 > **A child project holding a role is not an island, and the exception is
-> deliberate**: the tool writing the report card should not indefinitely be the
-> tool it grades most closely. The stated destination is a repository of its
-> own, and the role keeps its id when it goes.
+> deliberate**: the report card is shared work maintained by this child project.
+> Being housed with the president does not make its assessments independent.
 
 ### R37 — ecosystem status auditing
 
@@ -354,6 +356,9 @@ The checking rules and their implementation remain anoieu's under `R31`.
 ## tekmerion
 
 ## ynoia
+
+This project moves with the presidency, carrying its work and roles to the
+repository that holds the office.
 
 ### R23 — auditing whether an idea deserves a repository
 

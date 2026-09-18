@@ -15,6 +15,9 @@ kanon carries it in
 `scripts/eo_status_audit` lists it among the advertised children; it is therefore not
 unadvertised.
 
+This project is tied to the presidency: when the office changes hands, ynoia
+moves with its work and roles to the repository that holds the presidency.
+
 ## The question
 
 **Does the Eunoia ecosystem's arrangement earn its machinery — and what is it

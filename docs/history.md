@@ -336,6 +336,14 @@ It locates and runs anoieu's checker; the checking rules remain anoieu's under
 *Re-derive:* `git log --follow -- tools/stathmos/scripts/status_audit.py`, and the
 `R6`/`R37` entries in [`roles.md`](roles.md).
 
+### Ynoia and stathmos were tied to the presidency — 2026-09-18
+
+The maintainer directed that both projects move with their work and roles to
+whichever repository holds the presidency. Their charters and `roles.md` now
+say so. This replaces stathmos's proposed destination of a separate repository
+and the statement in `laws.md` that its report card does not move with the
+office; those passages conflicted with the chosen arrangement.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

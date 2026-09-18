@@ -81,7 +81,8 @@ a ceiling on it and says what earns an entry.
 **It is not the report card.**
 [`report-card.md`](../tools/stathmos/report-card.md)
 grades how well each tool performs the function it claims, is written by
-`stathmos` under `R30`, and **does not move with the office.** Keeping an archive or an assessment is not holding one.
+`stathmos` under `R30`, and moves with that project to the repository holding
+the presidency. Keeping an archive or an assessment is not holding the office.
 
 **It is not a defence.** A page written by the party it describes has an
 obvious failure mode, and the re-derivability requirement in LAW 4 is the only

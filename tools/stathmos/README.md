@@ -3,6 +3,9 @@
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, and advertised in ecosystem listings.
 
+This project is tied to the presidency: when the office changes hands, stathmos
+moves with its work and roles to the repository that holds the presidency.
+
 ## The name
 
 *σταθμός — a standard weight: the thing an object is weighed against, rather
@@ -65,17 +68,10 @@ remembering something.
 
 ## Why it is a separate thing at all
 
-**Because the tool that writes the report card should not be the tool the
-report card grades most closely.** A repository that writes the vision, keeps
-the page and is assessed on it is in an honest but fragile arrangement.
-**Moving the page does not remove the fragility, it moves it**: this project
-lives in the tree it grades second most closely, so its own entry and kanon's
-are self-assessments and say so.
-
-**So the intention is stated at the start rather than discovered later: this
-moves to a repository of its own.** Starting inside `anoieu` is the cheap first
-step, not the destination. `R30` keeps its number when it goes, which is what
-makes the move a handoff rather than a rewrite, and the procedure is in
+**The report card and status audit have a named maintainer**, with
+responsibilities separate from writing the governance they examine. The project
+remains a child of the repository holding the presidency; `R30` and `R37` keep
+their numbers when it moves, under the handoff described in
 [`../../docs/roles.md`](../../docs/roles.md).
 
 Assessments made while this project was in anoieu remain marked as
