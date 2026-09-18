@@ -60,7 +60,7 @@ reader wanting to know what happened does not skip past procedure.
 **It is not a changelog.** The commits are the changelog and are better at it.
 It records what a reader cannot reconstruct from them: how often the build was
 broken, for how long, and what nobody was watching.
-[LAW 11](#law-11--historymd-is-kept-short-enough-that-a-successor-reads-it) puts
+[LAW 4.6](#law-46--keeping-the-account-short) puts
 a recommended ceiling on it and says what earns an entry.
 
 **It is not the report card.** The report card assesses tools against the
@@ -272,6 +272,14 @@ both repositories.
 **This law does not assign a collector of those accounts.** A trail that stops
 or becomes selectively flattering needs a reader's scrutiny; mechanical checks
 alone do not establish its completeness or honesty.
+
+<a id="law-46--keeping-the-account-short"></a>
+<a id="law-11--historymd-is-kept-short-enough-that-a-successor-reads-it"></a>
+
+**(4.6)** Aim to keep `history.md` under 10,000 words. Record what a successor
+needs, stating what changed and how to verify it; leave routine cleanup to
+commits. Preserve evidence when shortening. Excess length or a minor entry is
+not a violation and must not fail a build.
 
 ## (LAW 5) — The registry says who the president is
 
@@ -546,30 +554,3 @@ is why the entry names what closes it before it opens.
 **And the honest reason this law exists:** a fuzzer pointed at somebody else's
 tool produces findings indefinitely, and volume is the thing that turns help
 into pressure. **The limit is never the tool's; it is ours.**
-
-## (LAW 11) — `history.md` is kept short enough that a successor reads it
-
-**A recommended length, and nothing more.** The account stays **under 10,000
-words**. A word count measures it; no build fails on the answer.
-
-**Why this page needs a ceiling of its own.**
-[LAW 8](#law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting)
-covers shared obligations. The term account has a different reader and purpose:
-it gives a successor the history needed to take up the work. Moving historical
-explanations out of current rules concentrates them here, so this account also
-needs a limit.
-
-**What earns an entry is something the next president cannot do the job
-without**: a role that left or arrived, a law added, removed or reversed, a
-footing that changed, a build that was broken and for how long, what went
-wrong, and what is still owed. **What does not earn one:** a page corrected, a
-stale description brought current, a link fixed, a routine sweep. **Those are
-the commits' job**, and the commits are better at it.
-
-**Re-derivability beats narration, and [LAW 4.3](#law-43--re-derivable-figures) is what the ceiling
-must not cost.** An entry says what changed and how to check it; it does not reproduce
-the argument, which is in the tree it changed.
-
-**Over the ceiling is not a violation**, and neither is an entry somebody later
-judges too small. Both are signals that the page has started recording the work
-instead of the term.

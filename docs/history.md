@@ -397,6 +397,9 @@ provisions. The earlier restriction cited as LAW 9.4 is now
 [LAW 9.5](laws.md#law-95--unreleased-and-unpublished-work). `D20` visibly
 records the revised recommendation so new subdivisions follow reading order.
 
+Former LAW 11 was condensed into [LAW 4.6](laws.md#law-46--keeping-the-account-short),
+placing the account's length guidance with its other duties.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
