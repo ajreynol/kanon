@@ -42,25 +42,35 @@ until kanon carries one.**
 `kanon`:** proposing a style you have not adopted is the error this office
 exists to avoid. **HUMAN FEEDBACK:**
 
-## B31 — the register readers are still here, and koine has agreed to host them
+## B31 — move ecosystem status auditing to stathmos
 
-**Task:** koine accepted the register readers and `eo_respond` in its `D11`.
-**`eo_respond` has landed and the readers have not**, so `eo_status_audit`,
-`ecosystem/ecosystem.py`, `child_listing.py` and `policy_check.py` are still
-the office's to maintain — about 7,000 words of it. **The register itself does
-not move**: a footing is a decision somebody made, and koine has said it does
-not want that part.
-**Entities:** `kanon`, `koine`
-**Status:** waiting on a person — koine has said yes, and carrying a request
-between trees is nobody else's act.
-**Channel:** **discussion** — [`D18`](discussion.md) answers koine's `D11`.
-**Next:** name the first reader to move and tell koine which. `child_listing.py`
-is the smallest and only the table imports it.
-**Prompt — `koine`:** the readers are yours and the register stays ours, which
-is the line you drew yourself — hosting the reader is not deciding who is in.
-**Prompt — `kanon`:** nothing here is deleted before its replacement runs, and
-the document checks stay whatever else moves. You argued that and we agreed.
-**HUMAN FEEDBACK:**
+**Task:** move `eo_status_audit`'s auditing responsibility and implementation to
+stathmos. Kanon keeps the authoritative register and its membership decisions;
+koine keeps the shared commands, including `eo_status`'s reading of the register.
+**Entities:** `kanon`, `stathmos`, `koine`
+**Status:** not started — the maintainer proposed stathmos as the audit's
+destination on 2026-09-18, revising the earlier plan to send the whole reader
+bundle to koine. `eo_respond` has already moved; the audit remains here.
+**Channel:** **internal** for stathmos; **discussion**, carried by a person,
+for the revised boundary with koine. [`D18`](discussion.md) records the earlier
+agreement, not this revision.
+**Next:** define the audit's split from `R6` and the shared reader code, with a
+concrete list of responsibilities and consumers for each holder.
+**Prompt — `kanon`:** separate custody of `ecosystem.json` from checking its
+claims. Map the audit's dependencies and callers, then update the role register
+and command paths as the implementation moves. Keep the existing command
+working through the handoff and keep this repository's document checks here.
+**Prompt — `stathmos`:** take on ecosystem status auditing and the evidence it
+produces. Update the charter to distinguish mechanically checked facts from the
+human judgements on the report card: policy and membership checks must never
+become automated grades against the vision. Preserve the audit's distinction
+between a failed check and missing evidence.
+**Prompt — `koine`:** our proposed destination for the auditing responsibility
+is now stathmos. Keep `eo_status` as the shared reader of the register, and
+agree which reusable helpers belong with that reader and how callers reach the
+audit. The register and its membership decisions remain kanon's.
+**HUMAN FEEDBACK:** 2026-09-18: move the eo status auditing functionality to
+stathmos.
 
 ## B18 — the associate protocol remains open for ethos
 
@@ -135,6 +145,42 @@ picks the fix up; `logos-1` is blocked on this and on nothing else. **Prompt —
 This is the finding that taught us to check.
 **HUMAN FEEDBACK:** a minor bug — moved down 2026-08-31.
 
+## B33 — update the ethos user manual from sapheneia's advice
+
+**Task:** update ethos's `user_manual.md` using the advice in
+[sapheneia's feedback ledger](../tools/sapheneia/feedback.md).
+**Entities:** `ethos`, `sapheneia`
+**Status:** not started — requested 2026-09-18; the ledger's fifteen entries
+are candidates read against `ethosEoc3` at `3cf1c03`.
+**Channel:** **upstream, by a person** — ethos has no discussion file;
+sapheneia's preparation is internal to kanon.
+**Next:** recheck `EOM-01` through `EOM-15` against the current ethos manual
+and identify which still need a change.
+**Prompt — `ethos`:** update the user manual using the confirmed advice from
+sapheneia's feedback ledger. Separate wording and documentation corrections
+from questions that require a language decision, and record which suggestions
+were applied, declined or left open.
+**Prompt — `sapheneia`:** recheck the fifteen feedback entries against a named
+revision of the ethos manual and prepare supported corrections for a person to
+carry upstream. Keep language decisions explicit as questions for ethos.
+**HUMAN FEEDBACK:**
+
+## B34 — determine whether another president is necessary
+
+**Task:** decide whether the ecosystem needs a successor president, with kanon
+stepping down to maintainer of the laws if the office moves.
+**Entities:** `kanon`
+**Status:** not started — requested 2026-09-18; the succession decision is open.
+**Channel:** **internal** — prepare the decision for the human maintainer.
+**Next:** identify the work that would require another president and assess
+whether it justifies appointing one.
+**Prompt — `kanon`:** assess whether another president is necessary. Describe
+what a successor would take on and what kanon would retain as maintainer of the
+laws, including any changes needed to the current laws and role assignments.
+Compare the costs and benefits of succession with continuing the current
+arrangement, and leave the appointment and kanon's footing to the maintainer.
+**HUMAN FEEDBACK:**
+
 ---
 
 ## How to maintain this page
@@ -145,7 +191,7 @@ that is the main way a person changes what this page says.
 
 **The id is stable.** `B6` stays `B6` when it moves, so ids appear out of order
 and that is correct rather than a mistake to tidy. A row that leaves is not
-reused. **The next unused id is `B33`**, including after completed items are
+reused. **The next unused id is `B35`**, including after completed items are
 removed; their earlier contents remain in git history.
 
 **Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
