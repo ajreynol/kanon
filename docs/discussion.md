@@ -36,7 +36,7 @@ topic; writing it here does not deliver it or authorize work in another tree.
 
 **`Kanon-ball!` marks a topic whose request rests on [the laws](laws.md), and
 marks nothing else.** It is the president's front-page joke and confers no
-power over the recipient: [LAW 3.1](laws.md#law-31--authority-over-members) lets
+power over the recipient: [LAW 3.1](laws.md#law-31--limits-on-presidential-authority) lets
 the office require nothing of a member that [`policy.md`](policy.md) does not
 already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
@@ -82,9 +82,9 @@ remain included in kanon's test run. The public commands keep their locations.
 
 The laws now have dotted subclause numbers and stable link targets. A reference
 to evidence can point to
-[re-derivable figures (LAW 4.3)](laws.md#law-43--re-derivable-figures),
+[re-derivable figures (LAW 4.3)](laws.md#law-43--evidence-for-figures-and-claims-in-historymd),
 while one about keeping a successor letter out of the index can point to
-[the letter's status (LAW 4.5)](laws.md#law-45--the-successor-letter).
+[the letter's status (LAW 4.5)](laws.md#law-45--recording-experience-in-the-successor-letter).
 Both previously sent readers to the whole law, which governs several different
 obligations.
 
@@ -103,7 +103,7 @@ obligations.
   retarget an old claim to a current clause that no longer supports it.
 
 Our current documentation links to the numbered paragraphs, such as
-`laws.md#law-43--re-derivable-figures`. Existing whole-law heading links
+`laws.md#law-43--evidence-for-figures-and-claims-in-historymd`. Existing whole-law heading links
 still resolve. This is a recommendation, not a new membership requirement or
 checker rule; the policy's instruction to cite policy rules by name is unchanged.
 

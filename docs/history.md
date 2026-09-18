@@ -394,10 +394,10 @@ The maintainer requested sequential numbers and paragraph markers such as
 `(3.1)`. Laws 3, 4 and 9 were renumbered without moving or changing their prose;
 current references were updated, and old anchors remain aliases for the same
 provisions. The earlier restriction cited as LAW 9.4 is now
-[LAW 9.5](laws.md#law-95--unreleased-and-unpublished-work). `D20` visibly
+[LAW 9.5](laws.md#law-95--permission-for-unreleased-and-unpublished-work). `D20` visibly
 records the revised recommendation so new subdivisions follow reading order.
 
-Former LAW 11 was condensed into [LAW 4.6](laws.md#law-46--keeping-the-account-short),
+Former LAW 11 was condensed into [LAW 4.6](laws.md#law-46--recommended-length-of-historymd),
 placing the account's length guidance with its other duties.
 
 ### The directory outline was clarified — 2026-09-18
@@ -447,6 +447,32 @@ look like every project's first appearance.
 *Re-derive:* `git show d03447d`; koine's `eo_cmd/eo_join`; paideia's
 `README.md` and `docs/maintenance.md`; and, in anoieu,
 `git log --follow -- scripts/ecosystem/ecosystem.json`.
+
+### The identity protocol was retired and the laws simplified — 2026-09-18
+
+At the maintainer's request, `PROTO-21` and its companion `INST-2` were retired
+because the identity header and its repetition rules were confusing. Their
+instructions are removed; the ids remain reserved in their tables. Responses
+no longer require the identity header or its long form.
+
+The laws' introduction now explains human responsibility directly. The section
+called *The same owner loophole* now uses the example of one person controlling
+both a tool and its audit to explain why separate repositories do not establish
+independent oversight. The standalone *What history.md is, and is not* section
+was removed, with its useful guidance placed under LAW 4. The history and letter
+requirements were shortened for readability; obligations and clause numbers
+remain unchanged, and old section links reach their replacements.
+
+### The law headings and referenced requirements were made explicit — 2026-09-18
+
+At the maintainer's request, LAW 9 now begins *External research*, and headings
+throughout name their subjects directly. LAW 6 is one short paragraph, with no
+subclauses. LAW 3.2 states the role-transfer requirements directly, and LAW 6
+states the limits on humour, removing the need to follow protocol references
+to understand those laws. Bold emphasis was removed from the page. Current
+references use the new headings and the combined LAW 6; old anchors remain
+available. These changes preserve the requirements while making them easier
+to find and read.
 
 ## Membership changes during this term
 
@@ -515,11 +541,11 @@ the first real separation and arrives by the office moving rather than by
 design. **The only real check remains the maintainer.**
 
 **Evidence** — every figure here re-derivable from the repositories and the
-public run history, per [LAW 4.3](laws.md#law-43--re-derivable-figures), with the
+public run history, per [LAW 4.3](laws.md#law-43--evidence-for-figures-and-claims-in-historymd), with the
 command beside it.
 
 **The joke** — on the front page for the whole term, per
-[LAW 6.1](laws.md#law-61--front-page-placement): what kanon sends is a
+[LAW 6](laws.md#law-6--presidency-a-readme-joke-about-the-repositorys-name): what kanon sends is a
 **kanon-ball**. It doubles as description, which is the test it has
 to pass.
 
@@ -929,7 +955,7 @@ composed for it**. Nobody sat down to invent any of them.
    name on the grounds that it started with the right two letters, which is not
    an operation and described nothing.
 2. **The result has to describe the work**, which is
-   [LAW 6.2](laws.md#law-62--describing-the-work)'s test. A joke that tells a
+   [LAW 6](laws.md#law-6--presidency-a-readme-joke-about-the-repositorys-name)'s test. A joke that tells a
    stranger nothing about what the tool does is decoration.
 3. **It must not flatter the tool.** Every working joke here is at its own
    expense, and that is not taste: LAW 6 exists because *a president that

@@ -35,7 +35,7 @@ The authoritative register is
 An entry with `status: president` identifies the current holder. The offline
 audit rejects multiple holders. In the status table, the audit reports limbo
 when the recorded president lacks `docs/laws.md` or `docs/history.md`, under
-[LAW 5.1](laws.md#law-51--limbo); that observation does not fail a build or
+[LAW 5.1](laws.md#law-51--when-the-recorded-president-cannot-maintain-the-office); that observation does not fail a build or
 withdraw the appointment. The command's
 `--help` describes its current coverage and limits.
 
@@ -65,7 +65,7 @@ for.
 | | what you do |
 | --- | --- |
 | `INST-1` | withdrawn, 2026-09-17 |
-| [`INST-2`](#inst-2--every-answer-says-who-it-is-from) | type *identify* whenever you want to know which tool the agent thinks it is working for |
+| `INST-2` | withdrawn, 2026-09-18 |
 | [`INST-3`](#inst-3--do-not-outrun-your-own-understanding) | do not push development faster than you understand it |
 | [`INST-4`](#inst-4--picking-it-back-up) | the command that tells you where everything stands |
 
@@ -149,33 +149,6 @@ costs a full turn of rework.
 **Give the principle rather than the edit** where you can. *You can do anything
 you want if the repository's policy says it is AI generated* produced a rule
 that generalises; the equivalent list of permitted actions would not have.
-
-## `INST-2` — every answer says who it is from
-
-**Every response you get opens with one line**: the tool the agent believes it
-is working for, and what that tool is for.
-
-<tool> — <what it is for>, powered by <which AI, by name>.
-
-**It names the AI, specifically** — which model and which version, not "an
-assistant". You are entitled to know what is answering you: these differ in
-what they are good at and in how they fail, and you cannot weigh an answer
-without knowing that. *The documents here never name one, deliberately, so that
-anybody's agent can do this work; the spoken line always does.*
-
-**You do not have to ask for it, and it should never stop.** If it stops, the
-protocol has been dropped, which is worth more of your attention than whatever
-was in the answer.
-
-**Ask for the long version any time.** You get the same line plus which
-checkout it is working in and the mission quoted from that tool's own files.
-
-**If it is ever wrong, say so.** The agent is reporting a belief, not proving
-anything, and you are the only one in a position to correct it. The
-repositories here look alike, and an agent in the wrong one is not visibly
-confused — it is confidently helpful in the wrong place.
-
----
 
 ## `INST-3` — do not outrun your own understanding
 

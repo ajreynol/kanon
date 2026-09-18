@@ -20,7 +20,7 @@ another project, no change of footing.
 **House style.** Cite a rule by name, never by number. Append; do not renumber;
 retire in place with a line saying why. Prefer the shortest form that is still
 arguable, and never narrate that you are following these rules. [LAW
-8.1](laws.md#law-81--the-reading-budget)
+8.1](laws.md#law-81--recommended-word-limits-for-shared-documents)
 gives this page a length to stay under.
 
 ## What is checked, and what is not
@@ -56,7 +56,7 @@ having been checked once.
 holds what, where a thing lives. It does not say what used to be true, what
 moved, when it moved, or what something was called before. **One page carries
 the account of how things came to be** — `history.md`, which
-[LAW 4.1](laws.md#law-41--where-term-records-stay) makes each office-holder's
+[LAW 4.1](laws.md#law-41--keeping-term-records-in-their-authoring-repository) makes each office-holder's
 record of its own term — and it is the only page that may.
 
 **The reason is a reader, not tidiness.** A document that carries its own
@@ -135,7 +135,7 @@ section of the front page where a repository is small enough or is itself an
 inventory — but there is exactly one, and it covers everything a reader is
 expected to open. Two things are deliberately unindexed: the index itself, and
 a **letter from one office-holder to the next** (`letter-to-<name>.md`), which
-[LAW 4.5](laws.md#law-45--the-successor-letter) holds is in no index. Checked
+[LAW 4.5](laws.md#law-45--recording-experience-in-the-successor-letter) holds is in no index. Checked
 where the index is `docs/README.md`; the front-page form is not yet decidable
 by the checker.
 
@@ -714,7 +714,7 @@ Role handoffs follow [`roles.md`](roles.md#how-a-role-is-handed-off);
 replacement of a stub follows
 [`PROTO-20`](protocols.md#proto-20--the-handoff-protocol). History and letters
 stay in the repository that held the office, under [LAW
-4.1](laws.md#law-41--where-term-records-stay).
+4.1](laws.md#law-41--keeping-term-records-in-their-authoring-repository).
 
 ## Joining the Eunoia ecosystem
 

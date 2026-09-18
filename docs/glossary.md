@@ -9,7 +9,7 @@ judgements, not tools or projects.
 
 **Maintained by the president of eo.** The president keeps the definitions
 current and hands this file to the next president with the
-[office’s shared documents](laws.md#law-32--transfers-with-the-office).
+[office’s shared documents](laws.md#law-32--transferring-presidential-roles-and-child-projects).
 
 Ynoia [argues about names](../tools/ynoia/docs/proposals.md#arguing-about-names)
 and proposes alternatives; it keeps no separate register and reserves no names
@@ -149,9 +149,9 @@ under investigation. [Repository](https://github.com/ddsmt/ddSMT).
 **dioktes** (status; *noun*): The state of a repository actively pursuing
 defects in an outside tool, used in the phrase “in dioktes.” Declared by a
 person with a closing condition under
-[LAW 10.1](laws.md#law-101--declaring-a-pursuit); the pursuit ends if the
+[LAW 10.1](laws.md#law-101--declaring-an-external-defect-investigation); the pursuit ends if the
 target’s maintainers ask under
-[LAW 10.3](laws.md#law-103--ending-a-pursuit-on-request).
+[LAW 10.3](laws.md#law-103--ending-an-investigation-on-request-or-resolution).
 It describes the pursuing repository’s activity. From Greek διώκτης, “pursuer.”
 
 <a id="dokimasia"></a>
@@ -235,7 +235,7 @@ the ecosystem: [member](#member), [associate](#associate),
 [president](#president), [candidate](#candidate), [foundation](#foundation),
 child, or [outsider](#outsider). These describe different obligations and
 claims, not ranks. See
-[the footings table (LAW 1)](laws.md#law-1--the-ecosystem-is-a-set-of-footings-and-member-is-only-one-of-them).
+[the footings table (LAW 1)](laws.md#law-1--ecosystem-footings-membership-and-other-relationships).
 
 <a id="foundation"></a>
 **foundation** (footing; *noun*): The [footing](#footing) for a project the
@@ -364,9 +364,9 @@ act of understanding.”
 
 <a id="outsider"></a>
 **outsider** (footing; *noun*): A tool outside the ecosystem that is tracked for
-[comparison](laws.md#what-tracking-is) and is not proposed for promotion. Its
+[comparison](laws.md#comparing-our-work-with-external-projects) and is not proposed for promotion. Its
 released artifact and published contribution are recorded separately under
-[LAW 9.1](laws.md#law-91--release-and-publication), and neither imposes
+[LAW 9.1](laws.md#law-91--distinguishing-released-code-from-published-research), and neither imposes
 obligations on it.
 
 ## P
@@ -390,8 +390,8 @@ should follow from a tool’s strengths and shortcomings. From Greek παραί�
 **president** (office; *noun*): The human maintainer of the repository recorded
 as holding the presidency. The office is bestowed for a [stretch](#stretch),
 sets direction, maintains shared governance including this glossary, and confers
-[no control over another tree](laws.md#law-31--authority-over-members).
-See [LAW 3](laws.md#law-3--there-is-a-president).
+[no control over another tree](laws.md#law-31--limits-on-presidential-authority).
+See [LAW 3](laws.md#law-3--presidency-appointment-authority-and-succession).
 
 ## S
 
@@ -418,9 +418,9 @@ Greek σταθμός, “a standard weight.” [Charter](../tools/stathmos/READM
 <a id="stretch"></a>
 **stretch** (term of office; *noun*): The period for which a repository holds
 the presidency, also called its term. The office expires with it; the account is
-[kept during it](laws.md#law-42--keeping-the-account-current). The laws
+[kept during it](laws.md#law-42--updating-historymd-during-the-term). The laws
 prescribe no fixed duration. See
-[LAW 3](laws.md#law-3--there-is-a-president).
+[LAW 3](laws.md#law-3--presidency-appointment-authority-and-succession).
 
 ## T
 

@@ -61,7 +61,7 @@ named.
 | `PROTO-18` | retired, 2026-09-17 | — | no active protocol |
 | `PROTO-19` | retired, 2026-09-15 | — | no active protocol |
 | `PROTO-20` | **the handoff protocol** — a stub is deleted only once a spawned repository has proved it is what it claims. CI green on both sides, non-negotiable; any hint of fraud, reject | spawned repo → anoieu | this page |
-| `PROTO-21` | **the identify protocol** — **every** response opens with the entity the agent acts for, its mission, and **which AI is answering, by name**. The long form at session start and on request | agent → human | [`protocols.md`](protocols.md) |
+| `PROTO-21` | retired, 2026-09-18 | — | no active protocol |
 | `PROTO-22` | **the misc protocol** — a document too expensive to clean up now is demoted to `docs/misc/` rather than deleted or left misrepresenting itself. Discouraged, and a growing `misc/` is a symptom | page → layout | this page |
 | `PROTO-23` | **the downstream refresh** — fetch and read another repository before making a claim about it, and say how far behind you were | us → downstream | this page |
 | `PROTO-24` | **the upstream refresh** — a member makes its copy of the shared arrangements current before relying on them, and only onto a green commit | member → us | this page |
@@ -240,7 +240,7 @@ adopting a change.**
 ## `PROTO-25` — the joke protocol
 
 **A president keeps a joke about its own name on its front page, and that is
-where humour stops.** [LAW 6.1](laws.md#law-61--front-page-placement) puts it
+where humour stops.** [LAW 6](laws.md#law-6--presidency-a-readme-joke-about-the-repositorys-name) puts it
 there; this protocol keeps it there.
 
 **Why the vision says to enjoy this.** The ecosystem requires every president
@@ -744,118 +744,3 @@ evidence, and composing the target is where being informed happens.
 check; the word *verification* is used loosely and we are not verifying
 anything. **And it is recorded** — the block goes into the artifact the
 approval was for.
-
-## `PROTO-21` — the identify protocol
-
-**Every response opens by saying who the agent is acting on behalf of.** Not
-when asked. Not at the start of a session. **Every response, first line, before
-anything else** — including short ones, corrections, and answers to questions
-that have nothing to do with identity.
-
-<entity> — <its mission>, powered by <the agent, by name and version>.
-
-**The entity, its mission, and what is answering, on one line.**
-
-**The line has a name: the identify header.** It is what the agent prints
-first, and naming it is worth a sentence because "the identification" and "the
-line" were being used for both the rule and its output.
-
-**The unit is the prompt, not the turn. One header per prompt, on the first
-text the agent emits in reply to it.**
-
-**The test is mechanical and leaves nothing to judgement: the header goes on
-the first text and on no later text.** If the agent says something before
-running a command, that preamble carries it and **the answer that follows does
-not**. If the agent runs a command before saying anything, the answer carries
-it. **There is no version where both do.** That single rule settles both ways
-of getting this wrong, and the count is mechanical: **at the end of a session,
-the number of identifications and the number of prompts are equal.**
-
-- **Before anything else.** Not after the first command, not after the answer
-  is known — the first words in reply to a prompt, ahead of any preamble about
-  what is about to be done.
-- **Not again for the same prompt.** A turn in which the agent speaks, runs
-  something, and speaks again is one reply. **Printing it twice is a defect,
-  not extra rigour** — a declaration that appears wherever the agent happens to
-  start talking has become furniture, and furniture is not read. **The failure
-  mode is specific and repeated**: the agent writes a preamble, works, and then
-  starts the answer as though the answer were the beginning.
-- **A prompt that arrives mid-turn is a prompt.** When somebody interrupts with
-  something new while the agent is working, the next thing said carries the
-  line again, because it is the first thing said in reply to *that*. **This is
-  the case that gets missed**, and it is the one where identity is most worth
-  restating: the agent has been away doing something, and what it was doing is
-  exactly what could have changed.
-
-That is the whole of the routine form, and it is short by design: **a
-declaration repeated every turn has to be cheap or it will be dropped**, and a
-protocol that is dropped when the work gets busy was never a protocol.
-
-### Naming the agent, and why this page cannot show you an example
-
-**The agent names itself specifically** — the model and its version, as it
-would be written on the thing that sells it. **Not *an AI*, not *an assistant*,
-not *a language model*.** Those are categories, and a category is not a
-disclosure.
-
-**This page is not allowed to print a real one.** `policy_check.py` refuses any
-document here that names a specific AI, so that nothing in this ecosystem reads
-as written for one vendor's agent and unavailable to anybody else's. That rule
-is right and stays.
-
-**The two rules do not collide, because one is about what is written and the
-other about what is spoken.** The documents stay vendor-neutral so that any
-agent can do this work. The line an agent says at runtime names the agent that
-is *actually* doing it, right now. **A page that presumes a vendor and a
-sentence that discloses one are opposite things**, and it is the second that
-this protocol requires.
-
-### Why the disclosure is owed
-
-**A person is entitled to know what is answering them.** These agents are not
-interchangeable: they differ in what they are good at, in how they fail, and in
-what they will and will not do. **Being told *an AI wrote this* leaves somebody
-unable to weigh any of that**, and the omission is convenient for us in a way
-that should make it suspect.
-
-**It also makes the record honest.** This repository's history is largely
-written by agents, and a reader reconstructing it later should be able to tell
-not only that an agent did the work but which one — including across the point
-where the answer changes because the agent did.
-
-### Where the mission comes from
-
-**The first sentence of the entity's README is its mission statement.** Read,
-not recited — **a remembered mission is the one that drifts**, and this is the
-same rule the rest of the ecosystem applies to every other ground truth. No new
-file, no second copy, nothing to keep in sync.
-
-### The long form, and when it is owed
-
-**At the start of a session, and any time somebody asks**, the same declaration
-is given in full: the entity, **how the agent knows** — the checkout it is
-working in, said plainly enough that a person can tell it is wrong — and the
-mission statement quoted from the tree.
-
-**It is a belief, stated as one, and the agent does not verify itself.** Same
-rule as [`PROTO-20`](protocols.md#proto-20--the-handoff-protocol): a claim
-about identity is worth nothing when the claimant is also the one checking it.
-What makes it useful is that **it is said out loud where somebody who knows
-better can contradict it.**
-
-**If the agent cannot tell, it says so, and that is a stop.** An agent that
-does not know whose work it is doing should not be doing work.
-
-### Why it is every turn and not once
-
-**The failure it catches is silent and it arrives mid-session.** This ecosystem
-is many repositories that look alike, share a policy, and are worked on by
-agents in each of them. An agent that comes to believe it acts for the wrong
-one does not produce nonsense — **it produces competent work in the wrong
-repository, against the wrong policy, and everything it says about that work is
-sincere.**
-
-**A declaration made once at the top of a session cannot catch that**, because
-the drift happens after it. Repeating it is the point: the line is cheap, and
-the turn where it is wrong is the turn it earns everything it cost on all the
-others.
