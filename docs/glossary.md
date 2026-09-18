@@ -144,9 +144,11 @@ under investigation. [Repository](https://github.com/ddsmt/ddSMT).
 **dioktes** (status; *noun*): The state of a repository actively pursuing
 defects in an outside tool, used in the phrase “in dioktes.” Declared by a
 person with a closing condition under
-[LAW 10.1](laws.md#law-101--declaring-an-external-defect-investigation); the pursuit ends if the
-target’s maintainers ask under
-[LAW 10.3](laws.md#law-103--ending-an-investigation-on-request-or-resolution).
+[LAW 10.1](laws.md#law-101--declaring-an-external-defect-investigation).
+Public reporting and contact stop on request under
+[LAW 10.2](laws.md#law-102--stopping-public-reporting-and-contact-on-request);
+private investigation may continue under
+[LAW 10.3](laws.md#law-103--continuing-an-investigation-privately).
 It describes the pursuing repository’s activity. From Greek διώκτης, “pursuer.”
 
 <a id="dokimasia"></a>

@@ -267,7 +267,8 @@ class Verification(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             inv = Path(temp) / "inventory.json"
             inv.write_text(json.dumps({
-                s: {"status": s, "what": "example", "published": "Example paper, 2026"}
+                s: {"status": s, "what": "example", "published": "Example paper, 2026",
+                    "released": "https://example.invalid/source"}
                 for s in statuses
             }))
             out = io.StringIO()
@@ -304,6 +305,63 @@ class Verification(unittest.TestCase):
                 for reader in (locate, topics, age, check):
                     reader.assert_not_called()
                 self.assertIn("treated as private", out.getvalue())
+
+    def test_outsider_eligibility_controls_validation_and_checkout_reads(self):
+        offer = {"date": "2026-09-18", "owner": "Example maintainer",
+                 "evidence": "The owner volunteered this tool for tracking."}
+        cases = [
+            ("published", {}, True),
+            ("unpublished", {"published": "none"}, False),
+            ("unknown publication", {"published": "unknown"}, False),
+            ("unreleased", {"released": "none"}, False),
+            ("unknown release", {"released": "unknown"}, False),
+            ("volunteered unpublished", {"published": "none", "volunteered": offer}, True),
+            ("volunteered unknown", {"published": "unknown", "volunteered": offer}, True),
+            ("volunteered unreleased", {"released": "none", "volunteered": offer}, True),
+            ("volunteered neither", {"released": "none", "published": "none",
+                                     "volunteered": offer}, True),
+            ("empty publication", {"published": "", "volunteered": offer}, False),
+            ("missing publication", {"published": None, "volunteered": offer}, False),
+            ("empty release", {"released": "", "volunteered": offer}, False),
+            ("offer flag", {"published": "none", "volunteered": True}, False),
+            ("no owner", {"published": "none", "volunteered": {**offer, "owner": " "}}, False),
+            ("no evidence", {"published": "none", "volunteered": {**offer, "evidence": ""}}, False),
+            ("invalid date", {"published": "none", "volunteered": {**offer, "date": "2026-02-30"}}, False),
+            ("missing date", {"published": "none", "volunteered": {"owner": "Example maintainer",
+                                                                     "evidence": "Owner's offer"}}, False),
+        ]
+        for label, changes, eligible in cases:
+            with self.subTest(case=label), tempfile.TemporaryDirectory() as temp:
+                entry = {"status": "outsider", "repo": "example", "what": "fixture",
+                         "url": "https://example.invalid/example", "vetted": "2026-09-18",
+                         "why": "context for our work", "published": "Example paper, 2026",
+                         "released": "https://example.invalid/example", **changes}
+                inventory = {"example": entry}
+                with patch.object(ecosystem, "board_entities", return_value=set()):
+                    errors = ecosystem.well_formed(inventory)
+                self.assertEqual(not errors, eligible, errors)
+
+                inv = Path(temp) / "inventory.json"
+                inv.write_text(json.dumps(inventory))
+                out = io.StringIO()
+                with patch.object(ecosystem, "INVENTORY", str(inv)), \
+                     patch.object(ecosystem, "locate", return_value=temp) as locate, \
+                     patch.object(ecosystem, "topics_for", return_value="-") as topics, \
+                     patch.object(ecosystem, "age", return_value="?") as age, \
+                     patch.object(ecosystem, "check") as check, \
+                     patch.object(sys, "argv", ["eo_status_audit"]), \
+                     contextlib.redirect_stdout(out):
+                    self.assertEqual(ecosystem.main(), 0)
+                check.assert_not_called()
+                if eligible:
+                    locate.assert_called_once_with("example")
+                    topics.assert_called_once_with(temp)
+                    age.assert_called_once_with(temp)
+                    self.assertIn("not held", out.getvalue())
+                else:
+                    for reader in (locate, topics, age):
+                        reader.assert_not_called()
+                    self.assertIn("treated as private", out.getvalue())
 
     def test_an_associate_is_checked_but_is_never_at_fault(self):
         # It owes us nothing, so the number is a measurement. `tracked` rather

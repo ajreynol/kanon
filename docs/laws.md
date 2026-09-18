@@ -351,8 +351,8 @@ on whether their code is released and their research is published.
 ### (LAW 9.1) — Tracking external projects
 
 For external projects, [tracking][tracking] records their work as context for
-assessing our own. Its conclusions concern our work. Differences in activity
-over a period do not establish differences in quality.
+assessing our own. Its conclusions concern our work. Our tracking does not
+necessarily establish differences in quality.
 
 <a id="law-95--release-and-publication"></a>
 <a id="law-91--release-and-publication"></a>
@@ -362,34 +362,37 @@ over a period do not establish differences in quality.
 ### (LAW 9.2) — Requirements for outsider status
 
 An [outsider][outsider] is an external project that is both a **public tool** and
-**published research**. Outsiders may be tracked by our tooling.
+**published research**, or whose owners volunteer it under
+[LAW 9.4](#law-94--owners-volunteering-external-tools). Outsiders may be tracked
+by our tooling.
 
-Outsider status must be backed by a public repository
-**and** a reference to a publication.
+Unless its owners volunteer it, outsider status requires a public repository
+**and** a reference to a publication. Record these in the `released` and
+`published` fields of
+[`scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json).
 
-The publication reference required by
-[LAW 9.2](#law-92--requirements-for-outsider-status) is recorded in the `published`
-field of [`scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json).
-Use `unknown` when publication is not established; this does not mean no
-publication exists. Until it is established, treat the work as private under
-[LAW 9.3](#law-93--treating-other-research-tools-as-private): no inspection or
-[tracking][tracking].
+<a id="law-93--external-work-with-unknown-publication-status"></a>
+<a id="law-96--external-work-with-unknown-publication-status"></a>
+
+If publication is unknown, leave the project out of the register until it
+qualifies, unless its owners volunteer it. On a volunteered entry, use
+`unknown` when release or publication is unestablished, and `none` only when
+its absence is established.
 
 ### (LAW 9.3) — Treating other research tools as private
 
 Research tools that are not publicly available or refer to unpublished work
-are **not** marked as outsiders by our ecosystem and **cannot** be tracked.
-We treat such tools as private.
+are **not** marked as outsiders and **cannot** be inspected or tracked, unless
+their owners volunteer them under [LAW 9.4](#law-94--owners-volunteering-external-tools).
+Otherwise, we treat them as private.
 
 ### (LAW 9.4) — Owners volunteering external tools
 
 The owners of an external tool may volunteer it to be considered an
-[outsider][outsider], even if it does not meet these requirements.
-
-<a id="why-it-binds-us-and-nobody-else"></a>
-<a id="our-responsibilities-when-recording-external-work"></a>
-
-<a id="law-93--external-work-with-unknown-publication-status"></a>
+[outsider][outsider], even if it does not meet the release or publication
+requirements. Record the offer in the entry's `volunteered` field with its
+`date` (YYYY-MM-DD), `owner` and `evidence`. This record permits tracking under
+the exception; it does not claim the work is released or published.
 
 <a id="law-10--in-dioktes-when-we-go-looking-for-defects-in-somebody-elses-tool"></a>
 
@@ -405,22 +408,28 @@ activity; it gives the target no new footing or obligations.
 
 ### (LAW 10.1) — Declaring an external defect investigation
 
-An external repository (i.e. `outsider`) may be targeted whenever
+An [outsider][outsider] may be targeted whenever
 [LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons)
 permits [tracking][tracking] it, subject to the same conditions.
 
 A person decides, and it is declared. The state is recorded
 against that tool in the register, with the date it began and what closes it.
 
-<a id="law-102--informing-the-owner-first"></a>
-<a id="law-102--giving-defects-to-maintainers-before-publication"></a>
-<a id="what-it-does-not-license"></a>
-<a id="limits-on-reporting-external-defects"></a>
+<a id="law-102--ending-an-investigation-on-request-or-resolution"></a>
+<a id="law-103--ending-an-investigation-on-request-or-resolution"></a>
 
-### (LAW 10.2) — Ending an investigation on request or resolution
+### (LAW 10.2) — Stopping public reporting and contact on request
 
-If the target's maintainers ask us to stop, we stop without appeal, argument
-or continuing quietly.
+If the target's maintainers ask us to stop, end public reporting and further
+contact with them about the investigation, without appeal or argument.
+
+<a id="law-103--a-defect-investigation-may-continue-privately"></a>
+
+### (LAW 10.3) — Continuing an investigation privately
+
+We reserve the right to continue investigating privately after such a request,
+provided the work remains eligible under
+[LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons).
 
 [footing]: glossary.md#footing
 [member]: glossary.md#member

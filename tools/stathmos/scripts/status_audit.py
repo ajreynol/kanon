@@ -96,12 +96,10 @@ REQUIRED = {
     # is the intellectual claim -- a paper, with an argument in it and its
     # authors' names on it -- and a great many public tools have none yet.
     #
-    # Released but unpublished work is treated as private: no inspection or
-    # tracking, including its activity. `published` is a citation, `"none"`
-    # where the absence of a publication is established, or `"unknown"` where
-    # its status is unknown. Both values prohibit reading the checkout.
-    # An absent value also prevents inspection; inventory validation separately
-    # reports the missing field.
+    # LAW 9.4 permits an owner-volunteered exception, recorded as `volunteered`
+    # with a date, owner and evidence. Only those entries may use `"none"` or
+    # `"unknown"` for release or publication. Missing facts remain required
+    # fields: an offer does not turn an absent field into a known fact.
     #
     # Neither is printed in any table: they back the footing rather than
     # describing the tool.
@@ -387,6 +385,28 @@ def board_entities() -> set[str]:
     return out
 
 
+def owner_volunteered(entry: dict) -> bool:
+    """Check the offer's recorded form; a person verifies its evidence."""
+    offer = entry.get("volunteered")
+    if not isinstance(offer, dict) or not all(
+            isinstance(offer.get(key), str) and offer[key].strip()
+            for key in ("date", "owner", "evidence")):
+        return False
+    try:
+        return datetime.date.fromisoformat(offer["date"]).isoformat() == offer["date"]
+    except ValueError:
+        return False
+
+
+def outsider_trackable(entry: dict) -> bool:
+    """Require recorded release and publication, or the LAW 9.4 exception."""
+    facts = [entry.get(field) for field in ("released", "published")]
+    if not all(isinstance(value, str) and value.strip() for value in facts):
+        return False
+    return owner_volunteered(entry) or all(
+        value.strip().lower() not in ("none", "unknown") for value in facts)
+
+
 def well_formed(inv: dict) -> list[str]:
     """The inventory read as a document about itself. No network, no checkouts."""
     bad = []
@@ -420,18 +440,8 @@ def well_formed(inv: dict) -> list[str]:
                     if not e.get(field):
                         bad.append(f"{name}: proposing `{proposed}` needs `{field}`, "
                                    "the same as holding it")
-        # LAW 9: `published` records an intellectual claim its authors made, and
-        # `"none"` is the answer when they have not made one yet. A blank is
-        # neither answer, and the two permit different things.
-        # LAW 10: *in dioktes* is a state this ecosystem enters, declared against
-        # the tool it concerns so that somebody can object while it is happening
-        # rather than afterwards. It is entered **only where we believe a claim
-        # that tool has made is inaccurate**, so the field reads "<date began> --
-        # <the claim, and what closes it>": a pursuit with no stated end is a
-        # posture rather than an investigation, and one whose belief was written
-        # afterwards is whatever the findings happened to support. The entry is
-        # removed when the claim settles either way, rather than kept as a record
-        # of having once been in one.
+        # LAW 10 records the start and closing condition of an investigation.
+        # Tracking eligibility below also applies to an outsider in dioktes.
         dioktes = e.get("dioktes", "")
         if dioktes:
             if status != "outsider":
@@ -443,8 +453,16 @@ def well_formed(inv: dict) -> list[str]:
                            "with no stated end is a posture")
 
         if status == "outsider":
+            if "volunteered" in e and not owner_volunteered(e):
+                bad.append(f"{name}: `volunteered` needs a YYYY-MM-DD date, "
+                           "an owner and evidence of the owner's offer")
+            if not outsider_trackable(e):
+                bad.append(f"{name}: an outsider needs public release and "
+                           "publication, or a recorded owner offer under LAW 9.4; "
+                           "both `released` and `published` must be filled in")
             pub = e.get("published", "")
-            if pub and pub not in ("none", "unknown") and "http" not in pub \
+            if isinstance(pub, str) and pub.strip() \
+                    and pub.strip().lower() not in ("none", "unknown") and "http" not in pub \
                     and len(pub) < 12:
                 bad.append(f"{name}: `published` is {pub!r}; write the paper it "
                            "cites, `none` where somebody established there is "
@@ -814,10 +832,9 @@ def main() -> int:
         if name.startswith("_"):
             continue
         status = e.get("status", "?")
-        if status == "outsider" and str(e.get("published") or "").strip().lower() \
-                in ("", "none", "unknown"):
+        if status == "outsider" and not outsider_trackable(e):
             notes.append(f"{name}: treated as private under LAW 9; "
-                         "publication is absent or unknown, so no checkout was inspected")
+                         "outsider eligibility is not established, so no checkout was inspected")
             continue
         if status == "child":
             parent = e.get("parent", "")

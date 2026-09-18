@@ -584,6 +584,20 @@ the historical link to the earlier permission rule names its recorded revision.
 LAW 9.6 explicitly connects unknown publication status to the inventory's
 `published` field, which records the publication required by LAW 9.2.
 
+### Outsider exceptions and private investigations were clarified — 2026-09-18
+
+At the maintainer's request, projects with unknown publication stay out of the
+register unless their owners volunteer them. The exception is recorded in
+`volunteered` with a date, owner and evidence; `released` and `published` still
+record the actual facts. The audit validates the offer's form and honors it
+before reading a checkout. Tests cover ordinary eligibility, volunteered
+exceptions, missing facts and malformed offers.
+
+The maintainer added LAW 10.3 reserving private continuation after a stop
+request. LAW 10.2 now ends public reporting and further contact, resolving its
+earlier prohibition on continuing quietly. Private work remains subject to
+LAW 9. The glossary, inventory guidance and section references now agree.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
