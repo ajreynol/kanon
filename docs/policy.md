@@ -710,11 +710,18 @@ member's CI is theirs.
 
 ## The handoff policy
 
-Role handoffs follow [`roles.md`](roles.md#how-a-role-is-handed-off);
-replacement of a stub follows
-[`PROTO-20`](protocols.md#proto-20--the-handoff-protocol). History and letters
-stay in the repository that held the office, under
+Role handoffs follow [`roles.md`](roles.md#how-a-role-is-handed-off).
+History and letters stay in the repository that held the office, under
 [LAW 4](laws.md#law-4--presidential-records-historymd-and-the-successor-letter).
+
+### Replacing a stub
+
+Before deleting a placeholder for a tool, read the replacement repository to
+verify that it does the claimed work. Every repository participating in the
+handoff must have passing CI; absent or unverified CI is not a pass. A person
+accepts the replacement and records the handoff in both discussion files.
+Keep the stub if verification is incomplete. Replacing it confers no ownership
+of the name.
 
 ## Joining the Eunoia ecosystem
 

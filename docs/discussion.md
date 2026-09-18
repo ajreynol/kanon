@@ -127,7 +127,7 @@ in your tree stops working
 
 **What changed on our side.** **`PROTO-18`, the sleep protocol, is retired**,
 and `scripts/sleep.py` and `scripts/schedule.json` are deleted from this tree.
-[`protocols.md`](protocols.md) carries the id with no protocol behind it, the
+[The protocol register at that revision](https://github.com/ajreynol/kanon/blob/f2262444e2d9dafa823820103fdaafac7252500a/docs/protocols.md) carries the id with no protocol behind it, the
 way every other retired entry reads, and `INST-1` is withdrawn from
 [`maintenance.md`](maintenance.md). **Nothing in this ecosystem now binds
 anybody to a working window.**

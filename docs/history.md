@@ -122,7 +122,11 @@ At the maintainer's direction, all on one day.
   them recording a glossary correction.** That entry is gone and this one is
   shorter than the three it replaces.
 
-*Re-derive:* `git log -p docs/laws.md docs/roles.md docs/protocols.md docs/policy.md`.
+*Re-derive:*
+
+```sh
+git log -p docs/laws.md docs/roles.md docs/protocols.md docs/policy.md
+```
 
 ### `eo_init` and `eo_join` went to koine — 2026-09-17
 
@@ -284,7 +288,7 @@ tree; a second and by then divergent copy of that program was in epikrisis's
 in three trees, and **no reader could assemble how it was supposed to work** —
 a defect in the arrangement rather than in any one piece.
 
-Retired in place: [`protocols.md`](protocols.md) carries `PROTO-18` with no
+Retired in place: [the protocol register](https://github.com/ajreynol/kanon/blob/f2262444e2d9dafa823820103fdaafac7252500a/docs/protocols.md) carries `PROTO-18` with no
 protocol behind it, `INST-1` is withdrawn from
 [`maintenance.md`](maintenance.md), and `scripts/sleep.py` and
 `scripts/schedule.json` are deleted. **Nothing in this ecosystem now binds
@@ -597,6 +601,27 @@ The maintainer added LAW 10.3 reserving private continuation after a stop
 request. LAW 10.2 now ends public reporting and further contact, resolving its
 earlier prohibition on continuing quietly. Private work remains subject to
 LAW 9. The glossary, inventory guidance and section references now agree.
+
+### The numbered protocol system was retired — 2026-09-18
+
+At the maintainer's request, the `PROTO-*` catalogue and `docs/protocols.md`
+were removed. The page contained 7,181 words, largely duplicating rules or
+turning ordinary collaboration into named procedures. All allocated protocol
+ids are retired and will not be reused; the
+[previous register](https://github.com/ajreynol/kanon/blob/f2262444e2d9dafa823820103fdaafac7252500a/docs/protocols.md)
+preserves their definitions.
+
+Stub replacement requirements now sit in the policy's handoff section.
+Project registration and brief guidance for working with an agent sit in the
+maintenance guide. Joining and discussion remain in policy, role transfers in
+the laws and role register, humour in LAW 6, research boundaries in LAW 8, and
+report-card updates in stathmos. Anoieu retains its reporting workflow.
+
+Mandatory protocol announcements, session reminders, approval blocks and the
+document-promotion scheme are removed. The useful requirements to stop on
+request, preserve Git history during rollback and report evidence remain in
+ordinary prose. Current indexes and ownership descriptions no longer name the
+deleted page; historical references name its recorded revision.
 
 ## Membership changes during this term
 

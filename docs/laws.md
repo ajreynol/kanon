@@ -275,8 +275,7 @@ and must not fail a build.
 
 The president keeps the following shared documents current, clear and concise:
 the policy in [`docs/policy.md`](policy.md), the development vision in
-[`docs/vision.md`](vision.md), the named exchanges in
-[`docs/protocols.md`](protocols.md), the vocabulary and name register in
+[`docs/vision.md`](vision.md), the vocabulary and name register in
 [`docs/glossary.md`](glossary.md), and the role register in
 `docs/roles.md`.
 

@@ -103,9 +103,11 @@ the frame — and each turn added structure that made the next correction more
 expensive. The rollback was cheap **only because it was fast**, and nothing had
 cited the work yet.
 
-That is now `PROTO-17`, which says a person may stop a direction in one word and
-that recency alone justifies removal. **The protocol is written; the claim under
-it is not established**, and that is what this request is for.
+The case produced the former
+[`PROTO-17`](https://github.com/ajreynol/kanon/blob/f2262444e2d9dafa823820103fdaafac7252500a/docs/protocols.md#proto-17--the-emergency-protocol),
+which let a person stop a direction in one word and treated recency as grounds
+for removal. **The claim behind it is not established**, and that is what this
+request is for.
 
 ### What it would ask
 
@@ -330,8 +332,7 @@ already been told from outside that it is better at diagnosis than treatment.
 **On 2026-09-02 a person asked for an inventory of when each member joined.**
 Reading three trees and running one existing command produced, in minutes, a
 result nobody had suspected: **all three members pinned a commit our own CI had
-failed**, so a requirement we published as hard has never been satisfiable. It
-is written up in [`../../../docs/protocols.md`](../../../docs/protocols.md).
+failed**, so a requirement we published as hard has never been satisfiable.
 
 That is a real demonstration and it demonstrates **detection**, not correction.
 Three honest limits, and they are the content of this request:

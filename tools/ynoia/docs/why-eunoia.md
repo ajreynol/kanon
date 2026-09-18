@@ -122,9 +122,7 @@ the most, and it is the one that is free.
 **A project that launches stops being documented here.** Its description is
 deleted — not marked stale — and it documents itself at its source; what is left
 behind is one line saying where it went. Whatever argument this page was making
-*with* it stays, because the argument is what this page is for. The general form
-of the rule, and why deletion beats a stale-marker, is in
-[`../../../docs/protocols.md`](../../../docs/protocols.md).
+*with* it stays, because the argument is what this page is for.
 
 ## How the numbering works
 

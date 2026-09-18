@@ -192,8 +192,7 @@ nobody has the authority to settle. How a repository is arranged, what its
 front page must say about who is writing it, how tools talk to one another, and
 what a child project may do. Written to be adopted rather than admired, and
 machine-checked in every member's CI.
-**Owns:** `docs/policy.md`, `docs/vision.md`, the named exchanges in
-`docs/protocols.md`, and the ecosystem's vocabulary and
+**Owns:** `docs/policy.md`, `docs/vision.md`, and the ecosystem's vocabulary and
 authoritative name register in `docs/glossary.md` (kept current by the
 president).
 

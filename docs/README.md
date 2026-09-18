@@ -13,7 +13,6 @@ that have been demoted.
 | [`vision.md`](vision.md) | the five tenets this development aims at, the argument for them, and what follows for anything that leaves the repository. Argued, and never checked |
 | [`laws.md`](laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
 | [`glossary.md`](glossary.md) | the authoritative name register and alphabetized dictionary of eo's terms, maintained by the president |
-| [`protocols.md`](protocols.md) | the register of named exchanges: between a person and an agent, and between one repository and another |
 
 ## The office, and this term's work
 
@@ -27,12 +26,9 @@ that have been demoted.
 
 ## Demoted
 
-**[`PROTO-22`](protocols.md) is the rule.** A page goes to `misc/` when cleaning
-it up properly would cost more than it is worth today. It keeps working, it
-stays linked, and what changes is only the claim the layout makes about it —
-it is no longer offered as one of the places a question is answered. **A
-`misc/` that grows is a symptom rather than a filing system**, so the count
-below is the thing to watch.
+[`policy.md`](policy.md#the-layout) defines `docs/misc/` as optional background.
+These pages remain available for the record; keeping one here is not a reason
+to postpone deciding whether it should be updated, merged or removed.
 
 | document | what it is |
 | --- | --- |

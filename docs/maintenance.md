@@ -9,8 +9,8 @@ way: an agent summarising what the tools here would tell you has no way to
 check that it summarised them fairly. **If a line here does not match what a
 tool actually says, the tool is right and this page is stale.**
 
-[`protocols.md`](protocols.md) records the named exchanges and how a person
-directs an agent. **Each command documents itself**, at the top of its own file.
+Shared requirements are in [`policy.md`](policy.md) and [`laws.md`](laws.md).
+**Each command documents itself**, at the top of its own file.
 
 ## Where to start
 
@@ -39,6 +39,28 @@ when the recorded president lacks `docs/laws.md` or `docs/history.md`, under
 withdraw the appointment. The command's
 `--help` describes its current coverage and limits.
 
+## Recording a new project
+
+A person chooses its footing and authorizes any new repository. `eo_init` can
+draft a README for new work or a project moving out of a child directory.
+
+1. Read the project's own description when inspection is permitted under
+   [LAW 9](laws.md#law-9--external-research-release-publication-and-permitted-comparisons).
+   Record its footing and required evidence in
+   [`ecosystem.json`](../scripts/ecosystem/ecosystem.json).
+2. Include existing children, advertised or not, under their parent. Record
+   names in use and their footings in [`glossary.md`](glossary.md); unused
+   naming ideas stay with proposals.
+3. Run `scripts/eo_status_audit --check` and the regression suite. Use
+   `scripts/repos.local` for an existing checkout outside the normal search
+   locations; local paths do not belong in the shared inventory.
+4. Installation uses the inventory and `checkouts.json` exceptions. Children
+   arrive with their parent; outsiders are not cloned. A child's README
+   controls its [listing preference](policy.md#child-projects).
+
+Joining through `eo_join` is the owner's choice. No welcome message or
+post-join grade is required.
+
 ## What this repository is responsible for
 
 | what | where |
@@ -51,7 +73,6 @@ withdraw the appointment. The command's
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
 | what we are saying to other tools | [`discussion.md`](discussion.md) |
-| the protocols | [`protocols.md`](protocols.md) |
 | maintaining this tree | this page |
 
 **The analyzer, the fuzzer, the policy checker and the findings workflow are
@@ -83,9 +104,23 @@ run and their output reported.
 
 **What never comes back**, whatever you ask for: anything sent to another
 repository, any repository created, anything pushed, posted or published. Those
-are structural — no code here can do them — and the reason is in
-[`protocols.md`](protocols.md): the path from an idea to a public artifact must
-have a person in it.
+are structural — no code here can do them. The path from an idea to a public
+artifact must have a person in it.
+
+### Working with an agent
+
+When asked to stop, stop and summarize what changed. If a rollback is requested,
+confirm its boundary when unclear and restore through forward changes without
+rewriting history. Point out affected published or pinned versions.
+
+Read available evidence before asking questions. Continue authorized work that
+does not depend on an answer, and ask only when different interpretations
+would lead to consequentially different actions. Report concrete changes,
+checks and remaining uncertainty. When approval is needed, state the exact
+action and its evidence; no fixed approval block is required.
+
+Before making a claim about another project, check the source and its version
+when access is permitted, date the claim, and say what could not be verified.
 
 ### The decisions only you can make
 
@@ -130,11 +165,9 @@ difference between work happening and a clarifying question coming back.
 **Say what you want back**: a judgement, a draft, or a change. The three have
 very different costs and the wrong guess wastes a whole turn.
 
-**Ask for removals, not only additions.** Every protocol here is held to *an
-addition says what it removes*, and the counter that watches it has reported
-three rounds and three increases. Nothing counts pages at all. A prompt that
-says *what comes out* is the one that moves that number, and it is rarely asked
-for.
+**Ask for removals, not only additions.** Ask what a new rule or document
+replaces, and what can be shortened or deleted. A prompt that says *what comes
+out* makes that tradeoff explicit.
 
 **State the conservatism you want.** *We are still testing whether this
 workflow is safe* changes what gets done, not just how it is described — it is
@@ -223,10 +256,7 @@ not be made quietly.
 page they already agree with will approve a well-argued twenty lines. **A bound
 checked by counting cannot be argued with**, and it forces the same discipline
 on every edit: a change needing more than five lines is not a vision change, it
-is a document that belongs elsewhere with one sentence pointing at it. **The
-vision holds claims, not their justifications** — which is why the argument for
-the line about enjoying this lives in `PROTO-25` below and the line itself
-lives there.
+is a document that belongs elsewhere with one sentence pointing at it.
 
 **Nothing may ever check the vision mechanically.** Whether a tool is fruitful
 or a claim oversold is contestable and nobody has standing to settle it, so a

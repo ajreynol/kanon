@@ -47,7 +47,6 @@ first.
 | [`docs/vision.md`](docs/vision.md) | the five tenets this development aims at, the argument for them, and what follows for anything that leaves the repository. Argued, and never checked |
 | [`docs/laws.md`](docs/laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
 | [`docs/glossary.md`](docs/glossary.md) | the authoritative name register and alphabetized dictionary of eo's terms, maintained by the president |
-| [`docs/protocols.md`](docs/protocols.md) | the register of named exchanges — between a person and an agent, and between one repository and another |
 
 ### The office, and this term's work
 
