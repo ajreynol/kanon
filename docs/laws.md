@@ -269,7 +269,7 @@ Aim to keep [`docs/history.md`](history.md) under 10,000 words, focused on what
 a successor may find useful. Excess length or a minor entry is not a violation
 and must not fail a build.
 
-## (LAW 5) — Presidential tenets: maintaining the shared documents
+## (LAW 5) — Presidential decrees: maintaining the shared documents
 
 ### (LAW 5.1) — Keeping shared documents current
 
@@ -290,31 +290,12 @@ transfer follows [LAW 3.2](#law-32--transferring-presidential-roles-and-child-pr
 
 ### (LAW 5.2) — Recommended word limits for shared documents
 
-A recommended length, and nothing more. The policy, the vision and the
-role register each stay under 10,000 words, with 7,000 the number to aim
-at. A word count measures the length; no build fails on the answer.
+Aim for 7,000 words and stay under 10,000 each for the policy, the vision
+(across all files), and the role register's explanatory prose. These are
+recommendations: exceeding them is not a violation and must not fail a build.
 
-These limits cover the policy in [`docs/policy.md`](policy.md), which states
-members' obligations; the vision in [`docs/vision.md`](vision.md), which explains
-the work's purpose and what follows for anything that leaves the repository;
-and the role register in `docs/roles.md`, which assigns responsibility.
-Splitting the vision across files does not increase its budget.
-For the role register, the limit applies to explanatory prose around the
-entries, so instructions for reading the register do not outweigh the entries.
-
-Count words, not lines.
-
-Over the ceiling is not a violation. It is a signal that something on the
-page has stopped being load-bearing, and the repair is to find that thing
-rather than to shave evenly.
-
-Growth is paid for. A change that adds a rule says what it replaces, or
-argues that the page is now worth more of a reader's time than it was.
-
-What comes out first, in order: a copy of something a script already
-carries; an account of how a rule came to be; a paragraph defending a rule
-against an objection nobody raised; and a second sentence that restates the
-first.
+Cut repetition and unnecessary explanation. A change adding a rule states
+what it replaces or justifies the extra reading time.
 
 <a id="law-61--front-page-placement"></a>
 <a id="law-62--describing-the-work"></a>
@@ -371,10 +352,20 @@ For external projects, [tracking][tracking] records their work as context for as
 Its conclusions concern our work. Differences in activity over a period do
 not establish differences in quality.
 
-It is never an assessment of their work, a grade, a report-card row, a finding
-filed against them, or a proposal that they join anything. An outsider is
-never proposed for promotion: they were not asked and owe this ecosystem
-nothing.
+An `outsider` is an external project that is both an **public tool** and
+**published research**. Outsiders may be tracked by our tooling.
+
+On the other hand, research tools that do not fit this requirement (either they
+are not publicly available, or refer to unpublished work) are **not**
+marked as outsiders by our ecosystem and thus **cannot** be tracked.
+We treat such tools as private.
+The assessment of an outsider status must be backed by a public repository
+**and** a reference to a publication.
+
+The owners of an external tool can volunteer their tool to be
+considered and `outsider` by these standards, even if it does not meet these
+requirements.
+
 
 <a id="why-it-binds-us-and-nobody-else"></a>
 <a id="our-responsibilities-when-recording-external-work"></a>
@@ -385,35 +376,6 @@ read and states that the project did not ask to be measured.
 <a id="law-95--release-and-publication"></a>
 <a id="law-91--release-and-publication"></a>
 
-### (LAW 9.1) — Distinguishing released code from published research
-
-Two things can be made public, and they are not the same act. A tool is
-released when its authors put the code where anybody can read it. A work is
-published when its authors have staked an intellectual claim on it in
-public — a paper, a report, something with their argument in it and their names
-on it. A great many public tools are not published in that second sense,
-and some of them are public precisely because the work is still being written
-up.
-
-Both are recorded, separately, against every outsider entry. Conflating
-them is the mistake this law exists to prevent, because what each permits is
-different.
-
-<a id="what-each-state-permits"></a>
-<a id="permitted-use-by-release-and-publication-status"></a>
-<a id="law-91--released-but-unpublished"></a>
-<a id="law-92--released-but-unpublished"></a>
-
-### (LAW 9.2) — Released code without published research
-
-Released, and not published: treat the work as private. We do not look at it.
-Do not read its code or documentation, run it, inspect its activity, track it
-or compare it with our work. Public access does not give us permission to
-examine unpublished research.
-
-<a id="law-92--unknown-publication-status"></a>
-<a id="law-93--unknown-publication-status"></a>
-
 ### (LAW 9.3) — External work with unknown publication status
 
 Publication unknown: treat the work as private under
@@ -423,25 +385,6 @@ is established, the same prohibition on inspection and [tracking][tracking] appl
 
 <a id="law-93--published-work"></a>
 <a id="law-94--published-work"></a>
-
-### (LAW 9.4) — Discussing published research
-
-Published: the contribution may be discussed, on its own terms.
-Once authors have made their argument in public, engaging with it is ordinary
-scholarship: cite the publication, represent it as they stated it, and argue
-with the claim rather than characterising the project. A published paper is
-what we compare against; the repository is only where the code is.
-
-<a id="law-94--unreleased-and-unpublished-work"></a>
-<a id="law-95--unreleased-and-unpublished-work"></a>
-
-### (LAW 9.5) — Permission for unreleased and unpublished work
-
-Neither released nor published: no [tracking][tracking] without permission.
-No entry, no measurement, no positioning, no note that it exists. The one way
-through is the permission of that work's maintainer, recorded with the entry,
-and its absence means the entry does not exist rather than that nobody has
-asked.
 
 <a id="law-10--in-dioktes-when-we-go-looking-for-defects-in-somebody-elses-tool"></a>
 
@@ -465,26 +408,14 @@ A person decides, and it is declared. The state is recorded
 against that tool in the register, with the date it began and what closes it.
 
 <a id="law-102--informing-the-owner-first"></a>
-
-### (LAW 10.2) — Giving defects to maintainers before publication
-
-Nothing is published about a defect before its owner has it.
-Findings go through the ordinary reporting discipline — confirmed, reduced,
-and put to whoever the authority is — and being *in dioktes* lowers that standard by
-nothing.
-
+<a id="law-102--giving-defects-to-maintainers-before-publication"></a>
 <a id="what-it-does-not-license"></a>
 <a id="limits-on-reporting-external-defects"></a>
 
-- A count is never a score. The number of defects we found says which of
-  our checks tripped, and never how sound their tool is. Publishing it as a
-  measure of the tool is overselling with a number attached.
-- No comparison. Not against our tools, not against another outsider, not
-  against a previous version of theirs. A pursuit produces findings, and a
-  ranking is a different artifact that nobody asked us to make.
-- No characterisation of the project. *We found three defects in X* is ours
-  to say when it is true. *X is poorly tested* is not, and never becomes so by
-  the first sentence being true many times.
+### (LAW 10.2) — Reporting external defects
+
+Reporting and publication follow
+[anoieu's reporting policy](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md).
 
 <a id="leaving-it"></a>
 <a id="ending-an-external-defect-investigation"></a>

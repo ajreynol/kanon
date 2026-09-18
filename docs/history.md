@@ -566,6 +566,15 @@ the separate released-and-published prerequisite and includes LAW 9.5's
 permission exception. The introduction is shorter; declaration, reporting and
 ending requirements remain. The inventory guidance uses the same eligibility.
 
+### Laws 5.2 and 10.2 were shortened — 2026-09-18
+
+At the maintainer's request, LAW 5.2 now states its recommended word limits,
+scope and requirement to justify added rules in two short paragraphs. The
+detailed editing advice was reduced to cutting repetition and unnecessary
+explanation. LAW 10.2 now delegates reporting and publication to anoieu's
+reporting policy, removing its separate maintainer-first publication rule and
+reporting restrictions. Existing section links still resolve.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
