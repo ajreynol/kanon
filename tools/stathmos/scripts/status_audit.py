@@ -96,17 +96,12 @@ REQUIRED = {
     # is the intellectual claim -- a paper, with an argument in it and its
     # authors' names on it -- and a great many public tools have none yet.
     #
-    # Released but not published means we may track the artifact and **not the
-    # contribution**: no positioning of our ideas against theirs, because a
-    # repository with no paper behind it may be under review or being written up
-    # right now, and we do not get to frame somebody's contribution before they
-    # have. So `published` is required, and takes one of three values: a
-    # citation, `"none"` where somebody established there is no paper, or
-    # `"unknown"` where nobody has looked. The third exists because `"none"` is
-    # a claim about somebody else's work -- asserting a project has published
-    # nothing, when it has, is a falsehood in our register about them.
-    # `"unknown"` permits exactly what `"none"` permits, so the careful
-    # behaviour is what happens when nobody knows.
+    # Released but unpublished work is treated as private: no inspection or
+    # tracking, including its activity. `published` is a citation, `"none"`
+    # where the absence of a publication is established, or `"unknown"` where
+    # its status is unknown. Both values prohibit reading the checkout.
+    # An absent value also prevents inspection; inventory validation separately
+    # reports the missing field.
     #
     # Neither is printed in any table: they back the footing rather than
     # describing the tool.
@@ -819,6 +814,11 @@ def main() -> int:
         if name.startswith("_"):
             continue
         status = e.get("status", "?")
+        if status == "outsider" and str(e.get("published") or "").strip().lower() \
+                in ("", "none", "unknown"):
+            notes.append(f"{name}: treated as private under LAW 9; "
+                         "publication is absent or unknown, so no checkout was inspected")
+            continue
         if status == "child":
             parent = e.get("parent", "")
             if parent not in parent_paths:

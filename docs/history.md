@@ -493,6 +493,31 @@ LAW 7 now explicitly assigns maintenance of the laws to the president for the
 current arrangement and allows that responsibility to be reassigned. No role
 has changed holder. The amendment-recording requirement remains in place.
 
+### Document paths and current checking roles were clarified — 2026-09-18
+
+At the maintainer's request, the laws now show repository-relative document
+paths and link directly to kanon's copies, including `docs/history.md`.
+LAW 3.3 names anoieu as the current policy-checker holder and stathmos as the
+current status-audit holder, linking to their role entries. These clarifications
+make the referenced files and responsibilities easier to find; no rules or
+holders changed.
+
+### Unpublished external work is treated as private — 2026-09-18
+
+At the maintainer's request, LAW 9.2 now prohibits inspecting or tracking
+released work without published research: public access is not permission to
+examine it. This is a rule change, removing the previous permission to read
+documentation and measure activity. LAW 9.3 applies the same restriction when
+publication is unknown. LAW 10.1 no longer permits defect investigations
+regardless of publication.
+
+The inventory guidance and audit comments now match. The status audit skips
+outsiders with absent or unknown publication before locating or reading their
+checkouts; a regression checks that those reads cannot occur.
+
+The maintainer also removed the redundant glossary entry for "candidate laws";
+the phrase remains plain text in the laws' introduction.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

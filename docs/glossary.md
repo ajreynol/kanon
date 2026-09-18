@@ -104,11 +104,6 @@ ecosystem would like to join, but which has not joined and owes nothing. It
 records our interest, not their consent. See
 [the footings](policy.md#the-footings).
 
-<a id="candidate-laws"></a>
-**candidate laws** (governance rules; *plural noun*): The voluntarily followed
-rules about footings and the presidency. They are maintained by the party they
-bind and are not mechanically enforced. See [the laws](laws.md).
-
 <a id="carcara"></a>
 **carcara** (Eunoia outsider; *proper noun*): An outside proof checker and
 elaborator for [Alethe](#alethe), tracked for comparison.

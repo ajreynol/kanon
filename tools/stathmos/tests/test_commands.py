@@ -267,7 +267,8 @@ class Verification(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp:
             inv = Path(temp) / "inventory.json"
             inv.write_text(json.dumps({
-                s: {"status": s, "what": "example"} for s in statuses
+                s: {"status": s, "what": "example", "published": "Example paper, 2026"}
+                for s in statuses
             }))
             out = io.StringIO()
             with patch.object(ecosystem, "INVENTORY", str(inv)), \
@@ -282,6 +283,27 @@ class Verification(unittest.TestCase):
         output, checker = self.status_of(["outsider"], ("ok", []))
         checker.assert_not_called()
         self.assertIn("not held", output)
+
+    def test_unpublished_outsiders_are_not_inspected(self):
+        for publication in ("none", "unknown", "", None):
+            with self.subTest(publication=publication), tempfile.TemporaryDirectory() as temp:
+                inv = Path(temp) / "inventory.json"
+                entry = {"status": "outsider", "what": "example"}
+                if publication is not None:
+                    entry["published"] = publication
+                inv.write_text(json.dumps({"example": entry}))
+                out = io.StringIO()
+                with patch.object(ecosystem, "INVENTORY", str(inv)), \
+                     patch.object(ecosystem, "locate") as locate, \
+                     patch.object(ecosystem, "topics_for") as topics, \
+                     patch.object(ecosystem, "age") as age, \
+                     patch.object(ecosystem, "check") as check, \
+                     patch.object(sys, "argv", ["eo_status_audit"]), \
+                     contextlib.redirect_stdout(out):
+                    self.assertEqual(ecosystem.main(), 0)
+                for reader in (locate, topics, age, check):
+                    reader.assert_not_called()
+                self.assertIn("treated as private", out.getvalue())
 
     def test_an_associate_is_checked_but_is_never_at_fault(self):
         # It owes us nothing, so the number is a measurement. `tracked` rather
