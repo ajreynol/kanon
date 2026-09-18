@@ -35,7 +35,7 @@ The authoritative register is
 An entry with `status: president` identifies the current holder. The offline
 audit rejects multiple holders. In the status table, the audit reports limbo
 when the recorded president lacks `docs/laws.md` or `docs/history.md`, under
-[LAW 5.1](laws.md#law-51--when-the-recorded-president-cannot-maintain-the-office); that observation does not fail a build or
+[LAW 3.4](laws.md#law-34--when-the-recorded-president-cannot-maintain-the-office); that observation does not fail a build or
 withdraw the appointment. The command's
 `--help` describes its current coverage and limits.
 

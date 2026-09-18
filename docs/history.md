@@ -530,6 +530,28 @@ LAW 8's conciseness guidance is now LAW 5.2, keeping the same recommended word
 limits and scope. LAW 8 remains an empty placeholder; Laws 9 and 10 keep their
 numbers. The policy links to LAW 5.2, and old anchors reach the moved text.
 
+### LAW 5's scope was separated from the laws — 2026-09-18
+
+At the maintainer's request, LAW 5 covers the listed shared documents and
+does not depend on LAW 7 or govern the laws themselves. Limbo moved to LAW 3.4,
+with current links updated and old anchors preserved. LAW 5.1 now names the
+documents to maintain; the guidance on the laws' own length moved to LAW 7.
+
+The maintainer also removed LAW 7.2 as overly procedural. Its requirement
+to preserve outcomes and distinguish rule changes from editorial rewrites,
+including the shortening requirement in LAW 5.2, is removed. LAW 7.1 still
+requires amendments to be recorded with their reasons.
+
+Links from the laws to the role register were removed at the maintainer's
+request. Anoieu and stathmos now link directly to their project roots.
+
+### LAW 8 now covers Eunoia's research boundaries — 2026-09-18
+
+At the maintainer's request, LAW 8 replaces its placeholder with a broad rule
+about what Eunoia does not research. It names aisthesis as the current holder
+of that account and links to its repository. The wording deliberately leaves
+the boundaries with aisthesis rather than enumerating them in the laws.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

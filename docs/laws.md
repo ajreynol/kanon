@@ -5,7 +5,7 @@ Candidate laws, followed voluntarily. They describe the ecosystem's
 outside the ecosystem. Programs can check recorded facts and policy compliance;
 passing those checks does not establish that these commitments have been met.
 
-[`docs/roles.md`](roles.md) records who holds each responsibility; project charters
+`docs/roles.md` records who holds each responsibility; project charters
 define its scope. [`docs/maintenance.md`](maintenance.md) locates the current tools
 and registers, and [`docs/policy.md`](policy.md) states the shared requirements.
 Moving a responsibility or its files does not itself change a law.
@@ -47,7 +47,7 @@ These laws leave the following questions unsettled:
    election or named duty to choose is established here. Recording a holder
    does not answer whose job it is to choose one.
 2. What happens if a stretch has no president. These laws establish no
-   vacancy arrangement. [LAW 5.1](#law-51--when-the-recorded-president-cannot-maintain-the-office) covers a recorded holder who cannot carry out
+   vacancy arrangement. [LAW 3.4](#law-34--when-the-recorded-president-cannot-maintain-the-office) covers a recorded holder who cannot carry out
    the office, and leaves the case of no holder unsettled.
 3. Who says no. Nothing here overrules a president, and [LAW 7](#law-7--maintaining-and-amending-the-laws) gives the
    president the page it would be overruled from.
@@ -134,7 +134,7 @@ procedure for removing a holder.
 <a id="law-5--presidency-the-ecosystem-register-identifies-the-holder"></a>
 
 The authoritative ecosystem register records who holds the presidency.
-Its custodian is named in [`docs/roles.md`](roles.md); its current location and
+Its custodian is named in `docs/roles.md`; its current location and
 auditing commands are described in [`docs/maintenance.md`](maintenance.md). Front
 pages, term accounts and letters do not create a competing record. Where they
 disagree, the register is authoritative and the other account is corrected.
@@ -161,7 +161,7 @@ office confers responsibilities without implying a project's merit.
 <a id="responsibilities-inherited-by-a-successor"></a>
 
 A successor takes on the duties these laws attach to the office. The
-current allocation of responsibilities is recorded in [`docs/roles.md`](roles.md).
+current allocation of responsibilities is recorded in `docs/roles.md`.
 
 A role or child project moves with the presidency only when its
 recorded responsibilities or charter explicitly attach it to the office.
@@ -183,14 +183,30 @@ Local maintenance instructions stay with the repository they describe.
 ### (LAW 3.3) — Separate responsibility for policy checks and status audits
 
 Checking policy compliance and auditing ecosystem status are separate
-responsibilities. The current holders are [anoieu](roles.md#r31--the-policy-checker)
-for policy checking and [stathmos](roles.md#r37--ecosystem-status-auditing) for
-status auditing, as recorded in [`docs/roles.md`](roles.md).
+responsibilities. The current holders are [anoieu](https://github.com/ajreynol/anoieu)
+for policy checking and [stathmos](../tools/stathmos/) for
+status auditing, as recorded in `docs/roles.md`.
 
 Members remain responsible for satisfying the policy. Hosting or moving an
 audit does not transfer the checking rules, change membership, or turn
 mechanical observations into judgements against the vision. Each
 responsibility follows its own recorded terms of transfer.
+
+<a id="in-limbo"></a>
+<a id="law-51--limbo"></a>
+<a id="law-51--when-the-recorded-president-cannot-maintain-the-office"></a>
+
+### (LAW 3.4) — When the recorded president cannot maintain the office
+
+A repository is in limbo when it is recorded as president but lacks
+the means to maintain the laws or keep its own term account. The office has
+moved and the means of holding it have not.
+
+A president in limbo makes ending limbo its first task.
+
+Limbo is reported for a person to resolve. It does not automatically
+revoke the appointment or fail a build. The remedy is to complete the handover
+or reverse the recorded appointment.
 
 <a id="law-4--the-president-writes-historymd-in-its-own-repository-and-a-letter-to-its-successor"></a>
 
@@ -255,33 +271,17 @@ and must not fail a build.
 
 ## (LAW 5) — Presidential tenets: maintaining the shared documents
 
-The president keeps the shared documents current, clear and concise. These
-include the policy in [`docs/policy.md`](policy.md), the development vision in
+### (LAW 5.1) — Keeping shared documents current
+
+The president keeps the following shared documents current, clear and concise:
+the policy in [`docs/policy.md`](policy.md), the development vision in
 [`docs/vision.md`](vision.md), the named exchanges in
 [`docs/protocols.md`](protocols.md), the vocabulary and name register in
 [`docs/glossary.md`](glossary.md), and the role register in
-[`docs/roles.md`](roles.md).
+`docs/roles.md`.
 
 The role register records the office's current responsibilities; their
 transfer follows [LAW 3.2](#law-32--transferring-presidential-roles-and-child-projects).
-Maintaining these laws follows [LAW 7](#law-7--maintaining-and-amending-the-laws),
-and keeping the term's history and successor letter follows
-[LAW 4](#law-4--presidential-records-historymd-and-the-successor-letter).
-
-<a id="in-limbo"></a>
-<a id="law-51--limbo"></a>
-
-### (LAW 5.1) — When the recorded president cannot maintain the office
-
-A repository is in limbo when it is recorded as president but lacks
-the means to maintain the laws or keep its own term account. The office has
-moved and the means of holding it have not.
-
-A president in limbo makes ending limbo its first task.
-
-Limbo is reported for a person to resolve. It does not automatically
-revoke the appointment or fail a build. The remedy is to complete the handover
-or reverse the recorded appointment.
 
 <a id="law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting"></a>
 <a id="law-8--reading-limits-for-the-policy-vision-and-role-register"></a>
@@ -297,7 +297,7 @@ at. A word count measures the length; no build fails on the answer.
 These limits cover the policy in [`docs/policy.md`](policy.md), which states
 members' obligations; the vision in [`docs/vision.md`](vision.md), which explains
 the work's purpose and what follows for anything that leaves the repository;
-and the role register in [`docs/roles.md`](roles.md), which assigns responsibility.
+and the role register in `docs/roles.md`, which assigns responsibility.
 Splitting the vision across files does not increase its budget.
 For the role register, the limit applies to explanatory prose around the
 entries, so instructions for reading the register do not outweigh the entries.
@@ -315,12 +315,6 @@ What comes out first, in order: a copy of something a script already
 carries; an account of how a rule came to be; a paragraph defending a rule
 against an objection nobody raised; and a second sentence that restates the
 first.
-
-Shortening must preserve the rules, as required by
-[LAW 7.2](#law-72--preserving-rules-when-rewriting-them).
-
-This page is not covered by the count and is expected to stay shorter than
-the documents above.
 
 <a id="law-61--front-page-placement"></a>
 <a id="law-62--describing-the-work"></a>
@@ -344,6 +338,9 @@ may add, remove or rewrite laws, taking advice from the rest of the ecosystem.
 No vote or formal amendment procedure is required. Changes remain in Git
 history, and a removal states what was removed and why.
 
+These laws have no word limit and are expected to stay shorter than the shared
+policy, vision and role register.
+
 <a id="law-71--recording-amendments"></a>
 
 ### (LAW 7.1) — Recording amendments to laws, policy and vision
@@ -353,14 +350,11 @@ Every change to this page, to [`docs/policy.md`](policy.md) and to
 [`docs/history.md`](history.md). Keep amendment notes there so the shared pages
 state the current rules.
 
-<a id="law-72--preserving-outcomes"></a>
+## (LAW 8) — Research boundaries: what Eunoia does not research
 
-### (LAW 7.2) — Preserving rules when rewriting them
-
-A rewrite must preserve outcomes. If the same cases produce
-different outcomes, record it as a rule change, not an editorial rewrite.
-
-## (LAW 8) — Placeholder
+Eunoia sets limits on what it researches and how far it takes that work.
+[aisthesis](https://github.com/ajreynol/aisthesis) currently maintains the
+account of what the ecosystem does not intend to pursue, and why.
 
 <a id="law-9--released-is-not-published-and-tracking-respects-the-difference"></a>
 
