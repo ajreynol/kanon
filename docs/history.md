@@ -318,6 +318,19 @@ check count nor the finding count moved** — the rule kept by deleting pages
 rather than by earning them. The table, and the part of it that is not to our
 credit, are in [`maintenance.md`](maintenance.md#the-governance-budget).
 
+### Status auditing moved to stathmos — 2026-09-18
+
+At the maintainer's direction, the implementation of `scripts/eo_status_audit`
+and its child-listing helper moved into `tools/stathmos/scripts/`. The public command
+stays in `scripts/`, so callers and CI use the same entry point. `R37` now
+records the audit separately from `R6`, which retains kanon's authoritative
+register and installation exceptions. Mechanical checks remain separate from
+the human report-card judgements under `R30`. `B31` retains only the notice to
+koine that revises the earlier reader-bundle handoff.
+
+*Re-derive:* `git log --follow -- tools/stathmos/scripts/status_audit.py`, and the
+`R6`/`R37` entries in [`roles.md`](roles.md).
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

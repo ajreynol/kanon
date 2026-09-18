@@ -9,6 +9,7 @@ import datetime
 import io
 import json
 import os
+import shutil
 import subprocess
 import sys
 import tempfile
@@ -100,6 +101,36 @@ class Commands(unittest.TestCase):
         result = self.command("scripts/eo_status_audit", "--online")
         self.assertEqual(result.returncode, 2)
         self.assertIn("--online requires --check", result.stderr)
+
+    def test_audit_launcher_reads_its_own_checkout_from_another_directory(self):
+        checkout = self.base / "kanon checkout"
+        for relative in ("scripts/eo_status_audit", "scripts/policy_check.py",
+                         "tools/stathmos/scripts/status_audit.py",
+                         "tools/stathmos/scripts/child_listing.py"):
+            target = checkout / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(ROOT / relative, target)
+        inventory = checkout / "scripts/ecosystem/ecosystem.json"
+        inventory.parent.mkdir(parents=True)
+        inventory.write_text(json.dumps({"example": {
+            "status": "member", "repo": "example",
+            "url": "https://example.invalid/example", "what": "fixture",
+        }}))
+        board = checkout / "docs/board.md"
+        board.parent.mkdir()
+        for entity, code in (("example", 0), ("unregistered", 1)):
+            with self.subTest(entity=entity):
+                board.write_text(f"**Entities:** `{entity}`\n")
+                result = subprocess.run(
+                    [str(checkout / "scripts/eo_status_audit"), "--check"],
+                    cwd=self.base, env=self.env, capture_output=True,
+                    text=True, timeout=30)
+                self.assertEqual(result.returncode, code, result.stderr)
+                self.assertIn("1 entries", result.stdout)
+                if code:
+                    self.assertIn("addresses `unregistered`", result.stdout)
+                else:
+                    self.assertIn("0 failure(s)", result.stdout)
 
     def test_search_roots_preserve_spaces_and_colons(self):
         # ANOIEU_REPOS is colon-separated and its entries may contain spaces.
@@ -265,4 +296,3 @@ class Verification(unittest.TestCase):
         output, _ = self.status_of(["associate"], ("ok", []))
         self.assertIn("ok", output)
         self.assertNotIn("tracked", output)
-

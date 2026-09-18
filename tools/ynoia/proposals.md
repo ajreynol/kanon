@@ -358,7 +358,7 @@ The third has grown since that sentence was written. It is now
 [`docs/policy.md`](../../docs/policy.md),
 [`scripts/policy_check.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/policy_check.py) — which runs in every
 member's CI — [`scripts/ecosystem/ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
-[`scripts/ecosystem/ecosystem.py`](../../scripts/ecosystem/ecosystem.py),
+the audit (now [`tools/stathmos/scripts/status_audit.py`](../stathmos/scripts/status_audit.py)),
 [`scripts/ecosystem/checkouts.json`](../../scripts/ecosystem/checkouts.json). That is a tool, and it is
 not the analyzer.
 

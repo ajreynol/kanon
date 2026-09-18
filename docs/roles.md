@@ -198,15 +198,15 @@ president).
 
 **The checker is a separate responsibility, `R31`, and is anoieu's.**
 
-### R6 — the inventory, and its auditing
+### R6 — the inventory
 
 **Held by:** `kanon`
-**Role:** who is in the ecosystem and on what footing, the command that reads
-that register, and the audit that checks it against the trees it describes and
-reports what has drifted.
+**Role:** who is in the ecosystem and on what footing: maintaining the
+authoritative register and the installation exceptions. Membership decisions
+remain a person's; stathmos audits the register under `R37`, and koine's
+`eo_status` reads it under `R16`.
 **Owns:** `scripts/ecosystem/ecosystem.json`,
-`scripts/ecosystem/checkouts.json`, `scripts/ecosystem/ecosystem.py`,
-and `scripts/eo_status_audit`.
+and `scripts/ecosystem/checkouts.json`.
 
 ### R32 — the laws of the office
 
@@ -337,6 +337,17 @@ and the evidence and protocol pages beside it.
 > tool it grades most closely. The stated destination is a repository of its
 > own, and the role keeps its id when it goes.
 
+### R37 — ecosystem status auditing
+
+**Held by:** `stathmos`
+**Role:** checking the register against the trees it describes and reporting
+status, local policy results, declaration drift and missing evidence. These
+mechanical checks do not grade adherence to the vision or decide membership.
+Split from `R6` on 2026-09-18; kanon retains the register.
+**Owns:** the public `scripts/eo_status_audit` launcher,
+[`tools/stathmos/scripts/status_audit.py`](../tools/stathmos/scripts/status_audit.py), and
+[`tools/stathmos/scripts/child_listing.py`](../tools/stathmos/scripts/child_listing.py).
+
 ## tekmerion
 
 ## ynoia
@@ -434,8 +445,8 @@ where a handoff goes looking for a taker.
 **The argument is about exactly one thing: the repository that writes the rules
 a member is judged by should not also be the one filing findings against
 them.** The filing sits with the analyzer; `R4` writes the rules, so it sits
-here. `R6` follows `R4`, because the audit that reads across both wants the
-register beside the policy rather than beside the ledger. And the position on
+here. `R6` keeps membership decisions beside the policy; stathmos's `R37`
+audits those decisions from the register. And the position on
 what may be published stays with the tool whose own behaviour it constrains.
 
 **The second of the three exists because an audit asked it and the procedure

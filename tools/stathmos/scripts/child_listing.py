@@ -1,4 +1,4 @@
-"""Read a parent's choice to advertise a child from the child's README.
+"""Read a parent's child-listing choice for stathmos's status audit.
 
 An exact, standalone declaration in the introduction (before the first section
 heading) sets the choice. Examples, comments and ordinary prose do not count.

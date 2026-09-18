@@ -354,8 +354,8 @@
     "status": "child",
     "parent": "kanon",
     "path": "tools/stathmos",
-    "short": "Writes the report card on the ecosystem's tenets",
-    "what": "writes and keeps the report card: how each tool stands against the ecosystem's tenets, at a recorded version, with the evidence each paragraph rests on -- argued and never checked, and a person may overrule any of it"
+    "short": "Audits ecosystem status and keeps the report card",
+    "what": "audits the ecosystem register against repository declarations and local policy checks; separately writes and keeps the report card against the vision, at recorded versions -- those grades are human judgements, never automated, and a person may overrule any of them"
   },
   "tekmerion": {
     "status": "child",

@@ -12,7 +12,7 @@
 # **Run `eo_status` for the table. Run this when the question is whether the
 # table is still true.**
 #
-# The public command for the implementation in scripts/ecosystem/ecosystem.py.
+# The public command for tools/stathmos/scripts/status_audit.py.
 #
 #   eo_status_audit                    # the table: status, policy, channel, moved, where, purpose
 #   eo_status_audit --verbose          # ... and why each policy verdict came out
@@ -36,4 +36,4 @@
 # is on this machine*, which is a fact about your disk.
 set -euo pipefail
 HERE=$(cd "$(dirname "$0")" && pwd)
-exec python3 "$HERE/ecosystem/ecosystem.py" "$@"
+exec python3 "$HERE/../tools/stathmos/scripts/status_audit.py" "$@"

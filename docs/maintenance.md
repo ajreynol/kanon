@@ -32,7 +32,8 @@ directs an agent. **Each command documents itself**, at the top of its own file.
 | policy and joining | [`policy.md`](policy.md) — the rule, not the commands that state it |
 | the development vision | [`vision.md`](vision.md) |
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
-| the register, and reading it back | `scripts/ecosystem/` |
+| the authoritative register and installation exceptions | `scripts/ecosystem/` |
+| the status audit, maintained by stathmos | `scripts/eo_status_audit` runs [`tools/stathmos/scripts/status_audit.py`](../tools/stathmos/scripts/status_audit.py) |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
 | what we are saying to other tools | [`discussion.md`](discussion.md) |

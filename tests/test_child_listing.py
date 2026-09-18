@@ -11,7 +11,7 @@ import unittest
 from unittest.mock import patch
 
 from support import ecosystem
-from child_listing import declaration, read_listing
+from tools.stathmos.scripts.child_listing import declaration, read_listing
 
 class Declarations(unittest.TestCase):
     def test_the_footing_marker_is_read_as_well_as_the_older_line(self):

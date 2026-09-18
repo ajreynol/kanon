@@ -42,35 +42,26 @@ until kanon carries one.**
 `kanon`:** proposing a style you have not adopted is the error this office
 exists to avoid. **HUMAN FEEDBACK:**
 
-## B31 — move ecosystem status auditing to stathmos
+## B31 — tell koine the status audit now belongs to stathmos
 
-**Task:** move `eo_status_audit`'s auditing responsibility and implementation to
-stathmos. Kanon keeps the authoritative register and its membership decisions;
-koine keeps the shared commands, including `eo_status`'s reading of the register.
-**Entities:** `kanon`, `stathmos`, `koine`
-**Status:** not started — the maintainer proposed stathmos as the audit's
-destination on 2026-09-18, revising the earlier plan to send the whole reader
-bundle to koine. `eo_respond` has already moved; the audit remains here.
-**Channel:** **internal** for stathmos; **discussion**, carried by a person,
-for the revised boundary with koine. [`D18`](discussion.md) records the earlier
-agreement, not this revision.
-**Next:** define the audit's split from `R6` and the shared reader code, with a
-concrete list of responsibilities and consumers for each holder.
-**Prompt — `kanon`:** separate custody of `ecosystem.json` from checking its
-claims. Map the audit's dependencies and callers, then update the role register
-and command paths as the implementation moves. Keep the existing command
-working through the handoff and keep this repository's document checks here.
-**Prompt — `stathmos`:** take on ecosystem status auditing and the evidence it
-produces. Update the charter to distinguish mechanically checked facts from the
-human judgements on the report card: policy and membership checks must never
-become automated grades against the vision. Preserve the audit's distinction
-between a failed check and missing evidence.
-**Prompt — `koine`:** our proposed destination for the auditing responsibility
-is now stathmos. Keep `eo_status` as the shared reader of the register, and
-agree which reusable helpers belong with that reader and how callers reach the
-audit. The register and its membership decisions remain kanon's.
-**HUMAN FEEDBACK:** 2026-09-18: move the eo status auditing functionality to
-stathmos.
+**Task:** carry the completed audit split to koine, revising the earlier plan
+to send the whole reader bundle there.
+**Entities:** `kanon`, `koine`
+**Status:** waiting on a person — the implementation moved to stathmos on
+2026-09-18 under `R37`; `scripts/eo_status_audit` remains the public command.
+**Channel:** **discussion**, carried by a person. [`D18`](discussion.md)
+records the earlier agreement, not this revision.
+**Next:** tell koine which responsibilities and paths now belong to stathmos.
+**Prompt — `kanon`:** carry the revised boundary to koine. The audit and its
+child-listing helper live in `tools/stathmos/scripts/`; the register, local checkout
+mapping and shared policy-checker launcher remain in `scripts/`. Document
+checks remain in this repository's tests.
+**Prompt — `koine`:** stathmos now maintains ecosystem status auditing under
+`R37`, reached through the existing `scripts/eo_status_audit` command. This
+revises our earlier reader-bundle handoff. Your `eo_status` remains the shared
+reader; the authoritative register and membership decisions remain kanon's.
+**HUMAN FEEDBACK:** 2026-09-18: keep `eo_status_audit` in `scripts/`, with its
+internal implementation in `tools/stathmos/scripts/`. Implemented.
 
 ## B18 — the associate protocol remains open for ethos
 

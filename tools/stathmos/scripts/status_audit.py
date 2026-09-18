@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Print the state of the Eunoia ecosystem: who is in it, and how they look.
+"""Stathmos's ecosystem status audit, run through scripts/eo_status_audit.
 
 No assistant and no prompting -- this is a local command that reads trees and
 reports. It is the thing to run when the question is *where does everything
@@ -60,11 +60,12 @@ import urllib.error
 import urllib.request
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROOT = os.path.dirname(os.path.dirname(HERE))
+ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
+sys.path.insert(0, ROOT)
 sys.path.insert(0, os.path.join(ROOT, "scripts"))
 from policy_check import policy_checker
-from child_listing import read_listing, unverified_note
-INVENTORY = os.path.join(HERE, "ecosystem.json")
+from tools.stathmos.scripts.child_listing import read_listing, unverified_note
+INVENTORY = os.path.join(ROOT, "scripts", "ecosystem", "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
                             os.path.join(ROOT, "scripts", "repos.local"))
 

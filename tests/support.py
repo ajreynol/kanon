@@ -26,7 +26,7 @@ def load(name, path):
 
 import policy_check  # scripts/ is on the path, set just above
 
-ecosystem = load("ecosystem_under_test", "scripts/ecosystem/ecosystem.py")
+ecosystem = load("ecosystem_under_test", "tools/stathmos/scripts/status_audit.py")
 
 
 def register() -> dict:
@@ -59,5 +59,3 @@ def anchors(path):
         counts[slug] = suffix + 1
     found.update(re.findall(r'(?:id|name)=[\"\']([^\"\']+)', text))
     return found
-
-

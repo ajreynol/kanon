@@ -390,8 +390,9 @@ proofs. See
 
 <a id="stathmos"></a>
 **stathmos** (Eunoia child project of [kanon](#kanon); *proper noun*): The
-author of the report card and keeper of its evidence. From Greek σταθμός, “a
-standard weight.” [Charter](../tools/stathmos/README.md).
+maintainer of ecosystem status auditing, author of the report card and keeper
+of its evidence. Mechanical checks and human grades remain separate. From
+Greek σταθμός, “a standard weight.” [Charter](../tools/stathmos/README.md).
 
 <a id="stretch"></a>
 **stretch** (term of office; *noun*): The period for which a repository holds
