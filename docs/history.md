@@ -368,6 +368,26 @@ outgoing president to choose and teach its successor, was removed on
 2026-09-14. Selection and vacancy remain unsettled; this pass neither restores
 that duty nor changes LAW 7's assignment of the laws to the president.
 
+### The laws received a lighter clarity pass — 2026-09-18
+
+The maintainer rejected a broad rewrite into instructions as excessive. This
+pass keeps the prose and structure, trims repetition, and labels important
+subclauses with dotted numbers for reference. Obligations, exceptions, advisory
+word limits and law numbers are retained; the purpose is to clarify rules
+without removing useful explanations.
+
+Current references now link to numbered paragraphs with explicit anchors. Seven further
+subdivisions identify the provisions those references need, preserving existing
+numbers. `D20` recommends the same approach for future references.
+LAW 10's tracking reference now names
+LAW 9.4's restriction on work that is neither released nor published; its own
+released-tool requirement is unchanged.
+
+The maintainer requested paragraph markers rather than subclause headings.
+The existing link targets are retained. Kanon's link tests accept them;
+anoieu's heading-only checker reports them as missing headings, a limitation
+recorded with the recommendation in `D20`.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
@@ -435,10 +455,12 @@ the first real separation and arrives by the office moving rather than by
 design. **The only real check remains the maintainer.**
 
 **Evidence** — every figure here re-derivable from the repositories and the
-public run history, per LAW 4, with the command beside it.
+public run history, per [LAW 4.1](laws.md#law-41--re-derivable-figures), with the
+command beside it.
 
-**The joke** — on the front page for the whole term, per LAW 6: what kanon
-sends is a **kanon-ball**. It doubles as description, which is the test it has
+**The joke** — on the front page for the whole term, per
+[LAW 6.1](laws.md#law-61--front-page-placement): what kanon sends is a
+**kanon-ball**. It doubles as description, which is the test it has
 to pass.
 
 **To the next president** — not yet. Written last, and positively, per the
@@ -846,8 +868,9 @@ composed for it**. Nobody sat down to invent any of them.
    substitution, a second sense of the word. This president once proposed a
    name on the grounds that it started with the right two letters, which is not
    an operation and described nothing.
-2. **The result has to describe the work**, which is LAW 6's own test. A joke
-   that tells a stranger nothing about what the tool does is decoration.
+2. **The result has to describe the work**, which is
+   [LAW 6.2](laws.md#law-62--describing-the-work)'s test. A joke that tells a
+   stranger nothing about what the tool does is decoration.
 3. **It must not flatter the tool.** Every working joke here is at its own
    expense, and that is not taste: LAW 6 exists because *a president that
    cannot leave one there has started to believe the office is important.*

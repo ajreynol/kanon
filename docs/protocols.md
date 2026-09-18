@@ -240,8 +240,8 @@ adopting a change.**
 ## `PROTO-25` — the joke protocol
 
 **A president keeps a joke about its own name on its front page, and that is
-where humour stops.** [LAW 6](laws.md) puts it there; this protocol keeps it
-there.
+where humour stops.** [LAW 6.1](laws.md#law-61--front-page-placement) puts it
+there; this protocol keeps it there.
 
 **Why the vision says to enjoy this.** The ecosystem requires every president
 to keep that joke for a whole term and gives any tool a veto over it. **Those

@@ -30,8 +30,9 @@ The authoritative register is
 [`scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json).
 An entry with `status: president` identifies the current holder. The offline
 audit rejects multiple holders. In the status table, the audit reports limbo
-when the recorded president lacks `docs/laws.md` or `docs/history.md`; that
-observation does not fail a build or withdraw the appointment. The command's
+when the recorded president lacks `docs/laws.md` or `docs/history.md`, under
+[LAW 5.1](laws.md#law-51--limbo); that observation does not fail a build or
+withdraw the appointment. The command's
 `--help` describes its current coverage and limits.
 
 ## What this repository is responsible for

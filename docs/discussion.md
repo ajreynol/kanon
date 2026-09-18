@@ -36,10 +36,51 @@ topic; writing it here does not deliver it or authorize work in another tree.
 
 **`Kanon-ball!` marks a topic whose request rests on [the laws](laws.md), and
 marks nothing else.** It is the president's front-page joke and confers no
-power over the recipient: `LAW 3` lets the office require nothing of a member
-that [`policy.md`](policy.md) does not already require. **A topic that is
+power over the recipient: [LAW 3.3](laws.md#law-33--authority-over-members) lets
+the office require nothing of a member that [`policy.md`](policy.md) does not
+already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
 a mark that said nothing.
+
+## D20 — cite the provision a claim depends on
+
+**To:** aisthesis, anoieu, dokimasia, epikrisis, eschaton, eudaimonia, kanon, koine, logos, tachyon
+**Kind:** notice
+**Opened:** 2026-09-18
+**Settles when:** recipients have read it; no reply or migration is required
+**Global:** No action owed; precise law references are recommended when editing
+
+The laws now have dotted subclause numbers and stable link targets. A reference
+to evidence can point to
+[re-derivable figures (LAW 4.1)](laws.md#law-41--re-derivable-figures),
+while one about keeping a successor letter out of the index can point to
+[the letter's status (LAW 4.3)](laws.md#law-43--the-successor-letter).
+Both previously sent readers to the whole law, which governs several different
+obligations.
+
+**Recommendation for future references:**
+
+- Link the smallest provision that supports the claim, with wording that tells
+  the reader why it is cited. Include the dotted identifier where useful.
+- Cite the whole law when the statement concerns the whole law, or several
+  clauses when it depends on more than one.
+- Let actual references guide subdivision: give a distinct, independently cited
+  obligation a subclause. Do not number every sentence.
+- Preserve existing identifiers and anchors. Assign new subclauses unused
+  numbers, even when they appear earlier in the text; update links with edits.
+- For a claim about an earlier rule, cite the version that applied. Do not
+  retarget an old claim to a current clause that no longer supports it.
+
+Our current documentation links to the numbered paragraphs, such as
+`laws.md#law-41--re-derivable-figures`. Existing whole-law heading links
+still resolve. This is a recommendation, not a new membership requirement or
+checker rule; the policy's instruction to cite policy rules by name is unchanged.
+
+**Checker limitation, 2026-09-18.** Subclauses are paragraph markers with
+explicit anchors. Kanon's document tests validate these links, but anoieu's
+current policy checker recognizes only heading anchors and reports the valid
+paragraph links as missing headings. Supporting explicit anchors belongs in
+the checker's link validation; it should not require making paragraphs headings.
 
 ## D19 — `PROTO-18` is retired, and martyria maintains what it pointed at
 

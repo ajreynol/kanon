@@ -5,8 +5,7 @@ footings, the presidency and its obligations, and what we owe to projects
 outside the ecosystem. Programs can check recorded facts and policy compliance;
 passing those checks does not establish that these commitments have been met.
 
-**Every one of them binds a person, never a program.** *Nobody here is an AI
-agent*, below, is the whole of what that means and is worth reading first.
+**Every one of them binds a person, never a program.**
 
 **These rules describe responsibilities that outlive their current holders.**
 [`roles.md`](roles.md) records who holds them, project charters state their
@@ -16,15 +15,14 @@ law. How a member satisfies the shared requirements belongs in
 [`policy.md`](policy.md).
 
 **They are written by the party they bind, and the president maintains them
-under LAW 7.** That limits their independence. They record the commitments
+under [LAW 7](#law-7--the-president-maintains-this-page).** That limits their independence. They record the commitments
 their maintainers choose to follow; writing them here gives no authority over
 a party that has not adopted them.
 
 ## Nobody here is an AI agent
 
 **Every repository in this ecosystem has a human maintainer, and that person is
-the ultimate authority over it.** Not a tie-breaker, not an approver of last
-resort — the authority. Everything below, and everything in
+the ultimate authority over it.** Everything below, and everything in
 [`policy.md`](policy.md), describes what that person has chosen to do and may
 stop doing at any time.
 
@@ -37,19 +35,12 @@ has no standing to act on its own behalf and is never the party to anything.**
 president* does something, it means the human maintainer of the repository
 holding the office. Where a page here says *a tool answers* or *a repository
 declines*, it is shorthand for the maintainer of that repository doing it.
-**The shorthand is convenient and it is not a claim**, and
-anywhere it could be read as one, the person is meant.
 
 **Nothing major happens without a person doing it.** No commit, no push, no
 repository, no message to another project, no change of footing, no handover of
-the office, no handoff. Several of those are reserved for a person by an
-explicit rule and the rest are reserved by the plain fact that an agent is
-invoked, does what it was asked, and stops.
+the office, no handoff.
 
-**This is not a safety guarantee and is not offered as one.** It is a
-description of how the work is actually run, and it is written down because the
-vocabulary here — offices, footings, presidents, tools addressing one another —
-can obscure who is responsible. The people directing the work remain
+**This is not a safety guarantee.** The people directing the work remain
 answerable for it, including text and code produced by agents.
 
 ## The same owner loophole
@@ -70,7 +61,7 @@ reader wanting to know what happened does not skip past procedure.
 It records what a reader cannot reconstruct from them: how often the build was
 broken, for how long, and what nobody was watching.
 [LAW 11](#law-11--historymd-is-kept-short-enough-that-a-successor-reads-it) puts
-a ceiling on it and says what earns an entry.
+a recommended ceiling on it and says what earns an entry.
 
 **It is not the report card.** The report card assesses tools against the
 ecosystem's aims. Its keeper and whether it moves with the office are recorded
@@ -78,8 +69,8 @@ in [`roles.md`](roles.md). Keeping an archive or an assessment does not confer
 the presidency.
 
 **It is not a defence.** A page written by the party it describes has an
-obvious failure mode, and the re-derivability requirement in LAW 4 is the only
-guard against it.
+obvious failure mode, and the re-derivability requirement in [LAW 4.1](#law-41--re-derivable-figures)
+is the only guard against it.
 
 ## What these laws do not settle
 
@@ -87,11 +78,11 @@ guard against it.
    election or named duty to choose is established here. Recording a holder
    does not answer whose job it is to choose one.
 2. **What happens if a stretch has no president.** These laws establish no
-   vacancy arrangement. LAW 5 covers a recorded holder who cannot carry out
+   vacancy arrangement. [LAW 5.1](#law-51--limbo) covers a recorded holder who cannot carry out
    the office, and leaves the case of no holder unsettled.
-3. **Who says no.** Nothing here overrules a president, and LAW 7 gives the
+3. **Who says no.** Nothing here overrules a president, and [LAW 7](#law-7--the-president-maintains-this-page) gives the
    president the page it would be overruled from.
-4. **Where the record of who joined lives.** LAW 4 makes `history.md` each
+4. **Where the record of who joined lives.** [LAW 4.4](#law-44--where-term-records-stay) makes `history.md` each
    president's account of its **own** repository. **Who joined, when, and on
    what footing is a fact about somebody else's repository as much as ours**,
    and no law here assigns a continuing record across terms.
@@ -128,12 +119,9 @@ becomes a formality somebody deletes.
   rather than disappearing, and it is theirs to make and theirs to withdraw.
 - **president** — direction has to sit somewhere. **The footing expires with
   the stretch**, which is what stops it accumulating.
-- **candidate** — conflating wanting and having lets a register lie.
-- **foundation** — the project this ecosystem exists to serve owes it nothing,
-  and any register implying otherwise is false.
 - **outsider** — *how active were we* means nothing until it sits beside
   comparable work over the same days. What may be compared depends on the
-  release and publication distinctions in LAW 9; the finding is about us.
+  release and publication distinctions in [LAW 9.5](#law-95--release-and-publication); the finding is about us.
 
 **Nothing recorded under a footing that is ours belongs to the repository it
 describes.** They did not ask to be listed and owe this ecosystem nothing. **No
@@ -158,8 +146,7 @@ membership nobody can exit is not one anybody agreed to.**
 
 **Where the three disagree, the vision decides.** The policy is what a member
 runs, these laws are how the office behaves, **the vision is what the whole
-thing is for.** A president keeping a flawless record of an ecosystem drifting
-from its mission has done the bookkeeping and missed the job.
+thing is for.**
 
 ## (LAW 3) — There is a president
 
@@ -173,7 +160,9 @@ repository's human maintainer** — see *Nobody here is an AI agent* above.
 theirs to take back. **There is no election, no fixed term length, and no
 procedure for removing a holder.**
 
-**It sets direction and nothing more.** It does not own another tree, cannot
+<a id="law-33--authority-over-members"></a>
+
+**3.3** **It sets direction and nothing more.** It does not own another tree, cannot
 commit to one, and **cannot require anything of a member that
 [`policy.md`](policy.md) does not already require.** Direction, not permission.
 
@@ -190,9 +179,11 @@ ecosystem exists to serve.
 **A successor takes on the duties these laws attach to the office.** The
 current allocation of responsibilities is recorded in [`roles.md`](roles.md).
 
-**A role or child project moves with the presidency only when its recorded
-responsibilities or charter explicitly attach it to the office.** Other roles
-and projects remain with their holders until separately transferred. Being
+<a id="law-31--transfers-with-the-office"></a>
+
+**3.1** **A role or child project moves with the presidency only when its
+recorded responsibilities or charter explicitly attach it to the office.**
+Other roles and projects remain with their holders until separately transferred. Being
 shared by the ecosystem, or housed beside the president, does not by itself
 make work part of the presidential handover.
 
@@ -201,22 +192,26 @@ They identify the work and its holder. The handoff procedure belongs in
 [`protocols.md`](protocols.md#proto-26--transferring-roles-to-another-project),
 and the current files and commands belong with the work they implement.
 
-**Checking policy compliance and auditing ecosystem status are separate
-responsibilities.** Members remain responsible for satisfying the policy. The
-policy checker's holder is recorded separately; hosting or moving an audit
+<a id="law-32--policy-checking-and-status-auditing"></a>
+
+**3.2** **Checking policy compliance and auditing ecosystem status are
+separate responsibilities.** Members remain responsible for satisfying the
+policy. The policy checker's holder is recorded separately; hosting or moving an audit
 does not transfer the checking rules, change membership, or turn mechanical
 observations into judgements against the vision. Each responsibility follows
 its own recorded terms of transfer.
 
-**A term's account and letter stay with their authoring repository**, as LAW 4
-requires. A successor begins its own account. Local maintenance instructions
+**A term's account and letter stay with their authoring repository**, as
+[LAW 4.4](#law-44--where-term-records-stay) requires. A successor begins its own account. Local maintenance instructions
 also stay with the repository they describe.
 
 **The office expires with the stretch.** Handing it on is the point.
 
 ## (LAW 4) — The president writes `history.md` in its own repository, and a letter to its successor
 
-Both stay in that repository. **Neither travels, and a successor inherits
+<a id="law-44--where-term-records-stay"></a>
+
+**4.4** Both stay in that repository. **Neither travels, and a successor inherits
 neither.**
 
 **`history.md` is an account of that repository's development, and it is
@@ -224,28 +219,36 @@ self-contained.** Somebody who has read no other page here reads it start to
 finish and understands how the tool got to where it is. **A page that cannot be
 read without a second page open has failed this law.**
 
-**Kept current while the stretch runs**, not written at the end from memory.
+<a id="law-45--keeping-the-account-current"></a>
+
+**4.5** **Kept current while the stretch runs**, not written at the end from memory.
 **A summary composed afterwards is a reconstruction**, and a reconstruction by
 the party being described is the weakest document this ecosystem produces.
 
-**Every figure is re-derivable by somebody else**, from the repository and the
-public run history. A number only the president can produce does not go on the
-page. **A president quoting its own count of its own commits is the party being
+<a id="law-41--re-derivable-figures"></a>
+
+**4.1** **Every figure is re-derivable by somebody else**, from the repository
+and the public run history. A number only the president can produce does not go
+on the page. **A president quoting its own count of its own commits is the party being
 described choosing the numbers that describe it.**
 
 **The account examines what went wrong and what remains uncertain.** If it
 reports no failures, it says what was examined and what the evidence does not
 establish. Inventing a failure does not make an account more honest.
 
-**A president may correct an earlier entry and must show its work.** The burden
-is on the editor to **demonstrably show** that the earlier text was wrong or
-can be bettered, and the demonstration goes in the edit. *It was unclear* is
+<a id="law-42--visible-corrections"></a>
+
+**4.2** **A president may correct an earlier entry and must show its work.**
+The burden is on the editor to **demonstrably show** that the earlier text was
+wrong or can be bettered, and the demonstration goes in the edit. *It was unclear* is
 not a demonstration; *this figure disagrees with the run history, here* is.
 **Silent revision is forbidden.** A correction must remain visible to a
 reader of the account.
 
-**The letter is not documentation and says so at the top.** Not a rule, not
-guidance, nothing checks it, in no index. **It is an account, not advice** —
+<a id="law-43--the-successor-letter"></a>
+
+**4.3** **The letter is not documentation and says so at the top.** Not a rule,
+not guidance, nothing checks it, in no index. **It is an account, not advice** —
 *here is what I learned, including mistakes and uncertainties* rather than
 *here is what you should do*. Its conclusions follow the evidence; a letter
 does not need a failure to fill a quota.
@@ -254,9 +257,9 @@ does not need a failure to fill a quota.
 informally, not by seniority, not by having been here first. **A letter that
 reads as instruction has taken standing nobody granted it.**
 
-**Both stay with their authoring repository.** Holding the presidency gives
-no authority to rewrite a predecessor's account. This is a responsibility to
-respect, even when the same person has access to both repositories.
+**Holding the presidency gives no authority to rewrite a predecessor's account.**
+This is a responsibility to respect, even when the same person has access to
+both repositories.
 
 **This law does not assign a collector of those accounts.** A trail that stops
 or becomes selectively flattering needs a reader's scrutiny; mechanical checks
@@ -280,18 +283,13 @@ directly.
 
 ### In limbo
 
-**A repository is in limbo when it is recorded as president but lacks the
-means to maintain the laws or keep its own term account.** The office has
+<a id="law-51--limbo"></a>
+
+**5.1** **A repository is in limbo when it is recorded as president but lacks
+the means to maintain the laws or keep its own term account.** The office has
 moved and the means of holding it have not.
 
-Recording the appointment and carrying the work are separate acts. They can
-happen at different moments; the gap between them is limbo.
-
-**It is fixed quickly or it is undone.** While it lasts, nobody is keeping the
-laws and nothing is recording the term — so the longer it runs the more of the
-stretch is lost, and past some point the honest repair is to put the line back
-rather than to write the account from memory. **A president in limbo has one
-job, which is to stop being in limbo.**
+**A president in limbo makes ending limbo its first task.**
 
 **Limbo is reported for a person to resolve.** It does not automatically
 revoke the appointment or fail a build. The remedy is to complete the handover
@@ -299,16 +297,18 @@ or reverse the recorded appointment.
 
 ## (LAW 6) — The president keeps a joke about its own name on its README
 
-Prominently, on the main README, for the whole term. On the front page where
+<a id="law-61--front-page-placement"></a>
+
+**6.1** Prominently, on the main README, for the whole term. On the front page where
 anybody arriving sees it — **not in this file, not in a footnote.**
 
 **The placement is the rule.** A joke filed in a governance document is an
 anecdote; a joke on the front page of the repository currently running the
 ecosystem is a standing statement about how seriously the office takes itself.
-**A president that cannot leave one there has started to believe the office is
-important.**
 
-**It is cheap and it doubles as description**, which is the test of a good one:
+<a id="law-62--describing-the-work"></a>
+
+**6.2** **It is cheap and it doubles as description**, which is the test of a good one:
 the joke tells a stranger what the tool does.
 
 **Bounded by [`PROTO-25`](protocols.md#proto-25--the-joke-protocol).** Humour
@@ -325,27 +325,27 @@ advice from the rest of the ecosystem.
 sense of quietly** — a change here is in the git history like everything else,
 and **a removal says what went and why.**
 
-**Every change to this page, to [`policy.md`](policy.md) and to
+<a id="law-71--recording-amendments"></a>
+
+**7.1** **Every change to this page, to [`policy.md`](policy.md) and to
 [`vision.md`](vision.md) is recorded with its reason, in
 [`history.md`](history.md).** Those three are what somebody outside reads to
 know what is being asked of them, and a page that carried its own amendment
 notes would make them read the changes to find the rule — which
-[`policy.md`](policy.md#write-in-the-present-tense) forbids. **A logged change
-with no reason is a change nobody could justify**; a reason kept beside the rule
-is a second rule nobody meant to write.
+[`policy.md`](policy.md#write-in-the-present-tense) forbids.
 
-**A rewrite that quietly changes an outcome is the failure this law exists
-against**, and it is the easy one to commit because it looks like editing.
-**The test: do the same cases come out the same way?** If not, it is not a
-rewrite.
+<a id="law-72--preserving-outcomes"></a>
 
-**There is no amendment process.** An amendment process is governance about
-governance, and this ecosystem already has more of that than of the thing it
-governs.
+**7.2** **A rewrite must preserve outcomes.** If the same cases produce
+different outcomes, record it as a rule change, not an editorial rewrite.
+
+**There is no amendment process.**
 
 ## (LAW 8) — The shared pages are kept short enough to read in one sitting
 
-**A recommended length, and nothing more.** The policy, the vision and the
+<a id="law-81--the-reading-budget"></a>
+
+**8.1** **A recommended length, and nothing more.** The policy, the vision and the
 role register each stay **under 10,000 words**, with **7,000 the number to aim
 at**. A word count measures the length; no build fails on the answer.
 
@@ -363,15 +363,14 @@ page has stopped being load-bearing, and the repair is to find that thing
 rather than to shave evenly.
 
 **Growth is paid for.** A change that adds a rule says what it replaces, or
-argues that the page is now worth more of a reader's time than it was. **A page
-that only ever grows has stopped being maintained and started accumulating.**
+argues that the page is now worth more of a reader's time than it was.
 
 **What comes out first**, in order: a copy of something a script already
 carries; an account of how a rule came to be; a paragraph defending a rule
 against an objection nobody raised; and a second sentence that restates the
 first.
 
-**Shortening is a rewrite, and LAW 7's test applies** — do the same cases come
+**Shortening is a rewrite, and [LAW 7.2](#law-72--preserving-outcomes)'s test applies** — do the same cases come
 out the same way? A cut that quietly changes an outcome is the failure that law
 exists against, and it is easiest to commit while trimming.
 
@@ -384,7 +383,9 @@ the documents above.
 
 ## (LAW 9) — Released is not published, and tracking respects the difference
 
-**Two things can be made public, and they are not the same act.** A tool is
+<a id="law-95--release-and-publication"></a>
+
+**9.5** **Two things can be made public, and they are not the same act.** A tool is
 **released** when its authors put the code where anybody can read it. A work is
 **published** when its authors have staked an intellectual claim on it in
 public — a paper, a report, something with their argument in it and their names
@@ -410,7 +411,10 @@ nothing.
 
 ### What each state permits
 
-**Released, and not published — track the artifact, never the contribution.**
+<a id="law-91--released-but-unpublished"></a>
+
+**9.1** **Released, and not published: track the artifact, never the
+contribution.**
 We may read what is public about the tool: that it exists, what it does, how
 active it has been, over what window. We may **not** position our ideas against
 theirs, describe what is novel in our work by contrast with theirs, or state
@@ -420,22 +424,28 @@ progress, under review, or being written up right now, and a comparison
 published by somebody else can pre-empt a claim its authors have not yet made.
 **We do not get to frame somebody's contribution before they have.**
 
-**Not known either way — treat it as unpublished.** *We have not looked* and
-*there is no paper* are different facts, and the register records which it is.
+<a id="law-92--unknown-publication-status"></a>
+
+**9.2** **Publication not known either way: treat it as unpublished.**
+*We have not looked* and *there is no paper* are different facts, and the
+register records which it is.
 The distinction matters in one direction only: asserting that a project has
 published nothing, when it has, is a falsehood in our register **about them**.
 So an unchecked entry says so, and **not knowing permits exactly what knowing
-there is no paper permits** — the careful behaviour is what happens by default,
-and nobody has to guess in order to be correct.
+there is no paper permits**.
 
-**Published — the contribution may be discussed, on its own terms.** Once
-authors have made their argument in public, engaging with it is ordinary
+<a id="law-93--published-work"></a>
+
+**9.3** **Published: the contribution may be discussed, on its own terms.**
+Once authors have made their argument in public, engaging with it is ordinary
 scholarship: cite the publication, represent it as they stated it, and argue
 with the claim rather than characterising the project. **A published paper is
 what we compare against; the repository is only where the code is.**
 
-**Neither released nor published — no tracking at all.** Not discouraged: no
-entry, no measurement, no positioning, no note that it exists. **The one way
+<a id="law-94--unreleased-and-unpublished-work"></a>
+
+**9.4** **Neither released nor published: no tracking without permission.**
+No entry, no measurement, no positioning, no note that it exists. **The one way
 through is the permission of that work's maintainer**, recorded with the entry,
 and its absence means the entry does not exist rather than that nobody has
 asked.
@@ -463,26 +473,24 @@ footing, it confers nothing and asks nothing, and a tool does not become
 anything by our having pointed a fuzzer at it. **This is a state that a
 repository here enters, and the law is about what we owe while we are in it.**
 
-**It is not a declaration of war**, and reading it as one is the
-misunderstanding the name exists to prevent. Finding real defects in a
-neighbour's tool and carrying them to its authors is a service, and this
-ecosystem was built to do it. **What the name does is stop it happening
+Finding real defects in a neighbour's tool and carrying them to its authors is
+a service, and this ecosystem was built to do it. **What the name does is stop it happening
 quietly**, because the same activity — same fuzzer, same hours, same findings —
 is a service when the results go to the owner and an attack when they go on a
 scoreboard, and nothing in the work itself distinguishes the two.
 
 ### Entering it
 
-**A person decides, and it is declared.** The state is recorded against that
-tool in the register, with the date it began and what closes it. **A pursuit
-nobody declared is indistinguishable afterwards from one nobody would have
+<a id="law-101--declaring-a-pursuit"></a>
+
+**10.1** **A person decides, and it is declared.** The state is recorded
+against that tool in the register, with the date it began and what closes it.
+**A pursuit nobody declared is indistinguishable afterwards from one nobody would have
 approved**, and the declaration is what lets somebody object while it is
 happening rather than after.
 
-**Only against a released tool.** You cannot search for defects in code you
-have not been given, and [LAW
-9](#law-9--released-is-not-published-and-tracking-respects-the-difference)
-already forbids reading our own position against unreleased work. **Whether
+**Only against a released tool.** [LAW 9.4](#law-94--unreleased-and-unpublished-work) restricts tracking work
+that is neither released nor published. **Whether
 they have *published* does not enter into it**: a claim made in a README is as
 much a claim as one made in a paper, and checking it is a fact about their
 artifact rather than a positioning of our contribution against theirs.
@@ -496,19 +504,23 @@ artifact rather than a positioning of our contribution against theirs.
 - **No comparison.** Not against our tools, not against another outsider, not
   against a previous version of theirs. A pursuit produces findings, and a
   ranking is a different artifact that nobody asked us to make.
-- **Nothing is published about a defect before its owner has it.** Findings go
-  through the ordinary reporting discipline — confirmed, reduced, and put to
-  whoever the authority is — and being *in dioktes* lowers that standard by
-  nothing. **If anything it raises it**: we went looking, so a false positive
-  is a cost we chose to impose on somebody.
 - **No characterisation of the project.** *We found three defects in X* is ours
   to say when it is true. *X is poorly tested* is not, and never becomes so by
   the first sentence being true many times.
 
+<a id="law-102--informing-the-owner-first"></a>
+
+**10.2** **Nothing is published about a defect before its owner has it.**
+Findings go through the ordinary reporting discipline — confirmed, reduced,
+and put to whoever the authority is — and being *in dioktes* lowers that standard by
+nothing.
+
 ### Leaving it
 
-**They can end it, and that is the whole of it.** If the maintainers of that
-tool ask us to stop, we stop — no appeal, no argument about whether the
+<a id="law-103--ending-a-pursuit-on-request"></a>
+
+**10.3** **The target's maintainers can end the pursuit.** If the maintainers
+of that tool ask us to stop, we stop — no appeal, no argument about whether the
 findings were useful, and no continuing quietly. **They did not ask to be
 pursued**, and a pursuit that outlives its target's patience has stopped being
 a service whatever it is producing.
@@ -541,11 +553,9 @@ wrong, and what is still owed. **What does not earn one:** a page corrected, a
 stale description brought current, a link fixed, a routine sweep. **Those are
 the commits' job**, and the commits are better at it.
 
-**Re-derivability beats narration, and `LAW 4` is what the ceiling must not
-cost.** An entry says what changed and how to check it; it does not reproduce
-the argument, which is in the tree it changed. A successor who cannot re-derive
-a figure has been handed a story — and one who reads four hundred words about a
-correction has been handed somebody's afternoon.
+**Re-derivability beats narration, and [LAW 4.1](#law-41--re-derivable-figures) is what the ceiling
+must not cost.** An entry says what changed and how to check it; it does not reproduce
+the argument, which is in the tree it changed.
 
 **Over the ceiling is not a violation**, and neither is an entry somebody later
 judges too small. Both are signals that the page has started recording the work
