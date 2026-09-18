@@ -74,11 +74,13 @@ authority; this is only the route in.
 | --- | --- |
 | the repository does not exist yet | `eo_init new` — writes a README saying what the tool is for, what it declines to answer, and why it is called what it is. **It complies with nothing, deliberately**: knowing what you are building is what makes the rest decidable, and joining comes later |
 | it exists, and you want to join | `eo_join` — adds the declaration to your maintenance note and the `anoieu / policy` workflow, in either of the two forms [`policy.md`](docs/policy.md#2-run-the-check) accepts |
-| it exists, and should *not* join | `eo_join --soft` — the maintenance note alone, declaring membership of nothing and naming no other project. `--affiliated` is the same again but names this ecosystem and says you are **not** held to its policy |
-| it exists, and is held to the policy without saying so out front | `eo_join --associate` — the footing marker on your own maintenance page, saying what you hold yourself to. No front-page declaration, and you answer to that marker rather than to us |
+| it exists, and should *not* join | `eo_join --soft` — the maintenance note alone, joining nothing: it names this ecosystem and says you are **not** held to its policy. A note naming nobody at all is the same section with one paragraph swapped, and you write it yourself |
+| it exists, and is held to the policy without saying so out front | **no command** — write the footing marker on your own maintenance page, saying what you hold yourself to. No front-page declaration, and you answer to that marker rather than to us |
 
 **These commands live in [koine](https://github.com/ajreynol/koine)**, and
-koine's `install_eo_cmd` puts them on your path. **What joining costs is this
+koine's `install_eo_cmd` puts them on your path. koine collapsed `eo_join` from
+four forms to two on 2026-09-18; the withdrawn flags refuse with a message
+saying what to run instead. **What joining costs is this
 repository's**:
 [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the authority
 on what a repository that joins is held to.

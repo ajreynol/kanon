@@ -247,8 +247,9 @@ every figure re-derivable by somebody else under
 **Role:** **maintaining the two commands a repository outside this ecosystem
 actually runs** — `eo_init`, which gives a new tool a README saying what it is
 for and complies with nothing, and `eo_join`, which writes the declaration and
-the pinned workflow. Their text, their options, and what they ask an assistant
-to do.
+the `anoieu / policy` workflow in whichever of the two forms
+[`policy.md`](policy.md#2-run-the-check) the joiner takes. Their text, their
+options, and what they ask an assistant to do.
 **Owns:** `eo_cmd/eo_init` and `eo_cmd/eo_join`, and `scripts/install_eo_cmd`,
 which puts them on a person's path.
 
@@ -276,13 +277,19 @@ is a change to be argued there.
 **Held by:** `koine`
 **Role:** maintaining the machinery every member would otherwise implement
 separately — **one implementation of the shared parts rather than one per
-repository.** The bug database and the history-review tool are two of them and
-are not the boundary of the role.
+repository.** The bug database is one of them and is not the boundary of the
+role. *The history-review tool was named here until 2026-09-18; it was removed
+from koine on 2026-09-17 and the subject is epikrisis's, which koine reported in
+its `D18`.*
 **Owns:** the shared implementations and the interfaces other tools build
 against, including the commands `install_eo_cmd` puts on a person's path that
-are not `R35`'s: `eo_status`, which reads the register in the tree that holds it,
-`eo_respond`, which answers one topic another tool addressed to you, and
-`eo_housekeeping`, which reports what a repository has outstanding.
+are not `R35`'s: `eo_status`, which reads the register in the tree that holds it;
+`eo_respond`, which answers one topic another tool addressed to you;
+`eo_housekeeping`, which reports what a repository has outstanding; `eo_topic`,
+which opens one topic in the runner's own discussion file; `eo_child`, which
+starts a child project and refuses a run that does not name one; and
+`eo_brainstorm`, which reads every tree on the machine and writes only
+`brainstorm.local.md`.
 
 ## logos
 

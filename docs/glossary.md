@@ -38,10 +38,11 @@ ecosystem nothing.
 ## A
 
 <a id="aisthesis"></a>
-**aisthesis** (Eunoia member; *proper noun*): Two documents about the practice
-of building this ecosystem rather than about the calculus: how that practice
-relates to the state of the art, and where writing about the future stops being
-a plan. From Greek αἴσθησις, “perception.”
+**aisthesis** (Eunoia member; *proper noun*): Three documents about the
+practice of building this ecosystem rather than about the calculus: how that
+practice relates to the state of the art, what that reading implies somebody
+should build, and where writing about the future stops being a plan. From Greek
+αἴσθησις, “perception.”
 [Repository](https://github.com/ajreynol/aisthesis).
 
 <a id="alethe"></a>
@@ -55,10 +56,11 @@ collaboration and permission.
 records the ecosystem’s interest in it.
 
 <a id="anakrisis"></a>
-**anakrisis** (Eunoia child project of [dokimasia](#dokimasia); *proper noun*):
+**anakrisis** (Eunoia child project of [paideia](#paideia); *proper noun*):
 The project reviewing [cvc5](#cvc5) pull requests through proof-completeness
-analyses before and after a change.
-[Charter](https://github.com/ajreynol/dokimasia/blob/main/tools/anakrisis/README.md).
+analyses before and after a change. It moved out of
+[dokimasia](#dokimasia) on 2026-09-18.
+[Charter](https://github.com/ajreynol/paideia/blob/main/tools/anakrisis/README.md).
 
 <a id="anoieu"></a>
 **anoieu** (Eunoia member; *proper noun*): The static analyzer, fuzzer, findings
@@ -161,6 +163,13 @@ proof-production code for work with no proof step behind it. From Greek
 
 ## E
 
+<a id="elaphros"></a>
+**elaphros** (Eunoia child project of [tachyon](#tachyon); *proper noun*): The
+project measuring what producing a proof costs [cvc5](#cvc5) in time and memory
+against solving the same problems without one, and testing optimizations that
+reduce it. From Greek ἐλαφρός, “light in weight.”
+[Charter](https://github.com/ajreynol/tachyon/blob/main/tools/elaphros/README.md).
+
 <a id="elleipsis"></a>
 **elleipsis** (assessment term; *noun*): A shortcoming, with the evidence that
 establishes it; the report-card field paired with [arete](#arete) and
@@ -168,10 +177,11 @@ establishes it; the report-card field paired with [arete](#arete) and
 [the report card](../tools/stathmos/docs/report-card.md).
 
 <a id="empeiria"></a>
-**empeiria** (Eunoia child project of [dokimasia](#dokimasia); *proper noun*):
+**empeiria** (Eunoia child project of [paideia](#paideia); *proper noun*):
 The project working on [cvc5](#cvc5) bug reports and learning from maintainer
-responses to improve the next fix.
-[Charter](https://github.com/ajreynol/dokimasia/blob/main/tools/empeiria/README.md).
+responses to improve the next fix. It moved out of
+[dokimasia](#dokimasia) on 2026-09-18.
+[Charter](https://github.com/ajreynol/paideia/blob/main/tools/empeiria/README.md).
 
 <a id="eo"></a>
 **eo** (abbreviation; *proper noun*): Short for [Eunoia](#eunoia) or the Eunoia
@@ -362,6 +372,16 @@ released artifact and published contribution are recorded separately under
 obligations on it.
 
 ## P
+
+<a id="paideia"></a>
+**paideia** (Eunoia candidate; *proper noun*): A written account of how
+[cvc5](#cvc5)’s source is put together, for people who have to change it. It
+houses [anakrisis](#anakrisis) and [empeiria](#empeiria), which moved there from
+[dokimasia](#dokimasia) on 2026-09-18. From Greek παιδεία, “education, the
+rearing of a child.” Its own front page records no footing and asked for none;
+the [candidate](#candidate) listing beside it is this ecosystem’s position and
+obliges it to nothing.
+[Repository](https://github.com/ajreynol/paideia).
 
 <a id="parainesis"></a>
 **parainesis** (assessment term; *noun*): Counsel following an assessment: what

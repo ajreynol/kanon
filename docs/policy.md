@@ -774,7 +774,8 @@ footing refuses.
 all of this with reason not to say so out front — it is not published, it is
 one person's working tree, a declaration would oversell what is in it — takes
 this footing and writes the marker. It answers to that marker; it does not
-answer to us. `eo_join --associate` writes it. A child on a parent whose
+answer to us. **No command writes it**: `eo_join --associate` was withdrawn on
+2026-09-18, so the marker is written by hand. A child on a parent whose
 front page does not name it records `unadvertised-child` the same way.
 
 **These are not a ladder, and reading them as one is the mistake this table
@@ -964,11 +965,14 @@ not, is the **maintenance note**, and that convention is not ours and never
 was. So it may be adopted on its own.
 
 `eo_join --soft` is that, and it is **a different act
-rather than a partial one**: it declares no membership and links nowhere, since
-a note that gestures at us without joining is worse than either; it adds no
-workflow and no checker; its default claim is human maintenance, because
-overstating the human share of the work is the error this convention exists to
-prevent; and it disclaims other people's assessments of it.
+rather than a partial one**: it declares no membership; it adds no workflow and
+no checker; its default claim is human maintenance, because overstating the
+human share of the work is the error this convention exists to prevent; and it
+disclaims other people's assessments of it.
+
+**The note it writes names this ecosystem and refuses its policy in the same
+breath** — right for a tool this ecosystem is built around, where an outright
+disclaimer would be wrong:
 
 ```
 ## How this repository is maintained
@@ -976,28 +980,15 @@ prevent; and it disclaims other people's assessments of it.
 **This repository is written and maintained by people.** <who does the work,
 under what supervision, and what that supervision does not cover>
 
-It is independent. It is not part of any other project's ecosystem, it adopts no
-other project's repository conventions, and it speaks only for itself. Where
-another project's tooling reads this repository and publishes an assessment of
-it, that assessment is that project's own work and not ours: their opinions are
-not necessarily our own, and nothing here is to be read as endorsing them.
-```
-
-The wording is deliberately formal: this is the paragraph a maintainer may one
-day have to stand behind in front of somebody who has read a finding about
-their code and drawn a conclusion from it.
-
-**There is a second form, for a repository happy to be named.** `eo_join --soft
---affiliated` writes it, differing by a single paragraph — right for a tool
-this ecosystem is built around, where the outright disclaimer above would be
-wrong:
-
-```
 It works with the **Eunoia ecosystem** and is **not held to** that ecosystem's
 repository policy: it adopts none of it, it is not checked against it, and it
 speaks only for itself. Where a tool in that ecosystem publishes an assessment of
 this repository, that assessment is that tool's own work and not ours.
 ```
+
+The wording is deliberately formal: this is the paragraph a maintainer may one
+day have to stand behind in front of somebody who has read a finding about
+their code and drawn a conclusion from it.
 
 **Naming an ecosystem and joining it are different claims, and only the first
 is made here.** The refusal is stated rather than implied: a note that named us
@@ -1012,10 +1003,30 @@ the section rather than adding to it**, since the independence paragraph and
 the membership declaration are contradictory claims and a note carrying both
 says nothing.
 
+**There is a second form, and no command writes it.** A repository that would
+rather name nobody swaps that paragraph for an outright disclaimer, and writes
+it by hand:
+
+```
+It is independent. It is not part of any other project's ecosystem, it adopts no
+other project's repository conventions, and it speaks only for itself. Where
+another project's tooling reads this repository and publishes an assessment of
+it, that assessment is that project's own work and not ours: their opinions are
+not necessarily our own, and nothing here is to be read as endorsing them.
+```
+
+**koine collapsed four forms into two on 2026-09-18**, reported to us in its
+`D17`: `--associate` and `--soft --affiliated` are gone, and both refuse with a
+message saying what to run instead. Four commands answered what a reader
+experiences as one question — *what does this repository say about us* — and a
+chooser who got it wrong wrote the wrong claim onto somebody's front page. What
+is left is `eo_join` and `eo_join --soft`; the disclaimer above, the associate
+marker, and the bare heading with nothing under it are each written by hand.
+
 ### The prompts, and checking from this side
 
-`eo_join` holds the canonical text of all three prompts — full, `--soft` and
-`--soft --affiliated`; `--show-prompt` prints one and does nothing else. They are run in the repository that is adopting
+`eo_join` holds the canonical text of both prompts — full and `--soft`;
+`--show-prompt` prints one and does nothing else. They are run in the repository that is adopting
 something, never here. Each opens by asking whether the repository is solely
 the runner's to speak for: **a declaration on a shared tree is not the runner's
 alone to make, and commit access does not make it so.** Saying *this is not

@@ -85,14 +85,18 @@
     "  member      declares membership in its README, the check passes, and it",
     "              shares the approach docs/vision.md argues for. The second half",
     "              is a judgement and is not checked -- see below",
-    "  associate   we have read it and it is load-bearing for us, and it is held",
-    "              to none of this. **Held by nobody yet**: what a repository",
-    "              would have to carry is drafted and not decided -- see `The",
-    "              associate protocol` in docs/policy.md. Until it is, an entry",
-    "              says `proposed: associate` and its `status` stays true",
-    "              to none of this. Its README carries the affiliating note, which",
-    "              names the ecosystem and says it is not held to the policy;",
-    "              `vetted` is when a person last read it and meant this",
+    "  associate   it holds *itself* to the shared policy and carries no",
+    "              front-page declaration, recording what it is held to on its",
+    "              own docs/maintenance.md. It owes us nothing, and the footing",
+    "              is theirs to record rather than ours to assert -- see `The",
+    "              footings` and `The associate protocol` in docs/policy.md,",
+    "              which is the authority on what the word means. What is still",
+    "              undecided there is whether the bare maintenance heading or",
+    "              the paragraph naming this ecosystem is the ask; until it is,",
+    "              an entry we would like on this footing says",
+    "              `proposed: associate` and its `status` stays what it is",
+    "              today. `vetted` is when a person last read their marker and",
+    "              `why` is what it said",
     "  candidate   the policy is addressed to it and it has not joined. It may",
     "              still carry `vetted` and `why`, which say we have read it and",
     "              what we read it as; those are what a proposed footing rests",
@@ -154,7 +158,7 @@
     "rule that has not been decided.",
     "",
     "`status` now carries one mechanical fact and, for a member, one judgement.",
-    "Only the mechanical half is ever read by a program: ecosystem.py --check",
+    "Only the mechanical half is ever read by a program: eo_status_audit --check",
     "--online decides *declares / does not declare* for a member and a candidate,",
     "and *carries the affiliating note / does not* for an associate. Whether a",
     "member shares the approach is a vision question, nobody has the authority to",
@@ -171,6 +175,13 @@
     "",
     "A status is changed by a person. An audit may report that one looks",
     "wrong; nothing edits this file on its own.",
+    "",
+    "This file's history starts on 2026-09-15, when the governance handoff moved",
+    "it here. **The record before that date is in anoieu, at tools/ecosystem.json**,",
+    "which ran from 2026-08-31 to its deletion on 2026-09-15: `git log --follow`",
+    "over that path in that tree. A first revision is a state and not a",
+    "transition, so reading this file alone reports every entry it was born with",
+    "on the day it moved -- reported by epikrisis, 2026-09-17.",
     "",
     "Two further fields, neither of which is a status:",
     "",
@@ -200,7 +211,7 @@
     "  genuine    a judgement, never a check: that the repository was",
     "             *constructed* according to these policies rather than made to",
     "             pass them afterwards. It is a fact about a history and not",
-    "             about a tree, so scripts/policy_check.py cannot decide it and",
+    "             about a tree, so the policy checker cannot decide it and",
     "             must never try -- a tree retrofitted into compliance and a",
     "             tree built compliant are identical from the tree alone. It is",
     "             settled by reading the history, which is what an auditor of",
@@ -218,8 +229,8 @@
     "joined": "kanon 16921b2",
     "repo": "aisthesis",
     "url": "https://github.com/ajreynol/aisthesis",
-    "short": "What can be seen about how this ecosystem develops",
-    "what": "two documents about the practice of building this ecosystem rather than about the calculus: how that practice relates to the state of the art, and where writing about the future stops being a plan"
+    "short": "How this ecosystem relates to other state-of-the-art AI systems",
+    "what": "three documents about the practice of building this ecosystem rather than about the calculus: how that practice relates to the state of the art, what that reading implies somebody should build, and where writing about the future stops being a plan"
   },
   "anoieu": {
     "status": "member",
@@ -274,6 +285,15 @@
     "url": "https://github.com/ajreynol/dokimasia",
     "short": "Finds gaps in cvc5's proof production",
     "what": "reads cvc5's proof-production C++ and asks what no proof step covers"
+  },
+  "paideia": {
+    "status": "candidate",
+    "repo": "paideia",
+    "url": "https://github.com/ajreynol/paideia",
+    "vetted": "2026-09-18",
+    "why": "it houses two child projects this register already carried, so a parent it can be reached through has to exist here; its own front page records no footing and asked for none",
+    "short": "A developer's guide to cvc5's source",
+    "what": "a written account of how cvc5's codebase is put together, for people who have to change it, and the tree anakrisis and empeiria moved into on 2026-09-18"
   },
   "tachyon": {
     "status": "member",
@@ -373,14 +393,14 @@
   },
   "anakrisis": {
     "status": "child",
-    "parent": "dokimasia",
+    "parent": "paideia",
     "path": "tools/anakrisis",
     "short": "Reviews cvc5 PRs for changes in proof completeness",
     "what": "examines cvc5 pull requests by comparing dokimasia's proof-completeness analyses before and after a change, and records what its review adds"
   },
   "empeiria": {
     "status": "child",
-    "parent": "dokimasia",
+    "parent": "paideia",
     "path": "tools/empeiria",
     "short": "Works cvc5 bug reports and learns from maintainer feedback",
     "what": "works cvc5's public bug reports and records what the maintainers' responses teach about the next fix"
@@ -433,6 +453,13 @@
     "path": "tools/hawkeye",
     "short": "Intention to build a new solver with agents; one page",
     "what": "a one-page intention to build a new SMT solver from nothing, written mostly by autonomous agents; nothing is built"
+  },
+  "elaphros": {
+    "status": "child",
+    "parent": "tachyon",
+    "path": "tools/elaphros",
+    "short": "Measures and reduces cvc5's proof-production overhead",
+    "what": "measures what producing a proof costs cvc5 in time and memory against solving the same problems without one, attributes the overhead, and tests optimizations against a pinned baseline"
   },
   "heuresis": {
     "status": "child",

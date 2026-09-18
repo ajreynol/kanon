@@ -372,9 +372,14 @@ per line.
 **There are no prompts in this tree**, and installing the ecosystem is not done
 from here. The commands that hand context to an assistant are koine's and are
 installed: `eo_init` and `eo_join`, which draft changes in the repository being
-started or joined, are `R35`; `eo_respond`, which answers one topic another tree
-has addressed to us and refuses a run that names none; and `eo_housekeeping`,
-which reads what is outstanding across the checkouts. Each takes
+started or joined, are `R35`; the rest are `R16` — `eo_respond`, which answers
+one topic another tree has addressed to us and refuses a run that names none;
+`eo_housekeeping`, which reads what is outstanding across the checkouts;
+`eo_topic`, which opens one topic in our own discussion file and asks the person
+running it for the thing a tree cannot supply; `eo_child`, which starts
+`tools/<name>/` here and refuses a run with no name, because naming the child is
+the decision the policy reserves to a person; and `eo_brainstorm`, which reads
+every tree on the machine and writes only `brainstorm.local.md`. Each takes
 `--show-prompt`, which prints its assembled instructions without launching an
 assistant and writes no files. `eo_status` reads the register directly and
 hands nothing to an assistant.
