@@ -62,8 +62,7 @@ import urllib.request
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(HERE)))
 sys.path.insert(0, ROOT)
-sys.path.insert(0, os.path.join(ROOT, "scripts"))
-from policy_check import policy_checker
+from tools.stathmos.scripts.policy_check import policy_checker
 from tools.stathmos.scripts.child_listing import read_listing, unverified_note
 INVENTORY = os.path.join(ROOT, "scripts", "ecosystem", "ecosystem.json")
 REPOS_FILE = os.environ.get("ANOIEU_REPOS_FILE",
@@ -257,7 +256,7 @@ def render_key() -> str:
                "docs/policy.md,")
     out.append("           \"The footings, and what each one costs whom\"")
     block(FOOTINGS.items())
-    out.append("  policy   scripts/policy_check.py, run over that checkout by this "
+    out.append("  policy   tools/stathmos/scripts/policy_check.py, run over that checkout by this "
                "command just now")
     block(POLICY_VALUES)
     out.append("  channel  their docs/discussion.md, which is optional and which "
@@ -274,7 +273,7 @@ def render_key() -> str:
     out.append("")
     out.append("fixing a `N failing` row")
     out.append("  The count is all this table has. To see what failed:")
-    out.append("      python3 scripts/policy_check.py --root <where>")
+    out.append("      python3 tools/stathmos/scripts/policy_check.py --root <where>")
     out.append("  Each FAIL line names the check and what it found.")
     out.append("  Whose it is to fix depends on the status column, and the two "
                "cases are not alike.")
@@ -334,7 +333,7 @@ def age(path: str) -> str:
 
 def check(path: str) -> tuple[str, list[str]]:
     out = subprocess.run(
-        [sys.executable, os.path.join(ROOT, "scripts", "policy_check.py"),
+        [sys.executable, os.path.join(HERE, "policy_check.py"),
          "--root", path], capture_output=True, text=True)
     # count the failing *checks*, not their detail lines: one check that reports
     # three things is one thing wrong, and saying "3 fail" overstates it.
@@ -881,7 +880,7 @@ def main() -> int:
             notes.append(
                 f"{name} says it follows the shared policy, and {n_fail} of our "
                 "checks fail on its tree. Theirs to fix, not ours. To see what: "
-                f"python3 scripts/policy_check.py --root {where_short}")
+                f"python3 tools/stathmos/scripts/policy_check.py --root {where_short}")
         # Limbo. Said against the row rather than left for somebody to notice,
         # because it is the one state here that is supposed to be brief: while
         # it lasts nobody is keeping the laws and nothing is recording the term.

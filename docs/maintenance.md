@@ -23,7 +23,8 @@ directs an agent. **Each command documents itself**, at the top of its own file.
 3. **Check [the supervision ladder](#the-supervision-ladder)** below before
    touching any document in it.
 4. **Run** `python3 -m unittest discover -s tests -v`,
-   `scripts/eo_status_audit --check`, and `python3 scripts/policy_check.py --root .`.
+   `scripts/eo_status_audit --check`, and
+   `python3 tools/stathmos/scripts/policy_check.py --root .`.
 
 ## What this repository is responsible for
 
@@ -381,8 +382,9 @@ between two runs of the same commit. [`policy.md`](policy.md#2-run-the-check)
 accepts a pinned commit just as well, and a member may be on either form — read
 a member's own workflow file rather than assuming.
 
-**anoieu** owns the checker implementation; kanon's `scripts/policy_check.py`
-is a local launcher, not that shared implementation. A local launch uses
+**anoieu** owns the checker implementation; stathmos's
+[`tools/stathmos/scripts/policy_check.py`](../tools/stathmos/scripts/policy_check.py)
+is the local launcher. A local launch uses
 whatever anoieu checkout is on this machine, at whatever revision it is on, and
 establishes nothing about what CI ran. **That gap is the subject of `D1`** and
 it widened with this change: there is no pinned revision here to reproduce

@@ -328,6 +328,11 @@ register and installation exceptions. Mechanical checks remain separate from
 the human report-card judgements under `R30`. `B31` retains only the notice to
 koine that revises the earlier reader-bundle handoff.
 
+The local policy-checker launcher followed into
+`tools/stathmos/scripts/policy_check.py` later the same day, also under `R37`.
+It locates and runs anoieu's checker; the checking rules remain anoieu's under
+`R31`. This supersedes the launcher's location recorded on 2026-09-17.
+
 *Re-derive:* `git log --follow -- tools/stathmos/scripts/status_audit.py`, and the
 `R6`/`R37` entries in [`roles.md`](roles.md).
 

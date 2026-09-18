@@ -13,7 +13,7 @@ import sys
 
 
 ROOT = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(ROOT / "scripts"))
+sys.path.insert(0, str(ROOT))
 
 
 def load(name, path):
@@ -24,7 +24,7 @@ def load(name, path):
     return module
 
 
-import policy_check  # scripts/ is on the path, set just above
+from tools.stathmos.scripts import policy_check
 
 ecosystem = load("ecosystem_under_test", "tools/stathmos/scripts/status_audit.py")
 

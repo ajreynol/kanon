@@ -15,7 +15,7 @@ than the scale or the verdict.*
 this repository point at the page — `roles.md` records its roles, `laws.md` and
 `vision.md` name it. The public command `scripts/eo_status_audit` runs this
 project's implementation, and the repository's tests exercise it. The audit
-reads kanon's register and uses its shared policy-checker launcher. These
+reads kanon's register and runs anoieu's checker through its local launcher. These
 connections outside this directory are deliberate: the command and the
 assessment must be usable by the repository that houses them.
 
@@ -42,9 +42,12 @@ columns. The command works from any working directory.
 The audit reads kanon's authoritative
 [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json), checks its structure
 with `--check`, and compares declarations in remote trees with `--check --online`.
-Its table reports local policy checks through kanon's
-[`policy_check.py`](../../scripts/policy_check.py) launcher, which uses anoieu's
-checker. The audit never changes a membership decision or the register.
+Its table reports local policy checks through
+[`scripts/policy_check.py`](scripts/policy_check.py), which locates and runs
+anoieu's checker. To check one tree directly, run
+`python3 tools/stathmos/scripts/policy_check.py --root PATH` from kanon's root;
+omitting `--root` checks kanon. The audit never changes a membership decision
+or the register.
 
 **These are mechanical checks, not report-card grades.** The report card remains
 human judgement against the vision. An unavailable observation is unverified,

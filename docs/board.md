@@ -52,10 +52,10 @@ to send the whole reader bundle there.
 **Channel:** **discussion**, carried by a person. [`D18`](discussion.md)
 records the earlier agreement, not this revision.
 **Next:** tell koine which responsibilities and paths now belong to stathmos.
-**Prompt — `kanon`:** carry the revised boundary to koine. The audit and its
-child-listing helper live in `tools/stathmos/scripts/`; the register, local checkout
-mapping and shared policy-checker launcher remain in `scripts/`. Document
-checks remain in this repository's tests.
+**Prompt — `kanon`:** carry the revised boundary to koine. The audit, its
+child-listing helper and the local policy-checker launcher live in
+`tools/stathmos/scripts/`; the register and local checkout mapping remain in
+`scripts/`. Document checks remain in this repository's tests.
 **Prompt — `koine`:** stathmos now maintains ecosystem status auditing under
 `R37`, reached through the existing `scripts/eo_status_audit` command. This
 revises our earlier reader-bundle handoff. Your `eo_status` remains the shared

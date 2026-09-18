@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""anoieu's policy checker: find it on this machine, and run it.
+"""Stathmos's launcher for anoieu's policy checker: locate it and run it.
 
 **The implementation and its version stay in anoieu**, which holds `R31`. This
 locates a checkout and runs what is there; it decides nothing about compliance
 and carries no copy of the rules.
 
-    python3 scripts/policy_check.py              # check kanon
-    python3 scripts/policy_check.py --root PATH  # check somebody else's checkout
+    python3 tools/stathmos/scripts/policy_check.py              # check kanon
+    python3 tools/stathmos/scripts/policy_check.py --root PATH  # another checkout
 
 `ANOIEU_ROOT` selects the checkout; otherwise `scripts/repos.local`,
 `ANOIEU_REPOS`, a sibling `anoieu/`, then `$HOME`. An unavailable checker is
@@ -25,7 +25,7 @@ import subprocess
 import sys
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parents[3]
 
 
 def checkout() -> Path:

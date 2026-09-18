@@ -44,7 +44,9 @@ class Commands(unittest.TestCase):
                               capture_output=True, text=True, timeout=30)
 
     def test_checker_launcher_defaults_to_kanon(self):
-        result = self.command(sys.executable, "scripts/policy_check.py")
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "tools/stathmos/scripts/policy_check.py")],
+            cwd=self.base, env=self.env, capture_output=True, text=True, timeout=30)
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn(f"--root {ROOT}", result.stdout)
 
@@ -52,13 +54,14 @@ class Commands(unittest.TestCase):
         legacy = self.source / "tools/policy_check.py"
         legacy.parent.mkdir()
         self.checker.rename(legacy)
-        result = self.command(sys.executable, "scripts/policy_check.py", "--root", str(self.base))
+        result = self.command(sys.executable, "tools/stathmos/scripts/policy_check.py",
+                              "--root", str(self.base))
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn(f"--root {self.base}", result.stdout)
 
     def test_missing_checker_is_unverified(self):
         env = {**self.env, "ANOIEU_ROOT": str(self.base / "missing")}
-        result = self.command(sys.executable, "scripts/policy_check.py", env=env)
+        result = self.command(sys.executable, "tools/stathmos/scripts/policy_check.py", env=env)
         self.assertEqual(result.returncode, 2)
         self.assertIn("UNVERIFIED", result.stderr)
         with patch.dict(os.environ, env):
@@ -104,7 +107,7 @@ class Commands(unittest.TestCase):
 
     def test_audit_launcher_reads_its_own_checkout_from_another_directory(self):
         checkout = self.base / "kanon checkout"
-        for relative in ("scripts/eo_status_audit", "scripts/policy_check.py",
+        for relative in ("scripts/eo_status_audit", "tools/stathmos/scripts/policy_check.py",
                          "tools/stathmos/scripts/status_audit.py",
                          "tools/stathmos/scripts/child_listing.py"):
             target = checkout / relative
