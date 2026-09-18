@@ -15,8 +15,7 @@ The president maintains these laws under
 they govern and give no authority over anyone who has not adopted them.
 
 <a id="nobody-here-is-an-ai-agent"></a>
-
-## People are responsible
+<a id="people-are-responsible"></a>
 
 The human maintainer decides what a repository adopts and may withdraw that
 choice. When these laws say a repository acts, they mean its maintainer acts.
@@ -31,8 +30,7 @@ The people directing the work remain responsible for it, including errors in
 agent-produced text or code. Human involvement does not guarantee safety.
 
 <a id="the-same-owner-loophole"></a>
-
-## Separate repositories and independent oversight
+<a id="separate-repositories-and-independent-oversight"></a>
 
 Moving work between repositories controlled by one person does not make its
 oversight independent. For example, if one person maintains both a tool and
@@ -41,7 +39,9 @@ Separating the work can help organize it. A claim of independent oversight must
 also say who can make decisions independently of the person whose work is being
 reviewed.
 
-## What these laws do not settle
+<a id="what-these-laws-do-not-settle"></a>
+
+These laws leave the following questions unsettled:
 
 1. How a president is chosen, beyond a person saying so. No procedure,
    election or named duty to choose is established here. Recording a holder
@@ -133,14 +133,13 @@ One repository holds the presidency at a time, for a term called a *stretch*.
 
 The office is recorded against a repository, because a repository persists
 across a stretch and a session does not. It is carried out by that
-repository's human maintainer — see *People are responsible* above.
+repository's human maintainer.
 
 It is bestowed. A person grants it, it rests on their say-so, and it is
 theirs to take back. There is no election, no fixed term length, and no
 procedure for removing a holder.
 
 <a id="law-33--authority-over-members"></a>
-
 <a id="law-31--authority-over-members"></a>
 
 ### (LAW 3.1) — Limits on presidential authority
@@ -157,18 +156,16 @@ load.
 It confers nothing over anybody's repository, including the ones this
 ecosystem exists to serve.
 
-<a id="what-the-office-carries"></a>
+<a id="law-31--transfers-with-the-office"></a>
+<a id="law-32--transfers-with-the-office"></a>
 
-### Responsibilities inherited by a successor
+### (LAW 3.2) — Transferring presidential roles and child projects
+
+<a id="what-the-office-carries"></a>
+<a id="responsibilities-inherited-by-a-successor"></a>
 
 A successor takes on the duties these laws attach to the office. The
 current allocation of responsibilities is recorded in [`roles.md`](roles.md).
-
-<a id="law-31--transfers-with-the-office"></a>
-
-<a id="law-32--transfers-with-the-office"></a>
-
-#### (LAW 3.2) — Transferring presidential roles and child projects
 
 A role or child project moves with the presidency only when its
 recorded responsibilities or charter explicitly attach it to the office.
@@ -183,10 +180,9 @@ what the previous holder retains. Passing CI in both repositories is
 recommended for a role transfer.
 
 <a id="law-32--policy-checking-and-status-auditing"></a>
-
 <a id="law-33--policy-checking-and-status-auditing"></a>
 
-#### (LAW 3.3) — Separate responsibility for policy checks and status audits
+### (LAW 3.3) — Separate responsibility for policy checks and status audits
 
 Checking policy compliance and auditing ecosystem status are
 separate responsibilities. Members remain responsible for satisfying the
@@ -210,7 +206,6 @@ successor.
 
 <a id="law-44--where-term-records-stay"></a>
 <a id="what-historymd-is-and-is-not"></a>
-
 <a id="law-41--where-term-records-stay"></a>
 
 ### (LAW 4.1) — Keeping term records in their authoring repository
@@ -225,7 +220,6 @@ went unreviewed. The report card separately assesses tools against the
 ecosystem's aims; [`roles.md`](roles.md) records who keeps it.
 
 <a id="law-45--keeping-the-account-current"></a>
-
 <a id="law-42--keeping-the-account-current"></a>
 
 ### (LAW 4.2) — Updating `history.md` during the term
@@ -234,7 +228,6 @@ Update the account during the term. A summary written afterwards is a
 reconstruction based on memory and hindsight.
 
 <a id="law-41--re-derivable-figures"></a>
-
 <a id="law-43--re-derivable-figures"></a>
 
 ### (LAW 4.3) — Evidence for figures and claims in `history.md`
@@ -248,7 +241,6 @@ reports no failures, it says what was examined and what the evidence does not
 establish. Inventing a failure does not make an account more honest.
 
 <a id="law-42--visible-corrections"></a>
-
 <a id="law-44--visible-corrections"></a>
 
 ### (LAW 4.4) — Documenting corrections to `history.md`
@@ -259,7 +251,6 @@ disproves a figure. Saying only that the text was unclear is insufficient.
 Do not silently replace an earlier account.
 
 <a id="law-43--the-successor-letter"></a>
-
 <a id="law-45--the-successor-letter"></a>
 
 ### (LAW 4.5) — Recording experience in the successor letter
@@ -281,7 +272,6 @@ or becomes selectively flattering needs a reader's scrutiny; mechanical checks
 alone do not establish its completeness or honesty.
 
 <a id="law-11--historymd-is-kept-short-enough-that-a-successor-reads-it"></a>
-
 <a id="law-46--keeping-the-account-short"></a>
 
 ### (LAW 4.6) — Recommended length of `history.md`
@@ -310,7 +300,6 @@ requires establishing which is the latest. The register states the holder
 directly.
 
 <a id="in-limbo"></a>
-
 <a id="law-51--limbo"></a>
 
 ### (LAW 5.1) — When the recorded president cannot maintain the office
@@ -327,7 +316,6 @@ or reverse the recorded appointment.
 
 <a id="law-61--front-page-placement"></a>
 <a id="law-62--describing-the-work"></a>
-
 <a id="law-6--the-president-keeps-a-joke-about-its-own-name-on-its-readme"></a>
 
 ## (LAW 6) — Presidency: a README joke about the repository's name
@@ -381,11 +369,12 @@ A recommended length, and nothing more. The policy, the vision and the
 role register each stay under 10,000 words, with 7,000 the number to aim
 at. A word count measures the length; no build fails on the answer.
 
-| page | why it is covered |
-| --- | --- |
-| [`policy.md`](policy.md) | what a member is held to |
-| [`vision.md`](vision.md) | what the work is for, and what follows from it for anything that leaves the repository. Splitting this page in two does not buy room, which is why it is one |
-| [`roles.md`](roles.md) | who is accountable for what. A register earns its length in entries, so the ceiling binds the prose around them: the rules for reading it should not outweigh the thing being read |
+These limits cover the [policy](policy.md), which states members' obligations;
+the [vision](vision.md), which explains the work's purpose and what follows for
+anything that leaves the repository; and the [role register](roles.md), which assigns
+responsibility. Splitting the vision across files does not increase its budget.
+For the role register, the limit applies to explanatory prose around the
+entries, so instructions for reading the register do not outweigh the entries.
 
 Words rather than lines. A hand-wrapped file's line count is a fact about
 its wrapping; what a reader spends is words.
@@ -421,8 +410,31 @@ This law governs how we record and compare work by projects outside the
 ecosystem. What we may say depends on whether their code is released and their
 research is published.
 
-<a id="law-95--release-and-publication"></a>
+<a id="what-tracking-is"></a>
+<a id="comparing-our-work-with-external-projects"></a>
 
+Tracking is analysing our own positioning against somebody else's work —
+reading what is public about it and setting our own record beside it, so that a
+number of ours acquires a scale. The finding it produces is about us. A
+difference in activity over a period does not establish a difference in quality.
+
+It is never an assessment of their work, a grade, a report-card row, a finding
+filed against them, or a proposal that they join anything. An outsider is
+never proposed for promotion: they were not asked and owe this ecosystem
+nothing.
+
+<a id="why-it-binds-us-and-nobody-else"></a>
+<a id="our-responsibilities-when-recording-external-work"></a>
+
+The `outsider` footing is the one place this ecosystem writes about projects
+that never agreed to anything, and this ecosystem publishes quickly by design.
+Speed is ours to take with our own work and nobody else's: the tenets say a
+tool should reach a consumer early, and none of that reaches a claim about
+somebody's unpublished contribution. Anything written under this footing
+carries the date it was read and says plainly that the project did not ask to
+be measured.
+
+<a id="law-95--release-and-publication"></a>
 <a id="law-91--release-and-publication"></a>
 
 ### (LAW 9.1) — Distinguishing released code from published research
@@ -439,29 +451,12 @@ Both are recorded, separately, against every outsider entry. Conflating
 them is the mistake this law exists to prevent, because what each permits is
 different.
 
-<a id="what-tracking-is"></a>
-
-### Comparing our work with external projects
-
-Tracking is analysing our own positioning against somebody else's work —
-reading what is public about it and setting our own record beside it, so that a
-number of ours acquires a scale. The finding it produces is about us. A
-difference in activity over a period does not establish a difference in quality.
-
-It is never an assessment of their work, a grade, a report-card row, a finding
-filed against them, or a proposal that they join anything. An outsider is
-never proposed for promotion: they were not asked and owe this ecosystem
-nothing.
-
 <a id="what-each-state-permits"></a>
-
-### Permitted use by release and publication status
-
+<a id="permitted-use-by-release-and-publication-status"></a>
 <a id="law-91--released-but-unpublished"></a>
-
 <a id="law-92--released-but-unpublished"></a>
 
-#### (LAW 9.2) — Released code without published research
+### (LAW 9.2) — Released code without published research
 
 Released, and not published: track the artifact, never the
 contribution.
@@ -475,10 +470,9 @@ published by somebody else can pre-empt a claim its authors have not yet made.
 We do not get to frame somebody's contribution before they have.
 
 <a id="law-92--unknown-publication-status"></a>
-
 <a id="law-93--unknown-publication-status"></a>
 
-#### (LAW 9.3) — External work with unknown publication status
+### (LAW 9.3) — External work with unknown publication status
 
 Publication not known either way: treat it as unpublished.
 *We have not looked* and *there is no paper* are different facts, and the
@@ -489,10 +483,9 @@ So an unchecked entry says so, and not knowing permits exactly what knowing
 there is no paper permits.
 
 <a id="law-93--published-work"></a>
-
 <a id="law-94--published-work"></a>
 
-#### (LAW 9.4) — Discussing published research
+### (LAW 9.4) — Discussing published research
 
 Published: the contribution may be discussed, on its own terms.
 Once authors have made their argument in public, engaging with it is ordinary
@@ -501,28 +494,15 @@ with the claim rather than characterising the project. A published paper is
 what we compare against; the repository is only where the code is.
 
 <a id="law-94--unreleased-and-unpublished-work"></a>
-
 <a id="law-95--unreleased-and-unpublished-work"></a>
 
-#### (LAW 9.5) — Permission for unreleased and unpublished work
+### (LAW 9.5) — Permission for unreleased and unpublished work
 
 Neither released nor published: no tracking without permission.
 No entry, no measurement, no positioning, no note that it exists. The one way
 through is the permission of that work's maintainer, recorded with the entry,
 and its absence means the entry does not exist rather than that nobody has
 asked.
-
-<a id="why-it-binds-us-and-nobody-else"></a>
-
-### Our responsibilities when recording external work
-
-The `outsider` footing is the one place this ecosystem writes about projects
-that never agreed to anything, and this ecosystem publishes quickly by design.
-Speed is ours to take with our own work and nobody else's: the tenets say a
-tool should reach a consumer early, and none of that reaches a claim about
-somebody's unpublished contribution. Anything written under this footing
-carries the date it was read and says plainly that the project did not ask to
-be measured.
 
 <a id="law-10--in-dioktes-when-we-go-looking-for-defects-in-somebody-elses-tool"></a>
 
@@ -546,12 +526,10 @@ is a service when the results go to the owner and an attack when they go on a
 scoreboard, and nothing in the work itself distinguishes the two.
 
 <a id="entering-it"></a>
-
-### Starting an external defect investigation
-
+<a id="starting-an-external-defect-investigation"></a>
 <a id="law-101--declaring-a-pursuit"></a>
 
-#### (LAW 10.1) — Declaring an external defect investigation
+### (LAW 10.1) — Declaring an external defect investigation
 
 A person decides, and it is declared. The state is recorded
 against that tool in the register, with the date it began and what closes it.
@@ -566,9 +544,17 @@ much a claim as one made in a paper, and checking it is a fact about their
 artifact rather than a positioning of our contribution against theirs.
 
 
-<a id="what-it-does-not-license"></a>
+<a id="law-102--informing-the-owner-first"></a>
 
-### Limits on reporting external defects
+### (LAW 10.2) — Giving defects to maintainers before publication
+
+Nothing is published about a defect before its owner has it.
+Findings go through the ordinary reporting discipline — confirmed, reduced,
+and put to whoever the authority is — and being *in dioktes* lowers that standard by
+nothing.
+
+<a id="what-it-does-not-license"></a>
+<a id="limits-on-reporting-external-defects"></a>
 
 - A count is never a score. The number of defects we found says which of
   our checks tripped, and never how sound their tool is. Publishing it as a
@@ -580,22 +566,11 @@ artifact rather than a positioning of our contribution against theirs.
   to say when it is true. *X is poorly tested* is not, and never becomes so by
   the first sentence being true many times.
 
-<a id="law-102--informing-the-owner-first"></a>
-
-#### (LAW 10.2) — Giving defects to maintainers before publication
-
-Nothing is published about a defect before its owner has it.
-Findings go through the ordinary reporting discipline — confirmed, reduced,
-and put to whoever the authority is — and being *in dioktes* lowers that standard by
-nothing.
-
 <a id="leaving-it"></a>
-
-### Ending an external defect investigation
-
+<a id="ending-an-external-defect-investigation"></a>
 <a id="law-103--ending-a-pursuit-on-request"></a>
 
-#### (LAW 10.3) — Ending an investigation on request or resolution
+### (LAW 10.3) — Ending an investigation on request or resolution
 
 The target's maintainers can end the pursuit. If the maintainers
 of that tool ask us to stop, we stop — no appeal, no argument about whether the

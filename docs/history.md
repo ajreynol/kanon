@@ -474,6 +474,15 @@ references use the new headings and the combined LAW 6; old anchors remain
 available. These changes preserve the requirements while making them easier
 to find and read.
 
+### The laws use one level of subclauses — 2026-09-18
+
+At the maintainer's request, every law now uses a level-two heading and every
+sublaw a level-three heading. Unnumbered headings were removed, with their
+content retained in the introduction or the relevant law. General external-work
+guidance sits under LAW 9, and reporting limits sit under LAW 10.2. LAW 8.1's
+table became prose; LAW 1 keeps the page's only table. The requirements, law
+numbers and existing link targets are preserved.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
