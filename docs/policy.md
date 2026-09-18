@@ -774,8 +774,8 @@ footing refuses.
 all of this with reason not to say so out front — it is not published, it is
 one person's working tree, a declaration would oversell what is in it — takes
 this footing and writes the marker. It answers to that marker; it does not
-answer to us. **No command writes it**: `eo_join --associate` was withdrawn on
-2026-09-18, so the marker is written by hand. A child on a parent whose
+answer to us. **No command writes it**: the marker is written by hand.
+A child on a parent whose
 front page does not name it records `unadvertised-child` the same way.
 
 **These are not a ladder, and reading them as one is the mistake this table
@@ -1015,13 +1015,10 @@ it, that assessment is that project's own work and not ours: their opinions are
 not necessarily our own, and nothing here is to be read as endorsing them.
 ```
 
-**koine collapsed four forms into two on 2026-09-18**, reported to us in its
-`D17`: `--associate` and `--soft --affiliated` are gone, and both refuse with a
-message saying what to run instead. Four commands answered what a reader
-experiences as one question — *what does this repository say about us* — and a
-chooser who got it wrong wrote the wrong claim onto somebody's front page. What
-is left is `eo_join` and `eo_join --soft`; the disclaimer above, the associate
-marker, and the bare heading with nothing under it are each written by hand.
+**The command offers two forms: `eo_join` and `eo_join --soft`.**
+`--associate` and `--affiliated` are withdrawn flags; both refuse with an
+explanation. The disclaimer above, the associate marker, and the bare heading
+with nothing under it are each written by hand.
 
 ### The prompts, and checking from this side
 

@@ -278,9 +278,7 @@ is a change to be argued there.
 **Role:** maintaining the machinery every member would otherwise implement
 separately — **one implementation of the shared parts rather than one per
 repository.** The bug database is one of them and is not the boundary of the
-role. *The history-review tool was named here until 2026-09-18; it was removed
-from koine on 2026-09-17 and the subject is epikrisis's, which koine reported in
-its `D18`.*
+role.
 **Owns:** the shared implementations and the interfaces other tools build
 against, including the commands `install_eo_cmd` puts on a person's path that
 are not `R35`'s: `eo_status`, which reads the register in the tree that holds it;

@@ -413,6 +413,41 @@ children: their documents now live in local `docs/` directories with indexes,
 and stathmos's regressions live in its `tests/`. The parent test run still
 includes them; public commands and child charters retain their locations.
 
+### Housekeeping completed after an interruption — 2026-09-18
+
+This entry is reconstructed from `d03447d` ("Hk") and the local source
+checkouts while completing that interrupted work.
+
+**The joining instructions now describe koine's two command forms.**
+`eo_join` joins; `eo_join --soft` writes the affiliating note and adopts no
+policy. Koine withdrew `--associate` and `--affiliated` on 2026-09-18 to reduce
+the choice of commands; both flags refuse with an explanation. The independent
+disclaimer and associate marker remain available by hand. These edits describe
+the command's behavior; they change no footing or membership requirement.
+`R35` now describes both accepted checker workflows, and `R16` names the current
+shared commands without the history-review tool removed from koine on
+2026-09-17. That subject belongs to epikrisis.
+
+**The same commit made the law subclauses headings.** The numbers and rule text
+were retained, and the heading-only policy checker can now resolve the current
+clause links. This supersedes the paragraph-marker implementation described
+above. Completion restores the dropped `#in-limbo` alias so older links still
+reach the same provision.
+
+The inventory and glossary record anakrisis and empeiria under paideia after
+their move from dokimasia, add tachyon's elaphros, and describe aisthesis's three
+documents. Paideia's front page calls it an associate, but its maintenance page
+explicitly leaves the marker unrecorded; its candidate listing is unchanged.
+Completion also removes the inventory's remaining claim that association is
+ours to confer and that the audit reads an affiliating note. It reads the
+repository's own maintenance marker. The earlier inventory history is traced
+through anoieu's rename as well as its later deletion, so the handoff does not
+look like every project's first appearance.
+
+*Re-derive:* `git show d03447d`; koine's `eo_cmd/eo_join`; paideia's
+`README.md` and `docs/maintenance.md`; and, in anoieu,
+`git log --follow -- scripts/ecosystem/ecosystem.json`.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

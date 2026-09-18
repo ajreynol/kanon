@@ -306,6 +306,8 @@ authoring repository. Reconstructing the current holder from those accounts
 requires establishing which is the latest. The register states the holder
 directly.
 
+<a id="in-limbo"></a>
+
 ### (LAW 5.1) — Limbo
 
 **A repository is in limbo when it is recorded as president but lacks

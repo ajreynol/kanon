@@ -58,8 +58,7 @@ records the ecosystem’s interest in it.
 <a id="anakrisis"></a>
 **anakrisis** (Eunoia child project of [paideia](#paideia); *proper noun*):
 The project reviewing [cvc5](#cvc5) pull requests through proof-completeness
-analyses before and after a change. It moved out of
-[dokimasia](#dokimasia) on 2026-09-18.
+analyses before and after a change.
 [Charter](https://github.com/ajreynol/paideia/blob/main/tools/anakrisis/README.md).
 
 <a id="anoieu"></a>
@@ -179,8 +178,7 @@ establishes it; the report-card field paired with [arete](#arete) and
 <a id="empeiria"></a>
 **empeiria** (Eunoia child project of [paideia](#paideia); *proper noun*):
 The project working on [cvc5](#cvc5) bug reports and learning from maintainer
-responses to improve the next fix. It moved out of
-[dokimasia](#dokimasia) on 2026-09-18.
+responses to improve the next fix.
 [Charter](https://github.com/ajreynol/paideia/blob/main/tools/empeiria/README.md).
 
 <a id="eo"></a>
@@ -376,11 +374,11 @@ obligations on it.
 <a id="paideia"></a>
 **paideia** (Eunoia candidate; *proper noun*): A written account of how
 [cvc5](#cvc5)’s source is put together, for people who have to change it. It
-houses [anakrisis](#anakrisis) and [empeiria](#empeiria), which moved there from
-[dokimasia](#dokimasia) on 2026-09-18. From Greek παιδεία, “education, the
-rearing of a child.” Its own front page records no footing and asked for none;
-the [candidate](#candidate) listing beside it is this ecosystem’s position and
-obliges it to nothing.
+houses [anakrisis](#anakrisis) and [empeiria](#empeiria). From Greek παιδεία,
+“education, the rearing of a child.” As read on 2026-09-18, its front page calls
+it an associate, but its maintenance page explicitly leaves the footing marker
+unrecorded. The [candidate](#candidate) listing beside it is this ecosystem’s
+position and obliges it to nothing.
 [Repository](https://github.com/ajreynol/paideia).
 
 <a id="parainesis"></a>
