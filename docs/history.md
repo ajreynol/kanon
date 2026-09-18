@@ -518,6 +518,18 @@ checkouts; a regression checks that those reads cannot occur.
 The maintainer also removed the redundant glossary entry for "candidate laws";
 the phrase remains plain text in the laws' introduction.
 
+### Presidential document tenets were gathered under LAW 5 — 2026-09-18
+
+At the maintainer's request, LAW 5 now begins *Presidential tenets* and names
+the shared documents the president maintains. This makes the existing document
+responsibilities explicit without changing their holders or transfer terms.
+The authoritative record of who holds the office belongs with appointment
+and succession, so that text moved to LAW 3. LAW 5.1 still covers limbo.
+
+LAW 8's conciseness guidance is now LAW 5.2, keeping the same recommended word
+limits and scope. LAW 8 remains an empty placeholder; Laws 9 and 10 keep their
+numbers. The policy links to LAW 5.2, and old anchors reach the moved text.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

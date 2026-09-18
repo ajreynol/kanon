@@ -252,7 +252,7 @@
     "proposed": "associate",
     "repo": "ethos",
     "url": "https://github.com/cvc5/ethos",
-    "short": "Proof checker and Eunoia manual",
+    "short": "C++ proof checker and Eunoia manual",
     "vetted": "2026-09-01",
     "what": "the proof checker, the home of the Eunoia manual, and the tree the ethos-eoc child project is in",
     "why": "every other reading of the language is measured against its behaviour, and this repository's oracle is a recording of it"
@@ -269,7 +269,7 @@
     "joined": "anoieu 7cdaab3",
     "repo": "logos",
     "url": "https://github.com/cvc5/logos",
-    "what": "the Lean development, and the owner of Cpc.eos"
+    "what": "Lean-based proof checker, and the owner of Cpc.eos"
   },
   "eudaimonia": {
     "status": "member",

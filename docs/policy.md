@@ -19,9 +19,9 @@ another project, no change of footing.
 
 **House style.** Cite a rule by name, never by number. Append; do not renumber;
 retire in place with a line saying why. Prefer the shortest form that is still
-arguable, and never narrate that you are following these rules. [LAW
-8.1](laws.md#law-81--recommended-word-limits-for-shared-documents)
-gives this page a length to stay under.
+arguable, and never narrate that you are following these rules.
+[Recommended word limits for shared documents](laws.md#law-52--recommended-word-limits-for-shared-documents)
+give this page a length to stay under.
 
 ## What is checked, and what is not
 

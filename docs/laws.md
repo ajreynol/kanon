@@ -130,6 +130,18 @@ It is bestowed. A person grants it, it rests on their say-so, and it is
 theirs to take back. There is no election, no fixed term length, and no
 procedure for removing a holder.
 
+<a id="law-5--the-registry-says-who-the-president-is"></a>
+<a id="law-5--presidency-the-ecosystem-register-identifies-the-holder"></a>
+
+The authoritative ecosystem register records who holds the presidency.
+Its custodian is named in [`docs/roles.md`](roles.md); its current location and
+auditing commands are described in [`docs/maintenance.md`](maintenance.md). Front
+pages, term accounts and letters do not create a competing record. Where they
+disagree, the register is authoritative and the other account is corrected.
+
+One holder at a time. Recording multiple holders is an inconsistency that
+must be resolved. An audit can detect it; the human decision grants the office.
+
 <a id="law-33--authority-over-members"></a>
 <a id="law-31--authority-over-members"></a>
 
@@ -241,18 +253,20 @@ Aim to keep [`docs/history.md`](history.md) under 10,000 words, focused on what
 a successor may find useful. Excess length or a minor entry is not a violation
 and must not fail a build.
 
-<a id="law-5--the-registry-says-who-the-president-is"></a>
+## (LAW 5) — Presidential tenets: maintaining the shared documents
 
-## (LAW 5) — Presidency: the ecosystem register identifies the holder
+The president keeps the shared documents current, clear and concise. These
+include the policy in [`docs/policy.md`](policy.md), the development vision in
+[`docs/vision.md`](vision.md), the named exchanges in
+[`docs/protocols.md`](protocols.md), the vocabulary and name register in
+[`docs/glossary.md`](glossary.md), and the role register in
+[`docs/roles.md`](roles.md).
 
-The authoritative ecosystem register records who holds the presidency.
-Its custodian is named in [`docs/roles.md`](roles.md); its current location and
-auditing commands are described in [`docs/maintenance.md`](maintenance.md). Front
-pages, term accounts and letters do not create a competing record. Where they
-disagree, the register is authoritative and the other account is corrected.
-
-One holder at a time. Recording multiple holders is an inconsistency that
-must be resolved. An audit can detect it; the human decision grants the office.
+The role register records the office's current responsibilities; their
+transfer follows [LAW 3.2](#law-32--transferring-presidential-roles-and-child-projects).
+Maintaining these laws follows [LAW 7](#law-7--maintaining-and-amending-the-laws),
+and keeping the term's history and successor letter follows
+[LAW 4](#law-4--presidential-records-historymd-and-the-successor-letter).
 
 <a id="in-limbo"></a>
 <a id="law-51--limbo"></a>
@@ -268,6 +282,45 @@ A president in limbo makes ending limbo its first task.
 Limbo is reported for a person to resolve. It does not automatically
 revoke the appointment or fail a build. The remedy is to complete the handover
 or reverse the recorded appointment.
+
+<a id="law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting"></a>
+<a id="law-8--reading-limits-for-the-policy-vision-and-role-register"></a>
+<a id="law-81--the-reading-budget"></a>
+<a id="law-81--recommended-word-limits-for-shared-documents"></a>
+
+### (LAW 5.2) — Recommended word limits for shared documents
+
+A recommended length, and nothing more. The policy, the vision and the
+role register each stay under 10,000 words, with 7,000 the number to aim
+at. A word count measures the length; no build fails on the answer.
+
+These limits cover the policy in [`docs/policy.md`](policy.md), which states
+members' obligations; the vision in [`docs/vision.md`](vision.md), which explains
+the work's purpose and what follows for anything that leaves the repository;
+and the role register in [`docs/roles.md`](roles.md), which assigns responsibility.
+Splitting the vision across files does not increase its budget.
+For the role register, the limit applies to explanatory prose around the
+entries, so instructions for reading the register do not outweigh the entries.
+
+Count words, not lines.
+
+Over the ceiling is not a violation. It is a signal that something on the
+page has stopped being load-bearing, and the repair is to find that thing
+rather than to shave evenly.
+
+Growth is paid for. A change that adds a rule says what it replaces, or
+argues that the page is now worth more of a reader's time than it was.
+
+What comes out first, in order: a copy of something a script already
+carries; an account of how a rule came to be; a paragraph defending a rule
+against an objection nobody raised; and a second sentence that restates the
+first.
+
+Shortening must preserve the rules, as required by
+[LAW 7.2](#law-72--preserving-rules-when-rewriting-them).
+
+This page is not covered by the count and is expected to stay shorter than
+the documents above.
 
 <a id="law-61--front-page-placement"></a>
 <a id="law-62--describing-the-work"></a>
@@ -307,45 +360,7 @@ state the current rules.
 A rewrite must preserve outcomes. If the same cases produce
 different outcomes, record it as a rule change, not an editorial rewrite.
 
-<a id="law-8--the-shared-pages-are-kept-short-enough-to-read-in-one-sitting"></a>
-
-## (LAW 8) — Reading limits for the policy, vision and role register
-
-<a id="law-81--the-reading-budget"></a>
-
-### (LAW 8.1) — Recommended word limits for shared documents
-
-A recommended length, and nothing more. The policy, the vision and the
-role register each stay under 10,000 words, with 7,000 the number to aim
-at. A word count measures the length; no build fails on the answer.
-
-These limits cover the policy in [`docs/policy.md`](policy.md), which states
-members' obligations; the vision in [`docs/vision.md`](vision.md), which explains
-the work's purpose and what follows for anything that leaves the repository;
-and the role register in [`docs/roles.md`](roles.md), which assigns responsibility.
-Splitting the vision across files does not increase its budget.
-For the role register, the limit applies to explanatory prose around the
-entries, so instructions for reading the register do not outweigh the entries.
-
-Count words, not lines.
-
-Over the ceiling is not a violation. It is a signal that something on the
-page has stopped being load-bearing, and the repair is to find that thing
-rather than to shave evenly.
-
-Growth is paid for. A change that adds a rule says what it replaces, or
-argues that the page is now worth more of a reader's time than it was.
-
-What comes out first, in order: a copy of something a script already
-carries; an account of how a rule came to be; a paragraph defending a rule
-against an objection nobody raised; and a second sentence that restates the
-first.
-
-Shortening must preserve the rules, as required by
-[LAW 7.2](#law-72--preserving-rules-when-rewriting-them).
-
-This page is not covered by the count and is expected to stay shorter than
-the documents above.
+## (LAW 8) — Placeholder
 
 <a id="law-9--released-is-not-published-and-tracking-respects-the-difference"></a>
 
