@@ -317,27 +317,6 @@ in its first line.
 > override.
 ```
 
-## Common questions on the front page
-
-**Recommended, not checked.** Every repository here is asked the same handful
-of questions — *what is this*, *which repository does X*, *where is the
-register that would record this* — and answers each by searching the tree,
-paying that cost every time and producing something *reconstructed* rather than
-decided. So write them down, as a `## Common questions` section late in the
-README: after what the tool is, before the maintenance note.
-
-**Questions that have short settled answers and that actually get asked**, in
-the words somebody would use, **routing answers first** — the most valuable
-entry is not *what does this tool do* but **which repository this belongs to**.
-**One line each, and a link.** Keep it re-readable in a minute; a stale FAQ is
-worse than none.
-
-**A child project is never an entry** — not by name, not as a hedge that tells
-a reader there is something to find. Children may be unadvertised, and an FAQ
-is the most efficient advertisement a repository can write. Where the true
-answer is a child project, the honest entry is that nothing is published yet,
-or there is no entry. **And nothing about a repository's own standing.**
-
 ## The ecosystem never locks everybody out
 
 **No arrangement here may reach a state where nobody can proceed**, and where
@@ -742,6 +721,24 @@ join, `--soft` for the maintenance note alone, and `--show-prompt` on either to
 read what it would do without running it. **This page is the authority for what
 it asks of you**; [`roles.md`](roles.md) says who maintains it.
 
+**The whole of a passing tree, for a repository with no code, is two files.**
+`README.md`, carrying the declaration and the maintenance note, and
+`.github/workflows/anoieu.yml`. Every other check this policy carries reports
+`skip`, each naming the path that would switch it on — *nothing at
+docs/discussion.md — this check turns on if you add one*, and so for the
+documentation index, `.gitignore`, `tools/` and the rest. **A discussion file
+is not in the joining set.** It is what a repository writes when it has
+somebody to talk to, and the response gate becomes fatal only once one exists.
+
+*Measured 2026-09-18* on a tree built from the two blocks below and nothing
+else, against anoieu `5fa91be` at contract 1, and the same result at `06bd787`
+a little over an hour later: **0 failures, 14 skipped**, and
+one minor finding — that the README does not explain its own name, which
+[the layout](#the-layout) recommends and nothing ever fails on. **Reading the
+checker is not the intended path into this ecosystem**, and a joining section
+that leaves somebody to discover the set by running it is our defect and not
+theirs.
+
 **If the repository is new, nothing is required yet.**
 `eo_init` gives it a README saying what it is for and is
 told not to comply with any of this, because knowing what you are building is
@@ -802,9 +799,10 @@ vision question. `scripts/eo_status_audit --check --online` decides *declares / 
 not declare* and nothing more. **`associate` carries an expiry:** its entry
 records `vetted`, the date a person last read the tree and meant it, and `why`
 — what we vetted them *as*. Nothing expires on its own; the date is there so a
-stale vetting is a fact somebody can point at. **Nothing runs against an
-associate**, because publishing a failure count for a tree held to none of this
-would be the grading the footing exists to refuse. **And a candidate is not an
+stale vetting is a fact somebody can point at. **No failure count is ever
+published for an associate**, because grading a tree held to none of this is
+what the footing exists to refuse: the check runs, its row reads `N tracked`,
+and nothing is counted against them. **And a candidate is not an
 accusation.**
 
 **What is not in this list:** everything these tools are built **with** rather

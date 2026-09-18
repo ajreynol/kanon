@@ -42,6 +42,22 @@ tree and documented at its source. A page that keeps its graduates is a page
 whose first entries are all finished work, which is exactly what the first two
 entries here had become before that sweep.
 
+**`iogos` left on 2026-09-18, and it had been gone a while.** It is a
+repository — an [associate](../../../docs/glossary.md#i), vetted
+2026-09-17, carrying its own maintenance marker — so the rule above had already
+decided this page should not describe it as work nobody has started. **What its
+entry was carrying is the fork**, and that is why the removal is worth a
+sentence rather than a diff: the entry's argument was that iogos is the thing
+`noesis` has to be decided *against*, and the fork is argued at length in
+[`proposals.md`](proposals.md#p3--the-semantics-and-the-compiler-defined-in-lean)
+and in [`why-eunoia.md`](why-eunoia.md), which is where it belongs. Nothing was
+lost by deleting the summary of it. **The falsification test the entry named is
+now running rather than finished**: iogos is a repository and noesis is a child
+project in eudaimonia's tree, so a second kernel is being attempted — whether it
+turns out to be a second backend or a second project is exactly what neither has
+answered yet, and iogos's own README warns it is a research scaffold with no
+soundness proof.
+
 ## How to read it, and how to edit it
 
 **Position is the priority**, exactly as on
@@ -301,27 +317,3 @@ arrangement's weakest artifact and touches nothing else, so every other open
 question in the account is exactly as open the day after it lands — which is
 worth saying, because *we are building a verified checker* is easily heard as
 *the rest is settled*.
-
-## iogos — logos in a second proof assistant
-
-**What:** an Isabelle/HOL backend for `ethos-eoc`, and the logos development
-redone against it: the same calculus, the same semantics and the same soundness
-argument, carried by a second kernel.
-**State:** `named`.
-**Settles:** reason **6**, as its falsification test. The claim that the Lean
-side is *generated rather than chosen* is what lets the arrangement count a
-proof-assistant justification as a derived artifact, and nothing has ever tested
-whether a second prover is a second backend or a second project.
-**Costs:** Eunoia's types are dependent where SMT-LIB's are, and Isabelle/HOL
-cannot follow that shape — widths become fields with well-formedness conditions
-carried through every operation, which is a redesign of the part of logos that
-is hardest to get right rather than a port of it.
-**Before it:** the fork with `noesis`, decided. Noesis moves the authoritative
-semantics into a prover and iogos needs it outside every prover; both cannot
-hold in their strongest forms, and that wants settling before either starts.
-**Today:** one development, one kernel, and no measurement of how much of it is
-Lean rather than calculus.
-**Why here:** last, and still on the page. Its largest present value is not as
-work to do but as the thing `noesis` has to be decided *against* — a page that
-dropped it for being expensive would lose the fork, which is the most
-consequential open decision on this page.

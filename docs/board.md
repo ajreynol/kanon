@@ -25,19 +25,6 @@ observation should be withdrawn. Do not refile the accepted findings.
 **HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is
 stopping us filing them.
 
-## B26 — add kanon's front-page FAQ
-
-**Task:** give kanon short, settled answers to its recurring questions.
-[`policy.md`](policy.md#common-questions-on-the-front-page) recommends the
-answer — a `## Common questions` section on the front page.
-**Entities:** `kanon`
-**Status:** open on our own side first. **Nothing may be proposed to anybody
-until kanon carries one.**
-**Channel:** **local**, then a ball each.
-**Next:** write kanon's, then propose the section to one other tool. **Prompt —
-`kanon`:** proposing a style you have not adopted is the error this office
-exists to avoid. **HUMAN FEEDBACK:**
-
 ## B31 — tell koine the status audit now belongs to stathmos
 
 **Task:** carry the completed audit split to koine, revising the earlier plan
@@ -47,7 +34,11 @@ to send the whole reader bundle there.
 2026-09-18 under `R37`; `scripts/eo_status_audit` remains the public command.
 **Channel:** **discussion**, carried by a person. [`D18`](discussion.md)
 records the earlier agreement, not this revision.
-**Next:** tell koine which responsibilities and paths now belong to stathmos.
+**Next:** carry it. The notice is drafted in
+[`D22`](discussion.md) — the audit, its child-listing helper and the local
+policy-checker launcher are in `tools/stathmos/scripts/`, the register and the
+checkout map stay in `scripts/`, and `scripts/eo_status_audit` is unchanged as
+the public command. Writing it there did not deliver it.
 **Prompt — `kanon`:** carry the revised boundary to koine. The audit, its
 child-listing helper and the local policy-checker launcher live in
 `tools/stathmos/scripts/`; the register and local checkout mapping remain in
@@ -68,10 +59,16 @@ by its own maintenance-page marker; the policy's
 README heading or an affiliating paragraph is required.
 **Entities:** `kanon`, `ethos`
 **Status:** blocked on policy clarification — ethos remains a candidate with
-`associate` proposed in the inventory, reviewed 2026-09-18.
+`associate` proposed in the inventory, reviewed 2026-09-18. Two things moved
+that day: `scripts/eo_status_audit --protocol` runs again, having been raising
+`AttributeError`, and it reports that **ethos carries the maintenance note and
+not the associate marker** — which is the distinction this item is about. The
+policy's separate self-contradiction, about whether an associate is checked at
+all, is fixed on `koine-D17`.
 **Channel:** **internal**, then **upstream, by a person** if an ask remains.
 **Next:** separate the associate marker from the optional README note in the
-policy's outstanding proposal.
+policy's outstanding proposal. That proposal adopts the weaker reading by
+default on 2026-12-01 if nobody has answered.
 **Prompt — `kanon`:** reconcile the proposal with the current footing before
 asking ethos to choose. Keep the inventory at candidate unless ethos records
 the associate marker itself; its README maintenance heading is not that marker.
@@ -131,13 +128,18 @@ This is the finding that taught us to check.
 **Task:** update ethos's `user_manual.md` using the advice in
 [sapheneia's feedback ledger](../tools/sapheneia/docs/feedback.md).
 **Entities:** `ethos`, `sapheneia`
-**Status:** in progress — checked 2026-09-18 against ethos `21fc6c7d`;
-`EOM-01` and `EOM-02` are addressed by the grammar changes in
-[`72a0c162`](https://github.com/cvc5/ethos/commit/72a0c162c80fab55986932c3976f4bd28fd9847c).
+**Status:** in progress — rechecked 2026-09-18 against ethos `21fc6c7d`.
+`EOM-01` and `EOM-02` are **fixed**: `<term>` now derives `<literal>`,
+`<literal>` has a production, and `<datatype-dec>` has the `par` alternative.
+Six more were re-read against the current manual and **stand** — `EOM-03`,
+`04`, `06`, `07`, `11` and `15`, each with its evidence in
+[the recheck](../tools/sapheneia/docs/feedback.md#the-recheck-2026-09-18).
+Our `D12` carried only the two now fixed, and has been removed.
 **Channel:** **upstream, by a person** — ethos has no discussion file;
 sapheneia's preparation is internal to kanon.
-**Next:** recheck `EOM-03` through `EOM-15` against the current ethos manual
-and identify which still need a change.
+**Next:** the seven judgement entries — `EOM-05`, `08`, `09`, `10`, `12`, `13`
+and `14` — need a reader who knows Eunoia rather than a grep. Decide whether to
+spend that reading, or to carry the six standing entries upstream as they are.
 **Prompt — `ethos`:** update the user manual using the confirmed advice from
 sapheneia's feedback ledger. Separate wording and documentation corrections
 from questions that require a language decision, and record which suggestions
@@ -146,6 +148,119 @@ were applied, declined or left open.
 recheck the remaining entries against a named revision of the ethos manual.
 Prepare supported corrections for a person to carry upstream, keeping language
 decisions explicit as questions for ethos.
+**HUMAN FEEDBACK:**
+
+## B37 — decide the three status transitions eudaimonia asked for
+
+**Task:** decide whether a name, a role handoff and a child project's ending
+each become a field a diff can read, rather than prose.
+**Entities:** `kanon`, `eudaimonia`
+**Status:** waiting on the maintainer — a schema change to
+[`ecosystem.json`](../scripts/ecosystem/ecosystem.json) and to how `roles.md`
+records a handoff. **No script writes the register**, deliberately, and an agent
+adding a field to the file that records decisions it may not make is the wrong
+order. Raised as `eudaimonia-D3`, answered in `D23`.
+**Channel:** **internal**, then **discussion** to report the outcome.
+**Next:** decide the third one first — a child's ending is nearly free, since
+children are already register entries with a `parent` and a `path`.
+**Prompt — `kanon`:** the evidence is that the register's git history is the only
+dated machine-readable record of a footing change in this ecosystem, and that
+two rules we already publish cannot be checked without transitions being data:
+*a child project that has gone quiet is a claim nobody is standing behind*, and
+*a name that graduates keeps its entry and changes that clause*. Against it:
+every field is a thing to keep true, and the name register has since become a
+dictionary rather than a status table.
+**Prompt — `eudaimonia`:** the demonstration is the argument and the reversal
+case — two tools moved to a footing and moved back — is the part worth repeating
+to somebody weighing the cost.
+**HUMAN FEEDBACK:**
+
+## B39 — decide whether citing a child project in the parent's channel advertises it
+
+**Task:** decide which of two readings binds — that the refusal to advertise
+means less than it says, or that the checker is narrower than the rule.
+**Entities:** `kanon`, `eudaimonia`
+**Status:** waiting on the maintainer — raised as `eudaimonia-D2`, answered in
+`D23`, where this repository deliberately declined to decide it. The written
+rule says *no link inward from anything a user reads*; the checker reads the
+README and the documentation index and nowhere else, and a discussion file is
+named in that index.
+**Channel:** **internal**, then **discussion** to report the outcome.
+**Next:** decide, and make the policy and the checker say the same thing.
+**Prompt — `kanon`:** whichever way it goes, one of the two moves. It changes
+what an unadvertised child is for: if a topic may cite one, the refusal protects
+a parent's credibility rather than a child's obscurity, and that is worth saying
+out loud rather than leaving as a gap between a rule and its program.
+**HUMAN FEEDBACK:**
+
+## B40 — decide whether `vision.md` records why it changed
+
+**Task:** decide whether a change to the vision must record its reason, in a
+form a program can find.
+**Entities:** `kanon`, `eudaimonia`
+**Status:** waiting on the maintainer — `vision.md` is first on
+[the supervision ladder](maintenance.md#the-supervision-ladder): ask a person
+first, always, and at most five lines of diff. Raised as `eudaimonia-D6`,
+answered in `D23`, which declined to answer it here for that reason.
+**Channel:** **internal.**
+**Next:** decide. A rule of this shape would itself be a change to that page.
+**Prompt — `kanon`:** for it — the vision was revised by 740 lines on the day it
+was added and those reasons are now nowhere; a page limited to five lines a time
+is a page where recording why costs almost nothing. Against it — **nothing may
+ever check the vision mechanically**, and a machine-readable why sits close
+enough to that line for a person to judge the distance. The requester's own
+interest is declared: it is the one file where their `derived_only` measure
+would mean real absence, which makes this a request rather than a proposal.
+**HUMAN FEEDBACK:**
+
+## B41 — two registers share the `R<n>` prefix and six ids already collide
+
+**Task:** decide whether ynoia's request ids and the role ids stop sharing a
+namespace, and which one moves.
+**Entities:** `kanon`, `ynoia`
+**Status:** ready — found 2026-09-18 while reading `aisthesis-D3`.
+[`roles.md`](roles.md) allocates twenty-six ids from `R2` to `R37`;
+[`requests.md`](../tools/ynoia/docs/requests.md) allocates `R1`–`R8`. **Six of
+the eight collide**: `R2` is both *the static analyzer* and *a check that a
+deletion did not remove the only explanation of something*; `R4` is both *the
+ecosystem's shared policy and vision* and *make the tenets configurable*; `R8`
+is both *CPC, the calculus* and *a documentation ranker*. `R3`, `R6`, `R7` the
+same. Only `R1` and `R5` are unambiguous.
+**Channel:** **internal** — both registers are in this tree.
+**Next:** decide which register renumbers. Ynoia's is the younger and the one
+nothing else cites, so it is the cheaper move; but **an id is permanent** is a
+rule of `roles.md` and ynoia's page says withdrawn ids stay listed, so neither
+renumbers for free.
+**Prompt — `kanon`:** note what makes this worse than cosmetic — decisions get
+recorded against ids, and a topic citing `R4` in either tree is already
+ambiguous to a reader who does not know which register was meant. A prefix
+(`Y4`, or `REQ-4`) is the smaller change and keeps both pages' permanence rules.
+**HUMAN FEEDBACK:**
+
+## B42 — decide whether to place aisthesis's six recommendations in ynoia
+
+**Task:** decide whether this office spends the time writing
+[aisthesis's recommendations](https://github.com/ajreynol/aisthesis/blob/main/docs/recommendations.md)
+into ynoia's registers.
+**Entities:** `kanon`, `aisthesis`, `ynoia`, `anoieu`
+**Status:** parked — **the maintainer decided on 2026-09-18 not to address it
+yet, and not to reply.** `aisthesis-D3` asks for it, is a `request`, and says
+*we gain*. A drafted answer was written and withdrawn on that instruction, so
+**nothing has been said to aisthesis and their topic stays open on their side.**
+**Channel:** **internal** until the decision changes; **discussion** if it does.
+**Next:** decide. If yes, `B41` should be settled first, or the placement adds
+four more colliding ids.
+**Prompt — `kanon`:** the entries are three requests naming anoieu's tree, one
+tool proposal for nobody's tree, one *not yet*, and one observation for
+`papers.md`. **Placing them moves nothing on its own** — the three that name
+anoieu move when anoieu agrees, not when ynoia lists them — so the question is
+whether a register entry is worth the afternoon. Against: the governance budget
+already reports prose growing while the check and finding counts do not.
+For: the entries meet a stricter entry standard than ynoia's own, each naming
+the source read and the fact it collides with.
+**Prompt — `aisthesis`:** nothing yet, deliberately. If the answer is ever *no*,
+their own settling condition already names *left where it is* as a complete
+outcome, so a reply costs one topic whenever somebody wants to close it.
 **HUMAN FEEDBACK:**
 
 ## B34 — determine whether another president is necessary
@@ -184,103 +299,74 @@ recorded agreements or objections, through eudaimonia.
 hermeneia you would accept and whether any current claim needs correction.
 **HUMAN FEEDBACK:**
 
+## B36 — record epikrisis's independent audit, or say this page does not carry it
+
+**Task:** decide whether [`roles.md`](roles.md) gains an `epikrisis` section for
+the independent audit it accepted on 2026-09-17.
+**Entities:** `kanon`, `epikrisis`
+**Status:** waiting on the maintainer — **granting a role is a person's**, and
+this repository declined to allocate an id for a responsibility another tool
+took on its own maintainer's instruction. epikrisis accepted in `epikrisis-D4`;
+our `D3` is closed on it and `D25` is the answer.
+**Channel:** **internal.**
+**Next:** either add the section and an id, or record that an accepted
+responsibility with no id is the deliberate state.
+**Prompt — `kanon`:** `roles.md` has no `epikrisis` section at all, and the tool
+is a member holding work three repositories rely on. Note that the duty is now
+an **offer**: the laws list the commit census under what they leave unsettled,
+so nothing confers it. An id records a fact; it does not create the obligation.
+**HUMAN FEEDBACK:**
+
+## B38 — decide whether the misaddressed-prompt check joins the fatal gate
+
+**Task:** decide whether *a prompt may not be for this repository* stops being
+reported-and-never-fatal.
+**Entities:** `kanon`, `anoieu`
+**Status:** waiting on the maintainer — [the policy](policy.md) says the check
+joins the fatal gate when every member has adopted or declined it, and
+`anoieu-D33` reports the condition met: three repositories carry the paragraph,
+nobody declined, and it has fired twice in opposite directions.
+**Channel:** **internal**; anoieu implements whatever is decided.
+**Next:** decide, or record that the condition being met is not sufficient.
+**Prompt — `kanon`:** the argument against acting on this is anoieu's own and it
+is good: a safety rule promoted on an agent's reading is the wrong way round,
+and the repositories a fatal gate would fail are the ones whose builds turn red.
+Note also that a joining tree has no discussion file, so the gate would not
+reach a new member until it writes one.
+**HUMAN FEEDBACK:**
+
 ---
 
 ## How to maintain this page
 
-**Position is the priority.** The first item is the most important thing
-outstanding; the last is the least. Reordering is done by moving a block, and
-that is the main way a person changes what this page says.
+- Order items by priority, highest first. Move whole items without changing
+  their ids. Never reuse an id. **The next unused id is `B43`.**
+- Keep at most 24 active items. Remove completed or abandoned work; Git and
+  the relevant project records preserve the outcome. Review the cap when the
+  entity count changes, recording any increase and its reason in
+  [`history.md`](history.md).
+- A person may edit any field. **HUMAN FEEDBACK** takes precedence over the
+  other fields; leave it empty until feedback is given.
 
-**The id is stable.** `B6` stays `B6` when it moves, so ids appear out of order
-and that is correct rather than a mistake to tidy. A row that leaves is not
-reused. **The next unused id is `B36`**, including after completed items are
-removed; their earlier contents remain in git history.
-
-**Twenty-four is a cap, not a target.** Adding a twenty-fifth means deciding
-which one leaves, which is the whole value of the number. An item that is done,
-or that nobody will act on, is deleted rather than archived — the record of
-what happened lives in
-[`reports/reports.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md)
-and in git, and a board that keeps its dead is a board nobody reads to the
-bottom of.
-
-**Raising the cap needs a reason on the page.** A cap that never moves stops
-measuring priority and starts measuring how many repositories exist, so the
-number is set at roughly two items per entity — and **it is reviewed when the
-entity count changes, never when the board is full.** The second is how a cap
-gets raised by whatever happens to want adding, which is the failure the number
-exists to prevent. Every raise is recorded here, with its date, like this one.
-
-**Every field is a person's to overwrite.** `HUMAN FEEDBACK` is the one that
-outranks everything else on its item: whatever it says wins over the status,
-the prompt, and the position, and anything that ever reads this file is to
-treat it that way. It is left empty rather than filled with a placeholder,
-because an empty field is visibly unanswered.
-
-Each item carries the same fields, in the same order:
+Use these fields in order:
 
 | field | what it holds |
 | --- | --- |
-| **Task** | one line: what is being maintained, not how |
-| **Entities** | the repositories and child projects involved, using only ids from [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) |
-| **Status** | `ready`, `in progress`, `waiting on <entity>`, `blocked on <what>`, `not started`, or `parked` — plus one clause saying since when or on what |
-| **Channel** | how the prompts below reach the entities they name: `discussion`, `findings`, `upstream, by a person`, or `internal`. The section after this one is what each means |
-| **Next** | the single next issue to fix. One thing, not a plan |
-| **Prompt — `<entity>`** | one per entity involved: what that repository would be asked to do, written so it can be handed over as it stands |
-| **HUMAN FEEDBACK** | empty, for a person |
+| **Task** | the work in one sentence |
+| **Entities** | involved ids from [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) |
+| **Status** | `ready`, `in progress`, `waiting on <entity>`, `blocked on <what>`, `not started`, or `parked`, with a date or reason |
+| **Channel** | `internal`, `discussion`, `findings`, or `upstream, by a person` |
+| **Next** | one next action |
+| **Prompt — `<entity>`** | a draft request for each entity involved |
+| **HUMAN FEEDBACK** | the maintainer's direction |
 
-**A prompt here has not been sent.** Writing one down is drafting it;
-delivering it is the next section, and a person's act either way.
+**Prompts are drafts.** A person carries anything outside this repository.
+Use `discussion` where the recipient keeps a discussion file, `findings` for
+defects through [anoieu's reporting workflow](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md),
+and `upstream, by a person` for other external messages. Check the recipient's
+tree; child projects are reached through their parent. `internal` work stays
+here.
 
-## How a prompt is delivered
-
-**A prompt on this page is not sent by being written here.** It reaches the
-repository it names through the channel that repository actually has, and the
-**Channel** field says which. There are three, and the difference between them
-is not a formality:
-
-| channel | what it means | who acts |
-| --- | --- | --- |
-| **discussion** | a topic in [`discussion.md`](discussion.md) addressed to them, or a reply into a topic of theirs — the standing channel for anything that is **not** a defect report | a person carries it; koine's installed `eo_respond` reads theirs, and nothing here writes into anybody else's file |
-| **findings** | a row in the ledger, carried by `prompts/check_anoieu <id>` and answered through `prompts/process_anoieu` | the same person, through the reporting workflow, which is a separate protocol on purpose |
-| **upstream, by a person** | a message, an issue or a pull request in a tree that has no discussion file | a person, entirely — no script here has a way to do it, and none should |
-
-**Not everybody has a discussion file, and a member need not.** `anoieu`,
-`eudaimonia`, `dokimasia` and `koine` have one; `ethos`, `logos` and `cvc5`
-have none, and a child project has none of its own and is reached through its
-parent. Every repository with one today is a member, which is a fact about who
-has bothered rather than a rule — the policy [does not require
-one](policy.md#the-discussion-file) of anybody, so a member with no file is
-possible and the third row is what reaches it. Writing `discussion` against a
-repository that keeps none would be describing a channel that does not exist.
-That is the shape this page adds to the protocol: the queue is here, the wire
-is the discussion file, and where there is no wire the page says so instead of
-pretending.
-
-**So check the tree rather than the footing.** The question a row answers is
-*does this repository have a file to write into*, and reading it off `member`
-would have been a shortcut even while it happened to work.
-
-**The board does not replace either protocol, and does not shortcut them.**
-Nothing is filed by being on this page, a prompt here is a draft rather than a
-message, and a row is not closed by sending — it closes when the artifact it
-names says what happened, which is the rule the findings ledger already keeps.
-
-## A handoff of a role is an ordinary item here
-
-[`roles.md`](roles.md) keeps what each tool is accountable for, and moving one
-of those to another tool is proposed on this page like anything else: the
-entities are the holder losing it, the tool gaining it where the inventory has
-an id for it, and every consumer whose pin moves. The channel is
-**discussion**, because the point of writing it here is to be disagreed with by
-the repositories it costs something, and there is one prompt per entity so that
-each has been asked rather than told.
-
-The procedure is three things, in
-[`roles.md`](roles.md#how-a-role-is-handed-off), and `B15` is the worked example
-— transferred, with policy/checker version coordination still open. **None of it
-gates anything**, and a handoff that never appeared on this page is still a
-handoff.
-
----
+Close an item on a recorded outcome, not merely on delivery. Role handoffs
+follow [`roles.md`](roles.md#how-a-role-is-handed-off); a board item is not a
+prerequisite.

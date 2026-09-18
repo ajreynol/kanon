@@ -91,6 +91,44 @@ class Commands(unittest.TestCase):
             self.assertEqual(ecosystem.check(str(ROOT)),
                              ("1 failing", ["missing declaration"]))
 
+    def test_readers_are_found_when_the_command_is_only_a_launcher(self):
+        """anoieu's command and its readers are different files, and were split.
+
+        `scripts/policy_check.py` became a launcher exporting `main` alone
+        while `declaration_in` and its siblings moved into `policy_check/`.
+        A loader that reads the command's path returns a module with no
+        readers on it, which crashed `--protocol` rather than reporting.
+        """
+        package = self.source / "policy_check"
+        package.mkdir()
+        (package / "checker.py").write_text(
+            "def declaration_in(text): return []\n"
+            "def note_in(text): return []\n"
+            "def affiliation_in(text): return []\n"
+            "def associate_in(text): return []\n")
+        self.checker.write_text("from policy_check.checker import main\n")
+        with patch.dict(os.environ, self.env):
+            policy_check.policy_checker.cache_clear()
+            try:
+                module = policy_check.policy_checker()
+                self.assertTrue(hasattr(module, "declaration_in"))
+                self.assertTrue(hasattr(module, "note_in"))
+            finally:
+                policy_check.policy_checker.cache_clear()
+
+    def test_a_checker_with_no_readers_anywhere_says_so(self):
+        """The failure names the paths it read, so the next move is obvious."""
+        self.checker.write_text("def main(): return 0\n")
+        with patch.dict(os.environ, self.env):
+            policy_check.policy_checker.cache_clear()
+            try:
+                with self.assertRaises(ImportError) as caught:
+                    policy_check.policy_checker()
+            finally:
+                policy_check.policy_checker.cache_clear()
+        self.assertIn("declaration_in", str(caught.exception))
+        self.assertIn("scripts/policy_check.py", str(caught.exception))
+
     def test_online_declaration_reader_uses_anoieu(self):
         with patch.dict(os.environ, self.env), patch.object(ecosystem, "readme_of", return_value=("member", "")):
             # Keep this test independent of any previous cached module load.

@@ -77,7 +77,7 @@ authority; this is only the route in.
 | it exists, and is held to the policy without saying so out front | **no command** — write the footing marker on your own maintenance page, saying what you hold yourself to. No front-page declaration, and you answer to that marker rather than to us |
 
 **These commands live in [koine](https://github.com/ajreynol/koine)**, and
-koine's `install_eo_cmd` puts them on your path. **What joining costs is this
+koine's `install_eo` puts them on your path. **What joining costs is this
 repository's**:
 [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the authority
 on what a repository that joins is held to.

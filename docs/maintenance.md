@@ -432,16 +432,16 @@ at `tools/workflow-launcher`, and `docs/ai-workflows.md` is the document.
 So: the rows, measured over this tree, each as *files, lines*. Reproducible in
 three commands, and the second row is what the first was worth waiting for.
 
-| what | 2026-09-01 | 2026-09-17 |
-| --- | --- | --- |
-| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 |
-| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written |
-| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 |
-| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** |
-| Python | 54, 13,382 | 8, 2,069 |
-| `scripts/` | 9, 2,481 | 8, 2,025 |
-| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | 63 | 63 |
-| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed |
+| what | 2026-09-01 | 2026-09-17 | 2026-09-18 |
+| --- | --- | --- | --- |
+| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 16,322 |
+| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none |
+| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,485 |
+| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,837** |
+| Python | 54, 13,382 | 8, 2,069 | 9, 1,986 |
+| `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 |
+| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | 63 | 63 | 63 |
+| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed | 41 open, 43 closed |
 
 **What the second row says, including the part that is not to our credit.**
 Written prose fell by 801 lines while **neither the check count nor the finding
@@ -459,7 +459,37 @@ that nothing advertises and nobody is asked to read.
 git ls-files '*.md' | grep -v '^deps/' | xargs wc -l | tail -1
 git ls-files 'tools/*/*.md'           | xargs wc -l | tail -1
 git ls-files '*.py'                   | xargs wc -l | tail -1
+git ls-files 'scripts/*'              | xargs wc -l | tail -1
 ```
+
+The fourth was added on 2026-09-18, because the `scripts/` row had been in the
+table with no command behind it since the table was written.
+
+**The third row, and it reports against the day it was taken.** Written prose
+grew by **188 lines** in one day while the check count did not move. Two
+findings opened, and **they are anoieu's** — the first time any counter on the
+right of this table has moved at all, and not to this repository's credit. So
+**the rule was not kept on 2026-09-18**, by the section's own test, and the
+number says so before anybody has to argue it.
+
+**What the prose bought, stated so the trade can be disagreed with rather than
+assumed.** Twenty-two topics addressed to this office were answered and six of
+ours were closed, which is most of the growth; the joining section gained a
+measured account of the minimal passing tree; and two broken commands were fixed
+with regression tests. **None of that is a check or a finding**, which is
+exactly what the rule is pointing at: correspondence is the cheapest thing this
+office produces and the hardest for it to stop producing.
+
+**Two columns moved for reasons that are not savings, and reading them as such
+would be the second failure this table exists to prevent.** `scripts/` fell from
+2,025 lines to 571 because the audit's implementation moved to
+`tools/stathmos/scripts/`, where it counts as Python and as a child project —
+the same shape as `martyria` and `zetesis` moving to epikrisis a day earlier.
+And **the ledger counts were re-derived differently**, because anoieu split
+`reports.md` into `open-findings.md` and `closed-findings.md`; the 41 and 43
+above are rows in those two files, and the earlier columns counted a page that
+no longer exists in that form. **A counter whose source moves is a counter that
+can drift without anybody lying**, and nothing here checks it.
 
 **What the row is for, and what it is not.** It is not a limit. Nobody has
 argued what the right ratio is, a budget invented here would be a number to

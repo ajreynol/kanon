@@ -62,7 +62,7 @@ tree that houses it are graded on the same scale.** Those are `stathmos` and
 | `kanon` | good | good | good | 2026-09-16 | it writes faster than anything reads |
 | `tachyon` | fair | good | excellent | 2026-09-16 | a ledger that fills daily and nothing downstream yet |
 | `eschaton` | fair | excellent | fair | 2026-09-16 | three bets, one page each, nothing run |
-| `epikrisis` | fair | good | excellent | 2026-09-16 | the laws depend on a report it has not produced |
+| `epikrisis` | fair | good | excellent | 2026-09-16 | took the audit on 2026-09-17; the laws no longer ask for the census |
 | `stathmos` | fair | good | fair | 2026-09-16 | it writes this page, and its own evidence file is older than it |
 
 **Read a row across, not down.** A column is not a league table: these projects
@@ -327,17 +327,42 @@ rather than believed. Its promotion out of eudaimonia into a repository of its
 own, completed this stretch, put it where a tool three repositories rely on
 should have been.
 
-**Elleipsis.** Tenet 5 again, from the other side. `LAW 4` makes the per-tool
-commit census epikrisis's work and **forbids the president from producing it**,
-and no such report exists. kanon's `D3` has been open since 2026-09-02 asking
+**Elleipsis.** Tenet 5 again, from the other side. `LAW 4` made the per-tool
+commit census epikrisis's work and **forbade the president from producing it**,
+and no such report existed. kanon's `D3` had been open since 2026-09-02 asking
 whether epikrisis accepts a responsibility it may never have been told about,
-and **it is still open on 2026-09-16**. A responsibility assigned in a document
+and **it was still open on 2026-09-16**. A responsibility assigned in a document
 the holder has not answered is not held by anybody.
 
-**Parainesis.** An instruction, and it is one sentence long. **Answer `D3`,
-either way.** A *no* ends the topic and frees the laws to be rewritten around
-what is actually true; a *yes* makes this the highest-leverage unbuilt report in
-the ecosystem. The one outcome that costs everybody is the current one.
+> **Both halves of that moved after this round was graded, in opposite
+> directions, and the paragraph above is left standing rather than rewritten.**
+>
+> **epikrisis answered on 2026-09-17, and the answer is yes** — `epikrisis-D4`,
+> given as a person's decision. Eight dated runs exist, six against anoieu and
+> two against the ecosystem. It also named two things to hold against it: the
+> subject list has fallen behind the register, so **a census run today reads
+> seven of the ten repositories held to the policy** and would report a total as
+> though it covered the ecosystem; and the newest run was dated 2026-09-02.
+>
+> **And the law stopped asking.** kanon's `laws.md` now lists the commit census
+> under *what these laws do not settle*: nothing requires per-tool commit
+> counts for a stretch, or a measure of how much work an agent generated.
+> **So the duty this paragraph graded a tool against is conferred on nobody**,
+> and epikrisis says accepting it is therefore an offer rather than a
+> compliance.
+>
+> **Which makes the elleipsis above a grade against a document rather than
+> against a tree, and that is the part worth keeping.** Read on 2026-09-18.
+
+**Parainesis.** *Discharged 2026-09-17.* It was one sentence — **answer `D3`,
+either way** — and the answer came. **What replaces it is narrower and is not an
+instruction to epikrisis:** the second figure `LAW 4` used to ask for, how many
+commits are believed AI-generated, **is not measurable by anybody**, because a
+trailer is opt-in and so the floor is zero with no ceiling. epikrisis says it
+will report it as not measurable with the disclosure count beside it, every
+time. **That is the right answer and this page should quote it rather than
+grade it.** The remaining unbuilt thing is a census whose denominator matches
+the register, and its blocker is a subject list, not a decision.
 
 ## stathmos
 

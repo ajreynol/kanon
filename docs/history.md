@@ -623,6 +623,88 @@ request, preserve Git history during rollback and report evidence remain in
 ordinary prose. Current indexes and ownership descriptions no longer name the
 deleted page; historical references name its recorded revision.
 
+### FAQ guidance was withdrawn and board instructions shortened — 2026-09-18
+
+At the maintainer's request, the policy's front-page FAQ recommendation and
+board item `B26` were removed: whether a FAQ helps is an editorial judgement
+for each repository. The board's maintenance advice was condensed to ordering,
+stable ids, the active-item cap, fields, delivery and closure. Repeated
+explanations and the stale handoff example were removed.
+
+### Twenty-two topics were answered and two commands were found broken — 2026-09-18
+
+**The discussion work.** Every topic in another tool's tree whose `To:` names
+kanon was read: twenty-two, across eight repositories. **Twenty-one were
+answered** — `D22` through `D26` and `D28`, one per recipient — and six topics
+of ours were removed as finished — `D3` (epikrisis answered yes), `D4` and `D5`
+(koine's `D15` answered both), `D9` (dokimasia accepted the remit reading),
+`D12` (ethos fixed both grammar items) and `D16` (`eo_join` now branches on the
+two check forms). `D15` and `D21` gained replies rather than being rewritten.
+
+**Two answers are refusals and say so.** Whether citing a child project in the
+parent's channel counts as advertising it, and whether `vision.md` must record
+why it changed, are decisions this repository declined to make for itself —
+the first because it changes what an unadvertised child is for, the second
+because `vision.md` is first on the supervision ladder and an agent agreeing
+with a proposal about it is not evidence. Both are on the board with the
+requester's argument attached, as are the three status transitions
+`eudaimonia-D3` asks for and the fatal-gate decision `anoieu-D33` reports the
+condition for.
+
+**Two commands were broken and nothing said so**, described under
+[what went wrong](#what-went-wrong). `eo_status_audit --protocol` raised
+`AttributeError` instead of printing its table and `--check --online` would have
+done the same; **stathmos's loader now looks for anoieu's declaration readers by
+name across the layouts they have lived in, and names the paths it read when it
+cannot find them**, held by two regression tests, one of which fails against the
+old loader.
+
+**The joining section now names the minimal passing tree, and the number was
+measured rather than asserted.** `anoieu-D30` asked for that and also asked us
+to say the discussion file is in the joining set. **It is not**, and anoieu's
+own conditional-skip fix is what took it out: a tree of one README and one
+workflow file checks clean at contract 1 — `0 failure(s), 14 skipped` — with
+every remaining check naming the path that would switch it on. That ask is
+declined, with the measurement, rather than satisfied.
+
+**In the child projects.** Ynoia's `tools.md` still carried `iogos` as a tool
+that does not exist; it is a repository and an associate, and the page's own
+rule says a tool leaves when it exists, so it left — with a note saying where
+the fork it argued is kept. **`aisthesis-D3` is the one topic of the twenty-two
+that was not answered, and that was the maintainer's decision.** It asks this
+office to write another repository's recommendations into ynoia's registers; it
+is a `request` and says *we gain*. The entries were drafted into `requests.md`,
+`tools.md` and `papers.md`, and a reply was drafted as `D27`; **all of it was
+withdrawn on the maintainer's instruction to leave it unaddressed for now**, so
+nothing has been said to aisthesis and their topic stays open on their side.
+**`D27` is spent and will not be reused**, which is why the answers above skip
+from `D26` to `D28`; it was withdrawn before it was ever committed, so git
+history does not hold it and this sentence is the only record that it existed.
+Reading it did turn up a defect of ours worth keeping — six of the eight ids in
+ynoia's `requests.md` collide with ids in `roles.md` — which is on the board
+without the entries. Sapheneia's ledger was
+rechecked against ethos `21fc6c7d`: `EOM-01` and `EOM-02` are fixed, six more
+stand with their evidence recorded, and seven are marked unchecked rather than
+re-confirmed, because confirming a judgement by grep would be the inflation the
+recheck exists to avoid. Stathmos's report card had two claims about epikrisis
+that had gone false; the graded paragraph is left standing with a dated note
+under it rather than rewritten.
+
+**What was corrected in the shared pages.** The policy said both that we check
+an associate anyway and that nothing runs against one; it now says the one
+thing both halves meant. `roles.md` named `install_eo_cmd`, said koine's
+manifest files every installed command under `R35`, and described
+`eo_housekeeping` as a reporter; all three are corrected against koine's tree.
+
+**And this page is now about 11,000 words, against the 10,000 that LAW 4.3
+recommends.** It was already over before this entry, by roughly 200. The law
+says excess length is not a violation and must not fail a build, which is
+correct and is also how a page gets to 12,000 — so the number is recorded here
+rather than left to be noticed. What would bring it down is deleting closed
+entries under *what crosses to the next president*, and that is a judgement
+about what mattered this term, which the next reader is better placed to make
+than the author of the entries.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the
@@ -731,6 +813,19 @@ reading: eschaton's was found by `../scripts/eo_status_audit --check --online`, 
 reads each member's front page and fails when the register disagrees with it.
 **That is the check working and the habit not**, and the check is the weaker of
 the two, because it only ever runs when somebody runs it.
+
+**A dependency reorganized and two of our commands went dark without a
+failure.** The readers stathmos imports from anoieu's checker are an interface
+with importers outside anoieu's tree, and they are not in the file the command
+lives at. When the two were separated, `getattr(policy_check, "associate_in",
+None)` returned `None` and the audit reported *this checker cannot read an
+associate's footing marker; a newer anoieu can* — **a guard written for an
+older checker, firing on a newer one, and saying the opposite of what was
+true.** The `--protocol` path had no guard and crashed. Nothing on either side
+checks that a launcher and its readers have not come apart, which is the same
+class as the cross-repository link nothing resolves: it fails silently until
+somebody runs the one thing that used it. Found 2026-09-18, by running every
+flag of the command rather than by any check.
 
 **The register is hand-maintained, and that is the design.** A footing is a
 decision rather than a fact about a tree, so nothing derives this file and

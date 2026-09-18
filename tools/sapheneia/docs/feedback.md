@@ -22,23 +22,30 @@ there — proposing the decision is out of this project's charter.
 Read against `user_manual.md` at `ethosEoc3` (`3cf1c03`). Section names are the
 manual's own headings.
 
-| id | where | in one line | kind |
-| --- | --- | --- | --- |
-| [EOM-01](#eom-01) | *Full syntax for Eunoia commands* | `<term>` cannot derive a literal | grammar |
-| [EOM-02](#eom-02) | *Full syntax for Eunoia commands* | `<datatype-dec>` cannot derive `par` | grammar |
-| [EOM-03](#eom-03) | *Full syntax for Eunoia commands* | `(! <term> <attr>+)` is in the grammar and nowhere in the prose | undocumented |
-| [EOM-04](#eom-04) | *Overview of Eunoia's features* | `eo::define` is named once and never described | undocumented |
-| [EOM-05](#eom-05) | *Command line options*, grammar | `let` appears only as something an option turns off | undocumented |
-| [EOM-06](#eom-06) | *Full syntax*, *Declaring theory signatures* | `declare-sort` is in the grammar and not in the prose | undocumented |
-| [EOM-07](#eom-07) | *Declaring theory signatures* | discriminators and updaters are promised and never described | undocumented |
-| [EOM-08](#eom-08) | *Computational Operators* | the strictness rule has more exceptions than it names | inconsistent |
-| [EOM-09](#eom-09) | *Computational Operators* | "value" carries two unrelated meanings | terminology |
-| [EOM-10](#eom-10) | *Arithmetic operators* | whether an operator preserves its arguments' literal category is only observable from examples | unstated rule |
-| [EOM-11](#eom-11) | *Chainable*, *Pairwise* | "neutral element" is used where "nil terminator" is meant | terminology |
-| [EOM-12](#eom-12) | *Declaring Parameterized Constants*, *Proofs as terms* | `(Quote u)` and `~>` are two notations for one or two things | inconsistent |
-| [EOM-13](#eom-13) | six places | the attribute contracts use *must*, *should* and *typically* interchangeably | normative language |
-| [EOM-14](#eom-14) | *The :opaque annotation* | the rule about opaque argument order is stated as a consequence | unstated rule |
-| [EOM-15](#eom-15) | *List operators*, *Parametric Nil terminators* | `eo::nil`'s arity is given as two and used as one | inconsistent |
+**Rechecked 2026-09-18 against ethos `21fc6c7d`.** Two rows are **fixed** and
+six were re-read and **stand**; the remaining seven are judgement rather than
+grammar and are unchanged since they were written. The `state` column below
+carries the result, and what was actually looked at is in
+[the recheck](#the-recheck-2026-09-18) at the bottom — **each fixed row names
+the line in the current manual that fixed it**, so disagreeing costs one look.
+
+| id | where | in one line | kind | state |
+| --- | --- | --- | --- | --- |
+| [EOM-01](#eom-01) | *Full syntax for Eunoia commands* | `<term>` cannot derive a literal | grammar | **fixed** `21fc6c7d` |
+| [EOM-02](#eom-02) | *Full syntax for Eunoia commands* | `<datatype-dec>` cannot derive `par` | grammar | **fixed** `21fc6c7d` |
+| [EOM-03](#eom-03) | *Full syntax for Eunoia commands* | `(! <term> <attr>+)` is in the grammar and nowhere in the prose | undocumented | stands `21fc6c7d` |
+| [EOM-04](#eom-04) | *Overview of Eunoia's features* | `eo::define` is named once and never described | undocumented | stands `21fc6c7d` |
+| [EOM-05](#eom-05) | *Command line options*, grammar | `let` appears only as something an option turns off | undocumented | unchanged |
+| [EOM-06](#eom-06) | *Full syntax*, *Declaring theory signatures* | `declare-sort` is in the grammar and not in the prose | undocumented | stands `21fc6c7d` |
+| [EOM-07](#eom-07) | *Declaring theory signatures* | discriminators and updaters are promised and never described | undocumented | stands `21fc6c7d` |
+| [EOM-08](#eom-08) | *Computational Operators* | the strictness rule has more exceptions than it names | inconsistent | unchanged |
+| [EOM-09](#eom-09) | *Computational Operators* | "value" carries two unrelated meanings | terminology | unchanged |
+| [EOM-10](#eom-10) | *Arithmetic operators* | whether an operator preserves its arguments' literal category is only observable from examples | unstated rule | unchanged |
+| [EOM-11](#eom-11) | *Chainable*, *Pairwise* | "neutral element" is used where "nil terminator" is meant | terminology | stands `21fc6c7d` |
+| [EOM-12](#eom-12) | *Declaring Parameterized Constants*, *Proofs as terms* | `(Quote u)` and `~>` are two notations for one or two things | inconsistent | unchanged |
+| [EOM-13](#eom-13) | six places | the attribute contracts use *must*, *should* and *typically* interchangeably | normative language | unchanged |
+| [EOM-14](#eom-14) | *The :opaque annotation* | the rule about opaque argument order is stated as a consequence | unstated rule | unchanged |
+| [EOM-15](#eom-15) | *List operators*, *Parametric Nil terminators* | `eo::nil`'s arity is given as two and used as one | inconsistent | stands `21fc6c7d` |
 
 ---
 
@@ -267,3 +274,60 @@ operator list does not list. The intended reading is presumably that the type
 argument is optional and that omitting it is stuck whenever the terminator is
 non-ground — but the one-argument form should appear in the operator list if it
 is legal.
+
+---
+
+## The recheck, 2026-09-18
+
+**Read against ethos `21fc6c7d`**, the tip of that checkout on the day, by
+grepping the manual for each row's own subject. **This is a re-read of the
+ledger and not a new pass over the manual**: nothing here looked for rows that
+were not already written down, so *no new entry* means nobody searched, not that
+there is nothing to find.
+
+**Two are fixed, and the fix is in the grammar block both rows pointed at.**
+
+| id | what it asked for | what `21fc6c7d` has |
+| --- | --- | --- |
+| `EOM-01` | `\| <literal>` on `<term>`, and a production for `<literal>` | `<term> ::= <symbol> \| <literal> \| (<symbol> <term>+) \| (! <term> <attr>+)`, and `<literal> ::= <numeral> \| <decimal> \| <rational> \| <binary> \| <hexadecimal> \| <string>` — both suggestions taken |
+| `EOM-02` | the `par` alternative on `<datatype-dec>` | `<datatype-dec> ::= (<cons-dec>+) \| (par (<symbol>+) (<cons-dec>+))` |
+
+**Neither fix was carried by this project**, which is worth saying because a
+ledger that records its own suggestions being taken reads as though it caused
+them. Nothing here has been sent anywhere, and the rows are recorded as fixed
+because the manual now says something different, not because anybody replied.
+
+**Six were re-read and stand**, with the current evidence beside each:
+
+- **`EOM-03`** — `(! <term> <attr>+)` appears in the manual **once**, in the
+  grammar block. No prose describes the annotation form.
+- **`EOM-04`** — `eo::define` appears **once**, in *Overview of Eunoia's
+  features*: named as a binder analogous to `let`, and described nowhere.
+- **`EOM-06`** — `declare-sort` appears **once**, in the command grammar.
+- **`EOM-07`** — discriminators and updaters are promised **once**, under
+  `declare-datatype`, and appear nowhere else.
+- **`EOM-11`** — *neutral element* is still used in *Chainable* and *Pairwise*,
+  and **both sentences now read "the neutral element of the combining operator
+  when that operator has a nil terminator"** — so the two terms now sit in one
+  sentence, which sharpens the row rather than answering it.
+- **`EOM-15`** — all three arity statements survive: the operator list gives
+  `(eo::nil f T)`; *Parametric Nil terminators* says it "accepts a type argument
+  in addition to the operator"; the later text says it "optionally accepts two
+  arguments"; and the one-argument form is still used in an example,
+  `(eo::nil bvor) == (eo::nil bvor)`.
+
+**Seven were not rechecked and say `unchanged` rather than `stands`**, and the
+difference is deliberate. `EOM-05`, `EOM-08`, `EOM-09`, `EOM-10`, `EOM-12`,
+`EOM-13` and `EOM-14` are judgement rather than grammar — whether a rule has
+unnamed exceptions, whether a word carries two meanings, whether *must* and
+*typically* are being used interchangeably. **Confirming one of those means
+re-reading the section and forming the same opinion twice**, which is the work
+this ledger says is most likely to be a defect in our reading rather than in the
+manual, and a grep cannot stand in for it. Recording them as re-confirmed on the
+strength of a search would be the inflation the recheck exists to avoid.
+
+**What this does not establish.** That the two fixed rows were the important
+ones — they were the two a grammar could decide, which is not the same thing.
+That the manual is now correct where these rows are silent. Or that anybody in
+ethos has seen this page: they have not, and carrying it upstream is a person's
+act.

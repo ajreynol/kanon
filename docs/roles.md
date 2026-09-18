@@ -246,14 +246,14 @@ for and complies with nothing, and `eo_join`, which writes the declaration and
 the `anoieu / policy` workflow in whichever of the two forms
 [`policy.md`](policy.md#2-run-the-check) the joiner takes. Their text, their
 options, and what they ask an assistant to do.
-**Owns:** `eo_cmd/eo_init` and `eo_cmd/eo_join`, and `scripts/install_eo_cmd`,
+**Owns:** `eo_cmd/eo_init` and `eo_cmd/eo_join`, and `scripts/install_eo`,
 which puts them on a person's path.
 
 **The rest of `eo_cmd/` is [`R16`](#r16--the-shared-low-level-tooling), and the
 line is where the command runs.** Only these two run inside a repository that is
 being started or joined, which is the whole reason this role is separate from
-`R4`. koine's own manifest files every installed command under `R35`; the split
-here is the register's and settles nothing else.
+`R4`. koine's own `eo_cmd/commands.json` files these two under `R35` and the
+rest under `R16`, agreeing with the split this register records.
 
 **Why this is separate from `R4`.** These two are the only commands in this
 ecosystem that run **inside the repository being started or joined**, rather
@@ -276,10 +276,11 @@ separately — **one implementation of the shared parts rather than one per
 repository.** The bug database is one of them and is not the boundary of the
 role.
 **Owns:** the shared implementations and the interfaces other tools build
-against, including the commands `install_eo_cmd` puts on a person's path that
+against, including the commands `install_eo` puts on a person's path that
 are not `R35`'s: `eo_status`, which reads the register in the tree that holds it;
 `eo_respond`, which answers one topic another tool addressed to you;
-`eo_housekeeping`, which reports what a repository has outstanding; `eo_topic`,
+`eo_housekeeping`, which brings a repository up to date and, with `--report`,
+only reports what is outstanding; `eo_topic`,
 which opens one topic in the runner's own discussion file; `eo_child`, which
 starts a child project and refuses a run that does not name one; and
 `eo_brainstorm`, which reads every tree on the machine and writes only

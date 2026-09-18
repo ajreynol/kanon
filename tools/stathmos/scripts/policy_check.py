@@ -12,9 +12,20 @@ and carries no copy of the rules.
 `ANOIEU_REPOS`, a sibling `anoieu/`, then `$HOME`. An unavailable checker is
 `UNVERIFIED` with exit code 2, which is not a pass.
 
+**The command and the readers are two different files, and they come apart.**
+`main` is what a run invokes; `declaration_in` and its siblings are what the
+status audit imports to read somebody's README. anoieu moved the
+implementation into `policy_check/` and left `scripts/policy_check.py` a
+launcher exporting `main` alone, so a loader that reads only the command's
+path silently returns a module with no readers on it -- which is how
+`--protocol` started raising `AttributeError` instead of printing a table.
+So `policy_checker()` looks for the readers by name and says which paths it
+tried when it cannot find them.
+
 **Locating the checker and running it are one job**, and one file: nothing
 wants the locator without the runner, and splitting them makes every importer
-learn two names for it.
+learn two names for it. Which file inside anoieu each half reaches for is
+anoieu's arrangement and is read here rather than assumed.
 """
 
 from functools import lru_cache
@@ -53,6 +64,17 @@ def checkout() -> Path:
         "or set ANOIEU_ROOT to its checkout")
 
 
+#: Where the readers have lived, newest arrangement first. The first entry is
+#: the package anoieu moved them into; the other two are the older layouts, so
+#: an older checkout keeps working.
+READER_PATHS = ("policy_check/checker.py", "scripts/policy_check.py",
+                "tools/policy_check.py")
+
+#: The reader every caller needs. A module without it is the launcher rather
+#: than the implementation, whatever it is called.
+READER = "declaration_in"
+
+
 def checker_path() -> Path:
     root = checkout()
     for rel in ("scripts/policy_check.py", "tools/policy_check.py"):
@@ -61,13 +83,32 @@ def checker_path() -> Path:
     raise FileNotFoundError(f"no policy checker in {root}")
 
 
-@lru_cache(maxsize=1)
-def policy_checker():
-    """Load declaration readers from the same checker the command runs."""
-    spec = importlib.util.spec_from_file_location("anoieu_policy_check", checker_path())
+def _load(path: Path):
+    spec = importlib.util.spec_from_file_location("anoieu_policy_check", path)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
+
+
+@lru_cache(maxsize=1)
+def policy_checker():
+    """The module carrying the declaration readers, from the anoieu checkout.
+
+    Not necessarily the file the command runs: see the note at the top.
+    """
+    root = checkout()
+    tried = []
+    for rel in READER_PATHS:
+        path = root / rel
+        if not path.is_file():
+            continue
+        tried.append(rel)
+        module = _load(path)
+        if hasattr(module, READER):
+            return module
+    raise ImportError(
+        f"no {READER} in {root}: read {', '.join(tried) or 'nothing'}. "
+        f"The readers have moved; add the new path to READER_PATHS")
 
 
 def main() -> int:
