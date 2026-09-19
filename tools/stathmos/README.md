@@ -11,7 +11,7 @@ moves with its work and roles to the repository that holds the presidency.
 *σταθμός — a standard weight: the thing an object is weighed against, rather
 than the scale or the verdict.*
 
-**In one line: it audits ecosystem status and keeps
+**In one line: it audits ecosystem status and tooling, and keeps
 [the report card](docs/report-card.md).**
 
 **This is not an island**, and the exception is deliberate. Other documents in
@@ -178,14 +178,17 @@ way one of these may begin.
 `R37` holds that responsibility, split from kanon's inventory role `R6`;
 `scripts/eo_status_audit` remains the public entry point.
 
-**It now holds the page rather than only the role**, since 2026-09-16:
-[`docs/report-card.md`](docs/report-card.md) is written here, supersedes the edition
-anoieu last graded on 2026-09-02, and covers twelve tools.
+**It has held the report card since 2026-09-16.** The September 19 edition of
+[`docs/report-card.md`](docs/report-card.md) covers fifteen repositories and the
+two previously assessed projects, ethos-eoc and stathmos. It uses the tooling
+audit, epikrisis's history reports and its LOC instrument, with fixed revisions
+in [`docs/evidence.md`](docs/evidence.md) and [`docs/evidence.json`](docs/evidence.json).
+Activity informs review priorities; LOC informs the new frugality assessment.
+Neither computes a grade.
 
-**And it is graded on it**, which the first edition promised and deferred: *a
-project on its first day has no record to weigh*. It has one now, its entry is
-in the sharper register, and the shortfall it records against itself is that
-[`docs/evidence.md`](docs/evidence.md) is older than the page resting on it.
+**And it is graded on it.** The assessed revision still had an older evidence
+file than report card. This edition repairs that mismatch, but the correction
+is outside its recorded pin and earns no retrospective credit.
 
 ## Layout
 

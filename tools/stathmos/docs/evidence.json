@@ -1,0 +1,746 @@
+{
+  "schema_version": 1,
+  "snapshot": {
+    "date": "2026-09-19",
+    "cutoff": "2026-09-19T15:53:09+00:00",
+    "since": "2026-09-15T16:15:46-05:00",
+    "epikrisis_commit": "447ddb1657ed55a7c974d00a5279cb07eccc1945",
+    "kanon_commit": "443cc8d7909ebab58cb4fc042569c0dfbcb43091",
+    "sources": [
+      {
+        "id": "aisthesis",
+        "origin": "https://github.com/ajreynol/aisthesis",
+        "ref": "HEAD",
+        "commit": "262c93d2c0bab8b527ab65bc7b63e44ac40a3524",
+        "first_commit": "2026-09-14",
+        "last_commit": "2026-09-18",
+        "commits": 11,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 10,
+        "implementation_lines": 0,
+        "documentation_lines": 2281,
+        "registered_deliverables": []
+      },
+      {
+        "id": "anoieu",
+        "origin": "https://github.com/ajreynol/anoieu",
+        "ref": "HEAD",
+        "commit": "4f1fb0aac1c58541f2cd1a4cacfbf9411e6d31c6",
+        "first_commit": "2026-08-29",
+        "last_commit": "2026-09-19",
+        "commits": 269,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 22,
+        "activity": 28,
+        "implementation_lines": 15850,
+        "documentation_lines": 8085,
+        "registered_deliverables": [
+          "anoieu_analyzer",
+          "anoieu_bug_db",
+          "anoieu_fuzz",
+          "policy_check"
+        ]
+      },
+      {
+        "id": "cvc5",
+        "origin": "https://github.com/cvc5/cvc5",
+        "ref": "HEAD",
+        "commit": "a07d51307598ec718af427c4fb97645d2013ebb8",
+        "first_commit": "2009-09-26",
+        "last_commit": "2026-09-17",
+        "commits": 14093,
+        "branch": "main",
+        "status": "foundation",
+        "uncommitted_paths": 0,
+        "activity": 7,
+        "implementation_lines": 1038850,
+        "documentation_lines": 15509,
+        "registered_deliverables": [
+          "cvc5",
+          "cvc5_proof_signatures"
+        ]
+      },
+      {
+        "id": "dokimasia",
+        "origin": "https://github.com/ajreynol/dokimasia",
+        "ref": "HEAD",
+        "commit": "54983f1bf19ea88dc555a2d4ff4b07d9640e5249",
+        "first_commit": "2026-08-30",
+        "last_commit": "2026-09-19",
+        "commits": 66,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 42,
+        "activity": 23,
+        "implementation_lines": 9943,
+        "documentation_lines": 6799,
+        "registered_deliverables": [
+          "dokimasia_analyzer",
+          "dokimasia_bug_db"
+        ]
+      },
+      {
+        "id": "epikrisis",
+        "origin": "https://github.com/ajreynol/epikrisis",
+        "ref": "HEAD",
+        "commit": "447ddb1657ed55a7c974d00a5279cb07eccc1945",
+        "first_commit": "2026-09-01",
+        "last_commit": "2026-09-19",
+        "commits": 50,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 27,
+        "implementation_lines": 4403,
+        "documentation_lines": 4932,
+        "registered_deliverables": [
+          "epikrisis_site",
+          "history_analyzer",
+          "loc_analyzer"
+        ]
+      },
+      {
+        "id": "eschaton",
+        "origin": "https://github.com/ajreynol/eschaton",
+        "ref": "HEAD",
+        "commit": "772923914e9e4f62cc2744e203dba5c332d982fc",
+        "first_commit": "2026-09-16",
+        "last_commit": "2026-09-18",
+        "commits": 17,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 17,
+        "implementation_lines": 0,
+        "documentation_lines": 2552,
+        "registered_deliverables": []
+      },
+      {
+        "id": "ethos",
+        "origin": "https://github.com/cvc5/ethos",
+        "ref": "HEAD",
+        "commit": "9aed6823725d6ed9c0cdcbfa73d623e47f57d8e8",
+        "first_commit": "2023-07-18",
+        "last_commit": "2026-09-19",
+        "commits": 1063,
+        "branch": "rmDeprecated",
+        "status": "candidate",
+        "uncommitted_paths": 19,
+        "activity": 3,
+        "implementation_lines": 48261,
+        "documentation_lines": 5752,
+        "registered_deliverables": [
+          "ethos_checker",
+          "ethos_eoc",
+          "ethos_plugins"
+        ]
+      },
+      {
+        "id": "eudaimonia",
+        "origin": "https://github.com/ajreynol/eudaimonia",
+        "ref": "HEAD",
+        "commit": "b465b9d954bb021992ff4ac6c28c9d72975f9894",
+        "first_commit": "2026-08-29",
+        "last_commit": "2026-09-19",
+        "commits": 104,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 33,
+        "implementation_lines": 28868,
+        "documentation_lines": 13398,
+        "registered_deliverables": [
+          "euthyna_measurement",
+          "euthyna_site",
+          "new_checker"
+        ]
+      },
+      {
+        "id": "eunoia",
+        "origin": "https://github.com/ajreynol/eunoia",
+        "ref": "HEAD",
+        "commit": "8cfb3ac5c3f6c01e453178de72200e265884a7bc",
+        "first_commit": "2026-09-19",
+        "last_commit": "2026-09-19",
+        "commits": 8,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 1,
+        "activity": 8,
+        "implementation_lines": 1591,
+        "documentation_lines": 6422,
+        "registered_deliverables": [
+          "eunoia_formatter",
+          "mimesis_tutorials"
+        ]
+      },
+      {
+        "id": "iogos",
+        "origin": "https://github.com/ajreynol/iogos",
+        "ref": "HEAD",
+        "commit": "e716d73c00c8e269f0d8aae65c69e9af0f04ec4e",
+        "first_commit": "2026-09-17",
+        "last_commit": "2026-09-19",
+        "commits": 6,
+        "branch": "main",
+        "status": "associate",
+        "uncommitted_paths": 8,
+        "activity": 6,
+        "implementation_lines": 84,
+        "documentation_lines": 586,
+        "registered_deliverables": [
+          "iogos_checker"
+        ]
+      },
+      {
+        "id": "kanon",
+        "origin": "https://github.com/ajreynol/kanon",
+        "ref": "HEAD",
+        "commit": "443cc8d7909ebab58cb4fc042569c0dfbcb43091",
+        "first_commit": "2026-09-02",
+        "last_commit": "2026-09-19",
+        "commits": 139,
+        "branch": "main",
+        "status": "president",
+        "uncommitted_paths": 0,
+        "activity": 119,
+        "implementation_lines": 3322,
+        "documentation_lines": 12236,
+        "registered_deliverables": [
+          "stathmos_audits"
+        ]
+      },
+      {
+        "id": "koine",
+        "origin": "https://github.com/ajreynol/koine",
+        "ref": "HEAD",
+        "commit": "98e917993425eb2fec0047da4fa9ac0a3730627d",
+        "first_commit": "2026-08-31",
+        "last_commit": "2026-09-19",
+        "commits": 55,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 42,
+        "implementation_lines": 7059,
+        "documentation_lines": 2335,
+        "registered_deliverables": [
+          "bug_db_manager",
+          "eo_cmd"
+        ]
+      },
+      {
+        "id": "logos",
+        "origin": "https://github.com/cvc5/logos",
+        "ref": "HEAD",
+        "commit": "e8fa24414aa69ede1f065f2cecf41fafb5aa05d8",
+        "first_commit": "2026-03-03",
+        "last_commit": "2026-09-18",
+        "commits": 716,
+        "branch": "housekeep-0918",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 5,
+        "implementation_lines": 814910,
+        "documentation_lines": 6923,
+        "registered_deliverables": [
+          "logos_checker",
+          "logos_cpcmini",
+          "logos_installer",
+          "logos_parser"
+        ]
+      },
+      {
+        "id": "paideia",
+        "origin": "https://github.com/ajreynol/paideia",
+        "ref": "HEAD",
+        "commit": "8240ce9e82c2ea5847b5884ceb621c15169c83e4",
+        "first_commit": "2026-09-18",
+        "last_commit": "2026-09-19",
+        "commits": 12,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 1,
+        "activity": 12,
+        "implementation_lines": 1079,
+        "documentation_lines": 9200,
+        "registered_deliverables": [
+          "paideia_bootcamp"
+        ]
+      },
+      {
+        "id": "tachyon",
+        "origin": "https://github.com/ajreynol/tachyon",
+        "ref": "HEAD",
+        "commit": "e400a97fc9fd7138500996f3176871a2871bee3d",
+        "first_commit": "2026-09-14",
+        "last_commit": "2026-09-19",
+        "commits": 51,
+        "branch": "main",
+        "status": "member",
+        "uncommitted_paths": 0,
+        "activity": 39,
+        "implementation_lines": 5703,
+        "documentation_lines": 7396,
+        "registered_deliverables": [
+          "elaphros_site",
+          "heuresis_site",
+          "job_launcher",
+          "stats_profiler"
+        ]
+      }
+    ]
+  },
+  "method": {
+    "history_window": "git rev-list --count --since-as-filter=SINCE --until=CUTOFF COMMIT",
+    "history_tool": "history_analyzer/bin/epikrisis",
+    "loc_tool": "loc_analyzer/bin/loc",
+    "loc_rules_version": 2,
+    "loc_exclude": [],
+    "loc_files_digest_sha256": "91a46dc7e585e0ac83d649043fc1502635897a3306b53010debdcebcb605967c",
+    "loc_functions": [
+      "count_tree",
+      "write_run",
+      "check_run"
+    ],
+    "working_tree_changes": "excluded",
+    "tooling": "tooling_audit.inspect over Git trees at snapshot commits; Tree.root=None"
+  },
+  "totals": {
+    "activity": 379,
+    "member_president_activity": 363,
+    "implementation_lines": 1979923,
+    "documentation_lines": 104406,
+    "tools": 23,
+    "artifacts": 9
+  },
+  "tooling": {
+    "gaps": [],
+    "unverified": [],
+    "notes": [
+      "ethos_eoc: layout gap: Python driver is under tools/eoc/; C++ implementation is shared across plugins/ (ethos/tools/eoc)"
+    ],
+    "entries": [
+      {
+        "id": "anoieu_analyzer",
+        "kind": "tool",
+        "owner": "anoieu",
+        "repo": "anoieu",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "anoieu_analyzer"
+      },
+      {
+        "id": "anoieu_bug_db",
+        "kind": "database",
+        "owner": "anoieu",
+        "repo": "anoieu",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "bug_db"
+      },
+      {
+        "id": "anoieu_fuzz",
+        "kind": "tool",
+        "owner": "anoieu",
+        "repo": "anoieu",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "anoieu_fuzz"
+      },
+      {
+        "id": "bug_db_manager",
+        "kind": "tool",
+        "owner": "koine",
+        "repo": "koine",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "bug_db_manager"
+      },
+      {
+        "id": "cvc5",
+        "kind": "solver",
+        "owner": "cvc5",
+        "repo": "cvc5",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "src"
+      },
+      {
+        "id": "cvc5_proof_signatures",
+        "kind": "artifact",
+        "owner": "cvc5",
+        "repo": "cvc5",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "proofs"
+      },
+      {
+        "id": "dokimasia_analyzer",
+        "kind": "tool",
+        "owner": "dokimasia",
+        "repo": "dokimasia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "dokimasia"
+      },
+      {
+        "id": "dokimasia_bug_db",
+        "kind": "database",
+        "owner": "dokimasia",
+        "repo": "dokimasia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "bug_db"
+      },
+      {
+        "id": "elaphros_site",
+        "kind": "webpage",
+        "owner": "elaphros",
+        "repo": "tachyon",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "tools/elaphros/reports"
+      },
+      {
+        "id": "eo_cmd",
+        "kind": "tool",
+        "owner": "koine",
+        "repo": "koine",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "eo_cmd"
+      },
+      {
+        "id": "epikrisis_site",
+        "kind": "webpage",
+        "owner": "epikrisis",
+        "repo": "epikrisis",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "ecosystem_report"
+      },
+      {
+        "id": "ethos_checker",
+        "kind": "checker",
+        "owner": "ethos",
+        "repo": "ethos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "src"
+      },
+      {
+        "id": "ethos_eoc",
+        "kind": "tool",
+        "owner": "ethos",
+        "repo": "ethos",
+        "availability": "present",
+        "layout": "exception",
+        "path": "tools/eoc"
+      },
+      {
+        "id": "ethos_plugins",
+        "kind": "tool",
+        "owner": "ethos",
+        "repo": "ethos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "plugins"
+      },
+      {
+        "id": "eunoia_formatter",
+        "kind": "tool",
+        "owner": "eunoia",
+        "repo": "eunoia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "eo_format"
+      },
+      {
+        "id": "euthyna_measurement",
+        "kind": "tool",
+        "owner": "euthyna",
+        "repo": "eudaimonia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "tools/euthyna/measurement"
+      },
+      {
+        "id": "euthyna_site",
+        "kind": "webpage",
+        "owner": "euthyna",
+        "repo": "eudaimonia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "tools/euthyna/report_site"
+      },
+      {
+        "id": "heuresis_site",
+        "kind": "webpage",
+        "owner": "heuresis",
+        "repo": "tachyon",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "tools/heuresis/reports"
+      },
+      {
+        "id": "history_analyzer",
+        "kind": "tool",
+        "owner": "epikrisis",
+        "repo": "epikrisis",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "history_analyzer"
+      },
+      {
+        "id": "iogos_checker",
+        "kind": "checker",
+        "owner": "iogos",
+        "repo": "iogos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "Cpc"
+      },
+      {
+        "id": "job_launcher",
+        "kind": "tool",
+        "owner": "tachyon",
+        "repo": "tachyon",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "job_launcher"
+      },
+      {
+        "id": "loc_analyzer",
+        "kind": "tool",
+        "owner": "epikrisis",
+        "repo": "epikrisis",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "loc_analyzer"
+      },
+      {
+        "id": "logos_checker",
+        "kind": "checker",
+        "owner": "logos",
+        "repo": "logos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "Cpc"
+      },
+      {
+        "id": "logos_cpcmini",
+        "kind": "checker",
+        "owner": "logos",
+        "repo": "logos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "CpcMini"
+      },
+      {
+        "id": "logos_installer",
+        "kind": "tool",
+        "owner": "logos",
+        "repo": "logos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "install"
+      },
+      {
+        "id": "logos_parser",
+        "kind": "tool",
+        "owner": "logos",
+        "repo": "logos",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "Logos"
+      },
+      {
+        "id": "mimesis_tutorials",
+        "kind": "tutorial",
+        "owner": "mimesis",
+        "repo": "eunoia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "tools/mimesis/tutorials"
+      },
+      {
+        "id": "new_checker",
+        "kind": "tool",
+        "owner": "eudaimonia",
+        "repo": "eudaimonia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "new_checker"
+      },
+      {
+        "id": "paideia_bootcamp",
+        "kind": "tutorial",
+        "owner": "paideia",
+        "repo": "paideia",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "bootcamp"
+      },
+      {
+        "id": "policy_check",
+        "kind": "tool",
+        "owner": "anoieu",
+        "repo": "anoieu",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "policy_check"
+      },
+      {
+        "id": "stathmos_audits",
+        "kind": "tool",
+        "owner": "stathmos",
+        "repo": "kanon",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "tools/stathmos/audits"
+      },
+      {
+        "id": "stats_profiler",
+        "kind": "tool",
+        "owner": "tachyon",
+        "repo": "tachyon",
+        "availability": "present",
+        "layout": "top-level",
+        "path": "stats_profiler"
+      }
+    ]
+  },
+  "loc_subsets": [
+    {
+      "repo": "eunoia",
+      "prefix": "eo_format/",
+      "implementation_lines": 1093,
+      "documentation_lines": 0
+    },
+    {
+      "repo": "ethos",
+      "prefix": "tools/eoc/",
+      "implementation_lines": 9348,
+      "documentation_lines": 2756
+    },
+    {
+      "repo": "ethos",
+      "prefix": "plugins/",
+      "implementation_lines": 17338,
+      "documentation_lines": 206
+    },
+    {
+      "repo": "kanon",
+      "prefix": "tools/stathmos/",
+      "implementation_lines": 3154,
+      "documentation_lines": 756
+    },
+    {
+      "repo": "kanon",
+      "prefix": "docs/misc/",
+      "implementation_lines": 0,
+      "documentation_lines": 2643
+    },
+    {
+      "repo": "paideia",
+      "prefix": "bootcamp/",
+      "implementation_lines": 0,
+      "documentation_lines": 7790
+    },
+    {
+      "repo": "eudaimonia",
+      "prefix": "new_checker/",
+      "implementation_lines": 21220,
+      "documentation_lines": 955
+    },
+    {
+      "repo": "eudaimonia",
+      "prefix": "tools/euthyna/measurement/",
+      "implementation_lines": 4594,
+      "documentation_lines": 62
+    },
+    {
+      "repo": "eudaimonia",
+      "prefix": "tools/euthyna/report_site/",
+      "implementation_lines": 826,
+      "documentation_lines": 24
+    },
+    {
+      "repo": "logos",
+      "prefix": "Cpc/",
+      "implementation_lines": 751932,
+      "documentation_lines": 0
+    },
+    {
+      "repo": "logos",
+      "prefix": "Cpc/Proofs/RuleSupport/",
+      "implementation_lines": 352795,
+      "documentation_lines": 0
+    },
+    {
+      "repo": "logos",
+      "prefix": "Cpc/Proofs/Rules/",
+      "implementation_lines": 279000,
+      "documentation_lines": 0
+    },
+    {
+      "repo": "tachyon",
+      "prefix": "job_launcher/",
+      "implementation_lines": 1063,
+      "documentation_lines": 0
+    },
+    {
+      "repo": "tachyon",
+      "prefix": "stats_profiler/",
+      "implementation_lines": 1306,
+      "documentation_lines": 0
+    }
+  ],
+  "loc_coverage_gaps": [
+    {
+      "bytes": 2118602,
+      "category": "ignored",
+      "mode": "100644",
+      "object": "e0fb73c321cdf1b306e050e25e4dfe13cecebcaa",
+      "path": "Cpc/Cpc_Checker.thy",
+      "reason": "data-or-unrecognized-text",
+      "source": "iogos"
+    },
+    {
+      "bytes": 156404,
+      "category": "ignored",
+      "mode": "100644",
+      "object": "c05129484c987fb41f71ffa0d48ceb24954f875c",
+      "path": "Cpc/Cpc_Spec.thy",
+      "reason": "data-or-unrecognized-text",
+      "source": "iogos"
+    },
+    {
+      "bytes": 1980,
+      "category": "ignored",
+      "mode": "100644",
+      "object": "8e26d017121c79cebd92a375787d348a9c82e08b",
+      "path": "Cpc/Soundness/Soundness.thy",
+      "reason": "data-or-unrecognized-text",
+      "source": "iogos"
+    }
+  ],
+  "bug_database_records": [
+    {
+      "repo": "anoieu",
+      "path": "bug_db/bugs.json",
+      "records": 82,
+      "closed_with_commit": 25
+    },
+    {
+      "repo": "dokimasia",
+      "path": "bug_db/bugs.json",
+      "records": 197,
+      "closed_with_commit": 1
+    }
+  ]
+}
