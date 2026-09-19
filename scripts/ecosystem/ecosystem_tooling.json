@@ -3,7 +3,7 @@
     "Ground truth for tooling boundaries, maintained by people; eo_tooling_audit reads but never rewrites it.",
     "ecosystem.json remains the authority for repositories and footings. These entries are tools and artifacts, not additional projects or membership decisions.",
     "repo names the containing repository. Optional owner names a child project in that repository; it defaults to repo. path and also list implementation or artifact directories relative to repo, within the owner's root.",
-    "kind defaults to tool. An artifact is a maintained output such as a bug database; it appears in the same inventory but needs content files rather than executable entrypoints.",
+    "kind defaults to tool, including executable programs and importable libraries. A tool's entrypoints can be command launchers or public library modules. An artifact is a maintained output such as a bug database; it needs content files rather than code entrypoints.",
     "entrypoints, files and docs are file paths relative to repo, including shared launchers and docs outside the owner. They are inspected, never executed. Empty required lists are allowed and reported as gaps.",
     "layout_note explains a departure from one self-contained top-level directory within the owning repository or child project. Such departures are advisory, never policy failures.",
     "exclude is keyed by repository or child owner and maps directories relative to that owner's root to reasons. Shared docs, scripts, tests, prompts, deps, scratch, tools and hidden directories are not discovery candidates.",
@@ -134,12 +134,24 @@
     },
     "logos_checker": {
       "repo": "logos",
-      "path": ".",
-      "also": ["Logos", "Cpc"],
-      "what": "Lean proof checker and CPC soundness development",
-      "entrypoints": ["Main.lean", "MainNative.lean"],
-      "docs": ["README.md", "docs/parser.md"],
-      "layout_note": "root executables combine the Logos/ parser and Cpc/ calculus and proofs"
+      "path": "Cpc",
+      "what": "CPC checker and proofs; logos and logos-native front ends",
+      "entrypoints": ["Cpc.lean", "Main.lean", "MainNative.lean"],
+      "docs": ["README.md", "docs/parser.md", "docs/lean-native-proofs.md"]
+    },
+    "logos_cpcmini": {
+      "repo": "logos",
+      "path": "CpcMini",
+      "what": "Reduced CPC checker library and proofs; no standalone CLI",
+      "entrypoints": ["CpcMini.lean"],
+      "docs": ["README.md", "docs/modularity.md"]
+    },
+    "logos_parser": {
+      "repo": "logos",
+      "path": "Logos",
+      "what": "Shared s-expression reader and proof-parser library",
+      "entrypoints": ["Logos.lean"],
+      "docs": ["docs/parser.md"]
     },
     "job_launcher": {
       "repo": "tachyon",
@@ -177,7 +189,6 @@
       "examples": "Isabelle sessions exercising the generated checker."
     },
     "logos": {
-      "CpcMini": "Reduced calculus for developing and testing proofs; no standalone executable.",
       "install": "Dependency retrieval and regeneration support for the checker.",
       "test": "Checker regression inputs and expected outputs."
     },

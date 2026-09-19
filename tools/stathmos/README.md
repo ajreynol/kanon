@@ -63,7 +63,9 @@ Koine's `eo_status` remains the shared command for reading the register.
 gaps.** [`audits/tooling_audit.py`](audits/tooling_audit.py) reads kanon's
 [`ecosystem_tooling.json`](../../scripts/ecosystem/ecosystem_tooling.json).
 Each entry names a repository, a directory, entry points or artifact files,
-and documentation. An optional `owner` can name a child project; the directory
+and documentation. Tools include programs and importable libraries; a library's
+public module is an entry point even when it has no standalone executable.
+An optional `owner` can name a child project; the directory
 is measured from that owner's root when checking layout. All paths remain
 relative to the containing repository, including shared launchers and docs.
 The audit reuses the status audit's checkout resolver and repository footings.

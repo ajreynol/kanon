@@ -61,6 +61,8 @@ locations; local paths do not belong in the shared inventory.
 Record tools and artifacts in
 [`ecosystem_tooling.json`](../scripts/ecosystem/ecosystem_tooling.json): its
 repository, directory, entry points or artifact files, and documentation.
+Tools include libraries: their public modules count as entry points without
+requiring a standalone executable.
 `owner` defaults to the repository and can name a child project; layout is
 measured within that owner's root. All entry paths remain repository-relative.
 `kind: artifact` records maintained data without requiring executable entry

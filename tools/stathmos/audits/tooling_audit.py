@@ -322,9 +322,10 @@ def main(argv=None):
         epilog="""The table reports availability from local working trees, not build quality or
 installation. owner is the repository or child project responsible for a tool;
 repo is its containing repository and path is relative to that repository.
-kind distinguishes executable tools from artifacts such as bug databases.
-Tools need entrypoints; artifacts need recorded content files and no executable
-entry point. Both need documentation. All file paths remain repository-relative.
+kind distinguishes tools (programs or importable libraries) from artifacts such
+as bug databases. Tool entrypoints may be command launchers or public library
+modules; artifacts need recorded content files. Both need documentation.
+All file paths remain repository-relative.
 Layout gaps are advisory: top-level means a dedicated directory within the owner;
 nested, root, shared, split and exception describe other arrangements. Missing files,
 empty required metadata, unregistered tracked top-level directories and
