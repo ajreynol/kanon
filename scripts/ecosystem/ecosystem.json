@@ -278,6 +278,16 @@
     "short": "Calculus template: a signature, checker, and proofs",
     "what": "the calculus template: bring a signature, get a checker and its proofs"
   },
+  "eunoia": {
+    "status": "member",
+    "joined": "kanon 4d16d1b",
+    "repo": "eunoia",
+    "url": "https://github.com/ajreynol/eunoia",
+    "vetted": "2026-09-19",
+    "why": "README declares membership at 302af2c and configures anoieu's policy contract 1; the local checker reports missing charter exception statements for its advertised children",
+    "short": "Eunoia language account, tutorials and case studies",
+    "what": "the repository studying Eunoia as a language and teaching signature authoring, housing sapheneia's language account and mimesis's tutorials and case studies"
+  },
   "dokimasia": {
     "status": "member",
     "joined": "anoieu 441b562",
@@ -337,7 +347,7 @@
   },
   "sapheneia": {
     "status": "child",
-    "parent": "kanon",
+    "parent": "eunoia",
     "path": "tools/sapheneia",
     "short": "Defines Eunoia as a language",
     "what": "Eunoia described as a language definition rather than as a checker's manual"
@@ -442,7 +452,7 @@
   },
   "mimesis": {
     "status": "child",
-    "parent": "eudaimonia",
+    "parent": "eunoia",
     "path": "tools/mimesis",
     "short": "Teaches Eunoia signature writing from worked examples",
     "what": "how a Eunoia signature is written and how one gets into Logos, in two strands: case studies of episodes that already happened, and tutorials that build a signature from a calculus's rule descriptions"

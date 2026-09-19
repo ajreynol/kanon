@@ -26,7 +26,7 @@ from tools.stathmos.audits import status_audit
 INVENTORY = ROOT / "scripts/ecosystem/ecosystem_tooling.json"
 # These directories already have purposes in docs/policy.md's layout table.
 SHARED = frozenset({"docs", "scripts", "test", "tests", "examples", "cmake", "include",
-                    "prompts", "deps", "scratch", "tools"})
+                    "licenses", "prompts", "deps", "scratch", "tools"})
 # Foundations supply tooling too. These are inventory observations, never a
 # policy check or a new obligation on the repository being described.
 REPOSITORIES = frozenset(status_audit.OWN_REPO) | {"foundation"}
@@ -255,6 +255,8 @@ def layout(entry, prefix=""):
     if "/" in path:
         return "nested", "implementation is below a top-level directory"
     if path in SHARED:
+        if entry.get("kind") == "artifact" and path == "docs":
+            return "shared", ""
         return "shared", "implementation uses a shared layout directory"
     return "top-level", ""
 
@@ -336,6 +338,7 @@ kind distinguishes tools (programs or importable libraries) from artifacts such
 as bug databases. Tool entrypoints may be command launchers or public library
 modules; artifacts need recorded content files. Both need documentation.
 All file paths remain repository-relative.
+Document artifacts in their owner's docs/ use shared layout without a layout gap.
 Layout gaps are advisory: top-level means a dedicated directory within the owner;
 nested, root, shared, split and exception describe other arrangements. Missing files,
 empty required metadata, unregistered tracked top-level directories and

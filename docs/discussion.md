@@ -222,9 +222,9 @@ child's `README.md` stayed where it was.
 | `tools/ynoia/tools.md` | [`tools/ynoia/docs/tools.md`](../tools/ynoia/docs/tools.md) |
 | `tools/ynoia/why-eunoia.md` | [`tools/ynoia/docs/why-eunoia.md`](../tools/ynoia/docs/why-eunoia.md) |
 | `tools/ynoia/names.md` | **deleted** in `998d124`, 2026-09-17. The authoritative name register is [`docs/glossary.md`](glossary.md) |
-| `tools/sapheneia/feedback.md` | [`tools/sapheneia/docs/feedback.md`](../tools/sapheneia/docs/feedback.md) |
-| `tools/sapheneia/manual.md` | [`tools/sapheneia/docs/manual.md`](../tools/sapheneia/docs/manual.md) |
-| `tools/sapheneia/semantics.md` | [`tools/sapheneia/docs/semantics.md`](../tools/sapheneia/docs/semantics.md) |
+| `tools/sapheneia/feedback.md` | [`eunoia/tools/sapheneia/docs/feedback.md`](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/feedback.md) |
+| `tools/sapheneia/manual.md` | [`eunoia/tools/sapheneia/docs/manual.md`](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/manual.md) |
+| `tools/sapheneia/semantics.md` | [`eunoia/tools/sapheneia/docs/semantics.md`](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/semantics.md) |
 | `tools/stathmos/evidence.md` | [`tools/stathmos/docs/evidence.md`](../tools/stathmos/docs/evidence.md) |
 | `tools/stathmos/protocol.md` | [`tools/stathmos/docs/protocol.md`](../tools/stathmos/docs/protocol.md) |
 | `tools/stathmos/report-card.md` | [`tools/stathmos/docs/report-card.md`](../tools/stathmos/docs/report-card.md) |

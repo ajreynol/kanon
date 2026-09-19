@@ -7,11 +7,14 @@
     "kind defaults to tool, including executable programs and importable libraries. A tool's entrypoints can be command launchers or public library modules. An artifact is a maintained output such as a bug database or tutorial; it needs content files rather than code entrypoints.",
     "entrypoints, files and docs are file paths relative to repo, including shared launchers and docs outside the owner. They are inspected, never executed. Empty required lists are allowed and reported as gaps.",
     "layout_note explains a departure from one self-contained top-level directory within the owning repository or child project. Such departures are advisory, never policy failures.",
-    "exclude is keyed by repository or child owner and maps directories relative to that owner's root to reasons. Each explicit exclusion is displayed and counts as non-compliant inventory coverage, not a silent waiver. Reserved docs, scripts, test, tests, examples, cmake, include, prompts, deps, scratch, tools and hidden directories are not discovery candidates; see docs/policy.md's layout table.",
+    "Document artifacts can live in their owner's reserved docs/ directory without a layout gap. Their recorded content and documentation paths are still checked.",
+    "exclude is keyed by repository or child owner and maps directories relative to that owner's root to reasons. Each explicit exclusion is displayed and counts as non-compliant inventory coverage, not a silent waiver. Reserved docs, scripts, test, tests, examples, cmake, include, licenses, prompts, deps, scratch, tools and hidden directories are not discovery candidates; see docs/policy.md's layout table.",
     "Discovery considers tracked top-level directories in repositories and child owners named here. Other nested tools and implementations in shared directories need explicit entries. Research charters alone are not tooling.",
     "Initial inventory read from local working trees on 2026-09-19: anoieu 06bd787, dokimasia 158c385, epikrisis e748ff6, ethos 21fc6c7d, eudaimonia 79dd601, kanon f22798f, koine 74ea664, logos e8fa2441, paideia 7b305f1, tachyon cccb1b2; iogos has staged files but no first commit. Local changes may be present.",
     "cvc5's entries were read from its clean checkout at a07d513075 on 2026-09-19. Logos's installer was read at e8fa2441; it regenerates from a supplied or cached signature and does not automatically track the latest cvc5.",
     "Paideia's bootcamp tutorial was read at 7ccb92d on 2026-09-19; its source-baseline page records the cvc5 revision and validation limits of the tutorial itself.",
+    "Eunoia's artifacts were read at 302af2c on 2026-09-19: mimesis owns the tutorials and case studies, sapheneia the language account and comparison ledgers. Their documents are explicitly recorded under each child's docs/; examples/ retains its reserved purpose.",
+    "Ethos's formatter was read at 92e6563b on 2026-09-19; its source supplies a docstring and CLI help. That working tree has the smtlibTests/ files staged under tests/smtlib/, so the old directory's exclusion is removed.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -111,6 +114,14 @@
       "entrypoints": ["src/main.cpp"],
       "docs": ["README.md", "user_manual.md"]
     },
+    "ethos_formatter": {
+      "repo": "ethos",
+      "path": "contrib",
+      "what": "Formats Eunoia signatures, with check and diff modes",
+      "entrypoints": ["contrib/eo_format.py"],
+      "docs": ["contrib/eo_format.py"],
+      "layout_note": "formatter shares contrib/ with compilation scripts and DRAT utilities"
+    },
     "ethos_eoc": {
       "repo": "ethos",
       "path": "tools/eoc",
@@ -144,6 +155,24 @@
       "entrypoints": ["tools/euthyna/bin/euthyna", "tools/euthyna/analysis/build-site.py", "tools/euthyna/analysis/plot-rules.py"],
       "docs": ["tools/euthyna/docs/publishing.md", "tools/euthyna/analysis/README.md"],
       "layout_note": "site builder, renderer and tests share analysis/ with measurement tooling and vendored scripts; the shared launcher lives in bin/"
+    },
+    "mimesis_tutorials": {
+      "repo": "eunoia",
+      "owner": "mimesis",
+      "kind": "artifact",
+      "path": "tools/mimesis/docs",
+      "what": "Tutorials and case studies for Eunoia signatures and Logos verification",
+      "files": ["tools/mimesis/docs/adding-a-cpc-rule.md", "tools/mimesis/docs/extending-cpc-operators.md", "tools/mimesis/docs/extending-cpc-theories.md", "tools/mimesis/docs/defining-a-calculus.md", "tools/mimesis/docs/case-study.md"],
+      "docs": ["tools/mimesis/README.md"]
+    },
+    "sapheneia_account": {
+      "repo": "eunoia",
+      "owner": "sapheneia",
+      "kind": "artifact",
+      "path": "tools/sapheneia/docs",
+      "what": "Eunoia language account and comparison ledgers; not authoritative",
+      "files": ["tools/sapheneia/docs/manual.md", "tools/sapheneia/docs/feedback.md", "tools/sapheneia/docs/account-vs-manual.md", "tools/sapheneia/docs/ethos-logos.md", "tools/sapheneia/docs/semantics.md"],
+      "docs": ["tools/sapheneia/README.md", "tools/sapheneia/docs/README.md"]
     },
     "stathmos_audits": {
       "repo": "kanon",
@@ -226,14 +255,6 @@
     }
   },
   "exclude": {
-    "cvc5": {
-      "licenses": "Third-party license texts."
-    },
-    "ethos": {
-      "contrib": "Build and release support.",
-      "licenses": "Third-party license texts.",
-      "smtlibTests": "SMT-LIB regression inputs."
-    },
     "euthyna": {
       "bin": "Shared measurement and site launcher; bin/euthyna is recorded as a site entry point.",
       "data": "Committed measurement snapshots consumed by the report site; input evidence rather than site implementation."

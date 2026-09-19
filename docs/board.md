@@ -127,17 +127,17 @@ This is the finding that taught us to check.
 ## B33 — update the ethos user manual from sapheneia's advice
 
 **Task:** update ethos's `user_manual.md` using the advice in
-[sapheneia's feedback ledger](../tools/sapheneia/docs/feedback.md).
+[sapheneia's feedback ledger](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/feedback.md).
 **Entities:** `ethos`, `sapheneia`
 **Status:** in progress — rechecked 2026-09-18 against ethos `21fc6c7d`.
 `EOM-01` and `EOM-02` are **fixed**: `<term>` now derives `<literal>`,
 `<literal>` has a production, and `<datatype-dec>` has the `par` alternative.
 Six more were re-read against the current manual and **stand** — `EOM-03`,
 `04`, `06`, `07`, `11` and `15`, each with its evidence in
-[the recheck](../tools/sapheneia/docs/feedback.md#the-recheck-2026-09-18).
+[the recheck](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/feedback.md#the-recheck-2026-09-18).
 Our `D12` carried only the two now fixed, and has been removed.
 **Channel:** **upstream, by a person** — ethos has no discussion file;
-sapheneia's preparation is internal to kanon.
+sapheneia's preparation belongs to eunoia.
 **Next:** the seven judgement entries — `EOM-05`, `08`, `09`, `10`, `12`, `13`
 and `14` — need a reader who knows Eunoia rather than a grep. Decide whether to
 spend that reading, or to carry the six standing entries upstream as they are.

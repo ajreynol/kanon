@@ -35,6 +35,9 @@ change its listing preference. The linked sources govern their subjects;
 outside projects listed for comparison did not ask to be measured and owe the
 ecosystem nothing.
 
+The eunoia repository and its children mimesis and sapheneia were rechecked on
+**2026-09-19** at eunoia `302af2c`.
+
 ## A
 
 <a id="aisthesis"></a>
@@ -216,7 +219,14 @@ a signature and supplies a checker and its proof development.
 **Eunoia** (language; *proper noun*): The language for defining calculi and
 checking solver proofs around which the ecosystem is built. From Greek εὔνοια,
 “good thinking.” See
-[the language account](../tools/sapheneia/docs/manual.md#1-what-eunoia-is).
+[the language account](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/manual.md#1-what-eunoia-is).
+
+<a id="eunoia-repository"></a>
+**eunoia** (Eunoia member; *proper noun*): The repository for studying the
+[Eunoia language](#eunoia) and teaching signature authoring. It houses
+[sapheneia](#sapheneia)'s language account and [mimesis](#mimesis)'s tutorials
+and case studies. Its documents are optional readings; ethos's manual remains
+authoritative. [Repository](https://github.com/ajreynol/eunoia).
 
 <a id="euthyna"></a>
 **euthyna** (Eunoia child project of [eudaimonia](#eudaimonia); *proper noun*):
@@ -338,10 +348,10 @@ bit-vectors, with small reproducible examples.
 [Charter](https://github.com/ajreynol/tachyon/blob/main/tools/metagraphe/README.md).
 
 <a id="mimesis"></a>
-**mimesis** (Eunoia child project of [eudaimonia](#eudaimonia); *proper noun*):
+**mimesis** (Eunoia child project of [eunoia](#eunoia-repository); *proper noun*):
 Case studies and tutorials teaching how to write [Eunoia](#eunoia) signatures
 and bring them into [logos](#logos). From Greek μίμησις, “imitation.”
-[Charter](https://github.com/ajreynol/eudaimonia/blob/main/tools/mimesis/README.md).
+[Charter](https://github.com/ajreynol/eunoia/blob/main/tools/mimesis/README.md).
 
 <a id="murxla"></a>
 **murxla** (Eunoia outsider; *proper noun*): An outside fuzzer that exercises
@@ -395,17 +405,17 @@ See [LAW 3](laws.md#law-3--presidency-appointment-authority-and-succession).
 ## S
 
 <a id="sapheneia"></a>
-**sapheneia** (Eunoia child project of [kanon](#kanon); *proper noun*): An
+**sapheneia** (Eunoia child project of [eunoia](#eunoia-repository); *proper noun*): An
 account of [Eunoia](#eunoia) as a language independent of one checker’s manual;
 [ethos](#ethos)’s manual remains authoritative. From Greek σαφήνεια, “clarity of
-an account.” [Charter](../tools/sapheneia/README.md).
+an account.” [Charter](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/README.md).
 
 <a id="smt-lib"></a>
 **SMT-LIB** (language; *proper noun*): The shared language and theory vocabulary
 used for solver inputs and the semantics modeled by [logos](#logos).
 [Eunoia](#eunoia) uses its syntax to express the formulas appearing in solver
 proofs. See
-[the language account](../tools/sapheneia/docs/manual.md#1-what-eunoia-is) and
+[the language account](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/manual.md#1-what-eunoia-is) and
 [the Lean model role](roles.md#r18--the-model-of-smt-lib-semantics-in-lean).
 
 <a id="stathmos"></a>

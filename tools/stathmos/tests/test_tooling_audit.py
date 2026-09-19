@@ -117,7 +117,8 @@ class ToolingAudit(unittest.TestCase):
         self.child_owner()
         self.tree.directories.update({"tools/child/extra", "tools/child/data", "tools/other/elsewhere",
                                       "tools/child/examples", "tools/child/test",
-                                      "tools/child/cmake", "tools/child/include"})
+                                      "tools/child/cmake", "tools/child/include",
+                                      "tools/child/licenses"})
         self.inventory["exclude"] = {"child": {"data": "archived evidence", "removed": "old evidence"}}
         rows, gaps, *_ = self.inspect()
         self.assertEqual(len(gaps), 4, gaps)
@@ -192,10 +193,26 @@ class ToolingAudit(unittest.TestCase):
                 inventory["tools"]["analyzer"].update(changes)
                 self.assertTrue(audit.well_formed(inventory, self.ecosystem))
 
+    def test_document_artifact_uses_owner_docs_without_a_layout_gap(self):
+        self.child_owner()
+        self.tree.directories.remove("tools/child/audits")
+        self.entry.update(kind="artifact", path="tools/child/docs",
+                          files=["tools/child/docs/manual.md"])
+        self.tree.files.update(self.entry["files"])
+        code, output = self.run_main("--check", "--local")
+        self.assertEqual(code, 0, output)
+        self.assertIn("0 layout gap(s)", output)
+        row = next(line for line in output.splitlines() if line.startswith("analyzer "))
+        self.assertIn("shared", row)
+        self.tree.files.remove("tools/child/docs/manual.md")
+        code, output = self.run_main("--check", "--local")
+        self.assertEqual(code, 1, output)
+        self.assertIn("missing files file tools/child/docs/manual.md", output)
+
     def test_missing_files_unknown_directories_and_stale_exclusions_are_gaps(self):
         self.tree.files.remove("scripts/analyze")
         self.tree.directories.update({"new_tool", "data", ".cache", "tools", "tests",
-                                      "examples", "test", "cmake", "include"})
+                                      "examples", "test", "cmake", "include", "licenses"})
         self.inventory["exclude"] = {"sample": {"data": "fixtures", "removed": "old fixtures"}}
         rows, gaps, unseen, notes, trees = self.inspect()
         self.assertEqual(len(gaps), 5, gaps)

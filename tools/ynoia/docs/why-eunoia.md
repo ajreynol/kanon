@@ -82,7 +82,7 @@ measured.** That belongs at the top.
 | **6 — the Lean side is generated rather than chosen** | **True of the pipeline as built**, and untested as an *independence* claim | `iogos` — a second prover — which does not exist. Until then, "generated rather than chosen" is a fact about one backend |
 | **O2 — the `.eos` layer is the tell** | **Argued, and conceded**: this is where the arrangement's own case is weakest, and the document says so | `noesis`, now a child project in eudaimonia and not yet landed |
 | **arrangements A–F** | **Laid out fairly. None costed.** No estimate of what moving to any of them would take | any one of them costed by somebody who would have to do it |
-| **the named projects** | **Three do not exist** — pathos, iogos, elenchos. **Four have been started**, all as child projects in eudaimonia and all documented at their sources: `euthyna`, `noesis`, `hermeneia`, `mimesis`. The register of the rest, in priority order, is [`tools.md`](tools.md) | another one being started |
+| **the named projects** | **Three do not exist** — pathos, iogos, elenchos. **Four have been started**, all documented at their sources: `euthyna`, `noesis` and `hermeneia` in eudaimonia, `mimesis` in eunoia. The register of the rest, in priority order, is [`tools.md`](tools.md) | another one being started |
 
 ### The one measurement that is runnable today
 

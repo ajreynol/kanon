@@ -98,6 +98,7 @@ distinguishable from one describing a present state of affairs.
 | `examples/` | examples showing how to use the project |
 | `cmake/` | CMake build configuration and helpers |
 | `include/` | header files used by the project or its users |
+| `licenses/` | license texts and notices for the project and its dependencies |
 | `scripts/` | commands, helpers and their data: generators, checks, the runner |
 | `prompts/` | workflows that hand context to an assistant, kept apart from `scripts/` so that running a command never means deciding to spend a turn |
 | `deps/` | other people's repositories, fetched by a run and never committed |
@@ -105,9 +106,9 @@ distinguishable from one describing a present state of affairs.
 | `.github/workflows/` | what runs on every push |
 | [tool or feature directories](#tool-and-feature-directories) | one named, self-contained implementation per top-level directory; recommended |
 
-For `examples/`, `test/` (or `tests/`), `cmake/` and `include/`, policy reserves
-the purpose and leaves the contents and organization to each project. The
-tooling audit skips these directories when discovering tools.
+For `examples/`, `test/` (or `tests/`), `cmake/`, `include/` and `licenses/`,
+policy reserves the purpose and leaves the contents and organization to each
+project. The tooling audit skips these directories when discovering tools.
 
 **One entry point, and it is the front page.** `README.md` carries what the
 tool is, what it finds, what it refuses to claim, how to run it, and a route to

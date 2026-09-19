@@ -73,12 +73,14 @@ It includes foundations such as cvc5 as tooling providers, without running
 policy checks or imposing requirements on them.
 It never executes the recorded entry points. `kind: artifact` identifies data
 such as anoieu's and dokimasia's bug databases, which need no executable.
+Document artifacts such as eunoia's tutorials and language account can live in
+their owner's `docs/` without a layout gap; their recorded files are still checked.
 
 The default table checks local paths and reports layout exceptions. Discovery
 flags unregistered tracked top-level directories within repositories and named
 child owners for a person to classify. Directories reserved by the
 [policy layout](../../docs/policy.md#the-layout), including `examples/`, `test/`,
-`tests/`, `cmake/` and `include/`, are skipped;
+`tests/`, `cmake/`, `include/` and `licenses/`, are skipped;
 explicit exclusions are listed with their reasons and marked non-compliant
 inventory coverage. That describes our record, not an obligation on the owner.
 Nested tools

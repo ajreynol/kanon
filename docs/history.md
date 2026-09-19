@@ -415,6 +415,11 @@ leaves their contents and organization to each project. The tooling audit
 skips these directories so ordinary project support is not an inventory gap;
 their explicit exclusions were removed.
 
+The maintainer also reserved `licenses/` on 2026-09-19 for license texts and
+notices, so it is skipped as ordinary project support. Ethos's `contrib/`
+exclusion was replaced by an entry for its Eunoia formatter, with its shared
+directory recorded as an advisory layout gap.
+
 ### Housekeeping completed after an interruption — 2026-09-18
 
 This entry is reconstructed from `d03447d` ("Hk") and the local source
@@ -747,11 +752,20 @@ the coordinate the register keeps in its `joined` field.
 | 2026-09-16 05:23 | `tachyon` | not in the register → member | `cbd8eb2` | `226d534`, 06:32 | `kanon 4c4a78a` |
 | 2026-09-16 06:24 | `eschaton` | not in the register → candidate | — | `2a6aac1` | — |
 | 2026-09-16 07:02 | `eschaton` | candidate → member | `50c780d` | `0c507d9`, 07:22 | `kanon c95ab21` |
+| 2026-09-19 07:35 | `eunoia` | not in the register → member | `302af2c` | working tree | `kanon 4d16d1b` |
 
 **No repository left, and no footing was withdrawn.**
 
-**Three of the four rows are somebody else joining; the first is the office
-moving.** It is on the same table because the presidency is a footing in the
+**Eunoia's handoff, read at `302af2c` on 2026-09-19.** At the maintainer's
+request, mimesis's parent changed from eudaimonia to eunoia and sapheneia's
+from kanon to eunoia; both keep their `tools/<name>` paths and child footings.
+The tooling inventory records their tutorials, case studies and language
+account as artifacts. Eunoia declares membership and configures policy
+contract 1. The local checker reports one failing check affecting both
+children: their front-page advertisement lacks charter exception statements.
+
+**The first row is the office moving; the rest record repositories' footings.**
+It is on the same table because the presidency is a footing in the
 same register and moves by the same act — a person editing one line — and a
 membership record that omitted the one change kanon made to its own row would
 be the page's most obvious blind spot.
