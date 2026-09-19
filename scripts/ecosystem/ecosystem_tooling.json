@@ -20,6 +20,7 @@
     "Iogos was rechecked at e716d73 on 2026-09-19. Cpc/ contains the generated checker and obligations, with its handwritten soundness scaffold under Cpc/Soundness/. Install and build wrappers live in scripts/. The soundness theory is still a placeholder, not a completed proof.",
     "Epikrisis's site was rechecked at 2dc4125 on 2026-09-19 and lives in ecosystem_report/. Eudaimonia's generator lives in new_checker/ at 50532e0; its staged Euthyna changes separate measurement/ and report_site/, with a shared scripts/ launcher and saved data under measurement/data/. The Euthyna entries describe that working tree, not the committed default branch.",
     "Tachyon's child webpages were read at effe42c on 2026-09-19. Heuresis's report builds gap measurements and a research queue; elaphros's report builds planning and source-evidence pages without measured performance claims. Each builder and its HTML templates live at the child's root and read ledger/ evidence. scripts/build_site.py assembles the site described in docs/site.md.",
+    "Metagraphe's rewrite database was read at 258102d on 2026-09-19. rewrite_db/ holds the curated records and their generated view; its validation, rendering and pinned-koine wrappers live in the child's shared scripts/. The records are rewrite proposals and source observations, not established solver fixes.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -255,6 +256,15 @@
       "entrypoints": ["tools/elaphros/reports/build", "scripts/build_site.py"],
       "files": ["tools/elaphros/reports/report.html"],
       "docs": ["tools/elaphros/README.md", "docs/site.md", "tools/elaphros/docs/ledger/README.md", "tools/elaphros/reports/data/README.md"]
+    },
+    "metagraphe_rewrite_db": {
+      "repo": "tachyon",
+      "owner": "metagraphe",
+      "kind": "database",
+      "path": "tools/metagraphe/rewrite_db",
+      "what": "Persistent rewrite candidates, coverage and browsing view",
+      "files": ["tools/metagraphe/rewrite_db/rewrites.json", "tools/metagraphe/rewrite_db/rewrites.md"],
+      "docs": ["tools/metagraphe/README.md", "tools/metagraphe/rewrite_db/README.md", "tools/metagraphe/rewrite_db/reporting-policy.md"]
     },
     "iogos_checker": {
       "repo": "iogos",
