@@ -18,6 +18,6 @@ def load(name, path):
     return module
 
 
-from tools.stathmos.scripts import policy_check
+from tools.stathmos.audits import policy_check
 
-ecosystem = load("ecosystem_under_test", "tools/stathmos/scripts/status_audit.py")
+ecosystem = load("ecosystem_under_test", "tools/stathmos/audits/status_audit.py")

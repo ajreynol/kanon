@@ -571,7 +571,7 @@ saying the usual thing happened. To opt out, the child's own `README.md`
 records `**Footing:** `unadvertised-child`` with the reason. An invalid
 declaration gives no permission to list the child. Commands
 read this exact field rather than inferring from prose; the reading rules are
-in [`child_listing.py`](../tools/stathmos/scripts/child_listing.py). Opting out lets a
+in [`child_listing.py`](../tools/stathmos/audits/child_listing.py). Opting out lets a
 parent avoid lending its own credibility to speculative work, and unadvertised
 work remains committed in the open.
 

@@ -36,19 +36,20 @@ to send the whole reader bundle there.
 records the earlier agreement, not this revision.
 **Next:** carry it. The notice is drafted in
 [`D22`](discussion.md) — the audit, its child-listing helper and the local
-policy-checker launcher are in `tools/stathmos/scripts/`, the register and the
+policy-checker launcher are in `tools/stathmos/audits/`, the register and the
 checkout map stay in `scripts/`, and `scripts/eo_status_audit` is unchanged as
 the public command. Writing it there did not deliver it.
 **Prompt — `kanon`:** carry the revised boundary to koine. The audit, its
 child-listing helper and the local policy-checker launcher live in
-`tools/stathmos/scripts/`; the register and local checkout mapping remain in
+`tools/stathmos/audits/`; the register and local checkout mapping remain in
 `scripts/`. Document checks remain in this repository's tests.
 **Prompt — `koine`:** stathmos now maintains ecosystem status auditing under
 `R37`, reached through the existing `scripts/eo_status_audit` command. This
 revises our earlier reader-bundle handoff. Your `eo_status` remains the shared
 reader; the authoritative register and membership decisions remain kanon's.
 **HUMAN FEEDBACK:** 2026-09-18: keep `eo_status_audit` in `scripts/`, with its
-internal implementation in `tools/stathmos/scripts/`. Implemented.
+internal implementation in `tools/stathmos/scripts/`. Implemented; moved to
+`tools/stathmos/audits/` on 2026-09-19 at the maintainer's direction.
 
 ## B18 — settle the associate proposal for ethos
 

@@ -23,8 +23,8 @@ Shared requirements are in [`policy.md`](policy.md) and [`laws.md`](laws.md).
 3. **Check [the supervision ladder](#the-supervision-ladder)** below before
    touching any document in it.
 4. **Run** `python3 -m unittest discover -s tests -v`,
-   `scripts/eo_status_audit --check`, and
-   `python3 tools/stathmos/scripts/policy_check.py --root .`.
+   `scripts/eo_status_audit --check`, `scripts/eo_tooling_audit --check`, and
+   `python3 tools/stathmos/audits/policy_check.py --root .`.
 
 The regression suite includes stathmos's tests from
 [`tools/stathmos/tests/`](../tools/stathmos/tests/). Run those alone with
@@ -53,10 +53,24 @@ draft a README for new work or a project moving out of a child directory.
    naming ideas stay with proposals.
 3. Run `scripts/eo_status_audit --check` and the regression suite. Use
    `scripts/repos.local` for an existing checkout outside the normal search
-   locations; local paths do not belong in the shared inventory.
+locations; local paths do not belong in the shared inventory.
 4. Installation uses the inventory and `checkouts.json` exceptions. Children
    arrive with their parent; outsiders are not cloned. A child's README
    controls its [listing preference](policy.md#child-projects).
+
+Record tools and artifacts in
+[`ecosystem_tooling.json`](../scripts/ecosystem/ecosystem_tooling.json): its
+repository, directory, entry points or artifact files, and documentation.
+`owner` defaults to the repository and can name a child project; layout is
+measured within that owner's root. All entry paths remain repository-relative.
+`kind: artifact` records maintained data without requiring executable entry
+points. Shared launchers and docs may sit outside the owner. `scripts/eo_tooling_audit`
+reports missing paths, unregistered top-level directories and layout gaps;
+`--verbose` shows the recorded entry points and source revisions. Explain
+nonstandard layouts with `layout_note` and non-inventory directories with
+`exclude`, whose directory names are relative to the named owner's root.
+`--check` validates records without checkouts; add `--local` or `--online` to
+compare trees. Layout observations alone never fail a check.
 
 Joining through `eo_join` is the owner's choice. No welcome message or
 post-join grade is required.
@@ -69,7 +83,8 @@ post-join grade is required.
 | the development vision | [`vision.md`](vision.md) |
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the authoritative register and installation exceptions | `scripts/ecosystem/` |
-| the status audit, maintained by stathmos | `scripts/eo_status_audit` runs [`tools/stathmos/scripts/status_audit.py`](../tools/stathmos/scripts/status_audit.py) |
+| the status audit, maintained by stathmos | `scripts/eo_status_audit` runs [`tools/stathmos/audits/status_audit.py`](../tools/stathmos/audits/status_audit.py) |
+| the tooling audit, maintained by stathmos | `scripts/eo_tooling_audit` runs [`tools/stathmos/audits/tooling_audit.py`](../tools/stathmos/audits/tooling_audit.py) |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
 | what we are saying to other tools | [`discussion.md`](discussion.md) |
@@ -403,7 +418,7 @@ accepts a pinned commit just as well, and a member may be on either form — rea
 a member's own workflow file rather than assuming.
 
 **anoieu** owns the checker implementation; stathmos's
-[`tools/stathmos/scripts/policy_check.py`](../tools/stathmos/scripts/policy_check.py)
+[`tools/stathmos/audits/policy_check.py`](../tools/stathmos/audits/policy_check.py)
 is the local launcher. A local launch uses
 whatever anoieu checkout is on this machine, at whatever revision it is on, and
 establishes nothing about what CI ran. **That gap is the subject of `D1`** and

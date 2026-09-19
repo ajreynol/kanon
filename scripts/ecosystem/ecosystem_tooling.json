@@ -1,0 +1,188 @@
+{
+  "_comment": [
+    "Ground truth for tooling boundaries, maintained by people; eo_tooling_audit reads but never rewrites it.",
+    "ecosystem.json remains the authority for repositories and footings. These entries are tools and artifacts, not additional projects or membership decisions.",
+    "repo names the containing repository. Optional owner names a child project in that repository; it defaults to repo. path and also list implementation or artifact directories relative to repo, within the owner's root.",
+    "kind defaults to tool. An artifact is a maintained output such as a bug database; it appears in the same inventory but needs content files rather than executable entrypoints.",
+    "entrypoints, files and docs are file paths relative to repo, including shared launchers and docs outside the owner. They are inspected, never executed. Empty required lists are allowed and reported as gaps.",
+    "layout_note explains a departure from one self-contained top-level directory within the owning repository or child project. Such departures are advisory, never policy failures.",
+    "exclude is keyed by repository or child owner and maps directories relative to that owner's root to reasons. Shared docs, scripts, tests, prompts, deps, scratch, tools and hidden directories are not discovery candidates.",
+    "Discovery considers tracked top-level directories in repositories and child owners named here. Other nested tools and implementations in shared directories need explicit entries. Research charters alone are not tooling.",
+    "Initial inventory read from local working trees on 2026-09-19: anoieu 06bd787, dokimasia 158c385, epikrisis e748ff6, ethos 21fc6c7d, eudaimonia 79dd601, kanon f22798f, koine 74ea664, logos e8fa2441, paideia 7b305f1, tachyon cccb1b2; iogos has staged files but no first commit. Local changes may be present.",
+    "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
+  ],
+  "tools": {
+    "anoieu_bug_db": {
+      "repo": "anoieu",
+      "kind": "artifact",
+      "path": "bug_db",
+      "what": "Persistent analyzer and fuzzer findings and browsing view",
+      "files": ["bug_db/bugs.json", "bug_db/bugs.md"],
+      "docs": ["bug_db/README.md"]
+    },
+    "anoieu_analyzer": {
+      "repo": "anoieu",
+      "path": "anoieu_analyzer",
+      "what": "Static analysis of Eunoia signatures and semantics",
+      "entrypoints": ["anoieu_analyzer/__main__.py"],
+      "docs": ["docs/usage.md", "docs/checks.md"]
+    },
+    "anoieu_fuzz": {
+      "repo": "anoieu",
+      "path": "anoieu_fuzz",
+      "what": "Generates and mutates inputs for proof checkers",
+      "entrypoints": ["anoieu_fuzz/__main__.py"],
+      "docs": ["anoieu_fuzz/README.md", "docs/fuzzing.md"]
+    },
+    "policy_check": {
+      "repo": "anoieu",
+      "path": "policy_check",
+      "what": "Repository policy checks and documentation currency",
+      "entrypoints": ["scripts/policy_check.py", "policy_check/__main__.py"],
+      "docs": ["policy_check/README.md"]
+    },
+    "dokimasia_analyzer": {
+      "repo": "dokimasia",
+      "path": "dokimasia",
+      "what": "Analyzes gaps in cvc5 proof production",
+      "entrypoints": ["scripts/dokimasia_analyzer", "dokimasia/__main__.py"],
+      "docs": ["docs/analyzer.md", "docs/usage.md"]
+    },
+    "dokimasia_bug_db": {
+      "repo": "dokimasia",
+      "kind": "artifact",
+      "path": "bug_db",
+      "what": "Persistent proof-production findings and browsing view",
+      "files": ["bug_db/bugs.json", "bug_db/bugs.md"],
+      "docs": ["bug_db/README.md"]
+    },
+    "history_analyzer": {
+      "repo": "epikrisis",
+      "path": "history_analyzer",
+      "what": "Audits repository histories at recorded revisions",
+      "entrypoints": ["history_analyzer/bin/epikrisis"],
+      "docs": ["history_analyzer/README.md"]
+    },
+    "loc_analyzer": {
+      "repo": "epikrisis",
+      "path": "loc_analyzer",
+      "what": "Counts implementation and documentation in Git trees",
+      "entrypoints": ["loc_analyzer/bin/loc"],
+      "docs": ["loc_analyzer/README.md"]
+    },
+    "epikrisis_site": {
+      "repo": "epikrisis",
+      "path": "bin",
+      "what": "Builds the shared history and repository-size report site",
+      "entrypoints": ["bin/site"],
+      "docs": ["README.md"],
+      "layout_note": "shared site builder lives in bin/ rather than its own named tool directory"
+    },
+    "ethos_checker": {
+      "repo": "ethos",
+      "path": "src",
+      "what": "C++ checker for Eunoia proof calculi",
+      "entrypoints": ["src/main.cpp"],
+      "docs": ["README.md", "user_manual.md"]
+    },
+    "ethos_eoc": {
+      "repo": "ethos",
+      "path": "tools/eoc",
+      "also": ["plugins"],
+      "what": "Compiles Eunoia calculi to checkers and proof obligations",
+      "entrypoints": ["tools/eoc/driver.py", "plugins/main_eoc.cpp"],
+      "docs": ["tools/eoc/README.md"],
+      "layout_note": "Python driver is under tools/eoc/; C++ implementation is shared across plugins/"
+    },
+    "ethos_cpp_compiler": {
+      "repo": "ethos",
+      "path": "plugins/cpp_compiler",
+      "what": "Compiles signatures into a custom Ethos binary",
+      "entrypoints": ["plugins/cpp_compiler/build_custom_ethos.sh"],
+      "docs": ["plugins/cpp_compiler/README.md"],
+      "layout_note": "experimental compiler is a plugin below plugins/"
+    },
+    "new_checker": {
+      "repo": "eudaimonia",
+      "path": "templates",
+      "what": "Generates a calculus-specific Lean checker project",
+      "entrypoints": ["scripts/new-checker.sh"],
+      "docs": ["README.md", "docs/generated-checker.md"],
+      "layout_note": "generator implementation is split between scripts/new-checker.sh and templates/"
+    },
+    "stathmos_audits": {
+      "repo": "kanon",
+      "owner": "stathmos",
+      "path": "tools/stathmos/audits",
+      "what": "Audits ecosystem status and available tooling",
+      "entrypoints": ["scripts/eo_status_audit", "scripts/eo_tooling_audit"],
+      "docs": ["tools/stathmos/README.md"]
+    },
+    "bug_db_manager": {
+      "repo": "koine",
+      "path": "bug_db_manager",
+      "what": "Shared tooling for owners to append to their bug databases",
+      "entrypoints": ["bug_db_manager/koine_append_db"],
+      "docs": ["bug_db_manager/README.md"]
+    },
+    "eo_cmd": {
+      "repo": "koine",
+      "path": "eo_cmd",
+      "what": "Shared ecosystem commands and assistant workflow launchers",
+      "entrypoints": ["scripts/install_eo", "eo_cmd/eo_status", "eo_cmd/eo_git_status", "eo_cmd/eo_init", "eo_cmd/eo_join", "eo_cmd/eo_child", "eo_cmd/eo_listen", "eo_cmd/eo_topic", "eo_cmd/eo_respond", "eo_cmd/eo_brainstorm", "eo_cmd/eo_housekeeping"],
+      "docs": ["eo_cmd/README.md"]
+    },
+    "logos_checker": {
+      "repo": "logos",
+      "path": ".",
+      "also": ["Logos", "Cpc"],
+      "what": "Lean proof checker and CPC soundness development",
+      "entrypoints": ["Main.lean", "MainNative.lean"],
+      "docs": ["README.md", "docs/parser.md"],
+      "layout_note": "root executables combine the Logos/ parser and Cpc/ calculus and proofs"
+    },
+    "job_launcher": {
+      "repo": "tachyon",
+      "path": "job_launcher",
+      "what": "Validates, launches and retrieves remote benchmark jobs",
+      "entrypoints": ["job_launcher/submit", "job_launcher/status", "job_launcher/fetch", "job_launcher/checks", "job_launcher/deploy"],
+      "docs": ["docs/job-launcher.md"]
+    },
+    "iogos_checker": {
+      "repo": "iogos",
+      "path": "isabelle",
+      "what": "Experimental generated Isabelle/HOL checker and obligations",
+      "entrypoints": ["isabelle/ROOT", "regenerate.sh"],
+      "docs": ["README.md"]
+    },
+    "stats_profiler": {
+      "repo": "tachyon",
+      "path": "stats_profiler",
+      "what": "Profiles cvc5 statistics with offline reports and plots",
+      "entrypoints": ["stats_profiler/profile.py", "stats_profiler/top.py", "stats_profiler/plots.py"],
+      "docs": ["docs/stats-profiler.md"]
+    }
+  },
+  "exclude": {
+    "ethos": {
+      "cmake": "Build configuration helpers.",
+      "contrib": "Build and release support.",
+      "licenses": "Third-party license texts.",
+      "smtlibTests": "SMT-LIB regression inputs."
+    },
+    "eudaimonia": {
+      "examples": "Example calculus specifications consumed by the generator."
+    },
+    "iogos": {
+      "examples": "Isabelle sessions exercising the generated checker."
+    },
+    "logos": {
+      "CpcMini": "Reduced calculus for developing and testing proofs; no standalone executable.",
+      "install": "Dependency retrieval and regeneration support for the checker.",
+      "test": "Checker regression inputs and expected outputs."
+    },
+    "paideia": {
+      "bootcamp": "Developer guide and chapter index, a written artifact rather than executable tooling."
+    }
+  }
+}

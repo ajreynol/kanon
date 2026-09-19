@@ -324,8 +324,13 @@ The local policy-checker launcher followed into
 It locates and runs anoieu's checker; the checking rules remain anoieu's under
 `R31`. This supersedes the launcher's location recorded on 2026-09-17.
 
-*Re-derive:* `git log --follow -- tools/stathmos/scripts/status_audit.py`, and the
+*Re-derive:* `git log --follow -- tools/stathmos/audits/status_audit.py`, and the
 `R6`/`R37` entries in [`roles.md`](roles.md).
+
+The implementations moved from `tools/stathmos/scripts/` to
+`tools/stathmos/audits/` on 2026-09-19, so tooling ownership can name stathmos
+and measure its layout from the child project's root. Public commands stay in
+kanon's `scripts/`.
 
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 

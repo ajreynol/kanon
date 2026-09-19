@@ -61,9 +61,8 @@ class Documents(unittest.TestCase):
         self.assertEqual(housed, {p.name for p in projects})
 
     def test_shell_syntax(self):
-        for path in [ROOT / "scripts/eo_status_audit"]:
+        for path in [ROOT / "scripts/eo_status_audit", ROOT / "scripts/eo_tooling_audit"]:
             with self.subTest(script=path.name):
                 result = subprocess.run(["bash", "-n", str(path)], capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr)
-
 

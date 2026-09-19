@@ -33,6 +33,13 @@ scripts/eo_status_audit              # policy and discussion status across check
 `scripts/eo_status_audit` lists the advertised ones; `--all-children` shows every
 recorded child with its listing preference.
 
+**What tools and artifacts are available:** `scripts/eo_tooling_audit` reads
+[`ecosystem_tooling.json`](scripts/ecosystem/ecosystem_tooling.json) and reports
+owners, locations, layout exceptions and inventory gaps. Child projects can own
+tools; bug databases appear as artifacts. `--verbose` includes entry points,
+artifact files and documentation; `--check` validates the inventory
+offline, and `--check --local` also checks the available working trees.
+
 ## The documents
 
 [`docs/README.md`](docs/README.md) is the index, and names every page in

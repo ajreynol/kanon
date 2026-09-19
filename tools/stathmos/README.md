@@ -38,17 +38,17 @@ decisions; stathmos checks the evidence and keeps the assessments.
 ## The status audit
 
 **`scripts/eo_status_audit` is the public command.** Its implementation lives in
-[`scripts/status_audit.py`](scripts/status_audit.py), with child-listing declarations read by
-[`scripts/child_listing.py`](scripts/child_listing.py). `--help` documents the options and
+[`audits/status_audit.py`](audits/status_audit.py), with child-listing declarations read by
+[`audits/child_listing.py`](audits/child_listing.py). `--help` documents the options and
 columns. The command works from any working directory.
 
 The audit reads kanon's authoritative
 [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json), checks its structure
 with `--check`, and compares declarations in remote trees with `--check --online`.
 Its table reports local policy checks through
-[`scripts/policy_check.py`](scripts/policy_check.py), which locates and runs
+[`audits/policy_check.py`](audits/policy_check.py), which locates and runs
 anoieu's checker. To check one tree directly, run
-`python3 tools/stathmos/scripts/policy_check.py --root PATH` from kanon's root;
+`python3 tools/stathmos/audits/policy_check.py --root PATH` from kanon's root;
 omitting `--root` checks kanon. The audit never changes a membership decision
 or the register.
 
@@ -56,6 +56,35 @@ or the register.
 human judgement against the vision. An unavailable observation is unverified,
 not a pass or a failure; local policy results are not the corresponding CI run.
 Koine's `eo_status` remains the shared command for reading the register.
+
+## The tooling audit
+
+**`scripts/eo_tooling_audit` reports available tools, artifacts and inventory
+gaps.** [`audits/tooling_audit.py`](audits/tooling_audit.py) reads kanon's
+[`ecosystem_tooling.json`](../../scripts/ecosystem/ecosystem_tooling.json).
+Each entry names a repository, a directory, entry points or artifact files,
+and documentation. An optional `owner` can name a child project; the directory
+is measured from that owner's root when checking layout. All paths remain
+relative to the containing repository, including shared launchers and docs.
+The audit reuses the status audit's checkout resolver and repository footings.
+It never executes the recorded entry points. `kind: artifact` identifies data
+such as anoieu's and dokimasia's bug databases, which need no executable.
+
+The default table checks local paths and reports layout exceptions. Discovery
+flags unregistered tracked top-level directories within repositories and named
+child owners for a person to classify;
+shared layout directories and explained exclusions are skipped. Nested tools
+and root implementations need explicit entries. A research charter alone is
+not evidence of tooling, and file presence is not evidence that a tool works.
+
+Stathmos owns the tooling in `audits/`; it is a top-level tool directory within
+this child project. Kanon's `scripts/` retains the public launchers.
+
+`--verbose` prints sources, entry points, artifact files and docs. `--check` validates the
+inventory without sibling checkouts; `--check --local` also compares working
+trees, and `--check --online` compares GitHub default-branch trees. Missing
+observations are unverified. Layout gaps are advisory; inventory gaps fail a
+requested comparison. `--help` documents discovery limits and exit codes.
 
 ## The question
 
@@ -119,7 +148,7 @@ in the sharper register, and the shortfall it records against itself is that
 ## Layout
 
 - [`docs/README.md`](docs/README.md) indexes the report card, evidence and protocol.
-- [`scripts/`](scripts/) holds the audit and its helpers.
+- [`audits/`](audits/) holds the status and tooling audits and their helpers.
 - [`tests/`](tests/) holds their offline regressions. Kanon's test run includes them.
 
 From this directory, run `python3 -m unittest discover -s tests -v` to test

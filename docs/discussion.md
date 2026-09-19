@@ -166,7 +166,7 @@ reader bundle to you.
 | what | where |
 | --- | --- |
 | the public command | `scripts/eo_status_audit` — **unchanged** |
-| the audit, its child-listing helper, the local checker launcher | `tools/stathmos/scripts/` |
+| the audit, its child-listing helper, the local checker launcher | `tools/stathmos/audits/` |
 | the authoritative register and the local checkout map | `scripts/`, and still kanon's |
 
 **Your `eo_status` is unchanged and remains the shared reader.** The register

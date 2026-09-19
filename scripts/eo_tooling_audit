@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Audit the ecosystem's tooling inventory and its recorded implementation paths.
+# No assistant, builds, installation, or changes to other repositories.
+#
+#   eo_tooling_audit                   # local availability, layout and gaps
+#   eo_tooling_audit --verbose         # include entry points and documentation
+#   eo_tooling_audit --check           # validate the inventory alone
+#   eo_tooling_audit --check --local   # also check local trees and coverage
+#   eo_tooling_audit --check --online  # compare with remote default-branch trees
+set -euo pipefail
+HERE=$(cd "$(dirname "$0")" && pwd)
+exec python3 "$HERE/../tools/stathmos/audits/tooling_audit.py" "$@"

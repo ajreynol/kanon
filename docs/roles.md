@@ -352,11 +352,12 @@ and the evidence and protocol pages beside it.
 status, local policy results, declaration drift and missing evidence. These
 mechanical checks do not grade adherence to the vision or decide membership.
 Split from `R6` on 2026-09-18; kanon retains the register.
-**Owns:** the public `scripts/eo_status_audit` launcher,
-[`tools/stathmos/scripts/status_audit.py`](../tools/stathmos/scripts/status_audit.py),
-[`tools/stathmos/scripts/child_listing.py`](../tools/stathmos/scripts/child_listing.py),
+**Owns:** the public `scripts/eo_status_audit` and `scripts/eo_tooling_audit` launchers,
+[`tools/stathmos/audits/status_audit.py`](../tools/stathmos/audits/status_audit.py),
+[`tools/stathmos/audits/tooling_audit.py`](../tools/stathmos/audits/tooling_audit.py),
+[`tools/stathmos/audits/child_listing.py`](../tools/stathmos/audits/child_listing.py),
 and the local checker launcher
-[`tools/stathmos/scripts/policy_check.py`](../tools/stathmos/scripts/policy_check.py).
+[`tools/stathmos/audits/policy_check.py`](../tools/stathmos/audits/policy_check.py).
 Their regressions live in [`tools/stathmos/tests/`](../tools/stathmos/tests/).
 The checking rules and their implementation remain anoieu's under `R31`.
 

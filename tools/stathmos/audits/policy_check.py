@@ -5,8 +5,8 @@
 locates a checkout and runs what is there; it decides nothing about compliance
 and carries no copy of the rules.
 
-    python3 tools/stathmos/scripts/policy_check.py              # check kanon
-    python3 tools/stathmos/scripts/policy_check.py --root PATH  # another checkout
+    python3 tools/stathmos/audits/policy_check.py              # check kanon
+    python3 tools/stathmos/audits/policy_check.py --root PATH  # another checkout
 
 `ANOIEU_ROOT` selects the checkout; otherwise `scripts/repos.local`,
 `ANOIEU_REPOS`, a sibling `anoieu/`, then `$HOME`. An unavailable checker is
