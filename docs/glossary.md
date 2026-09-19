@@ -216,17 +216,21 @@ a signature and supplies a checker and its proof development.
 [Repository](https://github.com/ajreynol/eudaimonia).
 
 <a id="eunoia"></a>
-**Eunoia** (language; *proper noun*): The language for defining calculi and
-checking solver proofs around which the ecosystem is built. From Greek εὔνοια,
-“good thinking.” See
-[the language account](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/manual.md#1-what-eunoia-is).
+**Eunoia** (*proper noun*): From Greek εὔνοια, “good thinking.” The name has
+three related uses:
 
-<a id="eunoia-repository"></a>
-**eunoia** (Eunoia member; *proper noun*): The repository for studying the
-[Eunoia language](#eunoia) and teaching signature authoring. It houses
-[sapheneia](#sapheneia)'s language account and [mimesis](#mimesis)'s tutorials
-and case studies. Its documents are optional readings; ethos's manual remains
-authoritative. [Repository](https://github.com/ajreynol/eunoia).
+- **The ecosystem:** The collection of projects built around the Eunoia
+  language and [cvc5](#cvc5), including proof checkers, compilers, analysis
+  tools and research. The [inventory](../scripts/ecosystem/ecosystem.json)
+  records the projects and their footings.
+- **The language:** The language for defining calculi and checking solver
+  proofs. [Ethos](#ethos)'s manual is authoritative; see also
+  [sapheneia's language account](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/manual.md#1-what-eunoia-is).
+- **The repository:** <a id="eunoia-repository"></a>
+  **eunoia** (Eunoia member; *proper noun*): The repository for studying the
+  language and teaching signature authoring. It houses [sapheneia](#sapheneia)'s
+  language account and [mimesis](#mimesis)'s tutorials and case studies. Its
+  documents are optional readings. [Repository](https://github.com/ajreynol/eunoia).
 
 <a id="euthyna"></a>
 **euthyna** (Eunoia child project of [eudaimonia](#eudaimonia); *proper noun*):

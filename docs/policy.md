@@ -234,8 +234,30 @@ and CI checks the script's copy has not drifted from it.
 
 ## Ownership, and what is claimed
 
-**Owner:** `ajreynol` — Andrew Reynolds, University of Iowa and AWS. Recorded
-here once, and deliberately not advertised anywhere else.
+### Human maintainers
+
+**The human maintainers of the Eunoia ecosystem are the people accountable for
+its shared arrangement and for human decisions within their responsibilities.**
+Each repository's own maintainers remain the authority over that repository.
+An agent or repository does not hold human authority.
+
+**Current human maintainers:**
+
+- Andrew Reynolds (`ajreynol`).
+
+This is the current list, not a permanent assignment. When responsibility
+changes by human decision, update this list here. Other repositories link to
+it so that a change does not leave copies of the old ownership statement.
+
+**Always link ownership and human-maintainer statements to this section of
+`policy.md`.** READMEs, maintenance notes, prompts and reports use a link to
+[the authoritative list](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers)
+instead of repeating the maintainers' names, personal handles or affiliations.
+Within this repository a relative link to `docs/policy.md#human-maintainers`
+is sufficient. Keep descriptions of authorship and supervision local.
+
+The ownership-link requirement is not mechanically checked by the current
+policy checker.
 
 **Why there is a name at all.** Accountability, and nothing else. This
 ecosystem publishes things about other people's code and says the work is done
@@ -247,16 +269,17 @@ this up with*.
 commit log. The distinction is between **recording** something so it can be
 relied on and **placing** it where it works as promotion — so it appears on no
 front page, in no maintenance note, in no outbound prompt, and in nothing
-published about somebody else's code. Checked.
+published about somebody else's code. Link to the list above wherever
+ownership needs to be identified.
 
 | what you are looking at | what is claimed |
 | --- | --- |
-| a **member** | part of the ecosystem. Its own maintainer runs it; the owner is accountable for the arrangement it belongs to |
+| a **member** | part of the ecosystem. Its own maintainer runs it; the ecosystem's [human maintainers](#human-maintainers) are accountable for the shared arrangement |
 | a **child project** | through its parent, on its parent's footing |
 | an **associate** | **nothing of ours.** What it holds itself to is on its own maintenance page, and that claim is theirs |
 | a **candidate** | nothing |
 | a **foundation** | nothing, emphatically. The arrangement is downstream of it |
-| **Eunoia**, and **CPC** | not ours and never were. They are cvc5's |
+| the **Eunoia language**, and **CPC** | not ours and never were. They are cvc5's |
 | a **reserved name** | nobody's. It is a description somebody wrote down |
 
 **Ownership here is accountability, not control over use.** Nothing restricts
@@ -275,6 +298,8 @@ achieved — who is writing it, under what supervision, and what that supervisio
 covers:
 
 > ## How this repository is maintained
+>
+> **Human maintainers:** [the current list in policy.md](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers).
 >
 > **Written by AI agents, under light human supervision.** A human directs the
 > work, reads what is published and decides what is filed; nobody vets the
@@ -344,9 +369,9 @@ safe locally and dangerous in aggregate**: ten gates that each refuse when in
 doubt compose into a system whose default is refusal, and no single one looks
 wrong at the moment the whole thing stops. **The largest is structural:**
 creating a repository, granting a role, carrying anything outward and deciding
-a footing are all reserved for a person, and there is one such person. If they
-are unavailable all of it freezes at once — a single point of failure the
-design cannot see.
+a footing are all reserved for people. Where one person holds all those
+responsibilities, their unavailability freezes all of it at once — a single
+point of failure the design cannot see.
 
 ### The escape hatch
 
@@ -856,6 +881,8 @@ This repository is part of the **Eunoia ecosystem** and follows its shared
 repository policy, kept by [kanon](https://github.com/ajreynol/kanon) in
 [`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
 
+**Human maintainers:** [the current list in policy.md](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers).
+
 <then your own note: who writes this, under what supervision, and what that
 supervision does not cover>
 ```
@@ -1075,6 +1102,7 @@ The policy is written to be copied. What another repository has to decide:
 | --- | --- |
 | how the tree is arranged | the table in *The layout* |
 | where the maintenance note goes | the last section of `README.md` |
+| where ownership and human maintainers are identified | link to [Human maintainers](#human-maintainers) in this policy; do not copy personal attribution |
 | where a maintainer starts | `docs/maintenance.md`, at a path anybody can guess |
 | where child projects live | `tools/X/` |
 | who may start and end one | a human, explicitly (rule 1) |

@@ -33,11 +33,11 @@ scripts/eo_status_audit              # policy and discussion status across check
 `scripts/eo_status_audit` lists the advertised ones; `--all-children` shows every
 recorded child with its listing preference.
 
-**What tools and artifacts are available:** `scripts/eo_tooling_audit` reads
+**What tools, artifacts and tutorials are available:** `scripts/eo_tooling_audit` reads
 [`ecosystem_tooling.json`](scripts/ecosystem/ecosystem_tooling.json) and reports
 owners, locations, layout exceptions and inventory gaps. Child projects can own
-tools; bug databases appear as artifacts. `--verbose` includes entry points,
-artifact files and documentation; `--check` validates the inventory
+tools; bug databases appear as artifacts, and instructional guides as tutorials.
+`--verbose` includes entry points, content files and documentation; `--check` validates the inventory
 offline, and `--check --local` also checks the available working trees.
 Foundation tooling such as cvc5 is included. Explicitly excluded directories
 remain visible with their reasons and count as non-compliant inventory coverage.
@@ -118,6 +118,8 @@ office does all day.
 This repository is part of the **Eunoia ecosystem** and follows its shared
 repository policy, kept here in
 [`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
+
+**Human maintainers:** [the current list in policy.md](docs/policy.md#human-maintainers).
 
 **Written by an agent, under a maintainer's supervision.** The tree was settled
 in conversation with the maintainer and written down by an agent working in

@@ -181,33 +181,59 @@ class ToolingAudit(unittest.TestCase):
         self.assertEqual(code, 1, output)
         self.assertIn("missing files file analyzer/bugs.json", output)
 
-    def test_artifact_records_cannot_hide_absent_content_or_documentation(self):
-        self.entry.update(kind="artifact", files=[], docs=[])
-        code, output = self.run_main("--check", "--local")
-        self.assertEqual(code, 1, output)
-        self.assertIn("no files recorded", output)
-        self.assertIn("no docs recorded", output)
-        for changes in ({"kind": "unknown"}, {"files": "bugs.json"}, {"files": ["../escape"]}):
-            with self.subTest(changes=changes):
-                inventory = copy.deepcopy(self.inventory)
-                inventory["tools"]["analyzer"].update(changes)
-                self.assertTrue(audit.well_formed(inventory, self.ecosystem))
+    def test_content_records_cannot_hide_absent_content_or_documentation(self):
+        for kind in ("artifact", "tutorial"):
+            with self.subTest(kind=kind):
+                self.entry.update(kind=kind, files=[], docs=[])
+                code, output = self.run_main("--check", "--local")
+                self.assertEqual(code, 1, output)
+                self.assertIn("no files recorded", output)
+                self.assertIn("no docs recorded", output)
+                for changes in ({"kind": "unknown"}, {"files": "content.md"}, {"files": ["../escape"]}):
+                    with self.subTest(changes=changes):
+                        inventory = copy.deepcopy(self.inventory)
+                        inventory["tools"]["analyzer"].update(changes)
+                        self.assertTrue(audit.well_formed(inventory, self.ecosystem))
 
-    def test_document_artifact_uses_owner_docs_without_a_layout_gap(self):
+    def test_tutorial_is_counted_separately_and_checked_without_an_executable(self):
+        for kind, path in (("tutorial", "tutorials"), ("artifact", "data")):
+            self.inventory["tools"][path] = {
+                "repo": "sample", "kind": kind, "path": path, "what": "Maintained content",
+                "files": [path + "/content.md"], "docs": ["docs/usage.md"]}
+            self.tree.directories.add(path)
+            self.tree.files.add(path + "/content.md")
+        self.assertEqual(audit.well_formed(self.inventory, self.ecosystem), [])
+        for mode in ("--local", "--online"):
+            with self.subTest(mode=mode), patch.object(audit, "remote_tree", return_value=self.tree):
+                code, output = self.run_main("--check", mode, "--verbose")
+                self.assertEqual(code, 0, output)
+                self.assertIn("1 tools, 1 artifacts, 1 tutorials", output)
+                self.assertIn("tutorials: files: tutorials/content.md", output)
+                row = next(line for line in output.splitlines() if line.startswith("tutorials "))
+                self.assertEqual(row.split()[1], "tutorial")
+                self.tree.files.remove("tutorials/content.md")
+                code, output = self.run_main("--check", mode)
+                self.assertEqual(code, 1, output)
+                self.assertIn("missing files file tutorials/content.md", output)
+                self.tree.files.add("tutorials/content.md")
+
+    def test_document_content_uses_owner_docs_without_a_layout_gap(self):
         self.child_owner()
         self.tree.directories.remove("tools/child/audits")
-        self.entry.update(kind="artifact", path="tools/child/docs",
-                          files=["tools/child/docs/manual.md"])
-        self.tree.files.update(self.entry["files"])
-        code, output = self.run_main("--check", "--local")
-        self.assertEqual(code, 0, output)
-        self.assertIn("0 layout gap(s)", output)
-        row = next(line for line in output.splitlines() if line.startswith("analyzer "))
-        self.assertIn("shared", row)
-        self.tree.files.remove("tools/child/docs/manual.md")
-        code, output = self.run_main("--check", "--local")
-        self.assertEqual(code, 1, output)
-        self.assertIn("missing files file tools/child/docs/manual.md", output)
+        for kind in ("artifact", "tutorial"):
+            with self.subTest(kind=kind):
+                self.entry.update(kind=kind, path="tools/child/docs",
+                                  files=["tools/child/docs/manual.md"])
+                self.tree.files.update(self.entry["files"])
+                code, output = self.run_main("--check", "--local")
+                self.assertEqual(code, 0, output)
+                self.assertIn("0 layout gap(s)", output)
+                row = next(line for line in output.splitlines() if line.startswith("analyzer "))
+                self.assertIn("shared", row)
+                self.tree.files.remove("tools/child/docs/manual.md")
+                code, output = self.run_main("--check", "--local")
+                self.assertEqual(code, 1, output)
+                self.assertIn("missing files file tools/child/docs/manual.md", output)
 
     def test_missing_files_unknown_directories_and_stale_exclusions_are_gaps(self):
         self.tree.files.remove("scripts/analyze")
@@ -232,7 +258,7 @@ class ToolingAudit(unittest.TestCase):
             self.assertEqual(code, 1 if flags else 0, output)
             self.assertIn("sample/data", output)
             self.assertIn("non-compliant inventory coverage: Archived inputs", output)
-            self.assertIn("1 tools, 0 artifacts, 1 intentional exclusions", output)
+            self.assertIn("1 tools, 0 artifacts, 0 tutorials, 1 intentional exclusions", output)
             self.assertNotIn("sample/data: unregistered", output)
         # The structural check still validates the document alone.
         self.assertEqual(self.run_main("--check")[0], 0)

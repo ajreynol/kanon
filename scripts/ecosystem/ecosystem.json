@@ -284,7 +284,7 @@
     "repo": "eunoia",
     "url": "https://github.com/ajreynol/eunoia",
     "vetted": "2026-09-19",
-    "why": "README declares membership at 302af2c and configures anoieu's policy contract 1; the local checker reports missing charter exception statements for its advertised children",
+    "why": "README declares membership at 302af2c and configures anoieu's policy contract 1; rechecked at a673f8f, both advertised children record their charter exceptions and the local policy check passes",
     "short": "Eunoia language account, tutorials and case studies",
     "what": "the repository studying Eunoia as a language and teaching signature authoring, housing sapheneia's language account and mimesis's tutorials and case studies"
   },

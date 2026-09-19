@@ -647,6 +647,16 @@ for each repository. The board's maintenance advice was condensed to ordering,
 stable ids, the active-item cap, fields, delivery and closure. Repeated
 explanations and the stale handoff example were removed.
 
+### Human-maintainer attribution was centralized — 2026-09-19
+
+At the maintainer's request, policy defines the ecosystem's human maintainers
+and records their current list in one place. Ownership statements must link
+there rather than repeat personal names, handles or affiliations, so a change
+in responsibility does not leave stale attribution across repository READMEs.
+The maintenance-note examples and kanon's README use that link. The list can
+change by human decision; the text no longer assumes one maintainer forever.
+The new link requirement is not yet enforced by the policy checker.
+
 ### Twenty-two topics were worked, three replies written, two commands found broken — 2026-09-18
 
 **The discussion work, and the mistake in how it was first done.** Every topic

@@ -59,10 +59,10 @@ Koine's `eo_status` remains the shared command for reading the register.
 
 ## The tooling audit
 
-**`scripts/eo_tooling_audit` reports available tools, artifacts and inventory
+**`scripts/eo_tooling_audit` reports available tools, artifacts, tutorials and inventory
 gaps.** [`audits/tooling_audit.py`](audits/tooling_audit.py) reads kanon's
 [`ecosystem_tooling.json`](../../scripts/ecosystem/ecosystem_tooling.json).
-Each entry names a repository, a directory, entry points or artifact files,
+Each entry names a repository, a directory, entry points or content files,
 and documentation. Tools include programs and importable libraries; a library's
 public module is an entry point even when it has no standalone executable.
 An optional `owner` can name a child project; the directory
@@ -72,9 +72,12 @@ The audit reuses the status audit's checkout resolver and repository footings.
 It includes foundations such as cvc5 as tooling providers, without running
 policy checks or imposing requirements on them.
 It never executes the recorded entry points. `kind: artifact` identifies data
-such as anoieu's and dokimasia's bug databases, which need no executable.
-Document artifacts such as eunoia's tutorials and language account can live in
-their owner's `docs/` without a layout gap; their recorded files are still checked.
+or reference documents, such as bug databases and language accounts.
+`kind: tutorial` identifies instructional guides, such as paideia's bootcamp
+and mimesis's tutorials. Both require content `files` and documentation, with no
+executable required, and are counted separately. Document artifacts and tutorials
+can live in their owner's `docs/` without a layout gap; their recorded files are
+still checked.
 
 The default table checks local paths and reports layout exceptions. Discovery
 flags unregistered tracked top-level directories within repositories and named
@@ -90,7 +93,7 @@ not evidence of tooling, and file presence is not evidence that a tool works.
 Stathmos owns the tooling in `audits/`; it is a top-level tool directory within
 this child project. Kanon's `scripts/` retains the public launchers.
 
-`--verbose` prints sources, entry points, artifact files and docs. `--check` validates the
+`--verbose` prints sources, entry points, content files and docs. `--check` validates the
 inventory without sibling checkouts; `--check --local` also compares working
 trees, and `--check --online` compares GitHub default-branch trees. Missing
 observations are unverified. Layout gaps are advisory; inventory gaps, including

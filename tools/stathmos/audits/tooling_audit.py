@@ -24,6 +24,8 @@ sys.path.insert(0, str(ROOT))
 from tools.stathmos.audits import status_audit
 
 INVENTORY = ROOT / "scripts/ecosystem/ecosystem_tooling.json"
+CONTENT_KINDS = ("artifact", "tutorial")
+KINDS = ("tool", *CONTENT_KINDS)
 # These directories already have purposes in docs/policy.md's layout table.
 SHARED = frozenset({"docs", "scripts", "test", "tests", "examples", "cmake", "include",
                     "licenses", "prompts", "deps", "scratch", "tools"})
@@ -88,8 +90,8 @@ def well_formed(inventory, ecosystem):
         if not name.strip() or not isinstance(entry, dict):
             bad.append(f"{name}: expected a named tool object")
             continue
-        if entry.get("kind", "tool") not in ("tool", "artifact"):
-            bad.append(f"{name}: `kind` must be tool or artifact")
+        if entry.get("kind", "tool") not in KINDS:
+            bad.append(f"{name}: `kind` must be tool, artifact or tutorial")
         repo = entry.get("repo")
         if not isinstance(repo, str) or repo not in ecosystem or ecosystem[repo].get("status") not in REPOSITORIES:
             bad.append(f"{name}: `repo` must name an ecosystem member, president, associate, candidate or foundation repository")
@@ -111,7 +113,7 @@ def well_formed(inventory, ecosystem):
                 bad.append(f"{name}: shares its primary directory with {locations[key]}")
             locations[key] = name
         for field in ("entrypoints", "docs", "also", "files"):
-            optional = field in ("also", "files") or (field == "entrypoints" and entry.get("kind") == "artifact")
+            optional = field in ("also", "files") or (field == "entrypoints" and entry.get("kind") in CONTENT_KINDS)
             values = entry.get(field, [] if optional else None)
             if not isinstance(values, list) or not all(relative_path(p) for p in values):
                 bad.append(f"{name}: `{field}` must be a list of repository-relative paths")
@@ -255,7 +257,7 @@ def layout(entry, prefix=""):
     if "/" in path:
         return "nested", "implementation is below a top-level directory"
     if path in SHARED:
-        if entry.get("kind") == "artifact" and path == "docs":
+        if entry.get("kind") in CONTENT_KINDS and path == "docs":
             return "shared", ""
         return "shared", "implementation uses a shared layout directory"
     return "top-level", ""
@@ -281,7 +283,7 @@ def inspect(inventory, ecosystem, online=False):
         if explanation:
             notes.append(f"{name}: layout gap: {explanation} ({entry['repo']}/{entry['path']})")
         kind = entry.get("kind", "tool")
-        for field in ("docs", "files" if kind == "artifact" else "entrypoints"):
+        for field in ("docs", "files" if kind in CONTENT_KINDS else "entrypoints"):
             if not entry.get(field):
                 problems.append(f"no {field} recorded")
         if tree:
@@ -330,15 +332,17 @@ def inspect(inventory, ecosystem, online=False):
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="eo_tooling_audit",
-        description="Audit ecosystem tools and artifacts: locations, documentation and inventory coverage.",
+        description="Audit ecosystem tools, artifacts and tutorials: locations, documentation and inventory coverage.",
         epilog="""The table reports availability from local working trees, not build quality or
 installation. owner is the repository or child project responsible for a tool;
 repo is its containing repository and path is relative to that repository.
-kind distinguishes tools (programs or importable libraries) from artifacts such
-as bug databases. Tool entrypoints may be command launchers or public library
-modules; artifacts need recorded content files. Both need documentation.
+kind distinguishes tools (programs or importable libraries), artifacts (such as
+bug databases and reference documents), and tutorials (instructional guides).
+Tool entrypoints may be command launchers or public library modules; artifacts
+and tutorials need recorded content files. All kinds need documentation.
 All file paths remain repository-relative.
-Document artifacts in their owner's docs/ use shared layout without a layout gap.
+Document artifacts and tutorials in their owner's docs/ use shared layout
+without a layout gap.
 Layout gaps are advisory: top-level means a dedicated directory within the owner;
 nested, root, shared, split and exception describe other arrangements. Missing files,
 empty required metadata, unregistered tracked top-level directories and
@@ -361,7 +365,7 @@ Exit 0: table, valid inventory, or complete comparison; 1: invalid inventory or
 observed inventory gaps; 2: bad options or incomplete verification. Observed
 gaps take precedence over unavailable trees. Layout notes alone never fail.
 """, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("--verbose", action="store_true", help="include source revisions, entry points, artifact files and documentation")
+    parser.add_argument("--verbose", action="store_true", help="include source revisions, entry points, content files and documentation")
     parser.add_argument("--check", action="store_true", help="validate inventory; no checkouts needed unless requested")
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--local", action="store_true", help="with --check, also compare local trees")
@@ -401,13 +405,15 @@ gaps take precedence over unavailable trees. Layout notes alone never fail.
                 print(f"source: {name}: {tree.source}")
         for name, entry in sorted(inventory["tools"].items()):
             content = (f"files: {', '.join(entry.get('files', [])) or '(none)'}"
-                       if entry.get("kind") == "artifact" else
+                       if entry.get("kind") in CONTENT_KINDS else
                        f"entrypoints: {', '.join(entry['entrypoints']) or '(none)'}")
             print(f"{name}: {content}; "
                   f"docs: {', '.join(entry['docs']) or '(none)'}")
-    artifacts = sum(entry.get("kind") == "artifact" for entry in inventory["tools"].values())
+    counts = {kind: 0 for kind in KINDS}
+    for entry in inventory["tools"].values():
+        counts[entry.get("kind", "tool")] += 1
     exclusions = sum(len(paths) for paths in inventory.get("exclude", {}).values())
-    print(f"\n{len(inventory['tools']) - artifacts} tools, {artifacts} artifacts, "
+    print(f"\n{counts['tool']} tools, {counts['artifact']} artifacts, {counts['tutorial']} tutorials, "
           f"{exclusions} intentional exclusions; "
           f"{len(gaps)} inventory gap(s); {len(notes)} layout gap(s); "
           f"{sum(tree is not None and not tree.errors for tree in trees.values())} repositories inspected, "

@@ -14,7 +14,7 @@ from support import ROOT, anchors, prose, register
 class Documents(unittest.TestCase):
     def test_glossary_project_labels_match_inventory(self):
         text = (ROOT / "docs/glossary.md").read_text()
-        labels = re.findall(r"^\*\*(.+?)\*\* \(Eunoia ([^;]+);", text, re.M)
+        labels = re.findall(r"^[ \t]*(?:[-*+] )?\*\*(.+?)\*\* \(Eunoia ([^;]+);", text, re.M)
         # a label may cross-link its parent: "child project of [x](#x)"
         unlink = lambda s: re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", s)
         actual = {name.casefold(): unlink(label) for name, label in labels}
@@ -65,4 +65,3 @@ class Documents(unittest.TestCase):
             with self.subTest(script=path.name):
                 result = subprocess.run(["bash", "-n", str(path)], capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr)
-

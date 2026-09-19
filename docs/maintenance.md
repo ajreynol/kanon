@@ -58,15 +58,16 @@ locations; local paths do not belong in the shared inventory.
    arrive with their parent; outsiders are not cloned. A child's README
    controls its [listing preference](policy.md#child-projects).
 
-Record tools and artifacts in
+Record tools, artifacts and tutorials in
 [`ecosystem_tooling.json`](../scripts/ecosystem/ecosystem_tooling.json): its
-repository, directory, entry points or artifact files, and documentation.
+repository, directory, entry points or content files, and documentation.
 Tools include libraries: their public modules count as entry points without
 requiring a standalone executable.
 `owner` defaults to the repository and can name a child project; layout is
 measured within that owner's root. All entry paths remain repository-relative.
-`kind: artifact` records maintained data without requiring executable entry
-points. Shared launchers and docs may sit outside the owner. `scripts/eo_tooling_audit`
+`kind: artifact` records maintained data or reference documents; `kind: tutorial`
+records instructional guides. Both use content `files` without requiring
+executable entry points. Shared launchers and docs may sit outside the owner. `scripts/eo_tooling_audit`
 reports missing paths, unregistered top-level directories and layout gaps;
 `--verbose` shows the recorded entry points and source revisions. Explain
 nonstandard layouts with `layout_note` and non-inventory directories with
