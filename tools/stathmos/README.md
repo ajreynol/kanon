@@ -52,6 +52,19 @@ anoieu's checker. To check one tree directly, run
 omitting `--root` checks kanon. The audit never changes a membership decision
 or the register.
 
+The `productive` column reports evidence under
+[Productive entities](../../docs/laws.md#law-11--productive-entities), using
+[`audits/productivity.py`](audits/productivity.py). For each president, member
+and child, `yes` means a deliverable is present in the tooling audit for that
+owner, a project link references it in laws/policy/vision, or it holds a current
+role in the role register or the presidency. `no` means none was found; `?` means
+verification is incomplete; other footings show `-`. Layout and unrelated
+inventory gaps do not disqualify a present deliverable. Parents and children
+are assessed separately. `--verbose` names the evidence, and `--all` includes
+unadvertised children. A person reviews whether a central reference explains
+the purpose adequately; the audit only locates it. Missing productivity is
+reported without changing membership or failing `--check`.
+
 **These are mechanical checks, not report-card grades.** The report card remains
 human judgement against the vision. An unavailable observation is unverified,
 not a pass or a failure; local policy results are not the corresponding CI run.
@@ -91,7 +104,9 @@ its `docs` metadata; it is never itself a tooling entry. The owner's
 `docs/` and `contrib/` cannot be tooling directories. `contrib/` is reserved for
 manually obtaining external tools.
 
-The default tables check local paths and report layout exceptions. Discovery
+The tables show the tool or artifact, kind, repository, path and purpose.
+Missing paths, unverified checkouts and layout exceptions appear below them.
+Ownership remains in the registry for layout checks and productivity. Discovery
 flags unregistered tracked top-level directories within repositories and named
 child owners for a person to classify. Directories reserved by the
 [policy layout](../../docs/policy.md#the-layout), including `examples/`, `test/`,

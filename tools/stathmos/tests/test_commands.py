@@ -312,7 +312,6 @@ class Verification(unittest.TestCase):
             out = io.StringIO()
             with patch.object(ecosystem, "INVENTORY", str(inv)), \
                  patch.object(ecosystem, "locate", return_value=temp), \
-                 patch.object(ecosystem, "age", return_value="?"), \
                  patch.object(ecosystem, "check", return_value=verdict) as checker, \
                  patch.object(sys, "argv", ["eo_status_audit"]), contextlib.redirect_stdout(out):
                 self.assertEqual(ecosystem.main(), 0)
@@ -335,12 +334,11 @@ class Verification(unittest.TestCase):
                 with patch.object(ecosystem, "INVENTORY", str(inv)), \
                      patch.object(ecosystem, "locate") as locate, \
                      patch.object(ecosystem, "topics_for") as topics, \
-                     patch.object(ecosystem, "age") as age, \
                      patch.object(ecosystem, "check") as check, \
                      patch.object(sys, "argv", ["eo_status_audit"]), \
                      contextlib.redirect_stdout(out):
                     self.assertEqual(ecosystem.main(), 0)
-                for reader in (locate, topics, age, check):
+                for reader in (locate, topics, check):
                     reader.assert_not_called()
                 self.assertIn("treated as private", out.getvalue())
 
@@ -385,7 +383,6 @@ class Verification(unittest.TestCase):
                 with patch.object(ecosystem, "INVENTORY", str(inv)), \
                      patch.object(ecosystem, "locate", return_value=temp) as locate, \
                      patch.object(ecosystem, "topics_for", return_value="-") as topics, \
-                     patch.object(ecosystem, "age", return_value="?") as age, \
                      patch.object(ecosystem, "check") as check, \
                      patch.object(sys, "argv", ["eo_status_audit"]), \
                      contextlib.redirect_stdout(out):
@@ -394,10 +391,9 @@ class Verification(unittest.TestCase):
                 if eligible:
                     locate.assert_called_once_with("example")
                     topics.assert_called_once_with(temp)
-                    age.assert_called_once_with(temp)
                     self.assertIn("not held", out.getvalue())
                 else:
-                    for reader in (locate, topics, age):
+                    for reader in (locate, topics):
                         reader.assert_not_called()
                     self.assertIn("treated as private", out.getvalue())
 

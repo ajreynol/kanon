@@ -685,8 +685,13 @@ isolation rules still apply.
 
 ## What a member is asked for
 
-**Four expectations, and none is a surprise on the day it is checked.** The
-middle column is what a program decides; the right column is what a repository
+The [productive-entity requirement](laws.md#law-11--productive-entities) asks
+every president, member and child project for a recorded deliverable, a central
+reference explaining its purpose, or an assigned special role. This is separate
+from the repository checks below.
+
+**Four repository expectations, and none is a surprise on the day it is checked.**
+The middle column is what a program decides; the right column is what a repository
 does once the middle column passes, which is where most of the value is and
 where nothing is enforced.
 

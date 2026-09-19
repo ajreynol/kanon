@@ -109,8 +109,7 @@ class ToolingAudit(unittest.TestCase):
         code, output = self.run_main("--check", "--local")
         self.assertEqual(code, 0, output)
         row = next(line for line in output.splitlines() if line.startswith("analyzer "))
-        self.assertEqual(row.split()[:7], ["analyzer", "tool", "child", "sample",
-                                         "present", "top-level", "tools/child/audits"])
+        self.assertEqual(row.split()[:4], ["analyzer", "tool", "sample", "tools/child/audits"])
         self.assertIn("0 layout gap(s)", output)
 
     def test_child_layout_discovery_and_exclusions_use_child_root(self):
@@ -233,6 +232,10 @@ class ToolingAudit(unittest.TestCase):
                 tables = output.split("-- columns and limits:", 1)[0]
                 self.assertTrue(tables.startswith("Tools\n"), tables)
                 tools, artifacts = tables.split("\nArtifacts\n")
+                self.assertEqual(tools.splitlines()[1].split(),
+                                 ["tool", "kind", "repo", "path", "purpose"])
+                self.assertEqual(artifacts.splitlines()[0].split(),
+                                 ["artifact", "kind", "repo", "path", "purpose"])
                 self.assertIn("analyzer ", tools)
                 self.assertNotIn("analyzer ", artifacts)
                 for kind, path, field in entries:

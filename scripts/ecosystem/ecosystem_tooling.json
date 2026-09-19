@@ -73,7 +73,7 @@
       "path": "dokimasia",
       "what": "Analyzes gaps in cvc5 proof production",
       "entrypoints": ["scripts/dokimasia_analyzer", "dokimasia/__main__.py"],
-      "docs": ["docs/analyzer.md", "docs/usage.md"]
+      "docs": ["README.md", "docs/maintenance.md"]
     },
     "dokimasia_bug_db": {
       "repo": "dokimasia",
@@ -101,7 +101,7 @@
       "repo": "epikrisis",
       "kind": "webpage",
       "path": "ecosystem_report",
-      "what": "Builds the shared history and repository-size report site",
+      "what": "Presents shared history and repository-size reports",
       "entrypoints": ["ecosystem_report/site"],
       "docs": ["ecosystem_report/README.md"]
     },
@@ -149,7 +149,7 @@
       "owner": "euthyna",
       "kind": "webpage",
       "path": "tools/euthyna/report_site",
-      "what": "Builds interactive proof-measurement reports from snapshots",
+      "what": "Presents interactive proof-measurement reports from snapshots",
       "entrypoints": ["tools/euthyna/scripts/euthyna", "tools/euthyna/report_site/build-site.py", "tools/euthyna/report_site/plot-rules.py"],
       "docs": ["tools/euthyna/report_site/README.md", "tools/euthyna/docs/publishing.md"]
     },
@@ -240,25 +240,21 @@
       "repo": "tachyon",
       "owner": "heuresis",
       "kind": "webpage",
-      "path": "tools/heuresis",
-      "also": ["tools/heuresis/ledger"],
-      "what": "Builds benchmark-gap reports and research-queue pages",
-      "entrypoints": ["tools/heuresis/report", "scripts/build_site.py"],
-      "files": ["tools/heuresis/report.html", "tools/heuresis/queue.html"],
-      "docs": ["tools/heuresis/README.md", "docs/site.md", "tools/heuresis/ledger/data/README.md"],
-      "layout_note": "builder and HTML templates sit at the child's root, with evidence under ledger/; no dedicated site directory"
+      "path": "tools/heuresis/reports",
+      "what": "Presents benchmark-gap reports and research queues",
+      "entrypoints": ["tools/heuresis/reports/build", "scripts/build_site.py"],
+      "files": ["tools/heuresis/reports/report.html", "tools/heuresis/reports/queue.html"],
+      "docs": ["tools/heuresis/README.md", "docs/site.md", "tools/heuresis/reports/data/README.md"]
     },
     "elaphros_site": {
       "repo": "tachyon",
       "owner": "elaphros",
       "kind": "webpage",
-      "path": "tools/elaphros",
-      "also": ["tools/elaphros/ledger"],
-      "what": "Builds proof-overhead research plans and source-evidence pages",
-      "entrypoints": ["tools/elaphros/report", "scripts/build_site.py"],
-      "files": ["tools/elaphros/report.html"],
-      "docs": ["tools/elaphros/README.md", "docs/site.md", "tools/elaphros/ledger/README.md"],
-      "layout_note": "builder and HTML template sit at the child's root, with evidence under ledger/; no dedicated site directory"
+      "path": "tools/elaphros/reports",
+      "what": "Presents proof-overhead research plans and source evidence",
+      "entrypoints": ["tools/elaphros/reports/build", "scripts/build_site.py"],
+      "files": ["tools/elaphros/reports/report.html"],
+      "docs": ["tools/elaphros/README.md", "docs/site.md", "tools/elaphros/docs/ledger/README.md", "tools/elaphros/reports/data/README.md"]
     },
     "iogos_checker": {
       "repo": "iogos",

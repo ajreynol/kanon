@@ -430,6 +430,36 @@ We reserve the right to continue investigating privately after such a request,
 provided the work remains eligible under
 [LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons).
 
+## (LAW 11) — Productive entities
+
+An **[ecosystem entity][entity]** is a repository recorded as
+**president** or **member**, or a recorded **child project**. Candidates,
+associates, foundations and outsiders are outside this definition, even when
+`eo_status_audit` lists them.
+
+Every entity should be **productive**, with at least one recorded basis for
+its place in the ecosystem:
+
+- **A deliverable:** an existing tool or artifact attributed to the entity in
+  `eo_tooling_audit`.
+- **A central reference:** an explicit reference to the entity and its purpose
+  in these laws, [`docs/policy.md`](policy.md), or
+  [`docs/vision.md`](vision.md).
+- **A special role:** a current assigned responsibility, such as the
+  presidency, recorded in the ecosystem register or [`docs/roles.md`](roles.md).
+
+Apply this to each entity separately, including unadvertised children shown by
+`eo_status_audit --all`. A parent's deliverable or role does not automatically
+qualify its children. A charter or a proposed deliverable alone does not
+satisfy the requirement.
+
+The register's maintainer identifies an unmet requirement for human review.
+Productivity is separate from footing and from judgements of quality.
+[LAW 1](#law-1--ecosystem-footings-membership-and-other-relationships) and
+[LAW 2](#law-2--membership-obligations-and-the-right-to-leave) still govern
+membership and the obligations a child inherits from its parent.
+
+[entity]: glossary.md#entity
 [footing]: glossary.md#footing
 [member]: glossary.md#member
 [associate]: glossary.md#associate

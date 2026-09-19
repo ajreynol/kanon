@@ -12,8 +12,8 @@ read across the answer and form a view.
     scripts/eo_status_audit --check --online   # ... and ask each remote
 
 Health here means **what can be established from a checkout in about a second**:
-does it declare membership, does the policy check pass, is there a channel to
-reach them, how long since anything moved. It deliberately does not build,
+does it declare membership, does the policy check pass, does it have a recorded
+basis for productivity. It deliberately does not build,
 test, or read anybody's source. A row that says `ok` is a claim about form, and
 a quiet row is not evidence that a tool is well -- the same caution the analyzer
 carries about its own silence applies here.
@@ -195,6 +195,15 @@ POLICY_VALUES = (
     ("-", "a child or a foundation: not a repository this table checks"),
 )
 
+PRODUCTIVE_VALUES = (
+    ("yes", "a present deliverable owned by this entity in eo_tooling_audit, "
+            "a reference in laws/policy/vision, or a current assigned role"),
+    ("no", "none of those bases was found; review the entity's contribution "
+           "and the records under LAW 11"),
+    ("?", "no basis confirmed and some evidence could not be read; unverified"),
+    ("-", "not a president, member or child; outside LAW 11"),
+)
+
 #: Every value the `advertised?` column can print. Only a widened table shows
 #: it: in the default view every row is one the default view kept, so the
 #: column would say `yes` all the way down and answer nothing.
@@ -206,14 +215,6 @@ ADVERTISED_VALUES = (
           "things at once. Not advertised, and not a choice either"),
     ("-", "a repository, which has no listing preference to declare: this "
           "column is a child's"),
-)
-
-#: Every value the `channel` column can print, and what it means.
-CHANNEL_VALUES = (
-    ("N for us", "N topics in it are addressed to kanon"),
-    ("yes", "they keep one, and nothing in it is for us"),
-    ("none", "they keep none. Not a defect: the file is optional"),
-    ("-", "a child or a foundation"),
 )
 
 
@@ -232,8 +233,8 @@ def render_key() -> str:
     is the part that cannot be dropped: a legend nobody is told about is not a
     legend, and *print it every run* and *do not mention it* are both wrong.
     """
-    values = (tuple(FOOTINGS.items()), POLICY_VALUES, CHANNEL_VALUES)
-    # One width across all three lists, so every description starts in the same
+    values = (tuple(FOOTINGS.items()), POLICY_VALUES, PRODUCTIVE_VALUES)
+    # One width across the lists, so every description starts in the same
     # column. Widths computed per list read as three tables that happen to be
     # adjacent, which is what they looked like when this was first written.
     w = max(len(k) for group in values for k, _ in group) + 2
@@ -252,14 +253,18 @@ def render_key() -> str:
     out.append("  policy   tools/stathmos/audits/policy_check.py, run over that checkout by this "
                "command just now")
     block(POLICY_VALUES)
-    out.append("  channel  their docs/discussion.md, which is optional and which "
-               "most tools do not keep")
-    block(CHANNEL_VALUES)
+    out.append("  productive  evidence under LAW 11; --verbose shows its source")
+    block(PRODUCTIVE_VALUES)
+    out.append("           Tooling availability comes from eo_tooling_audit's local inspection.")
+    out.append("           Deliverables count for their recorded owner, not its parent or children.")
+    out.append("           Layout and unrelated coverage gaps do not remove a present deliverable.")
+    out.append("           Central references are project links in laws/policy/vision; a person")
+    out.append("           reviews whether they explain the purpose. Roles are current Held by")
+    out.append("           assignments in docs/roles.md, or the recorded presidency.")
+    out.append("           Missing evidence is not a judgement of quality or a membership change.")
     out.append("  advertised?  what a child's README declares, shown only by "
                "--all and --all-children")
     block(ADVERTISED_VALUES)
-    out.append("  moved    days since the last commit in the checkout on this "
-               "disk, not on their remote")
     out.append("  where    where that checkout is")
     out.append("  purpose  `short`, falling back to `what`, in scripts/ecosystem/ecosystem.json")
     out.append("           at most 60 characters; longer descriptions end with an ellipsis")
@@ -313,15 +318,6 @@ def locate(repo: str) -> str:
         if os.path.isdir(cand):
             return cand
     return ""
-
-
-def age(path: str) -> str:
-    when = git("log", "-1", "--format=%cI", cwd=path)
-    if not when:
-        return "?"
-    then = datetime.datetime.fromisoformat(when)
-    days = (datetime.datetime.now(then.tzinfo) - then).days
-    return "today" if days == 0 else f"{days}d"
 
 
 def check(path: str) -> tuple[str, list[str]]:
@@ -758,7 +754,7 @@ def audit(online: bool) -> int:
 USAGE = """usage: eo_status_audit [--verbose] [--all | --all-children] [--check [--online]] [--protocol]
 
   (no arguments)  the table: repositories and advertised children
-  --verbose       ... and, per tool, which checks failed and what they found
+  --verbose       ... and policy failures and the evidence for productivity
   --all           every row this table can show, which today means every
                   recorded child including the unadvertised ones. The table
                   and nothing else
@@ -825,12 +821,11 @@ def main() -> int:
     listing_notes = "--all-children" in sys.argv
     with open(INVENTORY, encoding="utf-8") as f:
         inv = json.load(f)
+    inv = {name: entry for name, entry in inv.items() if not name.startswith("_")}
     rows, notes = [], []
     child_listings, parent_paths = {}, {}
 
     for name, e in inv.items():
-        if name.startswith("_"):
-            continue
         status = e.get("status", "?")
         if status == "outsider" and not outsider_trackable(e):
             notes.append(f"{name}: treated as private under LAW 9; "
@@ -850,11 +845,11 @@ def main() -> int:
         if status in ("child", "foundation"):
             listed = {"advertised": "yes", "unadvertised": "no"}.get(
                 listing.state, "?") if status == "child" else "-"
-            rows.append((name, status, "-", "-", "-", e.get("parent", ""), listed))
+            rows.append((name, status, "-", "-", e.get("parent", ""), listed))
             continue
         path = locate(e.get("repo", name))
         if not path:
-            rows.append((name, status, "no checkout", "-", "-", "", "-"))
+            rows.append((name, status, "no checkout", "-", "", "-"))
             continue
         # An associate is held to none of this, so nothing here runs the checker
         # over its tree. A failure count in that row would be this table
@@ -876,7 +871,7 @@ def main() -> int:
         else:
             verdict, fails = check(path)
         topics = topics_for(path)
-        rows.append((name, status, verdict, topics, age(path), path, "-"))
+        rows.append((name, status, verdict, topics, path, "-"))
         # Both notes name the disagreement and then say whose move it is,
         # rather than stating the rule -- "this is the state the check exists
         # to catch" explains the check to somebody who already knows why it is
@@ -935,20 +930,29 @@ def main() -> int:
         if note:
             notes.append(note)
 
+    # Import after this module's definitions: the tooling audit also reuses
+    # this audit's repository footings and checkout resolver.
+    from tools.stathmos.audits.productivity import assess
+    productive = assess(inv)
+    for name, *_ in rows:
+        result = productive.get(name)
+        if result and (verbose or result.value == "?"):
+            notes.append(f"{name}: productive {result.value}: " + "; ".join(result.reasons))
 
     w = max((len(r[0]) for r in rows), default=4) + 2
-    locations = {r[0]: r[5].replace(os.path.expanduser("~"), "~") for r in rows}
+    locations = {r[0]: r[4].replace(os.path.expanduser("~"), "~") for r in rows}
     where_width = max([len("where")] + [len(path) for path in locations.values()]) + 2
     # The column earns its width only where unadvertised rows can appear.
     ad = f"{'advertised?':<13}" if all_children else ""
-    print(f"{'tool':<{w}}{'status':<11}{'policy':<12}"
-          f"{'channel':<10}{ad}{'moved':<8}{'where':<{where_width}}purpose")
-    for name, status, verdict, topics, moved, where, listed in rows:
+    print(f"{'tool':<{w}}{'status':<11}{'policy':<12}{'productive':<12}"
+          f"{ad}{'where':<{where_width}}purpose")
+    for name, status, verdict, topics, where, listed in rows:
         purpose = textwrap.shorten(inv[name].get("short") or inv[name].get("what") or "-",
                                    width=60, placeholder="…")
-        print(f"{name:<{w}}{status:<11}{verdict:<12}"
-              f"{topics:<10}{f'{listed:<13}' if all_children else ''}"
-              f"{moved:<8}{locations[name]:<{where_width}}{purpose}")
+        productivity = productive[name].value if name in productive else "-"
+        print(f"{name:<{w}}{status:<11}{verdict:<12}{productivity:<12}"
+              f"{f'{listed:<13}' if all_children else ''}"
+              f"{locations[name]:<{where_width}}{purpose}")
 
     # The pointer, not the key. One line, immediately under the table, because
     # the moment somebody needs the legend is the moment they are looking at a
@@ -968,6 +972,9 @@ def main() -> int:
     members = [r for r in rows if r[1] in MEMBERS]
     passing = sum(1 for r in members if r[2] == "ok")
     owed = sum(int(r[3].split()[0]) for r in rows if r[3].endswith("for us"))
+    shown_entities = [productive[r[0]].value for r in rows if r[0] in productive]
+    productivity_summary = (f"{shown_entities.count('yes')} of {len(shown_entities)} "
+                            f"shown entities productive, {shown_entities.count('?')} unverified")
 
     #: Plurals not formed by adding an s.
     PLURAL = {"child": "children"}
@@ -983,7 +990,8 @@ def main() -> int:
     # president -- so calling the number "members" contradicted the footing
     # counts in the same sentence, which say 8 members and 1 president.
     print(f"In short: {parts}; {passing} of {len(members)} repositories held to "
-          f"the policy pass their check, {owed} topic{'s' if owed != 1 else ''} "
+          f"the policy pass their check; {productivity_summary}; "
+          f"{owed} topic{'s' if owed != 1 else ''} "
           f"{'are' if owed != 1 else 'is'} owed to us, "
           "and how good any of these tools actually are is a judgement kept in "
           "https://github.com/ajreynol/kanon/blob/main/tools/stathmos/docs/report-card.md "

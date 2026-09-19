@@ -666,6 +666,26 @@ The maintenance-note examples and kanon's README use that link. The list can
 change by human decision; the text no longer assumes one maintainer forever.
 The new link requirement is not yet enforced by the policy checker.
 
+### Productive entities received a common requirement — 2026-09-19
+
+At the maintainer's request, LAW 11 requires a recorded basis for each
+ecosystem entity: a deliverable in the tooling audit, a purposeful reference
+in the laws, policy or vision, or a current assigned special role. The
+maintainer defined entities as presidents, members and children; the other
+footings remain outside this requirement. Children are considered separately,
+including those not advertised by their parent.
+
+This adds a common requirement where the register previously recorded a
+project's footing without requiring one of these reasons for its place.
+Policy and the glossary link to the law. At the maintainer's further request,
+the status audit now reports productivity from the tooling audit's local
+availability results, project links in the three central documents and current
+role assignments. The `moved` and `channel` columns were also removed at the
+maintainer's request. Verbose output names the evidence; a person still reviews
+the purpose stated by a reference. Unavailable evidence is unverified,
+and the report does not change membership or add a CI gate. The old LAW 11
+anchor for history length still resolves to that guidance under LAW 4.3.
+
 ### Twenty-two topics were worked, three replies written, two commands found broken — 2026-09-18
 
 **The discussion work, and the mistake in how it was first done.** Every topic

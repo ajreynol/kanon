@@ -58,6 +58,18 @@ locations; local paths do not belong in the shared inventory.
    arrive with their parent; outsiders are not cloned. A child's README
    controls its [listing preference](policy.md#child-projects).
 
+For each president, member and child, review the evidence required by
+[Productive entities](laws.md#law-11--productive-entities). Use
+`eo_status_audit --all --verbose` to include unadvertised children and see the
+evidence behind the `productive` column. It reuses the tooling audit's local
+availability results, reads references in laws/policy/vision, and reads current
+role assignments. `yes` needs any one basis; `no` means none was found; `?`
+means evidence is unavailable; other footings show `-`. The audit recognizes
+central references by their project links, avoiding confusion between language
+names and repositories. Review whether the surrounding text explains the
+entity's purpose. This report does not change membership or make productivity
+a CI gate.
+
 Record tooling in
 [`ecosystem_tooling.json`](../scripts/ecosystem/ecosystem_tooling.json): its
 repository, directory, entry points or content files, and documentation.
@@ -245,9 +257,9 @@ party that cannot make it.*
 ./scripts/eo_status_audit
 ```
 
-One line per tool: what footing it is on, whether our checks pass on it, how
-many topics it has addressed to you, and when it last moved. `eo_status_audit --help`
-says what every column and every value means, and what to do about a failing
+One line per tool: its footing, policy result, productivity evidence, checkout
+location and purpose. `eo_status_audit --help` says what every column and every
+value means, and what to do about a failing
 row. **It ends in a single sentence summarising all of it.**
 
 ### How to read the answer

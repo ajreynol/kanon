@@ -336,9 +336,11 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="eo_tooling_audit",
         description="Audit ecosystem tooling by kind: locations, documentation and inventory coverage.",
-        epilog="""Two tables report availability from local working trees, not build quality or
-installation. owner is the repository or child project responsible for a tool;
-repo is its containing repository and path is relative to that repository.
+        epilog="""Two tables list tool/artifact, kind, repo, path and purpose. repo is the
+containing repository and path is relative to that repository. Missing paths,
+unverified checkouts and layout exceptions are reported below the tables.
+Checks inspect local working trees, not build quality or installation. The
+registry's owner identifies the responsible repository or child project.
 The Tools table contains tool, solver and checker kinds. The Artifacts table
 contains webpage, database, artifact and tutorial kinds. Webpage artifacts
 record their generators as entrypoints.
@@ -404,8 +406,9 @@ gaps take precedence over unavailable trees. Layout notes alone never fail.
     for title, label, kinds in (("Tools", "tool", TOOL_KINDS),
                                 ("Artifacts", "artifact", ARTIFACT_KINDS)):
         print(title)
-        headings = (label, "kind", "owner", "repo", "availability", "layout", "path", "purpose")
-        table = [row for row in rows if row[1] in kinds]
+        headings = (label, "kind", "repo", "path", "purpose")
+        table = [(row[0], row[1], row[3], row[6], row[7])
+                 for row in rows if row[1] in kinds]
         widths = [max(len(row[i]) for row in [headings, *table]) + 2 for i in range(len(headings))]
         for row in [headings, *table]:
             print("".join(value.ljust(width) for value, width in zip(row, widths)).rstrip())

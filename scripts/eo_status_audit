@@ -14,8 +14,8 @@
 #
 # The public command for tools/stathmos/audits/status_audit.py.
 #
-#   eo_status_audit                    # the table: status, policy, channel, moved, where, purpose
-#   eo_status_audit --verbose          # ... and why each policy verdict came out
+#   eo_status_audit                    # status, policy, productive, where, purpose
+#   eo_status_audit --verbose          # policy failures and productivity evidence
 #   eo_status_audit --all              # every row the table can show, and nothing else
 #   eo_status_audit --all-children     # the same rows, plus what each child declared
 #   eo_status_audit --check            # is the inventory itself well formed?

@@ -181,6 +181,13 @@ The project working on [cvc5](#cvc5) bug reports and learning from maintainer
 responses to improve the next fix.
 [Charter](https://github.com/ajreynol/paideia/blob/main/tools/empeiria/README.md).
 
+<a id="entity"></a>
+**entity** (ecosystem term; *noun*): A repository recorded as
+[president](#president) or [member](#member), or a recorded
+[child project](#child-project). Candidates, associates, foundations and
+outsiders are outside this definition. The productivity requirement applies
+to these entities under [Productive entities](laws.md#law-11--productive-entities).
+
 <a id="eo"></a>
 **eo** (abbreviation; *proper noun*): Short for [Eunoia](#eunoia) or the Eunoia
 ecosystem, according to context. See [the front page](../README.md).
@@ -404,6 +411,13 @@ as holding the presidency. The office is bestowed for a [stretch](#stretch),
 sets direction, maintains shared governance including this glossary, and confers
 [no control over another tree](laws.md#law-31--limits-on-presidential-authority).
 See [LAW 3](laws.md#law-3--presidency-appointment-authority-and-succession).
+
+<a id="productive"></a>
+**productive** (ecosystem term; *adjective*): An [entity](#entity) with a
+deliverable in the tooling audit, an explicit reference explaining its purpose
+in the laws, policy or vision, or a current assigned special role.
+This is separate from its footing and from an assessment of quality. See
+[Productive entities](laws.md#law-11--productive-entities).
 
 ## S
 

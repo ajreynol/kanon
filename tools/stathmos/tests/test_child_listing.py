@@ -12,6 +12,7 @@ from unittest.mock import patch
 
 from stathmos_support import ecosystem
 from tools.stathmos.audits.child_listing import declaration, read_listing
+from tools.stathmos.audits import productivity
 
 class Declarations(unittest.TestCase):
     def test_the_footing_marker_is_read_as_well_as_the_older_line(self):
@@ -103,7 +104,7 @@ class ChildCommands(unittest.TestCase):
             patch.object(ecosystem, "REPOS_FILE", str(mapping)),
             patch.dict(os.environ, {"ANOIEU_REPOS": str(self.base)}),
             patch.object(ecosystem, "check", return_value=("ok", [])),
-            patch.object(ecosystem, "age", return_value="today"),
+            patch.object(productivity, "assess", return_value={}),
         ]
         for p in patches:
             p.start()
@@ -130,7 +131,7 @@ class ChildCommands(unittest.TestCase):
         self.assertIn("2 children", output)
         self.assertNotIn("5 children", output)
         self.assertEqual(output.splitlines()[0].split(),
-                         ["tool", "status", "policy", "channel", "moved", "where", "purpose"])
+                         ["tool", "status", "policy", "productive", "where", "purpose"])
         for name, purpose in (("host", "parent"), ("published", "Research notes"),
                               ("implicit", "child project")):
             row = next(line for line in output.splitlines() if line.split()[:1] == [name])
