@@ -73,7 +73,7 @@ class ToolingAudit(unittest.TestCase):
         self.assertIn("both tooling and excluded", " ".join(audit.well_formed(self.inventory, self.ecosystem)))
 
     def test_repo_field_requires_a_repository_footing(self):
-        for status in ("child", "outsider", "foundation"):
+        for status in ("child", "outsider"):
             with self.subTest(status=status):
                 self.ecosystem["excluded"] = {"status": status, "repo": "excluded"}
                 with patch.object(audit, "local_tree", return_value=self.tree) as local:
@@ -82,6 +82,19 @@ class ToolingAudit(unittest.TestCase):
                 self.entry["repo"] = "excluded"
                 self.assertTrue(audit.well_formed(self.inventory, self.ecosystem))
                 self.entry["repo"] = "sample"
+
+    def test_foundation_tooling_is_inspected_without_a_policy_check(self):
+        self.ecosystem["sample"]["status"] = "foundation"
+        self.assertEqual(audit.well_formed(self.inventory, self.ecosystem), [])
+        with patch.object(audit.status_audit, "check") as policy:
+            code, output = self.run_main("--check", "--local")
+            self.assertEqual(code, 0, output)
+            with patch.object(audit, "remote_tree", return_value=self.tree) as remote:
+                result = audit.inspect(self.inventory, self.ecosystem, online=True)
+            remote.assert_called_once_with(self.ecosystem["sample"])
+            self.assertFalse(result[1] or result[2])
+        policy.assert_not_called()
+        self.assertEqual(self.ecosystem["sample"]["status"], "foundation")
 
     def child_owner(self):
         self.ecosystem["child"] = {"status": "child", "parent": "sample", "path": "tools/child"}
@@ -102,12 +115,17 @@ class ToolingAudit(unittest.TestCase):
 
     def test_child_layout_discovery_and_exclusions_use_child_root(self):
         self.child_owner()
-        self.tree.directories.update({"tools/child/extra", "tools/child/data", "tools/other/elsewhere"})
+        self.tree.directories.update({"tools/child/extra", "tools/child/data", "tools/other/elsewhere",
+                                      "tools/child/examples", "tools/child/test",
+                                      "tools/child/cmake", "tools/child/include"})
         self.inventory["exclude"] = {"child": {"data": "archived evidence", "removed": "old evidence"}}
-        gaps = self.inspect()[1]
-        self.assertEqual(len(gaps), 2, gaps)
+        rows, gaps, *_ = self.inspect()
+        self.assertEqual(len(gaps), 4, gaps)
         self.assertTrue(any("child/extra: unregistered" in gap for gap in gaps))
         self.assertTrue(any("child/removed: stale exclusion" in gap for gap in gaps))
+        excluded = next(row for row in rows if row[0] == "child/data")
+        self.assertEqual(excluded[1:7], ("excluded", "child", "sample", "present",
+                                        "non-compliant", "tools/child/data"))
         self.inventory["exclude"]["child"]["audits"] = "not tooling"
         self.assertIn("both tooling and excluded", " ".join(audit.well_formed(self.inventory, self.ecosystem)))
 
@@ -176,16 +194,41 @@ class ToolingAudit(unittest.TestCase):
 
     def test_missing_files_unknown_directories_and_stale_exclusions_are_gaps(self):
         self.tree.files.remove("scripts/analyze")
-        self.tree.directories.update({"new_tool", "data", ".cache", "tools", "tests"})
+        self.tree.directories.update({"new_tool", "data", ".cache", "tools", "tests",
+                                      "examples", "test", "cmake", "include"})
         self.inventory["exclude"] = {"sample": {"data": "fixtures", "removed": "old fixtures"}}
         rows, gaps, unseen, notes, trees = self.inspect()
-        self.assertEqual(len(gaps), 3, gaps)
+        self.assertEqual(len(gaps), 5, gaps)
         self.assertIn("missing entrypoints file scripts/analyze", gaps[0])
         self.assertTrue(any("sample/new_tool: unregistered" in gap for gap in gaps))
         self.assertTrue(any("sample/removed: stale exclusion" in gap for gap in gaps))
         self.assertFalse(unseen)
         self.assertEqual(self.run_main("--check", "--local")[0], 1)
         self.assertEqual(self.run_main()[0], 0)
+
+    def test_intentional_exclusions_are_visible_and_fail_requested_comparisons(self):
+        self.tree.directories.add("data")
+        self.inventory["exclude"] = {"sample": {"data": "Archived inputs, intentionally outside tooling"}}
+        for flags in ((), ("--check", "--local"), ("--check", "--online")):
+            with self.subTest(flags=flags), patch.object(audit, "remote_tree", return_value=self.tree):
+                code, output = self.run_main(*flags)
+            self.assertEqual(code, 1 if flags else 0, output)
+            self.assertIn("sample/data", output)
+            self.assertIn("non-compliant inventory coverage: Archived inputs", output)
+            self.assertIn("1 tools, 0 artifacts, 1 intentional exclusions", output)
+            self.assertNotIn("sample/data: unregistered", output)
+        # The structural check still validates the document alone.
+        self.assertEqual(self.run_main("--check")[0], 0)
+
+    def test_exclusions_stay_visible_when_checkout_is_unavailable(self):
+        self.inventory["exclude"] = {"sample": {"data": "Archived inputs"}}
+        code, output = self.run_main("--check", "--local", error=OSError("offline"))
+        self.assertEqual(code, 1, output)
+        row = next(line for line in output.splitlines() if line.startswith("sample/data "))
+        self.assertIn("unverified", row)
+        self.assertIn("non-compliant", row)
+        self.assertNotIn("stale exclusion", output)
+        self.assertIn("UNVERIFIED sample: offline", output)
 
     def test_empty_metadata_is_reported_even_without_a_checkout(self):
         self.entry["entrypoints"] = []

@@ -39,6 +39,8 @@ owners, locations, layout exceptions and inventory gaps. Child projects can own
 tools; bug databases appear as artifacts. `--verbose` includes entry points,
 artifact files and documentation; `--check` validates the inventory
 offline, and `--check --local` also checks the available working trees.
+Foundation tooling such as cvc5 is included. Explicitly excluded directories
+remain visible with their reasons and count as non-compliant inventory coverage.
 
 ## The documents
 

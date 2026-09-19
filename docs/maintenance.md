@@ -71,8 +71,12 @@ reports missing paths, unregistered top-level directories and layout gaps;
 `--verbose` shows the recorded entry points and source revisions. Explain
 nonstandard layouts with `layout_note` and non-inventory directories with
 `exclude`, whose directory names are relative to the named owner's root.
+Exclusions are displayed with their reasons as non-compliant inventory coverage;
+recording one explains the gap without hiding or clearing it. Foundation tooling
+such as cvc5 is included without changing its footing or policy obligations.
 `--check` validates records without checkouts; add `--local` or `--online` to
-compare trees. Layout observations alone never fail a check.
+compare trees. Explicit exclusions fail those comparisons, while layout
+observations alone never fail a check.
 
 Joining through `eo_join` is the owner's choice. No welcome message or
 post-join grade is required.

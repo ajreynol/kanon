@@ -25,8 +25,11 @@ from tools.stathmos.audits import status_audit
 
 INVENTORY = ROOT / "scripts/ecosystem/ecosystem_tooling.json"
 # These directories already have purposes in docs/policy.md's layout table.
-SHARED = frozenset({"docs", "scripts", "tests", "prompts", "deps", "scratch", "tools"})
-REPOSITORIES = frozenset(status_audit.OWN_REPO)
+SHARED = frozenset({"docs", "scripts", "test", "tests", "examples", "cmake", "include",
+                    "prompts", "deps", "scratch", "tools"})
+# Foundations supply tooling too. These are inventory observations, never a
+# policy check or a new obligation on the repository being described.
+REPOSITORIES = frozenset(status_audit.OWN_REPO) | {"foundation"}
 
 
 def relative_path(value, *, root=False):
@@ -89,7 +92,7 @@ def well_formed(inventory, ecosystem):
             bad.append(f"{name}: `kind` must be tool or artifact")
         repo = entry.get("repo")
         if not isinstance(repo, str) or repo not in ecosystem or ecosystem[repo].get("status") not in REPOSITORIES:
-            bad.append(f"{name}: `repo` must name an ecosystem member, president, associate or candidate repository")
+            bad.append(f"{name}: `repo` must name an ecosystem member, president, associate, candidate or foundation repository")
         try:
             owner_repo, prefix = owner_location(entry.get("owner", repo), ecosystem)
             if owner_repo != repo:
@@ -299,16 +302,23 @@ def inspect(inventory, ecosystem, online=False):
     for owner in sorted(owners):
         repo, prefix = owner_location(owner, ecosystem)
         tree = trees[repo]
+        excluded = inventory.get("exclude", {}).get(owner, {})
+        for path, reason in sorted(excluded.items()):
+            location = str(PurePosixPath(prefix) / path)
+            present = tree.has(location, directory=True) if tree else None
+            state = "unverified" if present is None else "present" if present else "missing"
+            rows.append((f"{owner}/{path}", "excluded", owner, repo, state,
+                         "non-compliant", location,
+                         textwrap.shorten(reason, width=60, placeholder="…")))
+            gaps.append(f"{owner}/{path}: intentionally excluded; non-compliant inventory coverage: {reason}")
+            if present is False:
+                gaps.append(f"{owner}/{path}: stale exclusion; directory is missing")
         if tree is None:
             continue
-        excluded = inventory.get("exclude", {}).get(owner, {})
         candidates = {p for p in top_directories(tree.directories, prefix) if not p.startswith(".")}
         unknown = candidates - SHARED - covered_directories(inventory["tools"], repo, prefix) - excluded.keys()
         gaps.extend(f"{owner}/{path}: unregistered directory; record tooling or an exclusion with a reason"
                     for path in sorted(unknown))
-        gaps.extend(f"{owner}/{path}: stale exclusion; directory is missing"
-                    for path in sorted(excluded)
-                    if tree.has(str(PurePosixPath(prefix) / path), directory=True) is False)
     for repo, tree in trees.items():
         if tree and tree.errors:
             unseen.append(f"{repo}: " + "; ".join(sorted(tree.errors)))
@@ -333,7 +343,12 @@ stale exclusions are inventory gaps. Discovery scans repositories and child
 owners named in the tooling inventory, skipping hidden and shared layout
 directories within each. It cannot find every tool inside scripts/, tools/ or
 an owner's root. Record those explicitly; child registration alone is not tooling.
-Foundations and outsiders are outside this audit; footings are never changed.
+Every explicit exclusion is listed with kind excluded, its reason and a
+non-compliant layout marker. These are gaps in our inventory coverage, even
+when deliberate; --check --local/--online returns 1 while they remain. A missing
+checkout leaves presence unverified without hiding the recorded exclusion.
+Foundations are included as tooling providers, without policy checks or new
+obligations. Outsiders remain outside this audit; footings are never changed.
 
 --check alone reads only the two inventories. --local reads checkouts resolved
 by eo_status_audit (ANOIEU_REPOS_FILE, scripts/repos.local, ANOIEU_REPOS, siblings,
@@ -388,7 +403,9 @@ gaps take precedence over unavailable trees. Layout notes alone never fail.
             print(f"{name}: {content}; "
                   f"docs: {', '.join(entry['docs']) or '(none)'}")
     artifacts = sum(entry.get("kind") == "artifact" for entry in inventory["tools"].values())
-    print(f"\n{len(rows) - artifacts} tools, {artifacts} artifacts; "
+    exclusions = sum(len(paths) for paths in inventory.get("exclude", {}).values())
+    print(f"\n{len(inventory['tools']) - artifacts} tools, {artifacts} artifacts, "
+          f"{exclusions} intentional exclusions; "
           f"{len(gaps)} inventory gap(s); {len(notes)} layout gap(s); "
           f"{sum(tree is not None and not tree.errors for tree in trees.values())} repositories inspected, "
           f"{len(unseen)} unverified.")

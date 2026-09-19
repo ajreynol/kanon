@@ -91,16 +91,23 @@ distinguishable from one describing a present state of affairs.
 | `README.md` | the front page, and the whole of what any other document may assume has been read |
 | `docs/` | every written document, each named in the index |
 | `docs/maintenance.md` | how a person maintains this repository, possibly by directing an agent. The one entry point a maintainer can guess |
+| [`docs/discussion.md`](#the-discussion-file) | optional standing channel for cross-repository questions, proposals, notices and replies; keep only live topics and the response gate |
 | `docs/misc/` | documents kept for the record and required of nobody: transcripts, deferred proposals, notes a reader may skip |
 | `tools/` | child projects, with their own code and data |
-| `tests/` | the evidence: cases, recorded behaviour of other people's programs, committed baselines |
+| `test/` or `tests/` | tests, their inputs and expected results |
+| `examples/` | examples showing how to use the project |
+| `cmake/` | CMake build configuration and helpers |
+| `include/` | header files used by the project or its users |
 | `scripts/` | commands, helpers and their data: generators, checks, the runner |
-| `scripts/ecosystem/` | internal ecosystem helpers, inventory and checkout settings |
 | `prompts/` | workflows that hand context to an assistant, kept apart from `scripts/` so that running a command never means deciding to spend a turn |
 | `deps/` | other people's repositories, fetched by a run and never committed |
 | `scratch/` | untracked working space |
 | `.github/workflows/` | what runs on every push |
 | [tool or feature directories](#tool-and-feature-directories) | one named, self-contained implementation per top-level directory; recommended |
+
+For `examples/`, `test/` (or `tests/`), `cmake/` and `include/`, policy reserves
+the purpose and leaves the contents and organization to each project. The
+tooling audit skips these directories when discovering tools.
 
 **One entry point, and it is the front page.** `README.md` carries what the
 tool is, what it finds, what it refuses to claim, how to run it, and a route to
@@ -129,6 +136,12 @@ can guess, addressed to whoever is doing the work rather than to what they are.
 
 Recommended, and not checked: nothing fails on its absence.
 
+**The cross-repository discussion channel is `docs/discussion.md`, when a
+repository keeps one.** This is where a reader looks for live questions,
+proposals, notices and replies involving other tools. Keeping it is optional;
+if present, it carries the response gate and follows [the discussion-file
+rules](#the-discussion-file). Reading a topic does not authorize acting on it.
+
 **Every document is indexed, and the index is itself a document.** One row per
 document saying what it is *for*. The index may be `docs/README.md`, or a
 section of the front page where a repository is small enough or is itself an
@@ -156,8 +169,8 @@ rows and never remove one — a generator allowed to delete can quietly delete a
 regression. Checked. Each generator also states, at the top of its own file in
 `scripts/`, what it writes and what it refuses to write.
 
-**`tests/` holds the evidence, not only the tests.** Every claim the front page
-makes should be traceable to a file somebody could open in a minute.
+**`test/` or `tests/` holds the evidence, not only the tests.** Every claim the
+front page makes should be traceable to a file somebody could open in a minute.
 
 **Working space is untracked, and says so.** `scratch/` for anything transient,
 `*.local.md` for a document deliberately not committed, carrying a line at the
@@ -198,8 +211,8 @@ one named tool or feature, with clear entry points. A repository containing
 several tools should give each its own directory.
 
 Shared documentation, command launchers, assistant workflows and test evidence
-belong in `docs/`, `scripts/`, `prompts/` and `tests/`, respectively. A launcher
-in `scripts/` may call the implementation in its tool's directory. This
+belong in `docs/`, `scripts/`, `prompts/` and `test/` or `tests/`, respectively.
+A launcher in `scripts/` may call the implementation in its tool's directory. This
 organization is recommended, not mechanically checked.
 
 ### Copies, and the thing that compares them
@@ -633,7 +646,7 @@ that it is no longer research.**
 with `tools/X/` as the root: its charter and front page are `tools/X/README.md`,
 its documents go in `tools/X/docs/`, its commands and helpers in
 `tools/X/scripts/`, its assistant workflows in `tools/X/prompts/`, and its test
-evidence in `tools/X/tests/`. Keep its documentation index inside that root.
+evidence in `tools/X/test/` or `tools/X/tests/`. Keep its documentation index inside that root.
 The [tool and feature directory recommendation](#tool-and-feature-directories)
 applies there too. Create only directories the child uses; its charter and
 isolation rules still apply.

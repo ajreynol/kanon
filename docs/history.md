@@ -409,6 +409,12 @@ children: their documents now live in local `docs/` directories with indexes,
 and stathmos's regressions live in its `tests/`. The parent test run still
 includes them; public commands and child charters retain their locations.
 
+On 2026-09-19, the maintainer reserved `examples/`, `test/` (alongside `tests/`),
+`cmake/` and `include/` for examples, tests, build support and headers. Policy
+leaves their contents and organization to each project. The tooling audit
+skips these directories so ordinary project support is not an inventory gap;
+their explicit exclusions were removed.
+
 ### Housekeeping completed after an interruption — 2026-09-18
 
 This entry is reconstructed from `d03447d` ("Hk") and the local source

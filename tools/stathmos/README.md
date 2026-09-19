@@ -69,13 +69,19 @@ An optional `owner` can name a child project; the directory
 is measured from that owner's root when checking layout. All paths remain
 relative to the containing repository, including shared launchers and docs.
 The audit reuses the status audit's checkout resolver and repository footings.
+It includes foundations such as cvc5 as tooling providers, without running
+policy checks or imposing requirements on them.
 It never executes the recorded entry points. `kind: artifact` identifies data
 such as anoieu's and dokimasia's bug databases, which need no executable.
 
 The default table checks local paths and reports layout exceptions. Discovery
 flags unregistered tracked top-level directories within repositories and named
-child owners for a person to classify;
-shared layout directories and explained exclusions are skipped. Nested tools
+child owners for a person to classify. Directories reserved by the
+[policy layout](../../docs/policy.md#the-layout), including `examples/`, `test/`,
+`tests/`, `cmake/` and `include/`, are skipped;
+explicit exclusions are listed with their reasons and marked non-compliant
+inventory coverage. That describes our record, not an obligation on the owner.
+Nested tools
 and root implementations need explicit entries. A research charter alone is
 not evidence of tooling, and file presence is not evidence that a tool works.
 
@@ -85,8 +91,9 @@ this child project. Kanon's `scripts/` retains the public launchers.
 `--verbose` prints sources, entry points, artifact files and docs. `--check` validates the
 inventory without sibling checkouts; `--check --local` also compares working
 trees, and `--check --online` compares GitHub default-branch trees. Missing
-observations are unverified. Layout gaps are advisory; inventory gaps fail a
-requested comparison. `--help` documents discovery limits and exit codes.
+observations are unverified. Layout gaps are advisory; inventory gaps, including
+intentional exclusions, fail a requested comparison. Structural validation alone
+still accepts explained exclusions. `--help` documents limits and exit codes.
 
 ## The question
 
