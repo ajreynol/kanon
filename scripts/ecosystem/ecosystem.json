@@ -297,13 +297,14 @@
     "what": "reads cvc5's proof-production C++ and asks what no proof step covers"
   },
   "paideia": {
-    "status": "candidate",
+    "status": "member",
+    "joined": "kanon 4165736",
     "repo": "paideia",
     "url": "https://github.com/ajreynol/paideia",
-    "vetted": "2026-09-18",
-    "why": "it houses two child projects this register already carried, so a parent it can be reached through has to exist here; its front page calls it an associate, but its docs/maintenance.md explicitly leaves the footing marker unrecorded",
+    "vetted": "2026-09-19",
+    "why": "README declares membership and configures anoieu's policy contract 1 at 864666f; rechecked at 8240ce9, the local policy check passes",
     "short": "A developer's guide to cvc5's source",
-    "what": "a written account of how cvc5's codebase is put together, for people who have to change it, and the tree anakrisis and empeiria moved into on 2026-09-18"
+    "what": "a developer's guide to cvc5's codebase, with bootcamp tutorials and the child projects anakrisis and empeiria"
   },
   "tachyon": {
     "status": "member",

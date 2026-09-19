@@ -28,7 +28,7 @@ CONTENT_KINDS = ("artifact", "tutorial")
 KINDS = ("tool", *CONTENT_KINDS)
 # These directories already have purposes in docs/policy.md's layout table.
 SHARED = frozenset({"docs", "scripts", "test", "tests", "examples", "cmake", "include",
-                    "licenses", "prompts", "deps", "scratch", "tools"})
+                    "licenses", "contrib", "prompts", "deps", "scratch", "tools"})
 # Foundations supply tooling too. These are inventory observations, never a
 # policy check or a new obligation on the repository being described.
 REPOSITORIES = frozenset(status_audit.OWN_REPO) | {"foundation"}
@@ -119,14 +119,17 @@ def well_formed(inventory, ecosystem):
                 bad.append(f"{name}: `{field}` must be a list of repository-relative paths")
             elif len(values) != len(set(values)):
                 bad.append(f"{name}: duplicate `{field}` paths")
-        if prefix:
-            paths = [path, *(entry.get("also") if isinstance(entry.get("also"), list) else [])]
-            for implementation in paths:
-                if relative_path(implementation, root=True):
-                    try:
-                        within_owner(implementation, prefix)
-                    except ValueError:
-                        bad.append(f"{name}: implementation {implementation!r} is outside its owner at {prefix!r}")
+        paths = [path, *(entry.get("also") if isinstance(entry.get("also"), list) else [])]
+        for implementation in paths:
+            if relative_path(implementation, root=True):
+                try:
+                    owned_path = within_owner(implementation, prefix)
+                except ValueError:
+                    bad.append(f"{name}: implementation {implementation!r} is outside its owner at {prefix!r}")
+                    continue
+                directory = owned_path.split("/")[0]
+                if directory in ("docs", "contrib"):
+                    bad.append(f"{name}: reserved {directory}/ is not a tooling directory")
         if "layout_note" in entry and (not isinstance(entry["layout_note"], str) or not entry["layout_note"].strip()):
             bad.append(f"{name}: `layout_note` must be nonempty text")
     for owner, paths in excluded.items():
@@ -257,8 +260,6 @@ def layout(entry, prefix=""):
     if "/" in path:
         return "nested", "implementation is below a top-level directory"
     if path in SHARED:
-        if entry.get("kind") in CONTENT_KINDS and path == "docs":
-            return "shared", ""
         return "shared", "implementation uses a shared layout directory"
     return "top-level", ""
 
@@ -337,12 +338,12 @@ def main(argv=None):
 installation. owner is the repository or child project responsible for a tool;
 repo is its containing repository and path is relative to that repository.
 kind distinguishes tools (programs or importable libraries), artifacts (such as
-bug databases and reference documents), and tutorials (instructional guides).
+bug databases and proof signatures), and tutorials (instructional guides).
 Tool entrypoints may be command launchers or public library modules; artifacts
 and tutorials need recorded content files. All kinds need documentation.
 All file paths remain repository-relative.
-Document artifacts and tutorials in their owner's docs/ use shared layout
-without a layout gap.
+Documentation is supporting metadata, never a tooling entry. The owner's docs/
+and contrib/ (manual setup of external tools) cannot be tooling directories.
 Layout gaps are advisory: top-level means a dedicated directory within the owner;
 nested, root, shared, split and exception describe other arrangements. Missing files,
 empty required metadata, unregistered tracked top-level directories and

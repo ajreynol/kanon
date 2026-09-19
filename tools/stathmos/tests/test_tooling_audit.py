@@ -118,7 +118,7 @@ class ToolingAudit(unittest.TestCase):
         self.tree.directories.update({"tools/child/extra", "tools/child/data", "tools/other/elsewhere",
                                       "tools/child/examples", "tools/child/test",
                                       "tools/child/cmake", "tools/child/include",
-                                      "tools/child/licenses"})
+                                      "tools/child/licenses", "tools/child/contrib"})
         self.inventory["exclude"] = {"child": {"data": "archived evidence", "removed": "old evidence"}}
         rows, gaps, *_ = self.inspect()
         self.assertEqual(len(gaps), 4, gaps)
@@ -217,28 +217,29 @@ class ToolingAudit(unittest.TestCase):
                 self.assertIn("missing files file tutorials/content.md", output)
                 self.tree.files.add("tutorials/content.md")
 
-    def test_document_content_uses_owner_docs_without_a_layout_gap(self):
-        self.child_owner()
-        self.tree.directories.remove("tools/child/audits")
-        for kind in ("artifact", "tutorial"):
-            with self.subTest(kind=kind):
-                self.entry.update(kind=kind, path="tools/child/docs",
-                                  files=["tools/child/docs/manual.md"])
-                self.tree.files.update(self.entry["files"])
-                code, output = self.run_main("--check", "--local")
-                self.assertEqual(code, 0, output)
-                self.assertIn("0 layout gap(s)", output)
-                row = next(line for line in output.splitlines() if line.startswith("analyzer "))
-                self.assertIn("shared", row)
-                self.tree.files.remove("tools/child/docs/manual.md")
-                code, output = self.run_main("--check", "--local")
-                self.assertEqual(code, 1, output)
-                self.assertIn("missing files file tools/child/docs/manual.md", output)
+    def test_docs_and_contrib_cannot_be_tooling_directories(self):
+        for prefix in ("", "tools/child/"):
+            if prefix:
+                self.child_owner()
+            for kind in audit.KINDS:
+                for directory in ("docs", "contrib"):
+                    for suffix in ("", "/nested"):
+                        for field in ("path", "also"):
+                            with self.subTest(prefix=prefix, kind=kind, directory=directory,
+                                              suffix=suffix, field=field):
+                                inventory = copy.deepcopy(self.inventory)
+                                entry = inventory["tools"]["analyzer"]
+                                entry["kind"] = kind
+                                path = prefix + directory + suffix
+                                entry[field] = path if field == "path" else [path]
+                                failures = audit.well_formed(inventory, self.ecosystem)
+                                self.assertIn(f"reserved {directory}/ is not a tooling directory",
+                                              " ".join(failures))
 
     def test_missing_files_unknown_directories_and_stale_exclusions_are_gaps(self):
         self.tree.files.remove("scripts/analyze")
         self.tree.directories.update({"new_tool", "data", ".cache", "tools", "tests",
-                                      "examples", "test", "cmake", "include", "licenses"})
+                                      "examples", "test", "cmake", "include", "licenses", "contrib"})
         self.inventory["exclude"] = {"sample": {"data": "fixtures", "removed": "old fixtures"}}
         rows, gaps, unseen, notes, trees = self.inspect()
         self.assertEqual(len(gaps), 5, gaps)

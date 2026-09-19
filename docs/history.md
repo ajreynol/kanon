@@ -420,6 +420,15 @@ notices, so it is skipped as ordinary project support. Ethos's `contrib/`
 exclusion was replaced by an entry for its Eunoia formatter, with its shared
 directory recorded as an advisory layout gap.
 
+Later on 2026-09-19, the maintainer reserved `contrib/` for manually obtaining
+external tools and excluded documentation from the tooling inventory. This
+keeps supporting material from being reported as a separate contribution.
+The audit rejects `docs/` and `contrib/` contribution directories, including
+within child projects. Sapheneia's account and mimesis's case-study documents
+were removed from tooling; dedicated tutorials remain listed. The formatter
+entry now records eunoia's `eo_format/`, and Ethos's `plugins/` is an ordinary
+top-level collection instead of a special entry for its C++ compiler.
+
 ### Housekeeping completed after an interruption — 2026-09-18
 
 This entry is reconstructed from `d03447d` ("Hk") and the local source
@@ -762,9 +771,18 @@ the coordinate the register keeps in its `joined` field.
 | 2026-09-16 05:23 | `tachyon` | not in the register → member | `cbd8eb2` | `226d534`, 06:32 | `kanon 4c4a78a` |
 | 2026-09-16 06:24 | `eschaton` | not in the register → candidate | — | `2a6aac1` | — |
 | 2026-09-16 07:02 | `eschaton` | candidate → member | `50c780d` | `0c507d9`, 07:22 | `kanon c95ab21` |
+| 2026-09-18 15:31 | `paideia` | candidate → member | `864666f` | working tree | `kanon 4165736` |
 | 2026-09-19 07:35 | `eunoia` | not in the register → member | `302af2c` | working tree | `kanon 4d16d1b` |
 
 **No repository left, and no footing was withdrawn.**
+
+**Paideia's stale candidate entry was corrected on 2026-09-19.** At the
+maintainer's request, the register and glossary were checked against paideia
+at `8240ce9`. Commit `864666f` had added the front-page membership declaration
+and anoieu's shared policy workflow with contract 1 on 2026-09-18. The local
+policy check passes; the candidate rationale described the tree before that
+declaration. The recorded policy coordinate is kanon's tip when it joined,
+not the checker version or the tip when this correction was made.
 
 **Eunoia's handoff, read at `302af2c` on 2026-09-19.** At the maintainer's
 request, mimesis's parent changed from eudaimonia to eunoia and sapheneia's

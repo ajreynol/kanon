@@ -385,13 +385,12 @@ Listing imposes no obligations on the project.
 ## P
 
 <a id="paideia"></a>
-**paideia** (Eunoia candidate; *proper noun*): A written account of how
+**paideia** (Eunoia member; *proper noun*): A written account of how
 [cvc5](#cvc5)’s source is put together, for people who have to change it. It
 houses [anakrisis](#anakrisis) and [empeiria](#empeiria). From Greek παιδεία,
-“education, the rearing of a child.” As read on 2026-09-18, its front page calls
-it an associate, but its maintenance page explicitly leaves the footing marker
-unrecorded. The [candidate](#candidate) listing beside it is this ecosystem’s
-position and obliges it to nothing.
+“education, the rearing of a child.” Its bootcamp is a tutorial for navigating
+and developing cvc5. As checked on 2026-09-19, its README declares membership,
+its CI uses policy contract 1, and its local policy check passes.
 [Repository](https://github.com/ajreynol/paideia).
 
 <a id="parainesis"></a>

@@ -71,19 +71,20 @@ relative to the containing repository, including shared launchers and docs.
 The audit reuses the status audit's checkout resolver and repository footings.
 It includes foundations such as cvc5 as tooling providers, without running
 policy checks or imposing requirements on them.
-It never executes the recorded entry points. `kind: artifact` identifies data
-or reference documents, such as bug databases and language accounts.
+It never executes the recorded entry points. `kind: artifact` identifies
+maintained data, such as bug databases and proof signatures.
 `kind: tutorial` identifies instructional guides, such as paideia's bootcamp
 and mimesis's tutorials. Both require content `files` and documentation, with no
-executable required, and are counted separately. Document artifacts and tutorials
-can live in their owner's `docs/` without a layout gap; their recorded files are
-still checked.
+executable required, and are counted separately. Documentation supports an entry
+through its `docs` metadata; it is never itself a tooling entry. The owner's
+`docs/` and `contrib/` cannot be tooling directories. `contrib/` is reserved for
+manually obtaining external tools.
 
 The default table checks local paths and reports layout exceptions. Discovery
 flags unregistered tracked top-level directories within repositories and named
 child owners for a person to classify. Directories reserved by the
 [policy layout](../../docs/policy.md#the-layout), including `examples/`, `test/`,
-`tests/`, `cmake/`, `include/` and `licenses/`, are skipped;
+`tests/`, `cmake/`, `include/`, `licenses/` and `contrib/`, are skipped;
 explicit exclusions are listed with their reasons and marked non-compliant
 inventory coverage. That describes our record, not an obligation on the owner.
 Nested tools

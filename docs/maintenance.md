@@ -65,9 +65,13 @@ Tools include libraries: their public modules count as entry points without
 requiring a standalone executable.
 `owner` defaults to the repository and can name a child project; layout is
 measured within that owner's root. All entry paths remain repository-relative.
-`kind: artifact` records maintained data or reference documents; `kind: tutorial`
-records instructional guides. Both use content `files` without requiring
-executable entry points. Shared launchers and docs may sit outside the owner. `scripts/eo_tooling_audit`
+`kind: artifact` records maintained data, such as bug databases and proof
+signatures; `kind: tutorial` records instructional guides. Both use content
+`files` without requiring executable entry points. Documentation is recorded
+in `docs`, never as its own
+tooling entry; `docs/` and `contrib/` cannot be tooling directories. `contrib/`
+is reserved for manually obtaining external tools. Shared launchers and docs
+may sit outside the owner. `scripts/eo_tooling_audit`
 reports missing paths, unregistered top-level directories and layout gaps;
 `--verbose` shows the recorded entry points and source revisions. Explain
 nonstandard layouts with `layout_note` and non-inventory directories with

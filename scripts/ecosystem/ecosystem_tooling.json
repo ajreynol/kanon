@@ -4,17 +4,18 @@
     "ecosystem.json remains the authority for repositories and footings. These entries are tools, artifacts and tutorials, not additional projects or membership decisions.",
     "Foundation repositories such as cvc5 are included as tooling providers. Path and coverage findings describe our inventory; they impose no policy obligations on those repositories. Outsiders remain outside this audit.",
     "repo names the containing repository. Optional owner names a child project in that repository; it defaults to repo. path and also list implementation or artifact directories relative to repo, within the owner's root.",
-    "kind defaults to tool, including executable programs and importable libraries. A tool's entrypoints can be command launchers or public library modules. artifact identifies maintained data or reference documents; tutorial identifies instructional guides. Artifacts and tutorials need content files rather than code entrypoints.",
+    "kind defaults to tool, including executable programs and importable libraries. A tool's entrypoints can be command launchers or public library modules. artifact identifies maintained data such as bug databases and proof signatures; tutorial identifies instructional guides. Artifacts and tutorials need content files rather than code entrypoints.",
     "entrypoints, files and docs are file paths relative to repo, including shared launchers and docs outside the owner. They are inspected, never executed. Empty required lists are allowed and reported as gaps.",
     "layout_note explains a departure from one self-contained top-level directory within the owning repository or child project. Such departures are advisory, never policy failures.",
-    "Document artifacts and tutorials can live in their owner's reserved docs/ directory without a layout gap. Their recorded content and documentation paths are still checked.",
-    "exclude is keyed by repository or child owner and maps directories relative to that owner's root to reasons. Each explicit exclusion is displayed and counts as non-compliant inventory coverage, not a silent waiver. Reserved docs, scripts, test, tests, examples, cmake, include, licenses, prompts, deps, scratch, tools and hidden directories are not discovery candidates; see docs/policy.md's layout table.",
+    "Documentation is supporting metadata, never a tooling entry. An owner's reserved docs/ and contrib/ directories, including their subdirectories, cannot be path or also entries. contrib/ holds scripts and instructions for manually obtaining external tools.",
+    "exclude is keyed by repository or child owner and maps directories relative to that owner's root to reasons. Each explicit exclusion is displayed and counts as non-compliant inventory coverage, not a silent waiver. Reserved docs, scripts, test, tests, examples, cmake, include, licenses, contrib, prompts, deps, scratch, tools and hidden directories are not discovery candidates; see docs/policy.md's layout table.",
     "Discovery considers tracked top-level directories in repositories and child owners named here. Other nested tools and implementations in shared directories need explicit entries. Research charters alone are not tooling.",
     "Initial inventory read from local working trees on 2026-09-19: anoieu 06bd787, dokimasia 158c385, epikrisis e748ff6, ethos 21fc6c7d, eudaimonia 79dd601, kanon f22798f, koine 74ea664, logos e8fa2441, paideia 7b305f1, tachyon cccb1b2; iogos has staged files but no first commit. Local changes may be present.",
     "cvc5's entries were read from its clean checkout at a07d513075 on 2026-09-19. Logos's installer was read at e8fa2441; it regenerates from a supplied or cached signature and does not automatically track the latest cvc5.",
-    "Paideia's bootcamp tutorial was read at 7ccb92d on 2026-09-19; its source-baseline page records the cvc5 revision and validation limits of the tutorial itself.",
-    "Eunoia's artifacts were rechecked at a673f8f on 2026-09-19: mimesis's four tutorials live in tutorials/, its case study and upstream documentation draft in docs/, and sapheneia's language account and comparison ledgers in docs/. examples/ retains its reserved purpose.",
-    "Ethos's tooling was rechecked in its clean checkout at a3f1c3af on 2026-09-19. The formatter remains in contrib/ with its docstring and CLI help; the test move from smtlibTests/ to the reserved tests/smtlib/ is committed.",
+    "Paideia's bootcamp tutorial was rechecked at 8240ce9 on 2026-09-19; its source-baseline page records the cvc5 revision and validation limits of the tutorial itself.",
+    "Eunoia's tooling was rechecked at 8cfb3ac on 2026-09-19: the formatter lives in eo_format/ with its docstring and CLI help, and mimesis's four tutorials live in tutorials/. Documentation-only outputs, including sapheneia's account, are outside the inventory.",
+    "Ethos's tooling was rechecked at a3f1c3af on 2026-09-19. plugins/ contains the plugin collection for compilation and code generation. contrib/ and tests/smtlib/ are reserved project support directories.",
+    "Iogos was rechecked at e3584af on 2026-09-19. Its generated checker is in Cpc/, with install and build wrappers in scripts/. Soundness/ contains only a placeholder theory and explanatory text; it has no definitions or proofs to inventory as tooling.",
     "Epikrisis's site was rechecked at 2dc4125 on 2026-09-19 and lives in ecosystem_report/. Eudaimonia's generator lives in new_checker/ at 50532e0; its staged Euthyna changes separate measurement/ and report_site/, with a shared scripts/ launcher and saved data under measurement/data/. The Euthyna entries describe that working tree, not the committed default branch.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
@@ -33,14 +34,6 @@
       "what": "CPC/Eunoia and LFSC proof-checking signatures",
       "files": ["proofs/eo/cpc/Cpc.eo", "proofs/lfsc/signatures/core_defs.plf", "proofs/lfsc/signatures/theory_def.plf"],
       "docs": ["docs/proofs/output_cpc.rst", "docs/proofs/output_lfsc.rst"]
-    },
-    "cvc5_proof_tools": {
-      "repo": "cvc5",
-      "path": "contrib",
-      "what": "Installs proof checkers and checks CPC/Logos compatibility",
-      "entrypoints": ["contrib/get-ethos-checker", "contrib/get-logos-checker", "contrib/get-lfsc-checker", "contrib/get-carcara-checker", "contrib/get-drat2er", "contrib/check-logos-compilation"],
-      "docs": ["docs/proofs/output_cpc.rst", "docs/proofs/output_lfsc.rst", "docs/proofs/output_alethe.rst"],
-      "layout_note": "proof-checker setup and compatibility scripts share contrib/ with other development utilities"
     },
     "anoieu_bug_db": {
       "repo": "anoieu",
@@ -114,14 +107,6 @@
       "entrypoints": ["src/main.cpp"],
       "docs": ["README.md", "user_manual.md"]
     },
-    "ethos_formatter": {
-      "repo": "ethos",
-      "path": "contrib",
-      "what": "Formats Eunoia signatures, with check and diff modes",
-      "entrypoints": ["contrib/eo_format.py"],
-      "docs": ["contrib/eo_format.py"],
-      "layout_note": "formatter shares contrib/ with compilation scripts and DRAT utilities"
-    },
     "ethos_eoc": {
       "repo": "ethos",
       "path": "tools/eoc",
@@ -131,13 +116,12 @@
       "docs": ["tools/eoc/README.md"],
       "layout_note": "Python driver is under tools/eoc/; C++ implementation is shared across plugins/"
     },
-    "ethos_cpp_compiler": {
+    "ethos_plugins": {
       "repo": "ethos",
-      "path": "plugins/cpp_compiler",
-      "what": "Compiles signatures into a custom Ethos binary",
-      "entrypoints": ["plugins/cpp_compiler/build_custom_ethos.sh"],
-      "docs": ["plugins/cpp_compiler/README.md"],
-      "layout_note": "experimental compiler is a plugin below plugins/"
+      "path": "plugins",
+      "what": "Ethos plugins for compilation and code generation",
+      "entrypoints": ["plugins/std_plugin.h", "plugins/main_eoc.cpp", "plugins/cpp_compiler/build_custom_ethos.sh"],
+      "docs": ["plugins/cpp_compiler/README.md", "plugins/eo_meta/README.md"]
     },
     "new_checker": {
       "repo": "eudaimonia",
@@ -162,6 +146,13 @@
       "entrypoints": ["tools/euthyna/scripts/euthyna", "tools/euthyna/report_site/build-site.py", "tools/euthyna/report_site/plot-rules.py"],
       "docs": ["tools/euthyna/report_site/README.md", "tools/euthyna/docs/publishing.md"]
     },
+    "eunoia_formatter": {
+      "repo": "eunoia",
+      "path": "eo_format",
+      "what": "Formats Eunoia signatures, with check and diff modes",
+      "entrypoints": ["eo_format/eo_format.py"],
+      "docs": ["eo_format/eo_format.py"]
+    },
     "mimesis_tutorials": {
       "repo": "eunoia",
       "owner": "mimesis",
@@ -170,24 +161,6 @@
       "what": "Tutorials for Eunoia signatures and Logos verification",
       "files": ["tools/mimesis/tutorials/adding-a-cpc-rule.md", "tools/mimesis/tutorials/extending-cpc-operators.md", "tools/mimesis/tutorials/extending-cpc-theories.md", "tools/mimesis/tutorials/defining-a-calculus.md"],
       "docs": ["tools/mimesis/README.md"]
-    },
-    "mimesis_case_studies": {
-      "repo": "eunoia",
-      "owner": "mimesis",
-      "kind": "artifact",
-      "path": "tools/mimesis/docs",
-      "what": "Eunoia authoring case study and upstream documentation draft",
-      "files": ["tools/mimesis/docs/case-study.md", "tools/mimesis/docs/upstream-draft.md"],
-      "docs": ["tools/mimesis/README.md"]
-    },
-    "sapheneia_account": {
-      "repo": "eunoia",
-      "owner": "sapheneia",
-      "kind": "artifact",
-      "path": "tools/sapheneia/docs",
-      "what": "Eunoia language account and comparison ledgers; not authoritative",
-      "files": ["tools/sapheneia/docs/manual.md", "tools/sapheneia/docs/feedback.md", "tools/sapheneia/docs/account-vs-manual.md", "tools/sapheneia/docs/ethos-logos.md", "tools/sapheneia/docs/semantics.md"],
-      "docs": ["tools/sapheneia/README.md", "tools/sapheneia/docs/README.md"]
     },
     "stathmos_audits": {
       "repo": "kanon",
@@ -256,9 +229,9 @@
     },
     "iogos_checker": {
       "repo": "iogos",
-      "path": "isabelle",
+      "path": "Cpc",
       "what": "Experimental generated Isabelle/HOL checker and obligations",
-      "entrypoints": ["isabelle/ROOT", "regenerate.sh"],
+      "entrypoints": ["Cpc/ROOT", "Cpc/Cpc_Checker.thy", "Cpc/Cpc_Spec.thy", "scripts/install.sh", "scripts/build.sh"],
       "docs": ["README.md"]
     },
     "stats_profiler": {
@@ -269,5 +242,9 @@
       "docs": ["docs/stats-profiler.md"]
     }
   },
-  "exclude": {}
+  "exclude": {
+    "iogos": {
+      "Soundness": "Placeholder Isabelle session with explanatory text; no definitions or proofs yet"
+    }
+  }
 }
