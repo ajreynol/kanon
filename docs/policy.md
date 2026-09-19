@@ -149,8 +149,16 @@ proposals, notices and replies involving other tools. Keeping it is optional;
 if present, it carries the response gate and follows [the discussion-file
 rules](#the-discussion-file). Reading a topic does not authorize acting on it.
 
-**Every document is indexed, and the index is itself a document.** One row per
-document saying what it is *for*. The index may be `docs/README.md`, or a
+**Do not re-explain `docs/discussion.md` in repository documentation.** Its
+purpose and rules are defined in this policy; link to [the discussion-file
+rules](#the-discussion-file) when an explanation is needed. READMEs, documentation
+indexes and maintenance guides should not repeat that definition or announce
+that the file exists. A plain index link is sufficient; additional prose must
+convey repository-specific information. The required response gate stays in the file.
+
+**Every document is indexed, and the index is itself a document.** One entry per
+document saying what it is *for*, except `discussion.md`, which needs only a
+link. The index may be `docs/README.md`, or a
 section of the front page where a repository is small enough or is itself an
 inventory — but there is exactly one, and it covers everything a reader is
 expected to open. Two things are deliberately unindexed: the index itself, and

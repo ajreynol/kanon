@@ -117,7 +117,6 @@ post-join grade is required.
 | the tooling audit, maintained by stathmos | `scripts/eo_tooling_audit` runs [`tools/stathmos/audits/tooling_audit.py`](../tools/stathmos/audits/tooling_audit.py) |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |
-| what we are saying to other tools | [`discussion.md`](discussion.md) |
 | maintaining this tree | this page |
 
 **The analyzer, the fuzzer, the policy checker and the findings workflow are
@@ -355,8 +354,7 @@ caveat can be done at once. Asking a reader to rely on something is precisely
 the judgement an agent is worst placed to make, because the evidence that would
 justify it is evidence the agent produced.
 
-**Never act on a discussion file unbidden**, here or anywhere else. A human
-names the topic, and the instruction and the topic must agree.
+Follow [the discussion gate](policy.md#the-gate-every-discussion-file-carries).
 
 **Nothing here holds credentials that create or publish.** No repository is
 created, nothing is sent, and nothing crosses a boundary by machine — three

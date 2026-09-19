@@ -64,7 +64,6 @@ first.
 | --- | --- |
 | [`docs/history.md`](docs/history.md) | the term record — what it is for, what changed, what went wrong, what crosses to the next president, and what the next term should be for |
 | [`docs/board.md`](docs/board.md) | cross-repository work and its next steps |
-| [`docs/discussion.md`](docs/discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`docs/maintenance.md`](docs/maintenance.md) | **start here to maintain this tree** — where to start, what you do, and what this repository is responsible for |
 
@@ -111,8 +110,6 @@ kanon-ball is one of those: a request, backed by law, fired from here.**
 
 Say the name out loud and the rest follows. A kanon-ball comes in fast and can
 be heavy — but it is aimed at exactly one tool, and nobody has to catch one.
-[`docs/discussion.md`](docs/discussion.md) is where they land, and what the
-office does all day.
 
 ## How this repository is maintained
 

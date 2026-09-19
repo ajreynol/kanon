@@ -20,9 +20,10 @@ that have been demoted.
 | --- | --- |
 | [`history.md`](history.md) | the term record — what it is for, what changed, what went wrong, what crosses to the next president, and what the next term should be for |
 | [`board.md`](board.md) | what is being maintained across the ecosystem, in priority order, each item with its next step and whose it is |
-| [`discussion.md`](discussion.md) | the standing channel — what we are saying to other tools, for a person to carry |
 | [`roles.md`](roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`maintenance.md`](maintenance.md) | **start here to maintain this tree**: what this repository is responsible for, what it checks, and what is outstanding |
+
+[`discussion.md`](discussion.md)
 
 ## Demoted
 

@@ -666,6 +666,15 @@ The maintenance-note examples and kanon's README use that link. The list can
 change by human decision; the text no longer assumes one maintainer forever.
 The new link requirement is not yet enforced by the policy checker.
 
+### Discussion-file explanations stay in policy — 2026-09-19
+
+At the maintainer's request, policy now tells repositories not to repeat what
+`docs/discussion.md` is or announce its existence. Policy defines it once;
+the documentation index needs only a plain link, and additional local prose
+must convey repository-specific information. Kanon's repeated descriptions
+were removed. This avoids boilerplate encouraged by the index's former demand
+for a purpose description on every entry; no new automated check was added.
+
 ### Productive entities received a common requirement — 2026-09-19
 
 At the maintainer's request, LAW 11 requires a recorded basis for each
