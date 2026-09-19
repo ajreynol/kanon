@@ -33,10 +33,11 @@ scripts/eo_status_audit              # policy and discussion status across check
 `scripts/eo_status_audit` lists the advertised ones; `--all-children` shows every
 recorded child with its listing preference.
 
-**What tools, artifacts and tutorials are available:** `scripts/eo_tooling_audit` reads
+**What tooling is available:** `scripts/eo_tooling_audit` reads
 [`ecosystem_tooling.json`](scripts/ecosystem/ecosystem_tooling.json) and reports
 owners, locations, layout exceptions and inventory gaps. Child projects can own
-tools; bug databases appear as artifacts, and instructional guides as tutorials.
+tooling. Two tables separate tools (general tools, solvers and proof checkers)
+from artifacts (webpages, databases, other artifacts and tutorials).
 `--verbose` includes entry points, content files and documentation; `--check` validates the inventory
 offline, and `--check --local` also checks the available working trees.
 Foundation tooling such as cvc5 is included. Explicitly excluded directories

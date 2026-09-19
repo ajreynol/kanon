@@ -24,8 +24,10 @@ sys.path.insert(0, str(ROOT))
 from tools.stathmos.audits import status_audit
 
 INVENTORY = ROOT / "scripts/ecosystem/ecosystem_tooling.json"
-CONTENT_KINDS = ("artifact", "tutorial")
-KINDS = ("tool", *CONTENT_KINDS)
+TOOL_KINDS = ("tool", "solver", "checker")
+CONTENT_KINDS = ("database", "artifact", "tutorial")
+ARTIFACT_KINDS = ("webpage", *CONTENT_KINDS)
+KINDS = (*TOOL_KINDS, *ARTIFACT_KINDS)
 # These directories already have purposes in docs/policy.md's layout table.
 SHARED = frozenset({"docs", "scripts", "test", "tests", "examples", "cmake", "include",
                     "licenses", "contrib", "prompts", "deps", "scratch", "tools"})
@@ -91,7 +93,7 @@ def well_formed(inventory, ecosystem):
             bad.append(f"{name}: expected a named tool object")
             continue
         if entry.get("kind", "tool") not in KINDS:
-            bad.append(f"{name}: `kind` must be tool, artifact or tutorial")
+            bad.append(f"{name}: `kind` must be one of {', '.join(KINDS)}")
         repo = entry.get("repo")
         if not isinstance(repo, str) or repo not in ecosystem or ecosystem[repo].get("status") not in REPOSITORIES:
             bad.append(f"{name}: `repo` must name an ecosystem member, president, associate, candidate or foundation repository")
@@ -333,14 +335,21 @@ def inspect(inventory, ecosystem, online=False):
 def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="eo_tooling_audit",
-        description="Audit ecosystem tools, artifacts and tutorials: locations, documentation and inventory coverage.",
-        epilog="""The table reports availability from local working trees, not build quality or
+        description="Audit ecosystem tooling by kind: locations, documentation and inventory coverage.",
+        epilog="""Two tables report availability from local working trees, not build quality or
 installation. owner is the repository or child project responsible for a tool;
 repo is its containing repository and path is relative to that repository.
-kind distinguishes tools (programs or importable libraries), artifacts (such as
-bug databases and proof signatures), and tutorials (instructional guides).
-Tool entrypoints may be command launchers or public library modules; artifacts
-and tutorials need recorded content files. All kinds need documentation.
+The Tools table contains tool, solver and checker kinds. The Artifacts table
+contains webpage, database, artifact and tutorial kinds. Webpage artifacts
+record their generators as entrypoints.
+kind distinguishes general tools (programs or importable libraries), solvers
+(constraint-solving programs or libraries), checkers (proof-checking programs
+or libraries), webpages (sites such as GitHub Pages), databases (maintained
+records such as bug databases), artifacts (other maintained data such as proof
+signatures), and tutorials (instructional guides).
+Tools, solvers, checkers and webpages need entrypoints: command launchers,
+public library modules or site generators. Databases, artifacts and tutorials
+need recorded content files. All kinds need documentation and are counted separately.
 All file paths remain repository-relative.
 Documentation is supporting metadata, never a tooling entry. The owner's docs/
 and contrib/ (manual setup of external tools) cannot be tooling directories.
@@ -351,9 +360,9 @@ stale exclusions are inventory gaps. Discovery scans repositories and child
 owners named in the tooling inventory, skipping hidden and shared layout
 directories within each. It cannot find every tool inside scripts/, tools/ or
 an owner's root. Record those explicitly; child registration alone is not tooling.
-Every explicit exclusion is listed with kind excluded, its reason and a
-non-compliant layout marker. These are gaps in our inventory coverage, even
-when deliberate; --check --local/--online returns 1 while they remain. A missing
+Every explicit exclusion is listed separately after the tables with its
+availability, reason and a non-compliant marker. These are gaps in our inventory
+coverage, even when deliberate; --check --local/--online returns 1 while they remain. A missing
 checkout leaves presence unverified without hiding the recorded exclusion.
 Foundations are included as tooling providers, without policy checks or new
 obligations. Outsiders remain outside this audit; footings are never changed.
@@ -362,7 +371,7 @@ obligations. Outsiders remain outside this audit; footings are never changed.
 by eo_status_audit (ANOIEU_REPOS_FILE, scripts/repos.local, ANOIEU_REPOS, siblings,
 then home). --online reads GitHub default-branch trees, which may differ from
 local work or a child's development branch. No tools or assistants are run.
-Exit 0: table, valid inventory, or complete comparison; 1: invalid inventory or
+Exit 0: tables, valid inventory, or complete comparison; 1: invalid inventory or
 observed inventory gaps; 2: bad options or incomplete verification. Observed
 gaps take precedence over unavailable trees. Layout notes alone never fail.
 """, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -392,11 +401,21 @@ gaps take precedence over unavailable trees. Layout notes alone never fail.
         print("-- structure only; --local or --online compares recorded paths and coverage")
         return 0
     rows, gaps, unseen, notes, trees = inspect(inventory, ecosystem, args.online)
-    headings = ("tooling", "kind", "owner", "repo", "availability", "layout", "path", "purpose")
-    widths = [max(len(row[i]) for row in [headings, *rows]) + 2 for i in range(len(headings))]
-    for row in [headings, *rows]:
-        print("".join(value.ljust(width) for value, width in zip(row, widths)).rstrip())
-    print("\n-- columns and limits: eo_tooling_audit --help")
+    for title, label, kinds in (("Tools", "tool", TOOL_KINDS),
+                                ("Artifacts", "artifact", ARTIFACT_KINDS)):
+        print(title)
+        headings = (label, "kind", "owner", "repo", "availability", "layout", "path", "purpose")
+        table = [row for row in rows if row[1] in kinds]
+        widths = [max(len(row[i]) for row in [headings, *table]) + 2 for i in range(len(headings))]
+        for row in [headings, *table]:
+            print("".join(value.ljust(width) for value, width in zip(row, widths)).rstrip())
+        if not table:
+            print("(none)")
+        print()
+    print("-- columns and limits: eo_tooling_audit --help")
+    for row in rows:
+        if row[1] == "excluded":
+            print(f"EXCLUDED {row[0]}: {row[4]}; {row[5]}; {row[7]}")
     for label, messages in (("GAP", gaps), ("UNVERIFIED", unseen), ("NOTE", notes)):
         for message in messages:
             print(f"{label} {message}")
@@ -414,7 +433,8 @@ gaps take precedence over unavailable trees. Layout notes alone never fail.
     for entry in inventory["tools"].values():
         counts[entry.get("kind", "tool")] += 1
     exclusions = sum(len(paths) for paths in inventory.get("exclude", {}).values())
-    print(f"\n{counts['tool']} tools, {counts['artifact']} artifacts, {counts['tutorial']} tutorials, "
+    totals = ", ".join(f"{count} {kind}s" for kind, count in counts.items())
+    print(f"\n{totals}, "
           f"{exclusions} intentional exclusions; "
           f"{len(gaps)} inventory gap(s); {len(notes)} layout gap(s); "
           f"{sum(tree is not None and not tree.errors for tree in trees.values())} repositories inspected, "

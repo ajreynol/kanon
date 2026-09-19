@@ -1,10 +1,12 @@
 {
   "_comment": [
     "Ground truth for tooling boundaries, maintained by people; eo_tooling_audit reads but never rewrites it.",
-    "ecosystem.json remains the authority for repositories and footings. These entries are tools, artifacts and tutorials, not additional projects or membership decisions.",
+    "ecosystem.json remains the authority for repositories and footings. These entries classify available contributions, not additional projects or membership decisions.",
     "Foundation repositories such as cvc5 are included as tooling providers. Path and coverage findings describe our inventory; they impose no policy obligations on those repositories. Outsiders remain outside this audit.",
     "repo names the containing repository. Optional owner names a child project in that repository; it defaults to repo. path and also list implementation or artifact directories relative to repo, within the owner's root.",
-    "kind defaults to tool, including executable programs and importable libraries. A tool's entrypoints can be command launchers or public library modules. artifact identifies maintained data such as bug databases and proof signatures; tutorial identifies instructional guides. Artifacts and tutorials need content files rather than code entrypoints.",
+    "kind defaults to tool for general programs and importable libraries. solver identifies constraint-solving programs or libraries; checker identifies proof-checking programs or libraries; webpage identifies sites such as GitHub Pages. These kinds need entrypoints: command launchers, public library modules or site generators.",
+    "database identifies maintained records such as bug databases; artifact identifies other maintained data such as proof signatures; tutorial identifies instructional guides. These kinds need content files rather than code entrypoints. Every kind needs docs and is counted separately.",
+    "The audit displays two tables: Tools for tool, solver and checker; Artifacts for webpage, database, artifact and tutorial. Webpage artifacts record their generators as entrypoints. Explicit exclusions appear separately after the tables as non-compliant inventory coverage.",
     "entrypoints, files and docs are file paths relative to repo, including shared launchers and docs outside the owner. They are inspected, never executed. Empty required lists are allowed and reported as gaps.",
     "layout_note explains a departure from one self-contained top-level directory within the owning repository or child project. Such departures are advisory, never policy failures.",
     "Documentation is supporting metadata, never a tooling entry. An owner's reserved docs/ and contrib/ directories, including their subdirectories, cannot be path or also entries. contrib/ holds scripts and instructions for manually obtaining external tools.",
@@ -15,13 +17,15 @@
     "Paideia's bootcamp tutorial was rechecked at 8240ce9 on 2026-09-19; its source-baseline page records the cvc5 revision and validation limits of the tutorial itself.",
     "Eunoia's tooling was rechecked at 8cfb3ac on 2026-09-19: the formatter lives in eo_format/ with its docstring and CLI help, and mimesis's four tutorials live in tutorials/. Documentation-only outputs, including sapheneia's account, are outside the inventory.",
     "Ethos's tooling was rechecked at a3f1c3af on 2026-09-19. plugins/ contains the plugin collection for compilation and code generation. contrib/ and tests/smtlib/ are reserved project support directories.",
-    "Iogos was rechecked at e3584af on 2026-09-19. Its generated checker is in Cpc/, with install and build wrappers in scripts/. Soundness/ contains only a placeholder theory and explanatory text; it has no definitions or proofs to inventory as tooling.",
+    "Iogos was rechecked at e716d73 on 2026-09-19. Cpc/ contains the generated checker and obligations, with its handwritten soundness scaffold under Cpc/Soundness/. Install and build wrappers live in scripts/. The soundness theory is still a placeholder, not a completed proof.",
     "Epikrisis's site was rechecked at 2dc4125 on 2026-09-19 and lives in ecosystem_report/. Eudaimonia's generator lives in new_checker/ at 50532e0; its staged Euthyna changes separate measurement/ and report_site/, with a shared scripts/ launcher and saved data under measurement/data/. The Euthyna entries describe that working tree, not the committed default branch.",
+    "Tachyon's child webpages were read at effe42c on 2026-09-19. Heuresis's report builds gap measurements and a research queue; elaphros's report builds planning and source-evidence pages without measured performance claims. Each builder and its HTML templates live at the child's root and read ledger/ evidence. scripts/build_site.py assembles the site described in docs/site.md.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
     "cvc5": {
       "repo": "cvc5",
+      "kind": "solver",
       "path": "src",
       "what": "SMT solver, library APIs and proof production",
       "entrypoints": ["src/main/main.cpp", "include/cvc5/cvc5.h"],
@@ -37,7 +41,7 @@
     },
     "anoieu_bug_db": {
       "repo": "anoieu",
-      "kind": "artifact",
+      "kind": "database",
       "path": "bug_db",
       "what": "Persistent analyzer and fuzzer findings and browsing view",
       "files": ["bug_db/bugs.json", "bug_db/bugs.md"],
@@ -73,7 +77,7 @@
     },
     "dokimasia_bug_db": {
       "repo": "dokimasia",
-      "kind": "artifact",
+      "kind": "database",
       "path": "bug_db",
       "what": "Persistent proof-production findings and browsing view",
       "files": ["bug_db/bugs.json", "bug_db/bugs.md"],
@@ -95,6 +99,7 @@
     },
     "epikrisis_site": {
       "repo": "epikrisis",
+      "kind": "webpage",
       "path": "ecosystem_report",
       "what": "Builds the shared history and repository-size report site",
       "entrypoints": ["ecosystem_report/site"],
@@ -102,6 +107,7 @@
     },
     "ethos_checker": {
       "repo": "ethos",
+      "kind": "checker",
       "path": "src",
       "what": "C++ checker for Eunoia proof calculi",
       "entrypoints": ["src/main.cpp"],
@@ -141,6 +147,7 @@
     "euthyna_site": {
       "repo": "eudaimonia",
       "owner": "euthyna",
+      "kind": "webpage",
       "path": "tools/euthyna/report_site",
       "what": "Builds interactive proof-measurement reports from snapshots",
       "entrypoints": ["tools/euthyna/scripts/euthyna", "tools/euthyna/report_site/build-site.py", "tools/euthyna/report_site/plot-rules.py"],
@@ -186,6 +193,7 @@
     },
     "logos_checker": {
       "repo": "logos",
+      "kind": "checker",
       "path": "Cpc",
       "what": "CPC checker and proofs; logos and logos-native front ends",
       "entrypoints": ["Cpc.lean", "Main.lean", "MainNative.lean"],
@@ -193,6 +201,7 @@
     },
     "logos_cpcmini": {
       "repo": "logos",
+      "kind": "checker",
       "path": "CpcMini",
       "what": "Reduced CPC checker library and proofs; no standalone CLI",
       "entrypoints": ["CpcMini.lean"],
@@ -227,8 +236,33 @@
       "entrypoints": ["job_launcher/submit", "job_launcher/status", "job_launcher/fetch", "job_launcher/checks", "job_launcher/deploy"],
       "docs": ["docs/job-launcher.md"]
     },
+    "heuresis_site": {
+      "repo": "tachyon",
+      "owner": "heuresis",
+      "kind": "webpage",
+      "path": "tools/heuresis",
+      "also": ["tools/heuresis/ledger"],
+      "what": "Builds benchmark-gap reports and research-queue pages",
+      "entrypoints": ["tools/heuresis/report", "scripts/build_site.py"],
+      "files": ["tools/heuresis/report.html", "tools/heuresis/queue.html"],
+      "docs": ["tools/heuresis/README.md", "docs/site.md", "tools/heuresis/ledger/data/README.md"],
+      "layout_note": "builder and HTML templates sit at the child's root, with evidence under ledger/; no dedicated site directory"
+    },
+    "elaphros_site": {
+      "repo": "tachyon",
+      "owner": "elaphros",
+      "kind": "webpage",
+      "path": "tools/elaphros",
+      "also": ["tools/elaphros/ledger"],
+      "what": "Builds proof-overhead research plans and source-evidence pages",
+      "entrypoints": ["tools/elaphros/report", "scripts/build_site.py"],
+      "files": ["tools/elaphros/report.html"],
+      "docs": ["tools/elaphros/README.md", "docs/site.md", "tools/elaphros/ledger/README.md"],
+      "layout_note": "builder and HTML template sit at the child's root, with evidence under ledger/; no dedicated site directory"
+    },
     "iogos_checker": {
       "repo": "iogos",
+      "kind": "checker",
       "path": "Cpc",
       "what": "Experimental generated Isabelle/HOL checker and obligations",
       "entrypoints": ["Cpc/ROOT", "Cpc/Cpc_Checker.thy", "Cpc/Cpc_Spec.thy", "scripts/install.sh", "scripts/build.sh"],
@@ -242,9 +276,5 @@
       "docs": ["docs/stats-profiler.md"]
     }
   },
-  "exclude": {
-    "iogos": {
-      "Soundness": "Placeholder Isabelle session with explanatory text; no definitions or proofs yet"
-    }
-  }
+  "exclude": {}
 }

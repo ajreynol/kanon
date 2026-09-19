@@ -58,26 +58,33 @@ locations; local paths do not belong in the shared inventory.
    arrive with their parent; outsiders are not cloned. A child's README
    controls its [listing preference](policy.md#child-projects).
 
-Record tools, artifacts and tutorials in
+Record tooling in
 [`ecosystem_tooling.json`](../scripts/ecosystem/ecosystem_tooling.json): its
 repository, directory, entry points or content files, and documentation.
 Tools include libraries: their public modules count as entry points without
 requiring a standalone executable.
 `owner` defaults to the repository and can name a child project; layout is
 measured within that owner's root. All entry paths remain repository-relative.
-`kind: artifact` records maintained data, such as bug databases and proof
-signatures; `kind: tutorial` records instructional guides. Both use content
-`files` without requiring executable entry points. Documentation is recorded
-in `docs`, never as its own
-tooling entry; `docs/` and `contrib/` cannot be tooling directories. `contrib/`
-is reserved for manually obtaining external tools. Shared launchers and docs
-may sit outside the owner. `scripts/eo_tooling_audit`
+`kind` defaults to `tool`; use `solver` for constraint-solving programs or
+libraries, `checker` for proof-checking programs or libraries, and `webpage`
+for sites such as GitHub Pages. These kinds require `entrypoints`.
+Use `database` for maintained records such as bug databases,
+`artifact` for other data such as proof signatures, and `tutorial` for
+instructional guides. These kinds require content `files` without executable
+entry points. The audit separates tools (`tool`, `solver`, `checker`) from
+artifacts (`webpage`, `database`, `artifact`, `tutorial`) in two tables, with
+counts for each kind. Webpage artifacts record their generators as entry points.
+Documentation is recorded in `docs`, never as its own tooling
+entry; `docs/` and `contrib/` cannot be tooling
+directories. `contrib/` is reserved for manually obtaining external tools.
+Shared launchers and docs may sit outside the owner. `scripts/eo_tooling_audit`
 reports missing paths, unregistered top-level directories and layout gaps;
 `--verbose` shows the recorded entry points and source revisions. Explain
 nonstandard layouts with `layout_note` and non-inventory directories with
 `exclude`, whose directory names are relative to the named owner's root.
-Exclusions are displayed with their reasons as non-compliant inventory coverage;
-recording one explains the gap without hiding or clearing it. Foundation tooling
+Exclusions are displayed after the tables with their availability and reasons
+as non-compliant inventory coverage; recording one explains the gap without
+hiding or clearing it. Foundation tooling
 such as cvc5 is included without changing its footing or policy obligations.
 `--check` validates records without checkouts; add `--local` or `--online` to
 compare trees. Explicit exclusions fail those comparisons, while layout

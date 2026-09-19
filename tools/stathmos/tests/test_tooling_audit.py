@@ -52,7 +52,7 @@ class ToolingAudit(unittest.TestCase):
                    {"path": "a//b"}, {"path": "a/./b"}, {"path": "a\\b"},
                    {"what": " "}, {"entrypoints": "scripts/analyze"},
                    {"entrypoints": ["../outside"]}, {"docs": [None]},
-                   {"also": ["/outside"]}, {"layout_note": []}]
+                   {"also": ["/outside"]}, {"layout_note": []}, {"kind": "analysis"}]
         for change in changes:
             with self.subTest(change=change):
                 inventory = copy.deepcopy(self.inventory)
@@ -166,14 +166,14 @@ class ToolingAudit(unittest.TestCase):
         self.assertEqual(len(rows), 2)
         self.assertFalse(gaps or unseen or notes)
 
-    def test_artifact_needs_content_and_docs_but_no_executable(self):
-        self.entry.update(kind="artifact", files=["analyzer/bugs.json", "analyzer/bugs.md"])
+    def test_database_needs_content_and_docs_but_no_executable(self):
+        self.entry.update(kind="database", files=["analyzer/bugs.json", "analyzer/bugs.md"])
         del self.entry["entrypoints"]
         self.tree.files.update(self.entry["files"])
         self.assertEqual(audit.well_formed(self.inventory, self.ecosystem), [])
         code, output = self.run_main("--check", "--local", "--verbose")
         self.assertEqual(code, 0, output)
-        self.assertIn("0 tools, 1 artifacts", output)
+        self.assertIn("1 databases, 0 artifacts", output)
         self.assertIn("files: analyzer/bugs.json, analyzer/bugs.md", output)
         self.assertNotIn("no entrypoints", output)
         self.tree.files.remove("analyzer/bugs.json")
@@ -182,7 +182,7 @@ class ToolingAudit(unittest.TestCase):
         self.assertIn("missing files file analyzer/bugs.json", output)
 
     def test_content_records_cannot_hide_absent_content_or_documentation(self):
-        for kind in ("artifact", "tutorial"):
+        for kind in ("database", "artifact", "tutorial"):
             with self.subTest(kind=kind):
                 self.entry.update(kind=kind, files=[], docs=[])
                 code, output = self.run_main("--check", "--local")
@@ -195,27 +195,58 @@ class ToolingAudit(unittest.TestCase):
                         inventory["tools"]["analyzer"].update(changes)
                         self.assertTrue(audit.well_formed(inventory, self.ecosystem))
 
-    def test_tutorial_is_counted_separately_and_checked_without_an_executable(self):
-        for kind, path in (("tutorial", "tutorials"), ("artifact", "data")):
+    def test_program_kinds_require_entrypoints_and_documentation(self):
+        for kind in ("tool", "solver", "checker", "webpage"):
+            with self.subTest(kind=kind):
+                self.entry.update(kind=kind, entrypoints=["scripts/analyze"], docs=["docs/usage.md"])
+                self.assertEqual(audit.well_formed(self.inventory, self.ecosystem), [])
+                code, output = self.run_main("--check", "--local", "--verbose")
+                self.assertEqual(code, 0, output)
+                self.assertIn("analyzer: entrypoints: scripts/analyze", output)
+                del self.entry["entrypoints"]
+                self.assertIn("`entrypoints` must be a list",
+                              " ".join(audit.well_formed(self.inventory, self.ecosystem)))
+                self.entry.update(entrypoints=[], docs=[])
+                code, output = self.run_main("--check", "--local")
+                self.assertEqual(code, 1, output)
+                self.assertIn("no entrypoints recorded", output)
+                self.assertIn("no docs recorded", output)
+
+    def test_kinds_are_reported_and_counted_separately(self):
+        entries = (("solver", "solver", "entrypoints"), ("checker", "checker", "entrypoints"),
+                   ("webpage", "site", "entrypoints"),
+                   ("database", "database", "files"), ("tutorial", "tutorials", "files"),
+                   ("artifact", "data", "files"))
+        for kind, path, field in entries:
             self.inventory["tools"][path] = {
                 "repo": "sample", "kind": kind, "path": path, "what": "Maintained content",
-                "files": [path + "/content.md"], "docs": ["docs/usage.md"]}
+                field: [path + "/content"], "docs": ["docs/usage.md"]}
             self.tree.directories.add(path)
-            self.tree.files.add(path + "/content.md")
+            self.tree.files.add(path + "/content")
         self.assertEqual(audit.well_formed(self.inventory, self.ecosystem), [])
         for mode in ("--local", "--online"):
             with self.subTest(mode=mode), patch.object(audit, "remote_tree", return_value=self.tree):
                 code, output = self.run_main("--check", mode, "--verbose")
                 self.assertEqual(code, 0, output)
-                self.assertIn("1 tools, 1 artifacts, 1 tutorials", output)
-                self.assertIn("tutorials: files: tutorials/content.md", output)
-                row = next(line for line in output.splitlines() if line.startswith("tutorials "))
-                self.assertEqual(row.split()[1], "tutorial")
-                self.tree.files.remove("tutorials/content.md")
-                code, output = self.run_main("--check", mode)
-                self.assertEqual(code, 1, output)
-                self.assertIn("missing files file tutorials/content.md", output)
-                self.tree.files.add("tutorials/content.md")
+                self.assertIn("1 tools, 1 solvers, 1 checkers, 1 webpages, "
+                              "1 databases, 1 artifacts, 1 tutorials", output)
+                tables = output.split("-- columns and limits:", 1)[0]
+                self.assertTrue(tables.startswith("Tools\n"), tables)
+                tools, artifacts = tables.split("\nArtifacts\n")
+                self.assertIn("analyzer ", tools)
+                self.assertNotIn("analyzer ", artifacts)
+                for kind, path, field in entries:
+                    target, other = ((artifacts, tools) if kind in ("webpage", "database", "artifact", "tutorial")
+                                     else (tools, artifacts))
+                    row = next(line for line in target.splitlines() if line.startswith(path + " "))
+                    self.assertEqual(row.split()[1], kind)
+                    self.assertFalse(any(line.startswith(path + " ") for line in other.splitlines()))
+                    self.assertIn(f"{path}: {field}: {path}/content", output)
+                    self.tree.files.remove(path + "/content")
+                    code, missing = self.run_main("--check", mode)
+                    self.assertEqual(code, 1, missing)
+                    self.assertIn(f"missing {field} file {path}/content", missing)
+                    self.tree.files.add(path + "/content")
 
     def test_docs_and_contrib_cannot_be_tooling_directories(self):
         for prefix in ("", "tools/child/"):
@@ -257,9 +288,11 @@ class ToolingAudit(unittest.TestCase):
             with self.subTest(flags=flags), patch.object(audit, "remote_tree", return_value=self.tree):
                 code, output = self.run_main(*flags)
             self.assertEqual(code, 1 if flags else 0, output)
-            self.assertIn("sample/data", output)
+            self.assertIn("EXCLUDED sample/data: present; non-compliant; Archived inputs", output)
+            self.assertNotIn("sample/data", output.split("-- columns and limits:", 1)[0])
             self.assertIn("non-compliant inventory coverage: Archived inputs", output)
-            self.assertIn("1 tools, 0 artifacts, 0 tutorials, 1 intentional exclusions", output)
+            self.assertIn("1 tools, 0 solvers, 0 checkers, 0 webpages, 0 databases, 0 artifacts, 0 tutorials, "
+                          "1 intentional exclusions", output)
             self.assertNotIn("sample/data: unregistered", output)
         # The structural check still validates the document alone.
         self.assertEqual(self.run_main("--check")[0], 0)
@@ -268,7 +301,7 @@ class ToolingAudit(unittest.TestCase):
         self.inventory["exclude"] = {"sample": {"data": "Archived inputs"}}
         code, output = self.run_main("--check", "--local", error=OSError("offline"))
         self.assertEqual(code, 1, output)
-        row = next(line for line in output.splitlines() if line.startswith("sample/data "))
+        row = next(line for line in output.splitlines() if line.startswith("EXCLUDED sample/data:"))
         self.assertIn("unverified", row)
         self.assertIn("non-compliant", row)
         self.assertNotIn("stale exclusion", output)
