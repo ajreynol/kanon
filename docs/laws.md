@@ -528,6 +528,21 @@ Productivity is separate from footing and from judgements of quality.
 [LAW 2](#law-2--membership-obligations-and-the-right-to-leave) still govern
 membership and the obligations a child inherits from its parent.
 
+<a id="law-12--human-maintainers-of-the-ecosystem"></a>
+
+## (LAW 12) — Human maintainers: who is accountable, and where they are named
+
+The people accountable for the Eunoia ecosystem are **named in a shared document
+the president keeps current** under
+[LAW 5.1](#law-51--keeping-shared-documents-current) — at present
+[`docs/policy.md`](policy.md#human-maintainers), which carries the list itself.
+
+**This list is kept primarily for accountability.** [People are
+responsible](#people-are-responsible) puts the work, including agent-produced
+text and code, on the people directing it; a reader who finds an error, a wrong
+claim about their project, or an unwanted contact needs to know who that is
+without reconstructing it from commit logs.
+
 [entity]: glossary.md#entity
 [footing]: glossary.md#footing
 [member]: glossary.md#member

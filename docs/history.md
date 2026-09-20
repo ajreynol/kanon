@@ -1054,6 +1054,49 @@ entries under *what crosses to the next president*, and that is a judgement
 about what mattered this term, which the next reader is better placed to make
 than the author of the entries.
 
+### LAW 12 was added, naming where the ecosystem's human maintainers are recorded — 2026-09-20
+
+At the maintainer's direction. **The list already existed; the obligation to
+keep one did not.** `policy.md`'s *Human maintainers* section has named the
+accountable person and carried the link-rather-than-copy rule for some time, and
+every README points at it — but nothing said the ecosystem must have such a
+list, so nothing would have noticed if the section were dropped or left to go
+stale.
+
+- **`LAW 12`** requires that the people accountable for the shared arrangement
+  be named in a document the president keeps current under LAW 5.1, and fixes
+  three things about it: that it is public and reachable from each repository's
+  front page, that it exists **primarily for accountability** under *People are
+  responsible*, and that it is updated when responsibility moves rather than at
+  the end of a term.
+- **The list stays out of the laws**, which is the point of writing the law this
+  way. Laws are amended rarely and responsibility is not; naming holders on a
+  page the president already revises keeps the record current without an
+  amendment each time. The preamble's *moving a responsibility or its files does
+  not itself change a law* covers a later move to another shared document.
+- **It says who is *not* listed, which is the part worth having.** Ethos and
+  logos are maintained by cvc5 and carry contributors who have not adopted these
+  laws; committing to a member repository does not make anyone accountable for
+  this ecosystem, and the law says so rather than leaving the list's silence to
+  be read either way.
+- **It claims nothing about licensing.** `policy.md` already records that this
+  repository has no licence file and that choosing one is a human decision. LAW
+  12 states that the work is public and that naming a maintainer grants no
+  ownership or control over use — and stops there, because a law that implied a
+  licence would be making a decision it has no business making.
+- **`policy.md`** now says its *Human maintainers* section is the list LAW 12
+  requires, and that a member maintained elsewhere is governed by its own
+  record. **Why the cross-reference both ways:** the README link
+  `policy.md#human-maintainers` is what readers follow, and a section that does
+  not say what obliges it is the kind that gets tidied away by someone shortening
+  the page under LAW 5.2.
+
+*Re-derive:*
+
+```sh
+git log -p docs/laws.md docs/policy.md
+```
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

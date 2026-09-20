@@ -97,14 +97,20 @@ independence paragraph with its membership declaration.
 <a id="ownership-and-what-is-claimed"></a>
 <a id="human-maintainers"></a>
 
-**Human maintainers.** Responsibility and the limits of authority follow
-[People are responsible](laws.md#people-are-responsible) and
+**Human maintainers.** This section is the list
+[LAW 12](laws.md#law-12--human-maintainers-of-the-ecosystem) requires, kept here
+because the president already maintains this page. Responsibility and the limits
+of authority follow [People are responsible](laws.md#people-are-responsible) and
 [Limits on presidential authority](laws.md#law-31--limits-on-presidential-authority).
-The current human maintainer accountable for the shared arrangement is:
+Those accountable for the shared arrangement — these laws, the shared documents
+and what crosses between repositories — are, at present:
 
 - Andrew Reynolds (`ajreynol`).
 
-Update this list when responsibility changes. Ownership and human-maintainer
+A member maintained elsewhere has its own contributors and its own
+maintainers, who are not accountable for this ecosystem by having committed to
+it and are not listed here. Update this list when responsibility changes, as
+LAW 12 asks, rather than at the end of a term. Ownership and human-maintainer
 statements in READMEs, maintenance notes, prompts and reports link to
 [this list](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers)
 rather than copying personal names, handles or affiliations. A relative link
