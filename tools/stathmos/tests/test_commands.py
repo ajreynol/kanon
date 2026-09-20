@@ -426,3 +426,132 @@ class Verification(unittest.TestCase):
         output, _ = self.status_of(["associate"], ("ok", []))
         self.assertIn("ok", output)
         self.assertNotIn("tracked", output)
+
+
+class Pursuits(unittest.TestCase):
+    """`_pursuits` read against `docs/laws.md` LAW 10."""
+
+    inventory = {
+        "kanon": {"status": "president", "repo": "kanon",
+                  "url": "https://example.invalid/kanon", "what": "the policy"},
+        "logos": {"status": "member", "repo": "logos",
+                  "url": "https://example.invalid/logos", "what": "a checker"},
+        "cvc5": {"status": "foundation", "repo": "cvc5",
+                 "url": "https://example.invalid/cvc5", "what": "the solver",
+                 "released": "https://example.invalid/cvc5",
+                 "published": "A paper, 2026. https://example.invalid/paper"},
+        "ethos": {"status": "candidate", "repo": "ethos",
+                  "url": "https://example.invalid/ethos", "what": "a checker"},
+        "stathmos": {"status": "child", "parent": "kanon",
+                     "path": "tools/stathmos", "what": "the audits"},
+    }
+
+    record = {"pursuer": "kanon", "subject": "cvc5", "basis": "nonmember",
+              "responsible": "the maintainer", "scope": "proof production",
+              "started": "2026-09-01", "declared": "2026-09-20",
+              "closes": "the campaign is retired", "state": "active",
+              "reporting": "public"}
+
+    def errors(self, *pursuits, **changes):
+        inv = {k: dict(v) for k, v in self.inventory.items()}
+        for name, fields in changes.items():
+            inv[name].update(fields)
+        return ecosystem.pursuits_well_formed(inv, list(pursuits))
+
+    def test_a_complete_nonmember_record_passes(self):
+        self.assertEqual(self.errors(self.record), [])
+
+    def test_every_field_is_required(self):
+        for field in ecosystem.PURSUIT_FIELDS:
+            with self.subTest(field=field):
+                short = {k: v for k, v in self.record.items() if k != field}
+                self.assertIn(f"needs `{field}`", " ".join(self.errors(short)))
+
+    def test_a_nonmember_subject_still_needs_law_9_evidence(self):
+        # The footing is ours to assign and supplies no permission; the
+        # release and publication facts are what LAW 10.1 actually turns on.
+        blind = {**self.record, "subject": "ethos"}
+        self.assertIn("LAW 9's evidence", " ".join(self.errors(blind)))
+        with_evidence = {"released": "https://example.invalid/ethos",
+                         "published": "A paper, 2026. https://example.invalid/e"}
+        self.assertEqual(self.errors(blind, ethos=with_evidence), [])
+
+    def test_membership_is_the_standing_for_a_member_subject(self):
+        member = {**self.record, "subject": "logos", "basis": "member"}
+        self.assertEqual(self.errors(member), [])
+        # and it is the only basis that reaches one: a member is not tracked
+        # under LAW 9, so `nonmember` has no evidence to rest on.
+        wrong = {**self.record, "subject": "logos"}
+        self.assertIn("does not reach", " ".join(self.errors(wrong)))
+
+    def test_a_child_is_reached_through_its_parent_and_pursues_through_it(self):
+        # LAW 1 gives a child its parent's footing, so the basis and LAW 9's
+        # evidence are both read off the parent. A child of the president is
+        # reached as a member; a child of a candidate is not.
+        subject = {**self.record, "subject": "stathmos", "basis": "member"}
+        self.assertEqual(self.errors(subject), [])
+        pursuer = {**self.record, "pursuer": "stathmos"}
+        self.assertIn("named as the parent", " ".join(self.errors(pursuer)))
+
+    def test_a_child_of_a_nonmember_is_reached_on_its_parents_footing(self):
+        inv = {**self.inventory,
+               "ethos-eoc": {"status": "child", "parent": "ethos",
+                             "path": "tools/eoc", "what": "the compiler"}}
+        record = {**self.record, "subject": "ethos-eoc"}
+        evidence = {"released": "https://example.invalid/ethos",
+                    "published": "A paper, 2026. https://example.invalid/e"}
+        run = lambda r, **c: ecosystem.pursuits_well_formed(
+            {**inv, "ethos": {**inv["ethos"], **c}}, [r])
+        # the parent is a candidate, so `member` does not reach it ...
+        self.assertIn("through `ethos`",
+                      " ".join(run({**record, "basis": "member"})))
+        # ... and `nonmember` does, once the parent carries LAW 9's evidence
+        self.assertIn("LAW 9's evidence", " ".join(run(record)))
+        self.assertEqual(run(record, **evidence), [])
+
+    def test_both_ends_are_in_the_register(self):
+        self.assertIn("no row in this file",
+                      " ".join(self.errors({**self.record, "subject": "nobody"})))
+        self.assertIn("not a member",
+                      " ".join(self.errors({**self.record, "pursuer": "nobody"})))
+
+    def test_a_record_cannot_predate_the_work_it_records(self):
+        early = {**self.record, "declared": "2026-08-01"}
+        self.assertIn("cannot predate", " ".join(self.errors(early)))
+        for field in ("started", "declared"):
+            with self.subTest(field=field):
+                self.assertIn("not a YYYY-MM-DD date",
+                              " ".join(self.errors({**self.record, field: "last spring"})))
+
+    def test_private_continuation_is_representable(self):
+        # LAW 10.3 after a LAW 10.2 request: the work goes on, the reporting
+        # stops. Collapsing the two states would lose exactly this row.
+        quiet = {**self.record, "reporting": "stopped"}
+        self.assertEqual(self.errors(quiet), [])
+
+    def test_a_closed_investigation_keeps_its_dated_closure(self):
+        closed = {**self.record, "state": "closed", "closed": "2026-09-19"}
+        self.assertEqual(self.errors(closed), [])
+        undated = {**self.record, "state": "closed"}
+        self.assertIn("keeps the date it closed", " ".join(self.errors(undated)))
+        self.assertIn("`closed` is set",
+                      " ".join(self.errors({**self.record, "closed": "2026-09-19"})))
+
+    def test_one_subject_may_have_several_pursuers(self):
+        second = {**self.record, "pursuer": "logos"}
+        self.assertEqual(self.errors(self.record, second), [])
+        # but one pursuer twice over is two records of one investigation
+        self.assertIn("same pursuer", " ".join(self.errors(self.record, dict(self.record))))
+        # and a closed record beside a live one is the retained history
+        done = {**self.record, "state": "closed", "closed": "2026-09-10"}
+        self.assertEqual(self.errors(done, self.record), [])
+
+    def test_the_old_per_entry_field_is_rejected_rather_than_ignored(self):
+        inv = {**self.inventory, "cvc5": {**self.inventory["cvc5"],
+                                          "dioktes": "2026-09-01 -- a fix lands"}}
+        with patch.object(ecosystem, "board_entities", return_value=set()):
+            self.assertIn("`_pursuits`", " ".join(ecosystem.well_formed(inv)))
+
+    def test_a_pursuits_value_that_is_not_a_list_fails(self):
+        self.assertIn("records investigations in a list",
+                      " ".join(ecosystem.pursuits_well_formed(self.inventory, {})))

@@ -53,6 +53,32 @@ reader; the authoritative register and membership decisions remain kanon's.
 internal implementation in `tools/stathmos/scripts/`. Implemented; moved to
 `tools/stathmos/audits/` on 2026-09-19 at the maintainer's direction.
 
+## B44 — carry the LAW 10 decision back to epikrisis
+
+**Task:** carry kanon's answer to `epikrisis-D7` to epikrisis, and get the four
+recorded pursuits declared or dropped.
+**Entities:** `kanon`, `epikrisis`, `anoieu`, `dokimasia`
+**Status:** waiting on a person — the decision is made and in the tree
+(LAW 10.4, LAW 10.1, `_pursuits` and its checker, 2026-09-20). The reply is
+drafted in `discussion-response.local.md`, which is uncommitted and delivers
+nothing.
+**Channel:** **discussion**, carried by a person.
+**Next:** carry the reply. Separately, ask anoieu's and dokimasia's maintainers
+for the start date and campaign closing condition of each of the four pursuits
+`D7` lists, so they can be recorded; `_pursuits` stays empty until they are.
+Three of the four also need `released` and `published` vetted onto the `cvc5`
+and `ethos` entries, which LAW 9's evidence requirement asks for and neither
+entry carries today.
+**Prompt — `kanon`:** record each pursuit a maintainer supplies evidence for.
+`started` is their date, `declared` is the day the record is written, and
+neither is reconstructed.
+**Prompt — `epikrisis`:** LAW 10.4 is adopted as you sent it; LAW 10.1 now
+reaches a foundation, candidate and associate on LAW 9's evidence; the register
+takes `_pursuits` records with the fields you asked for. The LAW 2
+cross-reference was declined by the maintainer. The disclosure question is
+recorded as unsettled, not answered.
+**HUMAN FEEDBACK:**
+
 ## B18 — settle the associate proposal for ethos
 
 **Task:** reconcile the current associate footing with the older proposal for
@@ -319,7 +345,7 @@ build red without anybody committing.
 ## How to maintain this page
 
 - Order items by priority, highest first. Move whole items without changing
-  their ids. Never reuse an id. **The next unused id is `B43`.**
+  their ids. Never reuse an id. **The next unused id is `B45`.**
 - Keep at most 24 active items. Remove completed or abandoned work; Git and
   the relevant project records preserve the outcome. Review the cap when the
   entity count changes, recording any increase and its reason in

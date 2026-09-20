@@ -224,6 +224,8 @@ That assignment may change; it is not a permanent condition of the presidency.
 and the standing channel in which one tool addresses another. Both are
 registers of work that crosses a repository boundary, and neither carries
 anything: a person does.
+[LAW 4.4](laws.md#law-44--the-board-and-the-role-register) makes the board and
+this page presidential records and separates the board from a discussion file.
 **Owns:** `docs/board.md` and `docs/discussion.md`.
 
 ### R34 — the historian of the current stretch

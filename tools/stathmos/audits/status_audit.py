@@ -156,6 +156,29 @@ PROPOSABLE = ("associate",)
 #: tree, and asking them for anything is what that footing exists to refuse.
 OWN_REPO = ("member", "president", "associate", "candidate")
 
+#: Every field a `_pursuits` record carries, under `docs/laws.md` LAW 10. They
+#: are records rather than a field on the subject's row because LAW 10 allows
+#: several pursuers of one subject and keeps a closed investigation's record;
+#: one string on one row carries neither.
+PURSUIT_FIELDS = ("pursuer", "subject", "basis", "responsible", "scope",
+                  "started", "declared", "closes", "state", "reporting")
+
+#: What a pursuit rests on, and which footing each basis reaches. `member` is
+#: LAW 10.4, where membership is the standing. `nonmember` is LAW 10.1, which
+#: needs LAW 9's evidence recorded whatever footing we assigned: a footing is
+#: our opinion and supplies no permission. `child` appears in neither, because
+#: LAW 1 gives a child its parent's footing and this resolves to the parent.
+PURSUIT_BASES = {
+    "member": MEMBERS,
+    "nonmember": ("foundation", "candidate", "associate", "outsider"),
+}
+
+#: Kept apart because `active` + `stopped` is the private continuation LAW 10.3
+#: reserves after a LAW 10.2 request -- the one combination a single column
+#: could not express.
+PURSUIT_STATES = ("active", "closed")
+PURSUIT_REPORTING = ("public", "stopped")
+
 
 # The key printed under the table. A reader who cannot decode `3 failing` in a
 # `candidate` row cannot tell a disagreement from a measurement, and the table
@@ -413,7 +436,7 @@ def outsider_trackable(entry: dict) -> bool:
         value.strip().lower() not in ("none", "unknown") for value in facts)
 
 
-def well_formed(inv: dict) -> list[str]:
+def well_formed(inv: dict, pursuits=()) -> list[str]:
     """The inventory read as a document about itself. No network, no checkouts."""
     bad = []
     for name, e in inv.items():
@@ -446,17 +469,12 @@ def well_formed(inv: dict) -> list[str]:
                     if not e.get(field):
                         bad.append(f"{name}: proposing `{proposed}` needs `{field}`, "
                                    "the same as holding it")
-        # LAW 10 records the start and closing condition of an investigation.
-        # Tracking eligibility below also applies to an outsider in dioktes.
-        dioktes = e.get("dioktes", "")
-        if dioktes:
-            if status != "outsider":
-                bad.append(f"{name}: `dioktes` is declared against a {status} "
-                           "entry; LAW 10 is about tools outside this ecosystem")
-            elif "--" not in dioktes:
-                bad.append(f"{name}: `dioktes` is {dioktes!r}; it reads "
-                           "\"<date began> -- <what closes it>\", and a pursuit "
-                           "with no stated end is a posture")
+        # An investigation is a `_pursuits` record now. Rejected rather than
+        # ignored, because a row still carrying the old field is a declaration
+        # somebody made and nothing is now reading.
+        if e.get("dioktes"):
+            bad.append(f"{name}: `dioktes` on an entry records an investigation "
+                       "nothing reads; LAW 10 puts it in `_pursuits`")
 
         if status == "outsider":
             if "volunteered" in e and not owner_volunteered(e):
@@ -505,6 +523,103 @@ def well_formed(inv: dict) -> list[str]:
                    + " -- and the office is held one at a time")
     for entity in sorted(board_entities() - set(inv)):
         bad.append(f"docs/board.md addresses `{entity}`, which has no row here")
+    bad += pursuits_well_formed(inv, pursuits)
+    return bad
+
+
+def pursuits_well_formed(inv: dict, pursuits) -> list[str]:
+    """`_pursuits` read against `docs/laws.md` LAW 10.
+
+    What this can decide is the record's form: that both ends of it are in the
+    register, that the basis matches the subject's footing, and that a
+    nonmember subject carries the LAW 9 evidence. **What it cannot decide is
+    the one thing the record is for** -- whether somebody is actually doing the
+    work, and whether `started` is the date they began it. That is the pursuing
+    maintainer's evidence, and an empty list is not evidence of no pursuit.
+    """
+    bad = []
+    # JSON produces no tuple, so the default empty sequence passes and a
+    # `_pursuits` written as an object or a string still fails here.
+    if not isinstance(pursuits, (list, tuple)):
+        return [f"`_pursuits` is {type(pursuits).__name__}, and LAW 10 records "
+                "investigations in a list"]
+    seen = set()
+    for i, p in enumerate(pursuits):
+        if not isinstance(p, dict):
+            bad.append(f"_pursuits[{i}]: not a record")
+            continue
+        who = f"{p.get('pursuer', '?')} -> {p.get('subject', '?')}"
+        missing = [f for f in PURSUIT_FIELDS
+                   if not isinstance(p.get(f), str) or not p[f].strip()]
+        for field in missing:
+            bad.append(f"{who}: an investigation needs `{field}`")
+        if missing:
+            continue
+
+        pursuer, subject = p["pursuer"], p["subject"]
+        # The pursuing side is ours, and a child pursues through its parent:
+        # LAW 10.4 gives a child no standing of its own to investigate with.
+        if inv.get(pursuer, {}).get("status") not in MEMBERS:
+            bad.append(f"{who}: `{pursuer}` is not a member of this ecosystem, "
+                       "and a child is named as the parent it pursues through")
+        if subject not in inv:
+            bad.append(f"{who}: `{subject}` has no row in this file")
+        elif p["basis"] not in PURSUIT_BASES:
+            bad.append(f"{who}: `basis` is {p['basis']!r}, and LAW 10 knows "
+                       + " and ".join(repr(b) for b in PURSUIT_BASES))
+        else:
+            # LAW 1: a child's footing follows its parent, and LAW 10.4 reaches
+            # a child through it. So the basis and the LAW 9 evidence are both
+            # read off the parent -- a child has no footing of its own to be
+            # investigated on, and no `released` of its own to be read.
+            e = inv[subject]
+            if e.get("status") == "child":
+                e = inv.get(e.get("parent", ""), {})
+            status = e.get("status", "")
+            if status not in PURSUIT_BASES[p["basis"]]:
+                where = f" (through `{inv[subject]['parent']}`)" \
+                    if inv[subject].get("status") == "child" else ""
+                bad.append(f"{who}: `{subject}`{where} is a "
+                           f"{status or '(none)'} entry, which the "
+                           f"{p['basis']!r} basis does not reach")
+            elif p["basis"] == "nonmember" and not outsider_trackable(e):
+                bad.append(f"{who}: a nonmember investigation needs LAW 9's "
+                           f"evidence on `{subject}` -- `released` and "
+                           "`published`, or a recorded owner offer")
+
+        for field in ("started", "declared"):
+            try:
+                datetime.date.fromisoformat(p[field])
+            except ValueError:
+                bad.append(f"{who}: `{field}` is {p[field]!r}, not a YYYY-MM-DD date")
+        if p["started"] > p["declared"]:
+            bad.append(f"{who}: declared {p['declared']} and started "
+                       f"{p['started']}; a record cannot predate the work")
+        if p["state"] not in PURSUIT_STATES:
+            bad.append(f"{who}: `state` is {p['state']!r}, not "
+                       + " or ".join(repr(s) for s in PURSUIT_STATES))
+        if p["reporting"] not in PURSUIT_REPORTING:
+            bad.append(f"{who}: `reporting` is {p['reporting']!r}, not "
+                       + " or ".join(repr(s) for s in PURSUIT_REPORTING))
+        # LAW 10.4 retains the dated closure, so the date is what makes
+        # `closed` distinguishable from a record somebody stopped updating.
+        closed = p.get("closed", "")
+        if p["state"] == "closed":
+            try:
+                datetime.date.fromisoformat(closed)
+            except (ValueError, TypeError):
+                bad.append(f"{who}: a closed investigation keeps the date it "
+                           f"closed, and `closed` is {closed!r}")
+        elif closed:
+            bad.append(f"{who}: `closed` is set on an investigation whose "
+                       f"`state` is {p['state']!r}")
+        # Several pursuers of one subject are allowed; the same pursuer twice
+        # over is two records of one investigation, and nothing says which.
+        if p["state"] == "active":
+            if (pursuer, subject) in seen:
+                bad.append(f"{who}: two active investigations of the same "
+                           "subject by the same pursuer")
+            seen.add((pursuer, subject))
     return bad
 
 
@@ -722,14 +837,20 @@ def audit(online: bool) -> int:
     for as long as that was true.
     """
     with open(INVENTORY, encoding="utf-8") as f:
-        inv = json.load(f)
-    inv = {k: v for k, v in inv.items() if not k.startswith("_")}
+        raw = json.load(f)
+    # `_pursuits` is read before the underscore keys are dropped; it is the one
+    # of them that is data rather than commentary.
+    pursuits = raw.get("_pursuits", [])
+    inv = {k: v for k, v in raw.items() if not k.startswith("_")}
 
-    bad = well_formed(inv)
+    bad = well_formed(inv, pursuits)
     for b in bad:
         print(f"FAIL {b}")
+    active = sum(1 for p in pursuits
+                 if isinstance(p, dict) and p.get("state") == "active")
     print(f"-- inventory structure: {len(bad)} failure(s), "
-          f"{len(inv)} entries")
+          f"{len(inv)} entries, {len(pursuits)} investigation(s) "
+          f"recorded, {active} active")
 
     if bad:
         return 1

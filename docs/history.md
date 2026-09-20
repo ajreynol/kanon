@@ -332,6 +332,44 @@ The implementations moved from `tools/stathmos/scripts/` to
 and measure its layout from the child project's root. Public commands stay in
 kanon's `scripts/`.
 
+### Investigations cover members, and are recorded as records — 2026-09-20
+
+At the maintainer's direction, and on epikrisis's `D7`, LAW 10 now covers
+investigating any project rather than only an outsider. LAW 10.4 is the
+maintainer's own text, added unchanged: a member is subject to internal public
+investigation by other members, membership is the standing, the president and
+member children through their parent are included, and LAW 10.2's stop on
+reporting and contact still ends it. LAW 10.1 now reaches a foundation, a
+candidate and an associate as well as an outsider, on LAW 9's evidence
+unchanged — a footing is ours to assign and supplies no permission, and being
+listed is not consent. The glossary follows, with its anchors preserved.
+
+D7 also asked for a LAW 2 cross-reference to 10.4; the maintainer declined it
+during the work, so membership's obligations are stated in one place.
+
+The register's `dioktes` field became `_pursuits` records, because LAW 10 allows
+several pursuers of one subject and keeps a closed investigation's record, and
+one string on the subject's row carries neither. Each record holds its pursuer,
+subject, basis, responsible maintainer, scope, start date, declaration date,
+closing condition, and its investigation and reporting states kept apart — so
+`active` + `stopped`, LAW 10.3's private continuation, is representable.
+The list is empty: the four pursuits D7 names need their pursuing maintainers'
+start evidence, and nothing here invents one. **An empty list is not evidence
+of no pursuit**, which is written in the register and in the law.
+
+The unresolved question D7 raised — whether a public-interest disclosure ever
+outweighs LAW 10.2 — is recorded as the laws' sixth unsettled question rather
+than answered.
+
+### The board and the role register became presidential records — 2026-09-20
+
+At the maintainer's direction, LAW 4.4 records that the president keeps
+`board.md` and `roles.md`, and what distinguishes the board from a discussion
+file: a discussion file is one repository's correspondence with tools it names,
+the board is one priority list across every entity, addressed to nobody. Both
+transfer with the office, unlike the term's account and the successor letter.
+LAW 4's heading widened to match, with its former anchor preserved.
+
 ### Child projects may maintain shared work — 2026-09-20
 
 At the maintainer's direction, the child-project policy replaced mandatory
