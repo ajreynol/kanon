@@ -114,8 +114,9 @@ elaborator for [Alethe](#alethe), tracked for comparison.
 
 <a id="child-project"></a>
 **child project** (project type; *noun*): Also
-**research project**: work on a potential tool housed
-within a parent repository. It has its own purpose and inherits its parent’s
+**research project**: a project housed within a parent repository, with its own
+purpose and charter. It may explore a potential tool or maintain work useful
+across the ecosystem, and inherits its parent’s
 [footing](#footing). See [child projects](policy.md#child-projects).
 
 <a id="cpc"></a>

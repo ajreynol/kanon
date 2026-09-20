@@ -9,11 +9,9 @@ Eunoia read backwards, and this is Eunoia read as a question.*
 
 A child project under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, and not part of the governance commands this repository ships.
-Deleting this directory changes no running command. **This is not an island:**
-kanon carries it in
+Its written arguments and proposal reviews serve the ecosystem. Kanon carries it in
 [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json) and
-`scripts/eo_status_audit` lists it among the advertised children; it is therefore not
-unadvertised.
+`scripts/eo_status_audit` lists it among the advertised children.
 
 This project is tied to the presidency: when the office changes hands, ynoia
 moves with its work and roles to the repository that holds the presidency.

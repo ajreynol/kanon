@@ -47,9 +47,8 @@ produces belongs somewhere else.
 at the top of its own file, and `eo_status_audit --help` carries the key to the
 table — which is where a reader who is about to run something already looks.
 
-**The child projects under [`../tools/`](../tools) are not documentation and are
-not indexed here.** Each documents itself at its source, and they are reached
-through the front page and through `scripts/eo_status_audit --all-children`. Naming
-one here is one of the things that makes a child project stop being an island,
-and that is a declaration for the child's own charter to make rather than for an
-index to make on its behalf.
+**The child projects under [`../tools/`](../tools) keep their own documentation
+indexes.** This index covers kanon's `docs/`; each child documents its work at
+its source. `scripts/eo_status_audit --all-children` lists every recorded child.
+Links to advertised children's shared work follow the parent's
+[listing preference](policy.md#child-projects).

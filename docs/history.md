@@ -332,6 +332,25 @@ The implementations moved from `tools/stathmos/scripts/` to
 and measure its layout from the child project's root. Public commands stay in
 kanon's `scripts/`.
 
+### Child projects may maintain shared work — 2026-09-20
+
+At the maintainer's direction, the child-project policy replaced mandatory
+isolation with documented boundaries. Children may supply globally useful
+artifacts, hold assigned roles, and participate in their parent's imports,
+tests and CI without treating usefulness as a rule violation or requiring
+graduation. The parent still carries cross-repository correspondence and
+commitments. The definition, related guidance and local charters were aligned.
+
+The layout now recommends repository-level `scripts/` and `prompts/` for child
+commands and workflows, with implementations inside the child. Stathmos's
+`audits/` and kanon's public launchers are the example. This is advisory and
+adds no CI check. The reason for both changes is the existing shared work:
+being housed in a parent does not make a project's outputs useful only there.
+
+Anoieu's checker at `0b6ec54` still described shared dependencies as island
+exceptions. Stathmos retained its explicit statement that it is not an island,
+with the interfaces documented; the policy no longer treats them as exceptions.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to

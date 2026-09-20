@@ -1,7 +1,8 @@
 # stathmos
 
 A **child project** under [`docs/policy.md`](../../docs/policy.md). Started by a
-human, read-only, and advertised in ecosystem listings.
+human, and advertised in ecosystem listings. Its audits read repositories and
+report observations without changing them.
 
 This project is tied to the presidency: when the office changes hands, stathmos
 moves with its work and roles to the repository that holds the presidency.
@@ -14,13 +15,14 @@ than the scale or the verdict.*
 **In one line: it audits ecosystem status and tooling, and keeps
 [the report card](docs/report-card.md).**
 
-**This is not an island**, and the exception is deliberate. Other documents in
-this repository point at the page — `roles.md` records its roles, `laws.md` and
-`vision.md` name it. The public command `scripts/eo_status_audit` runs this
-project's implementation, and the repository's tests exercise it. The audit
-reads kanon's register and runs anoieu's checker through its local launcher. These
-connections outside this directory are deliberate: the command and the
-assessment must be usable by the repository that houses them.
+**This project is not an island:** its work serves the ecosystem through kanon.
+Stathmos maintains the public
+`scripts/eo_status_audit` and `scripts/eo_tooling_audit` launchers in kanon's
+top-level `scripts/`, with their implementation in this project's `audits/`.
+Kanon's tests and CI exercise that implementation. The audits read kanon's
+registers and run anoieu's policy checker through the local launcher.
+`roles.md` records these responsibilities; `laws.md` and `vision.md` reference
+the report card. These are documented interfaces of a maintained child project.
 
 **For the report card:** assemble, per tool and at a recorded version, the evidence a
 paragraph would rest on; write the paragraph; and re-grade each round. **What it

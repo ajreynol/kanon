@@ -566,10 +566,10 @@ Nothing here sends anything.
 
 ### Who may address whom
 
-**A child project is addressed through its parent.** A child has no users,
-nothing depends on it, and it may be retired at any moment, so it opens no
-topics and answers none: correspondence with a thing that can vanish next week
-creates an obligation nobody agreed to carry. The one exception is the
+**A child project is addressed through its parent.** A child may have users,
+shared deliverables and assigned roles; its parent carries its cross-repository
+correspondence and commitments. It opens no separate topics and answers through
+the parent's channel. The one exception to addressing through the parent is the
 repository keeping this policy, which is the only tool positioned to ask a
 child to do something *as a child* — audit a proposal, produce a verdict,
 retire.
@@ -604,16 +604,15 @@ drafted here for a person to carry; their tree is read and never written to.
 ## Child projects
 
 A **child project** (also *research project*) is `tools/X/`, where `X` names a
-**potential tool** — an artifact that might one day be worth building,
-investigated by writing it down first. It reads the ecosystem, writes only
-inside its own directory, and is not part of what the repository ships.
+project with its own purpose and charter, housed in a parent repository on that
+parent's footing. It may investigate a potential tool or maintain a working
+tool, dataset, report or other artifact useful across the ecosystem. Its work
+may be part of what the parent ships.
 
 It is *not* a branch, an experiment directory, or a place to park unfinished
-work on the parent tool. It is for work whose subject is **outside** the
-parent: a question about the language, the ecosystem, or a neighbouring
-artifact, which the parent is well positioned to ask because of what building
-it taught, and badly positioned to answer in its own source tree because the
-answer would be read as the tool's position.
+work on the parent tool. Its distinct scope and ownership explain why it has a
+charter of its own; neither its usefulness nor its audience is limited to the
+parent.
 
 **1. A human starts one, and a human ends one.** No agent, script or workflow
 creates `tools/X/` on its own initiative or promotes a directory of notes into
@@ -621,12 +620,13 @@ one: a child is a claim on attention and a name in a shared namespace, both
 cheap to spend and expensive to withdraw. Everything *inside* one, once
 started, may be written by whoever is doing the work.
 
-**2. It is an island, and the island is read-only.** It reads whatever it likes
-and writes only inside its own directory. It imports nothing from the parent
-and the parent imports nothing from it: not on the import path, not in the test
-suite, not in CI. Deleting it is the test — if removing `tools/X/` changes what
-the tool does or what CI says, the coupling is a defect to remove rather than
-document.
+**2. Its boundaries are explicit; isolation is optional.** A child may read
+shared data, import parent code, provide code or artifacts to the parent and
+other projects, and participate in the parent's tests and CI. Its README names
+the shared entry points, dependencies and outputs that others rely on, and who
+maintains them. Changes outside its directory follow the containing
+repository's ordinary maintenance rules. Removing a child means handling those
+dependencies and commitments, not assuming that deletion changes nothing.
 
 **3. Its parent chooses whether to advertise it; the default is advertised.**
 When the parent opts out there is no entry in the README, no row in the
@@ -651,67 +651,77 @@ decided.
 **5. It carries a charter, and the charter names what it will not do.** The
 child's README states, before anything else: the question it is trying to
 answer, the goals in order, the **wishue** if there is one, and — the part that
-does the work — an explicit list of what is *out of scope*. A child with no
-stated boundary expands until it is a second tool, at which point it is neither
-research nor a tool. Changing the charter's scope is a decision for a human. A
+does the work — an explicit list of what is *out of scope*. Without a stated
+boundary, readers cannot tell which work the child is responsible for.
+Changing the charter's scope is a decision for a human. A
 **wishue** is the goal you would take if the work went unusually well and are
 not committing to.
 
-**6. It is additive, never authoritative.** A child may produce an account of
-something that already has one, and that is often the point: two independent
+**6. An independent account does not confer authority.** A child may produce
+an account of something that already has one, and that is often the point: two independent
 descriptions of the same artifact disagree exactly where the artifact is
 genuinely unclear, and the disagreement is the finding. But the existing
-account **remains the authority**, and the child says so on its own front page.
+account **remains the authority** unless a person explicitly assigns that
+responsibility to the child. The child's front page names the authority and
+any assigned role.
 *Authority* means it governs, not that it is presumed correct — a child that
 resolves every disagreement in the incumbent's favour has become a paraphrase.
 
-**7. Nothing leaves the island by machine.** Anything a child wants to say to
-the project that owns its subject goes through the parent's ordinary reporting
+**7. Cross-repository feedback goes through the parent.** Anything a child wants
+to say to the project that owns its subject goes through the parent's ordinary reporting
 discipline — no separate channel and no lighter standard. **That discipline is
 both routes and not only the findings one**: a defect with a path and a line
 number travels the reporting workflow, and anything without one is a topic in
 the parent's discussion file, in the parent's voice. What it may do on its
 own is accumulate a **ledger** of candidate feedback inside its own directory;
-a person decides whether any of it is carried anywhere.
+a person decides whether any of it is carried anywhere. Shared code, data and
+reports can be consumed through their documented interfaces; using them does
+not authorize sending feedback or changing another repository.
 
-**8. It builds on what the parent learned, and says where.** The reason to run
-a child inside a working tool's repository is that the tool has *evidence*:
-cases it ran, behaviours it verified, places the documentation and the
-implementation disagreed. A child that does not use it should be its own
-repository; one that does must cite it, so a reader can tell what was checked
-from what was reasoned.
+**8. It explains why the parent is its home.** The parent may provide evidence,
+shared infrastructure, related expertise or custody of an assigned role. The
+charter says which. Cite the evidence the child uses, so a reader can tell what
+was checked from what was reasoned. Work useful beyond the parent can remain a
+child when that is a suitable home.
 
-**9. It ends with a verdict.** Three endings, and a person picks: it
+**9. When it ends, it ends with a verdict.** A maintained child may continue
+delivering useful work without graduating. Three endings, and a person picks: it
 **graduates** into its own repository, it is **folded** into the parent, or it
 is **retired in place** with a line saying what was learned and why it stopped.
 What is not an ending is going quiet — a directory that has not moved in a long
 time is a claim nobody is standing behind, and the honest form of that is a
 retirement note.
 
-**10. A child that has earned its keep says so, and names what it broke.** A
-child may deliver long before anybody is ready to pick one of rule 9's endings.
-Then its README states **what it delivered**, **which of the rules above have
-stopped being true of it**, and **that the promotion decision is open, and with
-whom**. A named exception is a decision somebody can defend; an unnamed one is
-drift. **The rules a child has to break in order to be useful are the evidence
-that it is no longer research.**
+**10. A child that delivers says what it delivers and for whom.** Its README
+records the artifacts, users or consumers, and maintenance responsibility.
+Shared usefulness, assigned roles and integration with the parent are ordinary
+child-project work. They require neither an exception nor promotion to a
+separate repository. If graduation is proposed, say why and who decides.
 
 **11. The child's directory is its layout root.** Apply [the layout](#the-layout)
 with `tools/X/` as the root: its charter and front page are `tools/X/README.md`,
-its documents go in `tools/X/docs/`, its commands and helpers in
-`tools/X/scripts/`, its assistant workflows in `tools/X/prompts/`, and its test
-evidence in `tools/X/test/` or `tools/X/tests/`. Keep its documentation index inside that root.
-**The discussion row is the one row a child does not take**, because that row
-names a footing a child does not have: by rule 7 above it opens no topics and
-answers none, so a `tools/X/docs/discussion.md` would read as a channel to every
-visitor and be one to nobody. What a child keeps instead is rule 7's **ledger**,
-and its name is the child's own — `docs/upstream-questions.md` is one in use.
+its documents go in `tools/X/docs/`, and its test evidence in `tools/X/test/`
+or `tools/X/tests/`. Keep its documentation index inside that root.
+
+**Keep `scripts/` and `prompts/` at the repository root.** Commands, command
+helpers and assistant workflows for a child should use the parent's top-level
+`scripts/` and `prompts/`, rather than creating `tools/X/scripts/` or
+`tools/X/prompts/`. The implementation stays in the child's named tool or feature
+directories; a top-level launcher can call it. For example,
+[`stathmos`](../tools/stathmos/README.md) owns the implementation in
+`tools/stathmos/audits/`, while `scripts/eo_status_audit` and
+`scripts/eo_tooling_audit` provide the public commands. This placement is
+recommended, not a new CI requirement.
+
+**Use the parent's discussion channel.** A child does not keep a separate
+`tools/X/docs/discussion.md`. It may keep the **ledger** described above,
+whose name is the child's own — `docs/upstream-questions.md` is one in use.
 Nothing mechanical decides this either way: the checker reads the repository
 root's discussion file, so a child's is neither required to carry the gate nor
 refused for lacking one.
 The [tool and feature directory recommendation](#tool-and-feature-directories)
 applies there too. Create only directories the child uses; its charter and
-isolation rules still apply.
+documented boundaries still apply.
 
 ## What a member is asked for
 
@@ -1156,5 +1166,4 @@ The policy is written to be copied. What another repository has to decide:
 | what the ending states are | graduate, fold in, retire in place (rule 9) |
 
 Replace the rows that name documents with your own equivalents, keep the rules,
-and keep the names. A repository that adopts this and then advertises its child
-projects has adopted the directory layout and none of the policy.
+and keep the names.

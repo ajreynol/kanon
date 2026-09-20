@@ -341,8 +341,7 @@ month rather than a statement of what the work is for.
 **Owns:** [`tools/stathmos/docs/report-card.md`](../tools/stathmos/docs/report-card.md),
 and the evidence and protocol pages beside it.
 
-> **A child project holding a role is not an island, and the exception is
-> deliberate**: the report card is shared work maintained by this child project.
+> **The report card is shared work maintained by this child project.**
 > Being housed with the president does not make its assessments independent.
 
 ### R37 — ecosystem status auditing
@@ -485,8 +484,7 @@ ecosystem's mission says no tool should hold what another tool could. Every one
 of the seven is a candidate to hand off, and `R32` and `R34` move with the
 office by law whether anybody proposes it or not.
 
-**Four sections are empty** — a child project usually has no users and owes
-nobody an artifact, so that is the expected state rather than an omission.
-**`stathmos` is the exception and says so**, holding `R30` from its first day,
-which makes it not an island for a reason written beside the role. The rows
-worth reading are the longest, the empty ones, and that one.
+**An empty section records no assigned role.** A child may still deliver useful
+work without one, and may hold shared responsibilities when assigned them.
+`stathmos` holds `R30` and `R37`; its charter describes the shared work and
+interfaces it maintains.
