@@ -9,7 +9,7 @@ that have been demoted.
 
 | document | what it settles |
 | --- | --- |
-| [`policy.md`](policy.md) | how a repository is arranged, what its front page must say, and what joining costs. Decidable from a tree, and checked by a program |
+| [`policy.md`](policy.md) | repository layout, ownership, maintenance, child projects and membership requirements |
 | [`vision.md`](vision.md) | the five tenets this development aims at, the argument for them, and what follows for anything that leaves the repository. Argued, and never checked |
 | [`laws.md`](laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
 | [`glossary.md`](glossary.md) | the authoritative name register and alphabetized dictionary of eo's terms, maintained by the president |

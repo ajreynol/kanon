@@ -351,6 +351,23 @@ Anoieu's checker at `0b6ec54` still described shared dependencies as island
 exceptions. Stathmos retained its explicit statement that it is not an island,
 with the interfaces documented; the policy no longer treats them as exceptions.
 
+### Policy statements precede checker coverage — 2026-09-20
+
+At the maintainer's direction, `policy.md` now opens with member expectations
+and the repository layout. Document-maintenance rules have their own section;
+checker coverage and limitations sit at the end. Inline check-status labels
+and the enforcement column in the member table were removed so readers can
+find the policies without first interpreting the checker. Required CI and
+advisory recommendations retain their standing. Policies apply even where
+verification needs a person.
+
+Two dated checker observations were moved out of the joining and prompt rules:
+on 2026-09-18, the minimal two-file joining example passed anoieu `5fa91be` and
+`06bd787` at contract 1 with 14 skips and a minor naming finding; on 2026-09-19,
+all ten policy-bound repositories with a discussion file carried the
+misaddressed-prompt notice, while the four without a channel skipped it. That
+adoption evidence did not itself authorize making the notice check fatal.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to
