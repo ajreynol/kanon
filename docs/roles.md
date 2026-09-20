@@ -211,7 +211,7 @@ and `scripts/ecosystem/checkouts.json`.
 ### R32 — the laws of the office
 
 **Held by:** `kanon`
-**Role:** the candidate laws — what footings exist, what a member owes, and
+**Role:** the laws — what footings exist, what a member owes, and
 what the office owes. [LAW 7](laws.md#law-7--maintaining-and-amending-the-laws)
 currently assigns this work to the president, so the role moves with the office.
 That assignment may change; it is not a permanent condition of the presidency.

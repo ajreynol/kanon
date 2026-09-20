@@ -11,7 +11,7 @@ kept for consideration.
 | --- | --- |
 | [`policy.md`](policy.md) | repository layout, ownership, maintenance, child projects and membership requirements |
 | [`vision.md`](vision.md) | the five tenets this development aims at, the argument for them, and what follows for anything that leaves the repository. Argued, and never checked |
-| [`laws.md`](laws.md) | the candidate laws — the footings, the presidency, and what the office owes |
+| [`laws.md`](laws.md) | the laws — the footings, the presidency, and what the office owes |
 | [`glossary.md`](glossary.md) | the authoritative name register and alphabetized dictionary of eo's terms, maintained by the president |
 
 ## The office, and this term's work

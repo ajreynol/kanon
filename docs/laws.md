@@ -1,6 +1,6 @@
-# The candidate laws
+# The laws
 
-Candidate laws, followed voluntarily. They describe the ecosystem's
+Laws, followed voluntarily. They describe the ecosystem's
 [footings][footing], the presidency and its obligations, and what we owe to projects
 outside the ecosystem. Programs can check recorded facts and policy compliance;
 passing those checks does not establish that these commitments have been met.

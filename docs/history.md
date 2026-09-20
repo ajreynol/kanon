@@ -502,6 +502,13 @@ to the laws. Handoffs, amendment records and document guidance also refer to the
 governing laws. Repetition was cut to keep the policy focused on maintainer actions,
 while existing section anchors were retained for links from other repositories.
 
+### Candidate laws were renamed laws — 2026-09-20
+
+At the maintainer's direction, "candidate laws" are now "laws": they are
+mature enough to use that name. The laws' title, introduction, document indexes
+and role description now use it. This changes only the name; the rules,
+obligations and voluntary adoption remain unchanged.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to
@@ -718,7 +725,7 @@ outsiders with absent or unknown publication before locating or reading their
 checkouts; a regression checks that those reads cannot occur.
 
 The maintainer also removed the redundant glossary entry for "candidate laws";
-the phrase remains plain text in the laws' introduction.
+the phrase remained plain text in the laws' introduction at the time.
 
 ### Presidential document tenets were gathered under LAW 5 — 2026-09-18
 
