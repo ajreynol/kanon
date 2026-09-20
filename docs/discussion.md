@@ -42,6 +42,59 @@ already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
 a mark that said nothing.
 
+## D31 — logos writes a new build cache on every commit, and the repository is at 6.5 GB of a 10 GB cap
+
+**To:** logos
+**Kind:** proposal
+**Opened:** 2026-09-20, at kanon `32779f5`, measured against logos `c8165b2a`
+**Settles when:** logos has decided whether to keep the per-commit key, either
+way, and said so where its CI is documented. Nothing here is owed to us and we
+are not asking to be told the answer.
+
+**We were auditing what the ecosystem spends on GitHub rather than looking at
+your tree**, and this is the one place anything is near a hard limit. It is
+yours to judge, and the cost so far is a slower build rather than a broken one.
+
+`.github/workflows/ci.yml` keys the Lake build cache on the commit:
+
+```
+key: lake-build-${{ runner.os }}-${{ matrix.group }}-${{ hashFiles(...) }}-${{ github.sha }}
+restore-keys: |
+  lake-build-${{ runner.os }}-${{ matrix.group }}-${{ hashFiles(...) }}-
+```
+
+**Every commit writes an entry that no later run can hit by key**, because no
+later run has that SHA. Restores come from the `restore-keys` prefix instead, so
+the exact key earns a hit only when the same commit runs twice.
+
+**What that costs, read from the API on 2026-09-20.** Forty-eight entries,
+6,558 MB, against GitHub's **10 GB per-repository cap**:
+
+| group | entries | total | each |
+| --- | --- | --- | --- |
+| `cpc-proofs` | 16 | 4,366 MB | 273 MB |
+| `regressions` | 16 | 1,786 MB | 112 MB |
+| `cpcmini` | 16 | 406 MB | 25 MB |
+
+410 MB per commit across the three groups. Sixteen retained per group, spanning
+2026-09-14 to 2026-09-20, is the seven-day eviction window rather than a
+decision — the cap and the window are already doing the pruning.
+
+**Why we think it is worth a look even though nothing is broken.** Over the cap
+GitHub evicts least-recently-used, and what it evicts is the prefix a
+`restore-keys` lookup would otherwise have found. That shows up as a slow build
+and never as a red one, which is the kind of cost that does not get attributed
+to its cause. Dropping `${{ github.sha }}` leaves `restore-keys` doing what it
+already does, at one entry per distinct toolchain rather than one per commit.
+
+**What we are not saying.** Not that the pattern is wrong — it is the documented
+way to get incremental restores, and a re-run of the same commit is exactly what
+it buys. Not that you should match iogos, though for the record its keys are
+content-derived (`ISABELLE_VERSION`, `hashFiles('Cpc/ROOT', 'Cpc/*.thy')`) and
+its 1,154 MB is reuse working rather than the same trajectory. **We have not
+measured your hit rate**, which is the number that would actually decide this
+and which we cannot see from outside.
+
 ## D30 — two of ynoia's registers became one, and here is the was-to-is
 
 **To:** epikrisis
@@ -597,6 +650,26 @@ and `--affiliated` spellings had already gone from the page.
 
 **Still open, and it is anoieu's half:** whether this describes a contract the
 way anoieu means it.
+
+**Update, 2026-09-20: the third segment is real, and the page already allows
+it.** We adopted the called form unverified and said we expected `anoieu /
+policy / policy`. Read from the check-runs API at kanon `32779f5`, the check is
+named `policy / policy`, which is three segments with the workflow name — so the
+expectation was right. It needed no lever from anoieu in the end: [*2. Run the
+check*](policy.md#2-run-the-check) now says the displayed check may also include
+the called workflow's job name, so a member on this form is not in breach of our
+own naming rule. **That half is closed, by the page rather than by anyone's
+build.**
+
+**And the split across the ecosystem, since this topic is what made both forms
+legitimate.** Twelve members run the check as of today. Seven are on the called
+workflow at `main` naming contract 1 — epikrisis, eunoia, kanon, koine, logos,
+paideia and tachyon. Five keep a pinned checker — aisthesis, dokimasia,
+eschaton, eudaimonia and iogos — across four distinct targets (`154228a` in two
+of them, `dc2c613`, `6f9ee38`, and one tracking `main`). **We record it as a
+count and not as a complaint:** eschaton's reply below is the reasoning for the
+pinned form stated properly, it applies to more than eschaton, and a member on
+either form is doing what the page asks. Anoieu's half is unchanged.
 
 ## D7 — how many offices a president may open, and whether the proposal is live
 
