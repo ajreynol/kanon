@@ -66,13 +66,13 @@ So: write it down, make the strongest case against it, and see which survives.
    reserves that for a person. kanon carries proposals in, because it is the
    only tool that may address a child project directly.
 
-5. **Which projects have a paper in them.** The ecosystem's vision recommends
-   that a repository with a result write it up for a human, and argues why. It
-   does not say which repositories have one, because that is
-   a judgement — so it is made here, against a stated standard, one entry per
-   tool, in [`docs/papers.md`](docs/papers.md). The commonest verdict is **no**, this
-   project returns it about itself first, and a repository's own stance on
-   publishing outranks anything on the page.
+5. **Which projects have a paper in them.** No shared document asks a
+   repository to write one — the recommendation that used to be in `policy.md`
+   was removed on 2026-09-16 and `vision.md` never carried it — so the question
+   is a judgement with nothing behind it but the argument, and it is made here
+   against a stated standard in [`docs/papers.md`](docs/papers.md). The
+   commonest verdict is **no**, this project returns it about itself first, and
+   a repository's own stance on publishing outranks anything on the page.
 
 6. **Wishue: what would settle it.** An argument that cannot be lost is not
    worth having. The account carries what would change our minds and one
@@ -89,7 +89,7 @@ The boundary matters more than the goals, so it is stated first.
   with the alternatives listed for form's sake.
 - **It does not report defects.** Where reading the ecosystem turned up something
   actually wrong in somebody's file, that is a finding: it leaves through
-  [`reporting-workflow.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md) with an id and a
+  [anoieu's reporting discipline](https://github.com/ajreynol/anoieu/blob/main/bug_db/reporting-policy.md) with an id and a
   state, and never through here. This project's output is argument.
 - **It does not speak for kanon or anoieu.** Both are participants in the
   argument. Hosting this project does not make its account neutral.
@@ -121,7 +121,8 @@ anybody who disagrees, which is the whole point of writing it and has not
 happened yet. It has reached no consumer and so has earned no place in
 [`docs/vision.md`](../../docs/vision.md) — with one qualification: of the seven projects it named, four —
 **euthyna**, **noesis**, **hermeneia** and **mimesis** — have since been started
-as child projects of eudaimonia. Whether that is this account's doing or
+as child projects: the first three in eudaimonia's tree, and mimesis there too
+until it moved to eunoia on 2026-09-19. Whether that is this account's doing or
 convergence is not something this project can establish about itself.
 `eo_init` now reads the president's glossary directly; it does not
 depend on ynoia's naming arguments.
@@ -137,11 +138,14 @@ assembled from it would be a position piece about how to arrange an ecosystem,
 written by the ecosystem, with nothing in it a reader could check. The account is
 worth reading and worth disagreeing with; neither of those makes it a result.
 
-Stated because [`../../docs/policy.md`](../../docs/policy.md) asks every child
-project to say whether a paper exists for it, what the plan is, or that there is
-nothing in it worth writing up. This is the third answer, and it is the
-commonest. [`docs/papers.md`](docs/papers.md) is where the same question is asked of every
-other tool.
+Stated because it used to be asked: [`policy.md`](../../docs/policy.md) had a
+rule that a child project says whether a paper exists for it, what the plan is,
+or that there is nothing in it worth writing up, and that rule went in the same
+2026-09-16 pass that removed the convention behind it. **The answer is kept
+anyway** — it is the third of the three, it is the commonest, and a page that
+drops its own verdict the moment nobody is checking has told you what the
+verdict was worth. [`docs/papers.md`](docs/papers.md) asks the same question of
+other tools.
 
 ## Layout
 

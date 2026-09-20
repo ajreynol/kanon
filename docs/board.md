@@ -13,8 +13,10 @@ reported: `(include "no-such-file.eo")` prints without a source location.
 **Status:** in progress — [anoieu's ledger](https://github.com/ajreynol/anoieu/blob/5835c6fdbe1a64afa4480f8e8b7f20b33255d7e7/docs/reports/reports.md#ethos--the-proof-checker-and-its-own-signatures),
 read 2026-09-18, closes `ethos-8` and two `ethos-9` paths on an accepted fix;
 this third path remains unreported. Landing is audited separately by anoieu.
-**Channel:** **findings** — through `prompts/check_anoieu ethos`, carried by
-a person.
+**Channel:** **findings** — through anoieu's reporting discipline, carried by
+a person. **There is no command here to run it**: `prompts/` was deleted from
+this tree on 2026-09-17, and the workflow that `prompts/check_anoieu` launched
+was retired in anoieu on 2026-09-19.
 **Next:** reproduce the missing-include diagnostic against a named ethos
 revision and decide whether to file it or withdraw the observation.
 **Prompt — `ethos`:** assess whether a missing-include diagnostic should carry
@@ -108,8 +110,10 @@ that declares `Int`, recorded as fixed upstream three months ago on a change
 that never landed.
 **Entities:** `cvc5`, `logos`, `anoieu`
 **Status:** waiting on `cvc5` — reopened after the landing audit caught it.
-**Channel:** **findings** — `cvc5-1` in the ledger, carried by
-`prompts/check_anoieu cvc5`. `cvc5` has no discussion file and has joined
+**Channel:** **findings** — `cvc5-1` in
+[anoieu's ledger](https://github.com/ajreynol/anoieu/blob/main/bug_db/bugs.md),
+carried by a person: the `prompts/check_anoieu` launcher this line used to name
+no longer exists in either tree. `cvc5` has no discussion file and has joined
 nothing; delivery upstream is a person's act.
 **Next:** get the two lines fixed on a named branch of `cvc5`, or a statement
 that the declaration is intended and the finding is wrong. **Prompt — `cvc5`:**
@@ -301,7 +305,9 @@ reported-and-never-fatal.
 **Status:** waiting on the maintainer — [the policy](policy.md) says the check
 joins the fatal gate when every member has adopted or declined it, and
 `anoieu-D33` reports the condition met: three repositories carry the paragraph,
-nobody declined, and it has fired twice in opposite directions.
+nobody declined, and it has fired twice in opposite directions. **Measured wider
+on 2026-09-19** and recorded in the policy: all ten repositories held to the
+policy that keep a discussion file pass, and the four that keep none skip.
 **Channel:** **internal**; anoieu implements whatever is decided.
 **Next:** decide, or record that the condition being met is not sufficient.
 **Prompt — `kanon`:** the argument against acting on this is anoieu's own and it
@@ -309,6 +315,26 @@ is good: a safety rule promoted on an agent's reading is the wrong way round,
 and the repositories a fatal gate would fail are the ones whose builds turn red.
 Note also that a joining tree has no discussion file, so the gate would not
 reach a new member until it writes one.
+**HUMAN FEEDBACK:**
+
+## B43 — decide whether the ownership-link requirement is checked everywhere
+
+**Task:** decide whether *always link ownership and human-maintainer statements
+to `policy.md`* becomes a check every member is held to, or stays a requirement
+met by reading.
+**Entities:** `kanon`, `anoieu`
+**Status:** waiting on the maintainer — anoieu fixed its own check on
+2026-09-19 (`anoieu-D39`) and runs it against its tree alone, because widening
+an existing requirement to more repositories is an added obligation and
+therefore a **policy contract 2** candidate rather than a fix.
+**Channel:** **internal**; anoieu implements whatever is decided.
+**Next:** decide, or record that home-only is the deliberate state. Nothing
+waits on it: anoieu said an answer either way is complete.
+**Prompt — `kanon`:** the requirement is already written and already met by
+every member we have read; what a check adds is that a member learns from a red
+build rather than from a reader. The cost is that it opens contract 2, which
+nothing else currently needs, and a contract is a promise about what may turn a
+build red without anybody committing.
 **HUMAN FEEDBACK:**
 
 ---
@@ -338,7 +364,7 @@ Use these fields in order:
 
 **Prompts are drafts.** A person carries anything outside this repository.
 Use `discussion` where the recipient keeps a discussion file, `findings` for
-defects through [anoieu's reporting workflow](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-workflow.md),
+defects through [anoieu's reporting workflow](https://github.com/ajreynol/anoieu/blob/256939e1fb03/docs/reports/reporting-workflow.md),
 and `upstream, by a person` for other external messages. Check the recipient's
 tree; child projects are reached through their parent. `internal` work stays
 here.

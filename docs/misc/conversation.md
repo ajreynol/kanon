@@ -15,6 +15,13 @@ which stays outside this repository and holds the whole record including the
 tool traffic. Times are local (CDT). Speakers are **Andrew**, the maintainer,
 and **kanon**, the agent working in this checkout.
 
+**Four links in the dialogue below no longer resolve** — `tools/ynoia/names.md`,
+`docs/coherence.md`, `docs/interface.md` and `docs/instructions.md`, all of them
+pages this repository has since deleted or moved. **They are left exactly as
+they were said.** A transcript that is quietly repaired stops being a transcript,
+and what those addresses were on the day is part of what the session shows.
+Anything still live is reachable from [`../README.md`](../README.md).
+
 
 ---
 

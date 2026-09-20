@@ -38,12 +38,13 @@ transfer completed on 2026-09-15, and **epikrisis**, promoted out of eudaimonia
 — both members in
 [`ecosystem.json`](../../../scripts/ecosystem/ecosystem.json) — and **noesis**,
 **hermeneia** and **mimesis**, each started as a child project in eudaimonia's
-tree and documented at its source. A page that keeps its graduates is a page
+tree and documented at its source — mimesis moved to eunoia's tree on
+2026-09-19 and is documented there. A page that keeps its graduates is a page
 whose first entries are all finished work, which is exactly what the first two
 entries here had become before that sweep.
 
 **`iogos` left on 2026-09-18, and it had been gone a while.** It is a
-repository — an [associate](../../../docs/glossary.md#i), vetted
+repository — an [associate](../../../docs/glossary.md#associate), vetted
 2026-09-17, carrying its own maintenance marker — so the rule above had already
 decided this page should not describe it as work nobody has started. **What its
 entry was carrying is the fork**, and that is why the removal is worth a
@@ -205,8 +206,10 @@ person's, and this holds the page, watches compliance, and proposes.
 **State:** `named` — suggested 2026-09-02, the day the laws were first written
 down. Not audited; there is no proposal for it yet.
 **Settles:** nothing in [`why-eunoia.md`](why-eunoia.md). What it settles is a
-defect `laws.md` states about itself in its first paragraph: **the president
-writes the record and also the rules the record is kept under.** That is the
+defect `laws.md` still states about itself, in its opening section as read on
+2026-09-19: the president maintains the laws under `LAW 7`, and **they are
+written by the people they govern.** Same defect, and the page no longer puts it
+in the sharper words this entry used to quote. That is the
 whole of the case for it, and the page makes the case better than this entry
 does.
 **Costs:** little today, because nothing depends on `laws.md` yet. **The cost is
@@ -287,7 +290,7 @@ every one costs a person's judgement before it can be filed — and the generate
 checker is less independent than the argument wants, since it reads the same
 signature through the same compiler.
 **Before it:** `nothing`. It can start without a decision being made first.
-**Today:** the baseline, [`../../docs/fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md) —
+**Today:** the baseline, [`anoieu_fuzz/fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_fuzz/fuzzing.md) —
 grammar-directed generation, a mutated seed corpus, three verdict-level oracles,
 and no instrumentation anywhere. It is deliberately the floor, which is what
 makes *research-quality* a measurable claim rather than an adjective.

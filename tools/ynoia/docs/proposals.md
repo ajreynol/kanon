@@ -327,10 +327,42 @@ whose tree it lives in
 the inventory and the `*_eo` scripts move there in one commit, with anoieu
 becoming a consumer of them → every member's CI pin changes once, at a moment
 somebody chose
-**Decided:** **open.** Raised by the maintainer on 2026-08-31, who is inclined to
-do it, and **deliberately not actionable until they raise it again**. Audited
-here so that the argument exists before the decision does, which is the only
-thing this page is for.
+**Decided:** **done, and not as proposed.** Raised by the maintainer on
+2026-08-31; the transfer completed on 2026-09-15. Audited here before the
+decision existed, which is the only thing this page is for — and the divergence
+between what was proposed and what happened is recorded below rather than
+smoothed away.
+
+### What happened, and where it diverged
+
+*Amended 2026-09-19, reading the register and the role assignments.* **The
+audit's four pieces did not move to one place. They went to three**, and the
+split is the interesting part:
+
+| the piece | where the audit put it | where it is |
+| --- | --- | --- |
+| the policy, the vision, the laws | kanon | **kanon**, as proposed |
+| the inventory of who is in | kanon | **kanon**, as proposed — `scripts/ecosystem/ecosystem.json` |
+| the checker that decides the policy | kanon | **anoieu**, unmoved — `policy_check/`, held under `LAW 3.3` |
+| the scripts that start, join and install a tool | kanon | **koine**, under roles `R35` and `R16` |
+
+**The verdict survives the divergence and the argument for it does not.** *The
+judge stops being the prosecutor* was the whole of the case, and it is only half
+true: the party that writes the rule is no longer the party that files findings
+against you, but the party that **decides** the rule mechanically still is.
+anoieu publishes the policy contract, and kanon asks for contract 1 like anybody
+else. That is a smaller separation than this audit argued for, and nobody has
+argued it is the right one — it is what fell out of moving the documents first.
+
+**The `If approved` line predicted a cost that was not paid.** *Every member's
+CI pin changes once* did not happen, because the checker did not move: a member
+pinning anoieu on 2026-08-31 is still pinning anoieu. The move was therefore
+cheaper for members than the audit expected, and the reason is exactly the
+piece that stayed behind.
+
+**What this audit got wrong is worth keeping.** It counted the question as *whose
+tree does governance live in* and the answer turned out to be *which of
+governance's four pieces*, which is not a question it asked.
 
 ### The names
 
@@ -377,10 +409,16 @@ Written twice means the shared shape has been discovered. Written once but
 dependency is already real, and the only open question is whose release surface
 it rides on.
 
-*How many consumers, really?* Four today — anoieu, eudaimonia, dokimasia, koine —
-and every future member, by construction: joining *is* running this checker. The
-count that matters here is not how many use it but how many pin **anoieu** to get
-it, which is the same four, and each new member makes the move more expensive.
+*How many consumers, really?* Four when this was written — anoieu, eudaimonia,
+dokimasia, koine — and every future member, by construction: joining *is*
+running this checker. The count that matters here is not how many use it but how
+many reach into **anoieu** to get it, and each new member makes the move more
+expensive. *Re-measured 2026-09-19:* **eleven**, every repository held to the
+policy but anoieu itself. Four pin a commit — aisthesis and eschaton at
+`154228a`, eudaimonia at `dc2c613`, dokimasia through its `deps.lock` — and
+seven call anoieu's shared workflow at `main` asking for policy contract 1. The
+prediction held, and the checker never moved, so the expense it was pricing is
+still unpaid rather than spent.
 
 *What does a repository buy that `tools/` does not?* Three things, and the first
 is the whole proposal. **The judge stops being the prosecutor.** Then: a release
@@ -403,7 +441,7 @@ transfer asks two more:
 
 5. **What does the losing repository keep?** Here: the analyzer, the fuzzer, the
    findings ledger, and the reporting workflow. The line to argue is
-   [`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md), which is a
+   [`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/bug_db/reporting-policy.md), which is a
    position shared with dokimasia about what may be published — governance by
    any reading, and also the document anoieu most needs to own, since it is the
    one constraining anoieu's own behaviour. **Recommendation: it stays**, and the
@@ -575,6 +613,25 @@ In dokimasia: `scripts/check_dokimasia`, `scripts/process_dokimasia`, and their
 `workflows.md`. Theirs was written by reading ours, so the *differences* are the
 interesting part — they carry a fourth triage label, `answered`, for a row that
 is a question and names no branch, which ours cannot express.
+
+### What it turned into
+
+*Amended 2026-09-19.* **The repository exists and holds something other than
+what this audit described.** The loop above — a script run in the project a
+finding is about, a script run at home once it has replied, prompts in a
+document, a drift check, a postmortem with one block per run — **was retired at
+both ends**: anoieu removed its half on 2026-09-19 and dokimasia raised the
+same retirement as their `D17`. What koine holds instead is
+`bug_db_manager`, the programs an owner invokes to maintain its own database of
+findings, plus the shared command set under roles `R35` and `R16`. Three
+customers pin it.
+
+**The verdict `needed` was right and the artifact was not.** *One implementation
+instead of one per member* is what happened; *the reporting loop* is not the
+thing it turned out to be shared about, because the loop itself did not survive.
+The audit's own open question — *how a consumer fetches and calls the shared
+check is the owner's to design* — is why it could be wrong about the artifact
+and still right about the repository.
 
 ### Still open, and approved anyway
 

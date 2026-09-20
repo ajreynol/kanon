@@ -41,8 +41,13 @@ than an opinion. The immediate use is deciding what to merge or delete; the
 lasting one is that **nobody currently knows which pages are load-bearing**, and
 that is a strange thing not to know about a project whose central policy is
 about documents.
-**Where:** anoieu keeps the documentation policy and has the most documents, so
-the subject is here. It should work on any member's tree.
+**Where:** **anoieu**, which has the most documents and keeps the only program
+that reads a tree's documents at all. *The original reason for placing it there
+has expired:* this page said anoieu kept the documentation policy, and that
+moved to kanon's [`policy.md`](../../../docs/policy.md) on 2026-09-15 — so the
+rule and the instrument are now in different trees, which is an argument for
+placing it wherever it will actually be written rather than for moving it. It
+should work on any member's tree.
 **State:** **open.** Requested by the maintainer, 2026-09-02, on noticing that
 `docs/` had grown to 30 files and roughly 18,700 lines.
 
@@ -59,7 +64,7 @@ the subject is here. It should work on any member's tree.
   outbound prompt, or pinned by somebody else's CI. Those cannot be changed
   unilaterally at all.
 - **Age against the tree it describes**, which
-  [`scripts/doc_currency.py`](https://github.com/ajreynol/anoieu/blob/main/scripts/doc_currency.py) already measures separately and
+  [`policy_check/currency.py`](https://github.com/ajreynol/anoieu/blob/main/policy_check/currency.py) already measures separately and
   which this should read rather than recompute.
 
 ### The question underneath, which is the interesting one
@@ -92,7 +97,11 @@ specific claim to test: **work that happened in a short span has changed little,
 so removing it is cheap — and the window closes.** If that holds, recency is
 evidence and not merely context, and an ecosystem can use it to correct itself
 without arguing every case on its merits.
-**Where:** the interface protocols are anoieu's, so the subject is here.
+**Where:** **anoieu**, on the original reasoning that the interface protocols
+were theirs. *That reasoning has expired twice over:* the `PROTO-n` register was
+retired outright on 2026-09-18, and this project no longer sits in anoieu's tree,
+so *here* in the sentence this replaces meant somewhere else. The subject is a
+question about evidence rather than about a page, and its home is open.
 **State:** **open.** Raised by the maintainer, 2026-09-02, out of a live case.
 
 ### The case that raised it
@@ -437,10 +446,11 @@ where it now is.
 
 **What:** something that reads what each tool in the ecosystem depends on, and
 asks of each dependency whether it is needed.
-**Where:** with the policy checker — `tools/` in anoieu today, and the governance
-repository if [`P2`](proposals.md) is ever approved, because *what a member may
-depend on* is a rule about how a repository is arranged rather than a fact about
-a signature.
+**Where:** with the policy checker — `policy_check/` in anoieu, which is where
+it stayed when governance moved: [`P2`](proposals.md#p2--the-ecosystems-governance-out-of-the-analyzer)
+happened on 2026-09-15 and the checker was the one piece that did not travel
+with it. So *what a member may depend on* is a rule kanon would write and anoieu
+would decide, which is the split `P2`'s amendment records.
 **State:** **open.** Raised by the maintainer, 2026-08-31.
 
 ### The want

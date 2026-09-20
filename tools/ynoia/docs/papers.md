@@ -1,12 +1,34 @@
 # Which projects are worth a paper
 
-**One entry per tool in the ecosystem, saying whether the work in it has a paper
-in it.** [`../../../docs/vision.md`](../../../docs/vision.md) recommends that a
-repository with a result write it up — eight to twenty pages, addressed to a
-human who will never clone the tree — and argues why. It does not say which
-repositories have one, and the repository policy asks for nothing here at all.
-This page is that judgement, and it is a judgement, which is why it is here
-rather than in either of them.
+**Whether the work in a tool has a paper in it, one entry at a time.** This page
+is a judgement, which is why it is here rather than in a shared document.
+
+**The convention it was written against is in no shared page, and has not been
+since 2026-09-16.** `policy.md` used to carry a *Papers* section — *a repository
+with a result writes it up, in `report/`, encouraged and never required*, eight
+to twenty pages, addressed to a human who will never clone the tree — and it was
+removed with a great deal else in a simplification pass that morning
+([`d892fa6`](https://github.com/ajreynol/kanon/commit/d892fa6)). `vision.md`
+never carried it, and this page said for three days that it did. **Neither
+document mentions a paper or `report/` today**, read on 2026-09-19; anoieu asked
+in their `D38` whether the convention should come back and the answer was no.
+
+**So this page stands on its own argument**, which is the honest position and
+was always the load-bearing one: the [standard](#the-standard) below is stated
+here and the verdicts are argued here. Nothing in a shared document asks any
+repository for a paper, asks a child project to state a stance on one, or would
+be violated by ignoring this page entirely.
+
+**Coverage, stated because the old opening claimed more than the page has.** As
+of 2026-09-19 the register holds twelve repositories under the policy and this
+page judges five of them — `dokimasia`, `logos`, `anoieu`, `eudaimonia` and
+`koine` — plus five child projects: `ethos-eoc`, `sapheneia`, `euthyna`, `ynoia`
+and `workflow-launcher`. **Seven members have no entry**: `aisthesis`,
+`epikrisis`, `eschaton`, `eunoia`, `kanon`, `paideia` and `tachyon`. All but
+`eunoia` existed when the page was written on 2026-09-18, so this is a gap
+somebody left rather than one the calendar opened, and it is a gap rather than
+a set of silent verdicts. The two deliberate omissions are
+[below](#the-ones-this-page-does-not-judge).
 
 **The artifact is a *paper*.** The word matters because a neighbouring one is
 already in use: this ecosystem's *reports* are the findings ledgers, which are
@@ -129,17 +151,21 @@ is closer than it looks.
 
 ## anoieu — a checker's silence, read as a defect
 
-**Stance:** `unstated`. It kept the page that asks for one until governance
-moved to kanon on 2026-09-15, which makes the omission worse rather than
-excusable.
+**Stance:** `unstated`, and **nothing asks it to state one.** The rule that a
+repository declares a publishing stance was removed from `policy.md` on
+2026-09-16, so an earlier version of this line calling the omission *worse
+rather than excusable* was grading anoieu against a page that no longer
+existed. Corrected 2026-09-19.
 **Verdict:** **write it.**
 **The paper:** what can be found by reading a proof calculus's signature, its
 semantics and its embedding against one another — three artifacts with three
 owners that nothing else compares — and what class of defect that catches which
 running the checker does not.
 **Why:** it has the material and not the frame. One round of findings was carried
-to a project that answered, the verdicts are recorded, and the postmortem of that
-round is more honest than most published evaluations. What is missing is the
+to a project that answered, the verdicts are recorded, and the postmortem of
+that round was more honest than most published evaluations — it was retired with
+the workflow on 2026-09-19, and the last revision holding it is
+[`256939e1fb03`](https://github.com/ajreynol/anoieu/blob/256939e1fb03/docs/reports/postmortem.md). What is missing is the
 sentence a paper is built on: what *kind* of defect lives in the gap between a
 signature and its semantics, and why a checker cannot report it. Until that is
 written the paper is a tool description with a findings table, which is the shape

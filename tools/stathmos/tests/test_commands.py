@@ -245,11 +245,24 @@ class Verification(unittest.TestCase):
                 "## D3 — two of us\n\n**To:** koine, kanon\n\n"
                 "## D4 — not for us\n\n**To:** koine\n\n"
                 "## D5 — somebody else entirely\n\n**To:** kanonikos\n")
-            self.assertEqual(ecosystem.topics_for(temp), "3 for us")
+            self.assertEqual(ecosystem.topics_for(temp, "koine"), "3 for us")
             (docs / "discussion.md").write_text("## D1 — theirs\n\n**To:** koine\n")
-            self.assertEqual(ecosystem.topics_for(temp), "yes")
+            self.assertEqual(ecosystem.topics_for(temp, "koine"), "yes")
             (docs / "discussion.md").unlink()
-            self.assertEqual(ecosystem.topics_for(temp), "none")
+            self.assertEqual(ecosystem.topics_for(temp, "koine"), "none")
+
+    def test_our_own_broadcasts_are_not_topics_owed_to_us(self):
+        # A global announcement enumerates every member, and this office is a
+        # member, so our own outbox named us twice and the summary reported two
+        # topics owed to us that nobody could act on.
+        with tempfile.TemporaryDirectory() as temp:
+            docs = Path(temp) / "docs"
+            docs.mkdir()
+            (docs / "discussion.md").write_text(
+                "## D1 — a notice to every member\n\n**To:** anoieu, kanon, koine\n\n"
+                "## D2 — another\n\n**To:** kanon, tachyon\n")
+            self.assertEqual(ecosystem.topics_for(temp, "kanon"), "yes")
+            self.assertEqual(ecosystem.topics_for(temp, "koine"), "2 for us")
 
     def associate_seen_as(self, pages, **readers):
         """`--check --online` over one recorded associate, with its remote
@@ -390,7 +403,7 @@ class Verification(unittest.TestCase):
                 check.assert_not_called()
                 if eligible:
                     locate.assert_called_once_with("example")
-                    topics.assert_called_once_with(temp)
+                    topics.assert_called_once_with(temp, "example")
                     self.assertIn("not held", out.getvalue())
                 else:
                     for reader in (locate, topics):

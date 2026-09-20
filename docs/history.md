@@ -452,8 +452,11 @@ reach the same provision.
 
 The inventory and glossary record anakrisis and empeiria under paideia after
 their move from dokimasia, add tachyon's elaphros, and describe aisthesis's three
-documents. Paideia's front page calls it an associate, but its maintenance page
-explicitly leaves the marker unrecorded; its candidate listing is unchanged.
+documents. **As read that day**, paideia's front page called it an associate
+while its maintenance page left the marker unrecorded, and its candidate listing
+was unchanged; paideia declared membership later the same afternoon and the
+register was corrected on 2026-09-19, below. Paideia reported the staleness
+itself, which is what the shared policy asks of anybody who notices.
 Completion also removes the inventory's remaining claim that association is
 ours to confer and that the audit reads an affiliating note. It reads the
 repository's own maintenance marker. The earlier inventory history is traced
@@ -656,6 +659,59 @@ for each repository. The board's maintenance advice was condensed to ordering,
 stable ids, the active-item cap, fields, delivery and closure. Repeated
 explanations and the stale handoff example were removed.
 
+### A housekeeping pass repaired fourteen dead links, one audit defect and ynoia — 2026-09-19
+
+**The audit was counting our own outbox.** `eo_status_audit` reported *26 topics
+are owed to us* and the answer is 24. A global announcement enumerates every
+member by name and this office is a member, so `D20` and `D21` each named kanon
+in their own `To:` line and came back as topics we owed ourselves.
+`topics_for` now takes the tool whose file it is reading and never counts our
+own; the number in the summary line is the closest thing this command has to a
+to-do list, and it was inflated by two. A regression test in
+`tools/stathmos/tests/test_commands.py` holds it.
+
+**Fourteen dead links into anoieu, across eight files, and they were findable
+only by reading.** anoieu moved every document beside the thing it describes on
+2026-09-19 and published the was-to-is table in their `D41`; eleven links were
+repaired by rewriting the path and three by pinning `256939e1fb03`, the last
+revision holding the retired reporting pages. **Four more were deliberately not
+repaired**: they are inside `docs/misc/conversation.md`, a verbatim transcript,
+and the page now says why. No check on either side resolves a cross-repository
+link, which is why the count was fourteen rather than zero.
+
+**The `report/` convention was dropped here, not lost in the handoff.** Answering
+`anoieu-D38` turned up that kanon's `policy.md` carried the whole *Papers*
+section across the 2026-09-15 handoff and lost it the next morning in
+`d892fa6`, a simplification of 76 insertions and 101 deletions. The answer in
+`D29` is that the convention is not the policy's and is not being put back on an
+agent's reading. **What it cost was found in our own tree**: ynoia's front page
+and `papers.md` had been telling readers since 2026-09-18 that `vision.md`
+recommends writing a paper, which it never has — the same defect anoieu had just
+removed from its own checker's cannot-check list.
+
+**Ynoia was given the cleanup pass the maintainer asked for.** Its `P2` audit
+still read *Decided: open* for a transfer that completed on 2026-09-15, and now
+records what happened and where it diverged: governance went to **three** trees
+rather than one, the checker never left anoieu, and *the judge stops being the
+prosecutor* is therefore only half true. `P1` records that the reporting loop it
+audited was retired at both ends and that koine holds `bug_db_manager` instead.
+Two `Where:` fields still said *the subject is here* meaning anoieu, from when
+ynoia lived in that tree. `iogos` was described as not existing in three places
+and has been a repository since 2026-09-17. The analyzer was described as three
+thousand lines and is eight and a half thousand. `papers.md` claimed one entry
+per tool and judges five of twelve members.
+
+**Four topics were answered by the artifact rather than by a topic**, on the
+test this file recorded on 2026-09-18: `aisthesis-D7`, `eschaton-D8`,
+`epikrisis-D6` and `tachyon-D2` each name an artifact in their settling
+condition, so the edit is the answer. `koine-D23`, `koine-D24`, `tachyon-D3` and
+`paideia-D3` were already satisfied in this tree and needed nothing.
+
+*Re-derive:* `scripts/eo_status_audit` for the topic count;
+`scripts/eo_tooling_audit --check --local` for the register; in anoieu,
+`git show --stat 4f1fb0a` for what the retirement deleted; here,
+`git show d892fa6 -- docs/policy.md` for the Papers section.
+
 ### Human-maintainer attribution was centralized — 2026-09-19
 
 At the maintainer's request, policy defines the ecosystem's human maintainers
@@ -800,8 +856,8 @@ the coordinate the register keeps in its `joined` field.
 | 2026-09-16 05:23 | `tachyon` | not in the register → member | `cbd8eb2` | `226d534`, 06:32 | `kanon 4c4a78a` |
 | 2026-09-16 06:24 | `eschaton` | not in the register → candidate | — | `2a6aac1` | — |
 | 2026-09-16 07:02 | `eschaton` | candidate → member | `50c780d` | `0c507d9`, 07:22 | `kanon c95ab21` |
-| 2026-09-18 15:31 | `paideia` | candidate → member | `864666f` | working tree | `kanon 4165736` |
-| 2026-09-19 07:35 | `eunoia` | not in the register → member | `302af2c` | working tree | `kanon 4d16d1b` |
+| 2026-09-18 15:31 | `paideia` | candidate → member | `864666f` | `5719062`, 2026-09-19 09:07 | `kanon 4165736` |
+| 2026-09-19 07:35 | `eunoia` | not in the register → member | `302af2c` | `2a42793`, 08:23 | `kanon 4d16d1b` |
 
 **No repository left, and no footing was withdrawn.**
 

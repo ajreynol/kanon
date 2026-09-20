@@ -43,8 +43,8 @@ The eunoia repository and its children mimesis and sapheneia were rechecked on
 <a id="aisthesis"></a>
 **aisthesis** (Eunoia member; *proper noun*): Three documents about the
 practice of building this ecosystem rather than about the calculus: how that
-practice relates to the state of the art, what that reading implies somebody
-should build, and where writing about the future stops being a plan. From Greek
+practice relates to the state of the art, what that reading suggests might be
+worth examining, and where writing about the future stops being a plan. From Greek
 αἴσθησις, “perception.”
 [Repository](https://github.com/ajreynol/aisthesis).
 
@@ -198,9 +198,8 @@ change over time, using evidence another reader can re-derive.
 [Repository](https://github.com/ajreynol/epikrisis).
 
 <a id="eschaton"></a>
-**eschaton** (Eunoia member; *proper noun*): The
-[research project](#child-project) comparing approaches to better-founded SMT
-solvers and the costs of trying them. From Greek ἔσχατον, “the last thing” —
+**eschaton** (Eunoia member; *proper noun*): The repository comparing
+approaches to better-founded SMT solvers and the costs of trying them. From Greek ἔσχατον, “the last thing” —
 which its own README reads as the finished proof, the end the design question
 is asked backwards from.
 [Repository](https://github.com/ajreynol/eschaton).

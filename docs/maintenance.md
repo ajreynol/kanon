@@ -314,7 +314,7 @@ does ordinary work in it without asking step by step — the ladder above still
 orders what needs a person *within* this tree, and that is the whole of the
 constraint. Where the note says people write it, or where there is no note,
 restraint applies: propose, show the diff, and wait.
-[`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reporting-policy.md)
+[`reporting-policy.md`](https://github.com/ajreynol/anoieu/blob/main/bug_db/reporting-policy.md)
 already decides the *register of address* this way — by what the project says
 about itself, never by our impression of the code — and this is the same test
 applied to the scope of action. **Where there is no note, the cautious reading
@@ -368,6 +368,24 @@ commitment to keep is the one never made.
 **Documentation lives at its source, and a launch is a handoff.** A description
 moves to the thing it describes; the page it left keeps one sentence pointing
 at it.
+
+**When a page here moves, the notice carries the old path and the new one.**
+One row per path; a deletion says *deleted* and names what holds the register
+now, because that is the row a consumer cannot repair by rewriting a path.
+**This is a commitment of this office about its own notices, not a rule any
+member is held to** — putting it in [`policy.md`](policy.md) would add an
+obligation to every repository, and that is a person's.
+
+*Why it is worth keeping anyway.* A link into another repository is the one link
+nothing resolves from either end: anoieu's checker resolves every committed path
+and anchor in a tree and skips every `http` target, and a version that did not
+would turn a member's build red for a rename in a tree they do not own. So the
+only cheap instrument is the mover writing down what moved, and this repository
+is the one most of the ecosystem links into. It has been done twice — the
+twelve-row table in `D21` after eudaimonia reported five broken links, which
+anoieu then used to repair six of their own in minutes — and both times the
+table was written because somebody complained rather than because the move
+carried it. That is what this line changes.
 
 **Make changes a person can understand.** The standard for an agent's output is
 not that it is correct — it is that **whoever reviews it can tell whether it is
@@ -437,7 +455,7 @@ checker discovery and errors, and child listings. It launches
 no assistant, clones no repository, and makes no network requests.
 
 The separate `anoieu / policy` job is
-[anoieu's shared workflow](https://github.com/ajreynol/anoieu/blob/main/docs/policy-checker.md)
+[anoieu's shared workflow](https://github.com/ajreynol/anoieu/blob/main/policy_check/README.md)
 called at `main`, asking for **policy contract 1**. **This repository pins
 nothing for it**, so there is no checker lock to update. What is held still
 is the contract, and the implementation behind it may change
@@ -465,8 +483,10 @@ grades this repository down for exactly this and states the rule in the same
 paragraph: *every further page here has to displace a check, a finding, or an
 hour of somebody else's reading.* Nothing has ever measured whether it is kept.
 A rule with no counter attached is the same failure the prompt-length table in
-[`postmortem.md`](https://github.com/ajreynol/anoieu/blob/main/docs/reports/postmortem.md)
-exists to fix in the other half of the system — and it is the criticism that
+[`postmortem.md`](https://github.com/ajreynol/anoieu/blob/256939e1fb03/docs/reports/postmortem.md)
+existed to fix in the other half of the system — the page was retired with its
+workflow on 2026-09-19 and the link is pinned to the last revision that held
+it, because **the table has no successor** and the argument here rests on it — and it is the criticism that
 came from outside, in `workflow-launcher`'s register of what this ecosystem's
 practice appears to be doing, which reads six checkouts and writes down what is
 wrong with them beside what is not. It is a child project in eudaimonia's tree,
@@ -475,16 +495,16 @@ at `tools/workflow-launcher`, and `docs/ai-workflows.md` is the document.
 So: the rows, measured over this tree, each as *files, lines*. Reproducible in
 three commands, and the second row is what the first was worth waiting for.
 
-| what | 2026-09-01 | 2026-09-17 | 2026-09-18 |
-| --- | --- | --- | --- |
-| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 |
-| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none |
-| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 |
-| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** |
-| Python | 54, 13,382 | 8, 2,069 | 9, 1,986 |
-| `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 |
-| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md) | 63 | 63 | 63 |
-| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed | 41 open, 43 closed |
+| what | 2026-09-01 | 2026-09-17 | 2026-09-18 | 2026-09-19 |
+| --- | --- | --- | --- | --- |
+| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 | 26, 12,735 |
+| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none | none |
+| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 | 12, 3,801 |
+| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** | 14, **8,934** |
+| Python | 54, 13,382 | 8, 2,069 | 9, 1,986 | 13, 3,294 |
+| `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 | 5, 898 |
+| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_analyzer/checks.md) | 63 | 63 | 63 | 64 |
+| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed | 41 open, 43 closed | 2 open, 80 closed |
 
 **What the second row says, including the part that is not to our credit.**
 Written prose fell by 801 lines while **neither the check count nor the finding
@@ -524,15 +544,48 @@ was reading the settling condition of each incoming topic and noticing that most
 name an artifact, so the artifact is the answer and no topic is owed. The
 counter's job was to make the first version's cost visible, and it would have.
 
+**The fourth column, and the rule was not kept in it.** Written prose rose by
+**541 lines** while the check count moved by one and the finding counts moved
+for a reason that is not a finding. That is the reading this table exists to
+force, and it is stated before the excuses. **Split at the last commit**: 298 of
+those lines arrived in the five commits taken earlier on 2026-09-19, and 243 in
+the housekeeping session that wrote this column — a figure that had to be taken
+twice, because the first measurement did not include the paragraph reporting
+it. Child prose *fell* by 3,445
+lines over the same day, which is the row that was supposed to be watched and is
+the only one that went the right way.
+
+**What the 243 lines bought, so the reader can decide whether it was worth it.**
+One defect in this tree's own tooling, with a regression test: the status audit
+counted this office's own global announcements as topics owed to us, because a
+notice addressed to every member names us too — the summary line was reporting
+26 when the answer is 24. Fourteen dead links into anoieu, repaired by reading
+the table they published. One stale row in the tooling register, and roughly
+twenty claims in this tree that had stopped being true. **None of that is a
+check or a finding**, so by the rule as written it does not pay, and the honest
+entry is that a repair pass buys correctness rather than capacity.
+
+**And the ledger row moved a third time, which is now a pattern rather than an
+accident.** `reports.md` became `open-findings.md` and `closed-findings.md` on
+2026-09-18; both were deleted on 2026-09-19 and the ledger is `bug_db/bugs.md`,
+counted here from `bug_db/bugs.json`. The counts did not drift, they *jumped* —
+41 open and 43 closed became 2 open and 80 closed — and nothing in that jump is
+about how many defects exist. **Three sources in three days for one number is a
+counter that should either be defined against something stable or dropped**, and
+whoever writes the fifth column should decide which rather than re-deriving it a
+fourth way.
+
 **Two columns moved for reasons that are not savings, and reading them as such
 would be the second failure this table exists to prevent.** `scripts/` fell from
 2,025 lines to 571 because the audit's implementation moved to
-`tools/stathmos/scripts/`, where it counts as Python and as a child project —
+`tools/stathmos/audits/`, where it counts as Python and as a child project —
 the same shape as `martyria` and `zetesis` moving to epikrisis a day earlier.
 And **the ledger counts were re-derived differently**, because anoieu split
 `reports.md` into `open-findings.md` and `closed-findings.md`; the 41 and 43
 above are rows in those two files, and the earlier columns counted a page that
-no longer exists in that form. **A counter whose source moves is a counter that
+no longer exists in that form. **Both of those have since moved again** — the
+ledger is [`bug_db/bugs.md`](https://github.com/ajreynol/anoieu/blob/main/bug_db/bugs.md)
+as of 2026-09-19, so a fourth column would have to be re-derived a third time. **A counter whose source moves is a counter that
 can drift without anybody lying**, and nothing here checks it.
 
 **What the row is for, and what it is not.** It is not a limit. Nobody has

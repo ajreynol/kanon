@@ -74,6 +74,16 @@
     "implementation here and the commands in scripts/. Checkouts resolve",
     "through scripts/repos.local, which is written by hand.",
     "",
+    "**This file's history starts on 2026-09-15 and is the second half of one",
+    "record.** The first half is anoieu's tools/ecosystem.json -- 24 revisions",
+    "from 2026-08-31 until it was deleted there on 2026-09-15, when governance",
+    "moved here. Read either alone and the earliest revision reports every entry",
+    "in it at once, on the day the file was born, so a tool's joining date is",
+    "lost and the arrangement looks founded that day. Re-derive each half with",
+    "`git log --follow` over the path in that tree. Recorded because a file that",
+    "can move without the record noticing will move again; epikrisis asked for",
+    "it in their D6 and is stitching the two addresses together.",
+    "",
     "`what` is the full description. Optional `short` supplies a concise purpose",
     "for eo_status_audit, aiming for 60 characters or fewer. The table uses `short`",
     "before `what` and shortens longer text to 60 characters with an ellipsis.",
@@ -230,7 +240,7 @@
     "repo": "aisthesis",
     "url": "https://github.com/ajreynol/aisthesis",
     "short": "How this ecosystem relates to other state-of-the-art AI systems",
-    "what": "three documents about the practice of building this ecosystem rather than about the calculus: how that practice relates to the state of the art, what that reading implies somebody should build, and where writing about the future stops being a plan"
+    "what": "three documents about the practice of building this ecosystem rather than about the calculus: how that practice relates to the state of the art, what that reading suggests might be worth examining, and where writing about the future stops being a plan"
   },
   "anoieu": {
     "status": "member",

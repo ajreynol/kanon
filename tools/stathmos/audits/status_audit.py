@@ -356,12 +356,22 @@ def addressed_to(line: str, who: str) -> bool:
     return bool(m) and who in {n.strip(" `") for n in m.group(1).split(",")}
 
 
-def topics_for(path: str, who: str = "kanon") -> str:
+def topics_for(path: str, owner: str, who: str = "kanon") -> str:
     """The `channel` column: whether a tool keeps a discussion file, and how
-    many topics in it are addressed to us."""
+    many topics in it are addressed to us.
+
+    `owner` is the tool whose file this is. **Our own file never counts**, and
+    the reason is not tidiness: a global announcement enumerates every member by
+    name, and this office is a member, so every broadcast we make named us in
+    its own `To:` line and came back as two topics owed to us by ourselves. The
+    summary line then reported a number nobody could act on -- the closest thing
+    this command has to a to-do list, inflated by our own outbox.
+    """
     disc = os.path.join(path, "docs", "discussion.md")
     if not os.path.isfile(disc):
         return "none"
+    if owner == who:
+        return "yes"
     with open(disc, encoding="utf-8") as f:
         for_us = sum(1 for line in f if addressed_to(line, who))
     return f"{for_us} for us" if for_us else "yes"
@@ -870,7 +880,7 @@ def main() -> int:
                 verdict = verdict.replace("failing", "tracked")
         else:
             verdict, fails = check(path)
-        topics = topics_for(path)
+        topics = topics_for(path, name)
         rows.append((name, status, verdict, topics, path, "-"))
         # Both notes name the disagreement and then say whose move it is,
         # rather than stating the rule -- "this is the state the check exists

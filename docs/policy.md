@@ -270,8 +270,14 @@ instead of repeating the maintainers' names, personal handles or affiliations.
 Within this repository a relative link to `docs/policy.md#human-maintainers`
 is sufficient. Keep descriptions of authorship and supervision local.
 
-The ownership-link requirement is not mechanically checked by the current
-policy checker.
+**The ownership-link requirement is checked in anoieu's tree and nowhere
+else.** As of 2026-09-19 anoieu's checker decides it as written above — the page
+links [the list](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers)
+and no page substitutes a person for that link — and runs it against anoieu
+only, because applying an existing requirement to more repositories is an added
+obligation and therefore a new contract. **For every other member it is still a
+requirement met by reading**, and nothing here asks for that to change: widening
+it is a person's, and `B43` on [the board](board.md) carries the decision.
 
 **Why there is a name at all.** Accountability, and nothing else. This
 ecosystem publishes things about other people's code and says the work is done
@@ -353,7 +359,15 @@ question it can answer is **what would we accept**.
 folded into it, since diluting the one rule enforced as a build failure is a
 worse trade than repeating a sentence. Reported, never fatal **for now**: it
 joins the fatal gate when every member has adopted or declined it, which is a
-person's decision and is recorded here when it is made. The outbound prompts do not repeat it: each names the repository it is run in,
+person's decision and is recorded here when it is made. **The adoption half is
+now measured rather than assumed.** On 2026-09-19 the checker was run over every
+repository in the register held to this policy: all ten that keep a discussion
+file pass this check, and the four that keep none — `eunoia`, `logos`, `ethos`
+and `iogos` — skip it, because [a channel is not asked
+for](#what-a-member-is-asked-for). Nobody declined. **That is the evidence, not
+the decision**, which stays a person's and is `B38` on [the board](board.md).
+
+The outbound prompts do not repeat it: each names the repository it is run in,
 in its first line.
 
 ```
@@ -687,6 +701,14 @@ with `tools/X/` as the root: its charter and front page are `tools/X/README.md`,
 its documents go in `tools/X/docs/`, its commands and helpers in
 `tools/X/scripts/`, its assistant workflows in `tools/X/prompts/`, and its test
 evidence in `tools/X/test/` or `tools/X/tests/`. Keep its documentation index inside that root.
+**The discussion row is the one row a child does not take**, because that row
+names a footing a child does not have: by rule 7 above it opens no topics and
+answers none, so a `tools/X/docs/discussion.md` would read as a channel to every
+visitor and be one to nobody. What a child keeps instead is rule 7's **ledger**,
+and its name is the child's own — `docs/upstream-questions.md` is one in use.
+Nothing mechanical decides this either way: the checker reads the repository
+root's discussion file, so a child's is neither required to carry the gate nor
+refused for lacking one.
 The [tool and feature directory recommendation](#tool-and-feature-directories)
 applies there too. Create only directories the child uses; its charter and
 isolation rules still apply.
@@ -880,10 +902,15 @@ on this footing because we have read it.**
 
 **For a tree that adopts none of this, the ask is still one heading**: a `## How
 this repository is maintained` heading in the README with something under it.
-**No CI job, no workflow file, no pin, no run of our checker, no link to us and
-no membership declaration.** The thing asked for is a fact a reader of their
-repository needs whether or not this ecosystem exists; the moment it arrives
-with a job attached it becomes our housekeeping running at their expense.
+**No CI job, no workflow file, no pin, no run of our checker in their tree, no
+link to us and no membership declaration.** That list is what is **asked of
+them**, and it does not contradict *we check an associate anyway* above: that
+run happens in our checkout, over published code, and obliges them to nothing.
+Nothing is ever asked to execute on their side.
+
+The thing asked for is a fact a reader of their repository needs whether or not
+this ecosystem exists; the moment it arrives with a job attached it becomes our
+housekeeping running at their expense.
 
 **What is still undecided** is whether the bare heading or the affiliating
 paragraph is the ask, and what a stale `vetted` obliges. If nobody has answered
@@ -972,7 +999,7 @@ you paste the short version.
 **Or hold a contract still instead of a commit.** anoieu publishes a shared
 workflow that a repository calls, naming the **policy contract** it is checked
 against rather than a checker revision; [its contract
-page](https://github.com/ajreynol/anoieu/blob/main/docs/policy-checker.md)
+page](https://github.com/ajreynol/anoieu/blob/main/policy_check/README.md)
 is the authority on what a contract fixes and carries the file to copy, which
 belongs there rather than here for the reason above.
 

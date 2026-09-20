@@ -21,6 +21,7 @@
     "Epikrisis's site was rechecked at 2dc4125 on 2026-09-19 and lives in ecosystem_report/. Eudaimonia's generator lives in new_checker/ at 50532e0; its staged Euthyna changes separate measurement/ and report_site/, with a shared scripts/ launcher and saved data under measurement/data/. The Euthyna entries describe that working tree, not the committed default branch.",
     "Tachyon's child webpages were read at effe42c on 2026-09-19. Heuresis's report builds gap measurements and a research queue; elaphros's report builds planning and source-evidence pages without measured performance claims. Each builder and its HTML templates live at the child's root and read ledger/ evidence. scripts/build_site.py assembles the site described in docs/site.md.",
     "Metagraphe's rewrite database was read at 258102d on 2026-09-19. rewrite_db/ holds the curated records and their generated view; its validation, rendering and pinned-koine wrappers live in the child's shared scripts/. The records are rewrite proposals and source observations, not established solver fixes.",
+    "Dokimasia's analyzer was rechecked at de0f1b9 on 2026-09-19: the package directory was renamed from dokimasia/ to dokimasia_analyzer/ and the recorded path and entrypoint follow it. The launcher scripts/dokimasia_analyzer is unchanged.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -53,14 +54,14 @@
       "path": "anoieu_analyzer",
       "what": "Static analysis of Eunoia signatures and semantics",
       "entrypoints": ["anoieu_analyzer/__main__.py"],
-      "docs": ["docs/usage.md", "docs/checks.md"]
+      "docs": ["anoieu_analyzer/usage.md", "anoieu_analyzer/checks.md"]
     },
     "anoieu_fuzz": {
       "repo": "anoieu",
       "path": "anoieu_fuzz",
       "what": "Generates and mutates inputs for proof checkers",
       "entrypoints": ["anoieu_fuzz/__main__.py"],
-      "docs": ["anoieu_fuzz/README.md", "docs/fuzzing.md"]
+      "docs": ["anoieu_fuzz/README.md", "anoieu_fuzz/fuzzing.md"]
     },
     "policy_check": {
       "repo": "anoieu",
@@ -71,10 +72,10 @@
     },
     "dokimasia_analyzer": {
       "repo": "dokimasia",
-      "path": "dokimasia",
+      "path": "dokimasia_analyzer",
       "what": "Analyzes gaps in cvc5 proof production",
-      "entrypoints": ["scripts/dokimasia_analyzer", "dokimasia/__main__.py"],
-      "docs": ["README.md", "docs/maintenance.md"]
+      "entrypoints": ["scripts/dokimasia_analyzer", "dokimasia_analyzer/__main__.py"],
+      "docs": ["README.md", "dokimasia_analyzer/README.md", "docs/maintenance.md"]
     },
     "dokimasia_bug_db": {
       "repo": "dokimasia",

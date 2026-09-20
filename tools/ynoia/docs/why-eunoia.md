@@ -76,13 +76,13 @@ measured.** That belongs at the top.
 | the claim | what stands behind it | what would settle it |
 | --- | --- | --- |
 | **1 — the proof and the problem are in one language** | **A feature that exists and does what the argument says.** ethos's `(reference "problem.smt2")` parses the benchmark and refuses any `assume` that is not one of its assertions. This is the strongest claim here and the only one resting on a mechanism a reader can go and run | nothing; it is established. What is open is whether the seam could be *verified* on the Lean side instead — open question 2 |
-| **2 — a narrow fragment is analyzable** | **Evidence in anoieu's tree**: 63 checks, an analyzer of about three thousand lines, and a desugarer validated case by case against the real parser | it is evidence about *this analyzer*, not about the language. A second analyzer, or an analyzer of a wide fragment failing where this one succeeds, would make it about the language |
+| **2 — a narrow fragment is analyzable** | **Evidence in anoieu's tree**: 64 checks and an analyzer of about eight and a half thousand lines as read on 2026-09-19, and a desugarer validated case by case against the real parser | it is evidence about *this analyzer*, not about the language. A second analyzer, or an analyzer of a wide fragment failing where this one succeeds, would make it about the language |
 | **3 — the proof is data, not a program** | **Argued.** The counter, that a calculus moves too, is stated and not resolved | a case where a CPC proof survived a change that would have broken an equivalent Lean proof, or the reverse |
 | **4 — enormous proofs make the fragment's cheapness decisive** | **Explicitly folklore, by this document's own admission.** No measurement of ours, and open question 5 records that nobody has compared ethos with the generated Lean checker on the same proofs | the measurement. It is described below and it is runnable today |
-| **6 — the Lean side is generated rather than chosen** | **True of the pipeline as built**, and untested as an *independence* claim | `iogos` — a second prover — which does not exist. Until then, "generated rather than chosen" is a fact about one backend |
+| **6 — the Lean side is generated rather than chosen** | **True of the pipeline as built**, and untested as an *independence* claim | `iogos` — a second prover — which **now exists** as an associate repository, vetted 2026-09-17: an Isabelle/HOL checker compiled from the same CPC signature, whose own front page warns it is a research scaffold with no soundness proof. So the independence claim is being tested rather than untestable, and until that development says something, "generated rather than chosen" is still a fact about one backend |
 | **O2 — the `.eos` layer is the tell** | **Argued, and conceded**: this is where the arrangement's own case is weakest, and the document says so | `noesis`, now a child project in eudaimonia and not yet landed |
 | **arrangements A–F** | **Laid out fairly. None costed.** No estimate of what moving to any of them would take | any one of them costed by somebody who would have to do it |
-| **the named projects** | **Three do not exist** — pathos, iogos, elenchos. **Four have been started**, all documented at their sources: `euthyna`, `noesis` and `hermeneia` in eudaimonia, `mimesis` in eunoia. The register of the rest, in priority order, is [`tools.md`](tools.md) | another one being started |
+| **the named projects** | **Two do not exist** — pathos and elenchos. **Five have been started**, all documented at their sources: `euthyna`, `noesis` and `hermeneia` in eudaimonia, `mimesis` in eunoia, and `iogos` as a repository of its own on an associate footing. The register of the rest, in priority order, is [`tools.md`](tools.md) | another one being started |
 
 ### The one measurement that is runnable today
 
@@ -136,9 +136,10 @@ Five schemes run through this document and nothing has said so until now:
 | **A–F** | the six coherent arrangements of the ecosystem |
 | **1–10, under *Open questions*** | what is unsettled. These are separate from the reasons and share their numbers, which is a wart |
 
-Named projects — pathos, iogos, elenchos — are not numbered and are registered
-in [`tools.md`](tools.md). The ones that have since been started are not on that
-page and document themselves at their sources.
+Named projects — pathos and elenchos — are not numbered and are registered in
+[`tools.md`](tools.md). The ones that have since been started are not on that
+page and document themselves at their sources; `iogos` is one of them, and its
+section below is kept because the argument it carries is still open.
 
 ## The question, put fairly
 
@@ -233,10 +234,12 @@ tactics, no metaprogramming — and nothing a proof can invoke that is not one o
 those.
 
 What that buys is not elegance. It is that **the ways a thing can be wrong are
-enumerable**, and anoieu is the evidence: 63 checks cover a large part
-of what a signature can get wrong, the whole analyzer is about three thousand
-lines, and its account of the language's desugaring is validated against the
-real parser case by case. Nobody writes that for "arbitrary Lean", because for
+enumerable**, and anoieu is the evidence: 64 checks cover a large part
+of what a signature can get wrong, the whole analyzer is about eight and a half
+thousand lines, and its account of the language's desugaring is validated
+against the real parser case by case. *Both figures re-measured 2026-09-19; the
+analyzer has roughly tripled since this paragraph was written, which makes the
+cost it is describing larger rather than smaller.* Nobody writes that for "arbitrary Lean", because for
 arbitrary Lean the list does not close.
 
 The same narrowness is what lets one proof be checked by more than one thing.
@@ -414,8 +417,8 @@ These are about the fragment rather than about any one tool, and are numbered
 Program bodies untyped, matching untyped, `define` bodies never typed, a
 program's declared return type unverified, arity unchecked inside a body: every
 one of those is a check in anoieu, and every one is a non-question in a
-typed functional language. We wrote three thousand lines to recover a fraction
-of what Lean would have given by construction. That is not an argument about
+typed functional language. We wrote eight and a half thousand lines to recover
+a fraction of what Lean would have given by construction. That is not an argument about
 taste; it is a measured cost, and we paid it.
 
 ## O2. The `.eos` layer is the tell
@@ -532,16 +535,20 @@ and what nothing else provides.
 
 ---
 
-# Three projects that do not exist yet, and change the picture
+# Three projects that change the picture, two of which do not exist
 
-**Pathos**, **iogos** and **elenchos** are code names, and none of the three has
-a repository or a line of code. Four others were named here and **have since
-been started**, all as child projects in eudaimonia's tree: **euthyna**,
-**noesis**, **hermeneia** and **mimesis**. Their descriptions have been deleted
-from this page and each documents itself at its source, which is what this
-ecosystem does with anything that launches. They are still referred to below
-wherever they carry an argument — **the argument stays, the specification
-goes.**
+**Pathos** and **elenchos** are code names with no repository and no line of
+code. **Iogos is a repository**, on an associate footing since 2026-09-17, and
+it left [`tools.md`](tools.md) the next day under the rule that a tool leaves
+that page when it exists. Five others named here have also **been started** and
+document themselves at their sources: **euthyna**, **noesis** and **hermeneia**
+in eudaimonia's tree, **mimesis** in eunoia's.
+
+**The argument stays, the specification goes.** The started projects'
+descriptions have been deleted from this page and they are referred to below
+wherever they carry an argument. Iogos keeps a section rather than a description
+for that reason: what it carries is the fork with noesis, which no repository
+existing has settled.
 
 The three are named here because the costs and open questions above are stated
 relative to what exists today, and each of these would move a different one. Writing down what they *would* change is also the cheapest way
@@ -596,9 +603,13 @@ Isabelle. It is the one joke in the register and it earns its place, because the
 whole of the project's scope is in the substitution — everything else stays the
 same, and that is exactly the claim being tested.*
 
-*A code name, for work not yet started.* An Isabelle/HOL backend for
-`ethos-eoc`, and the logos development redone against it: the same calculus, the
-same semantics and the same soundness argument, carried by a second kernel.
+*Started, and a long way from done.* An Isabelle/HOL backend for `ethos-eoc`,
+and the logos development redone against it: the same calculus, the same
+semantics and the same soundness argument, carried by a second kernel. The
+repository exists and holds a generated checker; its own front page says there
+is **no soundness proof** and that nothing in it should be relied on. So what
+follows is still about what the project would establish, not about what it
+has.
 
 **What it tests.** Reason 6 — the Lean side is generated rather than chosen — is
 what lets the arrangement claim a proof-assistant justification as a derived
@@ -617,7 +628,7 @@ known.
 - *It makes the semantics prover-neutral by force.* Today `.eos` leaks its
   target: a termination measure is carried as literal Lean text inside a
   semantics file, and this analyzer has a check for one that names a program no
-  longer there ([TRI0007](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md#tri0007)) because nothing else compares
+  longer there ([TRI0007](https://github.com/ajreynol/anoieu/blob/main/anoieu_analyzer/checks.md#tri0007)) because nothing else compares
   them. A second backend cannot be built without separating what the semantics
   says from how Lean says it — the boundary noesis has to draw, arrived at from
   a third direction.
@@ -710,7 +721,7 @@ the expensive half — instrumentation, a corpus, a scheduler — pays only if t
 cheap half has stopped paying, which is an empirical question about a specific
 checker at a specific time.
 
-**What exists today.** The baseline: [`fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/docs/fuzzing.md), in this
+**What exists today.** The baseline: [`fuzzing.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_fuzz/fuzzing.md), in this
 repository, which has none of the above and is deliberately the floor —
 grammar-directed generation, mutation of a seed corpus, three verdict-level
 oracles, and no instrumentation anywhere. It is worth having partly for what it
@@ -817,7 +828,8 @@ nothing checks it; it is that the check runs after a checker has been generated,
 reads the output rather than the input, and can therefore only report what a
 signature *became*. Answering the same questions from the signature and its
 semantics — before anything is generated, in terms the author wrote — is
-[eud-1](https://github.com/ajreynol/anoieu/blob/main/docs/reports/reports.md#eudaimonia--the-template-for-other-calculi).
+[eud-1](https://github.com/ajreynol/anoieu/blob/256939e1fb03/docs/reports/reports.md#eudaimonia--the-template-for-other-calculi),
+pinned because that ledger was retired on 2026-09-19.
 
 *Its calculus profile has answers that are declared rather than verified.* Seven
 questions; five checked against what the compiler emitted, two recorded on
@@ -878,7 +890,7 @@ Squarely on one side, and it should be said plainly: this tool is an argument fo
 the narrow-fragment position, and also an admission that the position is not
 free. A fragment small enough to analyze exhaustively is only better than a
 language that checks itself *if the analysis actually exists*. Every check in
-anoieu's [`docs/checks.md`](https://github.com/ajreynol/anoieu/blob/main/docs/checks.md)
+anoieu's [`anoieu_analyzer/checks.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_analyzer/checks.md)
 is something a type system would have given for nothing.
 
 ---
