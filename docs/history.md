@@ -397,6 +397,24 @@ kanon's existing workflow already uses it. Commit pins remain accepted as an
 implementation choice. A fixed contract keeps the automated obligations stable
 while allowing checker fixes, without asking each member to maintain a pin.
 
+### Brainstorming was consolidated into a proposal register — 2026-09-20
+
+At the maintainer's direction, `docs/brainstorm.md` became the home for ideas
+worth considering. It has stable `X<N>` items, explicit status and revisit
+conditions, and maintenance instructions with a template. The internal office
+structure is `X1`; prompt intent, procedural deadlocks and the proposed agenda
+comparison have their own items. These are proposals, not assignments or rules.
+The shared policy recommends this file on the same optional footing as
+maintenance and discussion files, only for repositories maintained by AI agents
+under human supervision.
+
+The office brainstorm was condensed into that register, preserving its main
+questions and failure scenarios while dropping obsolete assignments, deadlines
+and repeated accounts. The conversation transcript and initial objections were
+deleted at the maintainer's request; their original wording remains in Git
+history. The old `docs/misc/` documents are no longer part of the maintained
+tree. Links and the documentation index now point to the proposal register.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to
@@ -1046,7 +1064,7 @@ existed and that it duplicated with a private measure of its own; and reached,
 several hours late and believing it new, a criticism another tool had already
 recorded from outside. The offices were judged premature the same day, their
 directories removed and their reasoning retained in [the brainstorming
-notes](misc/brainstorm-offices.md).
+notes](brainstorm.md).
 
 **This page arrived about fifteen hours late.** The registry recorded kanon as
 president at 16:15:45 on 2026-09-15; this page landed at about 07:30 the next
@@ -1100,8 +1118,8 @@ bind would be governing after its term.
 ### Established
 
 **Update, 2026-09-15:** the maintainer deferred the internal offices as
-premature. Their six documents are retained in
-[brainstorm-offices.md](misc/brainstorm-offices.md), and the completed handoff
+premature. Their proposals are summarized in
+[brainstorm.md](brainstorm.md), and the completed handoff
 (`7eb9973`, 2026-09-15) uses `tools/<project>/` directly, superseding the
 office destinations below. Governance documents, inventory, scripts and five
 child projects arrived. The policy checker, report card and earlier term
@@ -1200,7 +1218,7 @@ were made.
   vacant record, the pins the gate refuses), misappropriation (our own record
   says a human wrote all 323 commits and that is not what happened), and
   exhaustion. Written up in [the safety
-  scenarios](misc/brainstorm-offices.md#scenarios).
+  scenarios](brainstorm.md#scenarios).
 - **The ownership stance protects legibility, not ownership.** No accounts, no
   signatures, no chain of custody — deliberately. What defends provenance here
   is that the record is public and re-derivable, **which holds only while the
@@ -1350,7 +1368,7 @@ recorded here because a successor with fresh eyes re-raises dead questions.
   decision. Incoming projects sit directly under `tools/`.
 - **`synkrisis` — never started.** The name was proposed and not claimed, and
   claiming one is a person's act. The reasoning is in [the brainstorming
-  notes](misc/brainstorm-offices.md#synkrisis).
+  notes](brainstorm.md#synkrisis).
 - **`ai-novelty.md` and `science-fiction.md` — not ours.** Neither is in this
   tree and the pairing question belongs to whoever holds them.
 - **Nobody scrutinised kanon before it took the office.** *That was the
@@ -1384,7 +1402,7 @@ start disagreeing about it.** The required-reading budget is likewise [LAW
 - **The three-to-five office range — deferred on 2026-09-15.** It was kanon's
   practice, and is proposed outward in [`D7`](discussion.md); it no longer
   binds kanon. The reasoning is retained in [the brainstorming
-  notes](misc/brainstorm-offices.md#earlier-structure-proposal).
+  notes](brainstorm.md#earlier-structure-proposal).
 - **Six offices — no, two.** *Closed the day it was opened.* Four of the six
   were a status, a list, an output and a mission wearing directories. Corrected
   by the maintainer, who could not tell what four of them were for, which was

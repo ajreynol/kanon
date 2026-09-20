@@ -19,10 +19,10 @@ The [productive-entity requirement](laws.md#law-11--productive-entities) also
 asks every president, member and child project for a recorded deliverable, a
 central reference explaining its purpose, or an assigned special role.
 
-**`docs/maintenance.md` and `docs/discussion.md` are optional.** They are
+**`docs/maintenance.md`, `docs/discussion.md` and `docs/brainstorm.md` are optional.** They are
 recommended only for repositories maintained by AI agents under human
-supervision, when there are maintenance instructions or cross-repository
-discussions to keep. No post-join grading prompt is required.
+supervision, when there are maintenance instructions, cross-repository
+discussions or exploratory ideas to keep. No post-join grading prompt is required.
 
 **Report a shortfall as a specific observation, attributed and dated**, never
 as a characterisation of the project. If a member cannot satisfy a requirement,
@@ -41,6 +41,7 @@ the main repository conventions; its last column says when each applies.
 | --- | --- | --- |
 | `README.md` | the front page and route to everything else | every repository |
 | `docs/` | written documentation, with one index in `docs/README.md` or the front page | when documentation extends beyond the README |
+| `docs/brainstorm.md` | exploratory ideas and proposals that are not adopted policy or assigned work | optional; recommended only for repositories maintained by supervised AI agents, when there are ideas worth retaining |
 | `docs/maintenance.md` | the entry point for someone maintaining the repository | optional; recommended only for repositories maintained by supervised AI agents, when there are instructions to keep |
 | [`docs/discussion.md`](#the-discussion-file) | cross-repository questions, proposals, notices and replies | optional; recommended only for repositories maintained by supervised AI agents, when there are discussions to keep |
 | `tools/` | child projects, with their own charters, code and data | when the repository houses child projects |
@@ -89,6 +90,14 @@ not extend to repositories maintained by people.
 
 **Do not add a file per assistant to point at it.** Use one maintenance entry
 point, addressed to the person doing the work.
+
+**For repositories maintained by AI agents under human supervision,
+`docs/brainstorm.md` is the recommended home for exploratory ideas.** It is
+optional, like the maintenance and discussion files. Use stable `X<N>` item
+headings, with the idea, its reason, open questions, status and a condition for
+revisiting it. Include maintenance instructions and an item template on the
+page. Recording a proposal does not adopt it or assign work; put accepted
+decisions in the documents they govern and remove settled or abandoned items.
 
 **For repositories maintained by AI agents under human supervision,
 `docs/discussion.md` is the recommended cross-repository channel when one is
@@ -940,7 +949,7 @@ by check and contract; this is not a claim that every policy is automated.
 | coverage limit | what it means |
 | --- | --- |
 | Documentation | Index checking compares the documents with their index. Resolving a link does not establish that its claim is current or true. |
-| Recommendations | The maintenance and discussion files are optional and recommended only for repositories maintained by supervised AI agents. Tool-directory layout and repository-level child `scripts/` and `prompts/` are advisory. Naming explanations produce minor findings. Coding style does not block a build. |
+| Recommendations | The maintenance, discussion and brainstorm files are optional and recommended only for repositories maintained by supervised AI agents. Tool-directory layout and repository-level child `scripts/` and `prompts/` are advisory. Naming explanations produce minor findings. Coding style does not block a build. |
 | Ownership links | As of 2026-09-19, enforcement covers anoieu's tree only. The requirement applies to other members through review; expanding the check requires a contract decision, tracked in [B43](board.md). |
 | Discussion files | A missing response gate is a failure when the root discussion file exists. Topic format produces minor findings. The checker does not enforce a child's use of its parent's channel. |
 | Membership links | The declaration is required; a missing link to this policy is a minor finding. |

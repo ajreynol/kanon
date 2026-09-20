@@ -618,7 +618,7 @@ structure has nowhere to live today even if everybody agrees with it.
 **What we are doing about it.** **deferring the office structure, 2026-09-15.**
 The maintainer judged it premature. The proposed range and the earlier
 reasoning remain in
-[brainstorm-offices.md](misc/brainstorm-offices.md#earlier-structure-proposal);
+[brainstorm.md](brainstorm.md#earlier-structure-proposal);
 no offices or office-count requirement are established.
 
 **What we are asking.** One question, and *neither* is a complete answer.

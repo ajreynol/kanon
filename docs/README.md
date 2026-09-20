@@ -2,8 +2,8 @@
 
 **Every page in `docs/`, and what each one settles.** Grouped the way
 [`../README.md`](../README.md) groups them: the documents written for every
-repository in the ecosystem, the documents that record this term, and the ones
-that have been demoted.
+repository in the ecosystem, the documents that record this term, and ideas
+kept for consideration.
 
 ## Shared — written for every repository, not just this one
 
@@ -25,17 +25,11 @@ that have been demoted.
 
 [`discussion.md`](discussion.md)
 
-## Demoted
-
-Kanon keeps these optional background pages in `docs/misc/` as a local choice.
-Keeping one here is not a reason to postpone deciding whether it should be
-updated, merged or removed.
+## Ideas for consideration
 
 | document | what it is |
 | --- | --- |
-| [`misc/brainstorm-offices.md`](misc/brainstorm-offices.md) | the internal office structure that was proposed and **deferred on 2026-09-15** as premature. Optional background |
-| [`misc/conversation.md`](misc/conversation.md) | the verbatim transcript of the session that primed this repository, 2026-09-02. Housed here, and not required reading |
-| [`misc/initial-objections.md`](misc/initial-objections.md) | the objections entered when the office was offered and before it was held, recorded then because reservations get remembered as milder than they were |
+| [`brainstorm.md`](brainstorm.md) | `X<N>` proposals for offices, comparisons and working practices, with status, revisit conditions and an item template; no assignment or commitment implied |
 
 ## What is not here
 
