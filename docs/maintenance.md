@@ -114,6 +114,7 @@ post-join grade is required.
 | the authoritative name register and vocabulary, maintained by the president | [`glossary.md`](glossary.md) |
 | the authoritative register and installation exceptions | `scripts/ecosystem/` |
 | the status audit, maintained by stathmos | `scripts/eo_status_audit` runs [`tools/stathmos/audits/status_audit.py`](../tools/stathmos/audits/status_audit.py) |
+| members' hosted CI, maintained by stathmos | `scripts/eo_ci_audit` reports GitHub Actions; [coverage and usage](../tools/stathmos/README.md#the-ci-audit) |
 | the tooling audit, maintained by stathmos | `scripts/eo_tooling_audit` runs [`tools/stathmos/audits/tooling_audit.py`](../tools/stathmos/audits/tooling_audit.py) |
 | the laws, the board and the role register | [`laws.md`](laws.md), [`board.md`](board.md), [`roles.md`](roles.md) |
 | the term record, and what crosses to the next president | [`history.md`](history.md) |

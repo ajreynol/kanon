@@ -21,7 +21,15 @@ defines these relationships. Audit the register with:
 ```sh
 scripts/eo_status_audit --check      # validate the register, offline
 scripts/eo_status_audit              # policy and discussion status across checkouts
+scripts/eo_ci_audit                  # GitHub Actions at each member's default-branch HEAD
 ```
+
+**Hosted CI:** `scripts/eo_ci_audit` reports each member's
+GitHub Actions results using authenticated `gh`. `--verbose` includes every
+workflow and run link; `--check` exits 0 when all pass, 1 for failures, and 2
+for pending or unverified results. Missing runs are unverified, including
+workflows that run only on a schedule or selected paths.
+[Coverage and options](tools/stathmos/README.md#the-ci-audit).
 
 > **[`scripts/ecosystem/ecosystem.json`](scripts/ecosystem/ecosystem.json) is
 > the ground truth**, and a footing is a decision somebody made rather than a
@@ -116,7 +124,7 @@ This repository is part of the **Eunoia ecosystem** and follows its shared
 repository policy, kept here in
 [`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
 
-**Human maintainers:** [the current list in policy.md](docs/policy.md#human-maintainers).
+**Ecosystem human maintainers:** [the shared accountability list](docs/policy.md#human-maintainers).
 
 **Written by an agent, under a maintainer's supervision.** The tree was settled
 in conversation with the maintainer and written down by an agent working in

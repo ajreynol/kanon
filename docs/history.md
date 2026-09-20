@@ -1097,6 +1097,32 @@ stale.
 git log -p docs/laws.md docs/policy.md
 ```
 
+### Ecosystem accountability and project author credits were separated — 2026-09-20
+
+At the maintainer's request, because the human-maintainer law and README
+template were being read as requests for each member or child to announce its
+own maintainers. LAW 12 now explicitly concerns the ecosystem as a whole;
+contributing to a project creates no ecosystem office and the shared list
+establishes no project's authorship or local maintenance.
+
+Policy removes the generic human-maintainer line from the joining template,
+describes human/agent production and supervision without requiring personal
+names, and places project author and contributor credits in `AUTHORS` or an
+established equivalent. A README may link to that file; children may use their
+parent's credit file without a separate roster. Kanon's own README labels its
+link as ecosystem accountability. Existing copyright notices and citations
+remain intact.
+
+The examples were read on 2026-09-20: ethos's
+[`AUTHORS`](https://github.com/cvc5/ethos/blob/5475739f5060c78719e0a79207239c87e688ce7b/AUTHORS)
+and README at `5475739f5060`, and cvc5's
+[`AUTHORS`](https://github.com/cvc5/cvc5/blob/main/AUTHORS) and
+[`README.md`](https://github.com/cvc5/cvc5/blob/main/README.md) from `main`.
+Both keep the credit lists in `AUTHORS`; cvc5's front page links to that file.
+B43 now tracks the narrower checker mismatch: anoieu at `2e329121728a` still
+has its home-only ownership-link check. No checker contract, external repository
+or membership record was changed by this amendment.
+
 ## Membership changes during this term
 
 Each row names the commit in the joining repository's **own** tree where the

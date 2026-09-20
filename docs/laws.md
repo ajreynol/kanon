@@ -529,11 +529,12 @@ Productivity is separate from footing and from judgements of quality.
 membership and the obligations a child inherits from its parent.
 
 <a id="law-12--human-maintainers-of-the-ecosystem"></a>
+<a id="law-12--human-maintainers-who-is-accountable-and-where-they-are-named"></a>
 
-## (LAW 12) — Human maintainers: who is accountable, and where they are named
+## (LAW 12) — Human maintainers of the ecosystem
 
-The people accountable for the Eunoia ecosystem are **named in a shared document
-the president keeps current** under
+The people accountable for the Eunoia ecosystem as a whole are **named in a
+shared document the president keeps current** under
 [LAW 5.1](#law-51--keeping-shared-documents-current) — at present
 [`docs/policy.md`](policy.md#human-maintainers), which carries the list itself.
 
@@ -542,6 +543,16 @@ responsible](#people-are-responsible) puts the work, including agent-produced
 text and code, on the people directing it; a reader who finds an error, a wrong
 claim about their project, or an unwanted contact needs to know who that is
 without reconstructing it from commit logs.
+
+It records responsibility for the shared arrangement, not authorship or local
+maintenance of each member repository or child project. Contributing to or
+maintaining one of those projects does not itself make a person an ecosystem
+maintainer. This law requires no separate human-maintainer roster or named
+maintainer statement in a repository's or child's README.
+
+Project author credits belong in [`AUTHORS`](policy.md#authors), with a link
+from the README if useful. The README's maintenance note describes how the work
+is produced and supervised without listing the people credited for it.
 
 [entity]: glossary.md#entity
 [footing]: glossary.md#footing

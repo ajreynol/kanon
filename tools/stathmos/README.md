@@ -17,11 +17,11 @@ than the scale or the verdict.*
 
 **This project is not an island:** its work serves the ecosystem through kanon.
 Stathmos maintains the public
-`scripts/eo_status_audit`, `scripts/eo_tooling_audit` and
-`scripts/eo_dioktes_audit` launchers in kanon's
+`scripts/eo_status_audit`, `scripts/eo_tooling_audit`,
+`scripts/eo_dioktes_audit` and `scripts/eo_ci_audit` launchers in kanon's
 top-level `scripts/`, with their implementation in this project's `audits/`.
 Kanon's tests and CI exercise that implementation. The audits read kanon's
-registers and run anoieu's policy checker through the local launcher.
+registers; the status audit runs anoieu's policy checker through the local launcher.
 `roles.md` records these responsibilities; `laws.md` and `vision.md` reference
 the report card. These are documented interfaces of a maintained child project.
 
@@ -72,6 +72,43 @@ reported without changing membership or failing `--check`.
 human judgement against the vision. An unavailable observation is unverified,
 not a pass or a failure; local policy results are not the corresponding CI run.
 Koine's `eo_status` remains the shared command for reading the register.
+
+## The CI audit
+
+**`scripts/eo_ci_audit` answers whether members' GitHub Actions are passing.**
+[`audits/ci_audit.py`](audits/ci_audit.py) reads the registered members and
+president, discovers each default branch, and checks its current commit.
+Children share their parent's CI; other footings are excluded. It requires
+Python 3 and authenticated GitHub CLI (`gh auth login`), works from any directory,
+and makes only read requests.
+
+```sh
+scripts/eo_ci_audit                    # table and details for non-passing results
+scripts/eo_ci_audit --verbose          # every workflow and run link
+scripts/eo_ci_audit --repo kanon       # one member; repeat --repo for several
+scripts/eo_ci_audit --check            # 0 all pass, 1 failure, 2 otherwise incomplete
+scripts/eo_ci_audit --json             # dated observations, commits and workflow results
+```
+
+`pass` needs a successful run of every active workflow at that commit.
+`fail` means a failed, cancelled, timed-out or otherwise failed run; `pending`
+means work is queued, running or waiting. Missing, skipped, neutral and unknown
+results are `unverified`, as are inaccessible repositories, incomplete API
+responses and a branch advancing during the audit. Scheduled, manual and
+path-filtered workflows can therefore leave a repository unverified even when
+all workflows triggered by its last push passed. Reusable-only workflows also
+remain unverified: their results belong to caller runs, which this report does
+not attribute back to the reusable workflow. Disabled workflows, PR runs,
+branch-protection requirements and CI outside GitHub Actions are outside scope.
+
+The audit reads every results page and selects the newest run per workflow and
+event, including its latest attempt. A successful manual run cannot hide a
+failed push run, and an old green commit cannot stand in for the current one.
+Without `--check`, observations do not change the exit code; invalid arguments
+or an unreadable/empty register still exit 2. With `--check`, an observed failure
+takes precedence over incomplete results elsewhere. The offline regression
+suite covers this command; kanon's CI does not depend on live results from
+other repositories.
 
 ## The tooling audit
 
@@ -219,7 +256,7 @@ is outside its recorded pin and earns no retrospective credit.
 ## Layout
 
 - [`docs/README.md`](docs/README.md) indexes the report card, evidence and protocol.
-- [`audits/`](audits/) holds the status, tooling and dioktes audits and their helpers.
+- [`audits/`](audits/) holds the status, CI, tooling and dioktes audits and their helpers.
 - [`tests/`](tests/) holds their offline regressions. Kanon's test run includes them.
 
 From this directory, run `python3 -m unittest discover -s tests -v` to test

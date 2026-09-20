@@ -321,25 +321,24 @@ an **offer**: the laws list the commit census under what they leave unsettled,
 so nothing confers it. An id records a fact; it does not create the obligation.
 **HUMAN FEEDBACK:**
 
-## B43 — decide whether the ownership-link requirement is checked everywhere
+## B43 — align the ownership check with ecosystem accountability
 
-**Task:** decide whether *always link ownership and human-maintainer statements
-to `policy.md`* becomes a check every member is held to, or stays a requirement
-met by reading.
+**Task:** review anoieu's home-only ownership-link check against the clarified
+[ecosystem-maintainer scope](policy.md#human-maintainers) and
+[author-credit convention](policy.md#authors). A project's authors and local
+maintainers must not be inferred from the ecosystem's accountability list.
 **Entities:** `kanon`, `anoieu`
-**Status:** waiting on the maintainer — anoieu fixed its own check on
-2026-09-19 (`anoieu-D39`) and runs it against its tree alone, because widening
-an existing requirement to more repositories is an added obligation and
-therefore a **policy contract 2** candidate rather than a fix.
+**Status:** policy clarified, 2026-09-20; implementation remains in anoieu.
+At `2e329121728a`, its check still requires the shared list's link in
+`docs/maintenance.md` and rejects a personal `Owner` line elsewhere.
 **Channel:** **internal**; anoieu implements whatever is decided.
-**Next:** decide, or record that home-only is the deliberate state. Nothing
-waits on it: anoieu said an answer either way is complete.
-**Prompt — `kanon`:** the requirement is already written and already met by
-every member we have read; what a check adds is that a member learns from a red
-build rather than from a reader. The cost is that it opens contract 2, which
-nothing else currently needs, and a contract is a promise about what may turn a
-build red without anybody committing.
-**HUMAN FEEDBACK:**
+**Next:** reconcile that check with the clarified policy through anoieu's
+ordinary process. Do not expand the former blanket link requirement to members
+or children; any new automated obligation needs its own contract decision.
+**Prompt — `kanon`:** distinguish ecosystem accountability, local maintenance
+and author credit when reviewing proposed checks.
+**HUMAN FEEDBACK:** 2026-09-20: name human maintainers for the ecosystem;
+keep personal author credits in `AUTHORS`, not on front READMEs.
 
 ---
 

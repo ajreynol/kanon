@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Report GitHub Actions for members' current default-branch commits.
+# Requires Python 3 and authenticated GitHub CLI (gh auth login).
+#
+#   scripts/eo_ci_audit             # table, with details for anything not passing
+#   scripts/eo_ci_audit --verbose   # every workflow and run link
+#   scripts/eo_ci_audit --check     # exit 0 passing, 1 failure, 2 incomplete
+#   scripts/eo_ci_audit --json      # the same observations as JSON
+#
+# Read-only. Children share their parent's CI. --help explains coverage.
+set -euo pipefail
+HERE=$(cd "$(dirname "$0")" && pwd)
+exec python3 "$HERE/../tools/stathmos/audits/ci_audit.py" "$@"

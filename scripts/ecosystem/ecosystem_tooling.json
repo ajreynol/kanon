@@ -175,8 +175,8 @@
       "repo": "kanon",
       "owner": "stathmos",
       "path": "tools/stathmos/audits",
-      "what": "Audits ecosystem status and available tooling",
-      "entrypoints": ["scripts/eo_status_audit", "scripts/eo_tooling_audit"],
+      "what": "Audits ecosystem status, hosted CI and available tooling",
+      "entrypoints": ["scripts/eo_status_audit", "scripts/eo_tooling_audit", "scripts/eo_ci_audit"],
       "docs": ["tools/stathmos/README.md"]
     },
     "bug_db_manager": {

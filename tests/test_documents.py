@@ -62,7 +62,7 @@ class Documents(unittest.TestCase):
 
     def test_shell_syntax(self):
         for path in [ROOT / "scripts/eo_status_audit", ROOT / "scripts/eo_tooling_audit",
-                     ROOT / "scripts/eo_dioktes_audit"]:
+                     ROOT / "scripts/eo_dioktes_audit", ROOT / "scripts/eo_ci_audit"]:
             with self.subTest(script=path.name):
                 result = subprocess.run(["bash", "-n", str(path)], capture_output=True, text=True)
                 self.assertEqual(result.returncode, 0, result.stderr)

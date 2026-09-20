@@ -25,8 +25,8 @@ language or CI service does not by itself make it an ecosystem project.
 **To join:**
 
 1. Declare membership at the start of the README's closing
-   [maintenance note](#the-maintenance-note), describing who writes the work,
-   its supervision and what that supervision does not cover.
+   [maintenance note](#the-maintenance-note), describing whether humans, agents
+   or both write the work, its supervision and what that supervision does not cover.
 2. Add the [`anoieu / policy` CI job](#2-run-the-check), preferably selecting
    a fixed policy contract number.
 
@@ -97,7 +97,7 @@ independence paragraph with its membership declaration.
 <a id="ownership-and-what-is-claimed"></a>
 <a id="human-maintainers"></a>
 
-**Human maintainers.** This section is the list
+**Human maintainers of the ecosystem.** This section is the list
 [LAW 12](laws.md#law-12--human-maintainers-of-the-ecosystem) requires, kept here
 because the president already maintains this page. Responsibility and the limits
 of authority follow [People are responsible](laws.md#people-are-responsible) and
@@ -107,15 +107,17 @@ and what crosses between repositories — are, at present:
 
 - Andrew Reynolds (`ajreynol`).
 
-A member maintained elsewhere has its own contributors and its own
-maintainers, who are not accountable for this ecosystem by having committed to
-it and are not listed here. Update this list when responsibility changes, as
-LAW 12 asks, rather than at the end of a term. Ownership and human-maintainer
-statements in READMEs, maintenance notes, prompts and reports link to
+Membership, contributing to a repository, or maintaining a child project does
+not itself make a person accountable for the ecosystem. This list does not
+identify individual projects' authors or local maintainers. Update it when
+responsibility for the shared arrangement changes, rather than at the end of a
+term. Statements about **ecosystem human maintainers** link to
 [this list](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers)
 rather than copying personal names, handles or affiliations. A relative link
-suffices within this repository. Keep descriptions of authorship and supervision
-local.
+suffices within this repository. A member or child README need not carry such
+a statement or link, and must not present this list as its own maintainer roster.
+Project author credits belong in [`AUTHORS`](#authors); descriptions of how the
+work is produced and supervised stay in the local maintenance note.
 
 The list identifies accountability; it places no restriction on use of Eunoia
 or these tools. Eunoia and CPC are cvc5's work; reserving a name grants no
@@ -135,6 +137,7 @@ from recommendations, and each row is explained below.
 | path | what it holds | when it applies |
 | --- | --- | --- |
 | [`README.md`](#readmemd) | the front page and route to everything else | every repository |
+| [`AUTHORS`](#authors) | project author and contributor credits | when the project records personal credits; an established equivalent is acceptable |
 | [tool or feature directories](#tool-and-feature-directories) | the project's deliverables: one named tool, feature or artifact per top-level directory | highly recommended for repositories producing tools, features or artifacts |
 | [`docs/`](#docs) | written documentation, with one index in `docs/README.md` or the front page | when documentation extends beyond the README |
 | [`docs/brainstorm.md`](#docsbrainstormmd) | exploratory ideas and proposals that are not adopted policy or assigned work | optional; recommended only for repositories maintained by supervised AI agents, when there are ideas worth retaining |
@@ -156,8 +159,8 @@ A short explanation of the repository's name and why it fits is recommended.
 <a id="1-declare-it-at-the-top-of-your-maintenance-note"></a>
 
 **End with a maintenance note.** Every repository's README closes with
-`## How this repository is maintained`: who writes the work, under what
-supervision, and what that supervision does **not** cover. Keep technical
+`## How this repository is maintained`: whether humans, agents or both write
+the work, under what supervision, and what that supervision does **not** cover. Keep technical
 details elsewhere, write in the present tense and update it when the
 maintenance arrangement changes. Members put the declaration first in this
 section:
@@ -169,17 +172,34 @@ This repository is part of the **Eunoia ecosystem** and follows its shared
 repository policy, kept by [kanon](https://github.com/ajreynol/kanon) in
 [`docs/policy.md`](https://github.com/ajreynol/kanon/blob/main/docs/policy.md).
 
-**Human maintainers:** [the current list in policy.md](https://github.com/ajreynol/kanon/blob/main/docs/policy.md#human-maintainers).
-
-<who writes this, under what supervision, and what that supervision does not
-cover>
+<whether humans, agents or both write this; how the work is supervised and
+what that supervision does not cover>
 ```
 
 Use your own wording if it clearly declares membership; saying the repository
 *works with* the ecosystem does not. A link to this policy is recommended.
 Describe the actual arrangement without implying more review than takes place.
+Keep personal author and maintainer credits in [`AUTHORS`](#authors), rather
+than announcing names, handles or affiliations on the front README. A link to
+that file is enough; the maintenance note does not require a named person.
 The optional `docs/maintenance.md` guide serves a different purpose: instructions
 for maintaining the repository.
+
+### AUTHORS
+
+Use a root `AUTHORS` file for project author and contributor credits, following
+the convention in [ethos](https://github.com/cvc5/ethos/blob/main/AUTHORS) and
+[cvc5](https://github.com/cvc5/cvc5/blob/main/AUTHORS). An established equivalent
+such as `AUTHORS.md` is acceptable. The front README may link to it without
+reproducing its list. Keep existing copyright notices and source citations;
+this convention concerns where project credits are presented.
+
+A child project may record its credits in the parent's `AUTHORS`, identifying
+the child where useful; it needs neither a separate file nor a named-maintainer
+line in its charter. Credit records describe actual contributions and any
+local maintenance roles. Do not populate them from the ecosystem-maintainer
+list: ecosystem responsibility alone establishes neither authorship nor local
+maintenance. Creating a credit file is not an additional requirement for joining.
 
 ### Tool and feature directories
 
@@ -485,8 +505,10 @@ started, may be written by whoever is doing the work.
 **2. Its boundaries are explicit; isolation is optional.** A child may read
 shared data, import parent code, provide code or artifacts to the parent and
 other projects, and participate in the parent's tests and CI. Its README names
-the shared entry points, dependencies and outputs that others rely on, and who
-maintains them. Changes outside its directory follow the containing
+the shared entry points, dependencies and outputs that others rely on, and the
+project or role responsible for maintaining them. Personal credits follow the
+[`AUTHORS` convention](#authors); no separate human-maintainer roster is required.
+Changes outside its directory follow the containing
 repository's ordinary maintenance rules. Removing a child means handling those
 dependencies and commitments, not assuming that deletion changes nothing.
 
@@ -748,7 +770,7 @@ by check and contract; this is not a claim that every policy is automated.
 | --- | --- |
 | Documentation | Index checking compares the documents with their index. Resolving a link does not establish that its claim is current or true. |
 | Recommendations | The maintenance, discussion and brainstorm files are optional and recommended only for repositories maintained by supervised AI agents. Tool-directory layout and repository-level child `scripts/` and `prompts/` are advisory. Naming explanations produce minor findings. Coding style does not block a build. |
-| Ownership links | As of 2026-09-19, enforcement covers anoieu's tree only. The requirement applies to other members through review; expanding the check requires a contract decision, tracked in [B43](board.md). |
+| Ecosystem accountability and author credits | These conventions require review. Anoieu's home-only ownership-link check, read 2026-09-20, still requires the ecosystem link in its maintenance guide; it does not implement the distinction between ecosystem maintainers and project credits. [B43](board.md) tracks that mismatch. No new automated requirement is imposed on members or children. |
 | Discussion files | A missing response gate is a failure when the root discussion file exists. Topic format produces minor findings. The checker does not enforce a child's use of its parent's channel. |
 | Membership links | The declaration is required; a missing link to this policy is a minor finding. |
 | Child integration | The checker described in [the amendment record](history.md#child-projects-may-maintain-shared-work--2026-09-20) still uses the older island-exception wording. The [child-project policy](#child-projects) permits documented shared dependencies. |
