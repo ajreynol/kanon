@@ -40,6 +40,7 @@ the main repository conventions; its last column says when each applies.
 | path | what it holds | when it applies |
 | --- | --- | --- |
 | `README.md` | the front page and route to everything else | every repository |
+| [tool or feature directories](#tool-and-feature-directories) | the project's deliverables: one named tool, feature or artifact per top-level directory | highly recommended for repositories producing tools, features or artifacts |
 | `docs/` | written documentation, with one index in `docs/README.md` or the front page | when documentation extends beyond the README |
 | `docs/brainstorm.md` | exploratory ideas and proposals that are not adopted policy or assigned work | optional; recommended only for repositories maintained by supervised AI agents, when there are ideas worth retaining |
 | `docs/maintenance.md` | the entry point for someone maintaining the repository | optional; recommended only for repositories maintained by supervised AI agents, when there are instructions to keep |
@@ -48,28 +49,6 @@ the main repository conventions; its last column says when each applies.
 | `scripts/` | commands, helpers and their data, including launchers for child projects | when the repository has such commands |
 | `prompts/` | assistant workflows, separate from commands in `scripts/` | when the repository maintains such workflows |
 | `.github/workflows/` | CI jobs | members keep the required `anoieu / policy` job; other jobs depend on the project |
-
-**Suggested but may not be applicable to your project**
-
-Use these directories when they fit the project's implementation and workflow.
-Their presence is not a membership requirement; each project chooses the
-contents and organization it needs.
-
-| path | what it holds |
-| --- | --- |
-| `test/` or `tests/` | tests, their inputs and expected results |
-| `examples/` | examples showing how to use the project |
-| `cmake/` | CMake build configuration and helpers |
-| `include/` | header files used by the project or its users |
-| `licenses/` | license texts and notices for the project and its dependencies |
-| `contrib/` | scripts and instructions for manually obtaining external tools |
-| `deps/` | other people's repositories, fetched by a run and never committed |
-| `scratch/` | untracked working space |
-| [tool or feature directories](#tool-and-feature-directories) | one named, self-contained implementation per top-level directory; recommended |
-
-When one of these directories is used, keep its stated purpose. The guidance
-below applies to the corresponding work; it does not require adding work or
-directories the project does not need.
 
 Documentation is never a tooling entry; `docs/` and `contrib/` are outside the
 tooling inventory. Dedicated tutorials and maintained data, such as bug
@@ -130,16 +109,6 @@ rows and never remove one — a generator allowed to delete can quietly delete a
 regression. Each generator also states, at the top of its own file in
 `scripts/`, what it writes and what it refuses to write.
 
-**`test/` or `tests/` holds the evidence, not only the tests.** Every claim the
-front page makes should be traceable to a file somebody could open in a minute.
-
-**Working space is untracked, and says so.** `scratch/` for anything transient,
-`*.local.md` for a document deliberately not committed, carrying a line at the
-top saying so — otherwise a reader cannot tell an intention from an oversight.
-
-**Dependencies are fetched and pinned, never vendored.** A manifest and a lock
-in `scripts/`, restored by the run that needs them.
-
 **A link that does not resolve is a defect**, and so is a link to a heading
 that is not there, and a path named in an outbound prompt that does not exist.
 The anchor is the half that survives a careless fix: the file still resolves
@@ -164,11 +133,12 @@ Recommended.
 
 ### Tool and feature directories
 
-**Recommend one top-level directory per self-contained tool or feature.** The
-directories with defined purposes in [the layout](#the-layout) keep those
-purposes. Each other top-level directory should contain the implementation of
-one named tool or feature, with clear entry points. A repository containing
-several tools should give each its own directory.
+**Highly recommend one top-level directory per self-contained tool, feature
+or artifact.** These directories hold the project's deliverables: implementations
+or maintained artifacts that others can use. Give each a clear name and entry
+points or content files. A repository producing several deliverables should
+give each its own directory. The directories with defined purposes in
+[the layout](#the-layout) keep those purposes.
 
 Shared documentation, command launchers, assistant workflows and test evidence
 belong in `docs/`, `scripts/`, `prompts/` and `test/` or `tests/`, respectively.
@@ -189,6 +159,37 @@ in both places, never that the description is still true of the behaviour.
 Where none exists, say so where the copy is. Likewise **a workflow is defined
 in prose and implemented in `scripts/`**: the document stays the definition,
 and CI checks the script's copy has not drifted from it.
+
+### Suggested but may not be applicable to your project
+
+Use these directories when they fit the project's implementation and workflow.
+Their presence is not a membership requirement; each project chooses the
+contents and organization it needs.
+
+| path | what it holds |
+| --- | --- |
+| `test/` or `tests/` | tests, their inputs and expected results |
+| `examples/` | examples showing how to use the project |
+| `cmake/` | CMake build configuration and helpers |
+| `include/` | header files used by the project or its users |
+| `licenses/` | license texts and notices for the project and its dependencies |
+| `contrib/` | scripts and instructions for manually obtaining external tools |
+| `deps/` | other people's repositories, fetched by a run and never committed |
+| `scratch/` | untracked working space |
+
+When one of these directories is used, keep its stated purpose. The guidance
+below applies to the corresponding work; it does not require adding work or
+directories the project does not need.
+
+**`test/` or `tests/` holds the evidence, not only the tests.** Every claim the
+front page makes should be traceable to a file somebody could open in a minute.
+
+**Working space is untracked, and says so.** `scratch/` for anything transient,
+`*.local.md` for a document deliberately not committed, carrying a line at the
+top saying so — otherwise a reader cannot tell an intention from an oversight.
+
+**Dependencies are fetched and pinned, never vendored.** A manifest and a lock
+in `scripts/`, restored by the run that needs them.
 
 ## Keep documents current
 

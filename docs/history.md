@@ -415,6 +415,15 @@ deleted at the maintainer's request; their original wording remains in Git
 history. The old `docs/misc/` documents are no longer part of the maintained
 tree. Links and the documentation index now point to the proposal register.
 
+### Deliverable directories became a main layout convention — 2026-09-20
+
+At the maintainer's direction, tool and feature directories moved into the
+first layout table and became highly recommended. They hold the project's
+deliverables, including maintained artifacts, and belong alongside the main
+repository conventions. The recommendation remains advisory.
+The suggested-directory table follows the explanations of the main conventions,
+with its test, working-space and dependency guidance kept beside it.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to
