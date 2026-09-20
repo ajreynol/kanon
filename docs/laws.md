@@ -432,36 +432,45 @@ the term describes the pursuing repository's activity and gives its subject no
 new footing or obligations. A progress or governance review is an investigation
 under this law without being a defect pursuit.
 
-Who may be investigated depends on the subject:
-[LAW 10.1](#law-101--declaring-an-investigation-of-a-nonmember) for a
-nonmember, [LAW 10.4](#law-104--internal-public-investigations-of-members) for
-a member. Everything else here applies to both.
+Who may be investigated depends on the target.
+[LAW 10.1](#law-101--declaring-an-external-defect-investigation) covers a
+project outside the ecosystem, on the evidence
+[LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons)
+requires; [LAW 10.4](#law-104--internal-public-investigations-of-members)
+covers a member, where membership is the standing. Everything else here applies
+to both.
 
 **Every investigation is recorded, and so is its end.** A person decides and
 declares it in
 [`scripts/ecosystem/ecosystem.json`](../scripts/ecosystem/ecosystem.json), with
-the pursuer, the subject, the basis, the responsible maintainer, the scope,
+the pursuer, the target, the basis, the responsible maintainer, the scope,
 when the work began, when it was declared, what closes it, and — separately —
-its investigation state and its reporting-and-contact state. One subject may
+its investigation state and its reporting-and-contact state. One target may
 have several pursuers, and a closed investigation keeps its record. **An empty
 register is not evidence that nobody is investigating anything.**
+
+`scripts/eo_dioktes_audit` reads those records back and re-derives each basis
+from the register as it stands now. **A basis lapses without the record
+changing** — a member leaving under [LAW 2.1](#law-21--a-members-right-to-leave)
+ends the standing LAW 10.4 supplied, and the declaration still reads as it did
+the day it was written. What the command reports, a person acts on.
 
 <a id="entering-it"></a>
 <a id="starting-an-external-defect-investigation"></a>
 <a id="law-101--declaring-a-pursuit"></a>
 
-<a id="law-101--declaring-an-external-defect-investigation"></a>
+### (LAW 10.1) — Declaring an external defect investigation
 
-### (LAW 10.1) — Declaring an investigation of a nonmember
-
-A nonmember may be investigated whenever
+An [outsider][outsider], a [foundation][foundation], a [candidate][candidate]
+or an [associate][associate] may be targeted whenever
 [LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons)
-permits [tracking][tracking] it, subject to the same conditions. This covers a
-[foundation][foundation], a [candidate][candidate] and an
-[associate][associate] as well as an [outsider][outsider]: a footing we
-assigned cannot supply a permission the evidence does not.
+permits [tracking][tracking] it, subject to the same conditions. **The evidence
+is what permits it, not the footing**: a project we have recorded a position
+about still needs its release and publication, or its owners' offer under
+[LAW 9.4](#law-94--owners-volunteering-external-tools), before anybody goes
+looking through its work.
 
-Recording an investigation changes no footing and asks the subject for nothing.
+Recording an investigation changes no footing and asks the target for nothing.
 **Being listed is not consent.**
 
 <a id="law-102--ending-an-investigation-on-request-or-resolution"></a>

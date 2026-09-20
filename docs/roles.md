@@ -350,12 +350,17 @@ and the evidence and protocol pages beside it.
 
 **Held by:** `stathmos`
 **Role:** checking the register against the trees it describes and reporting
-status, local policy results, declaration drift and missing evidence. These
+status, local policy results, declaration drift and missing evidence, and
+reporting the declared investigations under
+[LAW 10](laws.md#law-10--investigations-declaring-conducting-and-ending-one)
+against the footings they rest on. These
 mechanical checks do not grade adherence to the vision or decide membership.
 Split from `R6` on 2026-09-18; kanon retains the register.
-**Owns:** the public `scripts/eo_status_audit` and `scripts/eo_tooling_audit` launchers,
+**Owns:** the public `scripts/eo_status_audit`, `scripts/eo_tooling_audit` and
+`scripts/eo_dioktes_audit` launchers,
 [`tools/stathmos/audits/status_audit.py`](../tools/stathmos/audits/status_audit.py),
 [`tools/stathmos/audits/tooling_audit.py`](../tools/stathmos/audits/tooling_audit.py),
+[`tools/stathmos/audits/dioktes_audit.py`](../tools/stathmos/audits/dioktes_audit.py),
 [`tools/stathmos/audits/child_listing.py`](../tools/stathmos/audits/child_listing.py),
 and the local checker launcher
 [`tools/stathmos/audits/policy_check.py`](../tools/stathmos/audits/policy_check.py).

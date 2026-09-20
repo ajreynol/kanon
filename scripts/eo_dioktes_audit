@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# eo_dioktes_audit -- what this ecosystem is looking for defects in, and
+# whether it is still allowed to.
+#
+# `docs/laws.md` LAW 10 makes a person declare an investigation and record it
+# in the register. This reads those records back. The question it answers that
+# the register cannot is whether each declaration is **still good**: LAW 10.4
+# rests on the target being a member, and a member may leave under LAW 2.1
+# without the investigation's record changing by a character.
+#
+# The public command for tools/stathmos/audits/dioktes_audit.py.
+#
+#   eo_dioktes_audit            # pursuer, target, basis, state, reporting, start
+#   eo_dioktes_audit --verbose  # and the scope, closing condition and owner
+#   eo_dioktes_audit --check    # well formed, and every basis still holds
+#   eo_dioktes_audit --help     # what it reads and what it refuses to decide
+#
+# It reports and changes nothing. Starting and ending an investigation are both
+# a person's act, and so is acting on a lapsed basis.
+set -euo pipefail
+HERE=$(cd "$(dirname "$0")" && pwd)
+exec python3 "$HERE/../tools/stathmos/audits/dioktes_audit.py" "$@"

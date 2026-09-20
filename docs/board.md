@@ -55,28 +55,29 @@ internal implementation in `tools/stathmos/scripts/`. Implemented; moved to
 
 ## B44 — carry the LAW 10 decision back to epikrisis
 
-**Task:** carry kanon's answer to `epikrisis-D7` to epikrisis, and get the four
-recorded pursuits declared or dropped.
-**Entities:** `kanon`, `epikrisis`, `anoieu`, `dokimasia`
+**Task:** carry kanon's answer to `epikrisis-D7` to epikrisis, and confirm the
+five declared pursuits with the maintainers responsible for them.
+**Entities:** `kanon`, `epikrisis`, `anoieu`, `dokimasia`, `tachyon`
 **Status:** waiting on a person — the decision is made and in the tree
-(LAW 10.4, LAW 10.1, `_pursuits` and its checker, 2026-09-20). The reply is
-drafted in `discussion-response.local.md`, which is uncommitted and delivers
-nothing.
+(LAW 10.1, LAW 10.4, five `_pursuits` records, `eo_dioktes_audit`, 2026-09-20).
+The reply is drafted in `discussion-response.local.md`, which is uncommitted
+and delivers nothing.
 **Channel:** **discussion**, carried by a person.
-**Next:** carry the reply. Separately, ask anoieu's and dokimasia's maintainers
-for the start date and campaign closing condition of each of the four pursuits
-`D7` lists, so they can be recorded; `_pursuits` stays empty until they are.
-Three of the four also need `released` and `published` vetted onto the `cvc5`
-and `ethos` entries, which LAW 9's evidence requirement asks for and neither
-entry carries today.
-**Prompt — `kanon`:** record each pursuit a maintainer supplies evidence for.
+**Next:** carry the reply. Separately, confirm with anoieu's, dokimasia's and
+tachyon's maintainers that each recorded `scope`, `started` and `closes` is
+theirs; `started` is the first commit carrying work on that target and is the
+field most likely to be wrong. Fill in ethos's IJCAR 2026 reference, which is
+recorded from a statement rather than a citation.
+**Prompt — `kanon`:** re-declare or close any record a maintainer disowns.
 `started` is their date, `declared` is the day the record is written, and
-neither is reconstructed.
-**Prompt — `epikrisis`:** LAW 10.4 is adopted as you sent it; LAW 10.1 now
-reaches a foundation, candidate and associate on LAW 9's evidence; the register
-takes `_pursuits` records with the fields you asked for. The LAW 2
-cross-reference was declined by the maintainer. The disclosure question is
-recorded as unsettled, not answered.
+neither is reconstructed. `heuresis` and `elaphros` pursue cvc5 performance on
+the same argument metagraphe was declared on, and are undeclared.
+**Prompt — `epikrisis`:** LAW 10.4 is adopted; LAW 10.1 reaches every footing
+outside the ecosystem on LAW 9's evidence; the register carries `_pursuits`
+records with the fields you asked for, and `eo_dioktes_audit` reads them back
+and re-checks each basis. Your four are declared, and a fifth you did not list.
+The LAW 2 cross-reference was declined by the maintainer. The disclosure
+question is recorded as unsettled, not answered.
 **HUMAN FEEDBACK:**
 
 ## B18 — settle the associate proposal for ethos

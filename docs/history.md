@@ -341,25 +341,54 @@ investigation by other members, membership is the standing, the president and
 member children through their parent are included, and LAW 10.2's stop on
 reporting and contact still ends it. LAW 10.1 now reaches a foundation, a
 candidate and an associate as well as an outsider, on LAW 9's evidence
-unchanged — a footing is ours to assign and supplies no permission, and being
+unchanged — there the evidence permits the work and not the footing, and being
 listed is not consent. The glossary follows, with its anchors preserved.
 
 D7 also asked for a LAW 2 cross-reference to 10.4; the maintainer declined it
 during the work, so membership's obligations are stated in one place.
 
 The register's `dioktes` field became `_pursuits` records, because LAW 10 allows
-several pursuers of one subject and keeps a closed investigation's record, and
-one string on the subject's row carries neither. Each record holds its pursuer,
-subject, basis, responsible maintainer, scope, start date, declaration date,
+several pursuers of one target and keeps a closed investigation's record, and
+one string on the target's row carries neither. Each record holds its pursuer,
+target, basis, responsible maintainer, scope, start date, declaration date,
 closing condition, and its investigation and reporting states kept apart — so
 `active` + `stopped`, LAW 10.3's private continuation, is representable.
-The list is empty: the four pursuits D7 names need their pursuing maintainers'
-start evidence, and nothing here invents one. **An empty list is not evidence
-of no pursuit**, which is written in the register and in the law.
+**An empty list is not evidence of no pursuit**, which is written in the
+register and in the law.
 
 The unresolved question D7 raised — whether a public-interest disclosure ever
 outweighs LAW 10.2 — is recorded as the laws' sixth unsettled question rather
 than answered.
+
+### Five investigations were declared, and a command reads them back — 2026-09-20
+
+At the maintainer's direction, the register declares what had been going on
+undeclared: anoieu against cvc5, ethos and logos, dokimasia against cvc5, and
+metagraphe against cvc5, where a missing rewrite is a performance defect.
+metagraphe is the worked case for a child pursuing on its parent's footing and
+tachyon's responsibility. anoieu's policy checker is not among them: it runs
+against every member by arrangement and declaring it would say nothing.
+
+**No start date was invented.** Each is the first commit in the pursuing
+repository that carries work on that target — anoieu 2026-08-29, dokimasia
+2026-08-30, metagraphe 2026-09-16 — and every record is declared 2026-09-20,
+which is the day somebody wrote it down and not a claim about when the work
+began. Re-derive with `git log --reverse -S<target>` in the pursuer's tree.
+
+LAW 10.1 reaches every footing outside the ecosystem, so the recorded basis is
+`member` or `external`. The maintainer reverted an earlier draft that had
+phrased this as *nonmember* and had briefly narrowed the law to outsiders
+alone. LAW 9's evidence is unchanged and is what permits an external pursuit,
+which is why `cvc5` and `ethos` now carry `released` and `published`; ethos's
+publication is recorded from the maintainer's statement and its full reference
+is still to be filled in.
+
+`scripts/eo_dioktes_audit` reads the records back, and re-derives every basis
+from the register rather than trusting the declaration. **A basis lapses
+without the record changing**: a member leaving under LAW 2.1 ends the standing
+LAW 10.4 supplied, and an entry losing its `published` ends what LAW 10.1
+permitted, in both cases in somebody else's tree. `--check` fails on a lapsed
+basis and runs in CI; acting on one is a person's job.
 
 ### The board and the role register became presidential records — 2026-09-20
 

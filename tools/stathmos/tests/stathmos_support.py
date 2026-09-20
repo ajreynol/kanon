@@ -21,3 +21,4 @@ def load(name, path):
 from tools.stathmos.audits import policy_check
 
 ecosystem = load("ecosystem_under_test", "tools/stathmos/audits/status_audit.py")
+dioktes = load("dioktes_under_test", "tools/stathmos/audits/dioktes_audit.py")

@@ -17,7 +17,8 @@ than the scale or the verdict.*
 
 **This project is not an island:** its work serves the ecosystem through kanon.
 Stathmos maintains the public
-`scripts/eo_status_audit` and `scripts/eo_tooling_audit` launchers in kanon's
+`scripts/eo_status_audit`, `scripts/eo_tooling_audit` and
+`scripts/eo_dioktes_audit` launchers in kanon's
 top-level `scripts/`, with their implementation in this project's `audits/`.
 Kanon's tests and CI exercise that implementation. The audits read kanon's
 registers and run anoieu's policy checker through the local launcher.
@@ -130,6 +131,29 @@ observations are unverified. Layout gaps are advisory; inventory gaps, including
 intentional exclusions, fail a requested comparison. Structural validation alone
 still accepts explained exclusions. `--help` documents limits and exit codes.
 
+## The dioktes audit
+
+**`scripts/eo_dioktes_audit` reports what this ecosystem is looking for defects
+in, and whether it is still allowed to.**
+[`audits/dioktes_audit.py`](audits/dioktes_audit.py) reads the `_pursuits`
+records in kanon's [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json),
+which [LAW 10](../../docs/laws.md#law-10--investigations-declaring-conducting-and-ending-one)
+requires a person to declare.
+
+**The basis is re-derived on every run rather than trusted.** A declaration
+records the footing it rested on the day it was written, and that footing is a
+line in somebody else's entry: a member leaving under
+[LAW 2.1](../../docs/laws.md#law-21--a-members-right-to-leave) ends the standing
+LAW 10.4 supplied, and an entry losing its `published` ends what LAW 10.1
+permitted, in both cases without the investigation's own record changing by a
+character. A lapsed basis is reported against the row and fails `--check`.
+
+`--verbose` adds the scope, the closing condition and the responsible
+maintainer. Rows whose reporting is `stopped` sort first, because those carry a
+LAW 10.2 obligation somebody can still breach. The audit reports and changes
+nothing: starting an investigation, ending one, and acting on a lapsed basis
+are each a person's act.
+
 ## The question
 
 **What does each tool in this ecosystem actually weigh against the tenets, at
@@ -195,7 +219,7 @@ is outside its recorded pin and earns no retrospective credit.
 ## Layout
 
 - [`docs/README.md`](docs/README.md) indexes the report card, evidence and protocol.
-- [`audits/`](audits/) holds the status and tooling audits and their helpers.
+- [`audits/`](audits/) holds the status, tooling and dioktes audits and their helpers.
 - [`tests/`](tests/) holds their offline regressions. Kanon's test run includes them.
 
 From this directory, run `python3 -m unittest discover -s tests -v` to test

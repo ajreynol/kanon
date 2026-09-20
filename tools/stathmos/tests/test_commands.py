@@ -17,7 +17,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from stathmos_support import ROOT, ecosystem, policy_check
+from stathmos_support import ROOT, dioktes, ecosystem, policy_check
 
 class Commands(unittest.TestCase):
     def setUp(self):
@@ -436,18 +436,19 @@ class Pursuits(unittest.TestCase):
                   "url": "https://example.invalid/kanon", "what": "the policy"},
         "logos": {"status": "member", "repo": "logos",
                   "url": "https://example.invalid/logos", "what": "a checker"},
-        "cvc5": {"status": "foundation", "repo": "cvc5",
-                 "url": "https://example.invalid/cvc5", "what": "the solver",
-                 "released": "https://example.invalid/cvc5",
-                 "published": "A paper, 2026. https://example.invalid/paper"},
+        "outside": {"status": "outsider", "repo": "outside", "vetted": "2026-09-01",
+                    "url": "https://example.invalid/outside", "what": "a tool",
+                    "why": "comparison data",
+                    "released": "https://example.invalid/outside",
+                    "published": "A paper, 2026. https://example.invalid/paper"},
         "ethos": {"status": "candidate", "repo": "ethos",
                   "url": "https://example.invalid/ethos", "what": "a checker"},
         "stathmos": {"status": "child", "parent": "kanon",
                      "path": "tools/stathmos", "what": "the audits"},
     }
 
-    record = {"pursuer": "kanon", "subject": "cvc5", "basis": "nonmember",
-              "responsible": "the maintainer", "scope": "proof production",
+    record = {"pursuer": "kanon", "target": "outside", "basis": "external",
+              "responsible": "the maintainer", "scope": "the signatures",
               "started": "2026-09-01", "declared": "2026-09-20",
               "closes": "the campaign is retired", "state": "active",
               "reporting": "public"}
@@ -458,7 +459,7 @@ class Pursuits(unittest.TestCase):
             inv[name].update(fields)
         return ecosystem.pursuits_well_formed(inv, list(pursuits))
 
-    def test_a_complete_nonmember_record_passes(self):
+    def test_a_complete_external_record_passes(self):
         self.assertEqual(self.errors(self.record), [])
 
     def test_every_field_is_required(self):
@@ -467,53 +468,61 @@ class Pursuits(unittest.TestCase):
                 short = {k: v for k, v in self.record.items() if k != field}
                 self.assertIn(f"needs `{field}`", " ".join(self.errors(short)))
 
-    def test_a_nonmember_subject_still_needs_law_9_evidence(self):
-        # The footing is ours to assign and supplies no permission; the
-        # release and publication facts are what LAW 10.1 actually turns on.
-        blind = {**self.record, "subject": "ethos"}
-        self.assertIn("LAW 9's evidence", " ".join(self.errors(blind)))
-        with_evidence = {"released": "https://example.invalid/ethos",
-                         "published": "A paper, 2026. https://example.invalid/e"}
-        self.assertEqual(self.errors(blind, ethos=with_evidence), [])
+    def test_an_external_target_still_needs_law_9_evidence(self):
+        blind = {"released": "", "published": ""}
+        self.assertIn("LAW 9's evidence", " ".join(self.errors(self.record, outside=blind)))
 
-    def test_membership_is_the_standing_for_a_member_subject(self):
-        member = {**self.record, "subject": "logos", "basis": "member"}
+    def test_every_footing_outside_the_ecosystem_is_reachable(self):
+        # LAW 10.1 reaches a foundation, candidate, associate and outsider
+        # alike, and LAW 9's evidence rather than the footing permits each one.
+        evidence = {"released": "https://example.invalid/e",
+                    "published": "A paper, 2026. https://example.invalid/p"}
+        record = {**self.record, "target": "ethos"}
+        for footing in ecosystem.PURSUIT_BASES["external"]:
+            with self.subTest(footing=footing):
+                self.assertIn("LAW 9's evidence",
+                              " ".join(self.errors(record, ethos={"status": footing})))
+                self.assertEqual(
+                    self.errors(record, ethos={**evidence, "status": footing}), [])
+
+    def test_a_member_is_out_of_reach_of_the_external_basis(self):
+        # LAW 9 does not track a member, so `external` has no evidence to rest
+        # on; LAW 10.4 is the only way to one.
+        self.assertIn("does not reach",
+                      " ".join(self.errors({**self.record, "target": "logos"})))
+
+    def test_membership_is_the_standing_for_a_member_target(self):
+        member = {**self.record, "target": "logos", "basis": "member"}
         self.assertEqual(self.errors(member), [])
         # and it is the only basis that reaches one: a member is not tracked
-        # under LAW 9, so `nonmember` has no evidence to rest on.
-        wrong = {**self.record, "subject": "logos"}
+        # under LAW 9, so `outsider` has no evidence to rest on.
+        wrong = {**self.record, "target": "logos"}
         self.assertIn("does not reach", " ".join(self.errors(wrong)))
 
-    def test_a_child_is_reached_through_its_parent_and_pursues_through_it(self):
+    def test_a_child_is_reached_on_its_parents_footing(self):
         # LAW 1 gives a child its parent's footing, so the basis and LAW 9's
-        # evidence are both read off the parent. A child of the president is
-        # reached as a member; a child of a candidate is not.
-        subject = {**self.record, "subject": "stathmos", "basis": "member"}
-        self.assertEqual(self.errors(subject), [])
-        pursuer = {**self.record, "pursuer": "stathmos"}
-        self.assertIn("named as the parent", " ".join(self.errors(pursuer)))
+        # evidence are both read off the parent.
+        target = {**self.record, "target": "stathmos", "basis": "member"}
+        self.assertEqual(self.errors(target), [])
+        self.assertIn("through `kanon`",
+                      " ".join(self.errors({**target, "basis": "external"})))
 
-    def test_a_child_of_a_nonmember_is_reached_on_its_parents_footing(self):
-        inv = {**self.inventory,
-               "ethos-eoc": {"status": "child", "parent": "ethos",
-                             "path": "tools/eoc", "what": "the compiler"}}
-        record = {**self.record, "subject": "ethos-eoc"}
-        evidence = {"released": "https://example.invalid/ethos",
-                    "published": "A paper, 2026. https://example.invalid/e"}
-        run = lambda r, **c: ecosystem.pursuits_well_formed(
-            {**inv, "ethos": {**inv["ethos"], **c}}, [r])
-        # the parent is a candidate, so `member` does not reach it ...
-        self.assertIn("through `ethos`",
-                      " ".join(run({**record, "basis": "member"})))
-        # ... and `nonmember` does, once the parent carries LAW 9's evidence
-        self.assertIn("LAW 9's evidence", " ".join(run(record)))
-        self.assertEqual(run(record, **evidence), [])
+    def test_a_child_pursues_on_its_parents_footing(self):
+        # metagraphe pursuing cvc5 is tachyon's standing and responsibility.
+        self.assertEqual(self.errors({**self.record, "pursuer": "stathmos"}), [])
+        # and a child of a non-member has no standing to lend it
+        stray = {"stray": {"status": "child", "parent": "ethos",
+                           "path": "tools/stray", "what": "a child"}}
+        self.assertIn("only a member of this ecosystem investigates",
+                      " ".join(ecosystem.pursuits_well_formed(
+                          {**self.inventory, **stray},
+                          [{**self.record, "pursuer": "stray"}])))
 
     def test_both_ends_are_in_the_register(self):
-        self.assertIn("no row in this file",
-                      " ".join(self.errors({**self.record, "subject": "nobody"})))
-        self.assertIn("not a member",
-                      " ".join(self.errors({**self.record, "pursuer": "nobody"})))
+        for end in ("target", "pursuer"):
+            with self.subTest(end=end):
+                self.assertIn("no row in this file",
+                              " ".join(self.errors({**self.record, end: "nobody"})))
 
     def test_a_record_cannot_predate_the_work_it_records(self):
         early = {**self.record, "declared": "2026-08-01"}
@@ -537,7 +546,7 @@ class Pursuits(unittest.TestCase):
         self.assertIn("`closed` is set",
                       " ".join(self.errors({**self.record, "closed": "2026-09-19"})))
 
-    def test_one_subject_may_have_several_pursuers(self):
+    def test_one_target_may_have_several_pursuers(self):
         second = {**self.record, "pursuer": "logos"}
         self.assertEqual(self.errors(self.record, second), [])
         # but one pursuer twice over is two records of one investigation
@@ -547,11 +556,80 @@ class Pursuits(unittest.TestCase):
         self.assertEqual(self.errors(done, self.record), [])
 
     def test_the_old_per_entry_field_is_rejected_rather_than_ignored(self):
-        inv = {**self.inventory, "cvc5": {**self.inventory["cvc5"],
-                                          "dioktes": "2026-09-01 -- a fix lands"}}
+        inv = {**self.inventory, "outside": {**self.inventory["outside"],
+                                             "dioktes": "2026-09-01 -- a fix lands"}}
         with patch.object(ecosystem, "board_entities", return_value=set()):
             self.assertIn("`_pursuits`", " ".join(ecosystem.well_formed(inv)))
 
     def test_a_pursuits_value_that_is_not_a_list_fails(self):
         self.assertIn("records investigations in a list",
                       " ".join(ecosystem.pursuits_well_formed(self.inventory, {})))
+
+
+class DioktesAudit(unittest.TestCase):
+    """`scripts/eo_dioktes_audit`: the records read back against the register."""
+
+    inventory = dict(Pursuits.inventory)
+    record = dict(Pursuits.record)
+
+    def audit(self, *pursuits, **changes):
+        inv = {k: dict(v) for k, v in self.inventory.items()}
+        for name, fields in changes.items():
+            inv[name].update(fields)
+        return inv, list(pursuits)
+
+    def verdict(self, inv, pursuits) -> int:
+        """`check`, without its report in the middle of the test output."""
+        with contextlib.redirect_stdout(io.StringIO()):
+            return dioktes.check(inv, pursuits)
+
+    def test_a_good_basis_reports_nothing_against_the_row(self):
+        inv, pursuits = self.audit(self.record)
+        self.assertEqual(dioktes.basis_holds(inv, pursuits[0]), "")
+        self.assertEqual(self.verdict(inv, pursuits), 0)
+
+    def test_a_member_leaving_lapses_a_law_104_basis(self):
+        # The failure the command exists for: LAW 2.1 is exercised in somebody
+        # else's tree and the declaration here does not change by a character.
+        member = {**self.record, "target": "logos", "basis": "member"}
+        inv, pursuits = self.audit(member, logos={"status": "candidate"})
+        self.assertIn("the basis has lapsed", dioktes.basis_holds(inv, pursuits[0]))
+        self.assertEqual(self.verdict(inv, pursuits), 1)
+
+    def test_losing_law_9_evidence_lapses_an_external_basis(self):
+        inv, pursuits = self.audit(self.record, outside={"published": ""})
+        self.assertIn("no longer records the release and publication",
+                      dioktes.basis_holds(inv, pursuits[0]))
+
+    def test_a_child_takes_its_parents_footing_both_ways(self):
+        through = {**self.record, "pursuer": "stathmos", "target": "stathmos",
+                   "basis": "member"}
+        inv, pursuits = self.audit(through)
+        self.assertEqual(dioktes.basis_holds(inv, pursuits[0]), "")
+        # and the parent losing membership lapses the child's basis with it
+        inv, pursuits = self.audit(through, kanon={"status": "candidate"})
+        self.assertIn("the basis has lapsed", dioktes.basis_holds(inv, pursuits[0]))
+
+    def test_a_stopped_row_is_called_out_and_sorted_first(self):
+        quiet = {**self.record, "pursuer": "logos", "reporting": "stopped"}
+        inv, pursuits = self.audit(self.record, quiet)
+        out = dioktes.render(inv, pursuits, False)
+        self.assertIn("reporting and contact ended on request", out)
+        body = [l for l in out.splitlines() if l.startswith(("logos", "kanon"))]
+        self.assertTrue(body[0].startswith("logos"), out)
+
+    def test_an_empty_record_says_what_it_does_not_mean(self):
+        out = dioktes.render(self.inventory, [], False)
+        self.assertIn("not evidence that nobody is investigating", out)
+
+    def test_verbose_adds_the_scope_and_the_closing_condition(self):
+        inv, pursuits = self.audit(self.record)
+        out = dioktes.render(inv, pursuits, True)
+        self.assertIn(self.record["scope"], out)
+        self.assertIn(self.record["closes"], out)
+
+    def test_it_reads_the_registers_own_records(self):
+        # The declarations in the tree are well formed and their bases hold.
+        inv, pursuits = dioktes.load()
+        self.assertTrue(pursuits, "the register records no investigation")
+        self.assertEqual(self.verdict(inv, pursuits), 0)

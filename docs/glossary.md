@@ -146,13 +146,16 @@ under investigation. [Repository](https://github.com/ddsmt/ddSMT).
 
 <a id="dioktes"></a>
 **dioktes** (status; *noun*): The state of a repository actively pursuing
-defects in another tool, used in the phrase “in dioktes.” The subject may be a
-nonmember under
-[LAW 10.1](laws.md#law-101--declaring-an-investigation-of-a-nonmember) or a
-[member](#member) under
-[LAW 10.4](laws.md#law-104--internal-public-investigations-of-members).
+defects in another tool, used in the phrase “in dioktes.” The target may be a
+project outside the ecosystem under
+[LAW 10.1](laws.md#law-101--declaring-an-external-defect-investigation), on the
+evidence [LAW 9](laws.md#law-9--external-research-release-publication-and-permitted-comparisons)
+requires, or a [member](#member) under
+[LAW 10.4](laws.md#law-104--internal-public-investigations-of-members), where
+membership is the standing.
 Declared by a person with a closing condition and recorded in the
-[register](../scripts/ecosystem/ecosystem.json). A governance or progress
+[register](../scripts/ecosystem/ecosystem.json), where
+`scripts/eo_dioktes_audit` reads it back. A governance or progress
 [investigation](laws.md#law-10--investigations-declaring-conducting-and-ending-one)
 is not dioktes unless it actively searches for software defects.
 Public reporting and contact stop on request under
