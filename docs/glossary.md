@@ -503,13 +503,10 @@ repository exists and how to turn them into a useful starting point.
 
 <a id="ydoki"></a>
 **ydoki** (Eunoia child project of [dokimasia](#dokimasia); *proper noun*): The
-argument about which of the theories [cvc5](#cvc5)’s safe mode switches off are
-worth making proof-supported, and in what order — a ranking a maintainer can
-disagree with, never a measurement. **Not a Greek word, and not a description of
-the work**: it is formed from δοκιμασία the way [ynoia](#ynoia) is formed from
-εὔνοια. That is a named exception to the convention that a child’s name is Greek
-and describes what it does, taken by the maintainer for continuity with this
-ecosystem’s other derived names.
+argument about which of the theories and options [cvc5](#cvc5)’s safe mode switches
+off are worth making proof-supported, and in what order — a ranking a maintainer can
+disagree with, never a measurement. It is not a Greek word, taken by the maintainer
+for continuity with this ecosystem’s other derived names (e.g. [ynoia](#ynoia)).
 [Charter](https://github.com/ajreynol/dokimasia/blob/main/tools/ydoki/README.md).
 
 <a id="ynoia"></a>

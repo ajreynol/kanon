@@ -210,13 +210,6 @@ much the more common error.
 instead of asking for. That is a topic you did not open, and the protocol was
 there.
 
-*A sixth tenet, **produce a deliverable**, was retired on 2026-09-16: it was
-tenet 1 said twice, since a consumer that can be named is the recipient and the
-thing it consumes is the deliverable. What was only in it — that the artifact
-need not be a file, that work with no external consumer should say so rather
-than invent one, and that speed belongs to producing a thing and not to sending
-it — now sits under tenet 1, and the remaining tenets were renumbered once.*
-
 ## Policy is checked; vision is argued
 
 What divides this page from [`policy.md`](policy.md) is not subject matter. It
