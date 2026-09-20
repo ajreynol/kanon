@@ -12,15 +12,17 @@ An agent holds no footing, role or decision on its own.
 | --- | --- |
 | **Declare membership** | Put the declaration first in the README's closing [maintenance note](#the-maintenance-note). Say who writes the work, under what supervision, and what that supervision does not cover. |
 | **Keep one entry point** | Use the README as the front page and keep one documentation index current. Follow [the layout](#the-layout). |
-| **Run the shared policy check** | Keep an `anoieu / policy` CI job using a chosen commit or named contract, as described in [joining](#2-run-the-check). |
+| **Run the shared policy check** | Keep an `anoieu / policy` CI job. The recommended setup selects a fixed policy contract number, as described in [joining](#2-run-the-check). |
 | **Keep links and claims current** | Maintain paths, anchors and descriptions as the work changes. Correct stale claims when you find them. |
 
 The [productive-entity requirement](laws.md#law-11--productive-entities) also
 asks every president, member and child project for a recorded deliverable, a
 central reference explaining its purpose, or an assigned special role.
 
-**A discussion channel is optional.** Keep [`docs/discussion.md`](#the-discussion-file)
-only if you intend to read it. No post-join grading prompt is required.
+**`docs/maintenance.md` and `docs/discussion.md` are optional.** They are
+recommended only for repositories maintained by AI agents under human
+supervision, when there are maintenance instructions or cross-repository
+discussions to keep. No post-join grading prompt is required.
 
 **Report a shortfall as a specific observation, attributed and dated**, never
 as a characterisation of the project. If a member cannot satisfy a requirement,
@@ -28,30 +30,45 @@ review whether the requirement fits that repository and is clearly written.
 
 ## The layout
 
+These paths give readers familiar places to find the work. **Create only what
+the project uses.** A listed directory need not exist when its purpose does
+not apply, and there is no need for empty placeholders. The first table groups
+the main repository conventions; its last column says when each applies.
+
+**Main repository conventions**
+
+| path | what it holds | when it applies |
+| --- | --- | --- |
+| `README.md` | the front page and route to everything else | every repository |
+| `docs/` | written documentation, with one index in `docs/README.md` or the front page | when documentation extends beyond the README |
+| `docs/maintenance.md` | the entry point for someone maintaining the repository | optional; recommended only for repositories maintained by supervised AI agents, when there are instructions to keep |
+| [`docs/discussion.md`](#the-discussion-file) | cross-repository questions, proposals, notices and replies | optional; recommended only for repositories maintained by supervised AI agents, when there are discussions to keep |
+| `tools/` | child projects, with their own charters, code and data | when the repository houses child projects |
+| `scripts/` | commands, helpers and their data, including launchers for child projects | when the repository has such commands |
+| `prompts/` | assistant workflows, separate from commands in `scripts/` | when the repository maintains such workflows |
+| `.github/workflows/` | CI jobs | members keep the required `anoieu / policy` job; other jobs depend on the project |
+
+**Suggested but may not be applicable to your project**
+
+Use these directories when they fit the project's implementation and workflow.
+Their presence is not a membership requirement; each project chooses the
+contents and organization it needs.
+
 | path | what it holds |
 | --- | --- |
-| `README.md` | the front page, and the whole of what any other document may assume has been read |
-| `docs/` | every written document, each named in the index |
-| `docs/maintenance.md` | how a person maintains this repository, possibly by directing an agent. The one entry point a maintainer can guess |
-| [`docs/discussion.md`](#the-discussion-file) | optional standing channel for cross-repository questions, proposals, notices and replies; keep only live topics and the response gate |
-| `docs/misc/` | documents kept for the record and required of nobody: transcripts, deferred proposals, notes a reader may skip |
-| `tools/` | child projects, with their own code and data |
 | `test/` or `tests/` | tests, their inputs and expected results |
 | `examples/` | examples showing how to use the project |
 | `cmake/` | CMake build configuration and helpers |
 | `include/` | header files used by the project or its users |
 | `licenses/` | license texts and notices for the project and its dependencies |
 | `contrib/` | scripts and instructions for manually obtaining external tools |
-| `scripts/` | commands, helpers and their data: generators, checks, the runner |
-| `prompts/` | workflows that hand context to an assistant, kept apart from `scripts/` so that running a command never means deciding to spend a turn |
 | `deps/` | other people's repositories, fetched by a run and never committed |
 | `scratch/` | untracked working space |
-| `.github/workflows/` | what runs on every push |
 | [tool or feature directories](#tool-and-feature-directories) | one named, self-contained implementation per top-level directory; recommended |
 
-For `examples/`, `test/` (or `tests/`), `cmake/`, `include/`, `licenses/` and `contrib/`,
-policy reserves the purpose and leaves the contents and organization to each
-project.
+When one of these directories is used, keep its stated purpose. The guidance
+below applies to the corresponding work; it does not require adding work or
+directories the project does not need.
 
 Documentation is never a tooling entry; `docs/` and `contrib/` are outside the
 tooling inventory. Dedicated tutorials and maintained data, such as bug
@@ -63,19 +80,21 @@ tool is, what it finds, what it refuses to claim, how to run it, and a route to
 everything else. Nothing competes for that role — no second overview in
 `docs/`, no wiki, no `INTRODUCTION.md`.
 
-**The recommended maintenance guide is `docs/maintenance.md`.** Describe
-where to start, what the repository is responsible for, and how a person
-maintains it, possibly by directing an agent. Keep it short and link to details.
-The guide is local to each repository and moves with nobody; its name is the
-shared convention.
+**For repositories maintained by AI agents under human supervision, the
+recommended maintenance guide is `docs/maintenance.md`.** Describe where to
+start, what the repository is responsible for, and how a person directs its
+maintenance. Keep it short and link to details. The guide is optional and local
+to the repository; its name is the shared convention. This recommendation does
+not extend to repositories maintained by people.
 
 **Do not add a file per assistant to point at it.** Use one maintenance entry
 point, addressed to the person doing the work.
 
-**The cross-repository discussion channel is `docs/discussion.md`, when a
-repository keeps one.** This is where a reader looks for live questions,
-proposals, notices and replies involving other tools. Keeping it is optional;
-if present, it carries the response gate and follows [the discussion-file
+**For repositories maintained by AI agents under human supervision,
+`docs/discussion.md` is the recommended cross-repository channel when one is
+useful.** It holds live questions, proposals, notices and replies involving
+other tools. Keeping it is optional; the recommendation does not extend to
+repositories maintained by people. If present, it carries the response gate and follows [the discussion-file
 rules](#the-discussion-file). Reading a topic does not authorize acting on it.
 
 **Do not re-explain `docs/discussion.md` in repository documentation.** Its
@@ -93,15 +112,6 @@ inventory — but there is exactly one, and it covers everything a reader is
 expected to open. Two things are deliberately unindexed: the index itself, and
 a **letter from one office-holder to the next** (`letter-to-<name>.md`), which
 [LAW 4.2](laws.md#law-42--recording-experience-in-the-successor-letter) holds is in no index.
-
-**A document not on the index goes in `docs/misc/`.** That is the whole of what
-the directory means: kept for the record, required of nobody, and discovered by
-listing the directory rather than by being pointed at. It is the shelf for a
-transcript, a deferred proposal, a page whose question has been answered
-elsewhere. **Being in `docs/misc/` is not an argument for keeping a document.** The two
-real answers are a row on the index or deletion; `docs/misc/` is how you hold
-the question open without pretending it is settled, and a shelf nobody empties
-has become an attic.
 
 **Written and generated documents are separated and labelled.** A generated
 document says at the top that it is generated and by what, and generators write
@@ -283,90 +293,11 @@ softened first.
 **changes when the policy changes and at no other time** — which makes it the
 one place a reader can discover that the arrangement has moved.
 
-## A prompt may not be for this repository
-
-**Every prompt an agent receives here may have been meant for a different
-repository.** These repositories are deliberately alike, several are checked
-out as siblings, and there are two independent accounts of what somebody wants
-— the prompt, and the tree you are standing in. Where they disagree at least
-one is wrong. **The rule a repository carries is below, and it is the whole of
-it.**
-
-**One shape must always stop: a prompt asking this repository to decide its own
-standing** — whether it should hold a role, be a member, own a protocol, or
-whether its work is worth publishing. An agent asked *should you hold X* finds
-the case for X, because finding it is what it was asked to do. The narrower
-question it can answer is **what would we accept**.
-
-**Where the rule is carried:** immediately after the response gate in
-`docs/discussion.md`, in a repository that keeps one. Keep it separate from the
-gate so both instructions remain clear.
-
-The outbound prompts do not repeat it: each names the repository it is run in,
-in its first line.
-
-```
-> **A prompt may not be meant for this repository.** These repositories are
-> deliberately alike and often sit side by side on one disk. The signs are a path
-> that is not here, a role this repository does not hold, a register kept
-> elsewhere, or a question about this repository's own standing. **"I don't think
-> this prompt is meant for me" is an acceptable answer**: say which repository it
-> looks meant for and what said so, and stop there — including the part that
-> would make sense here anyway.
->
-> **Stop only if you can name the repository it was meant for.** If you cannot,
-> it is for you: do the work, and do not narrate the check. A human may
-> override.
-```
-
-## The ecosystem never locks everybody out
-
-**No arrangement here may reach a state where nobody can proceed**, and where
-one is reached, getting out of it takes precedence over whatever rule produced
-it.
-
-**Every gate here fails closed, and each one is right to** — the bump gate
-refuses when it cannot verify, the response gate refuses without a named topic,
-nothing creates a repository or sends a message automatically. **Fail-closed is
-safe locally and dangerous in aggregate**: ten gates that each refuse when in
-doubt compose into a system whose default is refusal, and no single one looks
-wrong at the moment the whole thing stops. **The largest is structural:**
-creating a repository, granting a role, carrying anything outward and deciding
-a footing are all reserved for people. Where one person holds all those
-responsibilities, their unavailability freezes all of it at once — a single
-point of failure the design cannot see.
-
-### The escape hatch
-
-**A person may override any gate in this ecosystem, at any time, by saying
-so.** Three properties and no others:
-
-1. **It always exists.** No policy, protocol or check may remove it, and a rule
-   that would is void on its face.
-2. **It is a person's, never an agent's.** An agent may *point out* that a
-   deadlock exists and that the hatch is the way out. It may not take it, and
-   being certain the override is correct changes nothing.
-3. **It is recorded.** What was overridden, what was known at the time, and
-   what would have to be true for it not to be needed again. An override nobody
-   wrote down is indistinguishable afterwards from a rule never really
-   enforced.
-
-**It does not depend on any of this machinery working**, which is the point: a
-hatch implemented as a tool is not a hatch, because the thing it exists to
-escape may be the tool. **Not to be taken lightly** — the check is not on the
-person's authority, which they have, but on whether the record shows the same
-gate overridden repeatedly, which is evidence the gate is wrong.
-
-**Every gate names its way out.** This applies to anything added later: a
-check, a protocol, a status transition, a required field. A gate with no stated
-way past it is a lockout that has not happened yet, and the cost of writing the
-sentence is one sentence.
-
 ## The discussion file
 
-**A repository may keep `docs/discussion.md`, and is not asked to.** It is the
-standing channel for saying something to another tool that is *not a defect
-report*: a question about intent, a proposal crossing a boundary, a notice that
+**`docs/discussion.md` is optional, and recommended only for repositories
+maintained by AI agents under human supervision.** It is the standing channel
+for saying something to another tool that is *not a defect report*: a question about intent, a proposal crossing a boundary, a notice that
 something here is about to move under somebody, an answer to any of those.
 **Open one if you intend to read it** — an empty file with a gate at the top,
 which is what a requirement reliably produces, advertises a way to reach
@@ -664,7 +595,8 @@ History and letters stay in the repository that held the office, under
 Before deleting a placeholder for a tool, read the replacement repository to
 verify that it does the claimed work. Every repository participating in the
 handoff must have passing CI; absent or unverified CI is not a pass. A person
-accepts the replacement and records the handoff in both discussion files.
+accepts the replacement and records the handoff in each participating repository,
+using its discussion file when one is kept.
 Keep the stub if verification is incomplete. Replacing it confers no ownership
 of the name.
 
@@ -811,77 +743,46 @@ can find the arrangement being adopted; membership does not depend on the link.
 
 ### 2. Run the check
 
-Its own workflow file, `.github/workflows/anoieu.yml`, rather than a step
-inside one of yours:
+**Select a fixed policy contract number.** The recommended setup is anoieu's
+shared workflow with an explicit `policy-version`, such as `'1'`. The number
+fixes the automated requirements, their applicability and their severity;
+anoieu maintains the checker implementation.
+
+Keep the job in `.github/workflows/anoieu.yml`:
 
 ```yaml
 name: anoieu
 
 on: [push, pull_request]
 
+permissions:
+  contents: read
+
 jobs:
   policy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: the policy checker, at the commit this repository pins
-        env:
-          ANOIEU_REV: <a commit you choose>
-        run: |
-          <fetch the checker at $ANOIEU_REV and run it against this tree>
+    uses: ajreynol/anoieu/.github/workflows/policy.yml@main
+    with:
+      policy-version: '1'
 ```
 
-**The shape is ours; the contents of that last step are anoieu's.** Take the
-clone URL, the checker's path and the way it is invoked from
-[anoieu](https://github.com/ajreynol/anoieu) rather than from here. Writing
-them down on this page would make them wrong the day anoieu moves a file, and
-this page has no way to know when that is.
+**Keep the workflow and job names `anoieu / policy`.** The displayed check may
+also include the called workflow's job name. Anoieu's
+[contract documentation](https://github.com/ajreynol/anoieu/blob/main/policy_check/README.md)
+defines the supported numbers and the shared workflow interface.
 
-**The names are the point.** A check appears in your pull requests as *workflow
-/ job*, so this one reads **`anoieu / policy`**: it says who is asking and what
-for, and leaves room for anything else we ever ask to become another job in the
-same file, muted or deleted in one place. Nothing is installed and nothing is
-built.
+**Changing the policy contract number is the member's decision.** A new
+obligation or a change in severity requires a new contract. Within the selected
+contract, implementation fixes can change a result, including by detecting a
+violation that an earlier implementation missed. The run records the checker
+commit for diagnosis; consumers do not need to maintain an anoieu commit pin.
+State the selected contract in the maintenance note. The number versions the
+automated checks, not this policy document.
 
-**A called workflow nests one level deeper**, so on the contract form the
-displayed check may carry the called job's name as well. What this rule asks
-for is the file and the job — `anoieu / policy` — and both forms have them.
-
-**Pin it.** `ANOIEU_REV` is a commit you choose and move on your own schedule,
-and moving it is a commit in *your* repository. **A build that can turn green
-without anybody committing cannot be used as evidence that a commit was good.**
-Tracking the tip is a reasonable choice for a repository that wants to hear
-about changes immediately; it should be a decision rather than what happens if
-you paste the short version.
-
-**Or hold a contract still instead of a commit.** anoieu publishes a shared
-workflow that a repository calls, naming the **policy contract** it is checked
-against rather than a checker revision; [its contract
-page](https://github.com/ajreynol/anoieu/blob/main/policy_check/README.md)
-is the authority on what a contract fixes and carries the file to copy, which
-belongs there rather than here for the reason above.
-
-**Both forms satisfy this rule**, and what differs is what may move under you.
-A pin moves when you move it. A contract fixes the *obligations* and lets the
-implementation change, so a build can go red with nothing committed — and
-within a contract that means a violation already in the tree has started being
-reported, not a new requirement arriving. **Whichever you take, take it as a
-decision**, and say which in your maintenance note so a reader of a red build
-knows what could have moved.
-
-**And only move a pin to a commit where anoieu's CI is green — a requirement,
-not a suggestion.** Work anoieu could not get past its own build is not work to
-take on. Ask **about that commit and never about anoieu's tip**, so the answer
-never changes after you have taken it; **fail closed**, which is affordable
-because bumping is optional; and **do not run it in your CI**, since it reads a
-remote. Before editing a checker lock, inspect anoieu's CI result for the
-exact candidate commit and leave the lock unchanged if success cannot be
-established. A repository on the contract form pins nothing for this check
-and has nothing here to bump.
-
-**The checker and this page live in different repositories**, so the pin names
-the checker and not the policy text. **How the two stay in version step is
-undecided**; until it is settled, cite the policy by its own commit as well.
+**A checker commit pin remains an accepted implementation choice.** A repository
+that needs one may use it instead of the recommended shared workflow. Move it
+only to a commit whose own anoieu CI is verified green, and leave it unchanged
+when that cannot be established. This verification belongs to the update, not
+the member's CI run. A checker pin does not select a revision of this policy.
 
 ### When somebody asks you to add a CI check
 
@@ -902,26 +803,19 @@ member's CI is theirs.
 - **A temporary check must be built so it cannot become permanent.** Give it
   something to assert that stops being true when its purpose ends, so it forces
   its own removal.
-- **And the one thing we do ask:** the pinned `anoieu / policy` workflow a
+- **And the one thing we do ask:** the `anoieu / policy` workflow a
   member adds on joining is a contract with us rather than a check of their
   own. Add anything beside it; do not weaken it quietly.
 
 ### What is not promised
 
-**These are anoieu's to make and to change**, and its contract page states
-them. Three matter to a repository deciding how to run the check:
-
-- **No numbered releases.** What is versioned is the **contract**, which fixes
-  the obligations while the implementation stays free to change; a commit
-  identifies an implementation instead.
-- **Checks will be added, and some will fail repositories that pass today.** A
-  pinned tree adopts one by moving its pin, and a tree on the contract form by
-  naming a later contract — an added obligation is a new contract and never a
-  fix.
-- **Nobody maintains your bumping for you.** A repository choosing a checker
-  pin is responsible for checking and updating it. **An announcement is an
-  intention and nothing enforces it**; a pin or a named contract works whether
-  or not anybody remembers.
+- **A contract number fixes requirements, not results.** Implementation fixes
+  can change a verdict on an unchanged tree; the logged checker revision says
+  what ran.
+- **A new contract is not adopted automatically.** Each member chooses when
+  to change its `policy-version` after reviewing the new obligations.
+- **A contract number is not a numbered checker release or a revision of this
+  page.** Anoieu's contract documentation defines its mechanical coverage.
 
 ### The soft form: the note without the membership
 
@@ -1017,10 +911,10 @@ The policy is written to be copied. What another repository has to decide:
 
 | decision | here |
 | --- | --- |
-| how the tree is arranged | the table in *The layout* |
+| how the tree is arranged | the tables in *The layout*, using only applicable paths |
 | where the maintenance note goes | the last section of `README.md` |
 | where ownership and human maintainers are identified | link to [Human maintainers](#human-maintainers) in this policy; do not copy personal attribution |
-| where a maintainer starts | `docs/maintenance.md`, at a path anybody can guess |
+| where a maintainer starts | `docs/maintenance.md`, recommended only for repositories maintained by supervised AI agents |
 | where child projects live | `tools/X/` |
 | who may start and end one | a human, explicitly (rule 1) |
 | what governs anything published about somebody else's code | your own reporting policy, wherever you keep it |
@@ -1045,10 +939,10 @@ by check and contract; this is not a claim that every policy is automated.
 
 | coverage limit | what it means |
 | --- | --- |
-| Documentation | Index checking supports `docs/README.md`; the front-page index form is not yet covered. Resolving a link does not establish that its claim is current or true. |
-| Recommendations | The maintenance guide, tool-directory layout and repository-level child `scripts/` and `prompts/` are advisory. Naming explanations produce minor findings. Coding style does not block a build. |
+| Documentation | Index checking compares the documents with their index. Resolving a link does not establish that its claim is current or true. |
+| Recommendations | The maintenance and discussion files are optional and recommended only for repositories maintained by supervised AI agents. Tool-directory layout and repository-level child `scripts/` and `prompts/` are advisory. Naming explanations produce minor findings. Coding style does not block a build. |
 | Ownership links | As of 2026-09-19, enforcement covers anoieu's tree only. The requirement applies to other members through review; expanding the check requires a contract decision, tracked in [B43](board.md). |
-| Discussion files | A missing response gate is a failure when the root discussion file exists. Topic format and the misaddressed-prompt notice are minor findings. Making the latter fatal awaits the human decision in [B38](board.md). The checker does not enforce a child's use of its parent's channel. |
+| Discussion files | A missing response gate is a failure when the root discussion file exists. Topic format produces minor findings. The checker does not enforce a child's use of its parent's channel. |
 | Membership links | The declaration is required; a missing link to this policy is a minor finding. |
 | Child integration | The checker described in [the amendment record](history.md#child-projects-may-maintain-shared-work--2026-09-20) still uses the older island-exception wording. The [child-project policy](#child-projects) permits documented shared dependencies. |
 | Human judgement | Document currency, present-tense prose, evidence quality, scope, authority and the development vision require a reader. Passing does not settle them. |

@@ -368,6 +368,35 @@ all ten policy-bound repositories with a discussion file carried the
 misaddressed-prompt notice, while the four without a channel skipped it. That
 adoption evidence did not itself authorize making the notice check fatal.
 
+### Layout guidance was made conditional and internal instructions removed — 2026-09-20
+
+At the maintainer's direction, the layout now separates the main repository
+conventions from suggested directories that may not apply. Each main path says
+when it is needed; a listed folder is not a request for an empty placeholder.
+The `docs/misc/` recommendation and the instruction to put unindexed documents
+there were removed. Kanon's existing background directory remains a local
+choice.
+
+The shared policy also removed *A prompt may not be for this repository* and
+*The ecosystem never locks everybody out*, including the general escape-hatch
+subsection. These were internal operational instructions distracting from the
+repository policies. Local prompting advice remains in the maintenance guide.
+`B38`, the proposal to make the misaddressed-prompt check fatal, was abandoned
+with the shared requirement. Anoieu's checker still reports that notice as a
+minor finding when absent; changing its implementation belongs to anoieu.
+
+The maintainer also limited the recommendations for `docs/maintenance.md` and
+`docs/discussion.md` to repositories maintained by AI agents under human
+supervision. Both remain optional. Handoffs can be recorded without creating a
+discussion file. The README's maintenance note remains a separate requirement.
+
+The recommended CI setup now selects an explicit policy contract number,
+illustrated by `policy-version: '1'`, rather than leading with an anoieu commit
+pin. The example follows anoieu's shared workflow interface at `0b6ec54`;
+kanon's existing workflow already uses it. Commit pins remain accepted as an
+implementation choice. A fixed contract keeps the automated obligations stable
+while allowing checker fixes, without asking each member to maintain a pin.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to

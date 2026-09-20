@@ -27,9 +27,9 @@ that have been demoted.
 
 ## Demoted
 
-[`policy.md`](policy.md#the-layout) defines `docs/misc/` as optional background.
-These pages remain available for the record; keeping one here is not a reason
-to postpone deciding whether it should be updated, merged or removed.
+Kanon keeps these optional background pages in `docs/misc/` as a local choice.
+Keeping one here is not a reason to postpone deciding whether it should be
+updated, merged or removed.
 
 | document | what it is |
 | --- | --- |

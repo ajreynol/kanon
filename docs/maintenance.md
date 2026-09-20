@@ -193,9 +193,8 @@ Learned from sessions that went wrong, in rough order of how much each cost.
 
 **Say which repository the prompt is for.** These trees are alike on purpose
 and sit side by side on one disk, and a prompt meant for one arriving in
-another is a real failure with a real incident behind it — the rule is *A
-prompt may not be for this repository* in [`policy.md`](policy.md). One clause
-at the top prevents it.
+another can send work to the wrong tree. Name the intended repository in the
+first line. This is local prompting advice.
 
 **Never ask a repository whether it should hold something.** *Should koine own
 the communication protocols* is a question koine cannot answer: an agent asked
@@ -460,8 +459,8 @@ called at `main`, asking for **policy contract 1**. **This repository pins
 nothing for it**, so there is no checker lock to update. What is held still
 is the contract, and the implementation behind it may change
 between two runs of the same commit. [`policy.md`](policy.md#2-run-the-check)
-accepts a pinned commit just as well, and a member may be on either form — read
-a member's own workflow file rather than assuming.
+recommends this fixed contract number; a checker commit pin remains an accepted
+alternative. Read a member's own workflow file to see which it uses.
 
 **anoieu** owns the checker implementation; stathmos's
 [`tools/stathmos/audits/policy_check.py`](../tools/stathmos/audits/policy_check.py)

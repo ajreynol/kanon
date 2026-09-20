@@ -294,26 +294,6 @@ an **offer**: the laws list the commit census under what they leave unsettled,
 so nothing confers it. An id records a fact; it does not create the obligation.
 **HUMAN FEEDBACK:**
 
-## B38 — decide whether the misaddressed-prompt check joins the fatal gate
-
-**Task:** decide whether *a prompt may not be for this repository* stops being
-reported-and-never-fatal.
-**Entities:** `kanon`, `anoieu`
-**Status:** waiting on the maintainer — [the policy](policy.md) says the check
-joins the fatal gate when every member has adopted or declined it, and
-`anoieu-D33` reports the condition met: three repositories carry the paragraph,
-nobody declined, and it has fired twice in opposite directions. **Measured wider
-on 2026-09-19** and recorded in the policy: all ten repositories held to the
-policy that keep a discussion file pass, and the four that keep none skip.
-**Channel:** **internal**; anoieu implements whatever is decided.
-**Next:** decide, or record that the condition being met is not sufficient.
-**Prompt — `kanon`:** the argument against acting on this is anoieu's own and it
-is good: a safety rule promoted on an agent's reading is the wrong way round,
-and the repositories a fatal gate would fail are the ones whose builds turn red.
-Note also that a joining tree has no discussion file, so the gate would not
-reach a new member until it writes one.
-**HUMAN FEEDBACK:**
-
 ## B43 — decide whether the ownership-link requirement is checked everywhere
 
 **Task:** decide whether *always link ownership and human-maintainer statements
