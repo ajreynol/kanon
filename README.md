@@ -15,9 +15,8 @@ anybody's repository.
 
 **Who is in the Eunoia ecosystem, and on what terms.** A footing says what a
 tool owes us and what we say about it, and the two are not the same scale —
-[`docs/laws.md`](docs/laws.md) defines them and
-[`docs/policy.md`](docs/policy.md#the-footings) says what each costs whom. Audit
-the register with:
+[Ecosystem footings](docs/laws.md#law-1--ecosystem-footings-membership-and-other-relationships)
+defines these relationships. Audit the register with:
 
 ```sh
 scripts/eo_status_audit --check      # validate the register, offline

@@ -424,6 +424,17 @@ repository conventions. The recommendation remains advisory.
 The suggested-directory table follows the explanations of the main conventions,
 with its test, working-space and dependency guidance kept beside it.
 
+### The policy was organized around repository conventions — 2026-09-20
+
+At the maintainer's direction, the policy now has four sections and a matching
+table of contents: joining, main repository conventions, suggested directories,
+and checking coverage. Each main-table row has one detailed subsection;
+suggestions and mechanical coverage follow those explanations. Footing definitions
+and repeated explanations of membership and authority were replaced with links
+to the laws. Handoffs, amendment records and document guidance also refer to their
+governing laws. Repetition was cut to keep the policy focused on maintainer actions,
+while existing section anchors were retained for links from other repositories.
+
 ### Ynoia and stathmos were tied to the presidency — 2026-09-18
 
 The maintainer directed that both projects move with their work and roles to

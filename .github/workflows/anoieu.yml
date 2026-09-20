@@ -7,7 +7,7 @@ name: anoieu
 # a contract that is a violation already in the tree which has started being
 # reported, never a new requirement arriving.
 #
-# `docs/policy.md`, section `2. Run the check`, is the rule. It accepts a pinned
+# `docs/policy.md`, subsection `.github/workflows/`, is the rule. It accepts a pinned
 # commit instead, and this repository ran that form until 2026-09-17; there is
 # nothing left here to pin, and nothing here to bump.
 

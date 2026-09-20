@@ -89,7 +89,7 @@ may record on its own `docs/maintenance.md` what it holds itself to. Its tree
 is checked and the result printed as `N tracked` rather than `N failing`:
 **a measurement, not a shortfall, with nobody at fault and nobody asked to
 fix it.** `unadvertised-child` is the counterpart for a child its parent's
-front page does not name. See [the footings](policy.md#the-footings).
+front page does not name. See [the footings](laws.md#law-1--ecosystem-footings-membership-and-other-relationships).
 
 <a id="autarkeia"></a>
 **autarkeia** (status; *noun*): The proposed state in which an ecosystem can
@@ -105,7 +105,7 @@ See
 **candidate** (footing; *noun*): The [footing](#footing) for a repository the
 ecosystem would like to join, but which has not joined and owes nothing. It
 records our interest, not their consent. See
-[the footings](policy.md#the-footings).
+[the footings](laws.md#law-1--ecosystem-footings-membership-and-other-relationships).
 
 <a id="carcara"></a>
 **carcara** (Eunoia outsider; *proper noun*): An outside proof checker and
@@ -259,7 +259,7 @@ claims, not ranks. See
 **foundation** (footing; *noun*): The [footing](#footing) for a project the
 ecosystem exists to serve. It joins nothing, owes nothing, and is subject to no
 constraint imposed by this arrangement. See
-[the footings](policy.md#the-footings).
+[the footings](laws.md#law-1--ecosystem-footings-membership-and-other-relationships).
 
 ## H
 
@@ -350,7 +350,7 @@ conduct.
 <a id="member"></a>
 **member** (footing; *noun*): A repository that has chosen to adopt [eo](#eo)’s
 shared policy and approach. Membership carries obligations and may be left. See
-[the footings](policy.md#the-footings).
+[the footings](laws.md#law-1--ecosystem-footings-membership-and-other-relationships).
 
 <a id="metagraphe"></a>
 **metagraphe** (Eunoia child project of [tachyon](#tachyon); *proper noun*): The
