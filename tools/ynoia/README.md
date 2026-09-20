@@ -49,7 +49,7 @@ So: write it down, make the strongest case against it, and see which survives.
 
 3. **The naming arguments.** Whether a name describes the work, what it might
    mislead a reader into expecting, and why an alternative would fit better.
-   [The naming guidance](docs/proposals.md#arguing-about-names) states the approach;
+   [The naming guidance](docs/tools.md#arguing-about-names) states the approach;
    proposals carry the individual arguments. The president's
    [glossary](../../docs/glossary.md) is the authoritative name register.
    Ynoia neither duplicates it nor reserves names.
@@ -57,10 +57,9 @@ So: write it down, make the strongest case against it, and see which survives.
 4. **Auditing proposals.** Whether a given idea deserves a repository of its
    own is the account's general question applied to one case, with a decision
    attached — so it is answered here, against a stated standard, in
-   [`docs/proposals.md`](docs/proposals.md). Most wants are not that question, and the
-   ones that are work rather than repositories are tracked in
-   [`docs/requests.md`](docs/requests.md) with an argument about whose tree they belong
-   in. The output is an argument with a
+   [`docs/proposals.md`](docs/proposals.md) — which since 2026-09-19 also holds
+   the wants that are work rather than repositories, with an argument about
+   whose tree each belongs in. The output is an argument with a
    recommendation at the end. **It approves nothing:** a repository is a claim
    on a shared namespace and on years of somebody's attention, and the policy
    reserves that for a person. kanon carries proposals in, because it is the

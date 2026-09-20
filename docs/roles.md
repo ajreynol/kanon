@@ -374,9 +374,11 @@ repository that holds the office.
 **Role:** *should this become a repository of its own*, answered against a
 stated standard with a verdict attached — and, where the answer is no, an
 argument about whose existing tree the work belongs in instead.
-**Owns:** [`proposals.md`](../tools/ynoia/docs/proposals.md) and
-[`requests.md`](../tools/ynoia/docs/requests.md); naming arguments in `proposals.md`
-refer to the authoritative register in `docs/glossary.md`.
+**Owns:** [`proposals.md`](../tools/ynoia/docs/proposals.md), which absorbed
+`requests.md` on 2026-09-19 — the two pages asked one question and every entry
+on the second explained why it was not the first. Naming arguments are in
+[`tools.md`](../tools/ynoia/docs/tools.md#arguing-about-names) and refer to the
+authoritative register in `docs/glossary.md`.
 
 ## zetesis
 

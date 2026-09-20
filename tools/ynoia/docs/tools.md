@@ -15,187 +15,26 @@ priority of work that does not exist yet.
 judgement, it is this project's judgement, and the whole of what it costs to
 disagree is moving a block.
 
-## What is on it, and what is not
-
-| page | its question |
-| --- | --- |
-| [glossary](../../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
-| [`proposals.md`](proposals.md) | should this be a repository of its own, and why does its name fit |
-| [`requests.md`](requests.md) | whose tree should this work live in |
-| [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up |
-| **this page** | **which of them is worth building first** |
-
-**A tool is on this page when it does not exist and would be its own artifact.**
-Work that belongs inside somebody's existing tree is a request and is next door;
-that is the line, and it is why the dependency auditor `R1` is not here.
-
 **A tool leaves this page when it exists**, rather than being marked done and
 kept. **euthyna** left when eudaimonia started it and **koine** left when its
 repository existed; both are now in
-[`../../../docs/roles.md`](../../../docs/roles.md), which is where a tool with a role
-is described. **Five more left on 2026-09-16**: **kanon**, whose governance
-transfer completed on 2026-09-15, and **epikrisis**, promoted out of eudaimonia
-— both members in
-[`ecosystem.json`](../../../scripts/ecosystem/ecosystem.json) — and **noesis**,
-**hermeneia** and **mimesis**, each started as a child project in eudaimonia's
-tree and documented at its source — mimesis moved to eunoia's tree on
-2026-09-19 and is documented there. A page that keeps its graduates is a page
-whose first entries are all finished work, which is exactly what the first two
-entries here had become before that sweep.
-
-**`iogos` left on 2026-09-18, and it had been gone a while.** It is a
-repository — an [associate](../../../docs/glossary.md#associate), vetted
-2026-09-17, carrying its own maintenance marker — so the rule above had already
-decided this page should not describe it as work nobody has started. **What its
-entry was carrying is the fork**, and that is why the removal is worth a
-sentence rather than a diff: the entry's argument was that iogos is the thing
-`noesis` has to be decided *against*, and the fork is argued at length in
+[`../../../docs/roles.md`](../../../docs/roles.md), which is where a tool with a
+role is described. **Five more left on 2026-09-16** — **kanon** and
+**epikrisis**, now members in
+[`ecosystem.json`](../../../scripts/ecosystem/ecosystem.json), and **noesis**,
+**hermeneia** and **mimesis**, started as child projects and documented at their
+sources. **`iogos` left on 2026-09-18**, being a repository on an associate
+footing since the day before; the argument its entry carried is the fork with
+noesis, which is in
 [`proposals.md`](proposals.md#p3--the-semantics-and-the-compiler-defined-in-lean)
-and in [`why-eunoia.md`](why-eunoia.md), which is where it belongs. Nothing was
-lost by deleting the summary of it. **The falsification test the entry named is
-now running rather than finished**: iogos is a repository and noesis is a child
-project in eudaimonia's tree, so a second kernel is being attempted — whether it
-turns out to be a second backend or a second project is exactly what neither has
-answered yet, and iogos's own README warns it is a research scaffold with no
-soundness proof.
+and in [`why-eunoia.md`](why-eunoia.md#iogos--logos-in-a-second-proof-assistant),
+where it belongs. A page that keeps its graduates is a page whose first entries
+are all finished work.
 
-## How to read it, and how to edit it
-
-**Position is the priority**, exactly as on
-[`../../../docs/board.md`](../../../docs/board.md). The first entry is the one most
-worth starting; the last is the least. Reordering is done by moving a block, and
-that is the main way a person changes what this page says.
-
-**The working name identifies the proposal.** Check the
-[glossary](../../../docs/glossary.md) before using a name for different work.
-Proposed names here describe ideas; listing one neither reserves it nor creates
-a glossary entry. Keep naming arguments with the proposal.
-
-**Most promising means what it would change, weighed against whether anybody
-could start it.** Both halves are load-bearing. A page ordered only by what a
-tool would change puts the largest one first every time and is useless to
-somebody with an afternoon; a page ordered only by cheapness is a list of things
-not worth doing. Where the two pull apart, the entry's last field says so in
-words rather than hiding it in the position.
-
-**The ordering is the part to argue with.** Every other field is a summary of
-something argued elsewhere, and correcting one is bookkeeping. **Why here** is
-this page's own claim, it is the field that changes when an entry moves, and it
-is the only thing here worth an afternoon of disagreement.
-
-Nothing consumes this file yet. It is written to be *parsed later* rather than
-parsed now: the same seven labels, in the same order, always present, and a
-field with nothing in it says `nothing` rather than being left out.
-
-| field | what it holds |
-| --- | --- |
-| **What** | one line: the artifact, not the case for it |
-| **State** | `named`, `audited`, or `parked` — plus one clause saying by whom or since when |
-| **Settles** | which arguments, objections, open questions or arrangements it moves, by their ids in [`why-eunoia.md`](why-eunoia.md) |
-| **Costs** | where the difficulty actually sits. One line, and not a schedule |
-| **Before it** | what has to be decided or built first, or `nothing` |
-| **Today** | what stands in its place, or `nothing` |
-| **Why here** | the argument for this position, which is the field that changes when the entry moves |
-
-## Best practices for requesting a listing
-
-**Somebody wants a tool named here.** Sometimes it is a person with an
-afternoon; more often it is a repository that has noticed a hole next to itself
-and wants the hole registered. Either is welcome, and none of what follows is a
-gate — a request that arrives with none of it is still read, and the worst
-outcome is an entry whose fields say `nothing` in several places, which is
-information rather than a rejection.
-
-**The one thing worth having first is the vision.** Not the code, not a design,
-not a schedule: a written statement of what the tool is *for* — the artifact it
-would produce, the consumer that would read that artifact, what it refuses to
-answer, and what would show the idea was wrong. This page judges *which of these
-is worth starting*, and the judgement is made against the vision. Where there is
-none, the audit has to invent one in order to have something to weigh, and an
-audit that invents what it is judging is grading its own work. That is the whole
-of the argument, and everything below is it applied to two different situations.
-
-### An internal project: have it hashed out already
-
-An **internal** project is one this ecosystem would build, host or depend on —
-a child project in somebody's tree, a tool a member would fetch, a piece of
-shared machinery. For these the recommendation is strong, and it costs nothing,
-because **the vision is already owed elsewhere**. The policy asks a child project
-to open with the question it is trying to answer, the goals in order, the
-wishue, and an explicit list of what is out of scope; the ecosystem's vision asks
-that the consumer be named before the work starts, by tool and by artifact. A
-request that arrives with those answered can be judged the day it arrives.
-
-What it buys, concretely:
-
-- **The verdict is about the idea rather than about the request.** Every field
-  on this page is a summary of something settled elsewhere. When nothing has been
-  settled, the entry becomes a paraphrase of a conversation, and the first person
-  to disagree with it has to reconstruct what was actually proposed.
-- **It survives being audited as a repository.** The standard in
-  [`proposals.md`](proposals.md) opens by asking whether the thing exists
-  anywhere yet and how many consumers it really has. Both are unanswerable
-  without a stated scope, and an audit that reaches them with nothing to read
-  produces *not yet* by default — which looks like a judgement and is not one.
-- **It is the cheapest place to find out the scope is undecided.** A vision that
-  is hard to write is not a writing problem. Where the name needs a paragraph of
-  explanation and the paragraph does not come, what is unclear is what the tool
-  does, and finding that out before a repository exists costs an afternoon rather
-  than a namespace.
-
-### A standalone project: less clear, deliberately
-
-A **standalone** project is one that would be its own repository with its own
-maintainer, possibly somebody who has never heard of this ecosystem and owes it
-nothing. Here the recommendation is much weaker, and the asymmetry is on purpose.
-
-**The vision would be theirs to write, and asking for it first inverts the
-order.** A person who is going to build a thing finds out what it is by starting
-it; requiring a settled scope before the repository exists asks them to commit to
-a shape before they have the artifact that would tell them which shape is right.
-Several entries on this page were named with no vision at all — a Greek word, a
-paragraph in an account, and an argument that their absence distorts something —
-and they are better for it. What is registered in that case is **a name and a
-claim about priority**, not a plan, and the `named` state says exactly that.
-
-So for a standalone tool the honest minimum is smaller: one line on the artifact,
-and one line on what its existence would change. If the requester can also say
-what stands in its place today, the entry is complete enough to be argued with.
-Anything more is welcome and nothing more is expected.
-
-The line between the two cases is **who ends up holding it**, which is the same
-question the proposals standard has learned to ask last and should ask first. A
-tool this ecosystem would depend on is one we are committing to read, pin and
-live with, and we are entitled to have read its scope before doing that. A tool
-somebody else is going to build for their own reasons is theirs, and a register
-that demanded a business case from them would be a register nobody sends anything
-to.
-
-### What a request carries
-
-Enough to fill the seven fields, or an honest gap where it cannot:
-
-- **A working name**, checked against the [glossary](../../../docs/glossary.md)
-  and existing trees. Explain a new candidate with the proposal, following the
-  [naming arguments](proposals.md#arguing-about-names); do not create a second
-  name for work already listed.
-- **One line on the artifact** — what would exist that does not. Not the case
-  for it; that goes somewhere it can be disagreed with.
-- **What it would settle**, by the ids in [`why-eunoia.md`](why-eunoia.md) where
-  it touches the account, and in words where it does not.
-- **What stands in its place today**, including `nothing`. This is the field
-  requests most often omit and the one that most often changes the position.
-- **Where the vision is written down** — a charter, a README, a proposal, a
-  message — or `nothing`, said plainly.
-
-**A request with no vision is still listed**, as `named`, with the missing
-statement recorded as the first thing standing in the way. What it cannot be is
-*audited*: [`proposals.md`](proposals.md) asks four questions that a scope has to
-exist to answer, and an audit run against a gap would return a verdict about this
-project's imagination. That is the concrete consequence, and it is the reason the
-recommendation is worth making at all.
-
----
+**[How this page is maintained](#how-this-page-is-maintained) is at the bottom**,
+and it serves [`proposals.md`](proposals.md) and [`papers.md`](papers.md) too:
+the ordering rule, the fields, the naming arguments, and what a listing arrives
+with are written once, there.
 
 ## nomophylax — the laws, out of the hands of the party they bind
 
@@ -320,3 +159,137 @@ arrangement's weakest artifact and touches nothing else, so every other open
 question in the account is exactly as open the day after it lands — which is
 worth saying, because *we are building a verified checker* is easily heard as
 *the rest is settled*.
+
+---
+
+## How this page is maintained
+
+**This footer is the one place ynoia's registers state their shared
+conventions.** [`proposals.md`](proposals.md) and [`papers.md`](papers.md) point
+here rather than repeating it; what is specific to one of them stays on that
+page.
+
+### The registers, and what each asks
+
+| page | its question |
+| --- | --- |
+| [glossary](../../../docs/glossary.md) | what names are in use, what they mean, and which work they identify. **The president's, and authoritative** |
+| **this page** | **which tool that does not exist is worth building first** |
+| [`proposals.md`](proposals.md) | should this be a repository of its own — and where the answer is no, whose existing tree the work belongs in |
+| [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up |
+
+The line between this page and `proposals.md` is **whether anybody has audited
+it**. A name with a priority argument belongs here; a name with a verdict
+against a standard belongs there, and an entry can be on both.
+
+### Ordering
+
+**Position is the priority**, exactly as on
+[`../../../docs/board.md`](../../../docs/board.md). The first entry is the one
+most worth starting; the last is the least. Reordering is done by moving a
+block, and that is the main way a person changes what a register here says.
+
+**Most promising means what it would change, weighed against whether anybody
+could start it.** Both halves are load-bearing. Ordered only by what a tool
+would change, the largest goes first every time and the page is useless to
+somebody with an afternoon; ordered only by cheapness, it is a list of things
+not worth doing. Where the two pull apart, the entry says so in words rather
+than hiding it in the position.
+
+**The ordering is the part to argue with.** Every other field summarises
+something argued elsewhere, and correcting one is bookkeeping. **Why here** is
+the page's own claim and the only field worth an afternoon of disagreement.
+
+### The fields
+
+Nothing consumes these files yet. They are written to be *parsed later* rather
+than parsed now: the same labels, in the same order, always present, and a field
+with nothing in it says `nothing` rather than being left out.
+
+| field | what it holds |
+| --- | --- |
+| **What** | one line: the artifact, not the case for it |
+| **State** | `named`, `audited`, or `parked` — plus one clause saying by whom or since when |
+| **Settles** | which arguments, objections, open questions or arrangements it moves, by their ids in [`why-eunoia.md`](why-eunoia.md) |
+| **Costs** | where the difficulty actually sits. One line, and not a schedule |
+| **Before it** | what has to be decided or built first, or `nothing` |
+| **Today** | what stands in its place, or `nothing` |
+| **Why here** | the argument for this position, which is the field that changes when the entry moves |
+
+**Entries carry no id.** They are identified by their working name, and
+[`proposals.md`](proposals.md) works the same way except for the audited `P<n>`
+proposals, whose numbers are cited from outside this project and stay.
+
+### Arguing about names
+
+The president's [glossary](../../../docs/glossary.md) is the authoritative name
+register: what a name means and which work it identifies. Ynoia argues how a
+name fits its work, and keeps no list of taken, reserved or free names.
+
+**A name should describe what the work does to its subject.** Explain the fit in
+one sentence, then state the strongest likely misreading. **If the explanation is
+strained, revisit the scope rather than searching for a more elaborate word** —
+a name that needs a paragraph is telling you the scope is undecided. Greek draws
+on vocabulary the ecosystem already uses, and the etymology is an argument a
+reader can challenge; a descriptive name can earn its place too. Distinctive
+names help a reader tell a project from its subject, which is the reason for the
+convention rather than a reason to force a word onto unsuitable work.
+
+For an **existing** name, cite its glossary entry and the project's own
+explanation, and say which reading works, which misleads and why. Suggest a
+correction; do not keep a competing definition here.
+
+For **proposed** work, put the candidate name, scope, etymology, alternatives
+and objections with its entry. A suggestion reserves nothing, so check the
+glossary and the existing trees before treating a candidate as available.
+[`P2`](proposals.md#p2--the-ecosystems-governance-out-of-the-analyzer) and
+[`P1`](proposals.md#p1--central-tooling-for-reporting) show the form: what the
+name claims, and the objection to it. They preserve the choices considered then;
+the glossary records the names in use now.
+
+When a person adopts a name and the work exists, its definition belongs in the
+glossary, and when the work moves the inventory and the glossary entry move
+together. **Ynoia keeps the reasoning, not a second register to synchronise.**
+
+### What a listing arrives with
+
+**None of this is a gate.** A request that arrives with none of it is still
+listed, and the worst outcome is an entry saying `nothing` in several fields,
+which is information rather than a rejection.
+
+**The one thing worth having first is the vision** — not code, not a design, not
+a schedule, but a written statement of what the tool is *for*: the artifact it
+would produce, the consumer that would read it, what it refuses to answer, and
+what would show the idea was wrong. The judgement is made against that, and
+where there is none the audit has to invent one in order to have something to
+weigh — **an audit that invents what it is judging is grading its own work.**
+
+**How strongly it is recommended depends on who ends up holding the thing.**
+
+- **Internal** — a child project, a tool a member would fetch, shared machinery.
+  **Strongly, and it costs nothing**, because the vision is already owed
+  elsewhere: the policy asks a child project to open with its question, its
+  goals, its wishue and what is out of scope, and the ecosystem's vision asks
+  that the consumer be named before the work starts. A request that arrives with
+  those answered can be judged the day it arrives.
+- **Standalone** — its own repository, its own maintainer, possibly somebody who
+  has never heard of this ecosystem and owes it nothing. **Much more weakly, and
+  the asymmetry is deliberate**: the vision would be theirs to write, and asking
+  for it first asks them to commit to a shape before they have the artifact that
+  would tell them which shape is right. Several entries here were named with no
+  vision at all — a Greek word, a paragraph in an account, an argument that
+  their absence distorts something — and are better for it. The honest minimum is
+  one line on the artifact and one on what its existence would change.
+
+Enough to fill the fields, or an honest gap where it cannot: a **working name**
+checked against the glossary and the existing trees; **one line on the artifact**;
+**what it would settle**, by the ids in [`why-eunoia.md`](why-eunoia.md) where it
+touches the account; **what stands in its place today**, including `nothing`,
+which is the field most often omitted and the one that most often changes the
+position; and **where the vision is written down**, or `nothing`, said plainly.
+
+**A listing with no vision is still made**, as `named`, with the missing
+statement recorded as the first thing in the way. What it cannot be is
+*audited*: the standard in [`proposals.md`](proposals.md) asks questions a scope
+has to exist to answer, and run against a gap it returns a verdict about this
+project's imagination rather than about the idea.

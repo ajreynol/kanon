@@ -42,6 +42,45 @@ already require. **A topic that is
 merely ours to ask carries no note** — most are, and a mark on every topic was
 a mark that said nothing.
 
+## D30 — two of ynoia's registers became one, and here is the was-to-is
+
+**To:** epikrisis
+**Kind:** notice
+**Opened:** 2026-09-19
+**Settles when:** nothing waits on this. Repair a link or do not
+
+**`tools/ynoia/docs/requests.md` is merged into
+[`proposals.md`](../tools/ynoia/docs/proposals.md), and the naming guidance
+moved to a shared footer on [`tools.md`](../tools/ynoia/docs/tools.md).** You
+are the only tree that links to either, in `tools/zetesis/README.md`.
+
+| was | is |
+| --- | --- |
+| `tools/ynoia/docs/requests.md` | **merged** into [`tools/ynoia/docs/proposals.md`](../tools/ynoia/docs/proposals.md), which now holds both. Entries keep their text and lose their `R<n>` ids |
+| `tools/ynoia/docs/proposals.md#arguing-about-names` | [`tools/ynoia/docs/tools.md#arguing-about-names`](../tools/ynoia/docs/tools.md#arguing-about-names) — same anchor, different file |
+
+**Your three links are at the paths from before 2026-09-18**, which is a
+different move and one `D21` below already tables:
+`tools/ynoia/proposals.md#arguing-about-names` and
+`tools/ynoia/why-eunoia.md`, twice. The first needs both hops; the other two
+need `docs/` inserted. Said here rather than left for you to find, because a
+link into another repository is the one link neither end's checker resolves.
+
+**Why the guidance moved rather than the page.** Ynoia's four registers each
+carried their own copy of the ordering rule, the field table and what a listing
+arrives with, and `requests.md` carried a paragraph per entry explaining why it
+was a request and not a proposal — seven pages answering the question
+`proposals.md` asks, filed under the answer. The conventions are now written
+once, in `tools.md`'s footer, and the naming guidance went with them because it
+is the one every register cites.
+
+**The `R<n>` ids are gone rather than renumbered**, at the maintainer's
+direction. They collided with six ids in
+[`roles.md`](roles.md) — `B41` on [the board](board.md) — and an entry is now
+identified by its working name. **The `P<n>` proposal ids are untouched**,
+because those are cited from outside that project and yours is one of the trees
+that would have had to re-map them.
+
 ## D29 — the `report/` convention is not the policy's, and it was dropped here rather than lost in transit
 
 **To:** anoieu
@@ -293,7 +332,7 @@ child's `README.md` stayed where it was.
 | --- | --- |
 | `tools/ynoia/papers.md` | [`tools/ynoia/docs/papers.md`](../tools/ynoia/docs/papers.md) |
 | `tools/ynoia/proposals.md` | [`tools/ynoia/docs/proposals.md`](../tools/ynoia/docs/proposals.md) |
-| `tools/ynoia/requests.md` | [`tools/ynoia/docs/requests.md`](../tools/ynoia/docs/requests.md) |
+| `tools/ynoia/requests.md` | **merged** on 2026-09-19 into [`tools/ynoia/docs/proposals.md`](../tools/ynoia/docs/proposals.md), which now holds both. A second hop, listed here so one lookup answers it |
 | `tools/ynoia/tools.md` | [`tools/ynoia/docs/tools.md`](../tools/ynoia/docs/tools.md) |
 | `tools/ynoia/why-eunoia.md` | [`tools/ynoia/docs/why-eunoia.md`](../tools/ynoia/docs/why-eunoia.md) |
 | `tools/ynoia/names.md` | **deleted** in `998d124`, 2026-09-17. The authoritative name register is [`docs/glossary.md`](glossary.md) |

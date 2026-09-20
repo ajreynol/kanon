@@ -91,9 +91,9 @@ with them — two entries below.
 At the maintainer's direction, `docs/glossary.md` became the authoritative
 register of names in use, kept by the president. Ynoia's taken, reserved, and
 in-use tables were removed. The remaining guidance from `names.md` was merged
-into [proposals.md](../tools/ynoia/docs/proposals.md#arguing-about-names), and the
-separate page was deleted. Unused candidates remain in proposals, outside the
-dictionary.
+into `proposals.md`, and the separate page was deleted. Unused candidates remain
+with their proposals, outside the dictionary. *It moved once more on 2026-09-19,
+to [the shared footer on `tools.md`](../tools/ynoia/docs/tools.md#arguing-about-names).*
 `init_eo` now reads the glossary directly. Earlier accounts of the register's
 location in ynoia record the arrangement at the time.
 
@@ -658,6 +658,40 @@ board item `B26` were removed: whether a FAQ helps is an editorial judgement
 for each repository. The board's maintenance advice was condensed to ordering,
 stable ids, the active-item cap, fields, delivery and closure. Repeated
 explanations and the stale handoff example were removed.
+
+### Ynoia's two proposal registers became one, and the request ids were dropped — 2026-09-19
+
+**At the maintainer's direction**, `tools/ynoia/docs/requests.md` was merged into
+`proposals.md` and deleted. **The two pages asked one question.** `requests.md`
+held work that wanted doing but not a repository, and **every entry on it
+carried a paragraph explaining why it was a request and not a proposal** — seven
+pages answering the question `proposals.md` asks, filed under the answer instead
+of under the question. The merged page carries one verdict vocabulary: the four
+that were already there, plus **placed in `<tree>`** for work that wants a home
+rather than a namespace.
+
+**The shared conventions moved to a footer.** Each of ynoia's four registers
+carried its own copy of the ordering rule, the field table and what a listing
+arrives with, and the naming guidance sat on `proposals.md` while every register
+cited it. All of it is now `## How this page is maintained` at the **bottom** of
+`tools.md` — the shape [`board.md`](board.md) already uses — and `papers.md` and
+`proposals.md` point at it. The `#arguing-about-names` anchor is unchanged, so
+only the file in each link had to move.
+
+**The request ids were dropped rather than renumbered**, which closes `B41`.
+`R1`–`R8` collided with six ids in [`roles.md`](roles.md), and renumbering
+either register would have cost a re-map: ynoia's page said withdrawn ids stay
+listed, and *an id is permanent* is a rule of the role register. Dropping one
+side's ids leaves nothing to re-map, because **nothing outside ynoia ever cited
+an `R<n>` of its**. Entries are identified by their working name now, as on
+`tools.md`. **The `P<n>` proposal ids stay**, being cited from three other
+trees.
+
+**The measurement.** The three register pages went from 1,491 lines to 1,106, a
+**26% cut**, while absorbing `requests.md` whole and losing no entry: seven
+placed wants, three audited proposals and four named tools all survive. `D30`
+carries the was-to-is table to epikrisis, the only tree that links to either
+page — the first exercise of the commitment made the same day in `D40`'s answer.
 
 ### A housekeeping pass repaired fourteen dead links, one audit defect and ynoia — 2026-09-19
 
@@ -1415,3 +1449,15 @@ once the commits it names have stopped being confusing.*
   three totalling 109, and its message does describe it. It is named here only
   so the pair reads in order: a reader looking for why `discussion.md` doubled
   and then halved needs both commits, and only the second says so.
+- **`da58f86` "Hk", 2026-09-19 21:00** was taken while the session was still
+  running, and carries the first half of one day's housekeeping: the status
+  audit's self-counted-topics fix and its regression test, fourteen dead links
+  into anoieu repaired, the tooling register's stale `dokimasia_analyzer` path,
+  the `policy.md` corrections answering `anoieu-D39` and `koine-D17`, the
+  measured adoption evidence for `B38`, the child-project discussion row
+  answering `tachyon-D2`, the register's pointer to its earlier history for
+  `epikrisis-D6`, `D29` to anoieu, and the first pass over ynoia's stale claims.
+  **The second half is ynoia's register merge**, which the maintainer directed
+  after this commit and which is a different subject: `requests.md` folded into
+  `proposals.md`, the shared conventions moved to a footer on `tools.md`, the
+  request ids dropped, and `D30`. Both are above under their own headings.

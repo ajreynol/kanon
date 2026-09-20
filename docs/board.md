@@ -223,25 +223,22 @@ would mean real absence, which makes this a request rather than a proposal.
 **Task:** decide whether ynoia's request ids and the role ids stop sharing a
 namespace, and which one moves.
 **Entities:** `kanon`, `ynoia`
-**Status:** ready — found 2026-09-18. It is a defect of this tree and
-stands on its own.
-[`roles.md`](roles.md) allocates twenty-six ids from `R2` to `R37`;
-[`requests.md`](../tools/ynoia/docs/requests.md) allocates `R1`–`R8`. **Six of
-the eight collide**: `R2` is both *the static analyzer* and *a check that a
-deletion did not remove the only explanation of something*; `R4` is both *the
-ecosystem's shared policy and vision* and *make the tenets configurable*; `R8`
-is both *CPC, the calculus* and *a documentation ranker*. `R3`, `R6`, `R7` the
-same. Only `R1` and `R5` are unambiguous.
+**Status:** **done, 2026-09-19** — the maintainer directed that ynoia's request
+ids be dropped rather than renumbered. `requests.md` was merged into
+[`proposals.md`](../tools/ynoia/docs/proposals.md) and its entries are now
+identified by their working name, exactly as on
+[`tools.md`](../tools/ynoia/docs/tools.md). The `R<n>` prefix belongs to
+[`roles.md`](roles.md) alone, and the `P<n>` proposal ids are untouched because
+they are cited from outside that project.
 **Channel:** **internal** — both registers are in this tree.
-**Next:** decide which register renumbers. Ynoia's is the younger and the one
-nothing else cites, so it is the cheaper move; but **an id is permanent** is a
-rule of `roles.md` and ynoia's page says withdrawn ids stay listed, so neither
-renumbers for free.
-**Prompt — `kanon`:** note what makes this worse than cosmetic — decisions get
-recorded against ids, and a topic citing `R4` in either tree is already
-ambiguous to a reader who does not know which register was meant. A prefix
-(`Y4`, or `REQ-4`) is the smaller change and keeps both pages' permanence rules.
-**HUMAN FEEDBACK:**
+**Next:** remove this item once the diff is committed. It is kept for one round
+so a reader who remembers the collision can see how it went.
+**Prompt — `kanon`:** none. What made this worse than cosmetic was that
+decisions get recorded against ids and a topic citing `R4` was already ambiguous;
+dropping one register's ids rather than renumbering either is the answer that
+leaves nothing to re-map, because nothing outside ynoia ever cited an `R<n>` of
+its.
+**HUMAN FEEDBACK:** 2026-09-19: drop the request ids.
 
 ## B34 — determine whether another president is necessary
 

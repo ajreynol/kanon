@@ -497,10 +497,10 @@ three commands, and the second row is what the first was worth waiting for.
 
 | what | 2026-09-01 | 2026-09-17 | 2026-09-18 | 2026-09-19 |
 | --- | --- | --- | --- | --- |
-| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 | 26, 12,735 |
+| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 | 25, 12,437 |
 | — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none | none |
-| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 | 12, 3,801 |
-| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** | 14, **8,934** |
+| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 | 11, 3,409 |
+| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** | 14, **9,028** |
 | Python | 54, 13,382 | 8, 2,069 | 9, 1,986 | 13, 3,294 |
 | `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 | 5, 898 |
 | checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_analyzer/checks.md) | 63 | 63 | 63 | 64 |
@@ -545,17 +545,16 @@ name an artifact, so the artifact is the answer and no topic is owed. The
 counter's job was to make the first version's cost visible, and it would have.
 
 **The fourth column, and the rule was not kept in it.** Written prose rose by
-**541 lines** while the check count moved by one and the finding counts moved
+**635 lines** while the check count moved by one and the finding counts moved
 for a reason that is not a finding. That is the reading this table exists to
 force, and it is stated before the excuses. **Split at the last commit**: 298 of
-those lines arrived in the five commits taken earlier on 2026-09-19, and 243 in
+those lines arrived in the five commits taken earlier on 2026-09-19, and 337 in
 the housekeeping session that wrote this column — a figure that had to be taken
-twice, because the first measurement did not include the paragraph reporting
-it. Child prose *fell* by 3,445
+three times, because each measurement excluded the paragraph reporting it. Child prose *fell* by 3,445
 lines over the same day, which is the row that was supposed to be watched and is
 the only one that went the right way.
 
-**What the 243 lines bought, so the reader can decide whether it was worth it.**
+**What the 337 lines bought, so the reader can decide whether it was worth it.**
 One defect in this tree's own tooling, with a regression test: the status audit
 counted this office's own global announcements as topics owed to us, because a
 notice addressed to every member names us too — the summary line was reporting
@@ -564,6 +563,17 @@ the table they published. One stale row in the tooling register, and roughly
 twenty claims in this tree that had stopped being true. **None of that is a
 check or a finding**, so by the rule as written it does not pay, and the honest
 entry is that a repair pass buys correctness rather than capacity.
+
+**The child-project row is the one that went right, and it is the only row here
+that has ever moved because somebody asked what a page was for.** It fell by
+**3,837 lines** across the day, **392 of them** in a merge the maintainer
+directed at the end of it: ynoia's `requests.md` was folded into `proposals.md`
+and the two pages' shared conventions into one footer, cutting three registers
+from 1,491 lines to 1,106 while losing no entry. **That is the rule being kept
+in the one direction this table has been able to record** — deleting pages
+rather than earning them — and it is worth separating from the rest, because the
+prose row above went up in the same session. **A repair pass adds lines and a
+merge removes them, and the two are not the same work.**
 
 **And the ledger row moved a third time, which is now a pattern rather than an
 accident.** `reports.md` became `open-findings.md` and `closed-findings.md` on
@@ -611,7 +621,7 @@ can check — which is the first time it has paid for any of itself.
 [`glossary.md`](glossary.md) is the authoritative name register, maintained by
 the president. [`ecosystem.json`](../scripts/ecosystem/ecosystem.json) records
 membership and checkout locations. Ynoia's
-[naming guidance](../tools/ynoia/docs/proposals.md#arguing-about-names)
+[naming guidance](../tools/ynoia/docs/tools.md#arguing-about-names)
 links to the glossary to argue names; it keeps no parallel register.
 
 | when | the edit |

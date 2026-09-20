@@ -11,7 +11,7 @@ judgements, not tools or projects.
 current and hands this file to the next president with the
 [office’s shared documents](laws.md#law-32--transferring-presidential-roles-and-child-projects).
 
-Ynoia [argues about names](../tools/ynoia/docs/proposals.md#arguing-about-names)
+Ynoia [argues about names](../tools/ynoia/docs/tools.md#arguing-about-names)
 and proposes alternatives; it keeps no separate register and reserves no names
 by proposing them. When a name enters use, the president records it here with
 its meaning and source.

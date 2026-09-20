@@ -45,16 +45,9 @@ resolving it. Nobody here can commission a paper, and nobody here writes one.
 
 ## What is on it, and what is not
 
-| page | its question |
-| --- | --- |
-| [glossary](../../../docs/glossary.md) | what names are in use, what they mean, and which work they identify |
-| [`proposals.md`](proposals.md) | should this be a repository of its own, and why does its name fit |
-| [`requests.md`](requests.md) | whose tree should this work live in |
-| [`tools.md`](tools.md) | which tool that does not exist is worth building first |
-| **this page** | **which tool that does exist has a result worth writing up** |
-
-The sibling to notice is `tools.md`. That page ranks work nobody has done; this
-one ranks work somebody has. They ask the same question from opposite ends —
+[The registers and what each asks](tools.md#the-registers-and-what-each-asks)
+is the table, written once. **The sibling to notice is `tools.md`**: that page
+ranks work nobody has done; this one ranks work somebody has. They ask the same question from opposite ends —
 *is there something here* — and a tool appearing on both would be a contradiction
 rather than a coincidence.
 
@@ -87,12 +80,14 @@ found a paper in every tool would have stopped being a judgement.
 
 ## How to read it, and how to edit it
 
-**Position is the priority**, as on [`tools.md`](tools.md) and
-[`../../../docs/board.md`](../../../docs/board.md): the first entry has the most
-paper in it. Reordering is done by moving a block.
+**Position is the priority** — the first entry has the most paper in it, and
+reordering is done by moving a block. The argument for that rule, and everything
+else these registers share, is in
+[`tools.md`'s footer](tools.md#how-this-page-is-maintained).
 
-Four labelled fields each, the same four every time, always present, and a field
-with nothing in it says so in words:
+What is this page's own is the field set: four labelled lines each, the same
+four every time, always present, and a field with nothing in it says so in
+words.
 
 | field | what it holds |
 | --- | --- |
