@@ -31,87 +31,22 @@ and in [`why-eunoia.md`](why-eunoia.md#iogos--logos-in-a-second-proof-assistant)
 where it belongs. A page that keeps its graduates is a page whose first entries
 are all finished work.
 
+**Governance proposals reviewed, 2026-09-21.** `euboulia` is dropped:
+[zetesis](https://github.com/ajreynol/epikrisis/blob/main/tools/zetesis/README.md)
+already examines standards and evidence, and
+[martyria](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md)
+applies them to cases. Their recent laws and case reviews give this work a
+consumer; another advisor has no distinct deliverable identified.
+`nomophylax` also leaves the active list. Separate custody of the laws is a
+different question, but a new repository under the same maintainer supplies
+[no independent oversight](../../../docs/laws.md#separate-repositories-and-independent-oversight).
+Revisit either idea only when a concrete decision exposes a gap the existing
+roles cannot address, with the missing responsibility and its holder named.
+
 **[How this page is maintained](#how-this-page-is-maintained) is at the bottom**,
 and it serves [`proposals.md`](proposals.md) and [`papers.md`](papers.md) too:
 the ordering rule, the fields, the naming arguments, and what a listing arrives
 with are written once, there.
-
-## nomophylax — the laws, out of the hands of the party they bind
-
-**What:** the tool that maintains `docs/laws.md` — the rules under which a
-president writes the ecosystem's history — and checks that a closed stretch
-entry was written the way the laws say. **Not a lawgiver:** amendments stay a
-person's, and this holds the page, watches compliance, and proposes.
-**State:** `named` — suggested 2026-09-02, the day the laws were first written
-down. Not audited; there is no proposal for it yet.
-**Settles:** nothing in [`why-eunoia.md`](why-eunoia.md). What it settles is a
-defect `laws.md` still states about itself, in its opening section as read on
-2026-09-19: the president maintains the laws under `LAW 7`, and **they are
-written by the people they govern.** Same defect, and the page no longer puts it
-in the sharper words this entry used to quote. That is the
-whole of the case for it, and the page makes the case better than this entry
-does.
-**Costs:** little today, because nothing depends on `laws.md` yet. **The cost is
-in waiting** — the longer one party holds both, the more of the record was
-produced under rules its own author could have shaped.
-**Before it:** a second president. With one, the separation is theatre: there is
-nobody yet whose stretch was judged by rules somebody else wrote. `kanon`
-taking Stretch 1 is what makes this real rather than tidy.
-**Today:** `docs/laws.md` is held by kanon, the current president, following
-the 2026-09-15 handoff. Separating custody of the laws remains a proposal.
-**Why here:** **first, now that `kanon` has left the page.** It is not urgent — one stretch, one president, and the maintainer
-reviews every commit, which is real oversight even if it is not independence.
-It is placed above the research tools because **the defect it fixes gets worse
-with every stretch that closes**, and the entries written before it exists
-cannot be revisited later.
-
-*On the name: νομοφύλαξ, guardian of the laws — an office that held the statutes
-and checked that magistrates acted within them. It completes a family this
-ecosystem already has by accident: `dokimasia` is the scrutiny **before** office
-and `euthyna` the audit **after** it; this is the one that watches **during**.
-`thesmos` — θεσμός, that which is laid down — was the alternative and is the
-better name if the thing turns out to be a register of rules rather than an
-office that guards them.*
-
-## euboulia — the ethical advisor to whoever holds the laws
-
-**What:** the ethics of this ecosystem, gathered into one place and given a
-reader: **`nomophylax`**, the tool that holds `docs/laws.md`. It advises and
-does not decide — **the laws are held by one party, amended by a person, and
-advised by this one**, and none of the three is the other.
-**State:** `named` — suggested 2026-09-02, alongside `nomophylax`. Not audited;
-there is no proposal for it yet, and there is a real question below that a
-proposal would have to answer first.
-**Settles:** nothing in [`why-eunoia.md`](why-eunoia.md). What it settles is
-that this repository's ethics work is **scattered across child projects of the
-tool it is meant to hold to account**, which is the same defect `kanon` and
-`nomophylax` each fix in their own area, in the one area where it is least
-comfortable to say so.
-**Costs:** it would take custody of the two existing ethics child projects —
-[`martyria`](https://github.com/ajreynol/epikrisis/blob/main/tools/martyria/README.md), the actionable half, and
-[`zetesis`](https://github.com/ajreynol/epikrisis/blob/main/tools/zetesis/README.md), the general one — and **what they are
-advising changes with them.** They examine the ecosystem's conduct. Under this
-they would advise an office. **That is not a smaller job or a bigger one, it is
-a different one**, and a proposal has to say whether both belong or only one.
-**Before it:** `nomophylax`, obviously — an advisor with nobody to advise is a
-register with extra steps. And a second president, for the same reason that one
-gives.
-**Today:** `martyria` and `zetesis` moved from kanon to epikrisis on
-2026-09-17, remaining distinct child projects there. Their relocation does not
-by itself establish independence from the ecosystem whose conduct they assess.
-**Why here:** **second, behind `nomophylax`.** It cannot be built before the
-thing it advises exists, and it is placed above the research tools for the same
-reason: what it fixes gets quietly worse while nothing is done, because every
-stretch that closes was assessed by a project living inside the assessed.
-
-*On the name: εὐβουλία, good counsel — the quality of deliberating well, as
-against the deliberating itself. Chosen for what it claims and does not: it
-names an advisor's virtue rather than an authority, which is the whole of the
-office. It shares its prefix with **eunoia** by construction rather than by
-accident. Its near neighbour `bouleusis` — deliberation about particulars —
-would better describe something that decides cases, which this does not;
-`martyria` already holds particulars, and if this ever starts
-deciding them, it has taken the wrong job.*
 
 ## aphairesis — a delta-debugger for CPC proofs
 
