@@ -22,7 +22,9 @@ Shared requirements are in [`policy.md`](policy.md) and [`laws.md`](laws.md).
    you can already answer: *whose is this, and whose is it not*.
 3. **Check [the supervision ladder](#the-supervision-ladder)** below before
    touching any document in it.
-4. **Run** `python3 -m unittest discover -s tests -v`,
+4. **Install test dependencies** with
+   `python3 -m pip install -r tools/stathmos/audits/requirements.txt`.
+   **Run** `python3 -m unittest discover -s tests -v`,
    `scripts/eo_status_audit --check`, `scripts/eo_tooling_audit --check`, and
    `python3 tools/stathmos/audits/policy_check.py --root .`.
 

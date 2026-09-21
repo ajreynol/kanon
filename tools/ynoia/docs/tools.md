@@ -113,6 +113,28 @@ would better describe something that decides cases, which this does not;
 `martyria` already holds particulars, and if this ever starts
 deciding them, it has taken the wrong job.*
 
+## aphairesis — a delta-debugger for CPC proofs
+
+**What:** a CPC proof reducer that emits a smaller reproducer preserving a
+user-selected failure or checker disagreement, with the command to replay it.
+**State:** `named` — requested by the maintainer on 2026-09-21; candidate names
+`aphairesis` and `ddcpc`, neither adopted. Placement has not been audited.
+**Settles:** reduces the cost of investigating **O6**'s differential findings;
+the [scope and naming argument](why-eunoia.md#aphairesis--reducing-cpc-proofs)
+distinguish reduction from explaining a failure or deciding which checker is
+right.
+**Costs:** preserving step references, declarations and assumption scopes while
+shrinking, and keeping the intended failure rather than an unrelated error.
+**Before it:** `nothing` beyond choosing the first reproduction predicate and
+CPC fragment; it need not wait for elenchos.
+**Today:** anoieu's `anoieu_fuzz shrink` already reduces commands and term
+fragments against a finding bucket. The proposed work adds CPC structure and a
+user-supplied predicate; the existing shrinker is the baseline to improve.
+**Why here:** ahead of elenchos because a reducer can serve existing failures
+without building a new generator or instrumentation. First delivery: reduce
+real CPC cases, preserve their chosen behavior, and record size and replay cost
+against the current shrinker.
+
 ## elenchos — differential fuzzing as a derived artifact
 
 **What:** a research-quality fuzzer for the ecosystem's checkers — coverage
@@ -133,10 +155,34 @@ signature through the same compiler.
 grammar-directed generation, a mutated seed corpus, three verdict-level oracles,
 and no instrumentation anywhere. It is deliberately the floor, which is what
 makes *research-quality* a measurable claim rather than an adjective.
-**Why here:** highest of the account's projects because it is the one somebody
-could start on a Monday. It has a floor already built, it needs no question
-settled first, and it is the only one that would pay for the generation column
-in a currency other than trust.
+**Why here:** behind the narrower CPC reducer, ahead of the new verified
+checker proposals. It has a floor already built, it needs no question settled
+first, and it tests the value of generation through defects found in its
+outputs.
+
+## bebaiosis — verified checking of SAT witnesses
+
+**What:** an executable checker and a Lean correctness theorem establishing
+that a supplied assignment satisfies a formula in a stated supported fragment.
+**State:** `named` — requested by the maintainer on 2026-09-21; candidate names
+`bebaiosis` and `sat-witness`, neither adopted. Placement has not been audited.
+**Settles:** none of the account's numbered objections directly; extends the
+ecosystem's checking work to SAT answers. The
+[scope and naming argument](why-eunoia.md#bebaiosis--checking-sat-witnesses)
+also describe its possible use as an oracle for elenchos.
+**Costs:** executable model evaluation, its correctness proof, and an explicit
+boundary between parsed input, supported semantics and SMT-LIB text.
+**Before it:** choose a Boolean/bit-vector fragment and witness representation;
+establish which parts of Logos's semantics can support that checker.
+**Today:** Logos supplies model semantics and an UNSAT proof checker; no
+dedicated verified SAT-witness checker was found in the local ecosystem review
+of 2026-09-21. External model validation provides comparison points, not this
+artifact.
+**Why here:** behind the debugging tools because it needs new formalization,
+ahead of pathos because a small fragment can open a new use of the semantics
+without first solving the efficient-proof-checker problem. First delivery:
+accept genuine Boolean/bit-vector witnesses, reject corrupted assignments,
+report unsupported input, and prove what acceptance establishes.
 
 ## pathos — an efficient verified proof checker
 

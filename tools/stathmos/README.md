@@ -80,7 +80,12 @@ Koine's `eo_status` remains the shared command for reading the register.
 president, discovers each default branch, and checks its current commit.
 Children share their parent's CI; other footings are excluded. It requires
 Python 3 and authenticated GitHub CLI (`gh auth login`), works from any directory,
-and makes only read requests.
+and makes only read requests. Install the pinned YAML parser from kanon's root
+to inspect absent workflows' triggers:
+
+```sh
+python3 -m pip install -r tools/stathmos/audits/requirements.txt
+```
 
 ```sh
 scripts/eo_ci_audit                    # table and details for non-passing results
@@ -90,15 +95,26 @@ scripts/eo_ci_audit --check            # 0 all pass, 1 failure, 2 otherwise inco
 scripts/eo_ci_audit --json             # dated observations, commits and workflow results
 ```
 
-`pass` needs a successful run of every active workflow at that commit.
+`pass` needs successful observed runs and no missing push-triggered workflows
+at that commit. For each absent workflow, the audit reads its YAML definition
+at the same commit. A reusable-only workflow (`workflow_call`) has no standalone
+run to expect; its results belong to caller runs, which are checked normally.
+Other workflows without a push trigger, including schedule/manual and PR-only
+workflows, also need not run on every default-branch commit. These absences are
+shown as `not_expected`, with their reason, and do not count as passes or block
+successful observed CI. A repository with only expected absences remains
+unverified because it has no observed standalone CI result.
+
 `fail` means a failed, cancelled, timed-out or otherwise failed run; `pending`
-means work is queued, running or waiting. Missing, skipped, neutral and unknown
-results are `unverified`, as are inaccessible repositories, incomplete API
-responses and a branch advancing during the audit. Scheduled, manual and
-path-filtered workflows can therefore leave a repository unverified even when
-all workflows triggered by its last push passed. Reusable-only workflows also
-remain unverified: their results belong to caller runs, which this report does
-not attribute back to the reusable workflow. Disabled workflows, PR runs,
+means work is queued, running or waiting. Every observed run counts even if it
+was scheduled or manually requested: trigger inspection only explains absences
+and never excuses an observed failure. Skipped, neutral and unknown results
+remain `unverified`, as do missing push-triggered runs, unreadable or unrecognized
+trigger definitions, an unavailable YAML parser, inaccessible repositories,
+incomplete API responses and a branch advancing during the audit. Branch and
+path filters are not evaluated, so an absent filtered push run remains
+unverified. A workflow accepting both `workflow_call` and `push` still needs
+standalone evidence. Disabled workflows, PR runs,
 branch-protection requirements and CI outside GitHub Actions are outside scope.
 
 The audit reads every results page and selects the newest run per workflow and

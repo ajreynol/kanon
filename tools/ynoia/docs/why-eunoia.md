@@ -767,6 +767,80 @@ decision having been made.
 
 ---
 
+# Two proposals for concrete deliverables
+
+Recorded at the maintainer's request on **2026-09-21**. These are proposed
+tools, with candidate names and a first deliverable; neither has been started
+or assigned a home. Their priority is in [the tool register](tools.md).
+The names were checked against the glossary and available neighboring trees;
+the suggestions reserve nothing.
+
+## Bebaiosis — checking SAT witnesses
+
+**The artifact and its consumer.** A verified checker takes a formula and a
+supplied assignment and establishes that the assignment satisfies it. Solver
+developers and tools consuming SAT answers could use it independently of the
+solver that found the assignment. Start with an explicitly enumerated
+quantifier-free Boolean/bit-vector fragment, an executable evaluator and a Lean
+theorem relating acceptance to satisfaction. Correct witnesses, deliberately
+corrupted ones and unsupported inputs form the first demonstration.
+
+Logos's [model semantics](https://github.com/cvc5/logos/blob/main/Cpc/SmtModel.lean)
+is a starting point to investigate, not an existing executable witness checker.
+The theorem must state whether it concerns parsed terms or input bytes, and
+which decoding remains trusted. Missing assignments and unsupported constructs
+must not become successful checks. Quantifiers, arrays and general function
+models are outside the first version. This checks a supplied witness; it does
+not search for one or establish UNSAT when that witness fails.
+
+[External model validation](https://smt-comp.github.io/2024/model_validation/)
+already has practical consumers. The question here is whether a small verified
+checker can serve a useful fragment at acceptable cost. It could also give
+elenchos evidence of satisfiability for its proposed soundness oracle, provided
+the formula and semantics match those of the refutation being tested. If the
+first fragment cannot serve a real SAT-producing workload, expand or reconsider
+the scope before adding more formalization.
+
+| candidate | fit | likely misreading or cost |
+| --- | --- | --- |
+| **`bebaiosis`** | Greek βεβαίωσις, “confirmation” ([LSJ](https://atlas.perseus.tufts.edu/dictionaries/headword/%CE%B2%CE%B5%CE%B2%CE%B1%CE%AF%CF%89%CF%83%CE%B9%CF%82/)): confirms a SAT answer by checking its witness. Preferred Greek candidate. | Could suggest unrestricted assurance; the fragment and theorem boundary must accompany the claim. |
+| **`sat-witness`** | Directly names the evidence being checked; easiest to recognize at a command line. | Could be mistaken for a witness generator; describe it as a checker. |
+
+## Aphairesis — reducing CPC proofs
+
+**The artifact and its consumer.** A delta-debugger takes a CPC proof and an
+interestingness command, then produces a smaller file on which that command
+still confirms the selected behavior. Ethos and Logos developers, and anoieu's
+triage, could consume the reproducer and its replay command. This is the
+maintainer's refinement of the proof-failure-debugger idea: reduction is the
+deliverable, without requiring an explanation of the cause.
+
+**There is already a baseline.** Anoieu's
+[`shrink` command](https://github.com/ajreynol/anoieu/blob/main/anoieu_fuzz/fuzzing.md#the-other-commands)
+reduces a supplied case; its implementation deletes commands and simplifies
+term fragments while preserving a finding bucket. The proposed increment is
+CPC-aware reduction over step dependencies, declarations, shared terms and
+assumption scopes, with a user-supplied reproduction predicate. ddSMT reduces
+SMT-LIB solver inputs; this tool's subject is the emitted CPC proof.
+
+First delivery: reduce several real proofs preserving a chosen crash or the
+direction of a checker disagreement, and compare resulting size and replay
+cost with anoieu's shrinker. A proof-level failure should keep reaching that
+stage rather than shrink into an unrelated parse error; parser failures can
+have their own predicates. Timeout predicates need repeated confirmation.
+Keep the original input and checker/signature revisions alongside the result.
+Reduction need not preserve the proof's conclusion unless the predicate
+requires it, and claims neither a globally smallest case nor a diagnosis.
+If CPC structure does not improve the results, extending the existing shrinker
+may be enough; a separate repository remains an open question.
+
+| candidate | fit | likely misreading or cost |
+| --- | --- | --- |
+| **`aphairesis`** | Greek ἀφαίρεσις, “taking away” or “removal” ([LSJ](https://atlas.perseus.tufts.edu/dictionaries/entry/urn%3Acite2%3Ascaife-viewer%3Adictionaries.v1%3Alsj-n18100/)): removes proof material while preserving the chosen behavior. Preferred Greek candidate. | Could suggest ordinary proof compression; the target is a reproducer, which may be an invalid proof. |
+| **`ddcpc`** | “Delta-debugging CPC” names the operation and format directly, following ddSMT's descriptive pattern. | May imply affiliation with ddSMT, which is not proposed; less distinctive as a project name. |
+
+---
+
 # What eudaimonia says about all this
 
 [eudaimonia](https://github.com/ajreynol/eudaimonia) is the arrangement with the

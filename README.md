@@ -25,10 +25,11 @@ scripts/eo_ci_audit                  # GitHub Actions at each member's default-b
 ```
 
 **Hosted CI:** `scripts/eo_ci_audit` reports each member's
-GitHub Actions results using authenticated `gh`. `--verbose` includes every
+GitHub Actions results using authenticated `gh`, with PyYAML for trigger inspection.
+`--verbose` includes every
 workflow and run link; `--check` exits 0 when all pass, 1 for failures, and 2
-for pending or unverified results. Missing runs are unverified, including
-workflows that run only on a schedule or selected paths.
+for pending or unverified results. Absent reusable-only and other non-push
+workflows are marked `not_expected`; missing push runs remain unverified.
 [Coverage and options](tools/stathmos/README.md#the-ci-audit).
 
 > **[`scripts/ecosystem/ecosystem.json`](scripts/ecosystem/ecosystem.json) is

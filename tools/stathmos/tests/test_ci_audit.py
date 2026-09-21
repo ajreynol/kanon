@@ -1,5 +1,6 @@
 """Offline regressions for hosted CI observations, especially false greens."""
 
+import base64
 import contextlib
 import io
 import json
@@ -78,6 +79,43 @@ class Verdicts(unittest.TestCase):
         self.assertEqual(audit.aggregate(["pass", "unverified", "pending", "fail"]), "fail")
 
 
+class TriggerDefinitions(unittest.TestCase):
+    def test_scalar_list_mapping_and_quoted_on(self):
+        for source, expected in (
+            ("on: workflow_call", {"workflow_call"}),
+            ("on: [workflow_call, push]", {"workflow_call", "push"}),
+            ("on:\n  workflow_call:\n    inputs:\n      version:\n        type: string\n", {"workflow_call"}),
+            ("'on': {schedule: [{cron: '0 6 * * 1'}], workflow_dispatch: {}}", {"schedule", "workflow_dispatch"}),
+            ('"on":\n  push:\n    branches: [main]\n    paths: ["docs/**"]\n', {"push"}),
+            ("events: &events [workflow_call, workflow_dispatch]\non: *events", {"workflow_call", "workflow_dispatch"}),
+        ):
+            with self.subTest(source=source):
+                self.assertEqual(audit.workflow_events(source), expected)
+
+    def test_comments_names_and_job_text_do_not_define_triggers(self):
+        source = """name: push
+# on: push
+on: workflow_call
+jobs:
+  push:
+    steps:
+      - run: |
+          on: push
+"""
+        self.assertEqual(audit.workflow_events(source), {"workflow_call"})
+
+    def test_unknown_empty_malformed_or_duplicate_declarations_are_unverified(self):
+        for source in ("on: [", "jobs: {}", "on:", "on: []", "on: {}", "on: 42",
+                       "on: {puhs: {}}", "on: [{push: {}}]", "on: push\non: workflow_call",
+                       "on: {push: {}, push: {}}", "on: {<<: {push: {}}}"):
+            with self.subTest(source=source), self.assertRaises(audit.Unverified):
+                audit.workflow_events(source)
+
+    def test_missing_parser_is_actionable_and_never_an_exemption(self):
+        with patch.object(audit, "yaml", None), self.assertRaisesRegex(audit.Unverified, "requirements.txt"):
+            audit.workflow_events("on: workflow_call")
+
+
 class RemoteAudit(unittest.TestCase):
     def setUp(self):
         self.calls = []
@@ -85,6 +123,7 @@ class RemoteAudit(unittest.TestCase):
         self.runs = [run()]
         self.branch = "trunk"
         self.commits = [SHA, SHA]
+        self.sources = {}
 
     def remote(self, endpoint):
         self.calls.append(endpoint)
@@ -94,6 +133,11 @@ class RemoteAudit(unittest.TestCase):
             return {"default_branch": self.branch}
         if url.path.startswith("repos/example/project/commits/"):
             return {"sha": self.commits.pop(0)}
+        if "/contents/" in url.path:
+            self.assertEqual(query["ref"], [SHA])
+            path = url.path.split("/contents/", 1)[1]
+            source = self.sources.get(path, "on: push\n")
+            return {"encoding": "base64", "content": base64.b64encode(source.encode()).decode()}
         if url.path.endswith("/actions/workflows"):
             values, key = self.workflows, "workflows"
         elif url.path.endswith("/actions/runs"):
@@ -168,6 +212,67 @@ class RemoteAudit(unittest.TestCase):
                          {"total_count": 1, "workflow_runs": []}):
             with patch.object(audit, "api", return_value=response), self.assertRaises(audit.Unverified):
                 audit.collection("repos/example/project/actions/runs", "workflow_runs", capped=True)
+
+    def test_anoieu_reusable_only_workflow_does_not_require_a_standalone_run(self):
+        self.workflows.append(workflow(2, name="policy"))
+        self.sources[workflow(2)["path"]] = "on:\n  workflow_call:\n    inputs:\n      version:\n        type: string\n"
+        row = self.inspect()
+        self.assertEqual(row["state"], "pass")
+        reusable = next(w for w in row["workflows"] if w["name"] == "policy")
+        self.assertEqual(reusable["state"], "not_expected")
+        self.assertIn("caller runs", reusable["detail"])
+        with contextlib.redirect_stdout(io.StringIO()) as output:
+            audit.render({"observed_at": "2026-09-20", "repositories": [row]})
+        self.assertIn("policy: not_expected: reusable-only", output.getvalue())
+
+    def test_eudaimonia_schedule_manual_absence_does_not_obscure_passing_ci(self):
+        self.workflows.append(workflow(2, name="SMT semantics drift"))
+        self.sources[workflow(2)["path"]] = "on:\n  schedule:\n    - cron: '0 6 * * 1'\n  workflow_dispatch:\n"
+        row = self.inspect()
+        self.assertEqual(row["state"], "pass")
+        self.assertEqual(next(w["state"] for w in row["workflows"]
+                              if w["name"] == "SMT semantics drift"), "not_expected")
+
+    def test_reusable_with_push_and_filtered_push_still_need_evidence(self):
+        self.workflows.append(workflow(2))
+        for source in ("on: [workflow_call, push]", "on: {push: {paths: ['tools/euthyna/**']}}"):
+            self.sources[workflow(2)["path"]] = source
+            self.commits = [SHA, SHA]
+            row = self.inspect()
+            self.assertEqual(row["state"], "unverified")
+            self.assertIn("push trigger present", row["workflows"][1]["detail"])
+
+    def test_an_actual_non_push_failure_is_never_exempted(self):
+        self.runs[0].update(event="schedule", conclusion="failure")
+        self.sources[workflow()["path"]] = "on: {schedule: [{cron: '0 6 * * 1'}]}"
+        self.assertEqual(self.inspect()["state"], "fail")
+        self.assertFalse(any("/contents/" in call for call in self.calls))
+
+    def test_only_expected_absences_do_not_establish_passing_ci(self):
+        self.runs = []
+        self.sources[workflow()["path"]] = "on: workflow_call"
+        row = self.inspect()
+        self.assertEqual(row["state"], "unverified")
+        self.assertIn("no standalone CI results", row["note"])
+
+    def test_unreadable_source_or_bad_yaml_cannot_hide_a_known_failure(self):
+        self.workflows.append(workflow(2))
+        self.runs[0]["conclusion"] = "failure"
+        remote = self.remote
+        for failure in ("network", "malformed", "base64"):
+            self.commits = [SHA, SHA]
+            def request(endpoint):
+                if "/contents/" in endpoint:
+                    if failure == "network":
+                        raise audit.Unverified("HTTP 403")
+                    if failure == "base64":
+                        return {"encoding": "base64", "content": "%%%"}
+                    return {"encoding": "base64", "content": base64.b64encode(b"on: [").decode()}
+                return remote(endpoint)
+            with self.subTest(failure=failure), patch.object(audit, "api", side_effect=request):
+                row = audit.inspect_repository(("project", ENTRY))
+            self.assertEqual(row["state"], "fail")
+            self.assertEqual(row["workflows"][1]["state"], "unverified")
 
 
 class Command(unittest.TestCase):

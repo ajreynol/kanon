@@ -2,11 +2,13 @@
 """Report GitHub Actions for each member's current default-branch commit.
 
 Reads kanon's register and GitHub through authenticated `gh`; changes nothing.
-A pass needs a successful run of every active workflow at the observed commit.
-Missing, skipped and neutral results are unverified, including workflows whose
-path filters, schedules or manual triggers mean they need not run on each push.
-Reusable-only workflows also lack standalone runs; caller results are not
-attributed to them, so they remain unverified in this workflow-level report.
+A pass needs successful observed runs and no missing push-triggered workflows.
+For an absent workflow, read its definition at the observed commit: reusable-only
+workflows and workflows without a push trigger are not expected on every commit.
+Reusable workflow results belong to callers, whose runs are checked normally.
+Missing push-triggered runs, skipped and neutral results remain unverified.
+Branch and path filters are not evaluated; an absent filtered push run remains
+unverified. Unreadable or unrecognized trigger definitions are also unverified.
 Disabled workflows, pull-request runs and CI outside GitHub Actions are outside
 this report. Children share the containing member repository's CI.
 
@@ -18,6 +20,7 @@ a successful manual run cannot hide a failed push run at the same commit.
 from __future__ import annotations
 
 import argparse
+import base64
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 import datetime
@@ -29,6 +32,11 @@ import subprocess
 import sys
 from urllib.parse import quote, urlencode
 
+try:
+    import yaml
+except ImportError:
+    yaml = None
+
 ROOT = Path(__file__).resolve().parents[3]
 sys.path.insert(0, str(ROOT))
 from tools.stathmos.audits.status_audit import INVENTORY, MEMBERS
@@ -36,6 +44,14 @@ from tools.stathmos.audits.status_audit import INVENTORY, MEMBERS
 STATES = ("fail", "pending", "unverified", "pass")
 FAILURES = {"failure", "cancelled", "timed_out", "action_required", "startup_failure", "stale"}
 PENDING = {"queued", "in_progress", "waiting", "pending", "requested"}
+# Unknown events stay unverified instead of a typo or new trigger granting an
+# exemption. Keep this list with GitHub's documented workflow-trigger events.
+EVENTS = set("""branch_protection_rule check_run check_suite create delete
+deployment deployment_status discussion discussion_comment fork gollum
+issue_comment issues label merge_group milestone page_build public pull_request
+pull_request_review pull_request_review_comment pull_request_target push
+registry_package release repository_dispatch schedule status watch workflow_call
+workflow_dispatch workflow_run""".split())
 
 
 class Unverified(Exception):
@@ -101,7 +117,59 @@ def run_state(run):
     return "unverified"
 
 
-def workflow_results(workflows, runs, branch, sha):
+def workflow_events(source):
+    """Parse data only. BaseLoader preserves the YAML key `on` as a string."""
+    if yaml is None:
+        raise Unverified("trigger inspection needs PyYAML; run python3 -m pip install -r tools/stathmos/audits/requirements.txt from kanon's root")
+
+    class WorkflowLoader(yaml.BaseLoader):
+        def construct_mapping(self, node, deep=False):
+            result = {}
+            for key, value in self.construct_pairs(node, deep=deep):
+                if not isinstance(key, str) or key in result:
+                    raise Unverified("workflow YAML has a duplicate or non-string mapping key")
+                result[key] = value
+            return result
+
+    try:
+        document = yaml.load(source, Loader=WorkflowLoader)
+    except yaml.YAMLError as exc:
+        raise Unverified("cannot parse workflow YAML") from exc
+    if not isinstance(document, dict) or "on" not in document:
+        raise Unverified("workflow has no readable on declaration")
+    triggers = document["on"]
+    if isinstance(triggers, str):
+        events = [triggers]
+    elif isinstance(triggers, dict):
+        events = list(triggers)
+    elif isinstance(triggers, list):
+        events = triggers
+    else:
+        raise Unverified("unrecognized workflow trigger declaration")
+    if not events or any(not isinstance(event, str) or event not in EVENTS for event in events):
+        raise Unverified("empty or unrecognized workflow trigger declaration")
+    return set(events)
+
+
+def missing_workflow(base, workflow, sha):
+    """Explain absences from the committed definition, never a local checkout."""
+    try:
+        path = quote(workflow["path"], safe="/")
+        response = api(f"{base}/contents/{path}?ref={sha}")
+        if response["encoding"] != "base64":
+            raise Unverified("workflow source is unavailable")
+        source = base64.b64decode("".join(response["content"].split()), validate=True).decode("utf-8")
+        events = workflow_events(source)
+        if events == {"workflow_call"}:
+            return "not_expected", "reusable-only workflow; results belong to caller runs"
+        if "push" not in events:
+            return "not_expected", f"no push trigger ({', '.join(sorted(events))}); no run expected on every commit"
+        return "unverified", "no run for this commit; push trigger present (branch/path filters not evaluated)"
+    except (Unverified, KeyError, TypeError, ValueError, AttributeError) as exc:
+        return "unverified", f"no run for this commit; trigger inspection unavailable: {exc}"
+
+
+def workflow_results(workflows, runs, branch, sha, missing=None):
     latest = {}
     for run in runs:
         event = run["event"]
@@ -122,8 +190,9 @@ def workflow_results(workflows, runs, branch, sha):
                           if wid == workflow["id"])
         base = {"name": workflow["name"], "path": workflow["path"]}
         if not matching:
-            results.append({**base, "event": "", "state": "unverified",
-                            "detail": "no run for this commit", "url": workflow.get("html_url", "")})
+            state, detail = missing(workflow) if missing else ("unverified", "no run for this commit")
+            results.append({**base, "event": "", "state": state,
+                            "detail": detail, "url": workflow.get("html_url", "")})
         for event, run in matching:
             results.append({**base, "event": event, "state": run_state(run),
                             "detail": run.get("conclusion") or run.get("status") or "unknown result",
@@ -153,10 +222,13 @@ def inspect_repository(item):
         workflows = collection(f"{base}/actions/workflows", "workflows")
         query = urlencode({"branch": branch, "head_sha": sha})
         runs = collection(f"{base}/actions/runs?{query}", "workflow_runs", capped=True)
-        row["workflows"] = workflow_results(workflows, runs, branch, sha)
+        row["workflows"] = workflow_results(
+            workflows, runs, branch, sha, lambda workflow: missing_workflow(base, workflow, sha))
         row["state"] = aggregate(w["state"] for w in row["workflows"])
         if not row["workflows"]:
             row["note"] = "no active GitHub Actions workflows"
+        elif all(w["state"] == "not_expected" for w in row["workflows"]):
+            row["note"] = "no standalone CI results for this commit; expected absences alone do not establish a pass"
         # Do not announce a green current branch if it advanced during the audit.
         if api(commit_endpoint)["sha"] != sha:
             raise Unverified("default branch changed during the audit; run again")
@@ -178,18 +250,20 @@ def render(report, verbose=False):
         for workflow in row["workflows"]:
             if verbose or workflow["state"] != "pass":
                 event = f" ({workflow['event']})" if workflow["event"] else ""
-                print(f"    {workflow['name']}{event}: {workflow['detail']}")
+                label = "not_expected: " if workflow["state"] == "not_expected" else ""
+                print(f"    {workflow['name']}{event}: {label}{workflow['detail']}")
                 if workflow["url"]:
                     print(f"      {workflow['url']}")
     counts = Counter(r["state"] for r in rows)
     print("\n-- " + ", ".join(f"{counts[state]} {state}" for state in reversed(STATES)))
-    print("-- Children share their parent's CI. Active workflows only; missing or skipped runs are unverified.")
+    print("-- Children share their parent's CI. Absent non-push workflows are not expected on every commit.")
+    print("-- Missing push runs, unknown triggers and skipped runs remain unverified; branch/path filters are not evaluated.")
     print("-- GitHub Actions only; this does not establish branch-protection requirements or external CI.")
 
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="eo_ci_audit", description=__doc__,
-                                     epilog="Requires Python 3 and GitHub CLI authenticated with gh auth login.",
+                                     epilog="Requires Python 3 and authenticated gh; PyYAML is needed to inspect absent workflows' triggers.",
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--repo", action="append", metavar="NAME",
                         help="limit to a member's register name; repeat for several")
