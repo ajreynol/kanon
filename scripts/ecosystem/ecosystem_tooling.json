@@ -22,6 +22,7 @@
     "Tachyon's child webpages were read at effe42c on 2026-09-19. Heuresis's report builds gap measurements and a research queue; elaphros's report builds planning and source-evidence pages without measured performance claims. Each builder and its HTML templates live at the child's root and read ledger/ evidence. scripts/build_site.py assembles the site described in docs/site.md.",
     "Metagraphe's rewrite database was read at 258102d on 2026-09-19. rewrite_db/ holds the curated records and their generated view; its validation, rendering and pinned-koine wrappers live in the child's shared scripts/. The records are rewrite proposals and source observations, not established solver fixes.",
     "Dokimasia's analyzer was rechecked at de0f1b9 on 2026-09-19: the package directory was renamed from dokimasia/ to dokimasia_analyzer/ and the recorded path and entrypoint follow it. The launcher scripts/dokimasia_analyzer is unchanged.",
+    "Dokimasia's regression exclusion audit was read from its clean checkout at 9e42bda on 2026-09-21. regression_audit/ implements the read-only scripts/eo_cvc5_regressions_audit command, which reports proof-checking tester exclusions and reason comments in cvc5 CLI regressions.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -84,6 +85,13 @@
       "what": "Persistent proof-production findings and browsing view",
       "files": ["bug_db/bugs.json", "bug_db/bugs.md"],
       "docs": ["bug_db/README.md"]
+    },
+    "dokimasia_regression_audit": {
+      "repo": "dokimasia",
+      "path": "regression_audit",
+      "what": "Audits cvc5 regression proof-checking exclusions and reason comments",
+      "entrypoints": ["scripts/eo_cvc5_regressions_audit"],
+      "docs": ["regression_audit/README.md"]
     },
     "history_analyzer": {
       "repo": "epikrisis",

@@ -916,8 +916,9 @@ USAGE = """usage: eo_status_audit [--verbose] [--all | --all-children] [--check 
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
 
-Repositories are listed alphabetically by name, each followed immediately by
-its listed children in alphabetical order.
+Repositories are listed with foundations first, then outsiders, then associates,
+then all other repositories, alphabetically by name within each group. Each is
+followed immediately by its listed children in alphabetical order.
 
 A child opts out by recording **Footing:** `unadvertised-child` in its own
 README, spelled exactly as anoieu's checker reads it. Missing declarations mean
@@ -1076,9 +1077,16 @@ def main() -> int:
         if verbose and fails:
             notes.append(f"{name}: " + "; ".join(fails))
 
-    # Group children with their parent, with the parent before its children.
-    rows.sort(key=lambda row: (row[4] if row[1] == "child" else row[0],
-                               row[1] == "child", row[0]))
+    # Foundations, outsiders and associates lead; children stay with their parent.
+    footing_order = {"foundation": 0, "outsider": 1, "associate": 2}
+
+    def row_order(row):
+        parent = row[4] if row[1] == "child" else row[0]
+        status = inv.get(parent, {}).get("status")
+        return (footing_order.get(status, 3), parent,
+                row[1] == "child", row[0])
+
+    rows.sort(key=row_order)
 
     for parent, listings in child_listings.items():
         note = unverified_note(parent, listings)

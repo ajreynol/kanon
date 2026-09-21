@@ -43,9 +43,10 @@ decisions; stathmos checks the evidence and keeps the assessments.
 **`scripts/eo_status_audit` is the public command.** Its implementation lives in
 [`audits/status_audit.py`](audits/status_audit.py), with child-listing declarations read by
 [`audits/child_listing.py`](audits/child_listing.py). `--help` documents the options and
-columns. Repositories appear alphabetically by name, with each parent's listed
-children immediately after it in alphabetical order. The command works from
-any working directory.
+columns. Foundations appear first, then outsiders, then associates, then all
+other repositories, alphabetically by name within each group. Each parent's
+listed children appear immediately after it in alphabetical order. The command
+works from any working directory.
 
 The audit reads kanon's authoritative
 [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json), checks its structure
