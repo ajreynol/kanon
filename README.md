@@ -25,7 +25,9 @@ scripts/eo_ci_audit                  # GitHub Actions at each member's default-b
 ```
 
 **Hosted CI:** `scripts/eo_ci_audit` reports each member's
-GitHub Actions results using authenticated `gh`, with PyYAML for trigger inspection.
+GitHub Actions results using `gh` when available, with a Python HTTP fallback
+for public reads and optional `GH_TOKEN`/`GITHUB_TOKEN` authentication.
+PyYAML supplies trigger inspection.
 `--verbose` includes every
 workflow and run link; `--check` exits 0 when all pass, 1 for failures, and 2
 for pending or unverified results. Absent reusable-only and other non-push

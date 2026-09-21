@@ -9,7 +9,9 @@ import subprocess
 import tempfile
 import unittest
 from unittest.mock import patch
+from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qs, urlsplit
+from urllib.request import HTTPRedirectHandler
 
 from stathmos_support import ROOT
 from tools.stathmos.audits import ci_audit as audit
@@ -153,6 +155,26 @@ class RemoteAudit(unittest.TestCase):
     def inspect(self):
         with patch.object(audit, "api", side_effect=self.remote):
             return audit.inspect_repository(("project", ENTRY))
+
+    def test_public_audit_works_without_gh_or_credentials(self):
+        self.workflows.append(workflow(2))
+        self.sources[workflow(2)["path"]] = "on: workflow_call"
+
+        def request(req, timeout):
+            self.assertEqual(timeout, 30)
+            self.assertEqual(req.get_method(), "GET")
+            self.assertIsNone(req.get_header("Authorization"))
+            self.assertTrue(req.full_url.startswith("https://api.github.com/"))
+            endpoint = req.full_url.removeprefix("https://api.github.com/")
+            return io.BytesIO(json.dumps(self.remote(endpoint)).encode())
+
+        with patch.dict(audit.os.environ, {}, clear=True), \
+             patch.object(audit.subprocess, "run", side_effect=FileNotFoundError()), \
+             patch.object(audit, "urlopen", side_effect=request):
+            row = audit.inspect_repository(("project", ENTRY))
+        self.assertEqual(row["state"], "pass")
+        self.assertEqual(row["sha"], SHA)
+        self.assertEqual(row["workflows"][1]["state"], "not_expected")
 
     def test_fetches_all_workflow_and_run_pages(self):
         self.workflows = [workflow(n) for n in range(1, 102)]
@@ -342,13 +364,65 @@ class Command(unittest.TestCase):
         self.assertEqual(request.call_args.args[0],
                          ["gh", "api", "--hostname", "github.com", "--method", "GET", "repos/example/project"])
         self.assertEqual(request.call_args.kwargs["timeout"], 30)
-        bad = [FileNotFoundError(), subprocess.TimeoutExpired("gh", 30),
+        bad = [subprocess.TimeoutExpired("gh", 30),
                subprocess.CompletedProcess([], 1, "", "gh auth login required"),
                subprocess.CompletedProcess([], 0, "not json", "")]
         for result in bad:
             kwargs = {"side_effect": result} if isinstance(result, Exception) else {"return_value": result}
             with patch.object(audit.subprocess, "run", **kwargs), self.assertRaises(audit.Unverified):
                 audit.api("repos/example/project")
+
+
+class HttpTransport(unittest.TestCase):
+    def test_missing_gh_and_login_required_use_http(self):
+        for result in (FileNotFoundError(),
+                       subprocess.CompletedProcess([], 4, "", "gh auth login required")):
+            kwargs = {"side_effect": result} if isinstance(result, Exception) else {"return_value": result}
+            with self.subTest(result=result), \
+                 patch.object(audit.subprocess, "run", **kwargs), \
+                 patch.object(audit, "http_api", return_value={"default_branch": "main"}) as request:
+                self.assertEqual(audit.api("repos/example/project"), {"default_branch": "main"})
+            request.assert_called_once_with("repos/example/project")
+
+    def test_tokens_are_optional_prioritized_and_not_forwarded_on_redirect(self):
+        for env, expected in (({}, None), ({"GH_TOKEN": "first", "GITHUB_TOKEN": "second"}, "first"),
+                              ({"GITHUB_TOKEN": "second"}, "second")):
+            with self.subTest(env=env), patch.dict(audit.os.environ, env, clear=True), \
+                 patch.object(audit, "urlopen", return_value=io.BytesIO(b'{"ok": true}')) as request:
+                self.assertEqual(audit.http_api("repos/example/project"), {"ok": True})
+            req = request.call_args.args[0]
+            self.assertEqual(req.full_url, "https://api.github.com/repos/example/project")
+            self.assertEqual(req.get_method(), "GET")
+            self.assertEqual(request.call_args.kwargs["timeout"], 30)
+            self.assertEqual(req.get_header("Authorization"), f"Bearer {expected}" if expected else None)
+            redirected = HTTPRedirectHandler().redirect_request(
+                req, None, 302, "Found", {}, "https://example.invalid/redirect")
+            self.assertIsNone(redirected.get_header("Authorization"))
+
+    def test_http_failures_remain_unverified_and_explain_recovery(self):
+        url = "https://api.github.com/repos/example/project"
+        cases = [(HTTPError(url, 403, "Forbidden", {"X-RateLimit-Remaining": "0"}, None), "rate limit"),
+                 (HTTPError(url, 429, "Too many requests", {}, None), "rate limit"),
+                 (HTTPError(url, 401, "Unauthorized", {}, None), "authentication"),
+                 (HTTPError(url, 403, "Forbidden", {}, None), "read access"),
+                 (HTTPError(url, 404, "Not found", {}, None), "read access"),
+                 (HTTPError(url, 503, "Unavailable", {}, None), "HTTP 503"),
+                 (URLError("offline"), "cannot reach GitHub"),
+                 (TimeoutError(), "timed out")]
+        for error, detail in cases:
+            with self.subTest(error=error), patch.dict(audit.os.environ, {}, clear=True), \
+                 patch.object(audit.subprocess, "run", side_effect=FileNotFoundError()), \
+                 patch.object(audit, "urlopen", side_effect=error):
+                row = audit.inspect_repository(("project", ENTRY))
+            self.assertEqual(row["state"], "unverified")
+            self.assertIn(detail, row["note"])
+            if detail == "rate limit":
+                self.assertIn("GH_TOKEN", row["note"])
+
+    def test_invalid_json_is_unverified(self):
+        with patch.object(audit, "urlopen", return_value=io.BytesIO(b'not json')), \
+             self.assertRaisesRegex(audit.Unverified, "invalid JSON"):
+            audit.http_api("repos/example/project")
 
 
 if __name__ == "__main__":

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Report GitHub Actions for members' current default-branch commits.
-# Requires Python 3 and authenticated GitHub CLI (gh auth login).
+# Requires Python 3. GitHub CLI is optional; public reads work without login.
+# GH_TOKEN/GITHUB_TOKEN enables authenticated reads without gh.
 # Trigger inspection uses PyYAML: pip install -r tools/stathmos/audits/requirements.txt
 #
 #   scripts/eo_ci_audit             # table, with details for anything not passing

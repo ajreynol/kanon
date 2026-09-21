@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Report GitHub Actions for each member's current default-branch commit.
 
-Reads kanon's register and GitHub through authenticated `gh`; changes nothing.
+Reads kanon's register and GitHub; changes nothing. Uses `gh` when available,
+otherwise Python's HTTP client. Public repositories need no login; GH_TOKEN or
+GITHUB_TOKEN can supply authentication without installing GitHub CLI.
 A pass needs successful observed runs and no missing push-triggered workflows.
 For an absent workflow, read its definition at the observed commit: reusable-only
 workflows and workflows without a push trigger are not expected on every commit.
@@ -30,7 +32,9 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlencode
+from urllib.request import Request, urlopen
 
 try:
     import yaml
@@ -58,6 +62,39 @@ class Unverified(Exception):
     """An observation could not be established; never a CI failure or pass."""
 
 
+def http_api(endpoint):
+    """Read public GitHub data without gh, using an environment token if set."""
+    request = Request(f"https://api.github.com/{endpoint}", method="GET", headers={
+        "Accept": "application/vnd.github+json", "User-Agent": "eo_ci_audit"})
+    token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+    if token:
+        # Credentials must not follow redirects to another server.
+        request.add_unredirected_header("Authorization", f"Bearer {token}")
+    try:
+        with urlopen(request, timeout=30) as response:
+            return json.load(response)
+    except HTTPError as exc:
+        if exc.code == 429 or (exc.code == 403 and
+                               exc.headers.get("X-RateLimit-Remaining") == "0"):
+            detail = "GitHub API rate limit reached; wait for the limit to reset"
+            if not token:
+                detail += " or set GH_TOKEN/GITHUB_TOKEN for authenticated access"
+        elif exc.code == 401:
+            detail = "GitHub rejected authentication; check GH_TOKEN/GITHUB_TOKEN"
+        elif exc.code in (403, 404):
+            detail = (f"GitHub HTTP {exc.code}: repository or resource unavailable; "
+                      "private repositories need a token with read access")
+        else:
+            detail = f"GitHub HTTP {exc.code}"
+        raise Unverified(detail) from exc
+    except TimeoutError as exc:
+        raise Unverified("GitHub request timed out after 30 seconds") from exc
+    except (URLError, OSError) as exc:
+        raise Unverified(f"cannot reach GitHub: {exc}") from exc
+    except ValueError as exc:
+        raise Unverified("GitHub returned invalid JSON") from exc
+
+
 def api(endpoint):
     """Only GET requests, with a bounded wait and no interactive prompts."""
     try:
@@ -65,12 +102,14 @@ def api(endpoint):
             ["gh", "api", "--hostname", "github.com", "--method", "GET", endpoint],
             input="", capture_output=True, text=True, timeout=30,
             env={**os.environ, "GH_PROMPT_DISABLED": "1"})
-    except FileNotFoundError as exc:
-        raise Unverified("install GitHub CLI and run gh auth login") from exc
+    except FileNotFoundError:
+        return http_api(endpoint)
     except subprocess.TimeoutExpired as exc:
         raise Unverified("GitHub request timed out after 30 seconds") from exc
     except OSError as exc:
         raise Unverified(f"cannot run gh: {exc}") from exc
+    if result.returncode == 4:  # gh is installed but authentication is required.
+        return http_api(endpoint)
     if result.returncode:
         detail = " ".join(result.stderr.split())[:500]
         raise Unverified(detail or f"gh exited {result.returncode}")
@@ -263,7 +302,7 @@ def render(report, verbose=False):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="eo_ci_audit", description=__doc__,
-                                     epilog="Requires Python 3 and authenticated gh; PyYAML is needed to inspect absent workflows' triggers.",
+                                     epilog="Requires Python 3; gh is optional. Without gh authentication, public reads use Python and optional GH_TOKEN/GITHUB_TOKEN. Anonymous API rate limits may prevent a complete audit. PyYAML is needed to inspect absent workflows' triggers.",
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--repo", action="append", metavar="NAME",
                         help="limit to a member's register name; repeat for several")

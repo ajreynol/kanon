@@ -82,9 +82,18 @@ Koine's `eo_status` remains the shared command for reading the register.
 [`audits/ci_audit.py`](audits/ci_audit.py) reads the registered members and
 president, discovers each default branch, and checks its current commit.
 Children share their parent's CI; other footings are excluded. It requires
-Python 3 and authenticated GitHub CLI (`gh auth login`), works from any directory,
-and makes only read requests. Install the pinned YAML parser from kanon's root
-to inspect absent workflows' triggers:
+Python 3, works from any directory, and makes only read requests. GitHub CLI is
+optional: the audit uses `gh` when available, then falls back to Python's HTTP
+client when `gh` is missing or requests login. The fallback reads public
+repositories without authentication and uses `GH_TOKEN`, or `GITHUB_TOKEN` if
+the former is unset, when provided. No installation or login is performed.
+Private repositories need authenticated read access. Anonymous API limits can
+prevent a complete audit, especially across all members or on repeated runs;
+use a token for higher limits, or `--repo NAME` to narrow the audit. Rate limits
+and authentication errors remain `unverified` with an explanation.
+
+Install the pinned YAML parser from kanon's root to inspect absent workflows'
+triggers:
 
 ```sh
 python3 -m pip install -r tools/stathmos/audits/requirements.txt
