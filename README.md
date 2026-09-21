@@ -72,7 +72,7 @@ first.
 
 | document | what it records |
 | --- | --- |
-| [`docs/history.md`](docs/history.md) | the term record — what it is for, what changed, what went wrong, what crosses to the next president, and what the next term should be for |
+| [`docs/history.md`](docs/history.md) | important events from the term, their consequences, and lessons for future maintainers |
 | [`docs/board.md`](docs/board.md) | cross-repository work and its next steps |
 | [`docs/roles.md`](docs/roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`docs/maintenance.md`](docs/maintenance.md) | **start here to maintain this tree** — where to start, what you do, and what this repository is responsible for |

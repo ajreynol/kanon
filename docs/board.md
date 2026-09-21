@@ -129,32 +129,6 @@ plainly which of our claims it does and does not reach.
 did. A gap in the literature is a result; a plausible bibliography assembled to
 look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
 
-## B1 — cvc5's `Strings.eo` type mismatch, recorded as fixed and never fixed
-
-**Task:** **a type mismatch in cvc5's `Strings.eo` that was recorded as fixed
-and never was.** Two program declarations that return `Bool` from a signature
-that declares `Int`, recorded as fixed upstream three months ago on a change
-that never landed.
-**Entities:** `cvc5`, `logos`, `anoieu`
-**Status:** waiting on `cvc5` — reopened after the landing audit caught it.
-**Channel:** **findings** — `cvc5-1` in
-[anoieu's ledger](https://github.com/ajreynol/anoieu/blob/main/bug_db/bugs.md),
-carried by a person: the `prompts/check_anoieu` launcher this line used to name
-no longer exists in either tree. `cvc5` has no discussion file and has joined
-nothing; delivery upstream is a person's act.
-**Next:** get the two lines fixed on a named branch of `cvc5`, or a statement
-that the declaration is intended and the finding is wrong. **Prompt — `cvc5`:**
-`proofs/eo/cpc/programs/Strings.eo:42` and `:55` declare a program returning
-`Int` and give cases returning `Bool`. Either correct the declared return type,
-or say which of the two is intended so the finding can be withdrawn. It was
-previously reported as fixed; nothing in the tree changed. **Prompt —
-`logos`:** nothing to do until that lands. `install/defs/Cpc.eo` and
-`Cpc.cached.eo` carry the same three cases as vendored copies, and regenerating
-picks the fix up; `logos-1` is blocked on this and on nothing else. **Prompt —
-`anoieu`:** keep the row in the landing audit and do not close it on a reply.
-This is the finding that taught us to check.
-**HUMAN FEEDBACK:** a minor bug — moved down 2026-08-31.
-
 ## B33 — update the ethos user manual from sapheneia's advice
 
 **Task:** update ethos's `user_manual.md` using the advice in

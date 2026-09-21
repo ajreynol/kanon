@@ -18,7 +18,7 @@ kept for consideration.
 
 | document | what it records |
 | --- | --- |
-| [`history.md`](history.md) | the term record — what it is for, what changed, what went wrong, what crosses to the next president, and what the next term should be for |
+| [`history.md`](history.md) | important events from the term, their consequences, and lessons for future maintainers |
 | [`board.md`](board.md) | what is being maintained across the ecosystem, in priority order, each item with its next step and whose it is |
 | [`roles.md`](roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
 | [`maintenance.md`](maintenance.md) | **start here to maintain this tree**: what this repository is responsible for, what it checks, and what is outstanding |
