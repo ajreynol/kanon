@@ -336,7 +336,8 @@ def main(argv=None):
     parser = argparse.ArgumentParser(
         prog="eo_tooling_audit",
         description="Audit ecosystem tooling by kind: locations, documentation and inventory coverage.",
-        epilog="""Two tables list tool/artifact, kind, repo, path and purpose. repo is the
+        epilog="""Two tables list tool/artifact, kind, repo, path and purpose, ordered
+alphabetically by repo, then path, then tool/artifact name. repo is the
 containing repository and path is relative to that repository. Missing paths,
 unverified checkouts and layout exceptions are reported below the tables.
 Checks inspect local working trees, not build quality or installation. The
@@ -409,6 +410,7 @@ gaps take precedence over unavailable trees. Layout notes alone never fail.
         headings = (label, "kind", "repo", "path", "purpose")
         table = [(row[0], row[1], row[3], row[6], row[7])
                  for row in rows if row[1] in kinds]
+        table.sort(key=lambda row: (row[2], row[3], row[0]))
         widths = [max(len(row[i]) for row in [headings, *table]) + 2 for i in range(len(headings))]
         for row in [headings, *table]:
             print("".join(value.ljust(width) for value, width in zip(row, widths)).rstrip())

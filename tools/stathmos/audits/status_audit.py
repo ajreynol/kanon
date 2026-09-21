@@ -916,6 +916,9 @@ USAGE = """usage: eo_status_audit [--verbose] [--all | --all-children] [--check 
                   drafted protocol. Reports, and never fails
   --help          this, and the key below
 
+Repositories are listed alphabetically by name, each followed immediately by
+its listed children in alphabetical order.
+
 A child opts out by recording **Footing:** `unadvertised-child` in its own
 README, spelled exactly as anoieu's checker reads it. Missing declarations mean
 advertised. Opting out changes the listing and nothing else: the footing stands,
@@ -1072,6 +1075,10 @@ def main() -> int:
                              "than by its name")
         if verbose and fails:
             notes.append(f"{name}: " + "; ".join(fails))
+
+    # Group children with their parent, with the parent before its children.
+    rows.sort(key=lambda row: (row[4] if row[1] == "child" else row[0],
+                               row[1] == "child", row[0]))
 
     for parent, listings in child_listings.items():
         note = unverified_note(parent, listings)
