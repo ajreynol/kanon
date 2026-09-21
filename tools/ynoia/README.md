@@ -9,7 +9,7 @@ Eunoia read backwards, and this is Eunoia read as a question.*
 
 A child project under [`docs/policy.md`](../../docs/policy.md). Started by a
 human, read-only, and not part of the governance commands this repository ships.
-Its written arguments and proposal reviews serve the ecosystem. Kanon carries it in
+Its written arguments and project reviews serve the ecosystem. Kanon carries it in
 [`ecosystem.json`](../../scripts/ecosystem/ecosystem.json) and
 `scripts/eo_status_audit` lists it among the advertised children.
 
@@ -52,16 +52,12 @@ So: write it down, make the strongest case against it, and see which survives.
    [glossary](../../docs/glossary.md) is the authoritative name register.
    Ynoia neither duplicates it nor reserves names.
 
-4. **Auditing proposals.** Whether a given idea deserves a repository of its
-   own is the account's general question applied to one case, with a decision
-   attached — so it is answered here, against a stated standard, in
-   [`docs/proposals.md`](docs/proposals.md) — which since 2026-09-19 also holds
-   the wants that are work rather than repositories, with an argument about
-   whose tree each belongs in. The output is an argument with a
-   recommendation at the end. **It approves nothing:** a repository is a claim
-   on a shared namespace and on years of somebody's attention, and the policy
-   reserves that for a person. kanon carries proposals in, because it is the
-   only tool that may address a child project directly.
+4. **Where existing work deserves attention.**
+   [`docs/proposals.md`](docs/proposals.md) keeps a short list of projects,
+   their next useful result, and whether a separate repository would help.
+   It distinguishes promising work from work waiting for attention, and keeps
+   project queues at their sources. **Recommendations approve nothing:** a
+   person decides whether to create a repository or change a project's role.
 
 5. **Which projects have a paper in them.** No shared document asks a
    repository to write one — the recommendation that used to be in `policy.md`
@@ -106,12 +102,12 @@ the same judgement the account makes about work that does not exist, pointed at
 work that does, and it is the page most likely to be wrong in a way somebody
 notices — which is an improvement on being unread.
 
-**Also the place proposals are audited**, which is the first thing this
-project has been asked to produce for somebody else rather than for itself. Its
-first audit, `P1`, was carried to a decision and a repository was approved on the
-strength of it — which is a consumer in the sense the vision means, and would
-be the thing that earns this project a place there. Whether it has is not this
-project's call.
+**Project attention, reviewed 2026-09-21.** The old proposal collection has
+been shortened to a current review of metagraphe, heuresis and noesis, with
+brief outcomes for the earlier P1–P3 audits and a link to their full history.
+Metagraphe and heuresis are candidates for separate repositories; noesis keeps
+its purpose while attention is elsewhere. These are recommendations, not moves
+or changes to those projects' charters.
 
 **The account exists and is long.** Nothing in it has been argued with by
 anybody who disagrees, which is the whole point of writing it and has not

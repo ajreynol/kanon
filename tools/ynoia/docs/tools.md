@@ -156,12 +156,14 @@ page.
 | --- | --- |
 | [glossary](../../../docs/glossary.md) | what names are in use, what they mean, and which work they identify. **The president's, and authoritative** |
 | **this page** | **which tool that does not exist is worth building first** |
-| [`proposals.md`](proposals.md) | should this be a repository of its own — and where the answer is no, whose existing tree the work belongs in |
+| [`proposals.md`](proposals.md) | which existing projects deserve attention, and whether a different home would help them deliver |
 | [`papers.md`](papers.md) | which tool that *does* exist has a result worth writing up |
 
-The line between this page and `proposals.md` is **whether anybody has audited
-it**. A name with a priority argument belongs here; a name with a verdict
-against a standard belongs there, and an entry can be on both.
+New tool ideas belong here. Reviews of existing projects and concrete
+repository proposals belong in `proposals.md`; each points to the project's
+own work rather than copying its queue. When a tool starts, remove its entry
+here and review it there only if a current attention or placement question
+warrants one.
 
 ### Ordering
 
@@ -197,9 +199,9 @@ with nothing in it says `nothing` rather than being left out.
 | **Today** | what stands in its place, or `nothing` |
 | **Why here** | the argument for this position, which is the field that changes when the entry moves |
 
-**Entries carry no id.** They are identified by their working name, and
-[`proposals.md`](proposals.md) works the same way except for the audited `P<n>`
-proposals, whose numbers are cited from outside this project and stay.
+**Entries carry no id.** They are identified by their working name.
+[`proposals.md`](proposals.md) names existing projects and retains P1–P3 only
+as historical references cited by other documents.
 
 ### Arguing about names
 
@@ -223,10 +225,10 @@ correction; do not keep a competing definition here.
 For **proposed** work, put the candidate name, scope, etymology, alternatives
 and objections with its entry. A suggestion reserves nothing, so check the
 glossary and the existing trees before treating a candidate as available.
-[`P2`](proposals.md#p2--the-ecosystems-governance-out-of-the-analyzer) and
-[`P1`](proposals.md#p1--central-tooling-for-reporting) show the form: what the
-name claims, and the objection to it. They preserve the choices considered then;
-the glossary records the names in use now.
+The candidate tables for
+[bebaiosis](why-eunoia.md#bebaiosis--checking-sat-witnesses) and
+[aphairesis](why-eunoia.md#aphairesis--reducing-cpc-proofs) show the form: what
+the name claims, and the objection to it. The glossary records names in use.
 
 When a person adopts a name and the work exists, its definition belongs in the
 glossary, and when the work moves the inventory and the glossary entry move
@@ -270,7 +272,6 @@ which is the field most often omitted and the one that most often changes the
 position; and **where the vision is written down**, or `nothing`, said plainly.
 
 **A listing with no vision is still made**, as `named`, with the missing
-statement recorded as the first thing in the way. What it cannot be is
-*audited*: the standard in [`proposals.md`](proposals.md) asks questions a scope
-has to exist to answer, and run against a gap it returns a verdict about this
-project's imagination rather than about the idea.
+statement recorded. A repository recommendation needs enough scope to answer
+[the practical questions](proposals.md#the-standard); record what is unknown
+rather than inventing a purpose for the idea.

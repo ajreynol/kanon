@@ -131,11 +131,12 @@ this* is not drawn in it.
 constructor, type rule, evaluator case and verification condition per symbol.
 **Owns:** the compiler and its stages.
 
-> **Aspired handoff: `R12` to `noesis`** — the semantics *defined in* Lean, and
-> the compiler a metaprogram over those definitions rather than a translator
-> into them. **The gaining tool does not exist**, so it is named here and never
-> in an `Entities` field; [`proposals.md`](../tools/ynoia/docs/proposals.md) audits
-> it as `P3` with the verdict **not yet**.
+> **Possible second implementation: `noesis`** — the semantics *defined in*
+> Lean, and the compiler a metaprogram over those definitions. Noesis exists as
+> a child of eudaimonia, with a prototype semantics fragment rather than a
+> verified compiler. [Ynoia's current assessment](../tools/ynoia/docs/proposals.md#noesis)
+> recommends preserving a restart point while other work has priority.
+> No transfer of `R12` is scheduled.
 >
 > **The authorship point applies, less sharply than for `R11`.** The compiler
 > is human-written by authors who have not adopted [`vision.md`](vision.md).
@@ -375,15 +376,17 @@ The checking rules and their implementation remain anoieu's under `R31`.
 This project moves with the presidency, carrying its work and roles to the
 repository that holds the office.
 
-### R23 — auditing whether an idea deserves a repository
+<a id="r23--auditing-whether-an-idea-deserves-a-repository"></a>
+
+### R23 — reviewing project attention and repository proposals
 
 **Held by:** `ynoia`
-**Role:** *should this become a repository of its own*, answered against a
-stated standard with a verdict attached — and, where the answer is no, an
-argument about whose existing tree the work belongs in instead.
-**Owns:** [`proposals.md`](../tools/ynoia/docs/proposals.md), which absorbed
-`requests.md` on 2026-09-19 — the two pages asked one question and every entry
-on the second explained why it was not the first. Naming arguments are in
+**Role:** recommends which existing projects deserve attention, the next
+useful result, and whether a separate repository would help. Keeps those
+judgements distinct from the maintainers' priorities and decisions.
+**Owns:** [`proposals.md`](../tools/ynoia/docs/proposals.md), shortened on
+2026-09-21 to current project reviews and brief historical outcomes.
+Naming arguments are in
 [`tools.md`](../tools/ynoia/docs/tools.md#arguing-about-names) and refer to the
 authoritative register in `docs/glossary.md`.
 
