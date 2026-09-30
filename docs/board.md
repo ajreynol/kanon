@@ -1,318 +1,114 @@
 # The board
 
-**What is being maintained across the Eunoia ecosystem, in priority order** —
-each item with the next thing to do and who has to do it. **Position is the
-priority**, so the first is the most important thing outstanding. *How to read
-and edit this page is at the bottom.*
+**Outstanding work across the Eunoia ecosystem, in priority order.** Each
+item names the next action and who can take it. Stable ids survive reordering;
+the maintenance notes are at the bottom.
 
 ## B3 — resolve the remaining unreported ethos diagnostic
 
-**Task:** determine whether the missing-include error in `ethos-9` should be
-reported: `(include "no-such-file.eo")` prints without a source location.
+**Task:** decide whether `(include "no-such-file.eo")` should report the source
+location of the include command.
 **Entities:** `ethos`, `anoieu`
-**Status:** in progress — [anoieu's ledger](https://github.com/ajreynol/anoieu/blob/5835c6fdbe1a64afa4480f8e8b7f20b33255d7e7/docs/reports/reports.md#ethos--the-proof-checker-and-its-own-signatures),
-read 2026-09-18, closes `ethos-8` and two `ethos-9` paths on an accepted fix;
-this third path remains unreported. Landing is audited separately by anoieu.
-**Channel:** **findings** — through anoieu's reporting discipline, carried by
-a person. **There is no command here to run it**: `prompts/` was deleted from
-this tree on 2026-09-17, and the workflow that `prompts/check_anoieu` launched
-was retired in anoieu on 2026-09-19.
-**Next:** reproduce the missing-include diagnostic against a named ethos
-revision and decide whether to file it or withdraw the observation.
+**Status:** ready — source reviewed 2026-09-30 at ethos `08e4aa40`.
+[`FileInput`](https://github.com/cvc5/ethos/blob/08e4aa40c4f8a6e00833f10e8d8985777e424027/src/input.cpp)
+still handles an open failure with `EO_FATAL()` and the filename. The runtime
+diagnostic has not been rechecked against a build of this revision. This is the
+remaining path from the historical `ethos-9` observation; the other accepted
+diagnostics need no new report.
+**Channel:** **findings**, through anoieu and carried by a person.
+**Next:** reproduce the missing-include diagnostic with a build at a recorded
+revision, then file it or withdraw the observation with a reason.
 **Prompt — `ethos`:** assess whether a missing-include diagnostic should carry
-the location of the include command, using the confirmed reproducer.
-**Prompt — `anoieu`:** recheck the unreported third path in `ethos-9`. Record
-the revision and reproducer, then prepare a report or explain why the
-observation should be withdrawn. Do not refile the accepted findings.
+the include command's source location, using the confirmed reproducer.
+**Prompt — `anoieu`:** prepare the remaining diagnostic through the current
+[bug database](https://github.com/ajreynol/anoieu/blob/e5c0dca77da5beced6fa3c4c267d2335bdbf2d7d/bug_db/README.md)
+and reporting policy. Record the revision and reproducer before recommending
+a report or withdrawal.
 **HUMAN FEEDBACK:** raised 2026-08-31: these are real defects and nothing is
 stopping us filing them.
 
-## B31 — tell koine the status audit now belongs to stathmos
-
-**Task:** carry the completed audit split to koine, revising the earlier plan
-to send the whole reader bundle there.
-**Entities:** `kanon`, `koine`
-**Status:** waiting on a person — the implementation moved to stathmos on
-2026-09-18 under `R37`; `scripts/eo_status_audit` remains the public command.
-**Channel:** **discussion**, carried by a person. [`D18`](discussion.md)
-records the earlier agreement, not this revision.
-**Next:** carry it. The notice is drafted in
-[`D22`](discussion.md) — the audit, its child-listing helper and the local
-policy-checker launcher are in `tools/stathmos/audits/`, the register and the
-checkout map stay in `scripts/`, and `scripts/eo_status_audit` is unchanged as
-the public command. Writing it there did not deliver it.
-**Prompt — `kanon`:** carry the revised boundary to koine. The audit, its
-child-listing helper and the local policy-checker launcher live in
-`tools/stathmos/audits/`; the register and local checkout mapping remain in
-`scripts/`. Document checks remain in this repository's tests.
-**Prompt — `koine`:** stathmos now maintains ecosystem status auditing under
-`R37`, reached through the existing `scripts/eo_status_audit` command. This
-revises our earlier reader-bundle handoff. Your `eo_status` remains the shared
-reader; the authoritative register and membership decisions remain kanon's.
-**HUMAN FEEDBACK:** 2026-09-18: keep `eo_status_audit` in `scripts/`, with its
-internal implementation in `tools/stathmos/scripts/`. Implemented; moved to
-`tools/stathmos/audits/` on 2026-09-19 at the maintainer's direction.
-
-## B44 — carry the LAW 10 decision back to epikrisis
-
-**Task:** carry kanon's answer to `epikrisis-D7` to epikrisis, and confirm the
-five declared pursuits with the maintainers responsible for them.
-**Entities:** `kanon`, `epikrisis`, `anoieu`, `dokimasia`, `tachyon`
-**Status:** waiting on a person — the decision is made and in the tree
-(LAW 10.1, LAW 10.4, five `_pursuits` records, `eo_dioktes_audit`, 2026-09-20).
-The reply is drafted in `discussion-response.local.md`, which is uncommitted
-and delivers nothing.
-**Channel:** **discussion**, carried by a person.
-**Next:** carry the reply. Separately, confirm with anoieu's, dokimasia's and
-tachyon's maintainers that each recorded `scope`, `started` and `closes` is
-theirs; `started` is the first commit carrying work on that target and is the
-field most likely to be wrong. Fill in ethos's IJCAR 2026 reference, which is
-recorded from a statement rather than a citation.
-**Prompt — `kanon`:** re-declare or close any record a maintainer disowns.
-`started` is their date, `declared` is the day the record is written, and
-neither is reconstructed. `heuresis` and `elaphros` pursue cvc5 performance on
-the same argument metagraphe was declared on, and are undeclared.
-**Prompt — `epikrisis`:** LAW 10.4 is adopted; LAW 10.1 reaches every footing
-outside the ecosystem on LAW 9's evidence; the register carries `_pursuits`
-records with the fields you asked for, and `eo_dioktes_audit` reads them back
-and re-checks each basis. Your four are declared, and a fifth you did not list.
-The LAW 2 cross-reference was declined by the maintainer. The disclosure
-question is recorded as unsettled, not answered.
-**HUMAN FEEDBACK:**
-
-## B18 — settle the associate proposal for ethos
-
-**Task:** reconcile the current associate footing with the older proposal for
-ethos. [LAW 1](laws.md#law-1--ecosystem-footings-membership-and-other-relationships) and the policy define an associate
-by its own maintenance-page marker; the policy's
-[outstanding proposal](policy.md#the-associate-protocol) still asks whether a
-README heading or an affiliating paragraph is required.
-**Entities:** `kanon`, `ethos`
-**Status:** blocked on policy clarification — ethos remains a candidate with
-`associate` proposed in the inventory, reviewed 2026-09-18. Two things moved
-that day: `scripts/eo_status_audit --protocol` runs again, having been raising
-`AttributeError`, and it reports that **ethos carries the maintenance note and
-not the associate marker** — which is the distinction this item is about. The
-policy's separate self-contradiction, about whether an associate is checked at
-all, is fixed on `koine-D17`.
-**Channel:** **internal**, then **upstream, by a person** if an ask remains.
-**Next:** separate the associate marker from the optional README note in the
-policy's outstanding proposal. That proposal adopts the weaker reading by
-default on 2026-12-01 if nobody has answered.
-**Prompt — `kanon`:** reconcile the proposal with the current footing before
-asking ethos to choose. Keep the inventory at candidate unless ethos records
-the associate marker itself; its README maintenance heading is not that marker.
-**Prompt — `ethos`:** after that clarification, say whether you want to record
-an associate footing on your own maintenance page. Declining is a complete
-answer and leaves you owing this ecosystem nothing. **HUMAN FEEDBACK:**
-
-## B27 — the ethics projects: where they sit, and what they are held to
-
-**Task:** establish the external standard used to examine our conduct.
-**Where they sit:** the maintainer moved `martyria` and `zetesis` from kanon
-to epikrisis on 2026-09-17. They remain unadvertised child projects, housed
-with the ecosystem's evidence and assessment work. This separates them from
-the presidency; it does not establish independence from the ecosystem.
-**What they are held to:** `zetesis` says its standard comes from outside and
-cites the reading that supports it. **The reading has not been done**, so the
-project has a question, three recorded gaps, and no standard — and until one
-external account is cited, **every claim this ecosystem makes about its own
-conduct rests on a standard it wrote itself**, which is the arrangement we
-criticise elsewhere.
-**Entities:** `epikrisis`, `martyria`, `zetesis`
-**Status:** relocation complete; the standards question remains open. Its
-first hour is a literature search.
-**Channel:** epikrisis's child projects; a person carries work between trees.
-**Next:** cite one external account of what an agent-run project owes, and say
-plainly which of our claims it does and does not reach.
-**Prompt — `zetesis`:** name what you could not find as carefully as what you
-did. A gap in the literature is a result; a plausible bibliography assembled to
-look rigorous is the failure you exist to notice. **HUMAN FEEDBACK:**
-
 ## B33 — update the ethos user manual from sapheneia's advice
 
-**Task:** update ethos's `user_manual.md` using the advice in
-[sapheneia's feedback ledger](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/feedback.md).
+**Task:** correct the remaining supported issues in ethos's `user_manual.md`.
 **Entities:** `ethos`, `sapheneia`
-**Status:** in progress — rechecked 2026-09-18 against ethos `21fc6c7d`.
-`EOM-01` and `EOM-02` are **fixed**: `<term>` now derives `<literal>`,
-`<literal>` has a production, and `<datatype-dec>` has the `par` alternative.
-Six more were re-read against the current manual and **stand** — `EOM-03`,
-`04`, `06`, `07`, `11` and `15`, each with its evidence in
-[the recheck](https://github.com/ajreynol/eunoia/blob/main/tools/sapheneia/docs/feedback.md#the-recheck-2026-09-18).
-Our `D12` carried only the two now fixed, and has been removed.
-**Channel:** **upstream, by a person** — ethos has no discussion file;
-sapheneia's preparation belongs to eunoia.
-**Next:** the seven judgement entries — `EOM-05`, `08`, `09`, `10`, `12`, `13`
-and `14` — need a reader who knows Eunoia rather than a grep. Decide whether to
-spend that reading, or to carry the six standing entries upstream as they are.
-**Prompt — `ethos`:** update the user manual using the confirmed advice from
-sapheneia's feedback ledger. Separate wording and documentation corrections
-from questions that require a language decision, and record which suggestions
-were applied, declined or left open.
-**Prompt — `sapheneia`:** record the fixes for `EOM-01` and `EOM-02`, then
-recheck the remaining entries against a named revision of the ethos manual.
-Prepare supported corrections for a person to carry upstream, keeping language
-decisions explicit as questions for ethos.
-**HUMAN FEEDBACK:**
-
-## B37 — decide the three status transitions eudaimonia asked for
-
-**Task:** decide whether a name, a role handoff and a child project's ending
-each become a field a diff can read, rather than prose.
-**Entities:** `kanon`, `eudaimonia`
-**Status:** waiting on the maintainer — a schema change to
-[`ecosystem.json`](../scripts/ecosystem/ecosystem.json) and to how `roles.md`
-records a handoff. **No script writes the register**, deliberately, and an agent
-adding a field to the file that records decisions it may not make is the wrong
-order. Raised as `eudaimonia-D3`, answered in `D23`.
-**Channel:** **internal**, then **discussion** to report the outcome.
-**Next:** decide the third one first — a child's ending is nearly free, since
-children are already register entries with a `parent` and a `path`.
-**Prompt — `kanon`:** the evidence is that the register's git history is the only
-dated machine-readable record of a footing change in this ecosystem, and that
-two rules we already publish cannot be checked without transitions being data:
-*a child project that has gone quiet is a claim nobody is standing behind*, and
-*a name that graduates keeps its entry and changes that clause*. Against it:
-every field is a thing to keep true, and the name register has since become a
-dictionary rather than a status table.
-**Prompt — `eudaimonia`:** the demonstration is the argument and the reversal
-case — two tools moved to a footing and moved back — is the part worth repeating
-to somebody weighing the cost.
-**HUMAN FEEDBACK:**
-
-## B39 — decide whether citing a child project in the parent's channel advertises it
-
-**Task:** decide which of two readings binds — that the refusal to advertise
-means less than it says, or that the checker is narrower than the rule.
-**Entities:** `kanon`, `eudaimonia`
-**Status:** waiting on the maintainer — raised as `eudaimonia-D2`, answered in
-`D23`, where this repository deliberately declined to decide it. The written
-rule says *no link inward from anything a user reads*; the checker reads the
-README and the documentation index and nowhere else, and a discussion file is
-named in that index.
-**Channel:** **internal**, then **discussion** to report the outcome.
-**Next:** decide, and make the policy and the checker say the same thing.
-**Prompt — `kanon`:** whichever way it goes, one of the two moves. It changes
-what an unadvertised child is for: if a topic may cite one, the refusal protects
-a parent's credibility rather than a child's obscurity, and that is worth saying
-out loud rather than leaving as a gap between a rule and its program.
-**HUMAN FEEDBACK:**
-
-## B40 — decide whether `vision.md` records why it changed
-
-**Task:** decide whether a change to the vision must record its reason, in a
-form a program can find.
-**Entities:** `kanon`, `eudaimonia`
-**Status:** waiting on the maintainer — `vision.md` is first on
-[the supervision ladder](maintenance.md#the-supervision-ladder): ask a person
-first, always, and at most five lines of diff. Raised as `eudaimonia-D6`,
-answered in `D23`, which declined to answer it here for that reason.
-**Channel:** **internal.**
-**Next:** decide. A rule of this shape would itself be a change to that page.
-**Prompt — `kanon`:** for it — the vision was revised by 740 lines on the day it
-was added and those reasons are now nowhere; a page limited to five lines a time
-is a page where recording why costs almost nothing. Against it — **nothing may
-ever check the vision mechanically**, and a machine-readable why sits close
-enough to that line for a person to judge the distance. The requester's own
-interest is declared: it is the one file where their `derived_only` measure
-would mean real absence, which makes this a request rather than a proposal.
-**HUMAN FEEDBACK:**
-
-## B41 — two registers share the `R<n>` prefix and six ids already collide
-
-**Task:** decide whether ynoia's request ids and the role ids stop sharing a
-namespace, and which one moves.
-**Entities:** `kanon`, `ynoia`
-**Status:** **done, 2026-09-19** — the maintainer directed that ynoia's request
-ids be dropped rather than renumbered. `requests.md` was merged into
-[`proposals.md`](../tools/ynoia/docs/proposals.md) and its entries are now
-identified by their working name, exactly as on
-[`tools.md`](../tools/ynoia/docs/tools.md). The `R<n>` prefix belongs to
-[`roles.md`](roles.md) alone, and the `P<n>` proposal ids are untouched because
-they are cited from outside that project.
-**Channel:** **internal** — both registers are in this tree.
-**Next:** remove this item once the diff is committed. It is kept for one round
-so a reader who remembers the collision can see how it went.
-**Prompt — `kanon`:** none. What made this worse than cosmetic was that
-decisions get recorded against ids and a topic citing `R4` was already ambiguous;
-dropping one register's ids rather than renumbering either is the answer that
-leaves nothing to re-map, because nothing outside ynoia ever cited an `R<n>` of
-its.
-**HUMAN FEEDBACK:** 2026-09-19: drop the request ids.
-
-## B34 — determine whether another president is necessary
-
-**Task:** decide whether the ecosystem needs a successor president, with kanon
-stepping down to maintainer of the laws if the office moves.
-**Entities:** `kanon`
-**Status:** not started — requested 2026-09-18; the succession decision is open.
-**Channel:** **internal** — prepare the decision for the human maintainer.
-**Next:** identify the work that would require another president and assess
-whether it justifies appointing one.
-**Prompt — `kanon`:** assess whether another president is necessary. Describe
-what a successor would take on and what kanon would retain as maintainer of the
-laws, including any changes needed to the current laws and role assignments.
-Compare the costs and benefits of succession with continuing the current
-arrangement, and leave the appointment and kanon's footing to the maintainer.
-**HUMAN FEEDBACK:**
-
-## B35 — determine whether hermeneia is in proper standing with lean-smt
-
-**Task:** determine whether hermeneia is in proper standing with lean-smt.
-**Entities:** `kanon`, `hermeneia`, `lean-smt`
-**Status:** not started — requested 2026-09-18. Hermeneia's
-[assessment](https://github.com/ajreynol/eudaimonia/blob/79dd6010db64a0194af95ffb046cce77867357de/tools/hermeneia/docs/lean-smt.md#7-what-this-investigation-does-not-establish)
-says its integration proposal has not been put to lean-smt.
-**Channel:** **internal** review; a person carries any follow-up, reaching
-hermeneia through eudaimonia.
-**Next:** review the stated relationship and the evidence for any agreement
-or unresolved concern involving lean-smt.
-**Prompt — `kanon`:** assess the relationship from the available evidence.
-Distinguish proposed work from an agreed relationship, and identify anything
-that needs clarification from lean-smt's maintainers.
-**Prompt — `hermeneia`:** supply the account of work involving lean-smt and any
-recorded agreements or objections, through eudaimonia.
-**Prompt — `lean-smt`:** if clarification is needed, say what relationship with
-hermeneia you would accept and whether any current claim needs correction.
-**HUMAN FEEDBACK:**
-
-## B36 — record epikrisis's independent audit, or say this page does not carry it
-
-**Task:** decide whether [`roles.md`](roles.md) gains an `epikrisis` section for
-the independent audit it accepted on 2026-09-17.
-**Entities:** `kanon`, `epikrisis`
-**Status:** waiting on the maintainer — **granting a role is a person's**, and
-this repository declined to allocate an id for a responsibility another tool
-took on its own maintainer's instruction. epikrisis accepted in `epikrisis-D4`;
-our `D3` is closed on it and `D25` is the answer.
-**Channel:** **internal.**
-**Next:** either add the section and an id, or record that an accepted
-responsibility with no id is the deliberate state.
-**Prompt — `kanon`:** `roles.md` has no `epikrisis` section at all, and the tool
-is a member holding work three repositories rely on. Note that the duty is now
-an **offer**: the laws list the commit census under what they leave unsettled,
-so nothing confers it. An id records a fact; it does not create the obligation.
+**Status:** ready — rechecked 2026-09-30 against
+[ethos `08e4aa40`](https://github.com/cvc5/ethos/blob/08e4aa40c4f8a6e00833f10e8d8985777e424027/user_manual.md)
+and [sapheneia's ledger at eunoia `8115ed7`](https://github.com/ajreynol/eunoia/blob/8115ed761649fdd038b050b525b4e7e9d7d04f4d/tools/sapheneia/docs/feedback.md).
+`EOM-01` and `EOM-02` remain fixed. The six observations `EOM-03`, `04`, `06`,
+`07`, `11` and `15` remain visible: undocumented forms, datatype operations,
+nil-terminator wording and `eo::nil` arity. The seven judgement entries
+(`EOM-05`, `08`, `09`, `10`, `12`, `13`, `14`) still need a language-aware review.
+**Channel:** **upstream, by a person** — sapheneia is reached through eunoia.
+**Next:** prepare corrections for the six confirmed entries for ethos's review.
+**Prompt — `ethos`:** review the supported manual corrections and record which
+are applied, declined or require a language decision.
+**Prompt — `sapheneia`:** prepare those six corrections against the named
+manual revision. Keep the seven judgement entries explicit as unreviewed
+questions; they need not delay the supported corrections.
 **HUMAN FEEDBACK:**
 
 ## B43 — align the ownership check with ecosystem accountability
 
-**Task:** review anoieu's home-only ownership-link check against the clarified
+**Task:** bring anoieu's ownership-link check into agreement with the
 [ecosystem-maintainer scope](policy.md#human-maintainers) and
-[author-credit convention](policy.md#authors). A project's authors and local
-maintainers must not be inferred from the ecosystem's accountability list.
+[author-credit convention](policy.md#authors).
 **Entities:** `kanon`, `anoieu`
-**Status:** policy clarified, 2026-09-20; implementation remains in anoieu.
-At `2e329121728a`, its check still requires the shared list's link in
-`docs/maintenance.md` and rejects a personal `Owner` line elsewhere.
-**Channel:** **internal**; anoieu implements whatever is decided.
-**Next:** reconcile that check with the clarified policy through anoieu's
-ordinary process. Do not expand the former blanket link requirement to members
-or children; any new automated obligation needs its own contract decision.
-**Prompt — `kanon`:** distinguish ecosystem accountability, local maintenance
-and author credit when reviewing proposed checks.
+**Status:** ready — rechecked 2026-09-30 at anoieu `e5c0dca`.
+[`check_owner_unadvertised`](https://github.com/ajreynol/anoieu/blob/e5c0dca77da5beced6fa3c4c267d2335bdbf2d7d/policy_check/checker.py)
+still requires the shared link in `docs/maintenance.md` and rejects personal
+`Owner` lines. The policy already distinguishes ecosystem accountability,
+local maintenance and author credit; implementation remains in anoieu.
+**Channel:** **discussion**, carried by a person to anoieu.
+**Next:** prepare the specific checker correction against the clarified policy.
+**Prompt — `kanon`:** identify where the check conflates ecosystem
+accountability with project ownership. Keep the correction within its existing
+home-only scope; broader automated obligations need a separate decision.
+**Prompt — `anoieu`:** revise the home-only check to respect the distinction
+between ecosystem maintainers, local maintainers and author credits.
 **HUMAN FEEDBACK:** 2026-09-20: name human maintainers for the ecosystem;
 keep personal author credits in `AUTHORS`, not on front READMEs.
+
+## B44 — verify the investigation records and their evidence
+
+**Task:** resolve the evidence gaps in the five declared investigations.
+**Entities:** `kanon`, `anoieu`, `dokimasia`, `tachyon`
+**Status:** ready — reviewed 2026-09-30. LAW 10 and the five
+[`_pursuits` records](../scripts/ecosystem/ecosystem.json) are already adopted.
+Ethos's publication reference remains incomplete, and the recorded `scope`,
+`started` and `closes` still need the responsible maintainers' evidence.
+**Channel:** **internal** review; a person carries any requests for evidence.
+**Next:** locate the full ethos IJCAR 2026 reference for the register.
+**Prompt — `kanon`:** check the records against maintainer evidence. `started`
+records when work began, while `declared` records when the declaration was
+written; do not reconstruct a start date without that evidence. Review whether
+heuresis and elaphros need declarations on the same basis as metagraphe.
+**Prompt — `anoieu`:** supply evidence for the scope, start and closing
+conditions of your three recorded investigations.
+**Prompt — `dokimasia`:** supply that evidence for the cvc5 investigation.
+**Prompt — `tachyon`:** supply that evidence for metagraphe and clarify whether
+heuresis or elaphros also qualify for declaration.
+**HUMAN FEEDBACK:**
+
+## B39 — clarify whether discussion links advertise an unadvertised child
+
+**Task:** align the written advertising rule and the checker's coverage.
+**Entities:** `kanon`, `eudaimonia`, `anoieu`
+**Status:** waiting on the maintainer — rechecked 2026-09-30. The
+[policy](policy.md#child-projects) forbids links inward from anything a user
+reads. At anoieu `e5c0dca`, `check_child_unadvertised` checks the parent's
+README; `shared_surfaces` also observes its documentation index. Neither
+settles discussion links. `D23` records the unresolved question.
+**Channel:** **internal** decision, then **discussion** if implementation
+needs to change in anoieu.
+**Next:** decide whether the parent's discussion may link to an unadvertised
+child, and state the resulting policy and checker coverage consistently.
+**Prompt — `kanon`:** resolve the concrete question about discussion links
+before asking for broader checking.
+**Prompt — `eudaimonia`:** the question remains open; no new correspondence
+format or status field is needed to decide it.
+**Prompt — `anoieu`:** after the policy decision, align the check or its stated
+coverage with that decision.
+**HUMAN FEEDBACK:**
 
 ---
 
@@ -324,6 +120,8 @@ keep personal author credits in `AUTHORS`, not on front READMEs.
   the relevant project records preserve the outcome. Review the cap when the
   entity count changes, recording any increase and its reason in
   [`history.md`](history.md).
+- Keep items for concrete unresolved work. Optional notices and extra
+  bookkeeping alone do not need an open item.
 - A person may edit any field. **HUMAN FEEDBACK** takes precedence over the
   other fields; leave it empty until feedback is given.
 
@@ -341,11 +139,12 @@ Use these fields in order:
 
 **Prompts are drafts.** A person carries anything outside this repository.
 Use `discussion` where the recipient keeps a discussion file, `findings` for
-defects through [anoieu's reporting workflow](https://github.com/ajreynol/anoieu/blob/256939e1fb03/docs/reports/reporting-workflow.md),
+defects through [anoieu's bug database](https://github.com/ajreynol/anoieu/blob/e5c0dca77da5beced6fa3c4c267d2335bdbf2d7d/bug_db/README.md)
+and [reporting policy](https://github.com/ajreynol/anoieu/blob/e5c0dca77da5beced6fa3c4c267d2335bdbf2d7d/bug_db/reporting-policy.md),
 and `upstream, by a person` for other external messages. Check the recipient's
 tree; child projects are reached through their parent. `internal` work stays
 here.
 
-Close an item on a recorded outcome, not merely on delivery. Role handoffs
-follow [`roles.md`](roles.md#how-a-role-is-handed-off); a board item is not a
-prerequisite.
+Close an item when its work is complete or no longer worth pursuing.
+Delivery alone does not resolve the underlying work. Role handoffs follow
+[`roles.md`](roles.md#how-a-role-is-handed-off); a board item is not a prerequisite.
