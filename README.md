@@ -83,7 +83,7 @@ first.
 a checker, a compiler, a Lean development, an analyzer, a template.
 
 **Joining has two requirements: a reference in your README, and a CI job that
-checks the reference is true.** Nothing else is asked — no discussion file, no
+checks the reference is true.** Joining asks for no discussion file and no
 document you do not already keep.
 [`docs/policy.md`](docs/policy.md#joining-the-eunoia-ecosystem) is the
 authority; this is only the route in.
@@ -107,10 +107,12 @@ exactly what it would hand an assistant and does nothing else.
 **The answer to *should we join* is often no, and this page is better for
 saying so.** A tool with conventions of its own, or maintainers who have agreed
 to none of this, is worse off adopting a policy it did not choose — which is
-what `--soft` is for. **Joining obliges you to a shared policy and one CI job
-and nothing else**: no ownership of your tree, no authority over how you run
-it, and leaving is a commit. And **a declaration on a shared tree is not one
-maintainer's alone to make**, which is the first thing `eo_join` asks.
+what `--soft` is for. **Joining obliges you to a shared policy and one CI job**:
+no ownership of your tree, no authority over how you run it, and leaving is a
+commit. The one condition is that if you track or investigate another project's
+work, [LAW 2](docs/laws.md#law-2--membership-obligations-and-the-right-to-leave)
+holds you to the limits on doing so. And **a declaration on a shared tree is not
+one maintainer's alone to make**, which is the first thing `eo_join` asks.
 
 ## A joke about the name
 

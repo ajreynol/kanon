@@ -104,45 +104,47 @@ spend somebody else's fortnight would need an authority nobody here has.
 
 ---
 
-## dokimasia — what no proof step covers
-
-**Stance:** `unstated`.
-**Verdict:** **write it.**
-**The paper:** how much of a production solver's proof production has no proof
-step behind it, measured by reading the code that emits proofs rather than the
-proofs it emits.
-**Why:** first, because it is the only entry whose question survives the second
-test with nothing stripped out. *Which parts of this solver can reach a
-conclusion it cannot justify* is legible to anybody who works on solvers, needs
-none of this ecosystem explained, and is a question people ask about systems that
-have nothing to do with Eunoia. The evidence is a real codebase at recorded
-commits, so the third test is a matter of citing the lock rather than of building
-anything. Its risk is the second half of the reporting position it shares with
-anoieu — presence is not reachability — and a paper that reports uncovered
-inferences without saying which are reachable would be the most quotable wrong
-number this ecosystem has produced.
-
 ## logos and ethos-eoc — one result, two trees
 
-**Stance:** `unstated`, in both. Neither has joined the ecosystem, which makes
-this entry weaker than the one above rather than stronger: nothing here is a
-claim on either tree.
+**Stance:** `unstated`, in both. logos is a member and ethos-eoc is a child of a
+candidate; nothing here is a claim on either tree.
 **Verdict:** **write it**, once — and which of the two trees carries it is
 theirs to decide, not this page's.
 **The paper:** a proof calculus and its semantics compiled into a proof
 assistant, with the soundness of every rule stated and discharged in the emitted
 development — what the construction is, what the statement actually covers, and
 what it costs to regenerate when the calculus moves.
-**Why:** the largest genuinely new thing in the ecosystem, and the answer to the
-fourth question is what puts it here rather than first. The compiler without the
-development is machinery with nothing established by it; the development without
-the compiler is one large Lean project whose interesting property — that it was
-*generated rather than chosen* — is invisible. Two papers would each be missing
-the other's half. What holds it back from the top position is the second
-question, not the first: the construction is real, and the incompleteness of the
-soundness development is the fact the paper has to open with rather than work
-around. **euthyna**, the child project measuring exactly that, is why the paper
-is closer than it looks.
+**Why:** the largest genuinely new thing in the ecosystem. The compiler without
+the development is machinery with nothing established by it; the development
+without the compiler is one large Lean project whose interesting property — that
+it was *generated rather than chosen* — is invisible. Two papers would each be
+missing the other's half. An earlier version placed this second because the
+soundness development was incomplete. Read 2026-11-05 at logos `75c7ee67`, 607 of
+the signature's 609 main rules scan as proven (a text scan, not a build), so the
+paper now opens with what the theorem covers and trusts instead: `native_decide`,
+an unverified parser, and assumptions that are not tied to an input file. Those
+are [`B45` and `B46`](../../../docs/board.md#b45--check-the-full-logos-proof-and-report-its-axioms).
+**euthyna** would supply the measurements, though its latest snapshot is from
+2026-09-02.
+
+## dokimasia — what no proof step covers
+
+**Stance:** `unstated`.
+**Verdict:** **write it**, after adjudication.
+**The paper:** how much of a production solver's proof production has no proof
+step behind it, measured by reading the code that emits proofs rather than the
+proofs it emits.
+**Why:** this is the entry whose question survives the second test with the least
+stripped out. *Which parts of this solver can reach a conclusion it cannot
+justify* is legible to anybody who works on solvers, needs none of this ecosystem
+explained, and is a question people ask about systems that have nothing to do
+with Eunoia. The evidence is a real codebase at recorded commits, so the third
+test is a matter of citing the lock rather than of building anything. Its risk is
+the second half of the reporting position it shares with anoieu — presence is not
+reachability — and a paper that reports uncovered inferences without saying which
+are reachable would be the most quotable wrong number this ecosystem has
+produced. As of 2026-11-04, 196 of its 197 records have no closure, so that
+adjudication has not happened, and its pin is 67 cvc5 commits behind.
 
 ## anoieu — a checker's silence, read as a defect
 

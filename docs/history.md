@@ -306,6 +306,35 @@ particular path. They also reduced the chance that shortening a document
 would silently change who owes what. The exact editorial sequence is in
 `git log -p -- docs/laws.md docs/policy.md docs/vision.md`.
 
+### Priorities moved to the proof chain, and two rules were corrected — November 5
+
+Commits across the satellites stopped: kanon made 165 in September and none in
+October, and since October 10 only logos and ethos have changed. A review on
+November 4 found the core further along than the governance documents suggested,
+and less protected. Logos's rule files scanned as proven, yet CI builds 3 of 607
+of them and nothing runs real cvc5 proofs through logos. The maintainer reordered
+[the board](board.md) around that chain and asked for this repository's stale
+claims and inconsistencies to be repaired.
+
+LAW 2 said a member follows the laws, policy and vision, while LAW 3.1 and the
+front page limited obligations to the policy and the vision said it binds nobody.
+It now asks for the policy. Dropping the laws entirely would have released members
+from the limits on investigating other projects, so LAW 9 and LAW 10 stay as a
+stated condition for a member doing that work. LAW 2's rule that the vision decides
+a disagreement went too, because a page that binds nobody cannot settle what a
+member owes. LAW 7.1 said every change is recorded here, although this page already
+summarized related amendments and left editorial ones to Git. It now says so.
+
+The status audit also stopped printing `failing` for a candidate, which the laws
+say is bound by nothing. It reports the count as `tracked`, as for an associate.
+
+LAW 10's coverage of governance reviews was left for the maintainer: closing that
+gap means either declaring those reviews or narrowing a rule adopted deliberately
+in September.
+
+*Evidence:* the board's items at their named revisions, and
+`git log -p -- docs/laws.md`.
+
 ## What went wrong
 
 ### Structure and self-criticism displaced work

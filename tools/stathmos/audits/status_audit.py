@@ -182,7 +182,7 @@ PURSUIT_STATES = ("active", "closed")
 PURSUIT_REPORTING = ("public", "stopped")
 
 
-# The key printed under the table. A reader who cannot decode `3 failing` in a
+# The key printed under the table. A reader who cannot decode `3 tracked` in a
 # `candidate` row cannot tell a disagreement from a measurement, and the table
 # had been printing that distinction for months without saying it anywhere.
 #
@@ -211,9 +211,9 @@ FOOTINGS = {
 POLICY_VALUES = (
     ("ok", "every check that applies to that tree passed"),
     ("N failing", "N of our checks failed on a tree that is held to them"),
-    ("N tracked", "N of our checks failed on an associate, which owes us "
-                  "nothing. A measurement, and not a shortfall: nobody is at "
-                  "fault for it and nobody is asked to fix it"),
+    ("N tracked", "N of our checks failed on an associate or a candidate, which "
+                  "owe us nothing. A measurement, and not a shortfall: nobody is "
+                  "at fault for it and nobody is asked to fix it"),
     ("not held", "an outsider. No policy check was run"),
     ("no checkout", "not on this machine, so nothing could be run"),
     ("unverified", "the checker could not run; no compliance verdict is available"),
@@ -1016,7 +1016,7 @@ def main() -> int:
         # the reader to draw a conclusion the footing refuses.
         if status == "outsider":
             verdict, fails = "not held", []
-        elif status == "associate":
+        elif status in ("associate", "candidate"):
             verdict, fails = check(path)
             if verdict.endswith("failing"):
                 verdict = verdict.replace("failing", "tracked")

@@ -199,7 +199,7 @@
     "not how much we rely on it, and this file lists tools built around the",
     "calculus plus the one project all of it is downstream of. What those",
     "dependencies cost is a different question, and it belongs to the auditor",
-    "described in tools/ynoia/docs/requests.md rather than here.",
+    "described in tools/ynoia/docs/proposals.md's earlier revisions rather than here.",
     "",
     "A status is changed by a person. An audit may report that one looks",
     "wrong; nothing edits this file on its own.",
@@ -294,7 +294,6 @@
     "status": "child",
     "parent": "ethos",
     "path": "tools/eoc",
-    "branch": "ethosEoc3",
     "what": "the Eunoia compiler, and the semantics sets it ships"
   },
   "logos": {

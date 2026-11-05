@@ -10,6 +10,11 @@ sources; this page records the next useful decision, not a second backlog.
 [New tool ideas](tools.md) and [paper prospects](papers.md) have their own pages.
 A repository move remains a human decision; none is approved by this review.
 
+**This review predates the 2026-11-05 priorities.** [The board](../../../docs/board.md)
+now carries what to do next; metagraphe and heuresis appear there only as
+`B54`, and noesis is among the projects `B55` proposes to park. The repository
+questions below have not been revisited.
+
 ## Where attention goes
 
 | project | recommendation | next useful result or decision |

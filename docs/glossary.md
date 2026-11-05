@@ -36,7 +36,8 @@ outside projects listed for comparison did not ask to be measured and owe the
 ecosystem nothing.
 
 The eunoia repository and its children mimesis and sapheneia were rechecked on
-**2026-09-19** at eunoia `302af2c`.
+**2026-09-19** at eunoia `302af2c`. ethos-eoc was rechecked on **2026-11-05**: the
+compiler has been on ethos's default branch since #229.
 
 ## A
 
@@ -224,7 +225,7 @@ of the authoritative [Eunoia](#eunoia) manual. Proposed as an
 **ethos-eoc** (Eunoia child project of [ethos](#ethos); *proper noun*): The
 [Eunoia](#eunoia) compiler: turns a calculus and its semantics into a proof
 checker and the obligations needed to establish its soundness.
-[Charter](https://github.com/cvc5/ethos/blob/ethosEoc3/tools/eoc/README.md).
+[Charter](https://github.com/cvc5/ethos/blob/main/tools/eoc/README.md).
 
 <a id="eudaimonia"></a>
 **eudaimonia** (Eunoia member; *proper noun*): The calculus template that takes
@@ -358,7 +359,7 @@ conduct.
 
 <a id="member"></a>
 **member** (footing; *noun*): A repository that has chosen to adopt [eo](#eo)’s
-shared policy and approach. Membership carries obligations and may be left. See
+shared policy. Membership carries obligations and may be left. See
 [the footings](laws.md#law-1--ecosystem-footings-membership-and-other-relationships).
 
 <a id="metagraphe"></a>

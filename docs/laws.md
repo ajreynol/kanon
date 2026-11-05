@@ -99,9 +99,12 @@ sets the limits on recording and comparing outsiders' work.
 
 ## (LAW 2) — Membership: obligations and the right to leave
 
-A member follows these laws, the shared repository policy in
-[`docs/policy.md`](policy.md), and the development vision in
-[`docs/vision.md`](vision.md).
+A member adopts the shared repository policy in [`docs/policy.md`](policy.md).
+That is the whole of what membership requires of a repository, with one
+condition: a member that tracks or investigates another project's work does so
+under [LAW 9](#law-9--external-research-release-publication-and-permitted-comparisons)
+and [LAW 10](#law-10--investigations-declaring-conducting-and-ending-one). The
+development vision in [`docs/vision.md`](vision.md) is argued and binds nobody.
 
 Only members are bound. A candidate, a foundation and an outsider are bound
 by nothing here — those footings are our opinion, not their act, and no
@@ -111,9 +114,9 @@ bound exactly as its parent is, and no further.
 A president is a member and this law binds it like any other. The office
 adds responsibilities; it removes no membership obligation.
 
-Where the three disagree, the vision decides. The policy is what a member
-runs, these laws are how the office behaves, the vision is what the whole
-thing is for.
+The policy is what a member runs, these laws are how the office behaves, and the
+vision is the argument for what the whole thing is for. Where they disagree, the
+pages need correcting; until they are, the policy decides what a member owes.
 
 ### (LAW 2.1) — A member's right to leave
 
@@ -154,7 +157,8 @@ must be resolved. An audit can detect it; the human decision grants the office.
 
 The president sets direction but has no authority over another repository,
 including projects the ecosystem serves. It cannot commit to another tree or
-require anything of a member beyond [`docs/policy.md`](policy.md). Holding the
+require anything of a member beyond what
+[LAW 2](#law-2--membership-obligations-and-the-right-to-leave) states. Holding the
 office confers responsibilities without implying a project's merit.
 
 <a id="law-31--transfers-with-the-office"></a>
@@ -353,10 +357,11 @@ policy, vision and role register.
 
 ### (LAW 7.1) — Recording amendments to laws, policy and vision
 
-Every change to this page, to [`docs/policy.md`](policy.md) and to
+Every substantive change to this page, to [`docs/policy.md`](policy.md) and to
 [`docs/vision.md`](vision.md) is recorded with its reason, in
-[`docs/history.md`](history.md). Keep amendment notes there so the shared pages
-state the current rules.
+[`docs/history.md`](history.md). Related changes may be summarized together, and
+editorial ones may rest on Git history alone. Keep amendment notes there so the
+shared pages state the current rules.
 
 ## (LAW 8) — Research boundaries: what Eunoia does not research
 

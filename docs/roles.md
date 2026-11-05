@@ -10,8 +10,8 @@ bottom.*
 
 ## anoieu
 
-*Four responsibilities: the analyzer, fuzzer, findings system and policy
-checker. Governance is now held by kanon.*
+*Three recorded responsibilities: the policy checker, analyzer and fuzzer. Its
+findings system has no entry of its own. Governance is now held by kanon.*
 
 ### R31 — the policy checker
 
@@ -19,8 +19,9 @@ checker. Governance is now held by kanon.*
 **Role:** **deciding whether a tree complies with the policy**, whoever wrote
 the policy. The program every member's CI runs, its checks, its two tiers, its
 skip lines, and its refusal to report coverage it does not have.
-**Owns:** `scripts/policy_check.py`, and the `adoption_interface` case in
-`tests/run.py` that holds it to being a published interface.
+**Owns:** `policy_check/` and `scripts/policy_check.py`, and the
+`adoption_interface` case in `policy_check/tests/cases.py` that holds it to being
+a published interface.
 
 **Why it is split from `R4`.** The repository writing the rules should not be
 the one filing findings against the repositories judged by them. Separating the
@@ -43,8 +44,8 @@ mechanical requirements, and neither of them says which revision of the policy
 reporting what a checker accepts and should not — the front end, the checks,
 the shallow typing pass and the desugarer. It is also the only thing that
 compares the legs of the triple, which are owned by three different people.
-**Owns:** the analyzer, the check registry, `docs/checks.md`, `docs/usage.md`,
-and the committed baselines.
+**Owns:** the analyzer, the check registry, `anoieu_analyzer/checks.md`,
+`anoieu_analyzer/usage.md`, and the committed baselines.
 
 ### R3 — the fuzzer
 
@@ -52,8 +53,8 @@ and the committed baselines.
 **Role:** writing Eunoia nobody would write, handing it to a checker, and
 shrinking and bucketing what comes back into something that can be filed.
 Deliberately a baseline rather than a research instrument, and it says so.
-**Owns:** `anoieu_fuzz/`, `docs/fuzzing.md`, the seed corpus, and the promoted
-reproducers under `tests/fuzz/`.
+**Owns:** `anoieu_fuzz/`, including `anoieu_fuzz/fuzzing.md`, the seed corpus,
+and the promoted reproducers under `tests/fuzz/`.
 
 `R28` and `R29` are retired. Neither is an active responsibility or a pending
 role transfer.
@@ -488,12 +489,12 @@ unable to answer a question it could answer alone*.
 only honest way to count the roles, and a table here restating them would be a
 copy nothing compares.
 
-**kanon holds seven, which is the most of any tool, and that is the finding
-rather than an achievement.** The register's own rule says a long section means
-a tool has taken on more than it should or has not decided what it is — and the
-ecosystem's mission says no tool should hold what another tool could. Every one
-of the seven is a candidate to hand off, and `R32` and `R34` move with the
-office by law whether anybody proposes it or not.
+**kanon holds five, the most of any tool, and that is the finding rather than an
+achievement.** The register's own rule says a long section means a tool has taken
+on more than it should or has not decided what it is — and the ecosystem's
+mission says no tool should hold what another tool could. Every one of the five
+is a candidate to hand off, and `R32` and `R34` move with the office by law
+whether anybody proposes it or not.
 
 **An empty section records no assigned role.** A child may still deliver useful
 work without one, and may hold shared responsibilities when assigned them.
