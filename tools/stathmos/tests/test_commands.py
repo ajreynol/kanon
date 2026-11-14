@@ -422,6 +422,15 @@ class Verification(unittest.TestCase):
         # and it is not counted against anybody
         self.assertIn("0 of 0 repositories held to the policy", output)
 
+    def test_a_candidate_is_checked_but_is_never_at_fault(self):
+        # LAW 2 binds a candidate to nothing, so its number is a measurement too.
+        output, checker = self.status_of(["candidate"], ("1 failing", ["a"]))
+        checker.assert_called_once()
+        row = next(l for l in output.splitlines() if l.startswith("candidate "))
+        self.assertIn("1 tracked", row)
+        self.assertNotIn("failing", row)
+        self.assertNotIn("Theirs to fix", output)
+
     def test_a_passing_associate_reads_the_same_as_anybody(self):
         output, _ = self.status_of(["associate"], ("ok", []))
         self.assertIn("ok", output)

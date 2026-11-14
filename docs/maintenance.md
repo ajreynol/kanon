@@ -336,9 +336,8 @@ nobody's agreement.
 
 And the counterweight, because that rule is otherwise an invitation: what wants
 ramping up is **work on the thing at the bottom**, not machinery about the
-work. The governance budget below has a baseline and no second row, and the
-outside criticism that produced it says governance is the cheapest thing here
-to make. A session that widens its own latitude and spends it on more documents
+work. The outside criticism that produced the governance budget below says
+governance is the cheapest thing here to make. A session that widens its own latitude and spends it on more documents
 has answered the wrong half.
 
 **Do not hold up the ecosystem with a position of your own.** Two kinds of
@@ -495,30 +494,41 @@ wrong with them beside what is not. It is a child project in eudaimonia's tree,
 at `tools/workflow-launcher`, and `docs/ai-workflows.md` is the document.
 
 So: the rows, measured over this tree, each as *files, lines*. Reproducible in
-three commands, and the second row is what the first was worth waiting for.
+four commands, and the second row is what the first was worth waiting for.
 
-| what | 2026-09-01 | 2026-09-17 | 2026-09-18 | 2026-09-19 |
-| --- | --- | --- | --- | --- |
-| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 | 25, 12,437 |
-| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none | none |
-| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 | 11, 3,409 |
-| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** | 14, **9,028** |
-| Python | 54, 13,382 | 8, 2,069 | 9, 1,986 | 13, 3,294 |
-| `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 | 5, 898 |
-| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_analyzer/checks.md) | 63 | 63 | 63 | 64 |
-| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed | 41 open, 43 closed | 2 open, 80 closed |
+| what | 2026-09-01 | 2026-09-17 | 2026-09-18 | 2026-09-19 | 2026-11-05 |
+| --- | --- | --- | --- | --- | --- |
+| tracked Markdown outside `deps/` | 32, 15,142 | 31, 15,757 | 33, 15,639 | 25, 12,437 | 23, 8,206 |
+| — generated, written by a tool | 4, 1,142 | none: every page here is hand-written | none | none | none |
+| — child projects, shipped by nothing and advertised nowhere | 10, 4,550 | 16, 7,108 | 19, 7,246 | 11, 3,409 | 11, 2,894 |
+| — **written prose: the number this section is about** | 18, **9,450** | 15, **8,649** | 14, **8,393** | 14, **9,028** | 12, **5,312** |
+| Python | 54, 13,382 | 8, 2,069 | 9, 1,986 | 13, 3,294 | 16, 4,601 |
+| `scripts/` | 9, 2,481 | 8, 2,025 | 3, 571 | 5, 898 | 7, 1,038 |
+| checks with a page in [`checks.md`](https://github.com/ajreynol/anoieu/blob/main/anoieu_analyzer/checks.md) | 63 | 63 | 63 | 64 | 50 |
+| findings in the ledger | 39 open, 43 closed | 39 open, 43 closed | 41 open, 43 closed | 2 open, 80 closed | 5 open, 85 closed |
 
-**What the second row says, including the part that is not to our credit.**
-Written prose fell by 801 lines while **neither the check count nor the finding
-count moved** — both read from anoieu's tree on 2026-09-17 and both are
-anoieu's to change, not ours. So the rule was kept in the only direction
-available to a repository that writes documents: by deleting pages, not by
-earning them. The Python column fell by 11,313 lines for two reasons that are
-not the same, and only one is a saving: commands went to koine or were deleted
-outright, and `martyria` and `zetesis` moved to epikrisis, which moves lines off
-this table without removing them from the ecosystem. **Child-project prose grew
-by 2,558 lines**, which is the row to watch next: it is the part of this tree
-that nothing advertises and nobody is asked to read.
+**What the columns established.** Prose fell through 2026-09-18 while the check
+and finding counts stayed still, so the rule was kept only by deleting pages,
+not by earning them. It then rose by 635 lines on 2026-09-19 and the rule was not
+kept. Moving implementation between trees (`martyria` and `zetesis` to epikrisis,
+the audits to stathmos) took lines off this table without removing them from the
+ecosystem, so those drops are not savings. A repair pass buys correctness rather
+than capacity. **What actually shrank correspondence** was reading each incoming
+topic's settling condition, not this counter.
+
+**The ledger row is now defined against something stable:** open and closed rows
+of anoieu's `bug_db/bugs.json`, where a row is closed if it has a `closed_verdict`.
+It came from three different files in three days before that, and its jump from
+41 to 2 open says nothing about how many defects exist. Checks are now counted as
+headings naming an `EO` code in `anoieu_analyzer/checks.md`.
+
+**The 2026-11-05 column, and what it does and does not show.** Written prose
+fell from 9,028 lines to 5,309 by 2026-09-21, by cutting pages rather than by
+earning them. It stood at 5,108 before this column's edit, and rose by about 200
+because the board grew. Nothing here changed between 2026-09-30 and that edit, so
+the column records a repository that stopped, not a rule that began working. The
+check count of 50 is not comparable with the earlier 63 and 64, which used an
+unrecorded method: the method above gives 49 at anoieu `256939e1fb03`.
 
 ```
 git ls-files '*.md' | grep -v '^deps/' | xargs wc -l | tail -1
@@ -526,79 +536,6 @@ git ls-files 'tools/*/*.md'           | xargs wc -l | tail -1
 git ls-files '*.py'                   | xargs wc -l | tail -1
 git ls-files 'scripts/*'              | xargs wc -l | tail -1
 ```
-
-The fourth was added on 2026-09-18, because the `scripts/` row had been in the
-table with no command behind it since the table was written.
-
-**The third row, and the day it measures went both ways.** Written prose fell by
-**256 lines**, and **almost all of the movement is one file**: `discussion.md`
-went from 1,185 lines to 697. Six finished topics were removed, and six bundled
-answers to other tools — 619 lines, written earlier the same day — were replaced
-by three short ones totalling 109. **The first version of that work would have
-put this row at +188**, and the row is worth having because somebody read the
-file rather than the number.
-
-**What the rule actually caught.** Correspondence is the cheapest thing this
-office produces and the hardest for it to stop producing, and a discussion file
-is where it accumulates without looking like accumulation — every topic is
-individually defensible. **The check that shrank it was not this counter**; it
-was reading the settling condition of each incoming topic and noticing that most
-name an artifact, so the artifact is the answer and no topic is owed. The
-counter's job was to make the first version's cost visible, and it would have.
-
-**The fourth column, and the rule was not kept in it.** Written prose rose by
-**635 lines** while the check count moved by one and the finding counts moved
-for a reason that is not a finding. That is the reading this table exists to
-force, and it is stated before the excuses. **Split at the last commit**: 298 of
-those lines arrived in the five commits taken earlier on 2026-09-19, and 337 in
-the housekeeping session that wrote this column — a figure that had to be taken
-three times, because each measurement excluded the paragraph reporting it. Child prose *fell* by 3,445
-lines over the same day, which is the row that was supposed to be watched and is
-the only one that went the right way.
-
-**What the 337 lines bought, so the reader can decide whether it was worth it.**
-One defect in this tree's own tooling, with a regression test: the status audit
-counted this office's own global announcements as topics owed to us, because a
-notice addressed to every member names us too — the summary line was reporting
-26 when the answer is 24. Fourteen dead links into anoieu, repaired by reading
-the table they published. One stale row in the tooling register, and roughly
-twenty claims in this tree that had stopped being true. **None of that is a
-check or a finding**, so by the rule as written it does not pay, and the honest
-entry is that a repair pass buys correctness rather than capacity.
-
-**The child-project row is the one that went right, and it is the only row here
-that has ever moved because somebody asked what a page was for.** It fell by
-**3,837 lines** across the day, **392 of them** in a merge the maintainer
-directed at the end of it: ynoia's `requests.md` was folded into `proposals.md`
-and the two pages' shared conventions into one footer, cutting three registers
-from 1,491 lines to 1,106 while losing no entry. **That is the rule being kept
-in the one direction this table has been able to record** — deleting pages
-rather than earning them — and it is worth separating from the rest, because the
-prose row above went up in the same session. **A repair pass adds lines and a
-merge removes them, and the two are not the same work.**
-
-**And the ledger row moved a third time, which is now a pattern rather than an
-accident.** `reports.md` became `open-findings.md` and `closed-findings.md` on
-2026-09-18; both were deleted on 2026-09-19 and the ledger is `bug_db/bugs.md`,
-counted here from `bug_db/bugs.json`. The counts did not drift, they *jumped* —
-41 open and 43 closed became 2 open and 80 closed — and nothing in that jump is
-about how many defects exist. **Three sources in three days for one number is a
-counter that should either be defined against something stable or dropped**, and
-whoever writes the fifth column should decide which rather than re-deriving it a
-fourth way.
-
-**Two columns moved for reasons that are not savings, and reading them as such
-would be the second failure this table exists to prevent.** `scripts/` fell from
-2,025 lines to 571 because the audit's implementation moved to
-`tools/stathmos/audits/`, where it counts as Python and as a child project —
-the same shape as `martyria` and `zetesis` moving to epikrisis a day earlier.
-And **the ledger counts were re-derived differently**, because anoieu split
-`reports.md` into `open-findings.md` and `closed-findings.md`; the 41 and 43
-above are rows in those two files, and the earlier columns counted a page that
-no longer exists in that form. **Both of those have since moved again** — the
-ledger is [`bug_db/bugs.md`](https://github.com/ajreynol/anoieu/blob/main/bug_db/bugs.md)
-as of 2026-09-19, so a fourth column would have to be re-derived a third time. **A counter whose source moves is a counter that
-can drift without anybody lying**, and nothing here checks it.
 
 **What the row is for, and what it is not.** It is not a limit. Nobody has
 argued what the right ratio is, a budget invented here would be a number to
@@ -614,9 +551,7 @@ having: it reports its own metric going the wrong way, three rounds running,
 rather than being quietly retired. A counter that only ever confirms is not a
 counter.
 
-And this section is itself the thing it measures. It costs about sixty lines of
-written prose, and with a second row it has at last reported something a reader
-can check — which is the first time it has paid for any of itself.
+And this section is itself the thing it measures.
 
 ## Keeping names and ynoia's arguments current
 

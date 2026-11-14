@@ -18,11 +18,13 @@
     "Eunoia's tooling was rechecked at 8cfb3ac on 2026-09-19: the formatter lives in eo_format/ with its docstring and CLI help, and mimesis's four tutorials live in tutorials/. Documentation-only outputs, including sapheneia's account, are outside the inventory.",
     "Ethos's tooling was rechecked at a3f1c3af on 2026-09-19. plugins/ contains the plugin collection for compilation and code generation. contrib/ and tests/smtlib/ are reserved project support directories.",
     "Iogos was rechecked at e716d73 on 2026-09-19. Cpc/ contains the generated checker and obligations, with its handwritten soundness scaffold under Cpc/Soundness/. Install and build wrappers live in scripts/. The soundness theory is still a placeholder, not a completed proof.",
-    "Epikrisis's site was rechecked at 2dc4125 on 2026-09-19 and lives in ecosystem_report/. Eudaimonia's generator lives in new_checker/ at 50532e0; its staged Euthyna changes separate measurement/ and report_site/, with a shared scripts/ launcher and saved data under measurement/data/. The Euthyna entries describe that working tree, not the committed default branch.",
+    "Epikrisis's site was rechecked at 2dc4125 on 2026-09-19 and lives in ecosystem_report/. Eudaimonia's generator lives in new_checker/ at 50532e0; Euthyna separates measurement/ and report_site/, with a shared scripts/ launcher and saved data under measurement/data/, all committed on the default branch when rechecked on 2026-11-05.",
     "Tachyon's child webpages were read at effe42c on 2026-09-19. Heuresis's report builds gap measurements and a research queue; elaphros's report builds planning and source-evidence pages without measured performance claims. Each builder and its HTML templates live at the child's root and read ledger/ evidence. scripts/build_site.py assembles the site described in docs/site.md.",
     "Metagraphe's rewrite database was read at 258102d on 2026-09-19. rewrite_db/ holds the curated records and their generated view; its validation, rendering and pinned-koine wrappers live in the child's shared scripts/. The records are rewrite proposals and source observations, not established solver fixes.",
     "Dokimasia's analyzer was rechecked at de0f1b9 on 2026-09-19: the package directory was renamed from dokimasia/ to dokimasia_analyzer/ and the recorded path and entrypoint follow it. The launcher scripts/dokimasia_analyzer is unchanged.",
     "Dokimasia's regression exclusion audit was read from its clean checkout at 9e42bda on 2026-09-21. regression_audit/ implements the read-only scripts/eo_cvc5_regressions_audit command, which reports proof-checking tester exclusions and reason comments in cvc5 CLI regressions.",
+    "Dokimasia's rewriter_report/ was read at b9102ba on 2026-11-05: a dated review of bit-vector and string rewriters against proof rules, at the cvc5 revision in its scripts/cvc5.lock.",
+    "cvc5 removed its LFSC proof format in #12826 (aa833a320e, 2026-09-22), so its signature entry was rechecked at c666203d49 on 2026-11-05 and now lists CPC only. The separate LFSC checker remains an outsider in ecosystem.json.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -38,9 +40,9 @@
       "repo": "cvc5",
       "kind": "artifact",
       "path": "proofs",
-      "what": "CPC/Eunoia and LFSC proof-checking signatures",
-      "files": ["proofs/eo/cpc/Cpc.eo", "proofs/lfsc/signatures/core_defs.plf", "proofs/lfsc/signatures/theory_def.plf"],
-      "docs": ["docs/proofs/output_cpc.rst", "docs/proofs/output_lfsc.rst"]
+      "what": "CPC/Eunoia proof-checking signatures",
+      "files": ["proofs/eo/cpc/Cpc.eo"],
+      "docs": ["docs/proofs/output_cpc.rst"]
     },
     "anoieu_bug_db": {
       "repo": "anoieu",
@@ -92,6 +94,14 @@
       "what": "Audits cvc5 regression proof-checking exclusions and reason comments",
       "entrypoints": ["scripts/eo_cvc5_regressions_audit"],
       "docs": ["regression_audit/README.md"]
+    },
+    "dokimasia_rewriter_report": {
+      "repo": "dokimasia",
+      "kind": "artifact",
+      "path": "rewriter_report",
+      "what": "Reviews whether proof rules capture cvc5's hand-written rewrites",
+      "files": ["rewriter_report/REPORT.md", "rewriter_report/METHOD.md"],
+      "docs": ["rewriter_report/README.md"]
     },
     "history_analyzer": {
       "repo": "epikrisis",
@@ -184,7 +194,7 @@
       "owner": "stathmos",
       "path": "tools/stathmos/audits",
       "what": "Audits ecosystem status, hosted CI and available tooling",
-      "entrypoints": ["scripts/eo_status_audit", "scripts/eo_tooling_audit", "scripts/eo_ci_audit"],
+      "entrypoints": ["scripts/eo_status_audit", "scripts/eo_tooling_audit", "scripts/eo_ci_audit", "scripts/eo_dioktes_audit"],
       "docs": ["tools/stathmos/README.md"]
     },
     "bug_db_manager": {

@@ -19,11 +19,10 @@ kept for consideration.
 | document | what it records |
 | --- | --- |
 | [`history.md`](history.md) | important events from the term, their consequences, and lessons for future maintainers |
-| [`board.md`](board.md) | what is being maintained across the ecosystem, in priority order, each item with its next step and whose it is |
+| [`board.md`](board.md) | what is outstanding across the ecosystem, in priority order, each item with its next step and whose it is |
 | [`roles.md`](roles.md) | every responsibility, who holds it, and what is deliberately not part of it |
-| [`maintenance.md`](maintenance.md) | **start here to maintain this tree**: what this repository is responsible for, what it checks, and what is outstanding |
-
-[`discussion.md`](discussion.md)
+| [`maintenance.md`](maintenance.md) | **start here to maintain this tree**: what this repository is responsible for and what it checks |
+| [`discussion.md`](discussion.md) | live correspondence with other tools; acted on only when a person names the topic |
 
 ## Ideas for consideration
 

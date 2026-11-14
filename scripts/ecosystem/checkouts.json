@@ -16,7 +16,7 @@
     "**Only a default branch is ever installed.** An installer prints and",
     "runs `git clone <url> <dir>` and nothing else: no `-b`, no checkout, no",
     "branch switch. Where a child project's current work is on some other",
-    "branch of its parent -- ethos-eoc, on ethosEoc3 -- that is a fact about",
+    "branch of its parent, that is a fact about",
     "the child and is recorded on the child, in scripts/ecosystem/ecosystem.json. The",
     "parent still installs. Children are advertised by default when their local",
     "README has no Eunoia listing declaration. For advertised children, the",
