@@ -356,6 +356,16 @@
     "short": "Compares approaches to better-founded SMT solvers",
     "what": "compares approaches to better-founded SMT solvers and their costs"
   },
+  "telos": {
+    "status": "member",
+    "joined": "kanon 1d1bba7",
+    "repo": "telos",
+    "url": "https://github.com/ajreynol/telos",
+    "vetted": "2026-11-14",
+    "why": "README declares membership and configures anoieu's policy contract 1 at b1c20dc; previously a research child of eschaton, now its own repository",
+    "short": "Verified SMT rewriter in Lean, a port of cvc5's",
+    "what": "a verified rewriter for SMT in Lean 4: a port of cvc5's rewriter whose every step is a CPC rule checked by Logos, with a machine-checked proof that rewriting preserves equivalence and differential fuzzing against cvc5"
+  },
   "epikrisis": {
     "status": "member",
     "joined": "anoieu dbb9337",
@@ -456,13 +466,6 @@
     "path": "tools/empeiria",
     "short": "Works cvc5 bug reports and learns from maintainer feedback",
     "what": "works cvc5's public bug reports and records what the maintainers' responses teach about the next fix"
-  },
-  "telos": {
-    "status": "child",
-    "parent": "eschaton",
-    "path": "tools/telos",
-    "short": "Researches a proof-first SMT solver checked by Logos",
-    "what": "research toward a proof-first SMT solver whose output is checked by Logos, using dokimasia's analyses to guide the design"
   },
   "apodeixis": {
     "status": "child",

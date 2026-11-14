@@ -471,11 +471,15 @@ study of the evidence behind claims in documentation. From Greek τεκμήρι�
 [Charter](https://github.com/ajreynol/anoieu/blob/main/tools/tekmerion/README.md).
 
 <a id="telos"></a>
-**telos** (Eunoia child project of [eschaton](#eschaton); *proper noun*):
-Research toward a solver designed around proofs from the start, retaining
-[cvc5](#cvc5)’s calculus and parts of its checker while replacing the search.
-Research notes; nothing is built.
-[Charter](https://github.com/ajreynol/eschaton/blob/main/tools/telos/README.md).
+**telos** (Eunoia member; *proper noun*): A verified rewriter for SMT, written
+in Lean 4: a port of [cvc5](#cvc5)’s rewriter in which every step is an instance
+of a CPC rule checked by [logos](#logos), with a machine-checked proof that each
+rewrite preserves equivalence. Agreement with cvc5’s choice of rewrites is tested
+by differential fuzzing, not proved, and only some theories are ported. It began
+as a research child project of [eschaton](#eschaton). From Greek τέλος, “end” or
+“goal” — which its README reads as a verified SMT solver, the goal this rewriter
+is a step toward.
+[Repository](https://github.com/ajreynol/telos).
 
 <a id="tracking"></a>
 **tracking** (activity; *noun*): Recording projects' changes and activity over
