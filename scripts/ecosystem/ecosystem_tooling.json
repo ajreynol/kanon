@@ -25,6 +25,7 @@
     "Dokimasia's regression exclusion audit was read from its clean checkout at 9e42bda on 2026-09-21. regression_audit/ implements the read-only scripts/eo_cvc5_regressions_audit command, which reports proof-checking tester exclusions and reason comments in cvc5 CLI regressions.",
     "Dokimasia's rewriter_report/ was read at b9102ba on 2026-11-05: a dated review of bit-vector and string rewriters against proof rules, at the cvc5 revision in its scripts/cvc5.lock.",
     "cvc5 removed its LFSC proof format in #12826 (aa833a320e, 2026-09-22), so its signature entry was rechecked at c666203d49 on 2026-11-05 and now lists CPC only. The separate LFSC checker remains an outsider in ecosystem.json.",
+    "Telos was read from its clean checkout at b1c20dc on 2026-11-14. Telos/ holds the rewriter library, Main.lean and FuzzMain.lean build the telos and telos-fuzz executables, and verification/ is a separate Lake project with the correctness proofs. TelosTests/ holds build-time tests. The theorem covers equivalence preservation only; agreement with cvc5's rewrite choices is fuzzed, not proved.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -299,6 +300,15 @@
       "what": "Profiles cvc5 statistics with offline reports and plots",
       "entrypoints": ["stats_profiler/profile.py", "stats_profiler/top.py", "stats_profiler/plots.py"],
       "docs": ["docs/stats-profiler.md"]
+    },
+    "telos_rewriter": {
+      "repo": "telos",
+      "path": "Telos",
+      "also": ["verification", "TelosTests"],
+      "what": "Verified Lean port of cvc5's rewriter with CPC proof output",
+      "entrypoints": ["Telos.lean", "Main.lean", "FuzzMain.lean"],
+      "docs": ["README.md", "docs/design.md", "TRUSTED.md"],
+      "layout_note": "Two Lake projects: the rewriter in Telos/ with root executables, its correctness proofs in verification/ so the rewriter builds without Mathlib"
     }
   },
   "exclude": {}
