@@ -101,6 +101,13 @@ the implementation every other reading of the language is compared to.
 **Owns:** the checker, and its behaviour, which is the reference the rest of
 the ecosystem measures itself against.
 
+> **Second implementation: `pathos`**, a Rust reimplementation that answers as
+> ethos does, with the same diagnostics, and is checked against ethos's `main`
+> by differential testing. It re-implements `R10` and `R12` without holding
+> either of them: matching ethos is its stated goal, so ethos's behaviour stays
+> the reference. A case where they disagree is a finding against one of them,
+> and does not move the role.
+
 ### R11 — the Eunoia manual
 
 **Held by:** `ethos`
@@ -318,6 +325,10 @@ calculus cvc5 emits proofs in.
 **Owns:** `Cpc.eos` and its cached form.
 
 ## martyria
+
+## pathos
+
+Holds no role. It re-implements `R10` and `R12`; see the note under `R10`.
 
 ## sapheneia
 

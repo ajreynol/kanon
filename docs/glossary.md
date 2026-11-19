@@ -415,6 +415,17 @@ its CI uses policy contract 1, and its local policy check passes.
 should follow from a tool’s strengths and shortcomings. From Greek παραίνεσις,
 “counsel.” See [the report card](../tools/stathmos/docs/report-card.md).
 
+<a id="pathos"></a>
+**pathos** (Eunoia candidate; *proper noun*): A memory-safe Rust
+reimplementation of [ethos](#ethos), meant as a drop-in replacement for the
+checker and for [ethos-eoc](#ethos-eoc), kept equal to them by differential
+testing. It also has a CPC checker compiled from ethos’s generated Rust, with
+early Lean proofs about it against [logos](#logos). Proposed as an
+[associate](#associate); it has not joined as a [member](#member). From Greek
+πάθος, “experience” or “feeling,” the third mode of persuasion beside ethos and
+logos.
+[Repository](https://github.com/daniel-larraz/pathos).
+
 <a id="president"></a>
 **president** (office; *noun*): The human maintainer of the repository recorded
 as holding the presidency. The office is bestowed for a [stretch](#stretch),
@@ -472,14 +483,16 @@ study of the evidence behind claims in documentation. From Greek τεκμήρι�
 [Charter](https://github.com/ajreynol/anoieu/blob/main/tools/tekmerion/README.md).
 
 <a id="telos"></a>
-**telos** (Eunoia member; *proper noun*): A verified rewriter for SMT, written
-in Lean 4: a port of [cvc5](#cvc5)’s rewriter in which every step is an instance
-of a CPC rule checked by [logos](#logos), with a machine-checked proof that each
-rewrite preserves equivalence. Agreement with cvc5’s choice of rewrites is tested
-by differential fuzzing, not proved, and only some theories are ported. It began
-as a research child project of [eschaton](#eschaton). From Greek τέλος, “end” or
-“goal” — which its README reads as a verified SMT solver, the goal this rewriter
-is a step toward.
+**telos** (Eunoia member; *proper noun*): A verified rewriter and preprocessor
+for SMT, written in Lean 4: ports of [cvc5](#cvc5)’s rewriter and preprocessing
+passes, with machine-checked proofs that each preserves equivalence under
+[logos](#logos)’s semantics. Each step is either a CPC rule checked by logos or
+a faster method with a Lean theorem that it is equivalent to one. Agreement with
+cvc5’s choices is tested by differential fuzzing, not proved, and only some
+theories and passes are ported. It began as a research child project of
+[eschaton](#eschaton). From Greek τέλος, “end” or “goal” — which its README
+reads as a verified SMT solver, the goal this rewriter and preprocessor are
+steps toward.
 [Repository](https://github.com/ajreynol/telos).
 
 <a id="tracking"></a>

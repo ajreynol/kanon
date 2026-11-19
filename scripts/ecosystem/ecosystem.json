@@ -296,6 +296,17 @@
     "path": "tools/eoc",
     "what": "the Eunoia compiler, and the semantics sets it ships"
   },
+  "pathos": {
+    "status": "candidate",
+    "proposed": "associate",
+    "repo": "pathos",
+    "url": "https://github.com/daniel-larraz/pathos",
+    "released": "https://github.com/daniel-larraz/pathos",
+    "vetted": "2026-11-19",
+    "short": "Rust reimplementation of the ethos checker and compiler",
+    "what": "a memory-safe Rust reimplementation of ethos, meant as a drop-in replacement: pathos-eo for the checker, pathos-eoc for the Eunoia compiler, and pathos, a CPC checker compiled through ethos's rust-meta stage whose Lean translation is a proof pilot against logos",
+    "why": "a second implementation of the checker every other reading of the language is measured against, kept equal to ethos by differential testing on ethos's six CI platforms; read at af0fe49 on 2026-11-19"
+  },
   "logos": {
     "status": "member",
     "joined": "anoieu 7cdaab3",
@@ -360,10 +371,10 @@
     "joined": "kanon 1d1bba7",
     "repo": "telos",
     "url": "https://github.com/ajreynol/telos",
-    "vetted": "2026-11-14",
-    "why": "README declares membership and configures anoieu's policy contract 1 at b1c20dc; previously a research child of eschaton, now its own repository",
-    "short": "Verified SMT rewriter in Lean, a port of cvc5's",
-    "what": "a verified rewriter for SMT in Lean 4: a port of cvc5's rewriter whose every step is a CPC rule checked by Logos, with a machine-checked proof that rewriting preserves equivalence and differential fuzzing against cvc5"
+    "vetted": "2026-11-19",
+    "why": "README declares membership and configures anoieu's policy contract 1 at b1c20dc, and still does at 5661141, where both CI workflows pass; previously a research child of eschaton, now its own repository",
+    "short": "Verified SMT rewriter and preprocessor in Lean, ports of cvc5's",
+    "what": "a verified rewriter and preprocessor for SMT in Lean 4: ports of cvc5's rewriter and preprocessing passes, each step justified by a checked CPC rule or by a Lean theorem against Logos's semantics, with machine-checked proofs that both preserve equivalence and differential fuzzing against cvc5"
   },
   "epikrisis": {
     "status": "member",

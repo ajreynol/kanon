@@ -26,7 +26,7 @@
     "Dokimasia's rewriter_report/ was read at b9102ba on 2026-11-05: a dated review of bit-vector and string rewriters against proof rules, at the cvc5 revision in its scripts/cvc5.lock.",
     "cvc5 removed its LFSC proof format in #12826 (aa833a320e, 2026-09-22), so its signature entry was rechecked at c666203d49 on 2026-11-05 and now lists CPC only. The separate LFSC checker remains an outsider in ecosystem.json.",
     "Logos's verification/ was read at its default branch a3232131 on 2026-11-14. It is a separate Lake project, LogosVerification, that requires Mathlib and the checker package and owns the model semantics and correctness proofs, so building the checker fetches neither. The full proof is not checked in CI; the README records which proof targets CI builds.",
-    "Telos was read from its clean checkout at b1c20dc on 2026-11-14. Telos/ holds the rewriter library, Main.lean and FuzzMain.lean build the telos and telos-fuzz executables, and verification/ is a separate Lake project, TelosVerification, that mirrors Logos's: it requires Mathlib and LogosVerification so the rewriter builds without them, and unlike Logos's it holds its proofs itself, in TelosProofs/. TelosTests/ holds build-time tests. The theorem covers equivalence preservation only; agreement with cvc5's rewrite choices is fuzzed, not proved.",
+    "Telos was read from its clean checkout at b1c20dc on 2026-11-14, and again at origin/main 5661141 on 2026-11-19. Telos/ holds the library in layers: Core, Rewriter, Preprocess and Frontend. Main.lean and FuzzMain.lean build the telos and telos-fuzz executables. verification/ is a separate Lake project, TelosVerification, that mirrors Logos's: it requires Mathlib and LogosVerification so the rewriter builds without them, and unlike Logos's it holds its proofs itself, in TelosProofs/. The default build proves the theorems taking Logos's results as the class LogosFacts; TelosFull/ discharges that class and proves the unconditional rewrite_correct and preprocess_correct, and CI does not build it. TelosTests/ holds build-time tests. The theorems cover equivalence preservation only; agreement with cvc5's rewrite and preprocessing choices is fuzzed, not proved.",
     "The audit compares paths and coverage with current local trees or GitHub default branches. Descriptions and tool boundaries remain human readings; presence does not establish correctness or installation."
   ],
   "tools": {
@@ -315,17 +315,17 @@
       "repo": "telos",
       "path": "Telos",
       "also": ["TelosTests"],
-      "what": "Verified Lean port of cvc5's rewriter with CPC proof output",
+      "what": "Verified Lean ports of cvc5's rewriter and preprocessor, with CPC proof output for rewrites",
       "entrypoints": ["Telos.lean", "Main.lean", "FuzzMain.lean"],
-      "docs": ["README.md", "docs/design.md", "TRUSTED.md"],
+      "docs": ["README.md", "docs/design.md", "docs/preprocessor-plan.md", "TRUSTED.md"],
       "layout_note": "the executables' roots, Main.lean and FuzzMain.lean, sit at the repository root beside the Telos/ library"
     },
     "telos_verification": {
       "repo": "telos",
       "kind": "artifact",
       "path": "verification",
-      "what": "Lake project with the rewriter's correctness proofs",
-      "files": ["verification/lakefile.toml", "verification/TelosProofs/Spec.lean", "verification/TelosProofs/Rewriter.lean", "verification/TelosProofs/Equiv.lean"],
+      "what": "Lake project with the rewriter's and preprocessor's correctness proofs",
+      "files": ["verification/lakefile.toml", "verification/TelosProofs/Core/Spec.lean", "verification/TelosProofs/Rewriter/Rewriter.lean", "verification/TelosProofs/Preprocess/Preprocess.lean", "verification/TelosProofs/Core/LogosFacts.lean", "verification/TelosFull/Main.lean"],
       "docs": ["README.md", "TRUSTED.md"]
     }
   },
